@@ -1,0 +1,38 @@
+# 指挥官专属特质：适用于爱缪莎指挥舰队时。
+leader_trait_aemusa_commander = {
+    cost = 0 # 专属特质不占用特质点。
+    initial = no # 不在常规领袖生成界面中出现。
+    randomized = no # 不允许其他领袖随机获得。
+    leader_class = { commander } # 仅可由指挥官持有。
+
+    modifier = {
+        ship_weapon_damage_mult = 0.30 # 所在舰队武器伤害 +30%。
+        ship_fire_rate_mult = 0.20 # 所在舰队武器射速 +20%。
+    }
+}
+
+# 行政官专属特质：适用于爱缪莎担任总督时。
+leader_trait_aemusa_official = {
+    cost = 0 # 专属特质不占用特质点。
+    initial = no # 不在常规领袖生成界面中出现。
+    randomized = no # 不允许其他领袖随机获得。
+    leader_class = { official } # 仅可由行政官持有。
+
+    modifier = {
+        planet_stability_add = 10 # 管辖行星稳定度 +10。
+        planet_amenities_add = 10 # 管辖行星舒适度 +10。
+    }
+}
+
+# 科学家专属特质：适用于爱缪莎指挥科学船时。
+leader_trait_aemusa_scientist = {
+    cost = 0 # 专属特质不占用特质点。
+    initial = no # 不在常规领袖生成界面中出现。
+    randomized = no # 不允许其他领袖随机获得。
+    leader_class = { scientist } # 仅可由科学家持有。
+
+    modifier = {
+        science_ship_survey_speed = 0.50 # 科学船调查速度 +50%。
+        ship_anomaly_research_speed_mult = 0.50 # 异常现象研究速度 +50%。
+    }
+}

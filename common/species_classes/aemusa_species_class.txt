@@ -1,0 +1,19 @@
+# 神器使：可在帝国创建界面中选择的生物物种类别。
+ARTIFACT_USER = {
+    archetype = BIOLOGICAL # 使用有机生物规则与常规物种权利。
+
+    possible = {
+        authority = {
+            NOT = {
+                value = auth_machine_intelligence # 机械智能不可选择有机神器使。
+                text = SPECIES_CLASS_MUST_NOT_USE_MACHINE_INTELLIGENCE
+            }
+        }
+    }
+
+    playable = yes # 允许玩家在帝国创建界面选择。
+    randomized = no # 不让 AI 随机生成该物种，只供玩家主动选择。
+    trait = "trait_organic" # 赋予原版有机生物基础特质。
+    graphical_culture = "humanoid_01" # 复用人型舰船与城市外观。
+    move_pop_sound_effect = "moving_pop_confirmation" # 复用人型人口移动音效。
+}

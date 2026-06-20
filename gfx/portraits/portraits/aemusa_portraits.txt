@@ -1,0 +1,17 @@
+# 注册爱缪莎的静态肖像，供 change_leader_portrait 与通讯窗口调用。
+portraits = {
+    # 神器使物种在帝国创建界面中使用的基础肖像。
+    aemusa_species_portrait = {
+        texturefile = "gfx/models/portraits/aemusa_portrait.png" # 使用原始爱缪莎角色立绘。
+    }
+
+    # 11 至 29 级使用的城市背景通讯肖像。
+    aemusa_portrait = {
+        texturefile = "gfx/models/portraits/aemusa_portrait_city.png" # 城市背景图片路径。
+    }
+
+    # 爱缪莎升至 30 级后使用的成长版专属肖像。
+    aemusa_portrait_level_30 = {
+        texturefile = "gfx/models/portraits/aemusa_portrait_level_30.png" # 30 级图片路径。
+    }
+}

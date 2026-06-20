@@ -1,0 +1,65 @@
+# 一次性法令：支付凝聚力后招募一名 30 级官员领袖。
+
+edict_summon_stellar_administrator = {
+    length = 0 # 0 表示即时生效、不会持续占用法令栏。
+    icon = "GFX_edict_type_policy" # 复用原版政策类法令图标。
+
+    resources = {
+        category = edicts # 使用法令资源类别，确保 UI 正确显示花费。
+        cost = {
+            unity = 500 # 基础花费：500 凝聚力。
+            multiplier = value:edict_size_effect # 花费随帝国规模修正。
+        }
+    }
+
+    potential = {
+        is_nomadic = no # 游牧帝国不显示该法令。
+        owner_main_species = {
+            is_species_class = "ARTIFACT_USER" # 仅神器使主物种可见并能召唤爱缪莎。
+        }
+    }
+
+    allow = {
+        owner_main_species = {
+            is_species_class = "ARTIFACT_USER" # 再次确认帝国主物种，防止条件在 UI 更新前变化。
+        }
+        # 已存在爱缪莎时禁止再次召唤，避免重复生成。
+        NOT = {
+            exists = event_target:aemusa_leader
+        }
+        resources = {
+            unity >= 500 # 执行前再次检查凝聚力余额。
+        }
+    }
+
+    ai_weight = {
+        weight = 0 # 不让 AI 自动使用，避免生成无主的特殊领袖。
+    }
+
+    effect = {
+        hidden_effect = {
+            aemusa_summon_leader = yes # 调用脚本化效果创建领袖，避免法令文件过于冗长。
+        }
+    }
+}
+
+# 通讯法令：打开爱缪莎的职责选择对话。
+edict_contact_aemusa = {
+    length = 0 # 即时打开对话，不产生持续效果。
+    icon = "GFX_edict_type_policy" # 复用原版政策类法令图标。
+
+    potential = {
+        exists = event_target:aemusa_leader # 仅在爱缪莎仍存在时显示。
+        is_ai = no # 只允许玩家手动选择职责。
+    }
+
+    effect = {
+        country_event = {
+            id = aemusa_dialogue.10 # 打开职业切换事件。
+        }
+    }
+
+    ai_weight = {
+        weight = 0 # 禁止 AI 使用。
+    }
+}
