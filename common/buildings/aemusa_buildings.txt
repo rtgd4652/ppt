@@ -1,0 +1,115 @@
+# 神器使专属建筑：中央庭统筹神器使行动，在黑门威胁下维持城市秩序。
+building_artifact_sanctum = {
+	base_buildtime = 240
+	icon = building_precinct_house
+	category = government
+
+	building_sets = {
+		government
+	}
+
+	# 仅神器使帝国能够建造。
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	# 每颗星球限一座，代表该星球的中央庭分部。
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 300 }
+		upkeep = { energy = 2 }
+	}
+
+	planet_modifier = {
+		job_enforcer_add = 1
+		planet_stability_add = 3
+		planet_amenities_add = 5
+	}
+}
+
+# 黑门观测站：以塔罗演算预测灾厄，并为研究者提供交界都市的数据。
+building_artifact_black_gate_observatory = {
+	base_buildtime = 360
+	icon = building_research_lab_3
+	category = research
+
+	building_sets = {
+		research
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	allow = {
+		# 建筑作用域是星球；必须切换至星球拥有者国家检查科技。
+		owner = {
+			has_technology = tech_artifact_black_gate_observation
+		}
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 600 }
+		upkeep = { energy = 6 }
+	}
+
+	planet_modifier = {
+		job_researcher_add = 2
+		planet_stability_add = 2
+	}
+}
+
+# 中央庭神器工坊：将神器共鸣转化为舰船组件所需的精密材料。
+building_artifact_relic_workshop = {
+	base_buildtime = 360
+	icon = building_foundry_3
+	category = manufacturing
+
+	building_sets = {
+		manufacturing
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	allow = {
+		# 建筑作用域是星球；必须切换至星球拥有者国家检查科技。
+		owner = {
+			has_technology = tech_artifact_relic_fabrication
+		}
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 800 }
+		upkeep = { energy = 8 }
+	}
+
+	planet_modifier = {
+		job_foundry_add = 2
+		planet_amenities_add = 3
+	}
+}

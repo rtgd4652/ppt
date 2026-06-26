@@ -1,0 +1,24 @@
+# 命运主宰：完成中央庭守望后，神器使将城市的守护意志投射至整个星海。
+ap_artifact_court_destiny = {
+	possible = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+		has_tradition = tr_artifact_court_finish
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+	}
+
+	modifier = {
+		country_edict_fund_add = 100
+		ship_home_territory_fire_rate_mult = 0.15
+		ship_armor_hardening_add = 0.15
+		country_leader_pool_size = 1
+	}
+
+	ai_weight = {
+		factor = 20
+	}
+}

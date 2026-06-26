@@ -1,0 +1,66 @@
+# 命运观测塔：中央庭将黑门观测与塔罗演算扩展为星系尺度的守望网络。
+artifact_fate_observatory_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = 1800
+	resources = { category = megastructures cost = { alloys = 10000 unity = 3000 } upkeep = { energy = 10 } }
+	prerequisites = { "tech_artifact_fate_observatory" }
+	possible = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			NOT = { has_country_flag = artifact_fate_observatory_built }
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			is_star = no
+			colonizable_planet = no
+			NOT = { has_planet_flag = megastructure }
+		}
+	}
+	on_build_complete = {
+		from = { set_country_flag = artifact_fate_observatory_built }
+	}
+}
+
+# 第一阶段：建立塔基与黑门传感阵列。
+artifact_fate_observatory_1 = {
+	entity = "thinktank_phase_01_entity"
+	construction_entity = "thinktank_phase_01_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = 2400
+	resources = { category = megastructures cost = { alloys = 15000 unity = 5000 } upkeep = { energy = 30 } produces = { physics_research = 150 } }
+	upgrade_from = { artifact_fate_observatory_0 }
+	prerequisites = { "tech_artifact_fate_observatory" }
+	country_modifier = { ship_sensor_range_add = 2 }
+}
+
+# 第二阶段：塔罗牌阵开始计算跨星系灾厄的未来分歧。
+artifact_fate_observatory_2 = {
+	entity = "thinktank_phase_02_entity"
+	construction_entity = "thinktank_phase_02_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	build_time = 3000
+	resources = { category = megastructures cost = { alloys = 20000 unity = 7500 } upkeep = { energy = 60 } produces = { physics_research = 300 unity = 100 } }
+	upgrade_from = { artifact_fate_observatory_1 }
+	prerequisites = { "tech_artifact_fate_observatory" }
+	country_modifier = { ship_sensor_range_add = 4 ship_anomaly_research_speed_mult = 0.20 }
+}
+
+# 完工阶段：命运观测塔为神器使舰队提供最远端的预警与演算支援。
+artifact_fate_observatory_3 = {
+	entity = "thinktank_phase_03_entity"
+	construction_entity = "thinktank_phase_03_entity"
+	portrait = "GFX_megastructure_think_tank_background"
+	place_entity_on_planet_plane = no
+	build_time = 3600
+	resources = { category = megastructures cost = { alloys = 30000 unity = 10000 } upkeep = { energy = 100 } produces = { physics_research = 600 unity = 250 } }
+	upgrade_from = { artifact_fate_observatory_2 }
+	prerequisites = { "tech_artifact_fate_observatory" }
+	show_prereqs = yes
+	country_modifier = { ship_sensor_range_add = 6 ship_anomaly_research_speed_mult = 0.35 all_technology_research_speed = 0.10 }
+}

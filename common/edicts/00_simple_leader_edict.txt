@@ -1,4 +1,4 @@
-# 一次性法令：支付凝聚力后招募一名 30 级官员领袖。
+# 一次性法令：支付凝聚力后招募一名 11 级官员领袖。
 
 edict_summon_stellar_administrator = {
     length = 0 # 0 表示即时生效、不会持续占用法令栏。
@@ -13,7 +13,6 @@ edict_summon_stellar_administrator = {
     }
 
     potential = {
-        is_nomadic = no # 游牧帝国不显示该法令。
         owner_main_species = {
             is_species_class = "ARTIFACT_USER" # 仅神器使主物种可见并能召唤爱缪莎。
         }
@@ -27,9 +26,7 @@ edict_summon_stellar_administrator = {
         NOT = {
             exists = event_target:aemusa_leader
         }
-        resources = {
-            unity >= 500 # 执行前再次检查凝聚力余额。
-        }
+        # 凝聚力是否充足由上方 resources.cost 自动检查与扣除。
     }
 
     ai_weight = {
@@ -62,4 +59,27 @@ edict_contact_aemusa = {
     ai_weight = {
         weight = 0 # 禁止 AI 使用。
     }
+}
+
+# 科技档案法令：将当前阶段的神器使专属科技直接加入科技选择，兼容已开始的旧存档。
+edict_artifact_research_archive = {
+	length = 0
+	icon = "GFX_edict_type_policy"
+	resources = {
+		category = edicts
+		cost = { unity = 300 }
+	}
+
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+
+	effect = {
+		# 一次性授予完整基础科技链，兼容旧存档且不依赖随机科技候选刷新。
+		give_technology = { tech = tech_artifact_tarot_calculation }
+		give_technology = { tech = tech_artifact_black_gate_observation }
+		give_technology = { tech = tech_artifact_relic_fabrication }
+	}
+
+	ai_weight = { weight = 0 }
 }

@@ -1,0 +1,55 @@
+# 命运之主正式实体定义：专属根实体、舰艏、舰体、舰艉以及运行时粒子状态。
+# 三份 PDX 网格均已导出，并由舰船区段脚本直接引用。
+# 命运之主的无网格根实体；三个区段在同一原点组装，并负责向子实体传播状态。
+entity = {
+	name = "destiny_lord_entity"
+	locator = { name = part1 position = { 0 0 0 } }
+	locator = { name = part2 position = { 0 0 0 } }
+	locator = { name = part3 position = { 0 0 0 } }
+	# 根实体核心节点使用 PDX 坐标系：Y 轴为舰体上方高度。
+	locator = { name = destiny_core_root position = { 0 6.4 0 } }
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		# 根实体始终进入 idle 状态，确保大型冷蓝核心粒子能够可靠触发。
+		event = { time = 0 node = "destiny_core_root" particle = "ai_01_blue_large_station_core_effect" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "moving" state_time = 5 }
+	state = { name = "death" state_time = 5 looping = no }
+}
+
+entity = {
+	name = "destiny_lord_bow_entity"
+	pdxmesh = "destiny_lord_bow_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 }
+	state = { name = "death" state_time = 5 looping = no }
+}
+
+entity = {
+	name = "destiny_lord_mid_entity"
+	pdxmesh = "destiny_lord_mid_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		# 命运环四向圣辉节点，使用原版冷蓝舰船灯光粒子以控制性能开销。
+		start_event = { node = "destiny_ring_light_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "destiny_ring_light_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "destiny_ring_light_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+		start_event = { node = "destiny_ring_light_04" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "death" state_time = 5 looping = no }
+}
+
+entity = {
+	name = "destiny_lord_stern_entity"
+	pdxmesh = "destiny_lord_stern_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		start_event = { node = "engine_large_01" particle = "generic_big_2_5_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+		start_event = { node = "engine_large_02" particle = "generic_big_2_5_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "moving" state_time = 5
+		start_event = { node = "engine_large_01" particle = "generic_big_3_exhaust_circle_moving" keep_particle = yes trigger_once = yes }
+		start_event = { node = "engine_large_02" particle = "generic_big_3_exhaust_circle_moving" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "death" state_time = 5 looping = no }
+}

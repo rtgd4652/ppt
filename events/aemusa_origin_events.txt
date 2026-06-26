@@ -1,0 +1,24 @@
+namespace = aemusa_origin
+
+# 游戏开局时为“交界都市守望者”起源放置中央庭与学园巡查区；作用域为国家。
+country_event = {
+	id = aemusa_origin.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_origin = origin_artifact_resonance
+		NOT = { has_country_flag = aemusa_origin_setup_finished }
+	}
+
+	immediate = {
+		# 标记防止与其他开局事件或存档异常重复执行。
+		set_country_flag = aemusa_origin_setup_finished
+
+		# 首都获得一座中央庭指挥中心与一个学园巡查区。
+		capital_scope = {
+			add_building = building_artifact_sanctum
+			add_district = district_artifact_nexus
+		}
+	}
+}

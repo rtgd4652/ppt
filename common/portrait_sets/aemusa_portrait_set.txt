@@ -1,12 +1,8 @@
-# 将神器使类别与其唯一可选肖像关联，使其出现在帝国创建界面。
+# 神器使物种类别与爱缪莎静态肖像的直接关联。
 aemusa_artifact_users = {
-    species_class = "ARTIFACT_USER" # 对应 common/species_classes 中的神器使类别。
-
+    species_class = ARTIFACT_USER # 对应 common/species_classes 中的神器使类别。
     portraits = {
-        "aemusa_species_portrait" # 神器使使用爱缪莎基础肖像。
-    }
-
-    non_randomized_portraits = {
-        "aemusa_species_portrait" # 禁止该肖像被其他随机帝国使用。
+        "aemusa_species_portrait" # 爱缪莎基础立绘。
+        "aemusa_species_portrait_city" # 爱缪莎都市背景立绘。
     }
 }

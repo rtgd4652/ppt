@@ -5,3 +5,17 @@ on_leader_level_up = {
         aemusa_dialogue.20 # 达到 30 级时解锁并换用成长版立绘。
     }
 }
+
+# 监听帝国开局；事件会自行过滤，只处理“命运共鸣”起源。
+on_game_start_country = {
+	events = {
+		aemusa_origin.1 # 为神器使起源的首都放置专属建筑和区划。
+	}
+}
+
+# 命运之主被摧毁时触发重构事件；this 为舰船拥有者国家，fromfrom 为被摧毁舰船。
+on_ship_destroyed_victim = {
+	events = {
+		aemusa_destiny_lord.1
+	}
+}

@@ -1,0 +1,16 @@
+# 命运之主低面数骨架材质占位。最终版本应在 Blender 中导出 PBR 贴图。
+newmtl Hull_Silver
+Kd 0.72 0.78 0.85
+Ks 0.60 0.70 0.85
+Ns 220
+
+newmtl Emissive_IceBlue
+Kd 0.15 0.55 1.00
+Ke 0.15 0.55 1.00
+Ks 0.80 0.95 1.00
+Ns 300
+
+newmtl Engine_Blue
+Kd 0.05 0.25 0.80
+Ke 0.05 0.35 1.00
+Ns 180

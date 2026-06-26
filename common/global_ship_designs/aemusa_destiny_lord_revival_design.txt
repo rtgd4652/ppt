@@ -1,0 +1,19 @@
+# 命运之主重构预设：用于无限复活事件，确保复活舰船具备必需核心与三段舰体。
+ship_design = {
+	name = "NAME_Destiny_Lord_Reborn"
+	ship_size = destiny_lord
+	role = artillery
+	use_design_name = yes
+	is_event_design = yes
+	graphical_culture = "humanoid_01"
+
+	section = { template = "DESTINY_LORD_BOW" slot = "bow" }
+	section = { template = "DESTINY_LORD_MID" slot = "mid" }
+	section = { template = "DESTINY_LORD_STERN" slot = "stern" }
+
+	# 四个必需核心组件，保证重构舰船可以被正常创建与投入舰队。
+	required_component = "ARTIFACT_DESTINY_LORD_REACTOR"
+	required_component = "ARTIFACT_DESTINY_LORD_DRIVE"
+	required_component = "ARTIFACT_DESTINY_LORD_THRUSTER"
+	required_component = "ARTIFACT_DESTINY_LORD_COMPUTER"
+}

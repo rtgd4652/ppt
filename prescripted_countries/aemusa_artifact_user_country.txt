@@ -1,0 +1,67 @@
+# 神器使国家预设：可在新游戏的帝国创建界面直接选择。
+# 设计参考《永远的七日之都》的中央庭与交界都市，因此默认不作为随机 AI 帝国生成。
+artifact_user_central_court = {
+	name = "EMPIRE_DESIGN_artifact_user_central_court"
+	adjective = "PRESCRIPTED_adjective_artifact_user_central_court"
+	spawn_enabled = no
+
+	ship_prefix = "PRESCRIPTED_ship_prefix_artifact_user_central_court"
+
+	# 使用本模组定义的神器使物种类别、肖像与专属特质。
+	species = {
+		class = "ARTIFACT_USER"
+		portrait = "aemusa_species_portrait_city"
+		name = "PRESCRIPTED_species_name_artifact_user"
+		plural = "PRESCRIPTED_species_plural_artifact_user"
+		adjective = "PRESCRIPTED_species_adjective_artifact_user"
+		name_list = "HUMAN1"
+		trait = "trait_organic"
+		# 起源的 traits 要求预设物种显式携带该特质，否则帝国创建器会隐藏该预设。
+		trait = "trait_artifact_resonance"
+	}
+
+	# 中央庭以危机处置与城市防卫为首要职责。
+	room = "personality_honorbound_warriors_room"
+	authority = "auth_oligarchic"
+	civics = { "civic_police_state" "civic_distinguished_admiralty" }
+	government = "gov_military_junta"
+	origin = "origin_artifact_resonance"
+
+	ethic = "ethic_authoritarian"
+	ethic = "ethic_fanatic_militarist"
+
+	# 起源也会覆盖母星类型；此处保留专属星球以便预设信息完整展示。
+	planet_name = "PRESCRIPTED_planet_name_artifact_user_central_court"
+	planet_class = "pc_artifact_crossing_city"
+	system_name = "PRESCRIPTED_system_name_artifact_user_central_court"
+
+	graphical_culture = "humanoid_01"
+	city_graphical_culture = "humanoid_01"
+
+	# 采用蓝、金、白三色，呼应中央庭标识与都市中的神器辉光。
+	empire_flag = {
+		icon = {
+			category = "ornate"
+			file = "flag_ornate_7.dds"
+		}
+		background = {
+			category = "backgrounds"
+			file = "00_solid.dds"
+		}
+		colors = {
+			"blue"
+			"yellow"
+			"null"
+			"null"
+		}
+	}
+
+	# 预设统治者不使用爱缪莎之名，避免与法令召唤的独特领袖重复。
+	ruler = {
+		name = "PRESCRIPTED_ruler_name_artifact_user_central_court"
+		gender = female
+		portrait = "aemusa_species_portrait_city"
+		trait = "trait_ruler_eye_for_talent"
+		leader_class = official
+	}
+}

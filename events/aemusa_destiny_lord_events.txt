@@ -1,0 +1,32 @@
+namespace = aemusa_destiny_lord
+
+# 命运之主的无限重构：舰船被摧毁后，以预制的完整主炮配置在首都星系立即重生。
+country_event = {
+	id = aemusa_destiny_lord.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		fromfrom = { is_ship_size = destiny_lord }
+	}
+
+	immediate = {
+		# 保存当前帝国作为事件目标，供嵌套星球与星系作用域安全引用。
+		save_event_target_as = destiny_lord_revival_owner
+		capital_scope = {
+			solar_system = {
+				create_fleet = {
+					name = "NAME_Destiny_Lord_Reborn_Fleet"
+					effect = {
+						set_owner = event_target:destiny_lord_revival_owner
+						create_ship = {
+							name = "NAME_Destiny_Lord_Reborn"
+							design = "NAME_Destiny_Lord_Reborn"
+							graphical_culture = "humanoid_01"
+						}
+					}
+				}
+			}
+		}
+	}
+}

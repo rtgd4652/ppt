@@ -1,0 +1,7 @@
+# 神器使武器数据：分号分隔；游戏会读取该表为塔罗射线提供伤害与射程。
+key;cost;power;min_damage;max_damage;hull_damage;shield_damage;shield_penetration;armor_damage;armor_penetration;min_windup;max_windup;cooldown;range;accuracy;tracking;size_damage_factor;military_power_multiplier;missile_speed;missile_evasion;missile_shield;missile_armor;missile_health;missile_retarget_range;end
+SMALL_ARTIFACT_TAROT_RAY;18.00;-12.00;30.00;55.00;1.10;0.75;0.15;1.40;0.20;3.00;8.00;20.00;50.00;0.90;0.55;0.00;1.00;0.00;0.00;0.00;0.00;0.00;0.00;
+MEDIUM_ARTIFACT_TAROT_RAY;45.00;-28.00;75.00;138.00;1.10;0.75;0.15;1.40;0.20;4.00;10.00;24.00;70.00;0.90;0.35;0.00;1.00;0.00;0.00;0.00;0.00;0.00;0.00;
+LARGE_ARTIFACT_TAROT_RAY;105.00;-65.00;180.00;330.00;1.10;0.75;0.15;1.40;0.20;5.00;12.00;28.00;90.00;0.90;0.10;0.00;1.00;0.00;0.00;0.00;0.00;0.00;0.00;
+EXTRA_LARGE_ARTIFACT_TAROT_JUDGEMENT;2000.00;-500.00;1800.00;3200.00;1.20;0.80;0.20;1.50;0.30;8.00;16.00;35.00;150.00;0.90;0.00;0.00;1.00;0.00;0.00;0.00;0.00;0.00;0.00;
+TITANIC_ARTIFACT_FATE_DOMINION;5000.00;-1400.00;5000.00;9000.00;1.30;0.75;0.25;1.60;0.35;10.00;20.00;50.00;200.00;0.95;0.00;0.00;1.00;0.00;0.00;0.00;0.00;0.00;0.00;

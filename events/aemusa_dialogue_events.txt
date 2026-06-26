@@ -9,6 +9,13 @@ country_event = {
     is_triggered_only = yes # 禁止随机触发，只能由法令调用。
     event_window_type = leader_story # 使用原版领袖故事窗口样式。
 
+    immediate = {
+        # 每次通讯均刷新肖像，让旧存档中的爱缪莎也切换为上半身版本。
+        event_target:aemusa_leader = {
+            aemusa_refresh_portrait = yes
+        }
+    }
+
     picture_event_data = {
         portrait = event_target:aemusa_leader # 显示已保存的爱缪莎肖像。
         room = ethic_spaceship_room # 使用原版太空船通讯背景。

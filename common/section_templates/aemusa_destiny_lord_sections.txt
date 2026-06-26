@@ -1,0 +1,83 @@
+# 命运之主舰艏：16 个 T（泰坦级）武器槽，承担正面决战火力。
+ship_section_template = {
+	key = "DESTINY_LORD_BOW"
+	ship_size = destiny_lord
+	fits_on_slot = bow
+	should_draw_components = yes
+	# 使用命运之主自定义舰艏模型，包含 16 个泰坦级武器定位器。
+	entity = "destiny_lord_bow_entity"
+	icon = "GFX_ship_part_core_bow"
+	ai_tags = { artillery }
+	component_slot = { name = "T_01" template = "invisible_titanic_fixed" locatorname = "titanic_gun_01" }
+	component_slot = { name = "T_02" template = "invisible_titanic_fixed" locatorname = "titanic_gun_02" }
+	component_slot = { name = "T_03" template = "invisible_titanic_fixed" locatorname = "titanic_gun_03" }
+	component_slot = { name = "T_04" template = "invisible_titanic_fixed" locatorname = "titanic_gun_04" }
+	component_slot = { name = "T_05" template = "invisible_titanic_fixed" locatorname = "titanic_gun_05" }
+	component_slot = { name = "T_06" template = "invisible_titanic_fixed" locatorname = "titanic_gun_06" }
+	component_slot = { name = "T_07" template = "invisible_titanic_fixed" locatorname = "titanic_gun_07" }
+	component_slot = { name = "T_08" template = "invisible_titanic_fixed" locatorname = "titanic_gun_08" }
+	component_slot = { name = "T_09" template = "invisible_titanic_fixed" locatorname = "titanic_gun_09" }
+	component_slot = { name = "T_10" template = "invisible_titanic_fixed" locatorname = "titanic_gun_10" }
+	component_slot = { name = "T_11" template = "invisible_titanic_fixed" locatorname = "titanic_gun_11" }
+	component_slot = { name = "T_12" template = "invisible_titanic_fixed" locatorname = "titanic_gun_12" }
+	component_slot = { name = "T_13" template = "invisible_titanic_fixed" locatorname = "titanic_gun_13" }
+	component_slot = { name = "T_14" template = "invisible_titanic_fixed" locatorname = "titanic_gun_14" }
+	component_slot = { name = "T_15" template = "invisible_titanic_fixed" locatorname = "titanic_gun_15" }
+	component_slot = { name = "T_16" template = "invisible_titanic_fixed" locatorname = "titanic_gun_16" }
+	# 不配置通用槽，避免海量空装甲/护盾槽被设计器判定为缺少组件。
+	large_utility_slots = 0
+	resources = { category = ship_sections cost = { alloys = 12000 } }
+}
+
+# 命运之主舰体：20 个 X（超大型）武器槽，用于星系级远程齐射。
+ship_section_template = {
+	key = "DESTINY_LORD_MID"
+	ship_size = destiny_lord
+	fits_on_slot = mid
+	should_draw_components = yes
+	# 使用命运之主自定义舰体模型，包含 20 个 X 槽定位器。
+	entity = "destiny_lord_mid_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { artillery }
+	component_slot = { name = "X_01" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_01" }
+	component_slot = { name = "X_02" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_02" }
+	component_slot = { name = "X_03" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_03" }
+	component_slot = { name = "X_04" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_04" }
+	component_slot = { name = "X_05" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_05" }
+	component_slot = { name = "X_06" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_06" }
+	component_slot = { name = "X_07" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_07" }
+	component_slot = { name = "X_08" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_08" }
+	component_slot = { name = "X_09" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_09" }
+	component_slot = { name = "X_10" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_10" }
+	component_slot = { name = "X_11" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_11" }
+	component_slot = { name = "X_12" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_12" }
+	component_slot = { name = "X_13" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_13" }
+	component_slot = { name = "X_14" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_14" }
+	component_slot = { name = "X_15" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_15" }
+	component_slot = { name = "X_16" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_16" }
+	component_slot = { name = "X_17" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_17" }
+	component_slot = { name = "X_18" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_18" }
+	component_slot = { name = "X_19" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_19" }
+	component_slot = { name = "X_20" template = "invisible_extra_large_fixed" locatorname = "extra_large_gun_20" }
+	# 命运之主的舰体专注于 20 个 X 槽齐射，不额外要求通用组件。
+	large_utility_slots = 0
+	resources = { category = ship_sections cost = { alloys = 18000 } }
+}
+
+# 命运之主舰艉：不设置辅助与通用槽，保留为主炮供能与散热空间。
+ship_section_template = {
+	key = "DESTINY_LORD_STERN"
+	ship_size = destiny_lord
+	fits_on_slot = stern
+	should_draw_components = yes
+	# 使用命运之主自定义舰艉模型，包含双光环及双引擎定位器。
+	entity = "destiny_lord_stern_entity"
+	icon = "GFX_ship_part_core_stern"
+	ai_tags = { artillery }
+	# 两个独立光环槽，可同时装备友军强化与敌军削弱光环。
+	component_slot = { name = "DESTINY_AURA_01" template = "destiny_aura_slot" locatorname = "aura_slot_01" }
+	component_slot = { name = "DESTINY_AURA_02" template = "destiny_aura_slot" locatorname = "aura_slot_02" }
+	aux_utility_slots = 0
+	large_utility_slots = 0
+	resources = { category = ship_sections cost = { alloys = 10000 } }
+}

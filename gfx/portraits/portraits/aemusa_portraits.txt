@@ -2,16 +2,21 @@
 portraits = {
     # 神器使物种在帝国创建界面中使用的基础肖像。
     aemusa_species_portrait = {
-        texturefile = "gfx/models/portraits/aemusa_portrait.png" # 使用原始爱缪莎角色立绘。
+        spriteType = "GFX_aemusa_species_portrait" # 通过精灵定义加载基础 DDS 静态立绘。
+    }
+
+    # 神器使物种在帝国创建界面中的都市背景肖像。
+    aemusa_species_portrait_city = {
+        spriteType = "GFX_aemusa_species_portrait_city" # 通过精灵定义加载都市背景 DDS 静态立绘。
     }
 
     # 11 至 29 级使用的城市背景通讯肖像。
     aemusa_portrait = {
-        texturefile = "gfx/models/portraits/aemusa_portrait_city.png" # 城市背景图片路径。
+        spriteType = "GFX_aemusa_species_portrait_city" # 通讯使用都市背景静态立绘。
     }
 
     # 爱缪莎升至 30 级后使用的成长版专属肖像。
     aemusa_portrait_level_30 = {
-        texturefile = "gfx/models/portraits/aemusa_portrait_level_30.png" # 30 级图片路径。
+        texturefile = "gfx/models/portraits/aemusa_portrait_level_30_upper_dxt1.dds" # 30 级成长版使用上半身焦点立绘。
     }
 }

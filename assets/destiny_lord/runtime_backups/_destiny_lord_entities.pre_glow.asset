@@ -1,0 +1,33 @@
+# 命运之主实体定义预案。
+# 当前舰船仍使用原版泰坦实体，确保未导出 .mesh 前不会导致游戏缺失模型。
+# 三份 .mesh 导出完成后，把 section_templates 中的 entity 改为下列对应实体即可启用。
+entity = {
+	name = "destiny_lord_bow_entity"
+	pdxmesh = "destiny_lord_bow_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 }
+	state = { name = "death" state_time = 5 looping = no }
+}
+
+entity = {
+	name = "destiny_lord_mid_entity"
+	pdxmesh = "destiny_lord_mid_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5 }
+	state = { name = "death" state_time = 5 looping = no }
+}
+
+entity = {
+	name = "destiny_lord_stern_entity"
+	pdxmesh = "destiny_lord_stern_mesh"
+	default_state = "idle"
+	state = { name = "idle" state_time = 5
+		start_event = { node = "engine_large_01" particle = "generic_big_2_5_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+		start_event = { node = "engine_large_02" particle = "generic_big_2_5_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "moving" state_time = 5
+		start_event = { node = "engine_large_01" particle = "generic_big_3_exhaust_circle_moving" keep_particle = yes trigger_once = yes }
+		start_event = { node = "engine_large_02" particle = "generic_big_3_exhaust_circle_moving" keep_particle = yes trigger_once = yes }
+	}
+	state = { name = "death" state_time = 5 looping = no }
+}

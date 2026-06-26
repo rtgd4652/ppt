@@ -1,0 +1,39 @@
+# 神器使专属初始星球：交界都市。
+# 复用原版都市星球模型，但保留标准区划集，使神器使专属区划能够正常建造。
+pc_artifact_crossing_city = {
+	entity = "city_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_city
+	icon_large = GFX_planet_type_city_big
+
+	climate = "wet"
+	atmosphere_color = hsv { 0.60 0.25 0.90 }
+	atmosphere_intensity = 1.0
+	atmosphere_width = 0.5
+	city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+
+	# 交界都市是故事发生地：具有稳定的生活条件与适度的城市协作优势。
+	modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 200
+		planet_jobs_produces_mult = 0.05
+		pop_environment_tolerance = 1.0
+	}
+
+	min_distance_from_sun = @habitable_min_distance
+	max_distance_from_sun = @habitable_max_distance
+	spawn_odds = 0
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	chance_of_ring = 0.2
+	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
+	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
+
+	colonizable = yes
+	starting_planet = no
+	ideal = yes
+	district_set = standard
+	uses_alternative_skies_for_moons = no
+	uses_alternative_skies_if_has_orbital_ring = yes
+	carry_cap_per_free_district = @carry_cap_normal
+}

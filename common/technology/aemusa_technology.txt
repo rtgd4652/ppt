@@ -1,0 +1,71 @@
+# 塔罗演算：专属研究链的入口，取消稀有与高阶前置，确保神器使可稳定抽到。
+tech_artifact_tarot_calculation = {
+	area = physics
+	icon = tech_psionic_barrier
+	cost = 300
+	tier = 1
+	category = { computing }
+	weight = 200
+
+	modifier = {
+		ship_anomaly_research_speed_mult = 0.15
+	}
+}
+
+# 黑门观测：建筑与命运塔罗射线的直接前置科技。
+tech_artifact_black_gate_observation = {
+	area = physics
+	icon = tech_sensors_4
+	cost = 800
+	tier = 2
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_tarot_calculation" }
+	weight = 150
+
+	modifier = {
+		ship_sensor_range_add = 2
+	}
+}
+
+# 神器锻造：命运织装甲与七日演算核心的直接前置科技。
+tech_artifact_relic_fabrication = {
+	area = engineering
+	icon = tech_ship_armor_5
+	cost = 1400
+	tier = 3
+	category = { materials }
+	prerequisites = { "tech_artifact_black_gate_observation" }
+	weight = 120
+}
+
+# 命运观测塔：在中央庭守望传统完成后，建造星系尺度的命运演算巨构。
+tech_artifact_fate_observatory = {
+	area = physics
+	icon = tech_mega_engineering
+	cost = 24000
+	tier = 5
+	category = { computing }
+	is_rare = yes
+	prerequisites = { "tech_artifact_relic_fabrication" "tech_mega_engineering" }
+	weight = 15
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
+}
+
+# 命运之主：将观测塔演算核心嵌入超旗舰舰体的终极工程。
+tech_artifact_destiny_lord = {
+	area = engineering
+	icon = tech_titans
+	cost = 30000
+	tier = 5
+	category = { voidcraft }
+	is_rare = yes
+	prerequisites = { "tech_artifact_fate_observatory" "tech_titans" }
+	weight = 10
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
+}

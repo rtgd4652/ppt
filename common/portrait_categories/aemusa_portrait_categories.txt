@@ -1,0 +1,8 @@
+# 帝国创建器中的物种肖像分类：将神器使肖像集显示为独立可选类别。
+artifact_users = {
+    name = ARTIFACT_USER # 使用“神器使”物种类别的中文本地化名称。
+
+    sets = {
+        aemusa_artifact_users # 对应 common/portrait_sets 中注册的爱缪莎肖像集。
+    }
+}

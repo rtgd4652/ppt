@@ -1,0 +1,42 @@
+# 命运之主的群星 PDX 网格注册表。
+# 三段自定义 .mesh 已由 io_pdx_mesh 导出；贴图将在同目录以 DDS 格式提供。
+objectTypes = {
+	pdxmesh = {
+		name = "destiny_lord_bow_mesh"
+		file = "gfx/models/ships/destiny_lord/destiny_lord_bow.mesh"
+		meshsettings = {
+			name = "destiny_lord_bow"
+			index = 0
+			texture_diffuse = "destiny_lord_basecolor.dds"
+			texture_normal = "destiny_lord_normal.dds"
+			texture_specular = "destiny_lord_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+
+	pdxmesh = {
+		name = "destiny_lord_mid_mesh"
+		file = "gfx/models/ships/destiny_lord/destiny_lord_mid.mesh"
+		meshsettings = {
+			name = "destiny_lord_mid"
+			index = 0
+			texture_diffuse = "destiny_lord_basecolor.dds"
+			texture_normal = "destiny_lord_normal.dds"
+			texture_specular = "destiny_lord_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+
+	pdxmesh = {
+		name = "destiny_lord_stern_mesh"
+		file = "gfx/models/ships/destiny_lord/destiny_lord_stern.mesh"
+		meshsettings = {
+			name = "destiny_lord_stern"
+			index = 0
+			texture_diffuse = "destiny_lord_basecolor.dds"
+			texture_normal = "destiny_lord_normal.dds"
+			texture_specular = "destiny_lord_specular.dds"
+			shader = "PdxMeshShip"
+		}
+	}
+}

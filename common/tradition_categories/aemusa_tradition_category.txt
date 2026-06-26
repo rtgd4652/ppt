@@ -1,0 +1,24 @@
+# 中央庭守望传统树：仅与神器契约共鸣的神器使帝国可选择。
+tradition_artifact_court = {
+	desc = tradition_artifact_court_desc
+	tree_template = "tree_11_111"
+	adoption_bonus = "tr_artifact_court_adopt"
+	finish_bonus = "tr_artifact_court_finish"
+	traditions = {
+		"tr_artifact_court_black_gate_watch"
+		"tr_artifact_court_seven_guardians"
+		"tr_artifact_court_tarot_archive"
+		"tr_artifact_court_city_network"
+		"tr_artifact_court_final_day"
+	}
+
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+
+	ai_weight = {
+		factor = 25
+	}
+}
