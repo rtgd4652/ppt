@@ -3,6 +3,12 @@ district_artifact_nexus = {
 	base_buildtime = 480
 	icon = district_city
 	overlay_icon = GFX_district_research
+	# 4.0+ 区划必须声明区划槽；复用城市区划槽，避免加载时报缺失并崩溃。
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
 
 	# 只在标准行星区划集上显示，避免出现在环世界、轨道栖所等不匹配的地图上。
 	potential = {
@@ -27,4 +33,186 @@ district_artifact_nexus = {
 		job_researcher_add = 100
 		job_entertainer_add = 100
 	}
+}
+
+# 东方古街：命运都市专属民生区划，负责凝聚力、舒适度与有机人口增长。
+district_artifact_destiny_commons = {
+	base_buildtime = 600
+	icon = district_city
+	overlay_icon = GFX_district_government
+	# 命运都市民生区划承载行政与日常建筑槽。
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	potential = {
+		is_planet_class = pc_artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = { minerals = 1200 unity = 300 }
+		upkeep = { energy = 6 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 700
+		planet_amenities_add = 60
+		pop_growth_speed_mult = 0.05
+		job_artifact_memory_curator_add = 3
+		job_artifact_life_cultivator_add = 2
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 中央城区：命运都市专属工业区划，集中产出消费品与合金。
+district_artifact_destiny_industry = {
+	base_buildtime = 600
+	icon = district_city
+	overlay_icon = GFX_district_government
+	# 工业区划使用城市槽，保证新区划不会因缺少 zone_slots 触发硬错误。
+	zone_slots = {
+		slot_city_01
+		slot_city_02
+	}
+
+	potential = {
+		is_planet_class = pc_artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1500 alloys = 200 }
+		upkeep = { energy = 8 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 300
+		job_artifact_civic_artisan_add = 3
+		job_artifact_resonance_metallurgist_add = 3
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 海湾侧城：命运都市专属基建区划，集中产出能量、矿石与食物。
+district_artifact_destiny_foundation = {
+	base_buildtime = 600
+	icon = district_city
+	overlay_icon = GFX_district_energy
+	# 基建区划使用资源槽，匹配能源与资源向建筑布局。
+	zone_slots = {
+		slot_energy
+	}
+
+	potential = {
+		is_planet_class = pc_artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1200 alloys = 100 }
+		upkeep = { energy = 4 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 300
+		job_artifact_phase_technician_add = 2
+		job_artifact_phase_miner_add = 2
+		job_artifact_life_cultivator_add = 2
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 高校学园：命运都市专属科研区划，集中产出三系科研点。
+district_artifact_destiny_research = {
+	base_buildtime = 600
+	icon = district_city
+	overlay_icon = GFX_district_research
+	# 科研区划复用城市槽，给研究与学院建筑保留合法承载区。
+	zone_slots = {
+		slot_city_01
+		slot_city_02
+	}
+
+	potential = {
+		is_planet_class = pc_artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1400 consumer_goods = 300 }
+		upkeep = { energy = 8 consumer_goods = 3 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 300
+		job_artifact_destiny_researcher_add = 5
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 中央庭：命运都市专属舰务区划，提供稳定度与舰队容量。
+district_artifact_destiny_fleet = {
+	base_buildtime = 600
+	icon = district_city
+	overlay_icon = GFX_district_government
+	# 舰务区划复用政府城市槽，避免自定义区划缺少槽定义。
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+	}
+
+	potential = {
+		is_planet_class = pc_artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1600 alloys = 500 unity = 300 }
+		upkeep = { energy = 10 alloys = 2 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 300
+		planet_stability_add = 3
+		job_artifact_fleet_coordinator_add = 4
+	}
+
+	ai_weight = { weight = 100 }
 }

@@ -40,6 +40,29 @@ edict_summon_stellar_administrator = {
     }
 }
 
+# 白夜馆入口法令：打开统一通讯菜单，后续五名领袖也从这里接入。
+edict_contact_white_night_pavilion = {
+    length = 0 # 即时打开白夜馆通讯，不产生持续效果。
+    icon = "GFX_edict_white_night_pavilion" # 使用白夜馆专属灯箱图标，便于在法令栏中识别入口。
+
+    potential = {
+        owner_main_species = {
+            is_species_class = "ARTIFACT_USER" # 仅神器使主物种能够看到白夜馆入口。
+        }
+        is_ai = no # 白夜馆是玩家主动交互入口，禁止 AI 自动打开。
+    }
+
+    effect = {
+        country_event = {
+            id = aemusa_dialogue.1 # 打开白夜馆主菜单事件。
+        }
+    }
+
+    ai_weight = {
+        weight = 0 # 禁止 AI 使用。
+    }
+}
+
 # 通讯法令：打开爱缪莎的职责选择对话。
 edict_contact_aemusa = {
     length = 0 # 即时打开对话，不产生持续效果。

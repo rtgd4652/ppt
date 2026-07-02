@@ -4,6 +4,8 @@ objectTypes = {
 	pdxmesh = {
 		name = "destiny_lord_bow_mesh"
 		file = "gfx/models/ships/destiny_lord/destiny_lord_bow.mesh"
+		# 视觉尺度对标时隙之梭：三段统一放大，保持舰体拼接与武器定位器比例一致。
+		scale = 6.0
 		meshsettings = {
 			name = "destiny_lord_bow"
 			index = 0
@@ -17,6 +19,8 @@ objectTypes = {
 	pdxmesh = {
 		name = "destiny_lord_mid_mesh"
 		file = "gfx/models/ships/destiny_lord/destiny_lord_mid.mesh"
+		# 视觉尺度对标时隙之梭：三段统一放大，保持舰体拼接与武器定位器比例一致。
+		scale = 6.0
 		meshsettings = {
 			name = "destiny_lord_mid"
 			index = 0
@@ -30,6 +34,8 @@ objectTypes = {
 	pdxmesh = {
 		name = "destiny_lord_stern_mesh"
 		file = "gfx/models/ships/destiny_lord/destiny_lord_stern.mesh"
+		# 视觉尺度对标时隙之梭：三段统一放大，保持舰体拼接与武器定位器比例一致。
+		scale = 6.0
 		meshsettings = {
 			name = "destiny_lord_stern"
 			index = 0

@@ -38,6 +38,241 @@ tech_artifact_relic_fabrication = {
 	weight = 120
 }
 
+# 中央庭调度协议：把神器使行动编制从单星球指挥扩展为跨殖民地治理。
+tech_artifact_central_court_protocols = {
+	area = society
+	icon = tech_psionic_barrier
+	cost = 2500
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_artifact_tarot_calculation" }
+	weight = 120
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+
+	modifier = {
+		country_edict_fund_add = 50
+	}
+}
+
+# 塔罗经济演算：将无数次七日分歧整理为生产、科研与行政的预测模型。
+tech_artifact_tarot_economy = {
+	area = physics
+	icon = tech_sensors_4
+	cost = 6000
+	tier = 3
+	category = { computing }
+	prerequisites = { "tech_artifact_black_gate_observation" "tech_artifact_central_court_protocols" }
+	weight = 90
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+
+	modifier = {
+		# 拆成三系科研修正，避免旧的全科研修正符在当前版本被判无效。
+		category_physics_research_speed_mult = 0.05
+		category_society_research_speed_mult = 0.05
+		category_engineering_research_speed_mult = 0.05
+	}
+}
+
+# 共鸣制造体系：将神器碎片、相位合金与中央庭工坊规范合并为后期舰队工业线。
+tech_artifact_resonance_manufacturing = {
+	area = engineering
+	icon = tech_ship_armor_5
+	cost = 8000
+	tier = 3
+	category = { materials }
+	prerequisites = { "tech_artifact_relic_fabrication" }
+	weight = 85
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+
+	modifier = {
+		country_alloys_produces_mult = 0.05
+	}
+}
+
+# 七日后勤网络：把中央庭守望传统转化为行星级调度制度，解锁七日调度中枢。
+tech_artifact_seven_day_logistics = {
+	area = society
+	icon = tech_psionic_barrier
+	cost = 12000
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_artifact_tarot_economy" "tech_artifact_resonance_manufacturing" }
+	weight = 70
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_tradition = tr_artifact_court_finish
+	}
+
+	modifier = {
+		country_unity_produces_mult = 0.10
+	}
+}
+
+# 命运经济矩阵：命运观测塔之前的最终行星经济科技，解锁命运经济演算院。
+tech_artifact_destiny_economy = {
+	area = physics
+	icon = tech_mega_engineering
+	cost = 18000
+	tier = 4
+	category = { computing }
+	is_rare = yes
+	prerequisites = { "tech_artifact_seven_day_logistics" }
+	weight = 45
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
+
+	modifier = {
+		planet_jobs_produces_mult = 0.05
+	}
+}
+
+# 相位能源网：解锁神器使后期能量建筑。
+tech_artifact_phase_energy = {
+	area = physics
+	icon = tech_sensors_4
+	cost = 14000
+	tier = 4
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_tarot_economy" }
+	weight = 70
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+
+	modifier = {
+		country_resource_max_add = 10000
+	}
+}
+
+# 相位矿脉采掘：解锁神器使后期矿石建筑。
+tech_artifact_phase_extraction = {
+	area = engineering
+	icon = tech_ship_armor_5
+	cost = 14000
+	tier = 4
+	category = { materials }
+	prerequisites = { "tech_artifact_resonance_manufacturing" }
+	weight = 70
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+
+	modifier = {
+		country_resource_max_add = 10000
+	}
+}
+
+# 交界商业网络：解锁神器使后期贸易建筑。
+tech_artifact_crossing_trade = {
+	area = society
+	icon = tech_psionic_barrier
+	cost = 14000
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_artifact_central_court_protocols" }
+	weight = 70
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+
+	modifier = {
+		country_unity_produces_mult = 0.05
+	}
+}
+
+# 神器民生产业：解锁神器使后期消费品建筑。
+tech_artifact_civic_industry = {
+	area = engineering
+	icon = tech_ship_armor_5
+	cost = 15000
+	tier = 4
+	category = { industry }
+	prerequisites = { "tech_artifact_resonance_manufacturing" }
+	weight = 65
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+
+	modifier = {
+		country_consumer_goods_produces_mult = 0.05
+	}
+}
+
+# 稀有共鸣精炼：解锁神器使三类基础稀有资源建筑。
+tech_artifact_rare_resonance = {
+	area = engineering
+	icon = tech_ship_armor_5
+	cost = 18000
+	tier = 4
+	category = { materials }
+	is_rare = yes
+	prerequisites = { "tech_artifact_phase_extraction" "tech_artifact_phase_energy" }
+	weight = 50
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}
+
+# 星海契约行政：解锁神器使后期影响力建筑。
+tech_artifact_covenant_administration = {
+	area = society
+	icon = tech_psionic_barrier
+	cost = 20000
+	tier = 4
+	category = { statecraft }
+	is_rare = yes
+	prerequisites = { "tech_artifact_seven_day_logistics" "tech_artifact_crossing_trade" }
+	weight = 45
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
+
+	modifier = {
+		country_edict_fund_add = 100
+	}
+}
+
+# 旧日神器档案修复：解锁神器使小文物资源建筑。
+tech_artifact_relic_archive_restoration = {
+	area = society
+	icon = tech_psionic_barrier
+	cost = 22000
+	tier = 5
+	category = { archaeostudies }
+	is_rare = yes
+	prerequisites = { "tech_artifact_destiny_economy" "tech_artifact_rare_resonance" }
+	weight = 35
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
+}
+
+# 命运都市工程：解锁神器使专属的理想城式星球改造。
+tech_artifact_destiny_city_project = {
+	area = engineering
+	icon = tech_mega_engineering
+	cost = 26000
+	tier = 5
+	category = { voidcraft }
+	is_rare = yes
+	prerequisites = { "tech_artifact_destiny_economy" "tech_artifact_covenant_administration" }
+	weight = 30
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
+}
+
 # 命运观测塔：在中央庭守望传统完成后，建造星系尺度的命运演算巨构。
 tech_artifact_fate_observatory = {
 	area = physics
@@ -46,7 +281,7 @@ tech_artifact_fate_observatory = {
 	tier = 5
 	category = { computing }
 	is_rare = yes
-	prerequisites = { "tech_artifact_relic_fabrication" "tech_mega_engineering" }
+	prerequisites = { "tech_artifact_destiny_economy" "tech_mega_engineering" }
 	weight = 15
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }

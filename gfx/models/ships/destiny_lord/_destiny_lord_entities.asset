@@ -31,6 +31,8 @@ entity = {
 	default_state = "idle"
 	state = { name = "idle" state_time = 5
 		# 命运环四向圣辉节点，使用原版冷蓝舰船灯光粒子以控制性能开销。
+		# 中央命运核心挂在中段 mesh locator 上，确保随舰体缩放与镜头视角保持可见。
+		start_event = { node = "destiny_core_light" particle = "ai_01_blue_large_station_core_effect" keep_particle = yes trigger_once = yes }
 		start_event = { node = "destiny_ring_light_01" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		start_event = { node = "destiny_ring_light_02" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }
 		start_event = { node = "destiny_ring_light_03" particle = "ship_light_blue_effect" keep_particle = yes trigger_once = yes }

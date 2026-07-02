@@ -6,8 +6,7 @@ leader_trait_aemusa_commander = {
     leader_class = { commander } # 仅可由指挥官持有。
 
     modifier = {
-        ship_weapon_damage_mult = 0.30 # 所在舰队武器伤害 +30%。
-        ship_fire_rate_mult = 0.20 # 所在舰队武器射速 +20%。
+        ship_fire_rate_mult = 0.20 # 所在舰队武器射速 +20%，避免使用当前版本判无效的通用武器伤害修正。
     }
 }
 

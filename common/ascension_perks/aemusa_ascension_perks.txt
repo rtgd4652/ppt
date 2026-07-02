@@ -12,10 +12,15 @@ ap_artifact_court_destiny = {
 	}
 
 	modifier = {
-		country_edict_fund_add = 100
-		ship_home_territory_fire_rate_mult = 0.15
-		ship_armor_hardening_add = 0.15
-		country_leader_pool_size = 1
+		country_edict_fund_add = 250
+		# 使用三系科研修正替代无效的全科研修正符。
+		category_physics_research_speed_mult = 0.15
+		category_society_research_speed_mult = 0.15
+		category_engineering_research_speed_mult = 0.15
+		country_naval_cap_mult = 0.20
+		ship_home_territory_fire_rate_mult = 0.25
+		ship_armor_hardening_add = 0.25
+		country_leader_pool_size = 3
 	}
 
 	ai_weight = {

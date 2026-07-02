@@ -1,0 +1,31 @@
+# 神器使自定义部件集合：注册武器、防御与辅助组件所引用的 component_set，避免组件加载时报 Invalid component set。
+
+component_set = {
+	key = "ARTIFACT_TAROT_RAY"
+	icon = "GFX_ship_part_laser_4"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_FATE_ARMOR"
+	icon = "GFX_ship_part_armor_5"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_SEVEN_DAY_CORE"
+	icon = "GFX_ship_part_sensor_4"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_TAROT_JUDGEMENT"
+	icon = "GFX_ship_part_energy_lance_2"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_FATE_DOMINION"
+	icon = "GFX_ship_part_perdition_beam"
+	icon_frame = 1
+}

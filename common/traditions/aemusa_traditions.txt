@@ -1,14 +1,19 @@
 # 采纳中央庭守望：以共同的契约提升领袖成长效率。
 tr_artifact_court_adopt = {
 	modifier = {
-		species_leader_exp_gain = 0.10
+		species_leader_exp_gain = 0.20
+		country_edict_fund_add = 50
 	}
 }
 
 # 完成传统树：中央庭可调动更多资源维持全境的黑门警戒。
 tr_artifact_court_finish = {
 	modifier = {
-		country_edict_fund_add = 50
+		country_edict_fund_add = 200
+		# 使用三系科研修正替代无效的全科研修正符。
+		category_physics_research_speed_mult = 0.10
+		category_society_research_speed_mult = 0.10
+		category_engineering_research_speed_mult = 0.10
 		ascension_perks_add = 1
 	}
 }
@@ -16,16 +21,17 @@ tr_artifact_court_finish = {
 # 黑门守望：训练面对灾厄的防卫部队。
 tr_artifact_court_black_gate_watch = {
 	modifier = {
-		army_damage_mult = 0.15
-		planet_stability_add = 2
+		army_damage_mult = 0.25
+		planet_stability_add = 5
 	}
 }
 
 # 七人众协同：神器使将领与行政官之间形成稳定的指挥网络。
 tr_artifact_court_seven_guardians = {
 	modifier = {
-		country_commander_cap_add = 1
-		country_official_cap_add = 1
+		country_commander_cap_add = 2
+		country_official_cap_add = 2
+		country_naval_cap_add = 100
 	}
 }
 
@@ -34,21 +40,25 @@ tr_artifact_court_tarot_archive = {
 	modifier = {
 		num_tech_alternatives_add = 1
 		scientist_initial_skill = 1
+		# 使用三系科研修正替代无效的全科研修正符。
+		category_physics_research_speed_mult = 0.10
+		category_society_research_speed_mult = 0.10
+		category_engineering_research_speed_mult = 0.10
 	}
 }
 
 # 都市联络网：使交界都市的日常在危机中继续运转。
 tr_artifact_court_city_network = {
 	modifier = {
-		country_unity_produces_mult = 0.10
-		pop_amenities_usage_mult = -0.05
+		country_unity_produces_mult = 0.20
+		pop_amenities_usage_mult = -0.10
 	}
 }
 
 # 第七日的约定：守护者在本土作战时获得命运的回应。
 tr_artifact_court_final_day = {
 	modifier = {
-		ship_home_territory_fire_rate_mult = 0.10
-		ship_armor_hardening_add = 0.10
+		ship_home_territory_fire_rate_mult = 0.20
+		ship_armor_hardening_add = 0.20
 	}
 }

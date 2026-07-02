@@ -58,9 +58,24 @@ artifact_fate_observatory_3 = {
 	portrait = "GFX_megastructure_think_tank_background"
 	place_entity_on_planet_plane = no
 	build_time = 3600
-	resources = { category = megastructures cost = { alloys = 30000 unity = 10000 } upkeep = { energy = 100 } produces = { physics_research = 600 unity = 250 } }
+	resources = { category = megastructures cost = { alloys = 30000 unity = 10000 } upkeep = { energy = 150 } produces = { physics_research = 2500 unity = 1000 } }
 	upgrade_from = { artifact_fate_observatory_2 }
 	prerequisites = { "tech_artifact_fate_observatory" }
 	show_prereqs = yes
-	country_modifier = { ship_sensor_range_add = 6 ship_anomaly_research_speed_mult = 0.35 all_technology_research_speed = 0.10 }
+	country_modifier = {
+		ship_sensor_range_add = 12
+		ship_anomaly_research_speed_mult = 0.35
+		# 使用三系科研修正替代无效的全科研修正符。
+		category_physics_research_speed_mult = 0.25
+		category_society_research_speed_mult = 0.25
+		category_engineering_research_speed_mult = 0.25
+		country_unity_produces_mult = 0.20
+		country_naval_cap_add = 300
+		country_starbase_capacity_add = 4
+	}
+	on_build_complete = {
+		from = {
+			set_country_flag = artifact_fate_observatory_completed
+		}
+	}
 }

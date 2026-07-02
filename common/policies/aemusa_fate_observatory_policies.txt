@@ -1,0 +1,65 @@
+# 命运观测塔模式：完工后的神器使帝国可以在守望、演算、裁决三种后期路线间切换。
+artifact_fate_observatory_mode = {
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+		has_country_flag = artifact_fate_observatory_completed
+	}
+
+	# 守望模式：用观测塔维持全境秩序与法令体系，作为默认的稳态经济档。
+	option = {
+		name = "artifact_fate_observatory_mode_guardian"
+		policy_flags = {
+			artifact_fate_observatory_mode_guardian
+		}
+		modifier = {
+			country_edict_fund_add = 300
+			country_unity_produces_mult = 0.30
+			country_resource_max_add = 50000
+		}
+		ai_weight = {
+			weight = 40
+		}
+	}
+
+	# 演算模式：将观测塔算力集中到科研与预警，追赶新版本后期科研膨胀。
+	option = {
+		name = "artifact_fate_observatory_mode_calculation"
+		policy_flags = {
+			artifact_fate_observatory_mode_calculation
+		}
+		modifier = {
+			# 使用三系科研修正替代无效的全科研修正符。
+			category_physics_research_speed_mult = 0.35
+			category_society_research_speed_mult = 0.35
+			category_engineering_research_speed_mult = 0.35
+			ship_sensor_range_add = 4
+			country_edict_fund_add = 100
+		}
+		ai_weight = {
+			weight = 35
+		}
+	}
+
+	# 裁决模式：将命运观测塔转入战争演算，牺牲部分凝聚力换取后期舰队爆发。
+	option = {
+		name = "artifact_fate_observatory_mode_judgement"
+		policy_flags = {
+			artifact_fate_observatory_mode_judgement
+		}
+		modifier = {
+			country_naval_cap_mult = 0.30
+			# 舰船建造速度与通用武器伤害在当前版本报无效，保留已验证的舰队射速强化。
+			ship_fire_rate_mult = 0.25
+			country_unity_produces_mult = -0.10
+		}
+		ai_weight = {
+			weight = 25
+			modifier = {
+				factor = 2
+				is_at_war = yes
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+# 命运都市工程：神器使专属的理想城式后期星球改造。
+decision_artifact_destiny_city_project = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_resources
+
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 20000
+			alloys = 10000
+			unity = 10000
+		}
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			has_technology = tech_artifact_destiny_city_project
+			has_ascension_perk = ap_artifact_court_destiny
+		}
+		uses_district_set = standard
+		NOT = { is_planet_class = pc_artifact_destiny_city }
+	}
+
+	allow = {
+		pop_amount >= 25 # 使用行星人口触发器，避免 num_pops 在决议作用域中无效。
+	}
+
+	effect = {
+		change_pc = pc_artifact_destiny_city
+		set_planet_flag = artifact_destiny_city_world
+	}
+
+	ai_weight = {
+		weight = 20
+	}
+}

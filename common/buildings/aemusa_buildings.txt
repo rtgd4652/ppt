@@ -28,7 +28,7 @@ building_artifact_sanctum = {
 	}
 
 	planet_modifier = {
-		job_enforcer_add = 1
+		job_artifact_black_gate_warden_add = 2
 		planet_stability_add = 3
 		planet_amenities_add = 5
 	}
@@ -69,8 +69,18 @@ building_artifact_black_gate_observatory = {
 	}
 
 	planet_modifier = {
-		job_researcher_add = 2
+		job_artifact_tarot_analyst_add = 4
 		planet_stability_add = 2
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_artifact_tarot_economy
+			}
+		}
+		job_artifact_tarot_analyst_add = 2
 	}
 }
 
@@ -109,7 +119,394 @@ building_artifact_relic_workshop = {
 	}
 
 	planet_modifier = {
-		job_foundry_add = 2
+		job_artifact_relic_artificer_add = 4
 		planet_amenities_add = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = tech_artifact_resonance_manufacturing
+			}
+		}
+		job_artifact_relic_artificer_add = 2
+	}
+}
+
+# 七日调度中枢：把中央庭的轮回记录制度化，强化每颗核心星球的稳定、凝聚力与岗位效率。
+building_artifact_seven_day_command = {
+	base_buildtime = 480
+	icon = building_precinct_house
+	category = government
+
+	building_sets = {
+		government
+		unity
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	allow = {
+		# 建筑作用域是星球；必须切换至星球拥有者国家检查科技。
+		owner = {
+			has_technology = tech_artifact_seven_day_logistics
+		}
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 1200 unity = 500 }
+		upkeep = { energy = 12 consumer_goods = 4 }
+	}
+
+	planet_modifier = {
+		job_artifact_black_gate_warden_add = 4
+		planet_stability_add = 5
+		planet_jobs_produces_mult = 0.10
+	}
+}
+
+# 命运经济演算院：观测塔完工前的行星级算力节点，专门服务神器使科研与行政经济。
+building_artifact_fate_calculus_institute = {
+	base_buildtime = 600
+	icon = building_research_lab_3
+	category = research
+
+	building_sets = {
+		research
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	allow = {
+		# 建筑作用域是星球；必须切换至星球拥有者国家检查科技。
+		owner = {
+			has_technology = tech_artifact_destiny_economy
+		}
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 2000 alloys = 500 }
+		upkeep = { energy = 25 consumer_goods = 8 }
+	}
+
+	planet_modifier = {
+		job_artifact_tarot_analyst_add = 6
+		job_artifact_relic_artificer_add = 3
+		planet_jobs_produces_mult = 0.15
+	}
+}
+
+# 命运研究尖塔：神器使后期科研建筑，承载命运观测塔前置演算。
+building_artifact_destiny_research_spire = {
+	base_buildtime = 720
+	icon = building_research_lab_3
+	category = research
+	building_sets = { research }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_destiny_economy }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 3000 alloys = 1000 }
+		upkeep = { energy = 35 consumer_goods = 15 }
+	}
+
+	planet_modifier = {
+		job_artifact_destiny_researcher_add = 8
+		planet_jobs_produces_mult = 0.10
+	}
+}
+
+# 共鸣合金圣炉：神器使后期合金建筑，支撑命运之主与超大舰队。
+building_artifact_resonance_alloy_forge = {
+	base_buildtime = 720
+	icon = building_foundry_3
+	category = manufacturing
+	building_sets = { manufacturing }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_resonance_manufacturing }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 3000 alloys = 800 }
+		upkeep = { energy = 35 }
+	}
+
+	planet_modifier = {
+		job_artifact_resonance_metallurgist_add = 8
+	}
+}
+
+# 神器民生工坊：把神器纹样复现为高价值民用消费品。
+building_artifact_civic_goods_manufactory = {
+	base_buildtime = 600
+	icon = building_foundry_3
+	category = manufacturing
+	building_sets = { manufacturing }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_civic_industry }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 2600 alloys = 500 }
+		upkeep = { energy = 25 }
+	}
+
+	planet_modifier = {
+		job_artifact_civic_artisan_add = 8
+	}
+}
+
+# 黑门相位反应堆：神器使后期能量建筑。
+building_artifact_phase_reactor = {
+	base_buildtime = 600
+	icon = building_research_lab_3
+	category = resource
+	building_sets = { resource }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_phase_energy }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 2400 alloys = 600 }
+		upkeep = { alloys = 5 }
+	}
+
+	planet_modifier = {
+		job_artifact_phase_technician_add = 8
+	}
+}
+
+# 交界商业塔：神器使后期贸易建筑，整合商业街与星际市场。
+building_artifact_crossing_trade_tower = {
+	base_buildtime = 600
+	icon = building_precinct_house
+	category = trade
+	building_sets = { trade }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_crossing_trade }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 2400 consumer_goods = 800 }
+		upkeep = { energy = 20 }
+	}
+
+	planet_modifier = {
+		job_artifact_crossing_merchant_add = 8
+		planet_amenities_add = 10
+	}
+}
+
+# 相位矿脉稳定站：神器使后期矿石建筑。
+building_artifact_phase_mine = {
+	base_buildtime = 600
+	icon = building_foundry_3
+	category = resource
+	building_sets = { resource }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_phase_extraction }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 2400 alloys = 500 }
+		upkeep = { energy = 20 }
+	}
+
+	planet_modifier = {
+		job_artifact_phase_miner_add = 8
+	}
+}
+
+# 稀有共鸣精炼所：集中产出三类基础稀有资源。
+building_artifact_rare_resonance_refinery = {
+	base_buildtime = 720
+	icon = building_foundry_3
+	category = resource
+	building_sets = { resource }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_rare_resonance }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 3600 alloys = 1000 }
+		upkeep = { energy = 40 }
+	}
+
+	planet_modifier = {
+		job_artifact_rare_resonator_add = 6
+	}
+}
+
+# 中央庭记忆宫：神器使后期凝聚力建筑。
+building_artifact_memory_palace = {
+	base_buildtime = 600
+	icon = building_precinct_house
+	category = unity
+	building_sets = { unity }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_seven_day_logistics }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 2400 unity = 1000 }
+		upkeep = { energy = 25 consumer_goods = 8 }
+	}
+
+	planet_modifier = {
+		job_artifact_memory_curator_add = 8
+	}
+}
+
+# 星海契约议事厅：神器使后期影响力建筑。
+building_artifact_covenant_chamber = {
+	base_buildtime = 720
+	icon = building_precinct_house
+	category = government
+	building_sets = { government unity }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_covenant_administration }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 4000 unity = 2000 }
+		upkeep = { energy = 50 consumer_goods = 20 }
+	}
+
+	planet_modifier = {
+		job_artifact_covenant_envoy_add = 3
+		planet_stability_add = 5
+	}
+}
+
+# 旧日神器档案馆：神器使后期文物资源建筑。
+building_artifact_relic_archive = {
+	base_buildtime = 720
+	icon = building_research_lab_3
+	category = research
+	building_sets = { research unity }
+
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+
+	allow = {
+		owner = { has_technology = tech_artifact_relic_archive_restoration }
+	}
+
+	planet_limit = 1
+
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 4000 alloys = 1200 unity = 1000 }
+		upkeep = { energy = 60 consumer_goods = 20 }
+	}
+
+	planet_modifier = {
+		job_artifact_relic_curator_add = 3
+		planet_jobs_produces_mult = 0.05
 	}
 }
