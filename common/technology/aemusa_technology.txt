@@ -6,6 +6,10 @@ tech_artifact_tarot_calculation = {
 	tier = 1
 	category = { computing }
 	weight = 200
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
 
 	modifier = {
 		ship_anomaly_research_speed_mult = 0.15
@@ -21,6 +25,10 @@ tech_artifact_black_gate_observation = {
 	category = { field_manipulation }
 	prerequisites = { "tech_artifact_tarot_calculation" }
 	weight = 150
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
 
 	modifier = {
 		ship_sensor_range_add = 2
@@ -36,6 +44,10 @@ tech_artifact_relic_fabrication = {
 	category = { materials }
 	prerequisites = { "tech_artifact_black_gate_observation" }
 	weight = 120
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
 }
 
 # 中央庭调度协议：把神器使行动编制从单星球指挥扩展为跨殖民地治理。
@@ -49,6 +61,7 @@ tech_artifact_central_court_protocols = {
 	weight = 120
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -67,6 +80,7 @@ tech_artifact_tarot_economy = {
 	weight = 90
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -88,6 +102,7 @@ tech_artifact_resonance_manufacturing = {
 	weight = 85
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -106,6 +121,7 @@ tech_artifact_seven_day_logistics = {
 	weight = 70
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
 		has_tradition = tr_artifact_court_finish
 	}
 
@@ -130,7 +146,12 @@ tech_artifact_destiny_economy = {
 	}
 
 	modifier = {
-		planet_jobs_produces_mult = 0.05
+		# 科技作用域为国家，使用国家与科研分类修正，避免把行星作用域修正挂到科技上。
+		category_physics_research_speed_mult = 0.05
+		category_society_research_speed_mult = 0.05
+		category_engineering_research_speed_mult = 0.05
+		country_alloys_produces_mult = 0.05
+		country_consumer_goods_produces_mult = 0.05
 	}
 }
 
@@ -145,6 +166,7 @@ tech_artifact_phase_energy = {
 	weight = 70
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -163,6 +185,7 @@ tech_artifact_phase_extraction = {
 	weight = 70
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -181,6 +204,7 @@ tech_artifact_crossing_trade = {
 	weight = 70
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -194,11 +218,12 @@ tech_artifact_civic_industry = {
 	icon = tech_ship_armor_5
 	cost = 15000
 	tier = 4
-	category = { industry }
+	category = { materials }
 	prerequisites = { "tech_artifact_resonance_manufacturing" }
 	weight = 65
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -218,6 +243,7 @@ tech_artifact_rare_resonance = {
 	weight = 50
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
 	}
 }
 
@@ -302,5 +328,50 @@ tech_artifact_destiny_lord = {
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
 		has_ascension_perk = ap_artifact_court_destiny
+	}
+}
+
+# 神器使战斗编制：解锁神器使前期陆军、基础专属武器、防御组件和战术核心。
+tech_artifact_user_combat_doctrine = {
+	area = society
+	icon = tech_psionic_barrier
+	cost = 3500
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_assault_armies" "tech_lasers_1" }
+	weight = 110
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}
+
+# 神器共鸣军备：解锁神器使中期陆军和等同原版后期强度的舰船武器与组件。
+tech_artifact_user_resonance_armaments = {
+	area = engineering
+	icon = tech_ship_armor_5
+	cost = 16000
+	tier = 4
+	category = { materials }
+	prerequisites = { "tech_artifact_user_combat_doctrine" "tech_combat_computers_1" }
+	weight = 65
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_user_resonance_path
+	}
+}
+
+# 神器终解战争学：解锁神器使后期超模陆军、终局舰船武器、护盾、装甲、电脑、传感器与 A 槽核心。
+tech_artifact_user_apotheosis_warfare = {
+	area = engineering
+	icon = tech_titans
+	cost = 32000
+	tier = 5
+	category = { voidcraft }
+	is_rare = yes
+	prerequisites = { "tech_artifact_user_resonance_armaments" "tech_zero_point_power" }
+	weight = 20
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_user_apotheosis_path
 	}
 }

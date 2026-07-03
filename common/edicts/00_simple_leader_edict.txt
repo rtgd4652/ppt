@@ -84,7 +84,7 @@ edict_contact_aemusa = {
     }
 }
 
-# 科技档案法令：将当前阶段的神器使专属科技直接加入科技选择，兼容已开始的旧存档。
+# 科技档案法令：旧版兼容入口已停用，避免绕过爱缪莎飞升解锁科技线的规则。
 edict_artifact_research_archive = {
 	length = 0
 	icon = "GFX_edict_type_policy"
@@ -94,14 +94,7 @@ edict_artifact_research_archive = {
 	}
 
 	potential = {
-		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-	}
-
-	effect = {
-		# 一次性授予完整基础科技链，兼容旧存档且不依赖随机科技候选刷新。
-		give_technology = { tech = tech_artifact_tarot_calculation }
-		give_technology = { tech = tech_artifact_black_gate_observation }
-		give_technology = { tech = tech_artifact_relic_fabrication }
+		always = no
 	}
 
 	ai_weight = { weight = 0 }

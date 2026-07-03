@@ -1,4 +1,77 @@
-# 命运主宰：完成中央庭守望后，神器使将城市的守护意志投射至整个星海。
+# 神器共鸣之路：神器使物种线的一段飞升，负责解锁中期独立军备与经济扩展。
+ap_artifact_user_resonance_path = {
+	possible = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_2"
+			num_ascension_perks > 1
+		}
+	}
+
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+		NOT = { has_ascension_perk = ap_artifact_user_resonance_path }
+	}
+
+	modifier = {
+		# 一段飞升只给稳定成长与军备铺垫，避免前期直接爆表。
+		category_physics_research_speed_mult = 0.05
+		category_society_research_speed_mult = 0.05
+		category_engineering_research_speed_mult = 0.05
+		country_alloys_produces_mult = 0.05
+		country_consumer_goods_produces_mult = 0.05
+		country_naval_cap_mult = 0.10
+	}
+
+	ai_weight = {
+		factor = 15
+	}
+}
+
+# 神器终解之路：神器使物种线的二段飞升，负责解锁终局超模军备。
+ap_artifact_user_apotheosis_path = {
+	possible = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+		has_ascension_perk = ap_artifact_user_resonance_path
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_4"
+			num_ascension_perks > 3
+		}
+	}
+
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+		has_ascension_perk = ap_artifact_user_resonance_path
+		NOT = { has_ascension_perk = ap_artifact_user_apotheosis_path }
+	}
+
+	modifier = {
+		# 二段飞升进入后期超模段，强化舰队与全局产能。
+		category_physics_research_speed_mult = 0.10
+		category_society_research_speed_mult = 0.10
+		category_engineering_research_speed_mult = 0.10
+		country_alloys_produces_mult = 0.10
+		country_consumer_goods_produces_mult = 0.10
+		country_unity_produces_mult = 0.10
+		country_naval_cap_mult = 0.20
+		ship_fire_rate_mult = 0.10
+		ship_weapon_damage_mult = 0.10
+	}
+
+	ai_weight = {
+		factor = 10
+	}
+}
+
+# 爱缪莎命运主宰：爱缪莎个人科技线的入口，由爱缪莎达到 30 级后解锁。
 ap_artifact_court_destiny = {
 	possible = {
 		owner_main_species = {
@@ -9,6 +82,21 @@ ap_artifact_court_destiny = {
 			fail_text = "requires_ascension_perks_3"
 			num_ascension_perks > 2
 		}
+		custom_tooltip = {
+			fail_text = "requires_aemusa_level_30"
+			exists = event_target:aemusa_leader
+			event_target:aemusa_leader = {
+				has_leader_flag = aemusa_unique_leader
+				has_base_skill >= 30
+			}
+		}
+	}
+
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+		NOT = { has_ascension_perk = ap_artifact_court_destiny }
 	}
 
 	modifier = {

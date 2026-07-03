@@ -1,0 +1,136 @@
+# 神器使守备队：神器使前期陆军，强度接近普通突击军，优势在士气与较低附带伤害。
+artifact_user_guardian_army = {
+	damage = 1.05
+	health = 1.10
+	morale = 1.25
+	collateral_damage = 0.65
+	time = 90
+
+	icon = GFX_army_type_assault
+	prerequisites = { "tech_artifact_user_combat_doctrine" }
+
+	resources = {
+		category = armies
+		cost = { minerals = 120 }
+		upkeep = { energy = 1.2 }
+	}
+
+	potential_country = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+
+	potential = {
+		from = { exists = pop }
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = requires_pop
+			exists = pop
+		}
+	}
+
+	army_modifier = {
+		army_morale_mult = 0.15
+	}
+
+	ai_weight = { base = 80 }
+}
+
+# 神器共鸣突击军：神器使中期陆军，对标原版后期陆军，用高训练时间与合金维护限制泛滥。
+artifact_user_resonance_army = {
+	damage = 2.60
+	health = 2.70
+	morale = 3.00
+	collateral_damage = 0.80
+	time = 130
+
+	icon = GFX_army_type_assault
+	prerequisites = { "tech_artifact_user_resonance_armaments" }
+
+	resources = {
+		category = armies
+		cost = {
+			minerals = 320
+			alloys = 60
+		}
+		upkeep = {
+			energy = 3
+			alloys = 0.5
+		}
+	}
+
+	potential_country = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_technology = "tech_artifact_user_resonance_armaments"
+	}
+
+	potential = {
+		from = { exists = pop }
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = requires_pop
+			exists = pop
+		}
+	}
+
+	army_modifier = {
+		army_damage_mult = 0.20
+		army_health_mult = 0.20
+		army_morale_mult = 0.25
+	}
+
+	ai_weight = { base = 90 }
+}
+
+# 神器终解军团：神器使后期超模陆军，极高伤害与生命值换取昂贵维护，适合作为终局攻坚单位。
+artifact_user_apotheosis_army = {
+	damage = 6.50
+	health = 7.50
+	morale = 8.00
+	collateral_damage = 0.45
+	time = 220
+
+	icon = GFX_army_type_assault
+	prerequisites = { "tech_artifact_user_apotheosis_warfare" }
+
+	resources = {
+		category = armies
+		cost = {
+			minerals = 1200
+			alloys = 350
+			minor_artifacts = 25
+		}
+		upkeep = {
+			energy = 10
+			alloys = 2
+		}
+	}
+
+	potential_country = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_technology = "tech_artifact_user_apotheosis_warfare"
+	}
+
+	potential = {
+		from = { exists = pop }
+	}
+
+	allow = {
+		custom_tooltip = {
+			fail_text = requires_pop
+			exists = pop
+		}
+	}
+
+	army_modifier = {
+		army_damage_mult = 0.75
+		army_health_mult = 0.75
+		army_morale_mult = 0.50
+		army_collateral_damage_mult = -0.25
+	}
+
+	ai_weight = { base = 100 }
+}

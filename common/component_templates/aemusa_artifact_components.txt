@@ -6,6 +6,19 @@ weapon_component_template = {
 	icon = "GFX_ship_part_laser_4"
 	icon_frame = 1
 	projectile_gfx = "blue_laser_s"
+	# 武器基础数值直接写入 TXT，避免 CSV 未被游戏读取时显示为 1-1 伤害与 0 射程。
+	damage = { min = 30 max = 55 }
+	windup = { min = 3 max = 8 }
+	total_fire_time = 20
+	power = -12
+	hull_damage = 1.10
+	shield_damage = 0.75
+	shield_penetration = 0.15
+	armor_damage = 1.40
+	armor_penetration = 0.20
+	range = 50
+	accuracy = 0.90
+	tracking = 0.55
 	tags = { weapon_type_energy s_slot }
 	ai_tags = { weapon_role_anti_armor gunship }
 	component_set = "ARTIFACT_TAROT_RAY"
@@ -16,7 +29,7 @@ weapon_component_template = {
 		}
 	}
 
-	prerequisites = { "tech_artifact_black_gate_observation" }
+	prerequisites = { "tech_artifact_user_resonance_armaments" }
 	resources = {
 		category = ship_components
 		cost = { alloys = 18 }
@@ -34,6 +47,19 @@ weapon_component_template = {
 	icon = "GFX_ship_part_laser_4"
 	icon_frame = 1
 	projectile_gfx = "blue_laser_m"
+	# 武器基础数值直接写入 TXT，避免 CSV 未被游戏读取时显示为 1-1 伤害与 0 射程。
+	damage = { min = 75 max = 138 }
+	windup = { min = 4 max = 10 }
+	total_fire_time = 24
+	power = -28
+	hull_damage = 1.10
+	shield_damage = 0.75
+	shield_penetration = 0.15
+	armor_damage = 1.40
+	armor_penetration = 0.20
+	range = 70
+	accuracy = 0.90
+	tracking = 0.35
 	tags = { weapon_type_energy m_slot }
 	ai_tags = { weapon_role_anti_armor gunship }
 	component_set = "ARTIFACT_TAROT_RAY"
@@ -44,7 +70,7 @@ weapon_component_template = {
 		}
 	}
 
-	prerequisites = { "tech_artifact_black_gate_observation" }
+	prerequisites = { "tech_artifact_user_resonance_armaments" }
 	resources = {
 		category = ship_components
 		cost = { alloys = 45 }
@@ -62,6 +88,19 @@ weapon_component_template = {
 	icon = "GFX_ship_part_laser_4"
 	icon_frame = 1
 	projectile_gfx = "blue_laser_l"
+	# 武器基础数值直接写入 TXT，避免 CSV 未被游戏读取时显示为 1-1 伤害与 0 射程。
+	damage = { min = 180 max = 330 }
+	windup = { min = 5 max = 12 }
+	total_fire_time = 28
+	power = -65
+	hull_damage = 1.10
+	shield_damage = 0.75
+	shield_penetration = 0.15
+	armor_damage = 1.40
+	armor_penetration = 0.20
+	range = 90
+	accuracy = 0.90
+	tracking = 0.10
 	tags = { weapon_type_energy l_slot }
 	ai_tags = { weapon_role_anti_armor gunship }
 	component_set = "ARTIFACT_TAROT_RAY"
@@ -72,7 +111,7 @@ weapon_component_template = {
 		}
 	}
 
-	prerequisites = { "tech_artifact_black_gate_observation" }
+	prerequisites = { "tech_artifact_user_resonance_armaments" }
 	resources = {
 		category = ship_components
 		cost = { alloys = 105 }
@@ -99,7 +138,7 @@ utility_component_template = {
 		}
 	}
 
-	prerequisites = { "tech_artifact_relic_fabrication" }
+	prerequisites = { "tech_artifact_user_resonance_armaments" }
 	resources = {
 		category = ship_components
 		cost = { alloys = 24 }
@@ -126,7 +165,7 @@ utility_component_template = {
 		}
 	}
 
-	prerequisites = { "tech_artifact_relic_fabrication" }
+	prerequisites = { "tech_artifact_user_resonance_armaments" }
 	resources = {
 		category = ship_components
 		cost = { alloys = 70 }
@@ -153,7 +192,7 @@ utility_component_template = {
 		}
 	}
 
-	prerequisites = { "tech_artifact_relic_fabrication" }
+	prerequisites = { "tech_artifact_user_resonance_armaments" }
 	resources = {
 		category = ship_components
 		cost = { alloys = 165 }
@@ -183,7 +222,7 @@ utility_component_template = {
 		is_ship_class = shipclass_military
 	}
 
-	prerequisites = { "tech_artifact_relic_fabrication" }
+	prerequisites = { "tech_artifact_user_resonance_armaments" }
 	resources = {
 		category = ship_components
 		cost = { alloys = 40 }
