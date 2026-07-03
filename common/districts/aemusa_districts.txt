@@ -1,8 +1,8 @@
 # 神器使专属区划：以交界都市中的学园、商业街与巡查路线为概念。
 district_artifact_nexus = {
 	base_buildtime = 480
-	icon = district_city
-	overlay_icon = GFX_district_research
+	icon = district_artifact_nexus
+	overlay_icon = GFX_district_artifact_destiny_research
 	# 4.0+ 区划必须声明区划槽；复用城市区划槽，避免加载时报缺失并崩溃。
 	zone_slots = {
 		slot_city_government
@@ -38,8 +38,8 @@ district_artifact_nexus = {
 # 东方古街：命运都市专属民生区划，负责凝聚力、舒适度与有机人口增长。
 district_artifact_destiny_commons = {
 	base_buildtime = 600
-	icon = district_city
-	overlay_icon = GFX_district_government
+	icon = district_artifact_destiny_commons
+	overlay_icon = GFX_district_artifact_destiny_commons
 	# 命运都市民生区划承载行政与日常建筑槽。
 	zone_slots = {
 		slot_city_government
@@ -77,8 +77,8 @@ district_artifact_destiny_commons = {
 # 中央城区：命运都市专属工业区划，集中产出消费品与合金。
 district_artifact_destiny_industry = {
 	base_buildtime = 600
-	icon = district_city
-	overlay_icon = GFX_district_government
+	icon = district_artifact_destiny_industry
+	overlay_icon = GFX_district_artifact_destiny_industry
 	# 工业区划使用城市槽，保证新区划不会因缺少 zone_slots 触发硬错误。
 	zone_slots = {
 		slot_city_01
@@ -113,8 +113,8 @@ district_artifact_destiny_industry = {
 # 海湾侧城：命运都市专属基建区划，集中产出能量、矿石与食物。
 district_artifact_destiny_foundation = {
 	base_buildtime = 600
-	icon = district_city
-	overlay_icon = GFX_district_energy
+	icon = district_artifact_destiny_foundation
+	overlay_icon = GFX_district_artifact_destiny_foundation
 	# 基建区划使用资源槽，匹配能源与资源向建筑布局。
 	zone_slots = {
 		slot_energy
@@ -149,8 +149,8 @@ district_artifact_destiny_foundation = {
 # 高校学园：命运都市专属科研区划，集中产出三系科研点。
 district_artifact_destiny_research = {
 	base_buildtime = 600
-	icon = district_city
-	overlay_icon = GFX_district_research
+	icon = district_artifact_destiny_research
+	overlay_icon = GFX_district_artifact_destiny_research
 	# 科研区划复用城市槽，给研究与学院建筑保留合法承载区。
 	zone_slots = {
 		slot_city_01
@@ -184,8 +184,8 @@ district_artifact_destiny_research = {
 # 中央庭：命运都市专属舰务区划，提供稳定度与舰队容量。
 district_artifact_destiny_fleet = {
 	base_buildtime = 600
-	icon = district_city
-	overlay_icon = GFX_district_government
+	icon = district_artifact_destiny_fleet
+	overlay_icon = GFX_district_artifact_destiny_fleet
 	# 舰务区划复用政府城市槽，避免自定义区划缺少槽定义。
 	zone_slots = {
 		slot_city_government

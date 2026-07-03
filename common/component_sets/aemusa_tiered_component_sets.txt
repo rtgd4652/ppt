@@ -1,72 +1,76 @@
-# 绁炲櫒浣垮垎绾ф鍣ㄩ泦鍚堬細鍓嶆湡銆佷腑鏈熴€佸悗鏈熷悇鑷嫭绔嬶紝淇濊瘉鍗囩骇閾捐兘寮曠敤鏈夋晥 component_set銆?component_set = {
+# 神器使分级武器集合：前期、中期、后期各自独立，保证升级链能引用有效 component_set。
+component_set = {
 	key = "ARTIFACT_FATE_RAY_1"
-	icon = "GFX_ship_part_laser_2"
+	icon = "GFX_ship_part_artifact_fate_ray_1"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_FATE_RAY_2"
-	icon = "GFX_ship_part_laser_4"
+	icon = "GFX_ship_part_artifact_fate_ray_2"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_FATE_RAY_3"
-	icon = "GFX_ship_part_laser_4"
+	icon = "GFX_ship_part_artifact_fate_ray_3"
 	icon_frame = 1
 }
 
-# 绁炲櫒浣垮垎绾ф姢鐩鹃泦鍚堬細榛戦棬鐩镐綅鎶ょ浘鎵挎媴涓悗鏈熸姢鐩剧嚎銆?component_set = {
+# 神器使分级护盾集合：黑门相位护盾承担中后期护盾线。
+component_set = {
 	key = "ARTIFACT_BLACK_GATE_SHIELD_1"
-	icon = "GFX_ship_part_shield_2"
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_BLACK_GATE_SHIELD_2"
-	icon = "GFX_ship_part_shield_5"
+	icon = "GFX_ship_part_artifact_black_gate_shield_2"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_BLACK_GATE_SHIELD_3"
-	icon = "GFX_ship_part_shield_5"
+	icon = "GFX_ship_part_artifact_black_gate_shield_3"
 	icon_frame = 1
 }
 
-# 绁炲櫒浣垮垎绾ц鐢查泦鍚堬細鍛借繍缁囪鐢叉壙鎷呬腑鍚庢湡瑁呯敳绾裤€?component_set = {
+# 神器使分级装甲集合：命运织装甲承担中后期装甲线。
+component_set = {
 	key = "ARTIFACT_DESTINY_ARMOR_1"
-	icon = "GFX_ship_part_armor_2"
+	icon = "GFX_ship_part_artifact_destiny_armor_1"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_DESTINY_ARMOR_2"
-	icon = "GFX_ship_part_armor_5"
+	icon = "GFX_ship_part_artifact_destiny_armor_2"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_DESTINY_ARMOR_3"
-	icon = "GFX_ship_part_armor_5"
+	icon = "GFX_ship_part_artifact_destiny_armor_3"
 	icon_frame = 1
 }
 
-# 绁炲櫒浣?A 妲芥紨绠楁牳蹇冮泦鍚堬細鎻愪緵鐏帶銆佸皠绋嬪拰鏈哄姩缁煎悎鍔犳垚銆?component_set = {
+# 神器使 A 槽演算核心集合：提供火控、射程和机动综合加成。
+component_set = {
 	key = "ARTIFACT_TACTICAL_CORE_1"
-	icon = "GFX_ship_part_sensor_2"
+	icon = "GFX_ship_part_artifact_tactical_core_1"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_TACTICAL_CORE_2"
-	icon = "GFX_ship_part_sensor_4"
+	icon = "GFX_ship_part_artifact_tactical_core_2"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_TACTICAL_CORE_3"
-	icon = "GFX_ship_part_computer_default"
+	icon = "GFX_ship_part_artifact_tactical_core_3"
 	icon_frame = 1
 }
 

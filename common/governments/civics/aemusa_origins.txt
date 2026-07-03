@@ -1,7 +1,7 @@
 # 神器使专属起源：参考《永远的七日之都》的交界都市、中央庭与黑门灾变设定。
 origin_artifact_resonance = {
 	is_origin = yes
-	icon = "gfx/interface/icons/origins/origins_under_one_rule.dds"
+	icon = "gfx/interface/icons/origins/origin_artifact_resonance.dds"
 	picture = GFX_origin_legendary_leader
 
 	# 用专属城市星球覆盖玩家在创建帝国时选择的母星类型。

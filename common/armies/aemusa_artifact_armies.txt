@@ -6,7 +6,7 @@ artifact_user_guardian_army = {
 	collateral_damage = 0.65
 	time = 90
 
-	icon = GFX_army_type_assault
+	icon = GFX_army_type_artifact_user_guardian
 	prerequisites = { "tech_artifact_user_combat_doctrine" }
 
 	resources = {
@@ -45,7 +45,7 @@ artifact_user_resonance_army = {
 	collateral_damage = 0.80
 	time = 130
 
-	icon = GFX_army_type_assault
+	icon = GFX_army_type_artifact_user_resonance
 	prerequisites = { "tech_artifact_user_resonance_armaments" }
 
 	resources = {
@@ -93,7 +93,7 @@ artifact_user_apotheosis_army = {
 	collateral_damage = 0.45
 	time = 220
 
-	icon = GFX_army_type_assault
+	icon = GFX_army_type_artifact_user_apotheosis
 	prerequisites = { "tech_artifact_user_apotheosis_warfare" }
 
 	resources = {

@@ -1,7 +1,7 @@
 # 塔罗演算：专属研究链的入口，取消稀有与高阶前置，确保神器使可稳定抽到。
 tech_artifact_tarot_calculation = {
 	area = physics
-	icon = tech_psionic_barrier
+	icon = tech_artifact_tarot_calculation
 	cost = 300
 	tier = 1
 	category = { computing }
@@ -19,7 +19,7 @@ tech_artifact_tarot_calculation = {
 # 黑门观测：建筑与命运塔罗射线的直接前置科技。
 tech_artifact_black_gate_observation = {
 	area = physics
-	icon = tech_sensors_4
+	icon = tech_artifact_black_gate_observation
 	cost = 800
 	tier = 2
 	category = { field_manipulation }
@@ -38,7 +38,7 @@ tech_artifact_black_gate_observation = {
 # 神器锻造：命运织装甲与七日演算核心的直接前置科技。
 tech_artifact_relic_fabrication = {
 	area = engineering
-	icon = tech_ship_armor_5
+	icon = tech_artifact_relic_fabrication
 	cost = 1400
 	tier = 3
 	category = { materials }
@@ -53,7 +53,7 @@ tech_artifact_relic_fabrication = {
 # 中央庭调度协议：把神器使行动编制从单星球指挥扩展为跨殖民地治理。
 tech_artifact_central_court_protocols = {
 	area = society
-	icon = tech_psionic_barrier
+	icon = tech_artifact_central_court_protocols
 	cost = 2500
 	tier = 2
 	category = { statecraft }
@@ -72,7 +72,7 @@ tech_artifact_central_court_protocols = {
 # 塔罗经济演算：将无数次七日分歧整理为生产、科研与行政的预测模型。
 tech_artifact_tarot_economy = {
 	area = physics
-	icon = tech_sensors_4
+	icon = tech_artifact_tarot_economy
 	cost = 6000
 	tier = 3
 	category = { computing }
@@ -94,7 +94,7 @@ tech_artifact_tarot_economy = {
 # 共鸣制造体系：将神器碎片、相位合金与中央庭工坊规范合并为后期舰队工业线。
 tech_artifact_resonance_manufacturing = {
 	area = engineering
-	icon = tech_ship_armor_5
+	icon = tech_artifact_resonance_manufacturing
 	cost = 8000
 	tier = 3
 	category = { materials }
@@ -113,7 +113,7 @@ tech_artifact_resonance_manufacturing = {
 # 七日后勤网络：把中央庭守望传统转化为行星级调度制度，解锁七日调度中枢。
 tech_artifact_seven_day_logistics = {
 	area = society
-	icon = tech_psionic_barrier
+	icon = tech_artifact_seven_day_logistics
 	cost = 12000
 	tier = 4
 	category = { statecraft }
@@ -133,7 +133,7 @@ tech_artifact_seven_day_logistics = {
 # 命运经济矩阵：命运观测塔之前的最终行星经济科技，解锁命运经济演算院。
 tech_artifact_destiny_economy = {
 	area = physics
-	icon = tech_mega_engineering
+	icon = tech_artifact_destiny_economy
 	cost = 18000
 	tier = 4
 	category = { computing }
@@ -158,7 +158,7 @@ tech_artifact_destiny_economy = {
 # 相位能源网：解锁神器使后期能量建筑。
 tech_artifact_phase_energy = {
 	area = physics
-	icon = tech_sensors_4
+	icon = tech_artifact_phase_energy
 	cost = 14000
 	tier = 4
 	category = { field_manipulation }
@@ -177,7 +177,7 @@ tech_artifact_phase_energy = {
 # 相位矿脉采掘：解锁神器使后期矿石建筑。
 tech_artifact_phase_extraction = {
 	area = engineering
-	icon = tech_ship_armor_5
+	icon = tech_artifact_phase_extraction
 	cost = 14000
 	tier = 4
 	category = { materials }
@@ -196,7 +196,7 @@ tech_artifact_phase_extraction = {
 # 交界商业网络：解锁神器使后期贸易建筑。
 tech_artifact_crossing_trade = {
 	area = society
-	icon = tech_psionic_barrier
+	icon = tech_artifact_crossing_trade
 	cost = 14000
 	tier = 4
 	category = { statecraft }
@@ -215,7 +215,7 @@ tech_artifact_crossing_trade = {
 # 神器民生产业：解锁神器使后期消费品建筑。
 tech_artifact_civic_industry = {
 	area = engineering
-	icon = tech_ship_armor_5
+	icon = tech_artifact_civic_industry
 	cost = 15000
 	tier = 4
 	category = { materials }
@@ -234,7 +234,7 @@ tech_artifact_civic_industry = {
 # 稀有共鸣精炼：解锁神器使三类基础稀有资源建筑。
 tech_artifact_rare_resonance = {
 	area = engineering
-	icon = tech_ship_armor_5
+	icon = tech_artifact_rare_resonance
 	cost = 18000
 	tier = 4
 	category = { materials }
@@ -250,7 +250,7 @@ tech_artifact_rare_resonance = {
 # 星海契约行政：解锁神器使后期影响力建筑。
 tech_artifact_covenant_administration = {
 	area = society
-	icon = tech_psionic_barrier
+	icon = tech_artifact_covenant_administration
 	cost = 20000
 	tier = 4
 	category = { statecraft }
@@ -270,7 +270,7 @@ tech_artifact_covenant_administration = {
 # 旧日神器档案修复：解锁神器使小文物资源建筑。
 tech_artifact_relic_archive_restoration = {
 	area = society
-	icon = tech_psionic_barrier
+	icon = tech_artifact_relic_archive_restoration
 	cost = 22000
 	tier = 5
 	category = { archaeostudies }
@@ -286,7 +286,7 @@ tech_artifact_relic_archive_restoration = {
 # 命运都市工程：解锁神器使专属的理想城式星球改造。
 tech_artifact_destiny_city_project = {
 	area = engineering
-	icon = tech_mega_engineering
+	icon = tech_artifact_destiny_city_project
 	cost = 26000
 	tier = 5
 	category = { voidcraft }
@@ -302,7 +302,7 @@ tech_artifact_destiny_city_project = {
 # 命运观测塔：在中央庭守望传统完成后，建造星系尺度的命运演算巨构。
 tech_artifact_fate_observatory = {
 	area = physics
-	icon = tech_mega_engineering
+	icon = tech_artifact_fate_observatory
 	cost = 24000
 	tier = 5
 	category = { computing }
@@ -318,7 +318,7 @@ tech_artifact_fate_observatory = {
 # 命运之主：将观测塔演算核心嵌入超旗舰舰体的终极工程。
 tech_artifact_destiny_lord = {
 	area = engineering
-	icon = tech_titans
+	icon = tech_artifact_destiny_lord
 	cost = 30000
 	tier = 5
 	category = { voidcraft }
@@ -334,7 +334,7 @@ tech_artifact_destiny_lord = {
 # 神器使战斗编制：解锁神器使前期陆军、基础专属武器、防御组件和战术核心。
 tech_artifact_user_combat_doctrine = {
 	area = society
-	icon = tech_psionic_barrier
+	icon = tech_artifact_user_combat_doctrine
 	cost = 3500
 	tier = 2
 	category = { statecraft }
@@ -348,7 +348,7 @@ tech_artifact_user_combat_doctrine = {
 # 神器共鸣军备：解锁神器使中期陆军和等同原版后期强度的舰船武器与组件。
 tech_artifact_user_resonance_armaments = {
 	area = engineering
-	icon = tech_ship_armor_5
+	icon = tech_artifact_user_resonance_armaments
 	cost = 16000
 	tier = 4
 	category = { materials }
@@ -363,7 +363,7 @@ tech_artifact_user_resonance_armaments = {
 # 神器终解战争学：解锁神器使后期超模陆军、终局舰船武器、护盾、装甲、电脑、传感器与 A 槽核心。
 tech_artifact_user_apotheosis_warfare = {
 	area = engineering
-	icon = tech_titans
+	icon = tech_artifact_user_apotheosis_warfare
 	cost = 32000
 	tier = 5
 	category = { voidcraft }

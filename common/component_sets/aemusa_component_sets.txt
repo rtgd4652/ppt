@@ -2,30 +2,30 @@
 
 component_set = {
 	key = "ARTIFACT_TAROT_RAY"
-	icon = "GFX_ship_part_laser_4"
+	icon = "GFX_ship_part_artifact_tarot_ray"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_FATE_ARMOR"
-	icon = "GFX_ship_part_armor_5"
+	icon = "GFX_ship_part_artifact_fate_armor"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_SEVEN_DAY_CORE"
-	icon = "GFX_ship_part_sensor_4"
+	icon = "GFX_ship_part_artifact_seven_day_core"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_TAROT_JUDGEMENT"
-	icon = "GFX_ship_part_energy_lance_2"
+	icon = "GFX_ship_part_artifact_tarot_judgement"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "ARTIFACT_FATE_DOMINION"
-	icon = "GFX_ship_part_perdition_beam"
+	icon = "GFX_ship_part_artifact_fate_dominion"
 	icon_frame = 1
 }

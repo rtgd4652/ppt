@@ -2,7 +2,7 @@
 decision_artifact_destiny_city_project = {
 	owned_planets_only = yes
 	sound = event_administrative_work
-	icon = decision_resources
+	icon = decision_artifact_destiny_city_project
 
 	resources = {
 		category = decisions

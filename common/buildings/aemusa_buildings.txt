@@ -1,7 +1,7 @@
 # 神器使专属建筑：中央庭统筹神器使行动，在黑门威胁下维持城市秩序。
 building_artifact_sanctum = {
 	base_buildtime = 240
-	icon = building_precinct_house
+	icon = building_artifact_sanctum
 	category = government
 
 	building_sets = {
@@ -37,7 +37,7 @@ building_artifact_sanctum = {
 # 黑门观测站：以塔罗演算预测灾厄，并为研究者提供交界都市的数据。
 building_artifact_black_gate_observatory = {
 	base_buildtime = 360
-	icon = building_research_lab_3
+	icon = building_artifact_black_gate_observatory
 	category = research
 
 	building_sets = {
@@ -87,7 +87,7 @@ building_artifact_black_gate_observatory = {
 # 中央庭神器工坊：将神器共鸣转化为舰船组件所需的精密材料。
 building_artifact_relic_workshop = {
 	base_buildtime = 360
-	icon = building_foundry_3
+	icon = building_artifact_relic_workshop
 	category = manufacturing
 
 	building_sets = {
@@ -137,7 +137,7 @@ building_artifact_relic_workshop = {
 # 七日调度中枢：把中央庭的轮回记录制度化，强化每颗核心星球的稳定、凝聚力与岗位效率。
 building_artifact_seven_day_command = {
 	base_buildtime = 480
-	icon = building_precinct_house
+	icon = building_artifact_seven_day_command
 	category = government
 
 	building_sets = {
@@ -179,7 +179,7 @@ building_artifact_seven_day_command = {
 # 命运经济演算院：观测塔完工前的行星级算力节点，专门服务神器使科研与行政经济。
 building_artifact_fate_calculus_institute = {
 	base_buildtime = 600
-	icon = building_research_lab_3
+	icon = building_artifact_fate_calculus_institute
 	category = research
 
 	building_sets = {
@@ -220,7 +220,7 @@ building_artifact_fate_calculus_institute = {
 # 命运研究尖塔：神器使后期科研建筑，承载命运观测塔前置演算。
 building_artifact_destiny_research_spire = {
 	base_buildtime = 720
-	icon = building_research_lab_3
+	icon = building_artifact_destiny_research_spire
 	category = research
 	building_sets = { research }
 
@@ -250,7 +250,7 @@ building_artifact_destiny_research_spire = {
 # 共鸣合金圣炉：神器使后期合金建筑，支撑命运之主与超大舰队。
 building_artifact_resonance_alloy_forge = {
 	base_buildtime = 720
-	icon = building_foundry_3
+	icon = building_artifact_resonance_alloy_forge
 	category = manufacturing
 	building_sets = { manufacturing }
 
@@ -279,7 +279,7 @@ building_artifact_resonance_alloy_forge = {
 # 神器民生工坊：把神器纹样复现为高价值民用消费品。
 building_artifact_civic_goods_manufactory = {
 	base_buildtime = 600
-	icon = building_foundry_3
+	icon = building_artifact_civic_goods_manufactory
 	category = manufacturing
 	building_sets = { manufacturing }
 
@@ -308,7 +308,7 @@ building_artifact_civic_goods_manufactory = {
 # 黑门相位反应堆：神器使后期能量建筑。
 building_artifact_phase_reactor = {
 	base_buildtime = 600
-	icon = building_research_lab_3
+	icon = building_artifact_phase_reactor
 	category = resource
 	building_sets = { resource }
 
@@ -337,7 +337,7 @@ building_artifact_phase_reactor = {
 # 交界商业塔：神器使后期贸易建筑，整合商业街与星际市场。
 building_artifact_crossing_trade_tower = {
 	base_buildtime = 600
-	icon = building_precinct_house
+	icon = building_artifact_crossing_trade_tower
 	category = trade
 	building_sets = { trade }
 
@@ -367,7 +367,7 @@ building_artifact_crossing_trade_tower = {
 # 相位矿脉稳定站：神器使后期矿石建筑。
 building_artifact_phase_mine = {
 	base_buildtime = 600
-	icon = building_foundry_3
+	icon = building_artifact_phase_mine
 	category = resource
 	building_sets = { resource }
 
@@ -396,7 +396,7 @@ building_artifact_phase_mine = {
 # 稀有共鸣精炼所：集中产出三类基础稀有资源。
 building_artifact_rare_resonance_refinery = {
 	base_buildtime = 720
-	icon = building_foundry_3
+	icon = building_artifact_rare_resonance_refinery
 	category = resource
 	building_sets = { resource }
 
@@ -425,7 +425,7 @@ building_artifact_rare_resonance_refinery = {
 # 中央庭记忆宫：神器使后期凝聚力建筑。
 building_artifact_memory_palace = {
 	base_buildtime = 600
-	icon = building_precinct_house
+	icon = building_artifact_memory_palace
 	category = unity
 	building_sets = { unity }
 
@@ -454,7 +454,7 @@ building_artifact_memory_palace = {
 # 星海契约议事厅：神器使后期影响力建筑。
 building_artifact_covenant_chamber = {
 	base_buildtime = 720
-	icon = building_precinct_house
+	icon = building_artifact_covenant_chamber
 	category = government
 	building_sets = { government unity }
 
@@ -484,7 +484,7 @@ building_artifact_covenant_chamber = {
 # 旧日神器档案馆：神器使后期文物资源建筑。
 building_artifact_relic_archive = {
 	base_buildtime = 720
-	icon = building_research_lab_3
+	icon = building_artifact_relic_archive
 	category = research
 	building_sets = { research unity }
 

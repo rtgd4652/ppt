@@ -2,7 +2,7 @@
 
 edict_summon_stellar_administrator = {
     length = 0 # 0 表示即时生效、不会持续占用法令栏。
-    icon = "GFX_edict_type_policy" # 复用原版政策类法令图标。
+    icon = "GFX_edict_summon_aemusa" # 使用爱缪莎召唤专属图标。
 
     resources = {
         category = edicts # 使用法令资源类别，确保 UI 正确显示花费。
@@ -66,7 +66,7 @@ edict_contact_white_night_pavilion = {
 # 通讯法令：打开爱缪莎的职责选择对话。
 edict_contact_aemusa = {
     length = 0 # 即时打开对话，不产生持续效果。
-    icon = "GFX_edict_type_policy" # 复用原版政策类法令图标。
+    icon = "GFX_edict_contact_aemusa" # 使用爱缪莎通讯专属图标。
 
     potential = {
         exists = event_target:aemusa_leader # 仅在爱缪莎仍存在时显示。

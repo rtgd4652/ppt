@@ -1,5 +1,5 @@
 spriteTypes = {
-	# 传统树背景与分类图标复用探索传统的蓝色视觉，确保新传统在界面中完整显示。
+	# 传统树背景继续复用探索传统的界面底板，保证布局稳定。
 	spriteType = {
 		name = "GFX_tradition_hex_bg_tradition_artifact_court"
 		textureFile = "gfx/interface/traditions/tradition_hex_bg_discovery.dds"
@@ -16,22 +16,32 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_tradition_category_icon_tradition_artifact_court"
-		textureFile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_discovery.dds"
+		textureFile = "gfx/interface/icons/traditions/tradition_icon_artifact_court.dds"
 	}
 
-	# 各传统节点复用原版图标；效果、名称与说明均为神器使专属。
-	spriteType = { name = "GFX_tr_artifact_court_adopt" textureFile = "gfx/interface/icons/traditions/tradition_discovery_to_boldly_go.dds" }
-	spriteType = { name = "GFX_tr_artifact_court_finish" textureFile = "gfx/interface/icons/traditions/tradition_discovery_faith_in_science.dds" }
-	spriteType = { name = "GFX_tr_artifact_court_black_gate_watch" textureFile = "gfx/interface/icons/traditions/tradition_unyielding_never_surrender.dds" }
-	spriteType = { name = "GFX_tr_artifact_court_seven_guardians" textureFile = "gfx/interface/icons/traditions/tradition_aptitude_specialist_training.dds" }
-	spriteType = { name = "GFX_tr_artifact_court_tarot_archive" textureFile = "gfx/interface/icons/traditions/tradition_discovery_science_division.dds" }
-	spriteType = { name = "GFX_tr_artifact_court_city_network" textureFile = "gfx/interface/icons/traditions/tradition_unyielding_bulwark_of_harmony.dds" }
-	spriteType = { name = "GFX_tr_artifact_court_final_day" textureFile = "gfx/interface/icons/traditions/tradition_unyielding_defensive_zeal.dds" }
+	# 神器使传统节点图标使用自绘资源，避免继续借用原版传统图标。
+	spriteType = { name = "GFX_tr_artifact_court_adopt" textureFile = "gfx/interface/icons/traditions/tr_artifact_court_adopt.dds" }
+	spriteType = { name = "GFX_tr_artifact_court_finish" textureFile = "gfx/interface/icons/traditions/tr_artifact_court_finish.dds" }
+	spriteType = { name = "GFX_tr_artifact_court_black_gate_watch" textureFile = "gfx/interface/icons/traditions/tr_artifact_court_black_gate_watch.dds" }
+	spriteType = { name = "GFX_tr_artifact_court_seven_guardians" textureFile = "gfx/interface/icons/traditions/tr_artifact_court_seven_guardians.dds" }
+	spriteType = { name = "GFX_tr_artifact_court_tarot_archive" textureFile = "gfx/interface/icons/traditions/tr_artifact_court_tarot_archive.dds" }
+	spriteType = { name = "GFX_tr_artifact_court_city_network" textureFile = "gfx/interface/icons/traditions/tr_artifact_court_city_network.dds" }
+	spriteType = { name = "GFX_tr_artifact_court_final_day" textureFile = "gfx/interface/icons/traditions/tr_artifact_court_final_day.dds" }
 
-	# 飞升图标复用守护银河系的原版资源，避免缺失图标。
+	# 飞升图标分为神器使物种线与爱缪莎个人线。
+	spriteType = {
+		name = "GFX_ap_artifact_user_resonance_path"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_artifact_user_resonance_path.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_ap_artifact_user_apotheosis_path"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_artifact_user_apotheosis_path.dds"
+		alwaystransparent = yes
+	}
 	spriteType = {
 		name = "GFX_ap_artifact_court_destiny"
-		texturefile = "gfx/interface/icons/ascension_perks/ap_defender_of_the_galaxy.dds"
+		texturefile = "gfx/interface/icons/ascension_perks/ap_artifact_court_destiny.dds"
 		alwaystransparent = yes
 	}
 }

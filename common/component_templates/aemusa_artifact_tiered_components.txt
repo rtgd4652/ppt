@@ -1,8 +1,9 @@
-# 灏忓瀷宸℃煡濉旂綏灏勭嚎锛氱鍣ㄤ娇鍓嶆湡鑳介噺姝﹀櫒锛屾暟鍊间繚瀹堬紝浣滀负鍩虹涓撳睘姝﹀櫒绾垮叆鍙ｃ€?weapon_component_template = {
+# 小型巡查塔罗射线：神器使前期能量武器，数值保守，作为基础专属武器线入口。
+weapon_component_template = {
 	key = "SMALL_ARTIFACT_FATE_RAY_1"
 	size = small
 	type = instant
-	icon = "GFX_ship_part_laser_2"
+	icon = "GFX_ship_part_artifact_fate_ray_1"
 	icon_frame = 1
 	projectile_gfx = "blue_laser_s"
 	damage = { min = 16 max = 36 }
@@ -28,11 +29,12 @@
 	ai_weight = { weight = 6 }
 }
 
-# 涓瀷宸℃煡濉旂綏灏勭嚎锛氬墠鏈熶腑妲界増鏈紝淇濇寔骞冲焊浣嗗彲绋冲畾杩囨浮銆?weapon_component_template = {
+# 中型巡查塔罗射线：前期中槽版本，保持平庸但可稳定过渡。
+weapon_component_template = {
 	key = "MEDIUM_ARTIFACT_FATE_RAY_1"
 	size = medium
 	type = instant
-	icon = "GFX_ship_part_laser_2"
+	icon = "GFX_ship_part_artifact_fate_ray_1"
 	icon_frame = 1
 	projectile_gfx = "blue_laser_m"
 	damage = { min = 40 max = 90 }
@@ -58,11 +60,12 @@
 	ai_weight = { weight = 6 }
 }
 
-# 澶у瀷宸℃煡濉旂綏灏勭嚎锛氬墠鏈熷ぇ妲界増鏈紝灏勭▼浼樹簬鐏姏锛岄伩鍏嶈繃鏃╁帇鍒跺師鐗堣埌闃熴€?weapon_component_template = {
+# 大型巡查塔罗射线：前期大槽版本，射程优于火力，避免过早压制原版舰队。
+weapon_component_template = {
 	key = "LARGE_ARTIFACT_FATE_RAY_1"
 	size = large
 	type = instant
-	icon = "GFX_ship_part_laser_2"
+	icon = "GFX_ship_part_artifact_fate_ray_1"
 	icon_frame = 1
 	projectile_gfx = "blue_laser_l"
 	damage = { min = 96 max = 216 }
@@ -88,11 +91,12 @@
 	ai_weight = { weight = 6 }
 }
 
-# 灏忓瀷榛戦棬瑁佸畾灏勭嚎锛氫腑鏈熸鍣紝鎸夊師鐗堝悗鏈熶富鍔涙鍣ㄦ按骞宠璁°€?weapon_component_template = {
+# 小型黑门裁定射线：中期武器，按原版后期主力武器水平设计。
+weapon_component_template = {
 	key = "SMALL_ARTIFACT_FATE_RAY_2"
 	size = small
 	type = instant
-	icon = "GFX_ship_part_laser_4"
+	icon = "GFX_ship_part_artifact_fate_ray_2"
 	icon_frame = 1
 	projectile_gfx = "blue_laser_s"
 	damage = { min = 60 max = 120 }
@@ -118,11 +122,12 @@
 	ai_weight = { weight = 12 }
 }
 
-# 涓瀷榛戦棬瑁佸畾灏勭嚎锛氫腑鏈熶腑妲界増鏈紝杩涘叆鍘熺増缁堝眬绾х伀鍔涘尯闂淬€?weapon_component_template = {
+# 中型黑门裁定射线：中期中槽版本，进入原版终局级火力区间。
+weapon_component_template = {
 	key = "MEDIUM_ARTIFACT_FATE_RAY_2"
 	size = medium
 	type = instant
-	icon = "GFX_ship_part_laser_4"
+	icon = "GFX_ship_part_artifact_fate_ray_2"
 	icon_frame = 1
 	projectile_gfx = "blue_laser_m"
 	damage = { min = 150 max = 300 }
@@ -148,11 +153,12 @@
 	ai_weight = { weight = 12 }
 }
 
-# 澶у瀷榛戦棬瑁佸畾灏勭嚎锛氫腑鏈熷ぇ妲界増鏈紝鎵挎媴宸℃磱鑸板拰鎴樺垪鑸扮殑涓诲姏鐐嚮銆?weapon_component_template = {
+# 大型黑门裁定射线：中期大槽版本，承担巡洋舰和战列舰的主力炮击。
+weapon_component_template = {
 	key = "LARGE_ARTIFACT_FATE_RAY_2"
 	size = large
 	type = instant
-	icon = "GFX_ship_part_laser_4"
+	icon = "GFX_ship_part_artifact_fate_ray_2"
 	icon_frame = 1
 	projectile_gfx = "blue_laser_l"
 	damage = { min = 360 max = 720 }
@@ -178,11 +184,12 @@
 	ai_weight = { weight = 12 }
 }
 
-# 灏忓瀷鍛借繍缁堝眬灏勭嚎锛氬悗鏈熻秴妯℃鍣紝浠ラ珮缁存姢璐规崲鍙栧帇鍒剁伀鍔涖€?weapon_component_template = {
+# 小型命运终局射线：后期超模武器，以高维护费换取压制火力。
+weapon_component_template = {
 	key = "SMALL_ARTIFACT_FATE_RAY_3"
 	size = small
 	type = instant
-	icon = "GFX_ship_part_laser_4"
+	icon = "GFX_ship_part_artifact_fate_ray_3"
 	icon_frame = 1
 	projectile_gfx = "tachyon_lance"
 	damage = { min = 150 max = 280 }
@@ -207,11 +214,12 @@
 	ai_weight = { weight = 20 }
 }
 
-# 涓瀷鍛借繍缁堝眬灏勭嚎锛氬悗鏈熶腑妲借秴妯℃鍣紝涓撻棬鏈嶅姟绁炲櫒浣跨粓灞€鑸伴槦銆?weapon_component_template = {
+# 中型命运终局射线：后期中槽超模武器，专门服务神器使终局舰队。
+weapon_component_template = {
 	key = "MEDIUM_ARTIFACT_FATE_RAY_3"
 	size = medium
 	type = instant
-	icon = "GFX_ship_part_laser_4"
+	icon = "GFX_ship_part_artifact_fate_ray_3"
 	icon_frame = 1
 	projectile_gfx = "tachyon_lance"
 	damage = { min = 375 max = 700 }
@@ -236,11 +244,12 @@
 	ai_weight = { weight = 20 }
 }
 
-# 澶у瀷鍛借繍缁堝眬灏勭嚎锛氬悗鏈熷ぇ妲借秴妯℃鍣紝鐏姏鏄庢樉楂樹簬鍘熺増鍚庢湡銆?weapon_component_template = {
+# 大型命运终局射线：后期大槽超模武器，火力明显高于原版后期。
+weapon_component_template = {
 	key = "LARGE_ARTIFACT_FATE_RAY_3"
 	size = large
 	type = instant
-	icon = "GFX_ship_part_laser_4"
+	icon = "GFX_ship_part_artifact_fate_ray_3"
 	icon_frame = 1
 	projectile_gfx = "tachyon_lance"
 	damage = { min = 900 max = 1680 }
@@ -265,10 +274,11 @@
 	ai_weight = { weight = 20 }
 }
 
-# 灏忓瀷榛戦棬鐩镐綅鐩撅細鍓嶆湡鎶ょ浘缁勪欢锛岀暐浼樹簬鍩虹鎶ょ浘浣嗚兘鑰楄緝楂樸€?utility_component_template = {
+# 小型黑门相位盾：前期护盾组件，略优于基础护盾但能耗较高。
+utility_component_template = {
 	key = "SMALL_ARTIFACT_BLACK_GATE_SHIELD_1"
 	size = small
-	icon = "GFX_ship_part_shield_2"
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
 	icon_frame = 1
 	power = -18
 	modifier = { ship_shield_add = 90 ship_shield_regen_add_static = 1 }
@@ -280,10 +290,11 @@
 	ai_weight = { weight = 6 }
 }
 
-# 涓瀷榛戦棬鐩镐綅鐩撅細鍓嶆湡涓瀷鎶ょ浘缁勪欢銆?utility_component_template = {
+# 中型黑门相位盾：前期中型护盾组件。
+utility_component_template = {
 	key = "MEDIUM_ARTIFACT_BLACK_GATE_SHIELD_1"
 	size = medium
-	icon = "GFX_ship_part_shield_2"
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
 	icon_frame = 1
 	power = -42
 	modifier = { ship_shield_add = 270 ship_shield_regen_add_static = 3 }
@@ -295,10 +306,11 @@
 	ai_weight = { weight = 6 }
 }
 
-# 澶у瀷榛戦棬鐩镐綅鐩撅細鍓嶆湡澶у瀷鎶ょ浘缁勪欢銆?utility_component_template = {
+# 大型黑门相位盾：前期大型护盾组件。
+utility_component_template = {
 	key = "LARGE_ARTIFACT_BLACK_GATE_SHIELD_1"
 	size = large
-	icon = "GFX_ship_part_shield_2"
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
 	icon_frame = 1
 	power = -100
 	modifier = { ship_shield_add = 810 ship_shield_regen_add_static = 8 }
@@ -310,10 +322,11 @@
 	ai_weight = { weight = 6 }
 }
 
-# 灏忓瀷榛戦棬闂攣鐩撅細涓湡鎶ょ浘缁勪欢锛屽鏍囧師鐗堝悗鏈熸姢鐩惧€笺€?utility_component_template = {
+# 小型黑门闭锁盾：中期护盾组件，对标原版后期护盾值。
+utility_component_template = {
 	key = "SMALL_ARTIFACT_BLACK_GATE_SHIELD_2"
 	size = small
-	icon = "GFX_ship_part_shield_5"
+	icon = "GFX_ship_part_artifact_black_gate_shield_2"
 	icon_frame = 1
 	power = -32
 	modifier = { ship_shield_add = 220 ship_shield_regen_add_static = 3 }
@@ -325,10 +338,11 @@
 	ai_weight = { weight = 12 }
 }
 
-# 涓瀷榛戦棬闂攣鐩撅細涓湡涓瀷鎶ょ浘缁勪欢銆?utility_component_template = {
+# 中型黑门闭锁盾：中期中型护盾组件。
+utility_component_template = {
 	key = "MEDIUM_ARTIFACT_BLACK_GATE_SHIELD_2"
 	size = medium
-	icon = "GFX_ship_part_shield_5"
+	icon = "GFX_ship_part_artifact_black_gate_shield_2"
 	icon_frame = 1
 	power = -78
 	modifier = { ship_shield_add = 660 ship_shield_regen_add_static = 8 }
@@ -340,10 +354,11 @@
 	ai_weight = { weight = 12 }
 }
 
-# 澶у瀷榛戦棬闂攣鐩撅細涓湡澶у瀷鎶ょ浘缁勪欢銆?utility_component_template = {
+# 大型黑门闭锁盾：中期大型护盾组件。
+utility_component_template = {
 	key = "LARGE_ARTIFACT_BLACK_GATE_SHIELD_2"
 	size = large
-	icon = "GFX_ship_part_shield_5"
+	icon = "GFX_ship_part_artifact_black_gate_shield_2"
 	icon_frame = 1
 	power = -185
 	modifier = { ship_shield_add = 1980 ship_shield_regen_add_static = 20 }
@@ -355,10 +370,11 @@
 	ai_weight = { weight = 12 }
 }
 
-# 灏忓瀷鍛借繍鐩镐綅鐩撅細鍚庢湡瓒呮ā鎶ょ浘缁勪欢锛屾姢鐩惧拰鍥炲閮芥瀬楂樸€?utility_component_template = {
+# 小型命运相位盾：后期超模护盾组件，护盾和回复都很高。
+utility_component_template = {
 	key = "SMALL_ARTIFACT_BLACK_GATE_SHIELD_3"
 	size = small
-	icon = "GFX_ship_part_shield_5"
+	icon = "GFX_ship_part_artifact_black_gate_shield_3"
 	icon_frame = 1
 	power = -65
 	modifier = { ship_shield_add = 520 ship_shield_regen_add_static = 8 }
@@ -369,10 +385,11 @@
 	ai_weight = { weight = 20 }
 }
 
-# 涓瀷鍛借繍鐩镐綅鐩撅細鍚庢湡涓瀷瓒呮ā鎶ょ浘缁勪欢銆?utility_component_template = {
+# 中型命运相位盾：后期中型超模护盾组件。
+utility_component_template = {
 	key = "MEDIUM_ARTIFACT_BLACK_GATE_SHIELD_3"
 	size = medium
-	icon = "GFX_ship_part_shield_5"
+	icon = "GFX_ship_part_artifact_black_gate_shield_3"
 	icon_frame = 1
 	power = -155
 	modifier = { ship_shield_add = 1560 ship_shield_regen_add_static = 22 }
@@ -383,10 +400,11 @@
 	ai_weight = { weight = 20 }
 }
 
-# 澶у瀷鍛借繍鐩镐綅鐩撅細鍚庢湡澶у瀷瓒呮ā鎶ょ浘缁勪欢銆?utility_component_template = {
+# 大型命运相位盾：后期大型超模护盾组件。
+utility_component_template = {
 	key = "LARGE_ARTIFACT_BLACK_GATE_SHIELD_3"
 	size = large
-	icon = "GFX_ship_part_shield_5"
+	icon = "GFX_ship_part_artifact_black_gate_shield_3"
 	icon_frame = 1
 	power = -370
 	modifier = { ship_shield_add = 4680 ship_shield_regen_add_static = 55 }
@@ -397,10 +415,11 @@
 	ai_weight = { weight = 20 }
 }
 
-# 灏忓瀷宸℃煡缁囩敳锛氬墠鏈熻鐢茬粍浠讹紝浣滀负鏅€氳鐢茬嚎鐨勫钩婊戞浛浠ｃ€?utility_component_template = {
+# 小型巡查织甲：前期装甲组件，作为普通装甲线的平滑替代。
+utility_component_template = {
 	key = "SMALL_ARTIFACT_DESTINY_ARMOR_1"
 	size = small
-	icon = "GFX_ship_part_armor_2"
+	icon = "GFX_ship_part_artifact_destiny_armor_1"
 	icon_frame = 1
 	power = 0
 	modifier = { ship_armor_add = 110 }
@@ -412,10 +431,11 @@
 	ai_weight = { weight = 6 }
 }
 
-# 涓瀷宸℃煡缁囩敳锛氬墠鏈熶腑鍨嬭鐢茬粍浠躲€?utility_component_template = {
+# 中型巡查织甲：前期中型装甲组件。
+utility_component_template = {
 	key = "MEDIUM_ARTIFACT_DESTINY_ARMOR_1"
 	size = medium
-	icon = "GFX_ship_part_armor_2"
+	icon = "GFX_ship_part_artifact_destiny_armor_1"
 	icon_frame = 1
 	power = 0
 	modifier = { ship_armor_add = 330 }
@@ -427,10 +447,11 @@
 	ai_weight = { weight = 6 }
 }
 
-# 澶у瀷宸℃煡缁囩敳锛氬墠鏈熷ぇ鍨嬭鐢茬粍浠躲€?utility_component_template = {
+# 大型巡查织甲：前期大型装甲组件。
+utility_component_template = {
 	key = "LARGE_ARTIFACT_DESTINY_ARMOR_1"
 	size = large
-	icon = "GFX_ship_part_armor_2"
+	icon = "GFX_ship_part_artifact_destiny_armor_1"
 	icon_frame = 1
 	power = 0
 	modifier = { ship_armor_add = 990 }
@@ -442,10 +463,11 @@
 	ai_weight = { weight = 6 }
 }
 
-# 灏忓瀷涓ぎ搴粐鐢诧細涓湡瑁呯敳缁勪欢锛屽鏍囧師鐗堝悗鏈熻鐢层€?utility_component_template = {
+# 小型中央庭织甲：中期装甲组件，对标原版后期装甲。
+utility_component_template = {
 	key = "SMALL_ARTIFACT_DESTINY_ARMOR_2"
 	size = small
-	icon = "GFX_ship_part_armor_5"
+	icon = "GFX_ship_part_artifact_destiny_armor_2"
 	icon_frame = 1
 	power = 0
 	modifier = { ship_armor_add = 260 }
@@ -457,10 +479,11 @@
 	ai_weight = { weight = 12 }
 }
 
-# 涓瀷涓ぎ搴粐鐢诧細涓湡涓瀷瑁呯敳缁勪欢銆?utility_component_template = {
+# 中型中央庭织甲：中期中型装甲组件。
+utility_component_template = {
 	key = "MEDIUM_ARTIFACT_DESTINY_ARMOR_2"
 	size = medium
-	icon = "GFX_ship_part_armor_5"
+	icon = "GFX_ship_part_artifact_destiny_armor_2"
 	icon_frame = 1
 	power = 0
 	modifier = { ship_armor_add = 780 }
@@ -472,10 +495,11 @@
 	ai_weight = { weight = 12 }
 }
 
-# 澶у瀷涓ぎ搴粐鐢诧細涓湡澶у瀷瑁呯敳缁勪欢銆?utility_component_template = {
+# 大型中央庭织甲：中期大型装甲组件。
+utility_component_template = {
 	key = "LARGE_ARTIFACT_DESTINY_ARMOR_2"
 	size = large
-	icon = "GFX_ship_part_armor_5"
+	icon = "GFX_ship_part_artifact_destiny_armor_2"
 	icon_frame = 1
 	power = 0
 	modifier = { ship_armor_add = 2340 }
@@ -487,10 +511,11 @@
 	ai_weight = { weight = 12 }
 }
 
-# 灏忓瀷鍛借繍缁囩敳锛氬悗鏈熻秴妯¤鐢茬粍浠躲€?utility_component_template = {
+# 小型命运织甲：后期超模装甲组件。
+utility_component_template = {
 	key = "SMALL_ARTIFACT_DESTINY_ARMOR_3"
 	size = small
-	icon = "GFX_ship_part_armor_5"
+	icon = "GFX_ship_part_artifact_destiny_armor_3"
 	icon_frame = 1
 	power = 0
 	modifier = { ship_armor_add = 620 ship_hull_add = 80 }
@@ -501,10 +526,11 @@
 	ai_weight = { weight = 20 }
 }
 
-# 涓瀷鍛借繍缁囩敳锛氬悗鏈熶腑鍨嬭秴妯¤鐢茬粍浠躲€?utility_component_template = {
+# 中型命运织甲：后期中型超模装甲组件。
+utility_component_template = {
 	key = "MEDIUM_ARTIFACT_DESTINY_ARMOR_3"
 	size = medium
-	icon = "GFX_ship_part_armor_5"
+	icon = "GFX_ship_part_artifact_destiny_armor_3"
 	icon_frame = 1
 	power = 0
 	modifier = { ship_armor_add = 1860 ship_hull_add = 240 }
@@ -515,10 +541,11 @@
 	ai_weight = { weight = 20 }
 }
 
-# 澶у瀷鍛借繍缁囩敳锛氬悗鏈熷ぇ鍨嬭秴妯¤鐢茬粍浠躲€?utility_component_template = {
+# 大型命运织甲：后期大型超模装甲组件。
+utility_component_template = {
 	key = "LARGE_ARTIFACT_DESTINY_ARMOR_3"
 	size = large
-	icon = "GFX_ship_part_armor_5"
+	icon = "GFX_ship_part_artifact_destiny_armor_3"
 	icon_frame = 1
 	power = 0
 	modifier = { ship_armor_add = 5580 ship_hull_add = 720 }
@@ -529,10 +556,11 @@
 	ai_weight = { weight = 20 }
 }
 
-# 涓冩棩鎴樻湳鏍稿績锛氬墠鏈?A 妲界粍浠讹紝灏忓箙鎻愬崌鏈哄姩涓庣伀鎺с€?utility_component_template = {
+# 七日战术核心：前期 A 槽组件，小幅提升机动与火控。
+utility_component_template = {
 	key = "ARTIFACT_TACTICAL_CORE_1"
 	size = aux
-	icon = "GFX_ship_part_sensor_2"
+	icon = "GFX_ship_part_artifact_tactical_core_1"
 	icon_frame = 1
 	power = -15
 	modifier = {
@@ -551,10 +579,11 @@
 	ai_weight = { weight = 8 }
 }
 
-# 榛戦棬鎴樻湳鏍稿績锛氫腑鏈?A 妲界粍浠讹紝鐏帶寮哄害杈惧埌鍘熺増鍚庢湡杈呭姪浠舵按骞炽€?utility_component_template = {
+# 黑门战术核心：中期 A 槽组件，火控强度达到原版后期辅助件水平。
+utility_component_template = {
 	key = "ARTIFACT_TACTICAL_CORE_2"
 	size = aux
-	icon = "GFX_ship_part_sensor_4"
+	icon = "GFX_ship_part_artifact_tactical_core_2"
 	icon_frame = 1
 	power = -35
 	modifier = {
@@ -574,10 +603,11 @@
 	ai_weight = { weight = 14 }
 }
 
-# 鍛借繍婕旂畻鏍稿績锛氬悗鏈?A 妲借秴妯＄粍浠讹紝鏄捐憲鎻愬崌鍏ㄨ埌鐏姏涓庡懡涓ǔ瀹氭€с€?utility_component_template = {
+# 命运演算核心：后期 A 槽超模组件，显著提升全舰火力与命中稳定性。
+utility_component_template = {
 	key = "ARTIFACT_TACTICAL_CORE_3"
 	size = aux
-	icon = "GFX_ship_part_computer_default"
+	icon = "GFX_ship_part_artifact_tactical_core_3"
 	icon_frame = 1
 	power = -80
 	modifier = {
@@ -597,10 +627,11 @@
 	ai_weight = { weight = 24 }
 }
 
-# 涓ぎ搴綔鎴樼數鑴戯細鍓嶆湡閫氱敤浣滄垬鐢佃剳锛屽亸绾垮垪瀹氫綅銆?utility_component_template = {
+# 中央庭作战电脑：前期通用作战电脑，偏线列定位。
+utility_component_template = {
 	key = "ARTIFACT_COMBAT_COMPUTER_1"
 	size = small
-	icon = "GFX_ship_part_computer_default"
+	icon = "GFX_ship_part_artifact_combat_computer_1"
 	icon_frame = 1
 	power = -10
 	ship_behavior = "line"
@@ -620,10 +651,11 @@
 	ai_weight = { weight = 6 }
 }
 
-# 榛戦棬棰勬祴浣滄垬鐢佃剳锛氫腑鏈熼€氱敤浣滄垬鐢佃剳锛岀伀鎺ф帴杩戝師鐗堝悗鏈熴€?utility_component_template = {
+# 黑门预测作战电脑：中期通用作战电脑，火控接近原版后期。
+utility_component_template = {
 	key = "ARTIFACT_COMBAT_COMPUTER_2"
 	size = small
-	icon = "GFX_ship_part_computer_line_1"
+	icon = "GFX_ship_part_artifact_combat_computer_2"
 	icon_frame = 1
 	power = -25
 	ship_behavior = "line"
@@ -644,10 +676,11 @@
 	ai_weight = { weight = 12 }
 }
 
-# 鍛借繍瑁佸喅浣滄垬鐢佃剳锛氬悗鏈熻秴妯￠€氱敤浣滄垬鐢佃剳锛岄€傚悎绁炲櫒浣跨粓灞€鑸伴槦銆?utility_component_template = {
+# 命运裁决作战电脑：后期超模通用作战电脑，适合神器使终局舰队。
+utility_component_template = {
 	key = "ARTIFACT_COMBAT_COMPUTER_3"
 	size = small
-	icon = "GFX_ship_part_computer_artillery_1"
+	icon = "GFX_ship_part_artifact_combat_computer_3"
 	icon_frame = 1
 	power = -60
 	ship_behavior = "artillery"
@@ -668,10 +701,11 @@
 	ai_weight = { weight = 24 }
 }
 
-# 榛戦棬宸℃煡浼犳劅鍣細鍓嶆湡涓撳睘浼犳劅鍣紝棰濆鎻愪緵灏戦噺杩借釜銆?utility_component_template = {
+# 黑门巡查传感器：前期专属传感器，额外提供少量追踪。
+utility_component_template = {
 	key = "ARTIFACT_SENSOR_1"
 	size = medium
-	icon = "GFX_ship_part_sensor_2"
+	icon = "GFX_ship_part_artifact_sensor_1"
 	icon_frame = 1
 	power = -8
 	sensor_range = 2
@@ -685,10 +719,11 @@
 	ai_weight = { weight = 6 }
 }
 
-# 榛戦棬瑙傛祴浼犳劅鍣細涓湡涓撳睘浼犳劅鍣紝杈惧埌鍘熺増鍚庢湡鎺㈡祴姘村钩銆?utility_component_template = {
+# 黑门观测传感器：中期专属传感器，达到原版后期探测水平。
+utility_component_template = {
 	key = "ARTIFACT_SENSOR_2"
 	size = medium
-	icon = "GFX_ship_part_sensor_4"
+	icon = "GFX_ship_part_artifact_sensor_2"
 	icon_frame = 1
 	power = -20
 	sensor_range = 5
@@ -702,10 +737,11 @@
 	ai_weight = { weight = 12 }
 }
 
-# 鍛借繍瑙傛祴浼犳劅鍣細鍚庢湡瓒呮ā浼犳劅鍣紝寮哄寲鎺㈡祴銆佸懡涓笌杩借釜銆?utility_component_template = {
+# 命运观测传感器：后期超模传感器，强化探测、命中与追踪。
+utility_component_template = {
 	key = "ARTIFACT_SENSOR_3"
 	size = medium
-	icon = "GFX_ship_part_sensor_4"
+	icon = "GFX_ship_part_artifact_sensor_3"
 	icon_frame = 1
 	power = -55
 	sensor_range = 9

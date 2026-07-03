@@ -12,6 +12,8 @@
 - `common/component_templates/aemusa_artifact_components.txt` 中旧的 S/M/L 命运塔罗射线已补齐 TXT 内联武器数值。
 - `common/component_templates/aemusa_artifact_tiered_components.txt` 中新增的分级武器已全部使用 TXT 内联数值。
 - `common/component_templates/aemusa_weapon_components.csv` 仅作为旧数据残留参考，不再作为有效加载来源。
+- `assets/icon_generation/generate_artifact_icons.py` 已生成 90 个神器使专属 PNG/DDS 图标，并写入 `interface/aemusa_generated_icons.gfx` 与 `interface/aemusa_progression_icons.gfx`。
+- 科技、建筑、区划、陆军、飞升、传统、法令、决议、起源、舰船部件和部件组已改用专属图标引用。
 
 ## 平衡曲线
 
@@ -33,6 +35,7 @@
 - 若 wiki 或相关公开资料中存在适合当前对象的参考图，只将其作为题材、构图、配色和元素参考，再用自带绘图工具生成原创图；不要直接把网页图片原样放入模组资源。
 - 若没有合适参考，则按七日之都的都市科幻、日常与灾厄并存、青绿色 UI 光效、神器纹样、塔罗/契约/黑门意象、白夜馆和中央庭气质设计原创图。
 - 图标优先保持 Stellaris 可读性：小尺寸高对比、轮廓清晰、少文字、主体居中；神器使专属图标可使用青绿、紫、金、黑的组合，但避免整套资源变成单一色调。
+- 后续缺失图标优先追加到 `assets/icon_generation/generate_artifact_icons.py` 的 `ICONS` 表，再重新运行生成器和引用更新脚本，避免手工散落创建。
 - 本模组是免费公开项目，不以盈利为目的；即便如此，新增资产仍优先采用“参考后原创生成”的流程，减少直接搬运造成的授权和维护风险。
 
 ## 开发约束
