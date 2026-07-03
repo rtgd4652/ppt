@@ -262,12 +262,20 @@ def make_icon(motif: str, palette: str, variant: str) -> Image.Image:
     return base
 
 
+def output_icon(rel: str, image: Image.Image) -> Image.Image:
+    # 传统树节点按纹理原尺寸绘制，必须使用小图标，否则会在传统界面互相覆盖。
+    if rel.startswith("traditions/tr_artifact_court_"):
+        return image.resize((64, 64), Image.Resampling.LANCZOS)
+    return image
+
+
 def save_icon(rel: str, image: Image.Image):
     png_path = ROOT / "gfx" / "interface" / "icons" / f"{rel}.png"
     dds_path = ROOT / "gfx" / "interface" / "icons" / f"{rel}.dds"
     png_path.parent.mkdir(parents=True, exist_ok=True)
-    image.save(png_path)
-    image.save(dds_path)
+    out = output_icon(rel, image)
+    out.save(png_path)
+    out.save(dds_path)
 
 
 def make_preview(generated: list[tuple[str, Image.Image]]):
@@ -276,8 +284,8 @@ def make_preview(generated: list[tuple[str, Image.Image]]):
     rows = (len(generated) + cols - 1) // cols
     sheet = Image.new("RGBA", (cols * cell, rows * cell), "#0b1116")
     for idx, (_, image) in enumerate(generated):
-        x = (idx % cols) * cell + 12
-        y = (idx // cols) * cell + 12
+        x = (idx % cols) * cell + 12 + (SIZE - image.width) // 2
+        y = (idx // cols) * cell + 12 + (SIZE - image.height) // 2
         sheet.alpha_composite(image, (x, y))
     out = ROOT / "assets" / "icon_generation" / "artifact_icon_preview.png"
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -320,7 +328,7 @@ def main():
     for rel, (motif, palette, variant) in ICONS.items():
         image = make_icon(motif, palette, variant)
         save_icon(rel, image)
-        generated.append((rel, image))
+        generated.append((rel, output_icon(rel, image)))
     make_preview(generated)
     write_generated_gfx()
     print(f"generated {len(generated)} icons")
