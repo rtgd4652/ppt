@@ -7,6 +7,9 @@ from PIL import Image, ImageDraw, ImageFilter
 
 ROOT = Path(__file__).resolve().parents[2]
 SIZE = 128
+SOURCE_ATLAS = ROOT / "assets" / "icon_generation" / "source_atlas_realistic.png"
+SOURCE_ATLAS_COLUMNS = 12
+SOURCE_ATLAS_ROWS = 11
 
 
 # 图标统一使用高对比剪影和青绿辉光，保证在 Stellaris 小尺寸 UI 中仍能辨认。
@@ -278,6 +281,34 @@ def save_icon(rel: str, image: Image.Image):
     out.save(dds_path)
 
 
+def crop_source_atlas() -> list[tuple[str, Image.Image]] | None:
+    """从写实图集裁切图标；图集缺失时返回 None，交给程序化备选方案。"""
+    if not SOURCE_ATLAS.exists():
+        return None
+    atlas = Image.open(SOURCE_ATLAS).convert("RGBA")
+    width, height = atlas.size
+    cell_w = width / SOURCE_ATLAS_COLUMNS
+    cell_h = height / SOURCE_ATLAS_ROWS
+    generated: list[tuple[str, Image.Image]] = []
+    for index, rel in enumerate(ICONS):
+        col = index % SOURCE_ATLAS_COLUMNS
+        row = index // SOURCE_ATLAS_COLUMNS
+        if row >= SOURCE_ATLAS_ROWS:
+            raise ValueError(f"source atlas does not have enough cells for {rel}")
+        left = round(col * cell_w)
+        top = round(row * cell_h)
+        right = round((col + 1) * cell_w)
+        bottom = round((row + 1) * cell_h)
+        cell = atlas.crop((left, top, right, bottom))
+        side = min(cell.size)
+        ox = (cell.width - side) // 2
+        oy = (cell.height - side) // 2
+        icon = cell.crop((ox, oy, ox + side, oy + side)).resize((SIZE, SIZE), Image.Resampling.LANCZOS)
+        save_icon(rel, icon)
+        generated.append((rel, output_icon(rel, icon)))
+    return generated
+
+
 def make_preview(generated: list[tuple[str, Image.Image]]):
     cols = 8
     cell = 152
@@ -324,11 +355,13 @@ def write_generated_gfx():
 
 
 def main():
-    generated: list[tuple[str, Image.Image]] = []
-    for rel, (motif, palette, variant) in ICONS.items():
-        image = make_icon(motif, palette, variant)
-        save_icon(rel, image)
-        generated.append((rel, output_icon(rel, image)))
+    generated = crop_source_atlas()
+    if generated is None:
+        generated = []
+        for rel, (motif, palette, variant) in ICONS.items():
+            image = make_icon(motif, palette, variant)
+            save_icon(rel, image)
+            generated.append((rel, output_icon(rel, image)))
     make_preview(generated)
     write_generated_gfx()
     print(f"generated {len(generated)} icons")
