@@ -1,0 +1,16 @@
+# 测试法令永久修正：只用于本地调试，不进入正式平衡曲线。
+aemusa_debug_overdrive = {
+	country_resource_max_add = 500000000 # 全资源上限提高 500M，方便一次性灌入测试资源。
+	country_produces_mult = 1000 # 全国所有月度资源产出大幅提高，覆盖常规资源、凝聚力与科研点数。
+	country_trade_produces_mult = 1000 # 贸易值额外放大，便于测试贸易相关建筑与岗位。
+	category_all_research_speed_mult = 1000 # 全科技研究速度大幅提高，便于快速跑完科技线。
+	megastructure_build_speed_mult = 1000 # 巨构建造速度大幅提高，便于测试命运观测塔等后期工程。
+	ship_build_speed_mult = 1000 # 舰船建造速度大幅提高，便于测试命运之主与舰队组件。
+	army_build_speed_mult = 1000 # 陆军招募速度大幅提高，便于测试神器使陆军。
+	planet_building_build_speed_mult = 1000 # 行星建筑建造速度大幅提高，便于测试专属建筑。
+	planet_district_build_speed_mult = 1000 # 行星区划建造速度大幅提高，便于测试命运都市区划。
+	planet_decision_enact_speed_mult = 1000 # 行星决议执行速度大幅提高，便于测试命运都市工程。
+	starbase_module_build_speed_mult = 1000 # 空间站模块建造速度大幅提高，便于测试星港扩展。
+	starbase_building_build_speed_mult = 1000 # 空间站建筑建造速度大幅提高，便于测试星港建筑。
+	starbase_upgrade_speed_mult = 1000 # 空间站升级速度大幅提高，便于测试星系防务扩张。
+}

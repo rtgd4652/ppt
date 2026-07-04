@@ -84,6 +84,62 @@ edict_contact_aemusa = {
     }
 }
 
+# 临时测试法令：给玩家快速灌入测试资源、永久超频修正，并把神器使领袖补到 30 级。
+edict_aemusa_debug_overdrive = {
+	length = 0 # 即时触发，不占用法令栏；永久效果通过国家修正保存。
+	icon = "GFX_edict_contact_aemusa" # 复用已有通讯图标，避免为临时测试按钮额外引入图标依赖。
+
+	potential = {
+		is_ai = no # 仅玩家可见，避免 AI 测试加成污染正常局势。
+	}
+
+	allow = {
+		always = yes # 测试按钮不设置花费和门槛，便于随时刷新效果。
+	}
+
+	effect = {
+		add_modifier = {
+			modifier = aemusa_debug_overdrive # 添加永久测试修正。
+			days = -1 # -1 表示永久持续。
+		}
+
+		add_resource = {
+			energy = 100000000 # 测试能源。
+			minerals = 100000000 # 测试矿物。
+			food = 100000000 # 测试食物。
+			alloys = 100000000 # 测试合金。
+			consumer_goods = 100000000 # 测试消费品。
+			volatile_motes = 10000000 # 测试易爆微粒。
+			exotic_gases = 10000000 # 测试异星天然气。
+			rare_crystals = 10000000 # 测试稀有水晶。
+			unity = 100000000 # 测试凝聚力。
+			influence = 5000000 # 测试影响力。
+			minor_artifacts = 5000000 # 测试小型文物。
+			physics_research = 100000000 # 测试物理学点数。
+			society_research = 100000000 # 测试社会学点数。
+			engineering_research = 100000000 # 测试工程学点数。
+		}
+
+		every_owned_leader = {
+			limit = {
+				OR = {
+					has_leader_flag = aemusa_unique_leader # 爱缪莎。
+					has_leader_flag = seth_unique_leader # 赛斯。
+					has_trait = leader_trait_aemusa_commander # 爱缪莎指挥官形态。
+					has_trait = leader_trait_aemusa_official # 爱缪莎行政官形态。
+					has_trait = leader_trait_aemusa_scientist # 爱缪莎科学家形态。
+					has_trait = leader_trait_seth_official # 赛斯行政官形态。
+				}
+			}
+			aemusa_debug_raise_artifact_leader_to_30 = yes # 将所有已接入神器使领袖补到 30 级。
+		}
+	}
+
+	ai_weight = {
+		weight = 0 # 测试法令禁止 AI 使用。
+	}
+}
+
 # 科技档案法令：旧版兼容入口已停用，避免绕过爱缪莎飞升解锁科技线的规则。
 edict_artifact_research_archive = {
 	length = 0

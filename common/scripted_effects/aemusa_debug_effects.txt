@@ -1,0 +1,42 @@
+# 测试辅助效果：把当前领袖逐级补到 30 级，避免已经高等级的领袖被一次性加过头。
+aemusa_debug_raise_artifact_leader_to_30 = {
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 1 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 2 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 3 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 4 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 5 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 6 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 7 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 8 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 9 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 10 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 11 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 12 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 13 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 14 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 15 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 16 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 17 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 18 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 19 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 20 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 21 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 22 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 23 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 24 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 25 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 26 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 27 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 28 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 29 次补级。
+	if = { limit = { has_base_skill < 30 } add_skill = 1 } # 第 30 次补级。
+
+	if = {
+		limit = {
+			has_leader_flag = aemusa_unique_leader # 只有爱缪莎需要同步 30 级成长肖像。
+			has_base_skill >= 30
+		}
+		set_leader_flag = aemusa_level_30_portrait # 测试法令直接补级时，手动补上升级事件通常设置的标记。
+		aemusa_refresh_portrait = yes # 立即刷新为 30 级专属立绘。
+	}
+}
