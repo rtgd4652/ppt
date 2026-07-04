@@ -18,6 +18,8 @@ destiny_lord = {
 	num_target_locators = 8
 	is_space_station = no
 	base_buildtime = 3600
+	# 研究舰体科技后自动生成默认设计，使命运之主进入舰船设计器列表。
+	enable_default_design = yes
 	enable_3dview_in_ship_browser = yes
 	default_behavior = artillery
 	role_background = "GFX_role_selection_titan"
@@ -29,6 +31,8 @@ destiny_lord = {
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
+	# 命运之主拥有专属传感器，尺寸定义也必须声明该必需组件集。
+	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"
 	# 命运之主只强制一枚作战电脑；两枚光环由舰艉的专属可选槽承载。
 	potential_country = {

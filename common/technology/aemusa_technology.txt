@@ -324,6 +324,13 @@ tech_artifact_destiny_lord = {
 	category = { voidcraft }
 	is_rare = yes
 	prerequisites = { "tech_artifact_fate_observatory" "tech_titans" }
+	# 在科技卡上明确提示该科技会解锁命运之主舰船类型。
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_DESTINY_LORD_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_DESTINY_LORD_CONSTRUCTION_DESC"
+		}
+	}
 	weight = 10
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }

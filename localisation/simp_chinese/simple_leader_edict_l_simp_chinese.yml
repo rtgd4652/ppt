@@ -318,6 +318,8 @@
  tech_artifact_fate_observatory_desc:0 "将黑门观测阵列、中央庭档案与塔罗演算核心汇聚为一座巨构。它能够守望整片星海的灾厄征兆。"
  tech_artifact_destiny_lord:0 "命运之主舰体工程"
  tech_artifact_destiny_lord_desc:0 "以命运观测塔的演算结果统合超旗舰的武器、装甲与航行系统。这艘舰并非为了战争而存在，而是为了让灾厄无从抵达应被守护之人。"
+ TECH_UNLOCK_DESTINY_LORD_CONSTRUCTION_TITLE:0 "§H$UNLOCKS_SHIP_TYPE$：§!命运之主"
+ TECH_UNLOCK_DESTINY_LORD_CONSTRUCTION_DESC:0 "§H命运之主§!\n完成该科技后，舰船设计器将生成命运之主默认设计。建造仍需要拥有泰坦船坞的堡垒级星港。"
  artifact_fate_observatory_0:0 "命运观测塔：奠基"
  artifact_fate_observatory_0_DESC:0 "中央庭正在部署第一座跨星系命运观测设施。"
  artifact_fate_observatory_1:0 "命运观测塔：黑门阵列"
