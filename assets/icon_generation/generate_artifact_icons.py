@@ -275,6 +275,8 @@ def output_icon(rel: str, image: Image.Image) -> Image.Image:
         return image.resize((64, 64), Image.Resampling.LANCZOS)
     if rel.startswith("edicts/"):
         return image.resize((32, 32), Image.Resampling.LANCZOS)
+    if rel.startswith("ship_parts/"):
+        return image.resize((64, 64), Image.Resampling.LANCZOS)
     return image
 
 
