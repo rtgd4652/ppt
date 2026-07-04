@@ -266,9 +266,15 @@ def make_icon(motif: str, palette: str, variant: str) -> Image.Image:
 
 
 def output_icon(rel: str, image: Image.Image) -> Image.Image:
-    # 传统树节点按纹理原尺寸绘制，必须使用小图标，否则会在传统界面互相覆盖。
+    # 这些 UI 位置会按纹理原尺寸绘制，必须按用途输出小图标。
     if rel.startswith("traditions/tr_artifact_court_"):
+        return image.resize((48, 48), Image.Resampling.LANCZOS)
+    if rel == "traditions/tradition_icon_artifact_court":
         return image.resize((64, 64), Image.Resampling.LANCZOS)
+    if rel.startswith("ascension_perks/"):
+        return image.resize((64, 64), Image.Resampling.LANCZOS)
+    if rel.startswith("edicts/"):
+        return image.resize((32, 32), Image.Resampling.LANCZOS)
     return image
 
 
