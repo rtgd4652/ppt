@@ -41,8 +41,8 @@ destiny_lord = {
 	}
 	potential_construction = { is_scope_type = starbase }
 	possible_construction = {
+		# 当前版本已移除泰坦船坞，命运之主只要求最高级擎天堡星港。
 		has_starbase_size >= starbase_citadel
-		has_starbase_building = titan_yards
 	}
 	resources = { category = ships cost = { alloys = 50000 } upkeep = { energy = 100 alloys = 25 } }
 	min_upgrade_cost = { alloys = 100 }
