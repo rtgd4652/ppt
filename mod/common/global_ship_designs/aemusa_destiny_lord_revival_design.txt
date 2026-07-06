@@ -1,0 +1,29 @@
+# 命运之主重构预设：用于复活事件生成，确保舰船具备全部必需核心、传感器与双光环。
+ship_design = {
+	name = "NAME_Destiny_Lord_Reborn"
+	ship_size = destiny_lord
+	role = artillery
+	use_design_name = yes
+	is_event_design = yes
+	graphical_culture = "humanoid_01"
+
+	section = { template = "DESTINY_LORD_BOW" slot = "bow" }
+	section = { template = "DESTINY_LORD_MID" slot = "mid" }
+	section = { template = "DESTINY_LORD_STERN" slot = "stern" }
+
+	# 必需核心组件。
+	required_component = "ARTIFACT_DESTINY_LORD_REACTOR"
+	required_component = "ARTIFACT_DESTINY_LORD_DRIVE"
+	required_component = "ARTIFACT_DESTINY_LORD_THRUSTER"
+	required_component = "ARTIFACT_DESTINY_LORD_SENSOR"
+	required_component = "ARTIFACT_DESTINY_LORD_COMPUTER"
+	required_component = "ARTIFACT_AURA_GUARDIAN_MATRIX"
+	required_component = "ARTIFACT_AURA_BLACK_GATE_SUPPRESSION"
+
+	# 预设火力与防护，避免事件舰船生成后成为空壳。
+	required_component = "TITANIC_ARTIFACT_FATE_DOMINION"
+	required_component = "EXTRA_LARGE_ARTIFACT_TAROT_JUDGEMENT"
+	required_component = "LARGE_ARTIFACT_DESTINY_ARMOR_3"
+	required_component = "LARGE_ARTIFACT_BLACK_GATE_SHIELD_3"
+	required_component = "ARTIFACT_TACTICAL_CORE_3"
+}

@@ -1,5 +1,0 @@
-# 命运之主的专属光环槽：中型通用组件槽，用于安装两种中央庭光环。
-destiny_aura_slot = {
-	size = medium
-	component = utility
-}

@@ -1,0 +1,19 @@
+# 命运之主专属光环槽：尺寸对齐原版 ship_aura_components，避免第二个光环槽无法放入空光环或光环组件。
+destiny_aura_slot = {
+	size = small
+	component = utility
+}
+
+# 命运之主专属泰坦固定槽：保留固定射击逻辑，但不使用 invisible 模板名，避免详情页隐藏核心武器槽。
+destiny_titanic_fixed = {
+	size = titanic
+	component = weapon
+	is_fixed = yes
+}
+
+# 命运之主专属超大型固定槽：保留固定射击逻辑，但让配备界面按普通武器槽识别。
+destiny_extra_large_fixed = {
+	size = extra_large
+	component = weapon
+	is_fixed = yes
+}

@@ -1,0 +1,336 @@
+# 神器使专属区划：以交界都市中的学园、商业街与巡查路线为概念。
+district_artifact_nexus = {
+	base_buildtime = 480
+	icon = district_city
+	overlay_icon = GFX_district_artifact_destiny_research
+	# 4.0+ 区划必须声明区划槽；复用城市区划槽，避免加载时报缺失并崩溃。
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	# 只在标准行星区划集上显示，避免出现在环世界、轨道栖所等不匹配的地图上。
+	potential = {
+		uses_district_set = standard
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = { minerals = 500 }
+		upkeep = { energy = 2 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 500
+		planet_amenities_add = 100
+		job_researcher_add = 100
+		job_entertainer_add = 100
+	}
+}
+
+# 中央庭：命运都市主城区划，对应原版城市区划，承载住房、治理与核心建筑槽。
+district_artifact_destiny_commons = {
+	base_buildtime = 600
+	icon = district_city
+	overlay_icon = GFX_district_artifact_destiny_fleet
+	# 中央庭作为命运都市主区划，必须承载政府槽与城市建筑槽。
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
+	potential = {
+		uses_district_set = artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts_cities
+		cost = { minerals = 1400 unity = 500 }
+		upkeep = { energy = 8 consumer_goods = 2 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 900
+		planet_amenities_add = 90
+		planet_stability_add = 5
+		job_artifact_black_gate_warden_add = 2
+		job_artifact_memory_curator_add = 2
+		job_artifact_covenant_envoy_add = 1
+		job_artifact_fleet_coordinator_add = 1
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 中央城区：命运都市专属工业区划，集中产出消费品与合金。
+district_artifact_destiny_industry = {
+	base_buildtime = 600
+	icon = district_industrial
+	overlay_icon = GFX_district_artifact_destiny_industry
+	# 工业区划使用城市槽，保证新区划不会因缺少 zone_slots 触发硬错误。
+	zone_slots = {
+		slot_city_01
+		slot_city_02
+	}
+
+	potential = {
+		uses_district_set = artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1500 alloys = 200 }
+		upkeep = { energy = 8 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 300
+		job_artifact_civic_artisan_add = 3
+		job_artifact_resonance_metallurgist_add = 3
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 海湾侧城：命运都市专属基建区划，集中产出能量、矿石与食物。
+district_artifact_destiny_foundation = {
+	base_buildtime = 600
+	icon = district_generator
+	overlay_icon = GFX_district_artifact_destiny_foundation
+	# 基建区划使用资源槽，匹配能源与资源向建筑布局。
+	zone_slots = {
+		slot_energy
+	}
+
+	potential = {
+		uses_district_set = artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1200 alloys = 100 }
+		upkeep = { energy = 4 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 300
+		job_artifact_phase_technician_add = 2
+		job_artifact_phase_miner_add = 2
+		job_artifact_life_cultivator_add = 2
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 海湾区：命运都市专属港湾区划，负责贸易航线、能源中继与生活补给。
+district_artifact_destiny_bay_area = {
+	base_buildtime = 600
+	icon = district_generator
+	overlay_icon = GFX_district_artifact_destiny_foundation
+	# 海湾区偏向港湾与物流，因此使用能源槽承载基础设施。
+	zone_slots = {
+		slot_energy
+	}
+
+	potential = {
+		uses_district_set = artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1300 alloys = 150 }
+		upkeep = { energy = 6 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 250
+		planet_amenities_add = 20
+		job_artifact_phase_technician_add = 2
+		job_artifact_crossing_merchant_add = 2
+		job_artifact_life_cultivator_add = 1
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 高校学园：命运都市专属科研区划，集中产出三系科研点。
+district_artifact_destiny_research = {
+	base_buildtime = 600
+	icon = district_polytechnic
+	overlay_icon = GFX_district_artifact_destiny_research
+	# 科研区划复用城市槽，给研究与学院建筑保留合法承载区。
+	zone_slots = {
+		slot_city_01
+		slot_city_02
+	}
+
+	potential = {
+		uses_district_set = artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1400 consumer_goods = 300 }
+		upkeep = { energy = 8 consumer_goods = 3 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 300
+		job_artifact_destiny_researcher_add = 5
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 海上研究所：命运都市专属前沿科研区划，兼顾科研点与稀有资源精炼。
+district_artifact_destiny_maritime_research = {
+	base_buildtime = 600
+	icon = district_polytechnic
+	overlay_icon = GFX_district_artifact_destiny_research
+	# 海上研究所承载实验室与精炼设施，复用城市槽保持建筑兼容。
+	zone_slots = {
+		slot_city_01
+		slot_city_02
+	}
+
+	potential = {
+		uses_district_set = artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1600 consumer_goods = 500 exotic_gases = 50 }
+		upkeep = { energy = 10 consumer_goods = 5 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 250
+		job_artifact_destiny_researcher_add = 3
+		job_artifact_rare_resonator_add = 2
+		job_artifact_relic_curator_add = 1
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 东方古街：命运都市专属民生区划，负责凝聚力、舒适度与有机人口增长。
+district_artifact_destiny_fleet = {
+	base_buildtime = 600
+	icon = district_city
+	overlay_icon = GFX_district_artifact_destiny_commons
+	# 东方古街保留日常生活与商业巡查，承载普通城市槽。
+	zone_slots = {
+		slot_city_01
+		slot_city_02
+	}
+
+	potential = {
+		uses_district_set = artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1200 unity = 300 }
+		upkeep = { energy = 6 consumer_goods = 1 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 350
+		planet_amenities_add = 35
+		pop_growth_speed_mult = 0.05
+		job_artifact_memory_curator_add = 3
+		job_artifact_life_cultivator_add = 2
+		job_artifact_crossing_merchant_add = 1
+	}
+
+	ai_weight = { weight = 100 }
+}
+
+# 旧城区：命运都市专属遗迹区划，负责旧日档案、文物修复与政治承认。
+district_artifact_destiny_old_town = {
+	base_buildtime = 600
+	icon = district_city
+	overlay_icon = GFX_district_artifact_destiny_commons
+	# 旧城区是档案与遗址密集区，复用城市槽以承载文化设施。
+	zone_slots = {
+		slot_city_01
+		slot_city_02
+	}
+
+	potential = {
+		uses_district_set = artifact_destiny_city
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+
+	resources = {
+		category = planet_districts
+		cost = { minerals = 1300 unity = 600 minor_artifacts = 50 }
+		upkeep = { energy = 8 consumer_goods = 4 }
+	}
+
+	planet_modifier = {
+		planet_housing_add = 250
+		planet_stability_add = 2
+		job_artifact_relic_curator_add = 2
+		job_artifact_memory_curator_add = 2
+		job_artifact_covenant_envoy_add = 1
+		job_artifact_black_gate_warden_add = 1
+	}
+
+	ai_weight = { weight = 100 }
+}

@@ -1,0 +1,22 @@
+# 注册爱缪莎与神器使物种使用的静态肖像；直接使用 texturefile，避免议程与内阁界面把 sprite 纹理横向重复铺贴。
+portraits = {
+	# 神器使物种在帝国创建界面中使用的基础肖像。
+	aemusa_species_portrait = {
+		texturefile = "gfx/models/portraits/aemusa_portrait_upper_dxt1.dds"
+	}
+
+	# 神器使物种在帝国创建界面中的都市背景肖像。
+	aemusa_species_portrait_city = {
+		texturefile = "gfx/models/portraits/aemusa_portrait_upper_dxt1.dds"
+	}
+
+	# 11 至 29 级使用的通讯肖像。
+	aemusa_portrait = {
+		texturefile = "gfx/models/portraits/aemusa_portrait_upper_dxt1.dds"
+	}
+
+	# 爱缪莎升至 30 级后使用的成长版专属肖像。
+	aemusa_portrait_level_30 = {
+		texturefile = "gfx/models/portraits/aemusa_portrait_level_30_upper_dxt1.dds"
+	}
+}

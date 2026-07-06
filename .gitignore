@@ -1,0 +1,20 @@
+# Python 缓存
+__pycache__/
+*.py[cod]
+
+# Blender 自动备份与临时文件
+*.blend@
+*.blend.tmp
+
+# 本地运行日志
+*.log
+error.log
+game.log
+
+# 临时导出目录
+tmp/
+temp/
+
+# 系统文件
+Thumbs.db
+Desktop.ini

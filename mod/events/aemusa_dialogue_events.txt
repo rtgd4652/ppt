@@ -1,0 +1,945 @@
+# 本文件事件命名空间；所有事件 ID 均使用此前缀。
+namespace = aemusa_dialogue
+
+# 白夜馆主入口：由“联络白夜馆”法令打开，作为后续神器使领袖线的统一菜单。
+country_event = {
+    id = aemusa_dialogue.1 # 白夜馆主菜单事件 ID。
+    title = aemusa_dialogue.1.title # 标题本地化键。
+    desc = aemusa_dialogue.1.desc # 正文本地化键。
+    is_triggered_only = yes # 只能由法令或其他白夜馆事件主动调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用自定义白夜馆事件图作为主菜单背景。
+
+    option = {
+        name = aemusa_dialogue.1.communication # 右上第一枚菱形框：通讯入口。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.3 # 打开已入驻神器使通讯台。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.1.roster # 右上第二枚菱形框：名册入口。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.2 # 打开按原作分类整理的名册。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.1.memory # 右上第三枚菱形框：回忆入口。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.4 # 打开白夜馆回忆归档。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.1.goodbye # 关闭白夜馆通讯。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 白夜馆名册页：按原作来源与势力关系分组，避免所有神器使平铺在同一级菜单。
+country_event = {
+    id = aemusa_dialogue.2 # 白夜馆名册事件 ID。
+    title = aemusa_dialogue.2.title # 标题本地化键。
+    desc = aemusa_dialogue.2.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆主菜单调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 名册页沿用白夜馆前台事件图。
+
+    option = {
+        name = aemusa_dialogue.2.central_church # 查看中央庭与圣星教会相关神器使。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.40 # 打开中央庭与圣星教会分类页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.2.memory_palace # 查看主线剧情与记忆殿堂相关神器使。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.41 # 打开主线与记忆殿堂分类页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.2.white_night_gap # 查看白夜馆与记忆隙间相关神器使。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.42 # 打开白夜馆与记忆隙间分类页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.2.collaboration # 查看联动来客分类。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.43 # 打开联动来客分类页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.2.back # 返回白夜馆主菜单。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.1 # 返回白夜馆主菜单。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.2.goodbye # 关闭白夜馆名册。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 白夜馆通讯台：对应右上第一枚菱形框，只放已经接入或可直接联络的对象。
+country_event = {
+    id = aemusa_dialogue.3 # 通讯台事件 ID。
+    title = aemusa_dialogue.3.title # 标题本地化键。
+    desc = aemusa_dialogue.3.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆主菜单调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 通讯台沿用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.3.aemusa # 转入爱缪莎职责通讯。
+        trigger = {
+            exists = event_target:aemusa_leader # 仅在爱缪莎已被召唤且仍存在时显示。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.10 # 打开既有爱缪莎职业切换事件。
+                days = 1 # 延后一日打开，避免白夜馆普通事件与领袖故事窗口在同一 UI 栈中连跳。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.3.seth # 与已入驻的赛斯通讯。
+        trigger = {
+            exists = event_target:seth_leader # 已招募赛斯时显示通讯入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.31 # 打开赛斯通讯事件。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.3.yutong # 与已入驻的幽桐通讯。
+        trigger = {
+            exists = event_target:yutong_leader # 已招募幽桐时显示通讯入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.35 # 打开幽桐通讯事件。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.3.rabi # 与已入驻的拉比通讯。
+        trigger = {
+            exists = event_target:rabi_leader # 已招募拉比时显示通讯入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.45 # 打开拉比通讯事件。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.3.empty # 尚无可通讯对象时显示占位。
+        trigger = {
+            NOT = {
+                exists = event_target:aemusa_leader # 爱缪莎未接入。
+            }
+            NOT = {
+                exists = event_target:seth_leader # 赛斯未接入。
+            }
+            NOT = {
+                exists = event_target:yutong_leader # 幽桐未接入。
+            }
+            NOT = {
+                exists = event_target:rabi_leader # 拉比未接入。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.3.back # 返回白夜馆主菜单。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.1 # 返回白夜馆主菜单。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.3.goodbye # 关闭通讯台。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 白夜馆回忆页：对应右上第三枚菱形框，后续可放已解锁剧情回放。
+country_event = {
+    id = aemusa_dialogue.4 # 回忆归档事件 ID。
+    title = aemusa_dialogue.4.title # 标题本地化键。
+    desc = aemusa_dialogue.4.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆主菜单调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 回忆页沿用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.4.seth_memory # 查看赛斯回忆占位。
+        trigger = {
+            exists = event_target:seth_leader # 赛斯接入后显示他的回忆档案入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.31 # 当前先复用赛斯通讯页作为回忆回放入口。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.4.yutong_memory # 查看幽桐回忆占位。
+        trigger = {
+            exists = event_target:yutong_leader # 幽桐接入后显示他的回忆档案入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.35 # 当前先复用幽桐通讯页作为回忆回放入口。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.4.rabi_memory # 查看拉比回忆占位。
+        trigger = {
+            exists = event_target:rabi_leader # 拉比接入后显示他的回忆档案入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.45 # 当前先复用拉比通讯页作为回忆回放入口。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.4.empty # 暂无回忆时显示占位。
+        trigger = {
+            NOT = {
+                exists = event_target:seth_leader # 赛斯尚未接入时暂无可回放内容。
+            }
+            NOT = {
+                exists = event_target:yutong_leader # 幽桐尚未接入时暂无可回放内容。
+            }
+            NOT = {
+                exists = event_target:rabi_leader # 拉比尚未接入时暂无可回放内容。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.4.back # 返回白夜馆主菜单。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.1 # 返回白夜馆主菜单。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.4.goodbye # 关闭回忆归档。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 中央庭与圣星教会分类页：赛斯先从这里接入，爱缪莎作为已存在的中央庭七人众提示。
+country_event = {
+    id = aemusa_dialogue.40 # 中央庭与圣星教会分类事件 ID。
+    title = aemusa_dialogue.40.title # 标题本地化键。
+    desc = aemusa_dialogue.40.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 势力页统一沿用白夜馆前台背景，避免自绘面板与事件正文叠层。
+
+    option = {
+        name = aemusa_dialogue.40.seth_recruit # 邀请赛斯入驻白夜馆。
+        trigger = {
+            NOT = {
+                exists = event_target:seth_leader # 未招募赛斯时显示邀请入口。
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.30 # 打开赛斯入驻事件。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.40.seth_contact # 与已入驻的赛斯通讯。
+        trigger = {
+            exists = event_target:seth_leader # 已招募赛斯时显示通讯入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.31 # 打开赛斯通讯事件。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.40.aemusa_contact # 与已入驻的爱缪莎通讯。
+        trigger = {
+            exists = event_target:aemusa_leader # 已召唤爱缪莎时显示通讯入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.10 # 打开爱缪莎职业通讯。
+                days = 1 # 延后一日打开领袖故事窗口，规避 UI 栈问题。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.40.back # 返回名册分类页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.2 # 返回白夜馆名册。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.40.goodbye # 关闭分类页。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 主线剧情与记忆殿堂分类页：幽桐与拉比从这里接入。
+country_event = {
+    id = aemusa_dialogue.41 # 主线与记忆殿堂分类事件 ID。
+    title = aemusa_dialogue.41.title # 标题本地化键。
+    desc = aemusa_dialogue.41.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 势力页统一沿用白夜馆前台背景，避免自绘面板与事件正文叠层。
+
+    option = {
+        name = aemusa_dialogue.41.yutong_recruit # 邀请幽桐入驻白夜馆。
+        trigger = {
+            NOT = {
+                exists = event_target:yutong_leader # 未招募幽桐时显示邀请入口。
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.34 # 打开幽桐入驻事件。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.41.yutong_contact # 与已入驻的幽桐通讯。
+        trigger = {
+            exists = event_target:yutong_leader # 已招募幽桐时显示通讯入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.35 # 打开幽桐通讯事件。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.41.rabi_recruit # 邀请拉比入驻白夜馆。
+        trigger = {
+            NOT = {
+                exists = event_target:rabi_leader # 未招募拉比时显示邀请入口。
+            }
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.44 # 打开拉比入驻事件。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.41.rabi_contact # 与已入驻的拉比通讯。
+        trigger = {
+            exists = event_target:rabi_leader # 已招募拉比时显示通讯入口。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.45 # 打开拉比通讯事件。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.41.back # 返回名册分类页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.2 # 返回白夜馆名册。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.41.goodbye # 关闭分类页。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 白夜馆与记忆隙间分类页：先放格蕾莎的可见占位，后续接入领袖效果。
+country_event = {
+    id = aemusa_dialogue.42 # 白夜馆与记忆隙间分类事件 ID。
+    title = aemusa_dialogue.42.title # 标题本地化键。
+    desc = aemusa_dialogue.42.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 势力页统一沿用白夜馆前台背景，避免自绘面板与事件正文叠层。
+
+    option = {
+        name = aemusa_dialogue.42.gresha_pending # 格蕾莎暂未接入。
+        # 占位按钮不再回调当前事件，避免同一事件窗口自我重开导致 UI 栈崩溃。
+    }
+
+    option = {
+        name = aemusa_dialogue.42.back # 返回名册分类页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.2 # 返回白夜馆名册。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.42.goodbye # 关闭分类页。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 联动来客分类页：先放冈部伦太郎的可见占位，后续接入领袖效果。
+country_event = {
+    id = aemusa_dialogue.43 # 联动来客分类事件 ID。
+    title = aemusa_dialogue.43.title # 标题本地化键。
+    desc = aemusa_dialogue.43.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 势力页统一沿用白夜馆前台背景，避免自绘面板与事件正文叠层。
+
+    option = {
+        name = aemusa_dialogue.43.okabe_pending # 冈部伦太郎暂未接入。
+        # 占位按钮不再回调当前事件，避免同一事件窗口自我重开导致 UI 栈崩溃。
+    }
+
+    option = {
+        name = aemusa_dialogue.43.back # 返回名册分类页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.2 # 返回白夜馆名册。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.43.goodbye # 关闭分类页。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 赛斯入驻事件：从白夜馆名册中招募赛斯。
+country_event = {
+    id = aemusa_dialogue.30 # 赛斯招募事件 ID。
+    title = aemusa_dialogue.30.title # 标题本地化键。
+    desc = aemusa_dialogue.30.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.30.accept # 确认招募赛斯。
+        trigger = {
+            NOT = {
+                exists = event_target:seth_leader # 防止重复招募。
+            }
+        }
+        hidden_effect = {
+            seth_summon_leader = yes # 调用脚本化效果创建赛斯。
+            country_event = {
+                id = aemusa_dialogue.31 # 接入完成后转入赛斯通讯。
+                days = 1 # 延后一日打开，避免招募窗口与通讯窗口在同一 UI 栈中连跳。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.30.back # 返回白夜馆名册。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.2 # 返回白夜馆名册。
+            }
+        }
+    }
+}
+
+# 赛斯通讯事件：展示赛斯当前定位，后续可在这里接职业选择与专属任务。
+country_event = {
+    id = aemusa_dialogue.31 # 赛斯通讯事件 ID。
+    title = aemusa_dialogue.31.title # 标题本地化键。
+    desc = aemusa_dialogue.31.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.31.profile # 查看赛斯的白夜馆档案。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.32 # 打开赛斯档案页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.31.duty # 查看赛斯当前值班安排。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.33 # 打开赛斯值班页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.31.communication # 返回白夜馆通讯台。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.3 # 返回通讯入口，便于继续联系其他已接入神器使。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.31.back # 返回白夜馆名册。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.2 # 返回白夜馆名册。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.31.goodbye # 关闭赛斯通讯。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 赛斯档案页：展示原作定位、神器与当前星海职责。
+country_event = {
+    id = aemusa_dialogue.32 # 赛斯档案事件 ID。
+    title = aemusa_dialogue.32.title # 标题本地化键。
+    desc = aemusa_dialogue.32.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由赛斯通讯页调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.32.back # 返回赛斯通讯页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.31 # 返回赛斯通讯。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.32.roster # 返回中央庭与圣星教会名册。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.40 # 返回所属分类页。
+            }
+        }
+    }
+}
+
+# 赛斯值班页：展示招募后可见的支援职责说明。
+country_event = {
+    id = aemusa_dialogue.33 # 赛斯值班事件 ID。
+    title = aemusa_dialogue.33.title # 标题本地化键。
+    desc = aemusa_dialogue.33.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由赛斯通讯页调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.33.back # 返回赛斯通讯页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.31 # 返回赛斯通讯。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.33.communication # 返回通讯台。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.3 # 返回白夜馆通讯入口。
+            }
+        }
+    }
+}
+
+# 幽桐入驻事件：从主线剧情与记忆殿堂名册中招募幽桐。
+country_event = {
+    id = aemusa_dialogue.34 # 幽桐招募事件 ID。
+    title = aemusa_dialogue.34.title # 标题本地化键。
+    desc = aemusa_dialogue.34.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.34.accept # 确认招募幽桐。
+        trigger = {
+            NOT = {
+                exists = event_target:yutong_leader # 防止重复招募。
+            }
+        }
+        hidden_effect = {
+            yutong_summon_leader = yes # 调用脚本化效果创建幽桐。
+            country_event = {
+                id = aemusa_dialogue.35 # 接入完成后转入幽桐通讯。
+                days = 1 # 延后一日打开，避免招募窗口与通讯窗口在同一 UI 栈中连跳。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.34.back # 返回主线剧情与记忆殿堂名册。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.41 # 返回所属分类页。
+            }
+        }
+    }
+}
+
+# 幽桐通讯事件：展示幽桐当前定位，后续可在这里接远程压制任务。
+country_event = {
+    id = aemusa_dialogue.35 # 幽桐通讯事件 ID。
+    title = aemusa_dialogue.35.title # 标题本地化键。
+    desc = aemusa_dialogue.35.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册和通讯台调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.35.profile # 查看幽桐的白夜馆档案。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.36 # 打开幽桐档案页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.35.duty # 查看幽桐当前值班安排。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.37 # 打开幽桐值班页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.35.communication # 返回白夜馆通讯台。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.3 # 返回通讯入口。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.35.back # 返回主线剧情与记忆殿堂名册。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.41 # 返回所属分类页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.35.goodbye # 关闭幽桐通讯。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 幽桐档案页：展示原作定位、神器与当前星海职责。
+country_event = {
+    id = aemusa_dialogue.36 # 幽桐档案事件 ID。
+    title = aemusa_dialogue.36.title # 标题本地化键。
+    desc = aemusa_dialogue.36.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由幽桐通讯页调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.36.back # 返回幽桐通讯页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.35 # 返回幽桐通讯。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.36.roster # 返回主线剧情与记忆殿堂名册。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.41 # 返回所属分类页。
+            }
+        }
+    }
+}
+
+# 幽桐值班页：展示招募后可见的远程压制职责说明。
+country_event = {
+    id = aemusa_dialogue.37 # 幽桐值班事件 ID。
+    title = aemusa_dialogue.37.title # 标题本地化键。
+    desc = aemusa_dialogue.37.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由幽桐通讯页调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.37.back # 返回幽桐通讯页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.35 # 返回幽桐通讯。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.37.communication # 返回通讯台。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.3 # 返回白夜馆通讯入口。
+            }
+        }
+    }
+}
+
+# 拉比入驻事件：从主线剧情与记忆殿堂名册中招募拉比。
+country_event = {
+    id = aemusa_dialogue.44 # 拉比招募事件 ID。
+    title = aemusa_dialogue.44.title # 标题本地化键。
+    desc = aemusa_dialogue.44.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.44.accept # 确认招募拉比。
+        trigger = {
+            NOT = {
+                exists = event_target:rabi_leader # 防止重复招募。
+            }
+        }
+        hidden_effect = {
+            rabi_summon_leader = yes # 调用脚本化效果创建拉比。
+            country_event = {
+                id = aemusa_dialogue.45 # 接入完成后转入拉比通讯。
+                days = 1 # 延后一日打开，避免招募窗口与通讯窗口在同一 UI 栈中连跳。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.44.back # 返回主线剧情与记忆殿堂名册。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.41 # 返回所属分类页。
+            }
+        }
+    }
+}
+
+# 拉比通讯事件：展示拉比当前定位，后续可在这里接地面突破任务。
+country_event = {
+    id = aemusa_dialogue.45 # 拉比通讯事件 ID。
+    title = aemusa_dialogue.45.title # 标题本地化键。
+    desc = aemusa_dialogue.45.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由白夜馆名册和通讯台调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.45.profile # 查看拉比的白夜馆档案。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.46 # 打开拉比档案页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.45.duty # 查看拉比当前值班安排。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.47 # 打开拉比值班页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.45.communication # 返回白夜馆通讯台。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.3 # 返回通讯入口。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.45.back # 返回主线剧情与记忆殿堂名册。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.41 # 返回所属分类页。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.45.goodbye # 关闭拉比通讯。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 拉比档案页：展示原作定位、神器与当前星海职责。
+country_event = {
+    id = aemusa_dialogue.46 # 拉比档案事件 ID。
+    title = aemusa_dialogue.46.title # 标题本地化键。
+    desc = aemusa_dialogue.46.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由拉比通讯页调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.46.back # 返回拉比通讯页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.45 # 返回拉比通讯。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.46.roster # 返回主线剧情与记忆殿堂名册。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.41 # 返回所属分类页。
+            }
+        }
+    }
+}
+
+# 拉比值班页：展示招募后可见的地面突破职责说明。
+country_event = {
+    id = aemusa_dialogue.47 # 拉比值班事件 ID。
+    title = aemusa_dialogue.47.title # 标题本地化键。
+    desc = aemusa_dialogue.47.desc # 正文本地化键。
+    is_triggered_only = yes # 仅由拉比通讯页调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    option = {
+        name = aemusa_dialogue.47.back # 返回拉比通讯页。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.45 # 返回拉比通讯。
+            }
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.47.communication # 返回通讯台。
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.3 # 返回白夜馆通讯入口。
+            }
+        }
+    }
+}
+
+# 通讯对话：由“联络爱缪莎”法令主动触发。
+country_event = {
+    id = aemusa_dialogue.10 # 供法令引用的事件 ID。
+    title = aemusa_dialogue.10.title # 标题本地化键。
+    desc = aemusa_dialogue.10.desc # 正文本地化键。
+    is_triggered_only = yes # 禁止随机触发，只能由法令调用。
+    picture = GFX_evt_aemusa_white_night_pavilion # 提供兜底事件图，避免领袖故事窗口关闭时出现空 sprite。
+    event_window_type = leader_story # 使用原版领袖故事窗口样式。
+
+    immediate = {
+        # 每次通讯均刷新肖像，让旧存档中的爱缪莎也切换为上半身版本。
+        event_target:aemusa_leader = {
+            aemusa_refresh_portrait = yes
+        }
+    }
+
+    picture_event_data = {
+        portrait = event_target:aemusa_leader # 显示已保存的爱缪莎肖像。
+        room = ethic_spaceship_room # 使用原版太空船通讯背景。
+    }
+
+    option = {
+        name = aemusa_dialogue.10.commander # 指挥官选项文本。
+        hidden_effect = {
+            aemusa_become_commander = yes # 调用指挥官切换效果。
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.10.official # 行政官选项文本。
+        hidden_effect = {
+            aemusa_become_official = yes # 调用行政官切换效果。
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.10.scientist # 科学家选项文本。
+        hidden_effect = {
+            aemusa_become_scientist = yes # 调用科学家切换效果。
+        }
+    }
+
+    option = {
+        name = aemusa_dialogue.10.goodbye # 不改变职业，关闭通讯。
+        default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
+    }
+}
+
+# 领袖升级检测：由 on_leader_level_up 调用；此时 this 为国家，from 为刚升级的领袖。
+country_event = {
+    id = aemusa_dialogue.20 # 30 级肖像升级事件。
+    hide_window = yes # 自动执行，不弹出额外事件窗口。
+    is_triggered_only = yes # 仅由 on_action 调用。
+
+    trigger = {
+        from = {
+            has_leader_flag = aemusa_unique_leader # 确保仅处理爱缪莎。
+            has_base_skill >= 30 # 达到设定满级。
+            NOT = {
+                has_leader_flag = aemusa_level_30_portrait # 防止重复切换肖像。
+            }
+        }
+    }
+
+    immediate = {
+        from = {
+            set_leader_flag = aemusa_level_30_portrait # 记录已解锁 30 级外观。
+            aemusa_refresh_portrait = yes # 立即换成 30 级专属肖像。
+        }
+    }
+}

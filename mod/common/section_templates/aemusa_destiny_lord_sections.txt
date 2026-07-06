@@ -1,0 +1,81 @@
+# 命运之主船艏：按船模设计保留 16 个泰坦级主炮槽。
+ship_section_template = {
+	key = "DESTINY_LORD_BOW"
+	ship_size = destiny_lord
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "destiny_lord_bow_entity"
+	icon = "GFX_ship_part_core_bow"
+	ai_tags = { artillery }
+	component_slot = { name = "T_01" template = "destiny_titanic_fixed" locatorname = "titanic_gun_01" }
+	component_slot = { name = "T_02" template = "destiny_titanic_fixed" locatorname = "titanic_gun_02" }
+	component_slot = { name = "T_03" template = "destiny_titanic_fixed" locatorname = "titanic_gun_03" }
+	component_slot = { name = "T_04" template = "destiny_titanic_fixed" locatorname = "titanic_gun_04" }
+	component_slot = { name = "T_05" template = "destiny_titanic_fixed" locatorname = "titanic_gun_05" }
+	component_slot = { name = "T_06" template = "destiny_titanic_fixed" locatorname = "titanic_gun_06" }
+	component_slot = { name = "T_07" template = "destiny_titanic_fixed" locatorname = "titanic_gun_07" }
+	component_slot = { name = "T_08" template = "destiny_titanic_fixed" locatorname = "titanic_gun_08" }
+	component_slot = { name = "T_09" template = "destiny_titanic_fixed" locatorname = "titanic_gun_09" }
+	component_slot = { name = "T_10" template = "destiny_titanic_fixed" locatorname = "titanic_gun_10" }
+	component_slot = { name = "T_11" template = "destiny_titanic_fixed" locatorname = "titanic_gun_11" }
+	component_slot = { name = "T_12" template = "destiny_titanic_fixed" locatorname = "titanic_gun_12" }
+	component_slot = { name = "T_13" template = "destiny_titanic_fixed" locatorname = "titanic_gun_13" }
+	component_slot = { name = "T_14" template = "destiny_titanic_fixed" locatorname = "titanic_gun_14" }
+	component_slot = { name = "T_15" template = "destiny_titanic_fixed" locatorname = "titanic_gun_15" }
+	component_slot = { name = "T_16" template = "destiny_titanic_fixed" locatorname = "titanic_gun_16" }
+	large_utility_slots = 8
+	resources = { category = ship_sections cost = { alloys = 12000 } }
+}
+
+# 命运之主舰体：按船模设计保留 20 个超大型武器槽。
+ship_section_template = {
+	key = "DESTINY_LORD_MID"
+	ship_size = destiny_lord
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "destiny_lord_mid_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { artillery }
+	component_slot = { name = "X_01" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_01" }
+	component_slot = { name = "X_02" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_02" }
+	component_slot = { name = "X_03" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_03" }
+	component_slot = { name = "X_04" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_04" }
+	component_slot = { name = "X_05" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_05" }
+	component_slot = { name = "X_06" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_06" }
+	component_slot = { name = "X_07" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_07" }
+	component_slot = { name = "X_08" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_08" }
+	component_slot = { name = "X_09" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_09" }
+	component_slot = { name = "X_10" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_10" }
+	component_slot = { name = "X_11" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_11" }
+	component_slot = { name = "X_12" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_12" }
+	component_slot = { name = "X_13" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_13" }
+	component_slot = { name = "X_14" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_14" }
+	component_slot = { name = "X_15" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_15" }
+	component_slot = { name = "X_16" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_16" }
+	component_slot = { name = "X_17" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_17" }
+	component_slot = { name = "X_18" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_18" }
+	component_slot = { name = "X_19" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_19" }
+	component_slot = { name = "X_20" template = "destiny_extra_large_fixed" locatorname = "extra_large_gun_20" }
+	large_utility_slots = 12
+	resources = { category = ship_sections cost = { alloys = 18000 } }
+}
+
+# 命运之主演算船尾：补足 L 槽与防护槽；泰坦光环由船体 required_component_set 统一生成。
+ship_section_template = {
+	key = "DESTINY_LORD_STERN"
+	ship_size = destiny_lord
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "destiny_lord_stern_entity"
+	icon = "GFX_ship_part_core_stern"
+	ai_tags = { artillery }
+	component_slot = { name = "L_01" template = "large_turret" locatorname = "large_gun_01" }
+	component_slot = { name = "L_02" template = "large_turret" locatorname = "large_gun_02" }
+	component_slot = { name = "L_03" template = "large_turret" locatorname = "large_gun_03" }
+	component_slot = { name = "L_04" template = "large_turret" locatorname = "large_gun_04" }
+	component_slot = { name = "L_05" template = "large_turret" locatorname = "large_gun_05" }
+	component_slot = { name = "L_06" template = "large_turret" locatorname = "large_gun_06" }
+	large_utility_slots = 4
+	aux_utility_slots = 4
+	resources = { category = ship_sections cost = { alloys = 10000 } }
+}

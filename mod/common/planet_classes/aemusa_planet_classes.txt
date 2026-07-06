@@ -1,0 +1,82 @@
+# 神器使专属初始星球：交界都市。
+# 初始母星保留标准区划组，让开局经济和原版自动规划保持兼容。
+pc_artifact_crossing_city = {
+	entity = "city_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_city
+	icon_large = GFX_planet_type_city_big
+
+	climate = "wet"
+	atmosphere_color = hsv { 0.60 0.25 0.90 }
+	atmosphere_intensity = 1.0
+	atmosphere_width = 0.5
+	city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+
+	# 交界都市是故事发生地，拥有稳定生活条件与适度城市协作优势。
+	modifier = {
+		planet_stability_add = 5
+		planet_amenities_add = 200
+		planet_jobs_produces_mult = 0.05
+		pop_environment_tolerance = 1.0
+	}
+
+	min_distance_from_sun = @habitable_min_distance
+	max_distance_from_sun = @habitable_max_distance
+	spawn_odds = 0
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	chance_of_ring = 0.2
+	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
+	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
+
+	colonizable = yes
+	starting_planet = no
+	ideal = yes
+	district_set = standard
+	uses_alternative_skies_for_moons = no
+	uses_alternative_skies_if_has_orbital_ring = yes
+	carry_cap_per_free_district = @carry_cap_normal
+}
+
+# 命运都市：神器使后期专属理想星球，由决议从标准殖民地转化而来。
+pc_artifact_destiny_city = {
+	entity = "city_planet"
+	entity_scale = @planet_standard_scale
+	icon = GFX_planet_type_city
+	icon_large = GFX_planet_type_city_big
+
+	climate = "wet"
+	atmosphere_color = hsv { 0.58 0.30 1.00 }
+	atmosphere_intensity = 1.2
+	atmosphere_width = 0.6
+	city_color_lut = "gfx/portraits/misc/colorcorrection_continental.dds"
+
+	# 命运都市将神器使经济全部纳入中央庭演算，类似理想城但保留神器使自己的建筑与职业体系。
+	modifier = {
+		planet_stability_add = 15
+		planet_amenities_add = 500
+		planet_jobs_produces_mult = 0.25
+		planet_housing_add = 1000
+		pop_environment_tolerance = 1.0
+	}
+
+	min_distance_from_sun = @habitable_min_distance
+	max_distance_from_sun = @habitable_max_distance
+	spawn_odds = 0
+	# 固定都市外观层级，确保决议后星球视觉会切换到完整城市世界。
+	fixed_city_level = 6
+	extra_orbit_size = 0
+	extra_planet_count = 0
+	chance_of_ring = 0.4
+	planet_size = { min = @habitable_planet_min_size max = @habitable_planet_max_size }
+	moon_size = { min = @habitable_moon_min_size max = @habitable_moon_max_size }
+
+	colonizable = yes
+	starting_planet = no
+	ideal = yes
+	# 转化后的命运都市使用专属区划组，专属区划不再只藏在标准区划替换列表中。
+	district_set = artifact_destiny_city
+	uses_alternative_skies_for_moons = no
+	uses_alternative_skies_if_has_orbital_ring = yes
+	carry_cap_per_free_district = @carry_cap_normal
+}

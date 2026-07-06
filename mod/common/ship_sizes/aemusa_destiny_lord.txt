@@ -1,0 +1,56 @@
+# 命运之主：中央庭以命运观测塔演算结果驱动的神器使超旗舰。
+destiny_lord = {
+	# 命运之主使用唯一专属实体，不按帝国舰船文化拼接模型。
+	graphical_culture = no
+	entity = "destiny_lord_entity"
+	formation_priority = 100
+	max_speed = 40
+	acceleration = 0.10
+	rotation_speed = 0.08
+	collision_radius = 180
+	max_hitpoints = 60000
+	modifier = { ship_evasion_add = 5 }
+	size_multiplier = 160
+	map_counter_icon = ship_counter_64
+	icon = ship_size_military_16
+	fleet_slot_size = 64
+	section_slots = { "bow" = { locator = "part1" } "mid" = { locator = "part2" } "stern" = { locator = "part3" } }
+	num_target_locators = 8
+	is_space_station = no
+	base_buildtime = 3600
+	# 研究舰体科技后自动生成默认设计，使命运之主进入舰船设计器列表。
+	enable_default_design = yes
+	enable_3dview_in_ship_browser = yes
+	default_behavior = artillery
+	role_background = "GFX_role_selection_titan"
+	ship_roles = { artillery gunship }
+	prerequisites = { "tech_artifact_destiny_lord" }
+	combat_disengage_chance = 0.5
+	class = shipclass_military
+	construction_type = starbase_shipyard
+
+	# 必需核心组件。
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	required_component_set = "ship_aura_components"
+	required_component_set = "station_large_aura_components"
+
+	potential_country = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
+	potential_construction = { is_scope_type = starbase }
+	possible_construction = {
+		# 当前版本已移除泰坦船坞，命运之主只要求最高级擎天堡星港。
+		has_starbase_size >= starbase_citadel
+	}
+	resources = {
+		category = ships
+		cost = { alloys = 50000 }
+		upkeep = { energy = 100 alloys = 25 }
+	}
+	min_upgrade_cost = { alloys = 100 }
+}
