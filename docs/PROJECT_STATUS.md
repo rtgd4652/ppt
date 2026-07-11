@@ -25,6 +25,7 @@
 
 ## In Progress
 
+- v0.1.0 候选已经推送到 `origin/parallel/v1-integration`。
 - 使用只启用本 Mod 的新开局执行 v0.1.0 手动复测。
 - 生成新的 `error.log`，确认当前修复后的真实运行状态。
 - 核对四名领袖的招募、唯一性、职业、trait 与存读档状态。
