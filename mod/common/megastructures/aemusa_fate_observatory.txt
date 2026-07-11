@@ -65,10 +65,7 @@ artifact_fate_observatory_3 = {
 	country_modifier = {
 		ship_sensor_range_add = 12
 		ship_anomaly_research_speed_mult = 0.35
-		# 使用三系科研修正替代无效的全科研修正符。
-		category_physics_research_speed_mult = 0.25
-		category_society_research_speed_mult = 0.25
-		category_engineering_research_speed_mult = 0.25
+		# 当前版本不接受分学科科研速度修正，巨构完工阶段只保留传感、异常研究和国力加成。
 		country_unity_produces_mult = 0.20
 		country_naval_cap_add = 300
 		country_starbase_capacity_add = 4

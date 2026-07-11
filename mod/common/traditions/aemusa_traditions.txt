@@ -10,10 +10,7 @@ tr_artifact_court_adopt = {
 tr_artifact_court_finish = {
 	modifier = {
 		country_edict_fund_add = 200
-		# 使用三系科研修正替代无效的全科研修正符。
-		category_physics_research_speed_mult = 0.10
-		category_society_research_speed_mult = 0.10
-		category_engineering_research_speed_mult = 0.10
+		# 当前版本不接受分学科科研速度修正，完成传统只保留已验证的法令和飞升槽效果。
 		ascension_perks_add = 1
 	}
 }
@@ -40,10 +37,7 @@ tr_artifact_court_tarot_archive = {
 	modifier = {
 		num_tech_alternatives_add = 1
 		scientist_initial_skill = 1
-		# 使用三系科研修正替代无效的全科研修正符。
-		category_physics_research_speed_mult = 0.10
-		category_society_research_speed_mult = 0.10
-		category_engineering_research_speed_mult = 0.10
+		# 当前版本不接受分学科科研速度修正，保留可用的科研选项和初始技能加成。
 	}
 }
 

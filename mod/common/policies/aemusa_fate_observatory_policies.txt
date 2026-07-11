@@ -30,10 +30,7 @@ artifact_fate_observatory_mode = {
 			artifact_fate_observatory_mode_calculation
 		}
 		modifier = {
-			# 使用三系科研修正替代无效的全科研修正符。
-			category_physics_research_speed_mult = 0.35
-			category_society_research_speed_mult = 0.35
-			category_engineering_research_speed_mult = 0.35
+			# 当前版本不接受分学科科研速度修正，演算模式先保留传感和法令容量。
 			ship_sensor_range_add = 4
 			country_edict_fund_add = 100
 		}

@@ -18,10 +18,7 @@ ap_artifact_user_resonance_path = {
 	}
 
 	modifier = {
-		# 一段飞升只给稳定成长与军备铺垫，避免前期直接爆表。
-		category_physics_research_speed_mult = 0.05
-		category_society_research_speed_mult = 0.05
-		category_engineering_research_speed_mult = 0.05
+		# 当前版本不接受分学科科研速度修正，一段飞升只保留产业和舰容加成。
 		country_alloys_produces_mult = 0.05
 		country_consumer_goods_produces_mult = 0.05
 		country_naval_cap_mult = 0.10
@@ -54,16 +51,12 @@ ap_artifact_user_apotheosis_path = {
 	}
 
 	modifier = {
-		# 二段飞升进入后期超模段，强化舰队与全局产能。
-		category_physics_research_speed_mult = 0.10
-		category_society_research_speed_mult = 0.10
-		category_engineering_research_speed_mult = 0.10
+		# 当前版本不接受分学科科研速度修正，二段飞升保留产业、凝聚力和舰队强化。
 		country_alloys_produces_mult = 0.10
 		country_consumer_goods_produces_mult = 0.10
 		country_unity_produces_mult = 0.10
 		country_naval_cap_mult = 0.20
-		ship_fire_rate_mult = 0.10
-		ship_weapon_damage_mult = 0.10
+		ship_fire_rate_mult = 0.15 # 使用已验证的射速修正，避免通用武器伤害修正报错。
 	}
 
 	ai_weight = {
@@ -101,10 +94,7 @@ ap_artifact_court_destiny = {
 
 	modifier = {
 		country_edict_fund_add = 250
-		# 使用三系科研修正替代无效的全科研修正符。
-		category_physics_research_speed_mult = 0.15
-		category_society_research_speed_mult = 0.15
-		category_engineering_research_speed_mult = 0.15
+		# 当前版本不接受分学科科研速度修正，命运主宰飞升保留行政与舰队效果。
 		country_naval_cap_mult = 0.20
 		ship_home_territory_fire_rate_mult = 0.25
 		ship_armor_hardening_add = 0.25

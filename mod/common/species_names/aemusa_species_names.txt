@@ -1,0 +1,8 @@
+# 神器使物种类别的创建器兜底名称，避免随机帝国界面因缺少物种名称隐藏内容。
+ARTIFACT_USER = {
+	name = PRESCRIPTED_species_name_artifact_user
+	plural = PRESCRIPTED_species_plural_artifact_user
+	home_planet = PRESCRIPTED_planet_name_artifact_user_central_court
+	home_system = PRESCRIPTED_system_name_artifact_user_central_court
+	name_list = HUMAN1
+}

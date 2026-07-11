@@ -3,6 +3,8 @@ destiny_lord = {
 	# 命运之主使用唯一专属实体，不按帝国舰船文化拼接模型。
 	graphical_culture = no
 	entity = "destiny_lord_entity"
+	# 所有原版名称表都已定义泰坦名称；复用泰坦命名可避免自定义舰种缺少舰名与舰级名。
+	use_shipnames_from = titan
 	formation_priority = 100
 	max_speed = 40
 	acceleration = 0.10

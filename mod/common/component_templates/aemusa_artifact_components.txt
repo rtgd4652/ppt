@@ -244,12 +244,10 @@ utility_component_template = {
 	# 仅在命运之主的反应堆槽中出现，避免被其他舰船装配。
 	potential = {
 		is_ship_size = destiny_lord
-		from = {
-			owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		}
+		# 造船设计器会用临时国家预览部件，核心槽只按船体限制，国家门槛交给船体本身。
 	}
 
-	prerequisites = { "tech_artifact_destiny_lord" }
+	# 必需核心部件不写科技前置，避免帝国创建器的临时舰船设计因没有科技而找不到能源核心。
 	resources = {
 		category = ship_components
 		cost = { alloys = 12000 }
@@ -273,7 +271,7 @@ utility_component_template = {
 
 	potential = {
 		is_ship_size = destiny_lord
-		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+		# 造船设计器会用临时国家预览部件，核心槽只按船体限制，国家门槛交给船体本身。
 	}
 
 	resources = { category = ship_components cost = { alloys = 2000 } upkeep = { energy = 5 alloys = 1 } }
@@ -298,7 +296,7 @@ utility_component_template = {
 
 	potential = {
 		is_ship_size = destiny_lord
-		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+		# 造船设计器会用临时国家预览部件，核心槽只按船体限制，国家门槛交给船体本身。
 	}
 
 	resources = { category = ship_components cost = { alloys = 3000 } upkeep = { energy = 8 alloys = 1 } }

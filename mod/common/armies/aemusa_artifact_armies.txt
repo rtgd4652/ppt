@@ -19,20 +19,7 @@ artifact_user_guardian_army = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
 	}
 
-	potential = {
-		from = { exists = pop }
-	}
-
-	allow = {
-		custom_tooltip = {
-			fail_text = requires_pop
-			exists = pop
-		}
-	}
-
-	army_modifier = {
-		army_morale_mult = 0.15
-	}
+	# 招募门槛由国家主物种和科技条件控制，避免在陆军作用域里检查不存在的人口对象。
 
 	ai_weight = { base = 80 }
 }
@@ -65,21 +52,11 @@ artifact_user_resonance_army = {
 		has_technology = "tech_artifact_user_resonance_armaments"
 	}
 
-	potential = {
-		from = { exists = pop }
-	}
-
-	allow = {
-		custom_tooltip = {
-			fail_text = requires_pop
-			exists = pop
-		}
-	}
+	# 招募门槛由国家主物种和科技条件控制，避免在陆军作用域里检查不存在的人口对象。
 
 	army_modifier = {
 		army_damage_mult = 0.20
-		army_health_mult = 0.20
-		army_morale_mult = 0.25
+		# 当前版本不接受额外生命和士气修正，保留已验证的伤害加成。
 	}
 
 	ai_weight = { base = 90 }
@@ -114,21 +91,11 @@ artifact_user_apotheosis_army = {
 		has_technology = "tech_artifact_user_apotheosis_warfare"
 	}
 
-	potential = {
-		from = { exists = pop }
-	}
-
-	allow = {
-		custom_tooltip = {
-			fail_text = requires_pop
-			exists = pop
-		}
-	}
+	# 招募门槛由国家主物种和科技条件控制，避免在陆军作用域里检查不存在的人口对象。
 
 	army_modifier = {
 		army_damage_mult = 0.75
-		army_health_mult = 0.75
-		army_morale_mult = 0.50
+		# 当前版本不接受额外生命和士气修正，生命和士气已写在陆军基础字段中。
 		army_collateral_damage_mult = -0.25
 	}
 

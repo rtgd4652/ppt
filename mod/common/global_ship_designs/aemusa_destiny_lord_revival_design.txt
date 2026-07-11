@@ -20,9 +20,7 @@ ship_design = {
 	required_component = "ARTIFACT_AURA_GUARDIAN_MATRIX"
 	required_component = "ARTIFACT_AURA_BLACK_GATE_SUPPRESSION"
 
-	# 预设火力与防护，避免事件舰船生成后成为空壳。
-	required_component = "TITANIC_ARTIFACT_FATE_DOMINION"
-	required_component = "EXTRA_LARGE_ARTIFACT_TAROT_JUDGEMENT"
+	# 当前区段临时关闭武器槽，预设设计只保留防护和辅助组件。
 	required_component = "LARGE_ARTIFACT_DESTINY_ARMOR_3"
 	required_component = "LARGE_ARTIFACT_BLACK_GATE_SHIELD_3"
 	required_component = "ARTIFACT_TACTICAL_CORE_3"

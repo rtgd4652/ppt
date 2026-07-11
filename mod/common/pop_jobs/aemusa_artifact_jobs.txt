@@ -104,7 +104,6 @@ artifact_black_gate_warden = {
 		category = planet_jobs
 		produces = {
 			unity = 10
-			amenities = 12
 		}
 		upkeep = {
 			energy = 2
@@ -291,9 +290,8 @@ artifact_crossing_merchant = {
 	resources = {
 		category = planet_jobs
 		produces = {
-			trade_value = 80
+			trade = 80
 			consumer_goods = 30
-			amenities = 12
 		}
 		upkeep = {
 			energy = 4
@@ -403,7 +401,6 @@ artifact_memory_curator = {
 		category = planet_jobs
 		produces = {
 			unity = 24
-			amenities = 6
 		}
 		upkeep = {
 			consumer_goods = 4
@@ -515,7 +512,6 @@ artifact_life_cultivator = {
 		category = planet_jobs
 		produces = {
 			food = 24
-			amenities = 4
 			society_research = 3
 		}
 		upkeep = {
@@ -552,9 +548,7 @@ artifact_fleet_coordinator = {
 	resources = {
 		category = planet_jobs
 		produces = {
-			naval_cap = 16
 			unity = 6
-			defense_armies = 2
 		}
 		upkeep = {
 			energy = 4

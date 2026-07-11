@@ -287,7 +287,7 @@ district_artifact_destiny_fleet = {
 	planet_modifier = {
 		planet_housing_add = 350
 		planet_amenities_add = 35
-		pop_growth_speed_mult = 0.05
+		# 当前版本不接受旧人口增长修正，先移除该加成以避免加载错误。
 		job_artifact_memory_curator_add = 3
 		job_artifact_life_cultivator_add = 2
 		job_artifact_crossing_merchant_add = 1

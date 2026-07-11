@@ -28,11 +28,27 @@ decision_artifact_destiny_city_project = {
 
 	allow = {
 		pop_amount >= 25 # 使用行星人口触发器，避免 num_pops 在决议作用域中无效。
+		owner = {
+			custom_tooltip = {
+				fail_text = aemod_destiny_city_already_exists # 若帝国已经拥有命运都市，只显示提示，不允许再次刷新专属星球。
+				NOR = {
+					has_country_flag = aemod_has_special_planet # 国家级永久防重复标记：已经创建过专属命运都市。
+					any_owned_planet = {
+						is_planet_class = pc_artifact_destiny_city # 兼容旧存档：已有命运都市但尚未设置国家 flag 时也禁止再次生成。
+					}
+				}
+			}
+		}
 	}
 
 	effect = {
 		change_pc = pc_artifact_destiny_city
 		set_planet_flag = artifact_destiny_city_world
+		set_planet_flag = aemod_special_planet_created # 行星级持久标记：记录这颗星球是已创建的神器使专属命运都市。
+		save_event_target_as = aemod_special_planet # 当前会话中保存目标，便于后续事件链或调试定位该星球。
+		owner = {
+			set_country_flag = aemod_has_special_planet # 国家级永久防重复标记：后续科技、事件、法令或重复决议不得再生成第二颗。
+		}
 	}
 
 	ai_weight = {

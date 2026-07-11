@@ -2,7 +2,7 @@
 
 edict_summon_stellar_administrator = {
     length = 0 # 0 表示即时生效、不会持续占用法令栏。
-    icon = "GFX_edict_summon_aemusa" # 使用爱缪莎召唤专属图标。
+    icon = "GFX_edict_type_policy" # 临时使用原版占位图标，避免自定义图标 sprite 未注册时崩溃。
 
     resources = {
         category = edicts # 使用法令资源类别，确保 UI 正确显示花费。
@@ -43,7 +43,7 @@ edict_summon_stellar_administrator = {
 # 白夜馆入口法令：打开统一通讯菜单，后续五名领袖也从这里接入。
 edict_contact_white_night_pavilion = {
     length = 0 # 即时打开白夜馆通讯，不产生持续效果。
-    icon = "GFX_edict_white_night_pavilion" # 使用白夜馆专属灯箱图标，便于在法令栏中识别入口。
+    icon = "GFX_edict_type_policy" # 临时使用原版占位图标，缺失图标后续再补。
 
     potential = {
         owner_main_species = {
@@ -66,7 +66,7 @@ edict_contact_white_night_pavilion = {
 # 通讯法令：打开爱缪莎的职责选择对话。
 edict_contact_aemusa = {
     length = 0 # 即时打开对话，不产生持续效果。
-    icon = "GFX_edict_contact_aemusa" # 使用爱缪莎通讯专属图标。
+    icon = "GFX_edict_type_policy" # 临时使用原版占位图标，避免自定义图标 sprite 未注册时崩溃。
 
     potential = {
         exists = event_target:aemusa_leader # 仅在爱缪莎仍存在时显示。
@@ -87,7 +87,7 @@ edict_contact_aemusa = {
 # 临时测试法令：给玩家快速灌入测试资源、永久超频修正，并把神器使领袖补到 30 级。
 edict_aemusa_debug_overdrive = {
 	length = 0 # 即时触发，不占用法令栏；永久效果通过国家修正保存。
-	icon = "GFX_edict_contact_aemusa" # 复用已有通讯图标，避免为临时测试按钮额外引入图标依赖。
+	icon = "GFX_edict_type_policy" # 临时使用原版占位图标，避免自定义图标 sprite 未注册时崩溃。
 
 	potential = {
 		is_ai = no # 仅玩家可见，避免 AI 测试加成污染正常局势。

@@ -2,6 +2,7 @@
  # 简体中文本地化；冒号前为键名，冒号后为游戏中显示的文本。
  ARTIFACT_USER:0 "神器使"
  ARTIFACT_USER_desc:0 "与神器共鸣的神秘有机生命。只有以神器使为主物种的帝国，才能通过法令召唤爱缪莎。"
+ requires_pop:0 "需要可招募人口。"
  trait_artifact_resonance:0 "神器使契约"
  trait_artifact_resonance_desc:0 "与神器缔结契约的守护者，能够在危机中维持都市日常。陆军伤害：§G+10%§!\n人口舒适度使用：§G-10%§!\n宜居性：§G+5%§!"
  origin_artifact_resonance:0 "交界都市守望者"
@@ -349,6 +350,7 @@
  mod_job_artifact_fleet_coordinator_add:0 "$job_artifact_fleet_coordinator$岗位"
  decision_artifact_destiny_city_project:0 "命运都市工程"
  decision_artifact_destiny_city_project_desc:0 "启动神器使专属的理想城式改造工程，将这颗殖民地重构为§Y命运都市§!。"
+ aemod_destiny_city_already_exists:0 "§Y命运都市§!已经存在。中央庭不会重复刷新第二颗神器使专属星球。"
  ARTIFACT_TAROT_RAY:0 "神器共鸣射线"
  ARTIFACT_TAROT_RAY_DESC:0 "神器使共鸣能量武器组。"
  ARTIFACT_FATE_ARMOR:0 "神器织甲"

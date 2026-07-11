@@ -1,4 +1,4 @@
-﻿spriteTypes = {
+spriteTypes = {
 	# 由 tools/build/icon_generation/generate_artifact_icons.py 生成的神器使专属图标注册。
 	spriteType = {
 		name = "GFX_army_type_artifact_user_apotheosis"

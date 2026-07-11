@@ -84,10 +84,7 @@ tech_artifact_tarot_economy = {
 	}
 
 	modifier = {
-		# 拆成三系科研修正，避免旧的全科研修正符在当前版本被判无效。
-		category_physics_research_speed_mult = 0.05
-		category_society_research_speed_mult = 0.05
-		category_engineering_research_speed_mult = 0.05
+		# 当前版本会把分学科科研速度修正判为无效，先移除该科技的科研速度加成以保证稳定加载。
 	}
 }
 
@@ -146,10 +143,7 @@ tech_artifact_destiny_economy = {
 	}
 
 	modifier = {
-		# 科技作用域为国家，使用国家与科研分类修正，避免把行星作用域修正挂到科技上。
-		category_physics_research_speed_mult = 0.05
-		category_society_research_speed_mult = 0.05
-		category_engineering_research_speed_mult = 0.05
+		# 当前版本会把分学科科研速度修正判为无效，保留已验证的资源产出加成。
 		country_alloys_produces_mult = 0.05
 		country_consumer_goods_produces_mult = 0.05
 	}

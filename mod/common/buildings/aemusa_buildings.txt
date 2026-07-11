@@ -358,7 +358,7 @@ building_artifact_crossing_trade_tower = {
 		upkeep = { energy = 20 }
 		# 交界商业塔是后期专属贸易中枢，提供可直接读到的消费品基础产出。
 		produces = {
-			trade_value = 600
+			trade = 600
 			consumer_goods = 300
 		}
 	}

@@ -4,8 +4,8 @@ origin_artifact_resonance = {
 	icon = "gfx/interface/icons/origins/origin_artifact_resonance.dds"
 	picture = GFX_origin_legendary_leader
 
-	# 用专属城市星球覆盖玩家在创建帝国时选择的母星类型。
-	starting_colony = pc_artifact_crossing_city
+	# 创建器会拒绝专属自定义母星偏好，开局先使用原版陆地星球保证预设帝国可见。
+	starting_colony = pc_continental
 
 	# 仅神器使物种类别可选；使用帝国创建器可识别的 species_class 判断。
 	possible = {

@@ -30,9 +30,9 @@ artifact_user_central_court = {
 	ethic = "ethic_authoritarian"
 	ethic = "ethic_fanatic_militarist"
 
-	# 起源也会覆盖母星类型；此处保留专属星球以便预设信息完整展示。
+	# 创建器会拒绝专属自定义母星偏好，预设帝国先使用原版陆地星球保证可见。
 	planet_name = "PRESCRIPTED_planet_name_artifact_user_central_court"
-	planet_class = "pc_artifact_crossing_city"
+	planet_class = "pc_continental"
 	system_name = "PRESCRIPTED_system_name_artifact_user_central_court"
 
 	graphical_culture = "humanoid_01"
