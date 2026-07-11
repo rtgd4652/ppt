@@ -4,6 +4,7 @@
 > 当前版本：`0.1.0` 封版候选
 > 当前分支：`parallel/v1-integration`
 > 详细总控文档：`docs/project/project_status_v0.1.md`
+> 知识重建工作线：`knowledge/source-rebuild-v0.1`，只修改知识库与工具，不修改 `mod/`。
 
 ## Completed
 
@@ -25,6 +26,8 @@
 
 ## In Progress
 
+- 建立本地 SQLite 知识库索引、85 集主线剧情目录与前三章人工摘要审核队列。
+- 使用灰机 Wiki 与经人工确认的主线视频重建可追溯来源体系；第 12 章《堕天使的挽歌》已明确排除。
 - v0.1.0 候选已经推送到 `origin/parallel/v1-integration`。
 - 使用只启用本 Mod 的新开局执行 v0.1.0 手动复测。
 - 生成新的 `error.log`，确认当前修复后的真实运行状态。

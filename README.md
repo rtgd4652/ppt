@@ -59,3 +59,10 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 - `docs/PROJECT_STATUS.md`
 - `docs/project/v0.1_release_freeze.md`
 - `reports/v0.1_manual_test_checklist.md`
+
+## 本地知识库
+
+- 知识重建工作线：`docs/project/knowledge_rebuild_v0.1.md`
+- 人工确认知识层：`knowledge/curated/README.md`
+- 本地 SQLite 数据库说明：`knowledge/database/README.md`
+- 知识库工具：`tools/knowledge/README.md`

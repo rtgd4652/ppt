@@ -25,3 +25,8 @@ tools/crawler/.npm-cache/
 tools/crawler/.playwright-browsers/
 tools/crawler/.playwright-profile/
 tools/crawler/artifacts/
+
+# 本地知识库 SQLite 数据库：由已提交的目录数据与工具重建，不提交二进制文件。
+knowledge/database/*.sqlite
+knowledge/database/*.sqlite-shm
+knowledge/database/*.sqlite-wal

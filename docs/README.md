@@ -52,6 +52,17 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 
 详细内容见 `docs/ROADMAP.md`。
 
+## 本地知识库
+
+当前知识重建工作线独立于 Mod 功能开发，使用 Markdown + 本地 SQLite 索引的双层结构：
+
+- 工作说明：`docs/project/knowledge_rebuild_v0.1.md`
+- 人工确认层：`knowledge/curated/README.md`
+- 数据库说明：`knowledge/database/README.md`
+- 工具说明：`tools/knowledge/README.md`
+
+当前已索引 85 集主线剧情目录与七名角色的灰机 Wiki 来源；视频只作为人工审核后的叙事证据，不进行自动转写或下载。
+
 ## 截图
 
 游戏截图和开发参考分别存入：
