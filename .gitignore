@@ -18,3 +18,10 @@ temp/
 # 系统文件
 Thumbs.db
 Desktop.ini
+
+# Node / Playwright 本地依赖与浏览器会话缓存
+node_modules/
+tools/crawler/.npm-cache/
+tools/crawler/.playwright-browsers/
+tools/crawler/.playwright-profile/
+tools/crawler/artifacts/
