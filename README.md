@@ -4,6 +4,8 @@
 
 当前候选版本：`0.1.0`。游戏内复测通过后发布 `v0.1.0` 标签。
 
+v0.2 架构准备在独立分支 `refactor/v0.2-architecture` 进行，不改变 v0.1 候选版的运行内容。
+
 ## 仓库结构
 
 ```text
@@ -59,3 +61,19 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 - `docs/PROJECT_STATUS.md`
 - `docs/project/v0.1_release_freeze.md`
 - `reports/v0.1_manual_test_checklist.md`
+
+## 架构与验证入口
+
+- 架构总览：`docs/architecture/README.md`
+- 运行时模块边界：`docs/architecture/runtime_architecture_v0.2.md`
+- 命名与兼容规则：`docs/architecture/naming_and_compatibility.md`
+- v0.2 渐进迁移顺序：`docs/architecture/migration_plan_v0.2.md`
+- 分支与发布流程：`docs/architecture/branch_release_workflow.md`
+- 静态验证工具：`tools/build/validation/README.md`
+- 架构基线报告：`reports/v0.2_architecture_baseline_report.md`
+
+默认静态验证不会把暂缓制作的正式图标视为阻断错误：
+
+```powershell
+node tools/build/validation/validate-mod.js
+```

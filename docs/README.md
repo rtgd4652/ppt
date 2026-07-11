@@ -35,6 +35,7 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 - Git，用于版本管理。
 - Blender 与 PDX Mesh 插件，仅在继续开发模型时需要。
 - Node.js 与 Playwright，仅在运行知识库采集工具时需要。
+- Node.js，仅运行静态验证工具时需要；验证工具不需要 Playwright。
 
 开发约定：
 
@@ -51,6 +52,26 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 - v0.3：确定统一美术规范，补齐图标，继续完成舰船和巨构模型。
 
 详细内容见 `docs/ROADMAP.md`。
+
+## 架构
+
+v0.2 开始采用“运行目录保持扁平、文件名前缀表达模块归属”的架构，避免依赖 Stellaris 对深层目录的递归加载行为。
+
+架构文档入口：
+
+- `docs/architecture/README.md`
+- `docs/architecture/runtime_architecture_v0.2.md`
+- `docs/architecture/naming_and_compatibility.md`
+- `docs/architecture/migration_plan_v0.2.md`
+- `docs/architecture/branch_release_workflow.md`
+
+静态验证入口：
+
+```powershell
+node tools/build/validation/validate-mod.js
+```
+
+当前缺失图标按既定决策暂缓补齐，默认验证只警告；统一美术规范确定后再启用 `--strict-art`。
 
 ## 截图
 
