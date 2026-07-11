@@ -186,6 +186,18 @@ def add_flagship_surface_details(target, hull, armor, ice, red):
             bevel=0.04,
             target=target,
         )
+    for index, angle in enumerate((0.15, 0.72, 1.35, 2.05, 2.72, 3.35, 3.95, 4.55, 5.15, 5.78)):
+        x = math.cos(angle) * 14.15
+        y = math.sin(angle) * 14.15
+        cube(
+            f"DL9_Fate_Ring_GlowSegment_{index}",
+            (x, y, 7.02),
+            (1.55, 0.16, 0.08),
+            ice,
+            rotation=(0, 0, angle),
+            bevel=0.012,
+            target=target,
+        )
 
     cube("DL9_Bridge_Collar_Aft", (-5.4, 0.0, 8.35), (4.8, 3.2, 0.24), armor, bevel=0.06, target=target)
     cube("DL9_Bridge_Collar_Fwd", (-1.2, 0.0, 8.70), (3.4, 2.4, 0.22), hull, bevel=0.05, target=target)
@@ -222,6 +234,26 @@ def add_flagship_surface_details(target, hull, armor, ice, red):
                 armor,
                 rotation=(0.0, 0.0, side * rot),
                 bevel=0.018,
+                target=target,
+            )
+        for index, (x, y, sx, sy, rot) in enumerate(((-21.5, 15.4, 3.4, 1.0, 0.04), (-9.0, 22.0, 3.8, 1.1, -0.05), (4.5, 28.6, 3.2, 0.9, -0.08))):
+            cube(
+                f"DL9_{prefix}_PanelBlock_{index}",
+                (x, side * y, 2.04),
+                (sx, sy, 0.18),
+                hull if index == 1 else armor,
+                rotation=(0.0, 0.0, side * rot),
+                bevel=0.035,
+                target=target,
+            )
+        for index, (x, y, sx, rot) in enumerate(((-24.0, 18.0, 1.2, 0.04), (-2.0, 24.8, 1.0, -0.06), (9.5, 30.4, 0.9, -0.10))):
+            cube(
+                f"DL9_{prefix}_PanelGlow_{index}",
+                (x, side * y, 2.25),
+                (sx, 0.10, 0.055),
+                ice,
+                rotation=(0.0, 0.0, side * rot),
+                bevel=0.008,
                 target=target,
             )
         for index, (x, y, sx, rot) in enumerate(((-14.0, 16.0, 2.8, 0.03), (2.5, 23.5, 2.4, -0.12))):
@@ -450,6 +482,21 @@ def add_destiny_core(target, hull, armor, ice):
     cube("DL9_Core_Lower_Dais", (0.0, 0.0, 4.75), (4.0, 4.0, 0.34), armor, bevel=0.08, target=target)
     cone("DL9_Core_Crystal_Upper", (0.0, 0.0, 10.2), 1.25, 0.24, 5.4, ice, target=target)
     cone("DL9_Core_Crystal_Lower", (0.0, 0.0, 3.6), 0.22, 1.05, 3.0, ice, target=target)
+    cube("DL9_Core_Clean_Base", (0.0, 0.0, 6.15), (3.2, 2.2, 0.26), armor, bevel=0.05, target=target)
+    cube("DL9_Core_Clean_Collar", (0.0, 0.0, 7.65), (2.4, 1.5, 0.22), hull, bevel=0.04, target=target)
+    cube("DL9_Core_Clean_Ice_Crown", (0.0, 0.0, 9.2), (0.72, 0.72, 0.24), ice, bevel=0.025, target=target)
+    for index, angle in enumerate((math.radians(35), math.radians(145), math.radians(215), math.radians(325))):
+        x = math.cos(angle) * 2.35
+        y = math.sin(angle) * 2.35
+        cube(
+            f"DL9_Core_Clean_GlowBlock_{index}",
+            (x, y, 7.05),
+            (0.58, 0.20, 0.18),
+            ice,
+            rotation=(0.0, 0.0, angle),
+            bevel=0.012,
+            target=target,
+        )
 
 
 def add_weapon_and_engine_layers(target, hull, armor, ice, red):
@@ -586,6 +633,8 @@ def should_export_pdx_object(obj):
 
 
 def section_for_object(obj):
+    if "Fate_Ring" in obj.name or "Ring_Anchor" in obj.name or "Core_" in obj.name or "Bridge" in obj.name or "Observation_Spire" in obj.name:
+        return "DL_PDX_Mid"
     if "Port_Wing" in obj.name or "Starboard_Wing" in obj.name:
         return "DL_PDX_Mid"
     if "Main_Hull_Side_Belt" in obj.name or "Main_Hull_Lower_Belt" in obj.name or "Main_Hull_Side_Break" in obj.name or "Main_Hull_Side_Shadow" in obj.name or "Main_Hull_Side_Glow" in obj.name or "Main_Hull_Side_Lower_Facet" in obj.name or "Main_Hull_Side_Casemate" in obj.name or "Main_Hull_Side_Forward_Dark_Cowl" in obj.name:
