@@ -30,3 +30,7 @@ tools/crawler/artifacts/
 knowledge/database/*.sqlite
 knowledge/database/*.sqlite-shm
 knowledge/database/*.sqlite-wal
+
+# 本地视觉参考缓存：允许下载或复制来源待核验的图片，但绝不提交二进制参考素材。
+art/reference_library/**
+!art/reference_library/README.md

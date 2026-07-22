@@ -4,6 +4,11 @@ from pathlib import Path
 import bpy
 
 
+# 已废弃：2026-07-22 起，本脚本只作为命运观测塔旧案的历史记录保留。
+# 不得继续执行本方案，也不得把其中太阳冠、环体或材质结论复制到未来重设计中。
+# 新命运观测塔应在全新概念审核通过后另建脚本。
+
+
 ASSET_DIR = Path(r"C:\Users\Admin\Desktop\ppt\simple_leader_edict\assets\ai_generated\destiny_observatory")
 OUTPUT = ASSET_DIR / "destiny_observatory_blockout.blend"
 PREVIEW_QUARTER = ASSET_DIR / "destiny_observatory_blockout_quarter.png"

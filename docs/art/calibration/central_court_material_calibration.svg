@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1120" viewBox="0 0 1600 1120" role="img" aria-labelledby="title desc">
+  <title id="title">中央庭公共材质校准板 v0.1</title>
+  <desc id="desc">项目自制的颜色与六类公共材质示意，不是群星游戏正式资产。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#101920"/>
+      <stop offset="1" stop-color="#182630"/>
+    </linearGradient>
+    <linearGradient id="ceramic" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#304651"/>
+      <stop offset="0.46" stop-color="#182630"/>
+      <stop offset="1" stop-color="#22343E"/>
+    </linearGradient>
+    <linearGradient id="coatedMetal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#263943"/>
+      <stop offset="0.5" stop-color="#52636A"/>
+      <stop offset="1" stop-color="#304651"/>
+    </linearGradient>
+    <linearGradient id="mistSilver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#D6D9D5"/>
+      <stop offset="0.35" stop-color="#9BA8AE"/>
+      <stop offset="0.7" stop-color="#C0C7C7"/>
+      <stop offset="1" stop-color="#75878F"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#79AFC7" stop-opacity="0.42"/>
+      <stop offset="0.45" stop-color="#304651" stop-opacity="0.62"/>
+      <stop offset="1" stop-color="#69C1CC" stop-opacity="0.28"/>
+    </linearGradient>
+    <linearGradient id="warmInterior" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#D6D9D5"/>
+      <stop offset="0.58" stop-color="#D6D9D5"/>
+      <stop offset="1" stop-color="#D39A55"/>
+    </linearGradient>
+    <radialGradient id="artifactCore" cx="50%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#D6D9D5" stop-opacity="0.95"/>
+      <stop offset="0.22" stop-color="#69C1CC" stop-opacity="0.86"/>
+      <stop offset="0.58" stop-color="#79AFC7" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#182630" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="brushed" width="16" height="16" patternUnits="userSpaceOnUse">
+      <path d="M0 4H16 M0 9H16 M0 14H16" stroke="#D6D9D5" stroke-opacity="0.10" stroke-width="1"/>
+    </pattern>
+    <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="9" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <style>
+      .title { font: 700 38px "Microsoft YaHei", "Noto Sans SC", sans-serif; fill: #D6D9D5; }
+      .subtitle { font: 400 18px "Microsoft YaHei", "Noto Sans SC", sans-serif; fill: #9BA8AE; }
+      .section { font: 700 24px "Microsoft YaHei", "Noto Sans SC", sans-serif; fill: #D6D9D5; }
+      .label { font: 700 19px "Microsoft YaHei", "Noto Sans SC", sans-serif; fill: #D6D9D5; }
+      .body { font: 400 15px "Microsoft YaHei", "Noto Sans SC", sans-serif; fill: #C0C7C7; }
+      .tiny { font: 400 13px "Microsoft YaHei", "Noto Sans SC", sans-serif; fill: #9BA8AE; }
+      .hex { font: 600 14px Consolas, monospace; fill: #D6D9D5; }
+      .panel { fill: #142129; stroke: #304651; stroke-width: 2; }
+      .divider { stroke: #304651; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1120" fill="url(#bg)"/>
+  <rect x="36" y="30" width="1528" height="1060" rx="16" fill="none" stroke="#9BA8AE" stroke-opacity="0.45" stroke-width="2"/>
+
+  <text x="70" y="85" class="title">中央庭公共材质校准板 v0.1</text>
+  <text x="70" y="118" class="subtitle">灾后现代幻想星海文明 · 公共工程层 · 项目自制参考</text>
+  <rect x="1190" y="53" width="325" height="55" rx="8" fill="#9E4651" fill-opacity="0.26" stroke="#D0644D"/>
+  <text x="1352" y="78" text-anchor="middle" class="label">不是游戏正式资产</text>
+  <text x="1352" y="98" text-anchor="middle" class="tiny">不得直接导入 mod/gfx</text>
+
+  <text x="70" y="170" class="section">公共色彩基线</text>
+
+  <!-- 主色 -->
+  <g transform="translate(70,195)">
+    <rect width="190" height="92" rx="8" fill="#182630" stroke="#9BA8AE" stroke-opacity="0.45"/>
+    <text x="14" y="27" class="label">深海军蓝</text><text x="14" y="51" class="hex">#182630</text><text x="14" y="76" class="tiny">主结构大面</text>
+  </g>
+  <g transform="translate(275,195)">
+    <rect width="190" height="92" rx="8" fill="#304651" stroke="#9BA8AE" stroke-opacity="0.45"/>
+    <text x="14" y="27" class="label">石墨蓝灰</text><text x="14" y="51" class="hex">#304651</text><text x="14" y="76" class="tiny">模块与次装甲</text>
+  </g>
+  <!-- 辅助色 -->
+  <g transform="translate(480,195)">
+    <rect width="190" height="92" rx="8" fill="#D6D9D5" stroke="#9BA8AE"/>
+    <text x="14" y="27" class="label" fill="#182630" style="fill:#182630">暖灰白</text><text x="14" y="51" class="hex" style="fill:#182630">#D6D9D5</text><text x="14" y="76" class="tiny" style="fill:#304651">公共内装与高亮</text>
+  </g>
+  <g transform="translate(685,195)">
+    <rect width="190" height="92" rx="8" fill="#9BA8AE" stroke="#D6D9D5"/>
+    <text x="14" y="27" class="label" style="fill:#182630">雾银</text><text x="14" y="51" class="hex" style="fill:#182630">#9BA8AE</text><text x="14" y="76" class="tiny" style="fill:#304651">承力边与接口</text>
+  </g>
+  <!-- 正常与人居 -->
+  <g transform="translate(890,195)">
+    <rect width="150" height="92" rx="8" fill="#69C1CC" stroke="#D6D9D5"/>
+    <text x="12" y="27" class="label" style="fill:#182630">冷青</text><text x="12" y="51" class="hex" style="fill:#182630">#69C1CC</text><text x="12" y="76" class="tiny" style="fill:#304651">正常状态</text>
+  </g>
+  <g transform="translate(1055,195)">
+    <rect width="150" height="92" rx="8" fill="#79AFC7" stroke="#D6D9D5"/>
+    <text x="12" y="27" class="label" style="fill:#182630">天蓝</text><text x="12" y="51" class="hex" style="fill:#182630">#79AFC7</text><text x="12" y="76" class="tiny" style="fill:#304651">科研扫描</text>
+  </g>
+  <g transform="translate(1220,195)">
+    <rect width="135" height="92" rx="8" fill="#D39A55" stroke="#D6D9D5"/>
+    <text x="11" y="27" class="label" style="fill:#182630">暖琥珀</text><text x="11" y="51" class="hex" style="fill:#182630">#D39A55</text><text x="11" y="76" class="tiny" style="fill:#304651">人居／注意</text>
+  </g>
+  <!-- 警示色 -->
+  <g transform="translate(1370,195)">
+    <rect width="72" height="92" rx="8" fill="#D0644D" stroke="#D6D9D5"/>
+    <text x="36" y="31" text-anchor="middle" class="tiny" style="fill:#182630">警戒</text><text x="36" y="55" text-anchor="middle" class="tiny" style="fill:#182630">橙红</text><text x="36" y="76" text-anchor="middle" class="tiny" style="fill:#182630">&lt;3%</text>
+  </g>
+  <g transform="translate(1452,195)">
+    <rect width="72" height="92" rx="8" fill="#9E4651" stroke="#D6D9D5"/>
+    <text x="36" y="31" text-anchor="middle" class="tiny">危险</text><text x="36" y="55" text-anchor="middle" class="tiny">暗红</text><text x="36" y="76" text-anchor="middle" class="tiny">&lt;3%</text>
+  </g>
+
+  <text x="70" y="335" class="section">六类公共材质样本</text>
+
+  <!-- 1 陶瓷装甲 -->
+  <g transform="translate(70,365)">
+    <rect class="panel" width="470" height="270" rx="12"/>
+    <text x="22" y="38" class="label">01 深色陶瓷／复合装甲</text>
+    <rect x="22" y="58" width="426" height="130" rx="8" fill="url(#ceramic)"/>
+    <path d="M22 145 L160 88 L302 112 L448 72 M160 88 V188 M302 112 V188" fill="none" stroke="#9BA8AE" stroke-opacity="0.38" stroke-width="3"/>
+    <path d="M37 174 H142 M322 174 H430" stroke="#69C1CC" stroke-width="4" stroke-linecap="round"/>
+    <text x="22" y="217" class="body">低—中反射 · 大板分区 · 有限边角磨损</text>
+    <text x="22" y="244" class="tiny">主舰体／外墙／防护壳体；发光不承担结构识别</text>
+  </g>
+
+  <!-- 2 涂层金属 -->
+  <g transform="translate(565,365)">
+    <rect class="panel" width="470" height="270" rx="12"/>
+    <text x="22" y="38" class="label">02 涂层金属</text>
+    <rect x="22" y="58" width="426" height="130" rx="8" fill="url(#coatedMetal)"/>
+    <rect x="22" y="58" width="426" height="130" rx="8" fill="url(#brushed)"/>
+    <path d="M46 75 H410 M46 102 H410 M46 129 H410 M46 156 H410" stroke="#182630" stroke-opacity="0.46"/>
+    <circle cx="76" cy="91" r="8" fill="#9BA8AE"/><circle cx="394" cy="155" r="8" fill="#9BA8AE"/>
+    <text x="22" y="217" class="body">拉丝方向服从加工与受力 · 裸露金属只在接口</text>
+    <text x="22" y="244" class="tiny">承重骨架／桥接梁／散热／滑轨／活动结构</text>
+  </g>
+
+  <!-- 3 雾银结构 -->
+  <g transform="translate(1060,365)">
+    <rect class="panel" width="470" height="270" rx="12"/>
+    <text x="22" y="38" class="label">03 雾银结构件</text>
+    <rect x="22" y="58" width="426" height="130" rx="8" fill="#182630"/>
+    <path d="M42 165 L106 81 H337 L425 165 Z" fill="none" stroke="url(#mistSilver)" stroke-width="17" stroke-linejoin="bevel"/>
+    <path d="M116 145 H332" stroke="#69C1CC" stroke-width="5" stroke-linecap="round"/>
+    <text x="22" y="217" class="body">清楚但非镜面 · 面积小于主装甲 · 提示厚度</text>
+    <text x="22" y="244" class="tiny">关键承力边／环体骨架／接口／公共 UI 边框</text>
+  </g>
+
+  <!-- 4 强化玻璃 -->
+  <g transform="translate(70,660)">
+    <rect class="panel" width="470" height="270" rx="12"/>
+    <text x="22" y="38" class="label">04 强化玻璃／半透明聚合物</text>
+    <rect x="22" y="58" width="426" height="130" rx="8" fill="#182630"/>
+    <path d="M54 174 L96 72 H368 L416 174 Z" fill="url(#glass)" stroke="#9BA8AE" stroke-width="8" stroke-linejoin="round"/>
+    <path d="M107 88 H354 M83 142 H392" stroke="#D6D9D5" stroke-opacity="0.28" stroke-width="3"/>
+    <circle cx="88" cy="164" r="7" fill="#304651" stroke="#9BA8AE"/><circle cx="382" cy="164" r="7" fill="#304651" stroke="#9BA8AE"/>
+    <text x="22" y="217" class="body">有厚度、夹层与固定件 · 优先假折射和局部高光</text>
+    <text x="22" y="244" class="tiny">观察窗／实验隔离／公共空间／信息表面</text>
+  </g>
+
+  <!-- 5 生活暖材质 -->
+  <g transform="translate(565,660)">
+    <rect class="panel" width="470" height="270" rx="12"/>
+    <text x="22" y="38" class="label">05 生活暖材质</text>
+    <rect x="22" y="58" width="426" height="130" rx="8" fill="#304651"/>
+    <rect x="52" y="78" width="366" height="90" rx="5" fill="url(#warmInterior)"/>
+    <path d="M80 78 V168 M150 78 V168 M220 78 V168" stroke="#304651" stroke-opacity="0.42" stroke-width="3"/>
+    <rect x="310" y="95" width="76" height="44" rx="20" fill="#D39A55" fill-opacity="0.68"/>
+    <text x="22" y="217" class="body">暖灰白实体 + 局部琥珀内光 · 保留人类生活感</text>
+    <text x="22" y="244" class="tiny">门厅／医疗／居住／休息／公共服务；不是金色神殿</text>
+  </g>
+
+  <!-- 6 受控神器接口 -->
+  <g transform="translate(1060,660)">
+    <rect class="panel" width="470" height="270" rx="12"/>
+    <text x="22" y="38" class="label">06 受控神器接口</text>
+    <rect x="22" y="58" width="426" height="130" rx="8" fill="#182630"/>
+    <path d="M54 163 V86 H146 M416 163 V86 H324" fill="none" stroke="#9BA8AE" stroke-width="10" stroke-linejoin="bevel"/>
+    <path d="M104 145 C162 91 198 119 236 88 C280 54 323 120 368 76" fill="none" stroke="#69C1CC" stroke-width="5" stroke-dasharray="14 10"/>
+    <ellipse cx="236" cy="124" rx="82" ry="44" fill="none" stroke="#79AFC7" stroke-opacity="0.58" stroke-width="4" transform="rotate(-8 236 124)"/>
+    <circle cx="236" cy="124" r="48" fill="url(#artifactCore)" filter="url(#softGlow)"/>
+    <rect x="223" y="111" width="26" height="26" transform="rotate(18 236 124)" fill="#D6D9D5" stroke="#69C1CC"/>
+    <text x="22" y="217" class="body">工程承载 60%–75% · 接口 15%–25% · 核心受控</text>
+    <text x="22" y="244" class="tiny">观测／隔离／反馈；不是紫水晶、魔法阵或无来源圣光</text>
+  </g>
+
+  <line x1="70" y1="972" x2="1530" y2="972" class="divider"/>
+  <text x="70" y="1012" class="section">校准判定</text>
+  <text x="70" y="1045" class="body">关闭发光仍能读出结构 · 主材质承担 ≥70% 常态识别 · 警示色常态 &lt;3% · 异常层受实体工程框架约束</text>
+  <text x="70" y="1074" class="tiny">适用：公共舰船、建筑、区划、科研设施、UI 与通用图标；角色个人色和神器本体色另查专项规范。</text>
+  <text x="1518" y="1074" text-anchor="end" class="tiny">Central Court Material Calibration · project-created · v0.1</text>
+</svg>

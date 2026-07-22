@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="940" viewBox="0 0 1600 940" role="img" aria-labelledby="title desc">
+  <title id="title">黑门与异界正式视觉对照组</title>
+  <desc id="desc">项目自制分析图，对照黑门入口、黑核、黑雾环境、异界生态、中央庭工程响应与群星实现参考的边界。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#10171d"/>
+      <stop offset="1" stop-color="#1b2932"/>
+    </linearGradient>
+    <linearGradient id="gate" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#7ba8b0" stop-opacity=".58"/>
+      <stop offset=".16" stop-color="#111217"/>
+      <stop offset=".84" stop-color="#050609"/>
+      <stop offset="1" stop-color="#8d5a66" stop-opacity=".5"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7ec5cf" stop-opacity=".42"/>
+      <stop offset="1" stop-color="#25404b" stop-opacity=".1"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="12"/></filter>
+    <style>
+      .title{font:700 34px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#eef4f4}
+      .sub{font:400 17px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#aebdc2}
+      .h{font:700 22px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#e8eeee}
+      .t{font:400 16px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#bfcccf}
+      .small{font:400 14px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#94a5aa}
+      .tag{font:700 13px 'Microsoft YaHei','Noto Sans CJK SC',sans-serif;fill:#10171d}
+      .panel{fill:#162129;stroke:#3a505a;stroke-width:2}
+      .ok{fill:#70bfc8}.risk{fill:#cc695c}.accent{fill:#d3a05b}.dim{fill:#72858c}
+    </style>
+  </defs>
+  <rect width="1600" height="940" fill="url(#bg)"/>
+  <text x="64" y="68" class="title">黑门与异界正式视觉对照组 v0.1</text>
+  <text x="64" y="99" class="sub">身份由原作证据决定；本图只做抽象视觉校准，不包含原作截图，也不是游戏正式资产。</text>
+
+  <g transform="translate(60 138)">
+    <rect class="panel" width="470" height="310" rx="16"/>
+    <text x="24" y="42" class="h">01 黑门入口｜空间裂缝</text>
+    <rect x="24" y="67" width="422" height="140" rx="10" fill="#23333b"/>
+    <path d="M52 178 L112 132 L170 154 L225 96 L277 139 L337 89 L421 146" fill="none" stroke="#566c74" stroke-width="5"/>
+    <path d="M237 78 C205 105 213 139 184 168 C222 160 228 191 257 180 C242 145 278 126 261 82 Z" fill="url(#gate)" stroke="#90abb0" stroke-opacity=".45" stroke-width="3"/>
+    <path d="M252 85 C231 111 245 133 220 168" fill="none" stroke="#d26d61" stroke-opacity=".42" stroke-width="2"/>
+    <text x="24" y="235" class="t">核心：吞光内部、不闭合边界、现实切面被中断</text>
+    <text x="24" y="264" class="small">不是：标准圆洞／紫色旋涡／均匀霓虹门框</text>
+    <rect x="24" y="279" width="108" height="22" rx="11" class="risk"/><text x="36" y="295" class="tag">异常本体</text>
+  </g>
+
+  <g transform="translate(565 138)">
+    <rect class="panel" width="470" height="310" rx="16"/>
+    <text x="24" y="42" class="h">02 黑核｜高密度源点</text>
+    <rect x="24" y="67" width="422" height="140" rx="10" fill="#22323a"/>
+    <ellipse cx="235" cy="139" rx="118" ry="46" fill="#090c10" opacity=".45" filter="url(#blur)"/>
+    <path d="M235 84 L272 124 L253 184 L203 173 L190 119 Z" fill="#090a0d" stroke="#7ba4ac" stroke-width="3"/>
+    <path d="M235 96 L252 128 L239 165 L214 156 L209 123 Z" fill="#20272b"/>
+    <circle cx="235" cy="137" r="5" fill="#d7a45c"/>
+    <text x="24" y="235" class="t">核心：小体量、清楚轮廓、能量与门体因果明确</text>
+    <text x="24" y="264" class="small">不是：装饰矿簇／遍地水晶／整片发光地貌</text>
+    <rect x="24" y="279" width="108" height="22" rx="11" class="accent"/><text x="36" y="295" class="tag">能量核心</text>
+  </g>
+
+  <g transform="translate(1070 138)">
+    <rect class="panel" width="470" height="310" rx="16"/>
+    <text x="24" y="42" class="h">03 黑雾｜环境响应</text>
+    <rect x="24" y="67" width="422" height="140" rx="10" fill="#27363d"/>
+    <path d="M48 178 L48 117 L110 99 L110 178 M132 178 L132 82 L210 102 L210 178 M236 178 L236 112 L300 91 L300 178 M324 178 L324 72 L418 103 L418 178" fill="none" stroke="#71858b" stroke-width="5"/>
+    <path d="M34 160 C105 113 164 188 230 137 C299 85 352 173 438 112 L438 196 L34 196 Z" fill="#05070a" opacity=".76" filter="url(#blur)"/>
+    <path d="M76 105 L76 183 M178 91 L164 182 M280 102 L290 183 M379 79 L363 183" stroke="#a3c0c5" stroke-opacity=".28" stroke-width="3" stroke-dasharray="8 9"/>
+    <text x="24" y="235" class="t">核心：冻结、失焦、错位、遮断与能量抽离</text>
+    <text x="24" y="264" class="small">必须让环境作出反应，不能只覆盖烟雾贴片</text>
+    <rect x="24" y="279" width="108" height="22" rx="11" class="risk"/><text x="36" y="295" class="tag">侵入影响</text>
+  </g>
+
+  <g transform="translate(60 480)">
+    <rect class="panel" width="470" height="310" rx="16"/>
+    <text x="24" y="42" class="h">04 异界内部｜生态未统一</text>
+    <rect x="24" y="67" width="422" height="140" rx="10" fill="#11171c"/>
+    <path d="M45 182 Q105 72 168 174 T292 136 T430 175" fill="none" stroke="#7f5d67" stroke-width="5"/>
+    <path d="M55 114 Q116 185 178 105 T307 129 T430 92" fill="none" stroke="#507a80" stroke-width="4"/>
+    <circle cx="126" cy="132" r="18" fill="#273c40" stroke="#76aeb6" stroke-width="2"/>
+    <path d="M236 91 L277 126 L250 181 L202 147 Z" fill="#30262d" stroke="#986776" stroke-width="2"/>
+    <text x="24" y="235" class="t">共享：规则不兼容；不共享：唯一颜色、器官或材质</text>
+    <text x="24" y="264" class="small">每个区域另建生态、运动和生存逻辑</text>
+    <rect x="24" y="279" width="128" height="22" rx="11" class="dim"/><text x="36" y="295" class="tag">分区待核验</text>
+  </g>
+
+  <g transform="translate(565 480)">
+    <rect class="panel" width="470" height="310" rx="16"/>
+    <text x="24" y="42" class="h">05 中央庭响应｜工程框定</text>
+    <rect x="24" y="67" width="422" height="140" rx="10" fill="#1e3038"/>
+    <rect x="71" y="91" width="328" height="95" rx="6" fill="none" stroke="#8da4aa" stroke-width="5"/>
+    <rect x="91" y="109" width="288" height="59" rx="4" fill="url(#glass)" stroke="#67b9c3" stroke-width="2"/>
+    <path d="M226 109 C211 126 220 145 204 168 M244 109 C255 133 239 148 263 168" fill="none" stroke="#05070a" stroke-width="11"/>
+    <circle cx="90" cy="91" r="8" class="accent"/><circle cx="399" cy="91" r="8" class="ok"/>
+    <text x="24" y="235" class="t">工程外框、传感器、隔离层与异常本体必须分层</text>
+    <text x="24" y="264" class="small">设备可测量异常，但不能把异常画成“已完全驯服”</text>
+    <rect x="24" y="279" width="108" height="22" rx="11" class="ok"/><text x="36" y="295" class="tag">人类工程</text>
+  </g>
+
+  <g transform="translate(1070 480)">
+    <rect class="panel" width="470" height="310" rx="16"/>
+    <text x="24" y="42" class="h">06 《群星》参考｜只学实现</text>
+    <rect x="24" y="67" width="422" height="140" rx="10" fill="#20313a"/>
+    <ellipse cx="235" cy="137" rx="119" ry="55" fill="none" stroke="#6fb6bf" stroke-width="5" stroke-dasharray="11 12"/>
+    <ellipse cx="235" cy="137" rx="79" ry="35" fill="none" stroke="#a08ab4" stroke-opacity=".55" stroke-width="3"/>
+    <path d="M106 189 L151 165 M364 189 L319 165 M235 74 L235 101" stroke="#d6a45c" stroke-width="3"/>
+    <text x="24" y="235" class="t">可学：尺度、镜头、交互、分层、LOD 与性能</text>
+    <text x="24" y="264" class="small">不可学：具体裂隙外形、虚境紫色、阵营符号</text>
+    <rect x="24" y="279" width="128" height="22" rx="11" class="accent"/><text x="36" y="295" class="tag">技术参考</text>
+  </g>
+
+  <line x1="64" y1="838" x2="1536" y2="838" stroke="#3b5058"/>
+  <text x="64" y="876" class="sub">审核顺序：原作身份 → 场景状态 → 抽象规律 → 《群星》实现 → 项目原创资产</text>
+  <text x="64" y="909" class="small">禁止反向推导：现有 Mod 紫色图标 ≠ 黑门固有色；星界间隙 ≠ 黑门；某一剧情特例 ≠ 全部异界。</text>
+</svg>
