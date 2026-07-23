@@ -14,6 +14,20 @@ const MAIN_STORY_CATALOG_PATH = path.join(
   "data",
   "bilibili_main_story_BV17M4y1w7rr.json"
 );
+const MAIN_STORY_MANUAL_REVIEW_PATH = path.join(
+  REPOSITORY_ROOT,
+  "tools",
+  "knowledge",
+  "data",
+  "main_story_manual_reviews_v0.1.json"
+);
+const MAIN_STORY_ROUTE_COMPARISON_PATH = path.join(
+  REPOSITORY_ROOT,
+  "tools",
+  "knowledge",
+  "data",
+  "main_story_route_comparisons_v0.1.json"
+);
 const CLEAN_CHARACTER_DIR = path.join(REPOSITORY_ROOT, "knowledge", "characters");
 
 function openKnowledgeDatabase() {
@@ -62,6 +76,63 @@ function ensureSchema(database) {
       updated_at TEXT NOT NULL,
       PRIMARY KEY (source_id, episode_no),
       FOREIGN KEY (source_id) REFERENCES source_records(source_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS episode_reviews (
+      source_id TEXT NOT NULL,
+      episode_no INTEGER NOT NULL,
+      watch_status TEXT NOT NULL,
+      review_status TEXT NOT NULL,
+      wiki_comparison TEXT NOT NULL,
+      special_note TEXT NOT NULL,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL,
+      PRIMARY KEY (source_id, episode_no),
+      FOREIGN KEY (source_id, episode_no) REFERENCES video_episodes(source_id, episode_no)
+    );
+
+    CREATE TABLE IF NOT EXISTS episode_review_segments (
+      source_id TEXT NOT NULL,
+      episode_no INTEGER NOT NULL,
+      segment_no INTEGER NOT NULL,
+      start_second INTEGER NOT NULL,
+      end_second INTEGER NOT NULL,
+      summary TEXT NOT NULL,
+      candidate_facts_json TEXT NOT NULL,
+      review_status TEXT NOT NULL,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL,
+      PRIMARY KEY (source_id, episode_no, segment_no),
+      FOREIGN KEY (source_id, episode_no) REFERENCES video_episodes(source_id, episode_no)
+    );
+
+    CREATE TABLE IF NOT EXISTS route_comparisons (
+      comparison_id TEXT PRIMARY KEY,
+      source_id TEXT NOT NULL,
+      title TEXT NOT NULL,
+      review_status TEXT NOT NULL,
+      scope_note TEXT NOT NULL,
+      editorial_note TEXT NOT NULL,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL,
+      FOREIGN KEY (source_id) REFERENCES source_records(source_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS route_comparison_entries (
+      comparison_id TEXT NOT NULL,
+      comparison_no INTEGER NOT NULL,
+      topic TEXT NOT NULL,
+      classification TEXT NOT NULL,
+      p09_evidence_json TEXT NOT NULL,
+      p10_evidence_json TEXT NOT NULL,
+      shared_observation TEXT NOT NULL,
+      difference_observation TEXT NOT NULL,
+      character_followup_json TEXT NOT NULL,
+      review_status TEXT NOT NULL,
+      created_at TEXT NOT NULL,
+      updated_at TEXT NOT NULL,
+      PRIMARY KEY (comparison_id, comparison_no),
+      FOREIGN KEY (comparison_id) REFERENCES route_comparisons(comparison_id)
     );
 
     CREATE TABLE IF NOT EXISTS glossary_terms (
@@ -133,6 +204,16 @@ function loadMainStoryCatalog() {
   return JSON.parse(fs.readFileSync(MAIN_STORY_CATALOG_PATH, "utf8"));
 }
 
+function loadMainStoryManualReviews() {
+  // 人工审核草稿单独存放，避免自动目录采集覆盖人工填写的摘要与排除决定。
+  return JSON.parse(fs.readFileSync(MAIN_STORY_MANUAL_REVIEW_PATH, "utf8"));
+}
+
+function loadMainStoryRouteComparison() {
+  // 路线对照种子只保存人工审核前的结构性候选，不替代原分集摘要或事实卡。
+  return JSON.parse(fs.readFileSync(MAIN_STORY_ROUTE_COMPARISON_PATH, "utf8"));
+}
+
 function parseDuration(durationText) {
   const parts = String(durationText)
     .trim()
@@ -174,13 +255,18 @@ function parseCleanCharacterFrontmatter(markdown) {
   };
 }
 
-function syncExistingCharacterSources(database) {
-  const timestamp = new Date().toISOString();
-  const files = fs
+function listCleanCharacterFiles() {
+  // 只把自动采集后的 clean 角色资料纳入来源索引，排除标准角色档案与关系文档。
+  return fs
     .readdirSync(CLEAN_CHARACTER_DIR, { withFileTypes: true })
     .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
     .map((entry) => entry.name)
     .filter((name) => !name.includes("_character_") && !name.startsWith("character_"));
+}
+
+function syncExistingCharacterSources(database) {
+  const timestamp = new Date().toISOString();
+  const files = listCleanCharacterFiles();
 
   const upsertSource = database.prepare(`
     INSERT INTO source_records (
@@ -255,8 +341,11 @@ function syncExistingCharacterSources(database) {
   }
 
   return {
-    characterSourceCount: database.prepare("SELECT COUNT(*) AS count FROM source_records WHERE provider = ?").get("Huiji Wiki").count,
-    cleanCharacterCount: database.prepare("SELECT COUNT(*) AS count FROM knowledge_documents WHERE layer = ?").get("clean").count,
+    // 灰机 Wiki 的剧情页与角色页使用相同 provider/source_type，必须按 Clean 角色文档关系计数。
+    characterSourceCount: getCharacterSourceRows(database).length,
+    cleanCharacterCount: database
+      .prepare("SELECT COUNT(*) AS count FROM knowledge_documents WHERE document_type = ? AND layer = ?")
+      .get("character", "clean").count,
   };
 }
 
@@ -268,27 +357,85 @@ function extractRouteNote(title) {
   return notes.join("；");
 }
 
-function deriveEpisodeMetadata(episode, excludedChapters) {
+function deriveEpisodeMetadata(episode, editorialRules = {}) {
   const title = String(episode.title).trim();
   const mainStory = /^主线剧情(\d+)([^—]*)——结局(\d+)：(.+)$/.exec(title);
-  const cityInterludeChapter =
-    episode.page >= 5 && episode.page <= 8 ? 1 : episode.page >= 51 && episode.page <= 52 ? 18 : null;
+  // 区域选择与讨伐后续分别由目录规则维护，避免把 P05-P07 误归类为主线本体或同一种分支。
+  const optionalBranchParentChapters = editorialRules.optional_branch_parent_chapters || {};
+  const configuredOptionalBranchChapter = optionalBranchParentChapters[String(episode.page)];
+  const optionalBranchChapter = Number.isInteger(configuredOptionalBranchChapter)
+    ? configuredOptionalBranchChapter
+    : null;
+  const regionalFollowupParentChapters = editorialRules.regional_followup_parent_chapters || {};
+  const configuredRegionalFollowupChapter = regionalFollowupParentChapters[String(episode.page)];
+  const regionalFollowupChapter = Number.isInteger(configuredRegionalFollowupChapter)
+    ? configuredRegionalFollowupChapter
+    : null;
+  const cityInterludeChapter = episode.page >= 51 && episode.page <= 52 ? 18 : null;
   const isBonus = title.startsWith("彩蛋");
-  const isCityInterlude = title.startsWith("城市区域讨伐剧情") || title.startsWith("城市黑核回收剧情");
-  const chapterNumber = mainStory ? Number.parseInt(mainStory[1], 10) : cityInterludeChapter;
-  const excluded = chapterNumber !== null && excludedChapters.includes(chapterNumber);
+  const isOptionalBranch = optionalBranchChapter !== null;
+  const isRegionalFollowup = regionalFollowupChapter !== null;
+  const isCityInterlude =
+    !isOptionalBranch &&
+    !isRegionalFollowup &&
+    (title.startsWith("城市区域讨伐剧情") || title.startsWith("城市黑核回收剧情"));
+  const chapterNumber = mainStory
+    ? Number.parseInt(mainStory[1], 10)
+    : isOptionalBranch
+      ? optionalBranchChapter
+      : isRegionalFollowup
+        ? regionalFollowupChapter
+        : cityInterludeChapter;
+  const excludedChapters = editorialRules.excluded_chapters || [];
+  const excludedEpisodePages = editorialRules.excluded_episode_pages || [];
+  const chapterExcluded = chapterNumber !== null && excludedChapters.includes(chapterNumber);
+  const episodeExcluded = excludedEpisodePages.includes(episode.page);
+  const excluded = chapterExcluded || episodeExcluded;
+  const priorityRange = editorialRules.priority_episode_range || [];
+  const inPriorityRange =
+    priorityRange.length === 2 && episode.page >= priorityRange[0] && episode.page <= priorityRange[1];
+  const exclusionReason = chapterExcluded
+    ? "项目编辑决定：第 12 章《堕天使的挽歌》不进入知识采集与世界观依据。"
+    : episodeExcluded
+      ? "项目人工确认：P08《彩蛋——闪闪发光的迷之钥》不进入主线剧情采集、摘要、事实提取或世界观引用。"
+      : "";
+  const baseRouteNote = extractRouteNote(title);
+  const optionalBranchNote = editorialRules.optional_branch_note || "";
+  const regionalFollowupNote = editorialRules.regional_followup_note || "";
 
   return {
     durationSeconds: parseDuration(episode.duration),
-    contentKind: mainStory ? "main_story" : isCityInterlude ? "city_interlude" : isBonus ? "bonus" : "prologue",
+    contentKind: mainStory
+      ? "main_story"
+      : isOptionalBranch
+        ? "optional_branch"
+        : isRegionalFollowup
+          ? "regional_followup"
+          : isCityInterlude
+            ? "city_interlude"
+            : isBonus
+              ? "bonus"
+              : "prologue",
     chapterNumber,
-    chapterLabel: mainStory ? mainStory[2].trim() : isCityInterlude ? "城市区段 / 黑核回收" : "",
+    chapterLabel: mainStory
+      ? mainStory[2].trim()
+      : isOptionalBranch
+        ? "中段区域剧情分支"
+        : isRegionalFollowup
+          ? "区域讨伐后续 / 黑核回收"
+          : isCityInterlude
+            ? "城市区段 / 黑核回收"
+            : "",
     endingCode: mainStory ? Number.parseInt(mainStory[3], 10) : null,
     endingTitle: mainStory ? mainStory[4].trim() : "",
-    routeNote: extractRouteNote(title),
+    routeNote: isOptionalBranch
+      ? [baseRouteNote, optionalBranchNote].filter(Boolean).join("；")
+      : isRegionalFollowup
+        ? [baseRouteNote, regionalFollowupNote].filter(Boolean).join("；")
+        : baseRouteNote,
     editorialStatus: excluded ? "excluded" : "queued",
-    priorityBatch: episode.page >= 1 && episode.page <= 12 ? "core_chapters_01_03" : "",
-    exclusionReason: excluded ? "项目编辑决定：第 12 章《堕天使的挽歌》不进入知识采集与世界观依据。" : "",
+    priorityBatch: inPriorityRange && !excluded ? editorialRules.priority_batch || "" : "",
+    exclusionReason,
     reviewStatus: excluded ? "excluded" : "not_started",
   };
 }
@@ -296,7 +443,6 @@ function deriveEpisodeMetadata(episode, excludedChapters) {
 function syncMainStoryCatalog(database) {
   const catalog = loadMainStoryCatalog();
   const timestamp = new Date().toISOString();
-  const excludedChapters = catalog.editorial_rules?.excluded_chapters || [];
 
   const upsertSource = database.prepare(`
     INSERT INTO source_records (
@@ -357,7 +503,7 @@ function syncMainStoryCatalog(database) {
     );
 
     for (const episode of catalog.episodes) {
-      const metadata = deriveEpisodeMetadata(episode, excludedChapters);
+      const metadata = deriveEpisodeMetadata(episode, catalog.editorial_rules || {});
       upsertEpisode.run(
         catalog.source.id,
         episode.page,
@@ -398,6 +544,273 @@ function syncMainStoryCatalog(database) {
   };
 }
 
+function syncManualStoryReviews(database) {
+  // 审核种子保存用户确认与人工摘要草稿；先同步目录，才能保证外键指向真实分集。
+  const reviewData = loadMainStoryManualReviews();
+  const timestamp = new Date().toISOString();
+  const sourceId = reviewData.source_id;
+
+  if (!sourceId) {
+    throw new Error("人工审核种子缺少 source_id。");
+  }
+
+  const sourceExists = database.prepare("SELECT source_id FROM source_records WHERE source_id = ?").get(sourceId);
+  if (!sourceExists) {
+    throw new Error(`人工审核来源尚未导入：${sourceId}`);
+  }
+
+  const upsertReview = database.prepare(`
+    INSERT INTO episode_reviews (
+      source_id, episode_no, watch_status, review_status, wiki_comparison,
+      special_note, created_at, updated_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(source_id, episode_no) DO UPDATE SET
+      watch_status = excluded.watch_status,
+      review_status = excluded.review_status,
+      wiki_comparison = excluded.wiki_comparison,
+      special_note = excluded.special_note,
+      updated_at = excluded.updated_at
+  `);
+  const deleteSegments = database.prepare(
+    "DELETE FROM episode_review_segments WHERE source_id = ? AND episode_no = ?"
+  );
+  const insertSegment = database.prepare(`
+    INSERT INTO episode_review_segments (
+      source_id, episode_no, segment_no, start_second, end_second,
+      summary, candidate_facts_json, review_status, created_at, updated_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+  const updateEpisodeReviewStatus = database.prepare(
+    "UPDATE video_episodes SET review_status = ?, updated_at = ? WHERE source_id = ? AND episode_no = ?"
+  );
+  const episodeExists = database.prepare(
+    "SELECT episode_no FROM video_episodes WHERE source_id = ? AND episode_no = ?"
+  );
+
+  database.exec("BEGIN IMMEDIATE;");
+  try {
+    for (const review of reviewData.reviews || []) {
+      const episodeNo = Number(review.episode_no);
+      if (!Number.isInteger(episodeNo) || !episodeExists.get(sourceId, episodeNo)) {
+        throw new Error(`人工审核引用了不存在的分集：P${review.episode_no}`);
+      }
+
+      upsertReview.run(
+        sourceId,
+        episodeNo,
+        review.watch_status || "未开始",
+        review.review_status || "not_started",
+        review.wiki_comparison || "待比对",
+        review.special_note || "无",
+        timestamp,
+        timestamp
+      );
+      deleteSegments.run(sourceId, episodeNo);
+
+      for (const segment of review.segments || []) {
+        const startSecond = Number(segment.start_second);
+        const endSecond = Number(segment.end_second);
+        if (!Number.isFinite(startSecond) || !Number.isFinite(endSecond) || endSecond < startSecond) {
+          throw new Error(`P${episodeNo} 的人工摘要时间码无效。`);
+        }
+
+        insertSegment.run(
+          sourceId,
+          episodeNo,
+          Number(segment.segment_no),
+          startSecond,
+          endSecond,
+          segment.summary || "待填写",
+          JSON.stringify(segment.candidate_facts || []),
+          segment.review_status || review.review_status || "not_started",
+          timestamp,
+          timestamp
+        );
+      }
+
+      updateEpisodeReviewStatus.run(review.review_status || "not_started", timestamp, sourceId, episodeNo);
+    }
+    database.exec("COMMIT;");
+  } catch (error) {
+    database.exec("ROLLBACK;");
+    throw error;
+  }
+
+  return {
+    sourceId,
+    reviewCount: database.prepare("SELECT COUNT(*) AS count FROM episode_reviews WHERE source_id = ?").get(sourceId).count,
+    segmentCount: database
+      .prepare("SELECT COUNT(*) AS count FROM episode_review_segments WHERE source_id = ?")
+      .get(sourceId).count,
+  };
+}
+
+function syncMainStoryRouteComparison(database) {
+  // 路线对照独立于分集摘要：它只整理 P09／P10 的候选结构，不创建正式剧情事实。
+  const comparison = loadMainStoryRouteComparison();
+  const timestamp = new Date().toISOString();
+
+  if (!comparison.comparison_id || !comparison.source_id) {
+    throw new Error("路线对照种子缺少 comparison_id 或 source_id。");
+  }
+
+  const sourceExists = database
+    .prepare("SELECT source_id FROM source_records WHERE source_id = ?")
+    .get(comparison.source_id);
+  if (!sourceExists) {
+    throw new Error(`路线对照来源尚未导入：${comparison.source_id}`);
+  }
+
+  const episodeExists = database.prepare(
+    "SELECT episode_no FROM video_episodes WHERE source_id = ? AND episode_no = ?"
+  );
+  const upsertComparison = database.prepare(`
+    INSERT INTO route_comparisons (
+      comparison_id, source_id, title, review_status, scope_note, editorial_note,
+      created_at, updated_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+    ON CONFLICT(comparison_id) DO UPDATE SET
+      source_id = excluded.source_id,
+      title = excluded.title,
+      review_status = excluded.review_status,
+      scope_note = excluded.scope_note,
+      editorial_note = excluded.editorial_note,
+      updated_at = excluded.updated_at
+  `);
+  const deleteEntries = database.prepare(
+    "DELETE FROM route_comparison_entries WHERE comparison_id = ?"
+  );
+  const insertEntry = database.prepare(`
+    INSERT INTO route_comparison_entries (
+      comparison_id, comparison_no, topic, classification, p09_evidence_json,
+      p10_evidence_json, shared_observation, difference_observation,
+      character_followup_json, review_status, created_at, updated_at
+    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+  `);
+
+  database.exec("BEGIN IMMEDIATE;");
+  try {
+    upsertComparison.run(
+      comparison.comparison_id,
+      comparison.source_id,
+      comparison.title || "未命名路线对照",
+      comparison.review_status || "pending_human_confirmation",
+      comparison.scope_note || "待补充",
+      comparison.editorial_note || "待补充",
+      timestamp,
+      timestamp
+    );
+    deleteEntries.run(comparison.comparison_id);
+
+    for (const entry of comparison.entries || []) {
+      const comparisonNo = Number(entry.comparison_no);
+      if (!Number.isInteger(comparisonNo) || comparisonNo <= 0) {
+        throw new Error("路线对照项缺少有效 comparison_no。");
+      }
+
+      const p09Evidence = Array.isArray(entry.p09_evidence) ? entry.p09_evidence : [];
+      const p10Evidence = Array.isArray(entry.p10_evidence) ? entry.p10_evidence : [];
+      for (const evidence of [...p09Evidence, ...p10Evidence]) {
+        const episodeNo = Number(evidence.episode_no);
+        if (!Number.isInteger(episodeNo) || !episodeExists.get(comparison.source_id, episodeNo)) {
+          throw new Error(`路线对照项 ${comparisonNo} 引用了不存在的分集。`);
+        }
+      }
+
+      insertEntry.run(
+        comparison.comparison_id,
+        comparisonNo,
+        entry.topic || "未命名对照项",
+        entry.classification || "unclassified",
+        JSON.stringify(p09Evidence),
+        JSON.stringify(p10Evidence),
+        entry.shared_observation || "待人工确认",
+        entry.difference_observation || "待人工确认",
+        JSON.stringify(Array.isArray(entry.character_followup) ? entry.character_followup : []),
+        entry.review_status || comparison.review_status || "pending_human_confirmation",
+        timestamp,
+        timestamp
+      );
+    }
+    database.exec("COMMIT;");
+  } catch (error) {
+    database.exec("ROLLBACK;");
+    throw error;
+  }
+
+  return {
+    comparisonId: comparison.comparison_id,
+    comparisonCount: database.prepare("SELECT COUNT(*) AS count FROM route_comparisons").get().count,
+    entryCount: database
+      .prepare("SELECT COUNT(*) AS count FROM route_comparison_entries WHERE comparison_id = ?")
+      .get(comparison.comparison_id).count,
+  };
+}
+
+function getMainStoryRouteComparison(database, comparisonId) {
+  const comparison = database.prepare(`
+    SELECT comparison_id, source_id, title, review_status, scope_note, editorial_note
+    FROM route_comparisons
+    WHERE comparison_id = ?
+  `).get(comparisonId);
+
+  if (!comparison) {
+    return null;
+  }
+
+  const entries = database.prepare(`
+    SELECT
+      comparison_no, topic, classification, p09_evidence_json, p10_evidence_json,
+      shared_observation, difference_observation, character_followup_json, review_status
+    FROM route_comparison_entries
+    WHERE comparison_id = ?
+    ORDER BY comparison_no
+  `).all(comparisonId).map((entry) => ({
+    ...entry,
+    p09_evidence: JSON.parse(entry.p09_evidence_json || "[]"),
+    p10_evidence: JSON.parse(entry.p10_evidence_json || "[]"),
+    character_followup: JSON.parse(entry.character_followup_json || "[]"),
+  }));
+
+  return {
+    ...comparison,
+    entries,
+  };
+}
+
+function getEpisodeReviewRows(database, sourceId) {
+  const reviews = database
+    .prepare(`
+      SELECT episode_no, watch_status, review_status, wiki_comparison, special_note
+      FROM episode_reviews
+      WHERE source_id = ?
+      ORDER BY episode_no
+    `)
+    .all(sourceId);
+  const segments = database.prepare(`
+    SELECT segment_no, start_second, end_second, summary, candidate_facts_json, review_status
+    FROM episode_review_segments
+    WHERE source_id = ? AND episode_no = ?
+    ORDER BY segment_no
+  `);
+
+  return reviews.map((review) => ({
+    ...review,
+    segments: segments.all(sourceId, review.episode_no).map((segment) => ({
+      ...segment,
+      candidate_facts: JSON.parse(segment.candidate_facts_json || "[]"),
+    })),
+  }));
+}
+
+function getConfiguredExcludedEpisodePages(catalog) {
+  // 用同一套规则推导排除分集，避免校验逻辑与目录导入逻辑出现两个真相来源。
+  return catalog.episodes
+    .filter((episode) => deriveEpisodeMetadata(episode, catalog.editorial_rules || {}).editorialStatus === "excluded")
+    .map((episode) => episode.page)
+    .sort((left, right) => left - right);
+}
+
 function getCatalogRows(database, sourceId) {
   return database
     .prepare(`
@@ -415,12 +828,17 @@ function getCatalogRows(database, sourceId) {
 function getCharacterSourceRows(database) {
   return database
     .prepare(`
-      SELECT source_id, title, canonical_url
-      FROM source_records
-      WHERE provider = ? AND source_type = ?
-      ORDER BY title
+      SELECT DISTINCT source.source_id, source.title, source.canonical_url
+      FROM source_records AS source
+      INNER JOIN knowledge_documents AS document
+        ON document.source_id = source.source_id
+      WHERE source.provider = ?
+        AND source.source_type = ?
+        AND document.document_type = ?
+        AND document.layer = ?
+      ORDER BY source.title
     `)
-    .all("Huiji Wiki", "wiki_page");
+    .all("Huiji Wiki", "wiki_page", "character", "clean");
 }
 
 module.exports = {
@@ -429,8 +847,16 @@ module.exports = {
   formatDuration,
   getCatalogRows,
   getCharacterSourceRows,
+  getConfiguredExcludedEpisodePages,
+  getEpisodeReviewRows,
+  getMainStoryRouteComparison,
+  listCleanCharacterFiles,
   loadMainStoryCatalog,
+  loadMainStoryManualReviews,
+  loadMainStoryRouteComparison,
   openKnowledgeDatabase,
   syncExistingCharacterSources,
+  syncMainStoryRouteComparison,
+  syncManualStoryReviews,
   syncMainStoryCatalog,
 };

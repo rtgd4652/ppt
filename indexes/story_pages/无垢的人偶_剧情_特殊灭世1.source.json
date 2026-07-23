@@ -1,0 +1,77 @@
+{
+  "title": "无垢的人偶/剧情/特殊灭世1",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E6%97%A0%E5%9E%A2%E7%9A%84%E4%BA%BA%E5%81%B6%2F%E5%89%A7%E6%83%85%2F%E7%89%B9%E6%AE%8A%E7%81%AD%E4%B8%961",
+  "page_id": 20077,
+  "touched": "2024-05-03T16:26:44Z",
+  "last_sync": "2026-07-20T17:27:43.064Z",
+  "story_scope": "main_story",
+  "route": "无垢的人偶",
+  "chapter": "主线剧情 2",
+  "day": "特殊灭世1",
+  "categories": [
+    "使用tbui时间轴的页面"
+  ],
+  "sections": [
+    {
+      "level": 2,
+      "title": "第一天",
+      "character_count": 685
+    },
+    {
+      "level": 4,
+      "title": "选项：这不可能！",
+      "character_count": 229
+    },
+    {
+      "level": 4,
+      "title": "选项：难道这是真的……",
+      "character_count": 439
+    },
+    {
+      "level": 2,
+      "title": "最终日",
+      "character_count": 406
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "这不可能！",
+        "难道这是真的……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    }
+  ],
+  "article_links": [
+    "无垢的人偶/剧情",
+    "无垢的人偶/剧情/第二天"
+  ],
+  "image_names": [
+    "CG_08.png",
+    "Dialogue_icon_.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_晏华.png",
+    "CG_62.png",
+    "手账CG_两个人的旅途.png",
+    "手账text_两个人的旅途.png",
+    "CG_09.png",
+    "Dialogue_icon_塞拉菲姆(黑影).png",
+    "CG_12.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/无垢的人偶_剧情_特殊灭世1.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/无垢的人偶_剧情_特殊灭世1.md"
+}

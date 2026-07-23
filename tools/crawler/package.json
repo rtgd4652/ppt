@@ -8,8 +8,11 @@
     "probe:f7d": "node scripts/probe-f7d.js",
     "test:aemusa": "node scripts/test-aemusa.js",
     "collect:character": "node scripts/collect-character.js",
+    "collect:story": "node scripts/collect-story-page.js",
+    "discover:story": "node scripts/discover-story-links.js",
     "regress:characters": "node scripts/regress-characters.js",
     "modready:characters": "node scripts/generate-mod-ready-characters.js",
+    "modready:character": "node scripts/generate-mod-ready-characters.js",
     "install:chromium": "set PLAYWRIGHT_BROWSERS_PATH=.playwright-browsers&& npx playwright install chromium"
   },
   "keywords": [],

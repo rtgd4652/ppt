@@ -7,12 +7,17 @@
     "url": "https://www.bilibili.com/video/BV17M4y1w7rr/",
     "uploader": "-Gravity-17",
     "published_on": "2021-12-04",
-    "scope": "经项目人工确认的主线大线剧情与对应结局；用于补足 Wiki 缺失的剧情过程与顺序。",
+    "scope": "经项目人工确认的主线大线剧情、对应结局及完整录入的区域剧情分支；用于补足 Wiki 缺失的剧情过程与顺序。",
     "project_authority": "主线缺失剧情的主要叙事证据（需逐项人工审核）",
-    "coverage_note": "合集不覆盖全部选项差异与翻车线；第 12 章按项目编辑决定排除。"
+    "coverage_note": "合集不覆盖全部选项差异与翻车线；P05、P06 是不影响主线走向或结局的区域选择分支，P07 是每个区域讨伐结束后的黑核回收后续；三集均包含前面未呈现的重要区域剧情，必须完整逐段录入；P08 经项目人工确认排除，第 12 章按项目编辑决定排除。"
   },
   "editorial_rules": {
     "excluded_chapters": [12],
+    "excluded_episode_pages": [8],
+    "optional_branch_parent_chapters": { "5": 1, "6": 1 },
+    "optional_branch_note": "项目人工确认：P05、P06 是第二次讨伐的区域选择分支，不属于主线本体，不影响主线走向或结局，但包含重要且独立的区域讨伐剧情，必须完整逐段录入。",
+    "regional_followup_parent_chapters": { "7": 1 },
+    "regional_followup_note": "项目人工确认：P07 是每个区域讨伐结束后的黑核回收后续，不是区域选择分支；各区域片段必须完整逐段录入。",
     "priority_batch": "core_chapters_01_03",
     "priority_episode_range": [1, 12]
   },

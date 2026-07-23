@@ -1,0 +1,68 @@
+{
+  "title": "黑暗中的身影/剧情/最终日",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E9%BB%91%E6%9A%97%E4%B8%AD%E7%9A%84%E8%BA%AB%E5%BD%B1%2F%E5%89%A7%E6%83%85%2F%E6%9C%80%E7%BB%88%E6%97%A5",
+  "page_id": 11912,
+  "touched": "2023-04-19T16:02:35Z",
+  "last_sync": "2026-07-21T00:11:29.247Z",
+  "story_scope": "main_story",
+  "route": "避世的方舟",
+  "chapter": "主线剧情 3",
+  "day": "最终日（黑暗中的身影）",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "最终日",
+      "character_count": 1072
+    },
+    {
+      "level": 4,
+      "title": "选项：战胜活骸零",
+      "character_count": 1033
+    },
+    {
+      "level": 4,
+      "title": "选项：未战胜活骸零",
+      "character_count": 593
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "战胜活骸零",
+        "未战胜活骸零"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    }
+  ],
+  "article_links": [
+    "避世的方舟/剧情",
+    "避世的方舟/剧情/第一天"
+  ],
+  "image_names": [
+    "Dialogue_icon_.png",
+    "Dialogue_icon_塞拉菲姆(黑影).png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_安托涅瓦.png",
+    "Dialogue_icon_活骸零.png",
+    "Dialogue_icon_塞拉菲姆.png",
+    "CG_20.png",
+    "CG_12.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/黑暗中的身影_剧情_最终日.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/黑暗中的身影_剧情_最终日.md"
+}

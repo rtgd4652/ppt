@@ -1,0 +1,96 @@
+{
+  "title": "箱庭风景/剧情/最终日",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E7%AE%B1%E5%BA%AD%E9%A3%8E%E6%99%AF%2F%E5%89%A7%E6%83%85%2F%E6%9C%80%E7%BB%88%E6%97%A5",
+  "page_id": 15958,
+  "touched": "2023-04-19T16:02:36Z",
+  "last_sync": "2026-07-19T12:50:16.582Z",
+  "story_scope": "main_story",
+  "route": "正轨的箱庭",
+  "chapter": "主线剧情 1",
+  "day": "最终日（箱庭风景）",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "最终日",
+      "character_count": 1150
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战胜利",
+      "character_count": 856
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战胜利",
+      "character_count": 920
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战失败",
+      "character_count": 188
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战失败",
+      "character_count": 188
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "剧情战胜利",
+        "剧情战失败"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "剧情战胜利",
+        "剧情战失败"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 1,
+      "parent_option": "剧情战胜利",
+      "depth": 1,
+      "tree_index": 2
+    }
+  ],
+  "article_links": [
+    "正轨的箱庭/剧情",
+    "正轨的箱庭/剧情/第一天"
+  ],
+  "image_names": [
+    "Dialogue_icon_.png",
+    "Dialogue_icon_爱缪莎.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_希罗.png",
+    "Dialogue_icon_奥露西娅.png",
+    "Dialogue_icon_晏华.png",
+    "Dialogue_icon_珈儿.png",
+    "Dialogue_icon_冥魂.png",
+    "CG_11.png",
+    "CG_12.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/箱庭风景_剧情_最终日.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/箱庭风景_剧情_最终日.md"
+}

@@ -1,0 +1,148 @@
+{
+  "title": "两个人的旅途/剧情/最终日",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E4%B8%A4%E4%B8%AA%E4%BA%BA%E7%9A%84%E6%97%85%E9%80%94%2F%E5%89%A7%E6%83%85%2F%E6%9C%80%E7%BB%88%E6%97%A5",
+  "page_id": 19750,
+  "touched": "2023-04-19T16:02:41Z",
+  "last_sync": "2026-07-20T17:23:47.647Z",
+  "story_scope": "main_story",
+  "route": "无垢的人偶",
+  "chapter": "主线剧情 2",
+  "day": "最终日（两个人的旅途）",
+  "categories": [],
+  "sections": [
+    {
+      "level": 4,
+      "title": "选项：和安离开城市",
+      "character_count": 409
+    },
+    {
+      "level": 4,
+      "title": "选项：和安离开城市",
+      "character_count": 173
+    },
+    {
+      "level": 4,
+      "title": "选项：和安离开城市",
+      "character_count": 998
+    },
+    {
+      "level": 3,
+      "title": "剧情战结束",
+      "character_count": 89
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战胜利",
+      "character_count": 183
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战失败",
+      "character_count": 188
+    },
+    {
+      "level": 4,
+      "title": "选项：留在中央庭",
+      "character_count": 9
+    },
+    {
+      "level": 4,
+      "title": "选项：留在中央庭",
+      "character_count": 9
+    },
+    {
+      "level": 4,
+      "title": "选项：留在中央庭",
+      "character_count": 9
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "和安离开城市",
+        "留在中央庭"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "和安离开城市",
+        "留在中央庭"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 1,
+      "parent_option": "和安离开城市",
+      "depth": 1,
+      "tree_index": 2
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "和安离开城市",
+        "留在中央庭"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 2,
+      "parent_option": "和安离开城市",
+      "depth": 2,
+      "tree_index": 3
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "剧情战胜利",
+        "剧情战失败"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 3,
+      "parent_option": "和安离开城市",
+      "depth": 3,
+      "tree_index": 4
+    }
+  ],
+  "article_links": [
+    "两个人的旅途/剧情/第一天",
+    "无垢的人偶/剧情",
+    "永恒的终焉/剧情/最终日"
+  ],
+  "image_names": [
+    "Dialogue_icon_.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_安.png",
+    "Dialogue_icon_安托涅瓦.png",
+    "Dialogue_icon_晏华.png",
+    "Char_mini_icon_boss.png",
+    "CG_43.png",
+    "Dialogue_icon_希罗.png",
+    "CG_12.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/两个人的旅途_剧情_最终日.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/两个人的旅途_剧情_最终日.md"
+}

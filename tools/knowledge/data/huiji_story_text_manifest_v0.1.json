@@ -1,0 +1,633 @@
+{
+  "schema_version": "1.0",
+  "purpose": "灰机 Wiki 剧情文本迁移清单。Wiki 文本为当前项目的剧情正文主来源；视频仅保留为补充证据。",
+  "source_policy": {
+    "provider": "Huiji Wiki",
+    "source_type": "wiki_page",
+    "project_authority": "剧情文本主来源（页面版本与路线共通性仍需人工核对）",
+    "legacy_video_policy": "既有 Bilibili 抽样记录保留为补充视觉或人工确认线索，不再作为剧情正文主来源。"
+  },
+  "editorial_rules": {
+    "excluded_story_chapters": [
+      {
+        "title": "堕天使的挽歌",
+        "reason": "项目编辑决定：该主线章节不进入当前知识库的正统剧情层。该规则按实际章节标题生效，不等同于视频 P12。"
+      }
+    ],
+    "do_not_auto_sync": true,
+    "summary_rule": "先保存原文与清洗文本，再基于可追溯来源制作人工审核摘要。"
+  },
+  "pages": [
+    {
+      "id": "huiji-story-regular-garden-day-7",
+      "title": "正轨的箱庭/剧情/第七天",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "第七天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P02 等抽样仅作补充记录"
+      ],
+      "notes": "用户确认该页提供完整文本；已完成 raw、clean 与来源索引三件套采集。"
+    },
+    {
+      "id": "huiji-story-regular-garden-day-6",
+      "title": "正轨的箱庭/剧情/第六天",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "第六天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有抽样仅作补充记录"
+      ],
+      "notes": "按“正轨的箱庭”逐页采集顺序完成；已生成 raw、clean 与来源索引三件套。"
+    },
+    {
+      "id": "huiji-story-regular-garden-day-5",
+      "title": "正轨的箱庭/剧情/第五天",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "第五天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有抽样仅作补充记录"
+      ],
+      "notes": "按“正轨的箱庭”逐页采集顺序完成；已生成 raw、clean 与来源索引三件套。"
+    },
+    {
+      "id": "huiji-story-regular-garden-day-4",
+      "title": "正轨的箱庭/剧情/第四天",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "第四天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有抽样仅作补充记录"
+      ],
+      "notes": "按“正轨的箱庭”逐页采集顺序完成；已生成 raw、clean 与来源索引三件套。"
+    },
+    {
+      "id": "huiji-story-regular-garden-day-3",
+      "title": "正轨的箱庭/剧情/第三天",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "第三天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有抽样仅作补充记录"
+      ],
+      "notes": "按“正轨的箱庭”逐页采集顺序完成；已生成 raw、clean 与来源索引三件套。"
+    },
+    {
+      "id": "huiji-story-regular-garden-day-2",
+      "title": "正轨的箱庭/剧情/第二天",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "第二天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有抽样仅作补充记录"
+      ],
+      "notes": "按“正轨的箱庭”逐页采集顺序完成；已生成 raw、clean 与来源索引三件套。"
+    },
+    {
+      "id": "huiji-story-regular-garden-day-1",
+      "title": "正轨的箱庭/剧情/第一天",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "第一天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有抽样仅作补充记录"
+      ],
+      "notes": "按“正轨的箱庭”逐页采集顺序完成；已生成 raw、clean 与来源索引三件套。"
+    },
+    {
+      "id": "huiji-story-regular-garden-final-sacrifice",
+      "title": "牺牲的意义/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "最终日（牺牲的意义）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有抽样仅作补充记录"
+      ],
+      "notes": "第一天页面列出的最终日入口之一；按逐页采集原则先建立来源记录，不预判其与黑核数量条件的逐项映射。"
+    },
+    {
+      "id": "huiji-story-regular-garden-final-garden-view",
+      "title": "箱庭风景/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "最终日（箱庭风景）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有抽样仅作补充记录"
+      ],
+      "notes": "第一天页面列出的最终日入口之一；按逐页采集原则建立独立来源记录，待正文采集与最终日对照完成后再核对入口条件。"
+    },
+    {
+      "id": "huiji-story-regular-garden-final-ending",
+      "title": "终结/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "最终日（终结）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有抽样仅作补充记录"
+      ],
+      "notes": "第一天页面列出的最终日入口之一；按逐页采集原则建立独立来源记录，待三个最终日正文完成后再核对入口条件与结局差异。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-day-7",
+      "title": "无垢的人偶/剧情/第七天",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "第七天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P09／P10 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "主线剧情 2 的首个逐页采集页面；已生成 raw、clean 与来源索引三件套。页面选择树已按原始 HTML 保留，后续按第六天至第一天顺序继续采集。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-day-6",
+      "title": "无垢的人偶/剧情/第六天",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "第六天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P09／P10 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "按主线剧情 2 的逐页顺序完成采集；已生成 raw、clean 与来源索引三件套。来源索引保留前置状态、玩家选择、嵌套选择及版本对照的结构区别。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-day-5",
+      "title": "无垢的人偶/剧情/第五天",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "第五天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P09／P10 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "按主线剧情 2 的逐页顺序完成采集；已生成 raw、clean 与来源索引三件套，并保留拒绝希罗／跟随希罗的一次性选择分支。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-day-4",
+      "title": "无垢的人偶/剧情/第四天",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "第四天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P09／P10 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "按主线剧情 2 的逐页顺序完成采集；已生成 raw、clean 与来源索引三件套，并保留页面中的一次性玩家对话选择。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-day-3",
+      "title": "无垢的人偶/剧情/第三天",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "第三天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P09／P10 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "按主线剧情 2 的逐页顺序完成采集；已生成 raw、clean 与来源索引三件套。页面的三个玩家选择中，第三个选择树已保留为第二个选择树“我……”分支下的嵌套节点。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-day-2",
+      "title": "无垢的人偶/剧情/第二天",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "第二天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P09／P10 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "按主线剧情 2 的逐页顺序完成采集；已生成 raw、clean 与来源索引三件套。原始页面未包含 Tab 选择树，未人为补造分支。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-day-1-travel",
+      "title": "两个人的旅途/剧情/第一天",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "第一天（两个人的旅途）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P09 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "第二天之后进入的第一天结局路线之一；已生成 raw、clean 与来源索引三件套，并保留请求放过安／强烈抗议的玩家选择。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-day-1-eternal",
+      "title": "永恒的终焉/剧情/第一天",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "第一天（永恒的终焉）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P10 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "第二天之后进入的第一天结局路线之一；已生成 raw、clean 与来源索引三件套。中央庭信任度已满／未满被保留为状态分支，其下的请求放过安／强烈抗议保留为嵌套玩家选择。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-final-travel",
+      "title": "两个人的旅途/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "最终日（两个人的旅途）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P09 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "《两个人的旅途》正式最终日；已生成 raw、clean 与来源索引三件套，并保留三层连续玩家选择及其下的剧情战胜利／失败状态分支。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-final-eternal",
+      "title": "永恒的终焉/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "最终日（永恒的终焉）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P10 的既有视频抽样仅作补充记录，不作为剧情正文主来源"
+      ],
+      "notes": "《永恒的终焉》正式最终日；已生成 raw、clean 与来源索引三件套。是否满足《两个人的旅途》条件被保留为状态分支，其下三层玩家选择保持原始嵌套关系。"
+    },
+    {
+      "id": "huiji-story-uncorrupted-doll-special-annihilation-1",
+      "title": "无垢的人偶/剧情/特殊灭世1",
+      "story_scope": "main_story",
+      "route": "无垢的人偶",
+      "chapter": "主线剧情 2",
+      "day": "特殊灭世1",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：视频合集不保证覆盖该条件失败结局，Wiki 正文为当前主要来源"
+      ],
+      "notes": "由《永恒的终焉》第一天页面直接链接的条件失败结局；已生成 raw、clean 与来源索引三件套，不与两个正式最终日混写。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-day-7",
+      "title": "避世的方舟/剧情/第七天",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "第七天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；保留页面中的来源版本对照、状态条件及嵌套对话选择树。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-day-6",
+      "title": "避世的方舟/剧情/第六天",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "第六天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；状态条件与玩家选择均按页面 Tab 层级保留。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-day-5",
+      "title": "避世的方舟/剧情/第五天",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "第五天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；保留两组一次性玩家选择。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-day-4",
+      "title": "避世的方舟/剧情/第四天",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "第四天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；剧情战胜利／失败作为玩家选择下的嵌套状态分支保留。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-day-3",
+      "title": "避世的方舟/剧情/第三天",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "第三天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；连续选择按原页面父子关系保留。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-day-2",
+      "title": "避世的方舟/剧情/第二天",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "第二天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；原页面无 Tab 选择树，未人工补造分支。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-day-1",
+      "title": "避世的方舟/剧情/第一天",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "第一天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；战斗结果及黑核收集条件均保留为嵌套状态分支。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-final-deep-blue-star",
+      "title": "深蓝之星/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "最终日（深蓝之星）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；战胜／未战胜活骸零为状态分支，拯救世界／拯救安托涅瓦为其下玩家选择。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-final-dark-figure",
+      "title": "黑暗中的身影/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "最终日（黑暗中的身影）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；战胜／未战胜活骸零按战斗状态分支登记。"
+    },
+    {
+      "id": "huiji-story-secluded-ark-final-termination",
+      "title": "终结（避世的方舟）/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "避世的方舟",
+      "chapter": "主线剧情 3",
+      "day": "最终日（终结）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：既有 P11 视频记录仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成 raw、clean 与来源索引三件套；原页面无 Tab 选择树，作为独立终结页保存。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-day-7",
+      "title": "深渊的步伐/剧情/第七天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第七天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P13／P14／P15 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "母路线第七天；已生成 raw、clean 与来源索引三件套。页面无 Tab 选择树，未人工补造分支。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-day-6",
+      "title": "深渊的步伐/剧情/第六天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第六天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P13／P14／P15 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成三件套；五组玩家选择及其中的嵌套选择均按页面 Tab 层级保留。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-day-5",
+      "title": "深渊的步伐/剧情/第五天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第五天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P13／P14／P15 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成三件套；跟随／拒绝希罗及跟随后的两组嵌套对话选择均已结构化。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-day-4",
+      "title": "深渊的步伐/剧情/第四天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第四天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P13／P14／P15 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "已生成三件套；玩家选择、三组战斗结果和晨间选择／研究所占领状态已分别标注。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-day-3",
+      "title": "深渊的步伐/剧情/第三天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第三天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P14／P15 的对应路线仅作补充视觉证据"
+      ],
+      "notes": "神的棋盘／零的故事共通分支第三天；已生成三件套并保留嵌套选择。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-day-2",
+      "title": "深渊的步伐/剧情/第二天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第二天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P14／P15 的对应路线仅作补充视觉证据"
+      ],
+      "notes": "神的棋盘／零的故事共通分支第二天；已生成三件套并保留一次性玩家选择。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-day-1",
+      "title": "深渊的步伐/剧情/第一天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第一天",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P14／P15 的对应路线仅作补充视觉证据"
+      ],
+      "notes": "神的棋盘／零的故事共通分支第一天；战斗结果与黑核条件按状态分支标注，其下玩家选择保持原始嵌套关系。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-abandoned-day-3",
+      "title": "被抛下的人/剧情/第三天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第三天（被抛下的人）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P13 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "被抛下的人独立分支第三天；前日实验／区域推进条件与其下玩家选择已分层保存。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-abandoned-day-2",
+      "title": "被抛下的人/剧情/第二天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第二天（被抛下的人）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P13 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "被抛下的人独立分支第二天；已生成三件套并保留拒绝／答应的一次性选择。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-abandoned-day-1",
+      "title": "被抛下的人/剧情/第一天",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "第一天（被抛下的人）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P13 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "被抛下的人独立分支第一天；黑核、活骸等要求达成／未达成按状态分支保存。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-final-gods-board",
+      "title": "神的棋盘/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "最终日（神的棋盘）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P14 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "正式最终日；玩家意志选择与其后的剧情战胜败状态分别保存。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-final-zero-story",
+      "title": "零的故事/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "最终日（零的故事）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P15 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "正式最终日；希罗死亡／存活与两条路线下的剧情战胜败均按嵌套状态分支保存。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-final-abandoned",
+      "title": "被抛下的人/剧情/最终日",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "最终日（被抛下的人）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P13 仅作补充视觉证据，不作为剧情正文主来源"
+      ],
+      "notes": "正式最终日；玩家选择与剧情战胜败状态已分开登记。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-special-annihilation-1",
+      "title": "深渊的步伐/剧情/特殊灭世1",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "特殊灭世 1（研究所被中央庭攻占）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：视频合集不保证覆盖该失败状态，Wiki 正文为主要来源"
+      ],
+      "notes": "研究所被中央庭攻占的特殊灭世页；已作为失败状态独立保存，不与正式结局混写。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-special-annihilation-2",
+      "title": "深渊的步伐/剧情/特殊灭世2",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "特殊灭世 2（剧情战失败）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：视频合集不保证覆盖该失败状态，Wiki 正文为主要来源"
+      ],
+      "notes": "剧情战失败的特殊灭世页；希罗死亡／存活前置状态已结构化保存。"
+    },
+    {
+      "id": "huiji-story-abyss-steps-special-annihilation-3",
+      "title": "深渊的步伐/剧情/特殊灭世3",
+      "story_scope": "main_story",
+      "route": "深渊的步伐",
+      "chapter": "主线剧情 4",
+      "day": "特殊灭世 3（被抛下的人要求未达成）",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：视频合集不保证覆盖该失败状态，Wiki 正文为主要来源"
+      ],
+      "notes": "被抛下的人要求未达成的特殊灭世页；原页面无 Tab 选择树，未人工补造分支。"
+    }
+  ]
+}

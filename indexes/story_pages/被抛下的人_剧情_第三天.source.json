@@ -1,0 +1,132 @@
+{
+  "title": "被抛下的人/剧情/第三天",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E8%A2%AB%E6%8A%9B%E4%B8%8B%E7%9A%84%E4%BA%BA%2F%E5%89%A7%E6%83%85%2F%E7%AC%AC%E4%B8%89%E5%A4%A9",
+  "page_id": 14251,
+  "touched": "2024-05-03T16:02:31Z",
+  "last_sync": "2026-07-21T12:59:01.666Z",
+  "story_scope": "main_story",
+  "route": "深渊的步伐",
+  "chapter": "主线剧情 4",
+  "day": "第三天（被抛下的人）",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "第3天",
+      "character_count": 34
+    },
+    {
+      "level": 4,
+      "title": "条件：第四天让普通人参加实验",
+      "character_count": 529
+    },
+    {
+      "level": 4,
+      "title": "选项：是有点累了",
+      "character_count": 17
+    },
+    {
+      "level": 4,
+      "title": "选项：其实不怎么累，继续等着。",
+      "character_count": 1098
+    },
+    {
+      "level": 4,
+      "title": "条件：第四天未让普通人参加实验、未推完港湾区",
+      "character_count": 707
+    },
+    {
+      "level": 4,
+      "title": "选项：既然你这样要求了……",
+      "character_count": 13
+    },
+    {
+      "level": 4,
+      "title": "选项：一定要好好地回来",
+      "character_count": 1659
+    },
+    {
+      "level": 4,
+      "title": "高校学园・黑核",
+      "character_count": 80
+    },
+    {
+      "level": 4,
+      "title": "中央庭・黑核",
+      "character_count": 161
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "第四天让普通人参加实验",
+        "第四天未让普通人参加实验、未推完港湾区"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "是有点累了",
+        "其实不怎么累，继续等着。"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 1,
+      "parent_option": "第四天让普通人参加实验",
+      "depth": 1,
+      "tree_index": 2
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "既然你这样要求了……",
+        "一定要好好地回来"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 1,
+      "parent_option": "第四天未让普通人参加实验、未推完港湾区",
+      "depth": 1,
+      "tree_index": 3
+    }
+  ],
+  "article_links": [
+    "深渊的步伐/剧情",
+    "深渊的步伐/剧情/第四天",
+    "被抛下的人/剧情/第二天"
+  ],
+  "image_names": [
+    "Dialogue_icon_塞拉菲姆(黑影).png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_希罗.png",
+    "Dialogue_icon_.png",
+    "手账CG_神的棋盘.png",
+    "手账text_神的棋盘.png",
+    "Dialogue_icon_安.png",
+    "Dialogue_icon_达尔维拉.png",
+    "CG_76.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/被抛下的人_剧情_第三天.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/被抛下的人_剧情_第三天.md"
+}

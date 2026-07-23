@@ -1,0 +1,72 @@
+{
+  "title": "被抛下的人/剧情/第一天",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E8%A2%AB%E6%8A%9B%E4%B8%8B%E7%9A%84%E4%BA%BA%2F%E5%89%A7%E6%83%85%2F%E7%AC%AC%E4%B8%80%E5%A4%A9",
+  "page_id": 14729,
+  "touched": "2024-05-03T16:04:44Z",
+  "last_sync": "2026-07-21T12:59:02.330Z",
+  "story_scope": "main_story",
+  "route": "深渊的步伐",
+  "chapter": "主线剧情 4",
+  "day": "第一天（被抛下的人）",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "第1天",
+      "character_count": 2284
+    },
+    {
+      "level": 4,
+      "title": "条件：黑核、活骸等要求达成",
+      "character_count": 9
+    },
+    {
+      "level": 4,
+      "title": "条件：要求未达成",
+      "character_count": 6
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "黑核、活骸等要求达成",
+        "要求未达成"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    }
+  ],
+  "article_links": [
+    "深渊的步伐/剧情",
+    "深渊的步伐/剧情/特殊灭世3",
+    "被抛下的人/剧情/最终日",
+    "被抛下的人/剧情/第二天"
+  ],
+  "image_names": [
+    "Dialogue_icon_.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_罗纳克.png",
+    "CG_83.png",
+    "Dialogue_icon_黑影2.png",
+    "Dialogue_icon_安.png",
+    "Dialogue_icon_希罗.png",
+    "CG_08.png",
+    "手账CG_神的棋盘.png",
+    "手账text_神的棋盘.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/被抛下的人_剧情_第一天.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/被抛下的人_剧情_第一天.md"
+}

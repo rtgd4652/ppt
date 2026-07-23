@@ -1,0 +1,95 @@
+{
+  "title": "神的棋盘/剧情/最终日",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E7%A5%9E%E7%9A%84%E6%A3%8B%E7%9B%98%2F%E5%89%A7%E6%83%85%2F%E6%9C%80%E7%BB%88%E6%97%A5",
+  "page_id": 14796,
+  "touched": "2025-04-06T11:17:05Z",
+  "last_sync": "2026-07-21T12:59:02.744Z",
+  "story_scope": "main_story",
+  "route": "深渊的步伐",
+  "chapter": "主线剧情 4",
+  "day": "最终日（神的棋盘）",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "最终日",
+      "character_count": 1464
+    },
+    {
+      "level": 4,
+      "title": "选项：想要一起活下去",
+      "character_count": 208
+    },
+    {
+      "level": 4,
+      "title": "选项：哪能就这么结束！",
+      "character_count": 194
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战胜利",
+      "character_count": 817
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战失败",
+      "character_count": 6
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "想要一起活下去",
+        "哪能就这么结束！"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "剧情战胜利",
+        "剧情战失败"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 2
+    }
+  ],
+  "article_links": [
+    "深渊的步伐/剧情",
+    "深渊的步伐/剧情/特殊灭世2",
+    "深渊的步伐/剧情/第一天"
+  ],
+  "image_names": [
+    "Dialogue_icon_晏华.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_.png",
+    "Dialogue_icon_希罗.png",
+    "CG_82.png",
+    "Dialogue_icon_塞拉菲姆.png",
+    "CG_82_2.png",
+    "CG_93.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/神的棋盘_剧情_最终日.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/神的棋盘_剧情_最终日.md"
+}

@@ -1,0 +1,152 @@
+{
+  "schema_version": "1.0",
+  "purpose": "保存项目人工确认的剧情结构修正。它不覆盖灰机 Wiki 的 raw 文本，而是为 clean 正文、后续摘要与 SQLite 提供可追溯的人工判断。",
+  "page_annotations": {
+    "正轨的箱庭/剧情/第七天": {
+      "manual_structure_note": "人工确认：本页“零周目”不是新一轮第七天中的普通行动段落。初次游玩先呈现一轮七日已在第一天结束后进入的最终战斗；该战斗失败后，系统执行数据删除、重新登录、将时间设为第七天并开始世界重构。多周目再次开场时，不再重复呈现最终战斗，只显示失败记录、数据重载、时间设为第七天与世界重构的系统提示；其后的“第七天早”才是新一轮七日循环的开端。",
+      "manual_structure_reference": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md"
+    },
+    "深渊的步伐/剧情/第六天": {
+      "manual_structure_note": "自动解析把多段共同续文挂在最后一个选项下。人工校订已将拒绝／接受、一定有办法、英雄／兵器等互斥回答与共同续段分开，并保留三处回归正轨路线的出口。",
+      "manual_structure_reference": "knowledge/story/curated/days/深渊的步伐_第六天_剧情整理_v0.1.md"
+    },
+    "深渊的步伐/剧情/第五天": {
+      "manual_structure_note": "页面末尾的“拒绝希罗”属于根路线选择，不是前一局部选项的补充；三组早期区域段落属于角色回忆，不能当作当前时间线的全知叙述。",
+      "manual_structure_reference": "knowledge/story/curated/days/深渊的步伐_第五天_剧情整理_v0.1.md"
+    },
+    "深渊的步伐/剧情/第四天": {
+      "manual_structure_note": "两次东方古街突袭必须分别编号；玩家是否提交普通样本、研究所是否失守与实际实验结果是不同层级，并分别导向特殊灭世 1、被抛下的人分支或共通第三天。",
+      "manual_structure_reference": "knowledge/story/curated/days/深渊的步伐_第四天_剧情整理_v0.1.md"
+    },
+    "深渊的步伐/剧情/第三天": {
+      "manual_structure_note": "阻止安和让安参加实验是路线级互斥选择；自动解析误挂的共同续段已抽离。第四天样本状态与港湾区进度的交叉条件仍需实机确认优先级。",
+      "manual_structure_reference": "knowledge/story/curated/days/深渊的步伐_第三天_剧情整理_v0.1.md"
+    },
+    "深渊的步伐/剧情/第一天": {
+      "manual_structure_note": "本页包含两场独立关键战斗。两场失败虽都可进入希罗存活版零的故事，但治疗结晶与安托涅瓦状态不同；两战全胜后才进入黑核状态和希罗生死判断。",
+      "manual_structure_reference": "knowledge/story/curated/days/深渊的步伐_第一天_剧情整理_v0.1.md"
+    },
+    "被抛下的人/剧情/第三天": {
+      "manual_structure_note": "本页同时收录普通样本实验和安参加实验的不同进入状态。第四天未提交普通样本与港湾区未推进的交叉条件存在，但来源未公开完整优先级。",
+      "manual_structure_reference": "knowledge/story/curated/days/被抛下的人_第三天_剧情整理_v0.1.md"
+    },
+    "零的故事/剧情/最终日": {
+      "manual_structure_note": "最终日有希罗死亡和希罗存活两个互斥开场；胜利后汇入零交付治疗力量与记忆的共同收束。零与活骸零为同一身体中的两个意识主体。",
+      "manual_structure_reference": "knowledge/story/curated/finales/零的故事_最终日_剧情整理_v0.1.md"
+    },
+    "深渊的步伐/剧情/特殊灭世2": {
+      "manual_structure_note": "本页汇总神的棋盘、零的故事和被抛下的人最终战失败结果；零的故事还分希罗死亡／存活两种状态，不能合并为一个通用灭世段。",
+      "manual_structure_reference": "knowledge/story/curated/finales/深渊的步伐_特殊灭世2_剧情整理_v0.1.md"
+    }
+  },
+  "claims": [
+    {
+      "claim_id": "CLAIM-STORY-REGULAR-GARDEN-ZERO-LOOP-BOUNDARY-001",
+      "domain": "main_story_structure",
+      "subject": "正轨的箱庭：零周目与新七日循环的边界",
+      "statement": "初次游玩的零周目展示的是一轮七日在第一天结束后进入的最终战斗；战斗失败后触发数据重载、时间设为第七天与世界重构，随后才进入新一轮七日。",
+      "claim_type": "narrative_structure",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "正轨的箱庭/剧情/第七天",
+      "source_section": "零周目",
+      "evidence_note": "用户人工确认；对应 Wiki 页面“零周目”中的失败记录、数据删除、重新登录、时间设置与世界重构段落。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-REGULAR-GARDEN-MULTI-LOOP-OPENING-001",
+      "domain": "main_story_structure",
+      "subject": "正轨的箱庭：多周目开场表现",
+      "statement": "多周目开场只保留失败记录、数据重载、时间设为第七天与世界重构的系统提示，不重复呈现零周目中的最终战斗。",
+      "claim_type": "narrative_structure",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "正轨的箱庭/剧情/第七天",
+      "source_section": "多周目",
+      "evidence_note": "用户人工确认；用于区分初次游玩的零周目收束段与后续循环的开场表现。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-ABYSS-ROUTE-BREAKPOINTS-001",
+      "domain": "main_story_structure",
+      "subject": "深渊的步伐：第四天与第三天路线断点",
+      "statement": "第四天研究所失守进入特殊灭世 1；让普通样本参加实验进入被抛下的人方向；未让普通样本参加时，第三天是否允许安参加实验构成第二个路线断点。",
+      "claim_type": "route_structure",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工校订",
+      "page_title": "深渊的步伐/剧情/第四天",
+      "source_section": "路线状态与实验选择",
+      "evidence_note": "依据第四天、第三天和被抛下的人第三天页面导航与正文人工交叉校订；区域进度交叉条件的优先级仍保留待实机确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-ABYSS-TWO-BATTLES-001",
+      "domain": "main_story_structure",
+      "subject": "深渊的步伐：第一天两场关键战斗",
+      "statement": "第一天包含两场不可合并的关键战斗；任一场失败都进入希罗存活版零的故事，但治疗结晶和安托涅瓦的状态不同。",
+      "claim_type": "battle_branch_structure",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工校订",
+      "page_title": "深渊的步伐/剧情/第一天",
+      "source_section": "第一场战斗与第二场战斗",
+      "evidence_note": "依据两场战斗各自的胜败正文、后续导航与零的故事前置状态人工校订。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-ABYSS-FINALE-MATRIX-001",
+      "domain": "main_story_structure",
+      "subject": "深渊的步伐：黑核与希罗生死的结局映射",
+      "statement": "两战全胜后，全黑核且放过希罗进入神的棋盘；全黑核或未全黑核状态下射杀希罗进入希罗死亡版零的故事；任一关键战失败进入希罗存活版零的故事。",
+      "claim_type": "finale_route_structure",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工校订",
+      "page_title": "深渊的步伐/剧情/第一天",
+      "source_section": "黑核状态、希罗生死与最终日入口",
+      "evidence_note": "依据第一天页面状态 Tab、选择分支和三个最终日页面的互相映射人工校订。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-ABYSS-ZERO-DUAL-CONSCIOUSNESS-001",
+      "domain": "character_narrative",
+      "subject": "零与活骸零的意识主体边界",
+      "statement": "零与活骸零共享同一具身体，但属于愿望和行动方向不同的两个意识主体；摘要不得把活骸人格的毁灭选择笼统写成零的选择。",
+      "claim_type": "character_identity_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工校订",
+      "page_title": "深渊的步伐/剧情/第二天",
+      "source_section": "地下研究所与两个意识",
+      "evidence_note": "依据第二天与零的故事最终日对白、说话者标签及各自愿望人工校订。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-ABYSS-ABANDONED-REQUIREMENTS-001",
+      "domain": "main_story_structure",
+      "subject": "被抛下的人：正式结局要求的证据边界",
+      "statement": "来源只说明需要满足黑核、活骸等综合要求，没有公开完整数量和隐藏阈值；未达成时进入特殊灭世 3。",
+      "claim_type": "source_uncertainty_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工校订",
+      "page_title": "被抛下的人/剧情/第一天",
+      "source_section": "最终日要求判断",
+      "evidence_note": "依据被抛下的人第一天与特殊灭世 3 的文本人工校订；明确禁止从角色台词反推数值。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-ABYSS-SPECIAL-DESTRUCTION-2-001",
+      "domain": "main_story_structure",
+      "subject": "深渊的步伐：特殊灭世 2 的独立失败结果",
+      "statement": "特殊灭世 2 汇总三个正式最终战的失败结果，其中零的故事还分希罗死亡与希罗存活两种前置；四种失败的责任主体和收束方式不同。",
+      "claim_type": "failure_branch_structure",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工校订",
+      "page_title": "深渊的步伐/剧情/特殊灭世2",
+      "source_section": "三正式结局最终战失败",
+      "evidence_note": "依据特殊灭世 2 的状态标签、三个正式最终日失败入口与说话者人工校订。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-ABYSS-MYSTERY-GIRL-IDENTITY-001",
+      "domain": "character_narrative",
+      "subject": "神的棋盘：神秘少女身份与结局边界",
+      "statement": "页面正文仍以“？？？”标记神秘少女，资源名只能作为提示，不能写成正文已经确认身份；结局确认箱庭崩裂，但没有确认她已经死亡。",
+      "claim_type": "identity_and_outcome_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工校订",
+      "page_title": "神的棋盘/剧情/最终日",
+      "source_section": "最终战胜利与神秘少女出现",
+      "evidence_note": "依据正文说话者标签和收束描述人工校订；不以资源文件名替代叙事证据。"
+    }
+  ]
+}

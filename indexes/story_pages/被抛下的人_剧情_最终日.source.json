@@ -1,0 +1,94 @@
+{
+  "title": "被抛下的人/剧情/最终日",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E8%A2%AB%E6%8A%9B%E4%B8%8B%E7%9A%84%E4%BA%BA%2F%E5%89%A7%E6%83%85%2F%E6%9C%80%E7%BB%88%E6%97%A5",
+  "page_id": 14730,
+  "touched": "2023-06-13T16:03:21Z",
+  "last_sync": "2026-07-21T12:59:03.424Z",
+  "story_scope": "main_story",
+  "route": "深渊的步伐",
+  "chapter": "主线剧情 4",
+  "day": "最终日（被抛下的人）",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "最终日",
+      "character_count": 936
+    },
+    {
+      "level": 4,
+      "title": "选项：就算在这里动摇也没有意义了",
+      "character_count": 35
+    },
+    {
+      "level": 4,
+      "title": "选项：已经坚定的目标一定要走到底才行",
+      "character_count": 190
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战胜利",
+      "character_count": 539
+    },
+    {
+      "level": 4,
+      "title": "条件：剧情战战败",
+      "character_count": 6
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "就算在这里动摇也没有意义了",
+        "已经坚定的目标一定要走到底才行"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "剧情战胜利",
+        "剧情战战败"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 2
+    }
+  ],
+  "article_links": [
+    "深渊的步伐/剧情",
+    "深渊的步伐/剧情/特殊灭世2",
+    "被抛下的人/剧情/第一天"
+  ],
+  "image_names": [
+    "Dialogue_icon_.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_希罗.png",
+    "Dialogue_icon_罗纳克.png",
+    "Dialogue_icon_晏华.png",
+    "Dialogue_icon_爱缪莎.png",
+    "CG_92.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/被抛下的人_剧情_最终日.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/被抛下的人_剧情_最终日.md"
+}

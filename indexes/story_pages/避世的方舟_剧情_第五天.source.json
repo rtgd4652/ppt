@@ -1,0 +1,120 @@
+{
+  "title": "避世的方舟/剧情/第五天",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E9%81%BF%E4%B8%96%E7%9A%84%E6%96%B9%E8%88%9F%2F%E5%89%A7%E6%83%85%2F%E7%AC%AC%E4%BA%94%E5%A4%A9",
+  "page_id": 11483,
+  "touched": "2024-05-03T15:51:55Z",
+  "last_sync": "2026-07-21T00:07:25.997Z",
+  "story_scope": "main_story",
+  "route": "避世的方舟",
+  "chapter": "主线剧情 3",
+  "day": "第五天",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "第五天",
+      "character_count": 3219
+    },
+    {
+      "level": 4,
+      "title": "选项：拒绝希罗",
+      "character_count": 371
+    },
+    {
+      "level": 4,
+      "title": "选项：跟随希罗",
+      "character_count": 1195
+    },
+    {
+      "level": 3,
+      "title": "巡查方舟所在地",
+      "character_count": 426
+    },
+    {
+      "level": 4,
+      "title": "选项：拜托你了",
+      "character_count": 0
+    },
+    {
+      "level": 4,
+      "title": "选项：你有驾照吗？",
+      "character_count": 1015
+    },
+    {
+      "level": 3,
+      "title": "巡查方舟所在地",
+      "character_count": 2005
+    },
+    {
+      "level": 3,
+      "title": "巡查方舟所在地",
+      "character_count": 1098
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "拒绝希罗",
+        "跟随希罗"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "拜托你了",
+        "你有驾照吗？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 2
+    }
+  ],
+  "article_links": [
+    "避世的方舟/剧情",
+    "避世的方舟/剧情/第六天",
+    "避世的方舟/剧情/第四天"
+  ],
+  "image_names": [
+    "Dialogue_icon_.png",
+    "Dialogue_icon_塞拉菲姆(黑影).png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_安.png",
+    "Dialogue_icon_安托涅瓦.png",
+    "Dialogue_icon_奥露西娅.png",
+    "Dialogue_icon_罗纳克.png",
+    "Dialogue_icon_爱缪莎.png",
+    "Dialogue_icon_晏华.png",
+    "Dialogue_icon_芙罗拉.png",
+    "Dialogue_icon_希罗.png",
+    "Dialogue_icon_达尔维拉.png",
+    "CG_03.png",
+    "Mission_type_Side.png",
+    "Dialogue_icon_安托涅瓦(青年).png",
+    "CG_61.png",
+    "Dialogue_icon_爷爷2.png",
+    "Dialogue_icon_零.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/避世的方舟_剧情_第五天.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/避世的方舟_剧情_第五天.md"
+}

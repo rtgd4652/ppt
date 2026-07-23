@@ -1,0 +1,102 @@
+{
+  "title": "正轨的箱庭/剧情/第二天",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E6%AD%A3%E8%BD%A8%E7%9A%84%E7%AE%B1%E5%BA%AD%2F%E5%89%A7%E6%83%85%2F%E7%AC%AC%E4%BA%8C%E5%A4%A9",
+  "page_id": 15783,
+  "touched": "2024-05-03T16:12:21Z",
+  "last_sync": "2026-07-19T07:26:58.959Z",
+  "story_scope": "main_story",
+  "route": "正轨的箱庭",
+  "chapter": "主线剧情 1",
+  "day": "第二天",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "第二天",
+      "character_count": 666
+    },
+    {
+      "level": 4,
+      "title": "选项：我不想伤害安托涅瓦",
+      "character_count": 1626
+    },
+    {
+      "level": 4,
+      "title": "选项：帮助安托涅瓦解脱",
+      "character_count": 1447
+    },
+    {
+      "level": 2,
+      "title": "海湾侧城黑核情报",
+      "character_count": 339
+    },
+    {
+      "level": 2,
+      "title": "领取补给",
+      "character_count": 34
+    },
+    {
+      "level": 4,
+      "title": "版本：改版前",
+      "character_count": 23
+    },
+    {
+      "level": 4,
+      "title": "版本：改版后",
+      "character_count": 31
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "我不想伤害安托涅瓦",
+        "帮助安托涅瓦解脱"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "source_version",
+      "repeatable": false,
+      "options": [
+        "改版前",
+        "改版后"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 2
+    }
+  ],
+  "article_links": [
+    "正轨的箱庭/剧情",
+    "正轨的箱庭/剧情/第一天",
+    "正轨的箱庭/剧情/第三天"
+  ],
+  "image_names": [
+    "Dialogue_icon_.png",
+    "Dialogue_icon_塞拉菲姆(黑影).png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_晏华.png",
+    "Dialogue_icon_安托涅瓦.png",
+    "Dialogue_icon_安.png",
+    "CG_07.png",
+    "Dialogue_icon_达尔维拉.png",
+    "Dialogue_icon_阿岚.png",
+    "手账CG_牺牲的意义.png",
+    "手账text_牺牲的意义.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/正轨的箱庭_剧情_第二天.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/正轨的箱庭_剧情_第二天.md"
+}

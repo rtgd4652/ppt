@@ -1,0 +1,206 @@
+{
+  "schema_version": "1.0",
+  "purpose": "登记基于已采集 Wiki 剧情正文制作的结构化整理层。该层不覆盖 raw 或 clean 来源文本，并按来源页面写入本地知识库数据库。",
+  "documents": [
+    {
+      "id": "story-regular-garden-day-6-curated-v0.1",
+      "title": "正轨的箱庭：第六天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/正轨的箱庭_第六天_剧情整理_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/第六天",
+      "document_status": "source_structured",
+      "notes": "按页面原始 HTML 分支结构整理；不将不同选择或状态分支合并为同一次经历。"
+    },
+    {
+      "id": "story-regular-garden-day-5-curated-v0.1",
+      "title": "正轨的箱庭：第五天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/正轨的箱庭_第五天_剧情整理_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/第五天",
+      "document_status": "source_structured",
+      "notes": "按页面原始 HTML 分支结构整理；不把拒绝、未能跟随、港湾区处理或版本对照混为同一条经历。"
+    },
+    {
+      "id": "story-regular-garden-day-4-curated-v0.1",
+      "title": "正轨的箱庭：第四天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/正轨的箱庭_第四天_剧情整理_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/第四天",
+      "document_status": "source_structured",
+      "notes": "保留第五天前置状态、旧城区情报处理与版本对照的边界；港湾区状态到失守文本的映射待以原结构或人工实测确认。"
+    },
+    {
+      "id": "story-regular-garden-day-3-curated-v0.1",
+      "title": "正轨的箱庭：第三天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/正轨的箱庭_第三天_剧情整理_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/第三天",
+      "document_status": "source_structured",
+      "notes": "保留安离开病房后的互斥选择、第四天前置状态与海湾侧城情报处理的边界；旧城区状态到失守文本的映射待以原结构或人工实测确认。"
+    },
+    {
+      "id": "story-regular-garden-day-2-curated-v0.1",
+      "title": "正轨的箱庭：第二天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/正轨的箱庭_第二天_剧情整理_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/第二天",
+      "document_status": "source_structured",
+      "notes": "保留安托涅瓦处置的互斥选择、战斗结果标签与第三天前置状态的边界；海湾侧城状态到失守文本的映射待以原结构或人工实测确认。"
+    },
+    {
+      "id": "story-regular-garden-day-1-curated-v0.1",
+      "title": "正轨的箱庭：第一天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/正轨的箱庭_第一天_剧情整理_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/第一天",
+      "document_status": "source_structured",
+      "notes": "保留中央庭黑核状态、研究所前置状态与最终日入口的边界；不在采集三个最终日正文前推定黑核数量与结局页面的逐项映射。"
+    },
+    {
+      "id": "story-regular-garden-final-sacrifice-curated-v0.1",
+      "title": "牺牲的意义：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/牺牲的意义_最终日_剧情整理_v0.1.md",
+      "source_page_title": "牺牲的意义/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "按剧情战胜利／失败分别整理；角色语音按条件性文本库保存，胜利分支尾部重复的希罗收束文本待以原始 HTML 或实测核对。"
+    },
+    {
+      "id": "story-regular-garden-final-garden-view-curated-v0.1",
+      "title": "箱庭风景：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/箱庭风景_最终日_剧情整理_v0.1.md",
+      "source_page_title": "箱庭风景/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "按剧情战胜利／失败分别整理；保留爱缪莎未来观测与箱庭叙事的说话者／叙事边界，胜利分支尾部重复的希罗收束文本待以原始 HTML 或实测核对。"
+    },
+    {
+      "id": "story-regular-garden-final-ending-curated-v0.1",
+      "title": "终结：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/终结_最终日_剧情整理_v0.1.md",
+      "source_page_title": "终结/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "保留本页无状态 Tab、仅有失败式收束的结构；在第一天入口 HTML 或实测确认前不推定其对应的黑核数量条件。"
+    },
+    {
+      "id": "story-abyss-steps-day-7-curated-v0.1",
+      "title": "深渊的步伐：第七天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/深渊的步伐_第七天_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/第七天",
+      "document_status": "source_structured",
+      "notes": "按来源页面校订希罗路线入口与中央庭历史说明；希罗对历史、神器使与黑门的解释保留为角色主张。"
+    },
+    {
+      "id": "story-abyss-steps-day-6-curated-v0.1",
+      "title": "深渊的步伐：第六天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/深渊的步伐_第六天_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/第六天",
+      "document_status": "source_structured",
+      "notes": "抽离自动解析误挂的共同续段，区分路线出口、态度选择以及英雄／兵器讨论。"
+    },
+    {
+      "id": "story-abyss-steps-day-5-curated-v0.1",
+      "title": "深渊的步伐：第五天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/深渊的步伐_第五天_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/第五天",
+      "document_status": "source_structured",
+      "notes": "区分跟随／拒绝与是否下手的独有段和共同离场；三条区域往事按角色回忆保存。"
+    },
+    {
+      "id": "story-abyss-steps-day-4-curated-v0.1",
+      "title": "深渊的步伐：第四天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/深渊的步伐_第四天_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/第四天",
+      "document_status": "source_structured",
+      "notes": "区分两次东方古街突袭、普通人实验选择、研究所状态和三个后续路线入口。"
+    },
+    {
+      "id": "story-abyss-steps-day-3-curated-v0.1",
+      "title": "深渊的步伐：第三天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/深渊的步伐_第三天_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/第三天",
+      "document_status": "source_structured",
+      "notes": "抽离共同续段，并区分阻止安、让安参加实验与进入被抛下的人分支的状态边界。"
+    },
+    {
+      "id": "story-abyss-steps-day-2-curated-v0.1",
+      "title": "深渊的步伐：第二天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/深渊的步伐_第二天_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/第二天",
+      "document_status": "source_structured",
+      "notes": "区分零与活骸零两个意识主体；角色关于融合、异界和活骸的解释不提升为无条件世界观事实。"
+    },
+    {
+      "id": "story-abyss-steps-day-1-curated-v0.1",
+      "title": "深渊的步伐：第一天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/深渊的步伐_第一天_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/第一天",
+      "document_status": "source_structured",
+      "notes": "分别整理两场关键战斗、各自失败后果、全／未全黑核以及希罗生死与最终日的映射。"
+    },
+    {
+      "id": "story-abandoned-day-3-curated-v0.1",
+      "title": "被抛下的人：第三天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/被抛下的人_第三天_剧情整理_v0.1.md",
+      "source_page_title": "被抛下的人/剧情/第三天",
+      "document_status": "source_structured",
+      "notes": "区分普通样本与安参加实验的进入状态；区域进度交叉条件保留为待实机确认。"
+    },
+    {
+      "id": "story-abandoned-day-2-curated-v0.1",
+      "title": "被抛下的人：第二天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/被抛下的人_第二天_剧情整理_v0.1.md",
+      "source_page_title": "被抛下的人/剧情/第二天",
+      "document_status": "source_structured",
+      "notes": "按态度选择与共同续段校订，不把对话选项误写成独立路线条件。"
+    },
+    {
+      "id": "story-abandoned-day-1-curated-v0.1",
+      "title": "被抛下的人：第一天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/被抛下的人_第一天_剧情整理_v0.1.md",
+      "source_page_title": "被抛下的人/剧情/第一天",
+      "document_status": "source_structured",
+      "notes": "保留黑核、活骸等综合要求的来源不确定性，不自行补写数量或隐藏阈值。"
+    },
+    {
+      "id": "story-abyss-final-gods-board-curated-v0.1",
+      "title": "神的棋盘：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/神的棋盘_最终日_剧情整理_v0.1.md",
+      "source_page_title": "神的棋盘/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "保留希罗、零／活骸零与神秘少女的主体边界；结局只确认箱庭崩裂，不推定神秘少女已经死亡。"
+    },
+    {
+      "id": "story-abyss-final-zero-story-curated-v0.1",
+      "title": "零的故事：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/零的故事_最终日_剧情整理_v0.1.md",
+      "source_page_title": "零的故事/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "分别整理希罗死亡／存活两个前置开场和同一胜利收束；零与活骸零的愿望保持分离。"
+    },
+    {
+      "id": "story-abyss-final-abandoned-curated-v0.1",
+      "title": "被抛下的人：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/被抛下的人_最终日_剧情整理_v0.1.md",
+      "source_page_title": "被抛下的人/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "区分最终战胜负、中央庭阻止开门与希罗控制后门；不把结局写成已经成功进入真正异界。"
+    },
+    {
+      "id": "story-abyss-special-destruction-1-curated-v0.1",
+      "title": "深渊的步伐：特殊灭世 1 剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/深渊的步伐_特殊灭世1_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/特殊灭世1",
+      "document_status": "source_structured",
+      "notes": "两种玩家选择均收束为被拘禁，但晏华的处置理由不同；不推定相关角色生死。"
+    },
+    {
+      "id": "story-abyss-special-destruction-2-curated-v0.1",
+      "title": "深渊的步伐：特殊灭世 2 剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/深渊的步伐_特殊灭世2_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/特殊灭世2",
+      "document_status": "source_structured",
+      "notes": "分别保存三个正式最终战的失败结果，并将零的故事中希罗死亡／存活两种状态分开。"
+    },
+    {
+      "id": "story-abyss-special-destruction-3-curated-v0.1",
+      "title": "深渊的步伐：特殊灭世 3 剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/深渊的步伐_特殊灭世3_剧情整理_v0.1.md",
+      "source_page_title": "深渊的步伐/剧情/特殊灭世3",
+      "document_status": "source_structured",
+      "notes": "记录被抛下的人要求未达成后的收束；不从台词反推完整黑核、活骸数量。"
+    }
+  ]
+}

@@ -4,6 +4,7 @@
 
 | 来源 ID | 角色 | 页面 |
 | --- | --- | --- |
+| SRC-HUIJI-CHAR-3DFA9EA3C4EE | 安 | https://f7d.huijiwiki.com/wiki/%E5%AE%89 |
 | SRC-HUIJI-CHAR-21B93DA44741 | 安托涅瓦 | https://f7d.huijiwiki.com/wiki/%E5%AE%89%E6%89%98%E6%B6%85%E7%93%A6 |
 | SRC-HUIJI-CHAR-FE4D26B592D5 | 幽桐 | https://f7d.huijiwiki.com/wiki/%E5%B9%BD%E6%A1%90 |
 | SRC-HUIJI-CHAR-F8411F613462 | 拉比 | https://f7d.huijiwiki.com/wiki/%E6%8B%89%E6%AF%94 |

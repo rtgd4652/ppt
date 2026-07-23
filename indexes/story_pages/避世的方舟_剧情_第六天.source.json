@@ -1,0 +1,204 @@
+{
+  "title": "避世的方舟/剧情/第六天",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E9%81%BF%E4%B8%96%E7%9A%84%E6%96%B9%E8%88%9F%2F%E5%89%A7%E6%83%85%2F%E7%AC%AC%E5%85%AD%E5%A4%A9",
+  "page_id": 11909,
+  "touched": "2024-05-03T15:54:26Z",
+  "last_sync": "2026-07-21T00:07:24.880Z",
+  "story_scope": "main_story",
+  "route": "避世的方舟",
+  "chapter": "主线剧情 3",
+  "day": "第六天",
+  "categories": [
+    "使用危险模板的页面"
+  ],
+  "sections": [
+    {
+      "level": 2,
+      "title": "第六天",
+      "character_count": 597
+    },
+    {
+      "level": 4,
+      "title": "条件：（已解放高校学园）",
+      "character_count": 122
+    },
+    {
+      "level": 4,
+      "title": "条件：（未解放高校学园）",
+      "character_count": 1581
+    },
+    {
+      "level": 4,
+      "title": "选项：答应希罗",
+      "character_count": 114
+    },
+    {
+      "level": 4,
+      "title": "选项：拒绝希罗",
+      "character_count": 611
+    },
+    {
+      "level": 4,
+      "title": "选项：一定会有解决的办法",
+      "character_count": 102
+    },
+    {
+      "level": 4,
+      "title": "选项：尊重当事人的想法",
+      "character_count": 533
+    },
+    {
+      "level": 4,
+      "title": "选项：说出活骸化的事情",
+      "character_count": 715
+    },
+    {
+      "level": 4,
+      "title": "选项：隐瞒实情",
+      "character_count": 707
+    },
+    {
+      "level": 4,
+      "title": "选项：去见希罗吧",
+      "character_count": 651
+    },
+    {
+      "level": 4,
+      "title": "选项：是英雄",
+      "character_count": 9
+    },
+    {
+      "level": 4,
+      "title": "选项：是兵器",
+      "character_count": 2073
+    },
+    {
+      "level": 4,
+      "title": "选项：不想和希罗扯上关系了",
+      "character_count": 480
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "（已解放高校学园）",
+        "（未解放高校学园）"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "答应希罗",
+        "拒绝希罗"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 2
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "一定会有解决的办法",
+        "尊重当事人的想法"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 3
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "说出活骸化的事情",
+        "隐瞒实情"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 4
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "去见希罗吧",
+        "不想和希罗扯上关系了"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 5
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "是英雄",
+        "是兵器"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 5,
+      "parent_option": "去见希罗吧",
+      "depth": 1,
+      "tree_index": 6
+    }
+  ],
+  "article_links": [
+    "避世的方舟/剧情",
+    "避世的方舟/剧情/第七天",
+    "避世的方舟/剧情/第五天"
+  ],
+  "image_names": [
+    "Dialogue_icon_.png",
+    "Dialogue_icon_塞拉菲姆(黑影).png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_安.png",
+    "CG_02.png",
+    "Dialogue_icon_赛哈姆.png",
+    "Dialogue_icon_希罗.png",
+    "Dialogue_icon_罗纳克.png",
+    "Dialogue_icon_安托涅瓦.png",
+    "手账CG_牺牲的意义.png",
+    "手账text_牺牲的意义.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/避世的方舟_剧情_第六天.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/避世的方舟_剧情_第六天.md"
+}

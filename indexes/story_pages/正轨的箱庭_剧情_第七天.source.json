@@ -1,0 +1,316 @@
+{
+  "title": "正轨的箱庭/剧情/第七天",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E6%AD%A3%E8%BD%A8%E7%9A%84%E7%AE%B1%E5%BA%AD%2F%E5%89%A7%E6%83%85%2F%E7%AC%AC%E4%B8%83%E5%A4%A9",
+  "page_id": 15430,
+  "touched": "2026-03-25T17:24:44Z",
+  "last_sync": "2026-07-19T07:56:42.214Z",
+  "story_scope": "main_story",
+  "route": "正轨的箱庭",
+  "chapter": "主线剧情 1",
+  "day": "第七天",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "零周目",
+      "character_count": 120
+    },
+    {
+      "level": 4,
+      "title": "选项：是的，有过。",
+      "character_count": 59
+    },
+    {
+      "level": 4,
+      "title": "选项：不，从来没有。",
+      "character_count": 95
+    },
+    {
+      "level": 4,
+      "title": "选项：是，我很确定。",
+      "character_count": 72
+    },
+    {
+      "level": 4,
+      "title": "选项：……也许吧？我不知道。",
+      "character_count": 108
+    },
+    {
+      "level": 4,
+      "title": "选项：会",
+      "character_count": 84
+    },
+    {
+      "level": 4,
+      "title": "选项：不会",
+      "character_count": 627
+    },
+    {
+      "level": 3,
+      "title": "第七天早",
+      "character_count": 693
+    },
+    {
+      "level": 4,
+      "title": "选项：关于「交界都市」",
+      "character_count": 121
+    },
+    {
+      "level": 4,
+      "title": "选项：关于「中央庭」",
+      "character_count": 100
+    },
+    {
+      "level": 4,
+      "title": "选项：关于「战术终端」",
+      "character_count": 102
+    },
+    {
+      "level": 4,
+      "title": "结束选项：我已经没有问题了。",
+      "character_count": 1271
+    },
+    {
+      "level": 4,
+      "title": "选项：需要什么代价",
+      "character_count": 53
+    },
+    {
+      "level": 4,
+      "title": "选项：你为什么有这能力",
+      "character_count": 136
+    },
+    {
+      "level": 4,
+      "title": "选项：伽梨耶",
+      "character_count": 248
+    },
+    {
+      "level": 4,
+      "title": "选项：乌鹭",
+      "character_count": 262
+    },
+    {
+      "level": 4,
+      "title": "选项：妮维",
+      "character_count": 1971
+    },
+    {
+      "level": 4,
+      "title": "选项：我愿意",
+      "character_count": 8
+    },
+    {
+      "level": 4,
+      "title": "选项：我有别的选择吗",
+      "character_count": 1768
+    },
+    {
+      "level": 3,
+      "title": "第七天晚",
+      "character_count": 0
+    },
+    {
+      "level": 2,
+      "title": "多周目",
+      "character_count": 156
+    },
+    {
+      "level": 3,
+      "title": "第七天",
+      "character_count": 1327
+    },
+    {
+      "level": 4,
+      "title": "条件：（当前为一周目）",
+      "character_count": 1938
+    },
+    {
+      "level": 4,
+      "title": "条件：（当前为多周目）",
+      "character_count": 3132
+    },
+    {
+      "level": 3,
+      "title": "解放高校学园后",
+      "character_count": 129
+    },
+    {
+      "level": 2,
+      "title": "领取补给",
+      "character_count": 34
+    },
+    {
+      "level": 4,
+      "title": "版本：改版前",
+      "character_count": 23
+    },
+    {
+      "level": 4,
+      "title": "版本：改版后",
+      "character_count": 31
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "是的，有过。",
+        "不，从来没有。"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "是，我很确定。",
+        "……也许吧？我不知道。"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 2
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "会",
+        "不会"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 3
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": true,
+      "options": [
+        "关于「交界都市」",
+        "关于「中央庭」",
+        "关于「战术终端」"
+      ],
+      "exit_option": "我已经没有问题了。",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 4
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "需要什么代价",
+        "你为什么有这能力"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 5
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "伽梨耶",
+        "乌鹭",
+        "妮维"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 6
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "我愿意",
+        "我有别的选择吗"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 7
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "state_condition",
+      "repeatable": false,
+      "options": [
+        "（当前为一周目）",
+        "（当前为多周目）"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 8
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "source_version",
+      "repeatable": false,
+      "options": [
+        "改版前",
+        "改版后"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "tree_index": 9
+    }
+  ],
+  "article_links": [
+    "正轨的箱庭/剧情",
+    "正轨的箱庭/剧情/第六天",
+    "飘零的自由者/剧情"
+  ],
+  "image_names": [
+    "Dialogue_icon_薇拉.png",
+    "Dialogue_icon_安托涅瓦.png",
+    "Dialogue_icon_安.png",
+    "Dialogue_icon_.png",
+    "CG_01.png",
+    "CG_01_2.png",
+    "CG_09.png",
+    "Dialogue_icon_指挥使.png",
+    "Alter_selector.png",
+    "Dialogue_icon_霞.png",
+    "Dialogue_icon_伽梨耶.png",
+    "Dialogue_icon_乌鹭.png",
+    "Dialogue_icon_妮维.png",
+    "Buliding_part_中央庭.png",
+    "Fight-level.png",
+    "Monster_mini_icon_蛮骨.png",
+    "Icon_Boss_style.png",
+    "Item_rare_无.png",
+    "Monster_mini_icon_α尘鱼.png",
+    "Monster_mini_icon_β尘鱼.png",
+    "Dialogue_icon_雷切尔.png",
+    "Mission_type_Main.png",
+    "Dialogue_icon_希罗.png",
+    "Dialogue_icon_黑影3.png",
+    "手账CG_牺牲的意义.png",
+    "手账text_牺牲的意义.png",
+    "Dialogue_icon_晏华.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "人工确认：本页“零周目”不是新一轮第七天中的普通行动段落。初次游玩先呈现一轮七日已在第一天结束后进入的最终战斗；该战斗失败后，系统执行数据删除、重新登录、将时间设为第七天并开始世界重构。多周目再次开场时，不再重复呈现最终战斗，只显示失败记录、数据重载、时间设为第七天与世界重构的系统提示；其后的“第七天早”才是新一轮七日循环的开端。",
+  "manual_structure_reference": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md",
+  "raw_markdown_path": "raw/huiji/stories/正轨的箱庭_剧情_第七天.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/正轨的箱庭_剧情_第七天.md"
+}

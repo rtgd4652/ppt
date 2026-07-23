@@ -18,6 +18,7 @@ temp/
 # 系统文件
 Thumbs.db
 Desktop.ini
+*.lnk
 
 # Node / Playwright 本地依赖与浏览器会话缓存
 node_modules/

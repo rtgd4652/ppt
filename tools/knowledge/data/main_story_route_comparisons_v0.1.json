@@ -1,0 +1,235 @@
+{
+  "comparison_id": "CMP-MAIN-STORY2-P09-P10",
+  "source_id": "SRC-BILI-BV17M4Y1W7RR",
+  "title": "主线剧情 2《无垢的人偶》P09／P10 路线结构对照 v0.1",
+  "review_status": "pending_human_confirmation",
+  "scope_note": "本对照仅整理 P09 结局 1“两个人的旅途（安线）”与 P10 结局 2“永恒的终焉”首轮摘要中的场景、时间码和候选人物线索。它用于后续人工确认前的结构准备，不新增剧情事实，也不判断任何路线的正史地位。",
+  "editorial_note": "分类仅表示当前证据的整理状态：共用候选不等于已确认共同事实；分歧候选不等于已确认路线差异；未分类内容继续保留在原分集摘要。所有角色补全必须回链到分集、时间码、结局编号和人工审核状态。",
+  "entries": [
+    {
+      "comparison_no": 1,
+      "topic": "开场的医疗、研究、居住与城市总览",
+      "classification": "common_candidate",
+      "p09_evidence": [
+        {
+          "episode_no": 9,
+          "start_second": 0,
+          "end_second": 720,
+          "note": "城市总览、中央庭风格研究设施、医疗相关人物与居住空间先后出现。"
+        }
+      ],
+      "p10_evidence": [
+        {
+          "episode_no": 10,
+          "start_second": 0,
+          "end_second": 720,
+          "note": "医疗床、研究设施、居住空间与城市总览先后出现。"
+        }
+      ],
+      "shared_observation": "两条路线均以医疗／研究、居住空间和城市总览构成开场候选结构，可能共享主线 2 的背景或角色处境。",
+      "difference_observation": "P09 先呈现城市与研究设施中的橙发角色、安托涅瓦候选；P10 更早呈现医疗床上的长棕发女性及不同研究人员组合。人物身份、时间顺序和因果关系均未确认。",
+      "character_followup": [
+        "安：确认 P09 的橙发角色与 P10 的浅金或橙金发角色是否为同一角色表现，以及其在两线开场中的处境。",
+        "安托涅瓦：确认两线医疗床、研究设施与长棕发女性画面是否对应同一人物和同一状态。",
+        "指挥使：确认居住空间中的叙事视角、对话对象与路线差异。"
+      ],
+      "review_status": "pending_human_confirmation"
+    },
+    {
+      "comparison_no": 2,
+      "topic": "校园、体育馆与蓝色室内设施",
+      "classification": "common_candidate",
+      "p09_evidence": [
+        {
+          "episode_no": 9,
+          "start_second": 720,
+          "end_second": 2160,
+          "note": "高校校园、室内活动空间、居住空间、研究设施与城市操作界面相继出现。"
+        }
+      ],
+      "p10_evidence": [
+        {
+          "episode_no": 10,
+          "start_second": 720,
+          "end_second": 2160,
+          "note": "校园或街区式外景、体育馆、蓝色室内设施、城市操作界面与圆形平台相继出现。"
+        }
+      ],
+      "shared_observation": "两线均在开场后进入校园／公共设施及城市操作节点，可作为共同环境与行动阶段的候选线索。",
+      "difference_observation": "P09 的校园段出现希罗、安与其他候选人物；P10 的体育馆和蓝色设施中出现不同的多人组合。不得仅凭相似地点认定为同一会面或同一事件。",
+      "character_followup": [
+        "希罗：核对 P09 校园段的可见候选身份与 P10 中浅发研究者／深色短发男性的关系，不能因服装或镜头相似而合并。",
+        "安：核对其在校园、体育馆与蓝色室内设施中的行动顺序和对话对象。"
+      ],
+      "review_status": "pending_human_confirmation"
+    },
+    {
+      "comparison_no": 3,
+      "topic": "中央庭式圆形平台与会议场景",
+      "classification": "common_candidate",
+      "p09_evidence": [
+        {
+          "episode_no": 9,
+          "start_second": 1440,
+          "end_second": 2880,
+          "note": "中央庭风格圆形平台出现多人群像、候选会议与后续交流。"
+        }
+      ],
+      "p10_evidence": [
+        {
+          "episode_no": 10,
+          "start_second": 1440,
+          "end_second": 2880,
+          "note": "白色圆形平台中出现长棕发女性、红橙发女性、浅发男性等候选人物。"
+        }
+      ],
+      "shared_observation": "两线均重复出现白色或中央庭风格的圆形平台，可作为重要叙事空间的共用候选。",
+      "difference_observation": "P09 可见人数更多且呈群像会议结构；P10 主要呈现成对或少数角色的对话。平台用途、会议议题、人物名单与是否为同一时点均待确认。",
+      "character_followup": [
+        "安托涅瓦：核对其在平台和中央庭空间中的候选出现，以补齐其文明治理与危机处境的叙事证据。",
+        "晏华、爱缪莎、奥露西亚、希罗：P09 的候选群像不得直接迁入 P10；需以逐时间点和人工确认判断是否可进入角色关系资料。"
+      ],
+      "review_status": "pending_human_confirmation"
+    },
+    {
+      "comparison_no": 4,
+      "topic": "日间公园、传统街区、城市界面与轨道站台",
+      "classification": "common_candidate",
+      "p09_evidence": [
+        {
+          "episode_no": 9,
+          "start_second": 2880,
+          "end_second": 3600,
+          "note": "喷泉外景、研究人员接触、东方古街、消息界面与列车站先后出现。"
+        }
+      ],
+      "p10_evidence": [
+        {
+          "episode_no": 10,
+          "start_second": 2880,
+          "end_second": 3600,
+          "note": "喷泉广场、研究或医疗风格男性、传统街区、事件界面与轨道站台先后出现。"
+        }
+      ],
+      "shared_observation": "两线均使用日间公园／喷泉、传统街区、城市操作与轨道站台构成个人行动阶段的候选场景链。",
+      "difference_observation": "P09 中出现对安自我认知的候选线索与“雷切尔”候选研究人员；P10 的人物外观、街区接触对象和画面顺序存在不同。具体人物和情节不得互相替代。",
+      "character_followup": [
+        "安：两线均可能补充其个人行动、对未知的反应与自我认知，但所有相关表达在人工确认前只能记为角色主观线索。",
+        "研究人员候选：核对 P09 的“雷切尔”候选与 P10 白色外套男性是否为同一人物或不同角色。"
+      ],
+      "review_status": "pending_human_confirmation"
+    },
+    {
+      "comparison_no": 5,
+      "topic": "研究设施、医疗床、夜间异常与行动界面",
+      "classification": "route_difference_candidate",
+      "p09_evidence": [
+        {
+          "episode_no": 9,
+          "start_second": 3600,
+          "end_second": 4320,
+          "note": "列车站、研究设施、医疗床上的棕发女性、夜间公园的金色圆环与黑红人形、战斗界面相继出现。"
+        }
+      ],
+      "p10_evidence": [
+        {
+          "episode_no": 10,
+          "start_second": 3600,
+          "end_second": 4320,
+          "note": "列车站、研究设施、医疗床上的棕发女性、夜间林地的浅色长发女性与行动界面相继出现。"
+        }
+      ],
+      "shared_observation": "两线均出现研究设施、医疗床、夜间演出与行动界面，可作为危机阶段存在共通背景的候选。",
+      "difference_observation": "P09 的夜间段包含金色圆环与黑红人形候选；P10 呈现夜间林地与不同人物轮廓。异常对象、战斗关系、医疗状态和事件先后关系都可能构成路线分歧，待人工确认。",
+      "character_followup": [
+        "安托涅瓦：医疗床画面需要与她的角色历史、中央庭处境和两线状态分别核对。",
+        "安：夜间演出与行动界面可补充其面对未知的候选反应，但不能据此定义神器机制或本体。"
+      ],
+      "review_status": "pending_human_confirmation"
+    },
+    {
+      "comparison_no": 6,
+      "topic": "工业轨道、研究枢纽与区域接触",
+      "classification": "common_candidate",
+      "p09_evidence": [
+        {
+          "episode_no": 9,
+          "start_second": 4320,
+          "end_second": 5760,
+          "note": "夜间异常、研究设施、圆形平台、城市街头、工业轨道、医疗／居住设施与东方古街接触相继出现。"
+        }
+      ],
+      "p10_evidence": [
+        {
+          "episode_no": 10,
+          "start_second": 4320,
+          "end_second": 5760,
+          "note": "夜间公园蓝色发光对象、研究设施、圆形平台、工业轨道、病房／居住空间、传统街区通讯与城市界面相继出现。"
+        }
+      ],
+      "shared_observation": "两线均以研究枢纽、工业轨道与区域街区接触交替推进，可作为主线 2 中调查或行动流程的共用候选框架。",
+      "difference_observation": "夜间异常的视觉对象、东方古街的接触人物、研究设施内的对话组合与时间位置不同；不能从流程相似性推断同一对象、同一任务或相同结果。",
+      "character_followup": [
+        "晏华：P09 多次出现白金色外套男性的候选身份，适合优先核对其是否为研究／判断相关角色证据。",
+        "安：轨道、街区和研究设施间的移动序列可用于补齐其路线行动记录，但须先确认场景共通性。"
+      ],
+      "review_status": "pending_human_confirmation"
+    },
+    {
+      "comparison_no": 7,
+      "topic": "个人空间、紫色晶体环境与结局前圆形平台",
+      "classification": "common_candidate",
+      "p09_evidence": [
+        {
+          "episode_no": 9,
+          "start_second": 5760,
+          "end_second": 6480,
+          "note": "城市街头、居住空间、紫色晶体环境、研究设施、档案界面与圆形平台相继出现。"
+        }
+      ],
+      "p10_evidence": [
+        {
+          "episode_no": 10,
+          "start_second": 5760,
+          "end_second": 6480,
+          "note": "城市街头、居住空间、紫色晶体环境、蓝色室内设施与圆形平台相继出现。"
+        }
+      ],
+      "shared_observation": "两线在片尾前均串联个人空间、紫色晶体环境与圆形平台，可作为角色自我认知和主线收束前讨论的候选结构。",
+      "difference_observation": "P09 中平台对话被记录为可能涉及安的身份或一致性问题；P10 中平台人物组合和画面顺序不同。任何关于角色本体、记忆、替代或机制的结论均不得从该候选结构直接得出。",
+      "character_followup": [
+        "安：可把两线的个人空间、紫色晶体环境与平台对话列入“自我认知相关候选证据”，但不写入确定能力或本体设定。",
+        "指挥使：核对其是否在两线片尾前的平台或居住空间中承担同一叙事视角。"
+      ],
+      "review_status": "pending_human_confirmation"
+    },
+    {
+      "comparison_no": 8,
+      "topic": "片尾演出与结局展示边界",
+      "classification": "route_difference_candidate",
+      "p09_evidence": [
+        {
+          "episode_no": 9,
+          "start_second": 6480,
+          "end_second": 7081,
+          "note": "圆形平台对话、红色天空与破损城市演出、暖色插画、黑底文字卡及结局 1完成提示出现。"
+        }
+      ],
+      "p10_evidence": [
+        {
+          "episode_no": 10,
+          "start_second": 6480,
+          "end_second": 6891,
+          "note": "圆形平台对话、暖色插画或特写演出、黑底文字卡及播放器终点出现。"
+        }
+      ],
+      "shared_observation": "两线均以圆形平台和插画／文字卡式片尾演出收束，表明它们都是同一主线 2的不同结局展示。",
+      "difference_observation": "P09 额外出现红色天空与破损城市演出及结局 1完成提示；P10 的片尾呈现不同。视觉演出和标题只确认视频展示归类，不能单独确定角色最终命运、路线正史地位或世界观终局。",
+      "character_followup": [
+        "安：片尾可作为其在不同路线中情感与行动位置的候选证据，但需要人工确认后才能进入角色历史。",
+        "安托涅瓦、晏华及其他中央庭角色：不得根据片尾是否出镜推断生死、关系终局或组织结论。"
+      ],
+      "review_status": "pending_human_confirmation"
+    }
+  ]
+}

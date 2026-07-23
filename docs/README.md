@@ -61,7 +61,20 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 - 数据库说明：`knowledge/database/README.md`
 - 工具说明：`tools/knowledge/README.md`
 
-当前已索引 85 集主线剧情目录与七名角色的灰机 Wiki 来源；视频只作为人工审核后的叙事证据，不进行自动转写或下载。
+当前已索引 85 集视频目录，以及 47 个灰机 Wiki 主线剧情页面、129 棵剧情选择树和七名角色来源。已完成《正轨的箱庭》《无垢的人偶》《避世的方舟》《深渊的步伐》四条早期主线的逐页采集；Wiki 文本是当前剧情正文主来源，视频只作为人工审核后的补充叙事证据。
+
+## 视觉参考图库
+
+视觉参考图库位于 `docs/art/reference_library/`，用于统一角色、舰船、建筑、区划、巨构、UI、图标和粒子特效的判断标准。
+
+- 参考登记：`docs/art/reference_library/REFERENCE_MANIFEST.csv`
+- 自动索引：`docs/art/reference_library/REFERENCE_INDEX.md`
+- 来源与权利边界：`docs/art/reference_library/SOURCE_AND_RIGHTS.md`
+- 反面参考：`docs/art/reference_library/ANTI_REFERENCES.md`
+- Moodboard：`docs/art/reference_library/moodboards/`
+- 正式资产登记：`docs/art/ASSET_REGISTRY.csv`
+
+来源或再分发状态不明的图片只保存在被 Git 忽略的 `art/reference_library/`，不得直接复制进正式 Mod 资产目录。
 
 ## 截图
 
