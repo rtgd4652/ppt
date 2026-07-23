@@ -1,5 +1,7 @@
 ﻿# 命运之主第七阶段：以 LOD0 的副本打包 UV，并烘焙基础 BaseColor、Emissive 与 Normal 贴图。
 # 原始 LOD0、LOD1、LOD2 与定位器不会被修改；烘焙副本保存在 DL_Bake_Source 集合。
+# 遗留声明：烘焙结果只属于待转用旧舰体，不属于新版命运之主视觉规范。
+# 中文注释：历史输出路径暂时保留，未来改舰种时必须统一迁移和重新登记。
 
 import bpy
 from pathlib import Path

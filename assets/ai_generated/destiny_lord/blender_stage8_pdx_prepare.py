@@ -1,5 +1,7 @@
 ﻿# 命运之主第八阶段：拆分为群星三段舰体，并建立 PDX/Clausewitz 导出所需的定位器。
 # 本脚本不依赖导出插件；安装 PDX Blender Exporter 后，只需对三个集合分别导出 .mesh。
+# 遗留声明：三段舰体与定位器只作 PDX 技术样本和旧模型维护。
+# 中文注释：该舰体已退出命运之主身份，不得把历史 section 结构继承给新版设计。
 import bpy
 from pathlib import Path
 

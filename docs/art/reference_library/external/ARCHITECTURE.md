@@ -6,9 +6,9 @@
 
 ## 当前仓库审计
 
-- `assets/` 中已有白夜馆 UI 源图、命运之主模型流程与命运观测塔方案，但没有单独登记的外部建筑照片、图纸或 Moodboard。
+- `assets/` 中已有白夜馆 UI 源图、旧 Stage 9 舰体模型流程与已废弃的命运观测塔方案，但没有单独登记的外部建筑照片、图纸或 Moodboard。
 - `assets/ui/white_night_pavilion/faction_icons/district_reference_contact_sheet.png` 属于原作地区线索，不是外部建筑参考。
-- `assets/ai_generated/destiny_observatory/` 是项目概念方案，不得反向登记成现实建筑来源。
+- `assets/ai_generated/destiny_observatory/` 是已废弃的项目旧概念，不得反向登记成现实建筑来源，也不得作为未来命运观测塔正向锚点。
 - 当前没有可据以声明“已获许可”“公共领域”或“可再分发”的外部建筑素材集。
 
 ## 优先收集主题

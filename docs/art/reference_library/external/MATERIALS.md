@@ -8,7 +8,7 @@
 
 - `assets/ai_generated/destiny_lord/textures/` 有 basecolor、normal、emissive 工作图；`mod/gfx/models/ships/destiny_lord/` 有正式 DDS 和预览。
 - 当前舰船正式注册使用 diffuse、normal、specular 与 `PdxMeshShip`，说明参考分析需要适配《群星》实际材质通道，不能只描述 PBR 渲染器里的效果。
-- 命运观测塔方案提出深蓝主装甲、银白边框、冰蓝水晶、蓝色发光与少量金色，但这是待评审方案，不是材料事实或批准色板。
+- 已废弃的命运观测塔旧案曾提出深蓝主装甲、银白边框、冰蓝水晶、蓝色发光与少量金色；这些结论不是材料事实、批准色板或新版命运观测塔输入。
 - 当前没有单独登记的外部材料照片、扫描、供应商样本或授权纹理库。
 
 ## 优先收集主题

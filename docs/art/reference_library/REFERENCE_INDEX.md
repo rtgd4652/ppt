@@ -9,16 +9,16 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| 参考记录 | 38 |
-| 分类 | 4 |
-| 填写了 local_path | 20 |
-| 本地文件存在 | 20 |
+| 参考记录 | 47 |
+| 分类 | 3 |
+| 填写了 local_path | 26 |
+| 本地文件存在 | 26 |
 | 本地文件缺失 | 0 |
 | 缺少来源 | 0 |
-| 授权状态需关注 | 15 |
-| 审核状态需关注 | 18 |
+| 授权状态需关注 | 7 |
+| 审核状态需关注 | 12 |
 | 校验错误 | 0 |
-| 校验警告 | 33 |
+| 校验警告 | 19 |
 
 ## 质量提示
 
@@ -34,93 +34,78 @@
 - **警告** · 第 6 行 / REF-OG-AEMUSA-005 · `source_uncertain`：条目来源仍待确认
 - **警告** · 第 7 行 / REF-PROJECT-CENTRAL-001 · `source_uncertain`：条目来源仍待确认
 - **警告** · 第 8 行 / REF-PROJECT-CENTRAL-002 · `source_uncertain`：条目来源仍待确认
-- **警告** · 第 10 行 / REF-PROJECT-CENTRAL-004 · `rights_unknown`：版权或许可状态仍为 unknown
-- **警告** · 第 10 行 / REF-PROJECT-CENTRAL-004 · `unreviewed`：条目尚未审核
-- **警告** · 第 27 行 / REF-OG-ANTONIVA-001 · `rights_unknown`：版权或许可状态仍为 unknown
-- **警告** · 第 27 行 / REF-OG-ANTONIVA-001 · `unreviewed`：条目尚未审核
-- **警告** · 第 28 行 / REF-OG-ANTONIVA-002 · `rights_unknown`：版权或许可状态仍为 unknown
-- **警告** · 第 28 行 / REF-OG-ANTONIVA-002 · `unreviewed`：条目尚未审核
-- **警告** · 第 29 行 / REF-OG-ANTONIVA-003 · `rights_unknown`：版权或许可状态仍为 unknown
-- **警告** · 第 29 行 / REF-OG-ANTONIVA-003 · `unreviewed`：条目尚未审核
-- **警告** · 第 30 行 / REF-OG-ANTONIVA-004 · `rights_unknown`：版权或许可状态仍为 unknown
-- **警告** · 第 30 行 / REF-OG-ANTONIVA-004 · `unreviewed`：条目尚未审核
 - **警告** · 第 31 行 / REF-PROJECT-OLDWORLD-001 · `rights_unknown`：版权或许可状态仍为 unknown
 - **警告** · 第 31 行 / REF-PROJECT-OLDWORLD-001 · `unreviewed`：条目尚未审核
 - **警告** · 第 32 行 / REF-PROJECT-OLDWORLD-002 · `source_uncertain`：条目来源仍待确认
 - **警告** · 第 34 行 / REF-PROJECT-OLDWORLD-004 · `rights_unknown`：版权或许可状态仍为 unknown
 - **警告** · 第 34 行 / REF-PROJECT-OLDWORLD-004 · `unreviewed`：条目尚未审核
-- **警告** · 第 35 行 / REF-PROJECT-OTHERWORLD-001 · `rights_unknown`：版权或许可状态仍为 unknown
-- **警告** · 第 35 行 / REF-PROJECT-OTHERWORLD-001 · `unreviewed`：条目尚未审核
-- **警告** · 第 36 行 / REF-PROJECT-OTHERWORLD-002 · `rights_unknown`：版权或许可状态仍为 unknown
-- **警告** · 第 36 行 / REF-PROJECT-OTHERWORLD-002 · `unreviewed`：条目尚未审核
-- **警告** · 第 38 行 / REF-PROJECT-OTHERWORLD-004 · `rights_unknown`：版权或许可状态仍为 unknown
-- **警告** · 第 38 行 / REF-PROJECT-OTHERWORLD-004 · `unreviewed`：条目尚未审核
+- **警告** · 第 40 行 / REF-PROJECT-OTHERWORLD-001 · `unreviewed`：条目尚未审核
+- **警告** · 第 41 行 / REF-PROJECT-OTHERWORLD-002 · `unreviewed`：条目尚未审核
 
 ## 分类索引
-
-### external
-
-#### materials
-
-##### <code>REF-PROJECT-OTHERWORLD-004</code> · 空间错位与材质研究板（待建立）
-
-| 字段 | 内容 |
-| --- | --- |
-| 对象 | 不可能空间、干涉与负空间 |
-| 角色／阵营 | 异界 |
-| 来源 | planned_reference_slot · <code>待建立：空间错位、光学干涉与负空间研究板</code> |
-| 权利与用途 | unknown · not_available_until_source_review |
-| 视觉角色 | <code>material_reference</code> |
-| 审核状态 | <code>unreviewed</code> |
-| 标签 | 视觉：不可能空间;光学干涉;负空间<br>配色：待提取<br>形状：透视错位;不闭合边界<br>材质：薄膜干涉;烟尘;负空间<br>构图：结构与材质对照 |
-| 可学习 | 未来以结构和材料规律表现规则不兼容 |
-| 禁止照搬 | 不得复制外部作品的标志性异界场景、生物或符号 |
-| 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
-| 本地文件 | 仅登记来源（无本地副本） |
-| 备注 | 登记空位。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目尚未审核 (`unreviewed`) |
 
 ### original_game
 
 #### artifact
 
-##### <code>REF-OG-ANTONIVA-003</code> · 安托涅瓦神器方舟参考（待搜集）
+##### <code>REF-OG-ANTONIVA-003</code> · 安托涅瓦「诺亚方舟」神器图标
+
+![安托涅瓦「诺亚方舟」神器图标](<../../../art/reference_library/original_game/antoniva/antoniva_ark_icon.png>)
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 方舟外观、空间容纳与保护结构 |
+| 对象 | 神器本体结构、器物固有色与空间异常媒介 |
 | 角色／阵营 | 安托涅瓦 |
-| 来源 | planned_reference_slot · <code>待搜集并核验：安托涅瓦神器方舟官方参考</code> |
-| 权利与用途 | unknown · not_available_until_source_review |
+| 来源 | official_game_media_via_huiji_index · [打开来源](<https://f7d.huijiwiki.com/wiki/%E6%96%87%E4%BB%B6%3A%E5%AE%89%E6%89%98%E6%B6%85%E7%93%A6_%E8%AF%BA%E4%BA%9A%E6%96%B9%E8%88%9F_Artifact_Icon.png>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
 | 视觉角色 | <code>technical_reference</code> |
-| 审核状态 | <code>unreviewed</code> |
-| 标签 | 视觉：方舟;空间容纳;保护结构<br>配色：待提取<br>形状：待提取<br>材质：待提取<br>构图：待提取 |
-| 可学习 | 未来提炼方舟的可识别器物和空间语言 |
-| 禁止照搬 | 不得把方舟直接等同普通宇宙飞船或宗教圣物 |
+| 审核状态 | <code>approved_anchor</code> |
+| 标签 | 视觉：紧凑黑色舱体;粉紫上壳;白花;暖金阶梯翼;悬浮方块<br>配色：近黑;灰粉;浅紫;暖金;暖白;空间淡紫<br>形状：紧凑舱体;阶梯翼片;尖角垂片;离散方块<br>材质：深色实体;粉紫涂层;金属翼片;空间投影<br>构图：器物居中;两侧展开;少量方块环绕 |
+| 可学习 | 学习诺亚方舟的黑色主体、粉紫花纹上壳、暖金翼片和克制悬浮方块之间的可识别组合 |
+| 禁止照搬 | 不得改成传统木船、普通宇宙飞船、无限避难所、纯金圣物或满屏随机碎片 |
 | 关联 Moodboard | ANTONIVA |
+| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/antoniva/antoniva_ark_icon.png>)<br><code>art/reference_library/original_game/antoniva/antoniva_ark_icon.png</code> |
+| 备注 | 已完成第一轮器物核验；图标只支持可见结构判断，不证明内部容量或全部工作原理。本地副本被 Git 忽略。 |
+
+#### artifact_object
+
+##### <code>REF-OG-BLACKCORE-001</code> · 原作黑核条目
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 产生黑门的能量核心 |
+| 角色／阵营 | 黑核 |
+| 来源 | official_wiki_page · [打开来源](<https://f7d.huijiwiki.com/wiki/%E9%BB%91%E6%A0%B8>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>technical_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：黑核;能量核心;黑门源点<br>配色：近黑;待原图校色<br>形状：高密度核心;悬浮晶体状态<br>材质：晶体或高密度异常核心;待原图校色<br>构图：单体物件与说明页 |
+| 可学习 | 确认黑核与黑门的因果位置，帮助区分核心、入口和环境污染 |
+| 禁止照搬 | 不得把攻略数值、所有紫色晶体或环境碎片都等同黑核 |
+| 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
 | 本地文件 | 仅登记来源（无本地副本） |
-| 备注 | 登记空位。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目尚未审核 (`unreviewed`) |
+| 备注 | 文字定义已核验；视觉只采用剧情中明确的悬浮黑色晶体状态。 |
 
 #### character_awakened
 
-##### <code>REF-OG-ANTONIVA-002</code> · 安托涅瓦觉醒或战斗形态锚点（待搜集）
+##### <code>REF-OG-ANTONIVA-002</code> · 安托涅瓦「觉醒・神使」全身立绘
+
+![安托涅瓦「觉醒・神使」全身立绘](<../../../art/reference_library/original_game/antoniva/antoniva_awakened.jpg>)
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 空间能力、庇护与战斗表现 |
+| 对象 | 觉醒形态变化与基础识别连续性 |
 | 角色／阵营 | 安托涅瓦 |
-| 来源 | planned_reference_slot · <code>待搜集并核验：安托涅瓦官方觉醒或战斗图</code> |
-| 权利与用途 | unknown · not_available_until_source_review |
+| 来源 | official_game_media_via_huiji_index · [打开来源](<https://f7d.huijiwiki.com/wiki/%E6%96%87%E4%BB%B6%3A%E5%AE%89%E6%89%98%E6%B6%85%E7%93%A6-%E8%A7%89%E9%86%92.jpg>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
 | 视觉角色 | <code>secondary_reference</code> |
-| 审核状态 | <code>unreviewed</code> |
-| 标签 | 视觉：安托涅瓦;空间;庇护<br>配色：待提取<br>形状：待提取<br>材质：待提取<br>构图：待提取 |
-| 可学习 | 未来区分基础形态、觉醒状态与能力表现 |
-| 禁止照搬 | 不得把未知候选图误标成正式觉醒形态，也不得直接复制 |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：深棕长发;琥珀橙瞳;觉醒外层;花朵;空间展开<br>配色：暖白;珍珠白;低饱和虹彩;灰粉;淡紫;黑紫<br>形状：扩大外层;长披片;花瓣;包覆空间<br>材质：柔软织物;珍珠光泽;低饱和虹彩折面<br>构图：竖向全身;前后景展开;人物识别居中 |
+| 可学习 | 学习觉醒状态如何扩大白色与虹彩空间层，同时保留深棕长发、琥珀橙瞳、东方层叠服装及基础粉紫深色关系 |
+| 禁止照搬 | 不得把觉醒外层误读为常驻天使翼、婚纱、王座或纯白神体，也不得替换基础形态 |
 | 关联 Moodboard | ANTONIVA |
-| 本地文件 | 仅登记来源（无本地副本） |
-| 备注 | 登记空位。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目尚未审核 (`unreviewed`) |
+| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/antoniva/antoniva_awakened.jpg>)<br><code>art/reference_library/original_game/antoniva/antoniva_awakened.jpg</code> |
+| 备注 | 已核验为觉醒状态参考，不是基础服装替代品；本地副本被 Git 忽略。 |
 
 #### character_base
 
@@ -144,23 +129,24 @@
 | 备注 | 候选原作图；具体出处、形态名称与再分发权限尚未确认，因此本地副本被 Git 忽略。 |
 | 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`) |
 
-##### <code>REF-OG-ANTONIVA-001</code> · 安托涅瓦基础立绘锚点（待搜集）
+##### <code>REF-OG-ANTONIVA-001</code> · 安托涅瓦基础「神使」全身立绘
+
+![安托涅瓦基础「神使」全身立绘](<../../../art/reference_library/original_game/antoniva/antoniva_base.png>)
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 基础外貌、服装与方舟识别 |
+| 对象 | 基础外貌、服装、体态与诺亚方舟的组合关系 |
 | 角色／阵营 | 安托涅瓦 |
-| 来源 | planned_reference_slot · <code>待搜集并核验：安托涅瓦官方基础立绘</code> |
-| 权利与用途 | unknown · not_available_until_source_review |
+| 来源 | official_game_media_via_huiji_index · [打开来源](<https://f7d.huijiwiki.com/wiki/%E6%96%87%E4%BB%B6%3A%E5%AE%89%E6%89%98%E6%B6%85%E7%93%A6-%E7%A5%9E%E4%BD%BF.png>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
 | 视觉角色 | <code>primary_anchor</code> |
-| 审核状态 | <code>unreviewed</code> |
-| 标签 | 视觉：安托涅瓦;基础立绘;方舟<br>配色：待提取<br>形状：待提取<br>材质：待提取<br>构图：待提取 |
-| 可学习 | 未来锁定不可改变的人物识别核心 |
-| 禁止照搬 | 在来源、形态和权利未核验前不得用于生成正式资产 |
+| 审核状态 | <code>approved_anchor</code> |
+| 标签 | 视觉：深棕超长直发;琥珀橙瞳;东方层叠宽袖;诺亚方舟;安静从容<br>配色：深暖棕;琥珀橙;薰衣草灰;灰粉;暖白;黑紫;暖金<br>形状：长直发弧线;层叠宽袖;低重心承托;包覆负形<br>材质：柔软织物;绳结流苏;近黑舱体;粉紫上壳;暖金结构翼<br>构图：竖向全身;人物依托方舟;稳定重心 |
+| 可学习 | 学习不可改变的发色瞳色、面部气质、基础服装逻辑、人物与方舟的承托关系及固有色比例 |
+| 禁止照搬 | 不得直接复制原图或把人物改成蓝白银女神；不得把角色个人粉紫和方舟符号扩展为文明公共风格 |
 | 关联 Moodboard | ANTONIVA |
-| 本地文件 | 仅登记来源（无本地副本） |
-| 备注 | 登记空位，不代表已有素材。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目尚未审核 (`unreviewed`) |
+| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/antoniva/antoniva_base.png>)<br><code>art/reference_library/original_game/antoniva/antoniva_base.png</code> |
+| 备注 | 已完成第一轮视觉核验；HEX 仅为项目制作校准值而非官方色卡。本地副本被 Git 忽略，不授予再分发权。 |
 
 #### character_combat
 
@@ -246,61 +232,100 @@
 | 备注 | 候选皮肤参考，形态名称待核验。 |
 | 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`) |
 
-#### effects
+#### character_source
 
-##### <code>REF-OG-ANTONIVA-004</code> · 安托涅瓦剧情环境与能力特效（待搜集）
+##### <code>REF-OG-ESOLIN-001</code> · 埃索林角色页来源锚点
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 蓝白空间、庇护与希望氛围 |
-| 角色／阵营 | 安托涅瓦 |
-| 来源 | planned_reference_slot · <code>待搜集并核验：安托涅瓦官方剧情 CG 与技能特效</code> |
-| 权利与用途 | unknown · not_available_until_source_review |
-| 视觉角色 | <code>effect_reference</code> |
-| 审核状态 | <code>unreviewed</code> |
-| 标签 | 视觉：空间;庇护;蓝白;希望<br>配色：待提取<br>形状：待提取<br>材质：待提取<br>构图：待提取 |
-| 可学习 | 未来区分角色能力、剧情状态与公共文明风格 |
-| 禁止照搬 | 不得让个人方舟语言覆盖整个中央庭，也不得直接复制 CG |
-| 关联 Moodboard | ANTONIVA |
+| 对象 | 角色对象、导师与世界管理语境的来源入口 |
+| 角色／阵营 | 埃索林 |
+| 来源 | huiji_wiki_character_page · [打开来源](<https://f7d.huijiwiki.com/wiki/%E5%9F%83%E7%B4%A2%E6%9E%97>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>secondary_reference</code> |
+| 审核状态 | <code>reviewed</code> |
+| 标签 | 视觉：埃索林;导师;箱庭;因果;世界管理<br>配色：待高分辨率原图校色<br>形状：待全身图提取<br>材质：待原图核验<br>构图：角色页与对话头像入口 |
+| 可学习 | 建立可追溯角色来源，并区分已确认叙事身份与尚未核验外貌 |
+| 禁止照搬 | 不得直接复制页面图片、根据世界管理身份发明冠冕神殿或宣称已获得再分发权 |
 | 本地文件 | 仅登记来源（无本地副本） |
-| 备注 | 登记空位。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目尚未审核 (`unreviewed`) |
+| 备注 | 页面级来源锚点已建立；仍缺高分辨率全身图、设计稿和状态对照。 |
 
-##### <code>REF-PROJECT-OTHERWORLD-001</code> · 原作黑门候选参考组（待拆分）
+#### character_turnaround
+
+##### <code>REF-OG-ANTONIVA-004</code> · 安托涅瓦原作人物设计稿
+
+![安托涅瓦原作人物设计稿](<../../../art/reference_library/original_game/antoniva/antoniva_design.jpg>)
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 基础服装分层、侧面关系与比例校验 |
+| 角色／阵营 | 安托涅瓦 |
+| 来源 | official_game_media_via_huiji_index · [打开来源](<https://f7d.huijiwiki.com/wiki/%E6%96%87%E4%BB%B6%3A%E5%AE%89%E6%89%98%E6%B6%85%E7%93%A6%E8%AE%BE%E8%AE%A1.jpg>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>technical_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：人物设计;服装分层;宽袖;长发;饰件<br>配色：深暖棕;薰衣草灰;灰粉;暖白;黑紫<br>形状：正侧面比例;层叠衣片;宽袖;长直发<br>材质：织物;绳结;流苏;低调金属饰件<br>构图：设计稿对照;正侧面校准 |
+| 可学习 | 学习基础服装层级、长发重量、饰件尺度及不能由单张正面立绘确认的侧面关系 |
+| 禁止照搬 | 不得直接复制设计稿、臆造不可见背面，也不得把低调饰件放大成冠冕或宗教标志 |
+| 关联 Moodboard | ANTONIVA |
+| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/antoniva/antoniva_design.jpg>)<br><code>art/reference_library/original_game/antoniva/antoniva_design.jpg</code> |
+| 备注 | 用于基础形态正侧面校验；不是剧情 CG 或能力特效证据。本地副本被 Git 忽略。 |
+
+#### effects
+
+##### <code>REF-PROJECT-OTHERWORLD-001</code> · 原作黑门截图候选组（待逐图登记）
 
 | 字段 | 内容 |
 | --- | --- |
 | 对象 | 门形、城市侵入与灾难尺度 |
 | 角色／阵营 | 黑门 |
-| 来源 | planned_reference_slot · <code>待从原作剧情 CG 与技能特效中逐图筛选黑门参考</code> |
-| 权利与用途 | unknown · not_available_until_source_review |
+| 来源 | planned_reference_slot · <code>待从已核验原作页面逐图筛选黑门截图</code> |
+| 权利与用途 | official_game_reference · local_reference_analysis_only |
 | 视觉角色 | <code>primary_anchor</code> |
 | 审核状态 | <code>unreviewed</code> |
-| 标签 | 视觉：黑门;城市侵入;规则不兼容<br>配色：待提取<br>形状：待提取<br>材质：待提取<br>构图：待提取 |
-| 可学习 | 未来锁定黑门区别于普通虫洞和虚境的核心视觉 |
+| 标签 | 视觉：黑门;城市侵入;规则不兼容<br>配色：待原图校色<br>形状：待逐图提取<br>材质：待逐图提取<br>构图：待逐图提取 |
+| 可学习 | 补足文字证据无法确认的厚度、边缘、运动与场景曝光 |
 | 禁止照搬 | 不得用组级条目掩盖逐图来源，也不得默认紫色传送门视觉 |
 | 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
 | 本地文件 | 仅登记来源（无本地副本） |
-| 备注 | 必须逐图登记。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目尚未审核 (`unreviewed`) |
+| 备注 | 只登记待办；下载后必须存入 Git 忽略目录并逐图登记。 |
+| 质量标记 | ⚠ 条目尚未审核 (`unreviewed`) |
 
-##### <code>REF-PROJECT-OTHERWORLD-002</code> · 原作异界生态与黑雾候选组（待拆分）
+##### <code>REF-PROJECT-OTHERWORLD-002</code> · 原作异界生态与黑雾截图候选组（待逐图登记）
 
 | 字段 | 内容 |
 | --- | --- |
 | 对象 | 异界生态、污染与运动规律 |
 | 角色／阵营 | 异界 |
-| 来源 | planned_reference_slot · <code>待从原作剧情 CG 与技能特效中逐图筛选异界参考</code> |
-| 权利与用途 | unknown · not_available_until_source_review |
+| 来源 | planned_reference_slot · <code>待从已核验原作页面逐图筛选异界与黑雾截图</code> |
+| 权利与用途 | official_game_reference · local_reference_analysis_only |
 | 视觉角色 | <code>effect_reference</code> |
 | 审核状态 | <code>unreviewed</code> |
-| 标签 | 视觉：异界生态;黑雾;污染<br>配色：待提取<br>形状：待提取<br>材质：待提取<br>构图：待提取 |
-| 可学习 | 未来建立不同异界生态的材质和运动差异 |
+| 标签 | 视觉：异界生态;黑雾;污染<br>配色：待原图校色<br>形状：待逐图提取<br>材质：待逐图提取<br>构图：待逐图提取 |
+| 可学习 | 未来建立不同异界区域的材质与运动差异 |
 | 禁止照搬 | 不得统一成触手、眼睛、紫水晶或随机烟雾 |
 | 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
 | 本地文件 | 仅登记来源（无本地副本） |
-| 备注 | 必须逐图登记。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目尚未审核 (`unreviewed`) |
+| 备注 | 只登记待办；不能用一个剧情区域代表全部异界。 |
+| 质量标记 | ⚠ 条目尚未审核 (`unreviewed`) |
+
+#### effects_and_story_cg
+
+##### <code>REF-OG-SERAPHIM-001</code> · 《神明坠落》塞拉菲姆世界规则入口
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 世界片段、白核、白色方块、虚空与轮回管理 |
+| 角色／阵营 | 塞拉菲姆 |
+| 来源 | huiji_wiki_story_page · [打开来源](<https://f7d.huijiwiki.com/wiki/%E7%A5%9E%E6%98%8E%E5%9D%A0%E8%90%BD/%E5%89%A7%E6%83%85/%E6%9C%80%E7%BB%88%E6%97%A5>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>effect_reference</code> |
+| 审核状态 | <code>reviewed</code> |
+| 标签 | 视觉：塞拉菲姆;世界之主;轮回片段;白色方块;白核;虚空<br>配色：规则白;虚空近黑;待人物原图校色<br>形状：离散方块;核心环绕;世界片段;边界消散<br>材质：规则投影;空间片段;高密度核心<br>构图：人物与世界片段同场;虚空尺度 |
+| 可学习 | 学习塞拉菲姆世界规则的环境母题和片段聚散关系 |
+| 禁止照搬 | 不得把白色规则片段扩展成全身纯白、通用天使羽翼或中央庭公共纹样，也不得复制剧情画面 |
+| 本地文件 | 仅登记来源（无本地副本） |
+| 备注 | 来源页建立规则/环境锚点；尚不能代替人物高分辨率全身锚点。 |
 
 #### environments
 
@@ -346,6 +371,38 @@
 
 #### story_cg
 
+##### <code>REF-OG-ESOLIN-002</code> · 《导师与学生》埃索林剧情与画面入口
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 师生关系、箱庭修正与角色出现语境 |
+| 角色／阵营 | 埃索林 |
+| 来源 | huiji_wiki_story_page · [打开来源](<https://f7d.huijiwiki.com/wiki/%E5%AF%BC%E5%B8%88%E4%B8%8E%E5%AD%A6%E7%94%9F/%E5%89%A7%E6%83%85/%E6%9C%80%E7%BB%88%E6%97%A5>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>composition_reference</code> |
+| 审核状态 | <code>reviewed</code> |
+| 标签 | 视觉：埃索林;塞拉菲姆;导师与学生;箱庭狭缝;CG278<br>配色：待原图校色<br>形状：剧情构图;人物对峙;空间边界<br>材质：剧情CG;对话头像;规则空间<br>构图：最终日对峙与世界修正场景 |
+| 可学习 | 学习埃索林与塞拉菲姆作为独立人物的关系、剧情尺度和画面追溯路径 |
+| 禁止照搬 | 不得把剧情对白直接当作无限能力证明，也不得复制CG或互换两人视觉元素 |
+| 本地文件 | 仅登记来源（无本地副本） |
+| 备注 | 用于叙事与构图证据；人物完整外貌仍须单独原图核验。 |
+
+##### <code>REF-OG-SERAPHIM-002</code> · 《导师与学生》塞拉菲姆剧情与画面入口
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 塞拉菲姆与埃索林的师生关系、箱庭修正冲突和剧情状态 |
+| 角色／阵营 | 塞拉菲姆 |
+| 来源 | huiji_wiki_story_page · [打开来源](<https://f7d.huijiwiki.com/wiki/%E5%AF%BC%E5%B8%88%E4%B8%8E%E5%AD%A6%E7%94%9F/%E5%89%A7%E6%83%85/%E6%9C%80%E7%BB%88%E6%97%A5>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>composition_reference</code> |
+| 审核状态 | <code>reviewed</code> |
+| 标签 | 视觉：塞拉菲姆;埃索林;师生;箱庭;世界修正;CG278<br>配色：待高分辨率原图校色<br>形状：人物对峙;空间分层;世界边界<br>材质：剧情CG;对话头像;规则空间<br>构图：最终日人物关系与世界尺度构图 |
+| 可学习 | 学习塞拉菲姆与导师的独立角色关系、状态冲突和构图证据 |
+| 禁止照搬 | 不得把师生关系写成同一人物、互换外貌配色，或直接复制CG进入Mod |
+| 本地文件 | 仅登记来源（无本地副本） |
+| 备注 | 用于剧情状态和构图追溯；里见茜视觉锚点不由本条代替。 |
+
 ##### <code>REF-PROJECT-OLDWORLD-001</code> · 原作剧情 CG 与城市生活候选组（待拆分）
 
 | 字段 | 内容 |
@@ -363,6 +420,61 @@
 | 本地文件 | 仅登记来源（无本地副本） |
 | 备注 | 必须拆成逐图条目后才能使用。 |
 | 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目尚未审核 (`unreviewed`) |
+
+#### story_effect
+
+##### <code>REF-OG-BLACKGATE-004</code> · 死灵之穹时间回溯III：黑门剧情特例
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 圆环扩展、云层破开、黑雨与建筑腐蚀 |
+| 角色／阵营 | 黑门剧情特例 |
+| 来源 | official_wiki_page · [打开来源](<https://f7d.huijiwiki.com/wiki/%E6%AD%BB%E7%81%B5%E4%B9%8B%E7%A9%B9/%E5%89%A7%E6%83%85/%E6%97%B6%E9%97%B4%E5%9B%9E%E6%BA%AF%E2%85%A2>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>effect_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：圆环;黑雨;云层破裂;建筑腐蚀<br>配色：近黑;暗锈红;待原图校色<br>形状：扩展环;破云;垂直降落<br>材质：黑雨;腐蚀表面;空间异常<br>构图：事件阶段序列 |
+| 可学习 | 学习特定剧情中异常扩张、环境响应与阶段变化 |
+| 禁止照搬 | 不得把圆环当标准黑门造型或将腐蚀雨推广到全部异界 |
+| 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
+| 本地文件 | 仅登记来源（无本地副本） |
+| 备注 | 剧情特例，仅用于状态对照。 |
+
+#### story_environment
+
+##### <code>REF-OG-BLACKGATE-002</code> · 避世的方舟第七天：黑门环境状态
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 建筑冻结、黑雾与悬浮黑核 |
+| 角色／阵营 | 黑门与交界都市 |
+| 来源 | official_wiki_page · [打开来源](<https://f7d.huijiwiki.com/wiki/%E9%81%BF%E4%B8%96%E7%9A%84%E6%96%B9%E8%88%9F/%E5%89%A7%E6%83%85/%E7%AC%AC%E4%B8%83%E5%A4%A9>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>composition_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：黑雾;冻结空间;悬浮黑核;城市侵入<br>配色：近黑;煤灰;待原图校色<br>形状：环境停滞;局部错位;核心悬浮<br>材质：黑雾;冻结表面;黑色晶体<br>构图：现实城市—异常边界—黑核 |
+| 可学习 | 学习黑门影响现实环境时的空间层级与可读尺度 |
+| 禁止照搬 | 不得把该场景状态推广为所有黑门和异界生态 |
+| 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
+| 本地文件 | 仅登记来源（无本地副本） |
+| 备注 | 剧情文字证据已核验；页面图片未进入 Git。 |
+
+##### <code>REF-OG-BLACKGATE-003</code> · 门扉之外最终日：天幕级黑门
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 撕裂天空与黑幕吞噬的大型灾变 |
+| 角色／阵营 | 黑门 |
+| 来源 | official_wiki_page · [打开来源](<https://f7d.huijiwiki.com/wiki/%E9%97%A8%E6%89%89%E4%B9%8B%E5%A4%96/%E5%89%A7%E6%83%85/%E6%9C%80%E7%BB%88%E6%97%A5>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>composition_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：巨型黑门;天空撕裂;黑幕;吞噬<br>配色：近黑;病态亮边;待原图校色<br>形状：纵向撕裂;天幕展开;不闭合边界<br>材质：吞光空间;云层切面<br>构图：天空—城市—吞噬边界的大尺度构图 |
+| 可学习 | 学习大型黑门的灾变尺度、方向性和城市参照 |
+| 禁止照搬 | 不得用于普通入口、图标或低级异常，也不得复制 CG |
+| 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
+| 本地文件 | 仅登记来源（无本地副本） |
+| 备注 | 仅代表大型灾变状态，不定义黑门唯一形状。 |
 
 #### ui_and_icons
 
@@ -386,65 +498,105 @@
 | 备注 | 现有本地文件，需补精确来源与权利审核。 |
 | 质量标记 | ⚠ 条目来源仍待确认 (`source_uncertain`) |
 
+#### world_reference
+
+##### <code>REF-OG-BLACKGATE-001</code> · 原作世界观：黑门定义
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 黑色空间裂缝、黑雾与怪物的基础关系 |
+| 角色／阵营 | 黑门 |
+| 来源 | official_wiki_page · [打开来源](<https://f7d.huijiwiki.com/wiki/%E4%B8%96%E7%95%8C%E8%A7%82>) |
+| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
+| 视觉角色 | <code>primary_anchor</code> |
+| 审核状态 | <code>approved_anchor</code> |
+| 标签 | 视觉：黑门;黑色空间裂缝;黑雾;怪物<br>配色：近黑;冷灰;待原图校色<br>形状：不连续裂缝;现实切面<br>材质：吞光空间;黑雾;待原图校色<br>构图：世界观定义与场景入口 |
+| 可学习 | 确认黑门是两个世界次元碰撞融合形成的黑色空间裂缝，并区分门、雾和怪物 |
+| 禁止照搬 | 不得把页面文字变成任意圆洞造型，也不得复制页面图片进入正式资产 |
+| 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
+| 本地文件 | 仅登记来源（无本地副本） |
+| 备注 | 文字证据已核验；原作图片仍须逐张登记，未主张再分发权。 |
+
 ### project_output
 
 #### materials
 
-##### <code>REF-PROJECT-CENTRAL-004</code> · 中央庭公共材质与配色校准板（待建立）
+##### <code>REF-PROJECT-CENTRAL-004</code> · 中央庭公共材质与配色校准板
+
+![中央庭公共材质与配色校准板](<../calibration/central_court_material_calibration.svg>)
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 公共材质与跨资产色彩基线 |
+| 对象 | 公共材质、通道职责与跨资产色彩基线 |
 | 角色／阵营 | 中央庭 |
-| 来源 | planned_reference_slot · <code>待建立：中央庭公共材质与配色校准板</code> |
-| 权利与用途 | unknown · not_available_until_source_review |
+| 来源 | project_created · <code>docs/art/calibration/CENTRAL_COURT_MATERIAL_CALIBRATION.md 与配套 SVG</code> |
+| 权利与用途 | project_created · project_reference_analysis_and_calibration |
 | 视觉角色 | <code>material_reference</code> |
-| 审核状态 | <code>unreviewed</code> |
-| 标签 | 视觉：配色板;材质球;状态色<br>配色：深蓝灰;雾银;冷青;暖琥珀<br>形状：模块板;材料样本<br>材质：陶瓷装甲;拉丝金属;强化玻璃<br>构图：网格化校准板 |
-| 可学习 | 未来用于校准舰船、建筑、UI 和图标的共同底座 |
-| 禁止照搬 | 不得在校准板完成前把单张角色图或单个正式资产当作整个文明规范 |
+| 审核状态 | <code>approved_anchor</code> |
+| 标签 | 视觉：配色板;材质样本;状态色;通道职责<br>配色：深蓝灰;雾银;冷青;暖琥珀;警戒橙红<br>形状：模块板;材料样本;状态对照<br>材质：陶瓷装甲;涂层金属;雾银结构;强化玻璃;生活暖材质;受控神器接口<br>构图：网格化校准板 |
+| 可学习 | 校准舰船、建筑、区划、科研、UI 和图标的公共材料职责与面积关系 |
+| 禁止照搬 | 不得直接复制进 mod/gfx 或把角色个人色扩展为文明公共色 |
 | 关联 Moodboard | CENTRAL_COURT |
-| 本地文件 | 仅登记来源（无本地副本） |
-| 备注 | 登记空位，不代表已有可用素材。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目尚未审核 (`unreviewed`) |
+| 本地文件 | [打开本地文件](<../calibration/central_court_material_calibration.svg>)<br><code>docs/art/calibration/central_court_material_calibration.svg</code> |
+| 备注 | 项目自制分析与校准板，不是游戏正式资产；仍需游戏内曝光和材质通道复测。 |
 
-##### <code>REF-PROJECT-DESTINY-003</code> · 命运之主底色贴图预览
+##### <code>REF-PROJECT-DESTINY-003</code> · 旧 Stage 9 舰体底色贴图预览
 
-![命运之主底色贴图预览](<../../../assets/ai_generated/destiny_lord/textures/destiny_lord_basecolor.png>)
+![旧 Stage 9 舰体底色贴图预览](<../../../assets/ai_generated/destiny_lord/textures/destiny_lord_basecolor.png>)
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 舰体底色与材质分区 |
-| 角色／阵营 | 爱缪莎 |
+| 对象 | 遗留舰体底色与材质分区 |
+| 角色／阵营 | 待定舰种 |
 | 来源 | project_created · <code>项目自制贴图源文件</code> |
-| 权利与用途 | project_created · project_development_reference |
+| 权利与用途 | project_created · project_technical_reference_only |
 | 视觉角色 | <code>material_reference</code> |
 | 审核状态 | <code>supporting</code> |
-| 标签 | 视觉：舰体贴图;材质分区;低频细节<br>配色：近黑;深蓝;冷灰<br>形状：面板分区;细线<br>材质：涂层金属;陶瓷装甲<br>构图：UV 贴图平面 |
-| 可学习 | 学习大面层级、色块比例和远景稳定性 |
-| 禁止照搬 | 不得用底色贴图替代法线、高光、磨损与真实材质审核 |
-| 关联 Moodboard | DESTINY_SOVEREIGN |
+| 标签 | 视觉：遗留舰体贴图;材质分区;低频细节<br>配色：近黑;深蓝;冷灰<br>形状：面板分区;细线<br>材质：涂层金属;陶瓷装甲<br>构图：UV 贴图平面 |
+| 可学习 | 学习大面层级、色块比例和贴图导出流程 |
+| 禁止照搬 | 不得将旧贴图色彩冻结为未来命运之主或爱缪莎资产配色 |
 | 本地文件 | [打开本地文件](<../../../assets/ai_generated/destiny_lord/textures/destiny_lord_basecolor.png>)<br><code>assets/ai_generated/destiny_lord/textures/destiny_lord_basecolor.png</code> |
-| 备注 | 与法线、发光贴图共同评审。 |
+| 备注 | 随旧 Stage 9 舰体保留，等待未来舰种重新分配。 |
+
+#### materials_and_effects
+
+##### <code>REF-PROJECT-OTHERWORLD-004</code> · 黑门与异界正式视觉对照组
+
+![黑门与异界正式视觉对照组](<../calibration/black_gate_otherworld_comparison.svg>)
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 黑门、黑核、黑雾、异界生态与工程响应的边界 |
+| 角色／阵营 | 黑门与异界 |
+| 来源 | project_created · <code>docs/art/calibration/BLACK_GATE_OTHERWORLD_COMPARISON.md 与配套 SVG</code> |
+| 权利与用途 | project_created · project_reference_analysis_and_calibration |
+| 视觉角色 | <code>material_reference</code> |
+| 审核状态 | <code>approved_anchor</code> |
+| 标签 | 视觉：黑门;黑核;黑雾;异界生态;工程隔离;状态序列<br>配色：近黑;煤灰;冷青灰;暗锈红;中央庭状态色<br>形状：不连续裂缝;高密度核心;环境错位;隔离框<br>材质：吞光空间;黑雾;异常表面;工程陶瓷与金属<br>构图：五层横向对照与阶段序列 |
+| 可学习 | 统一异常层级、证据边界和《群星》技术参考的使用范围 |
+| 禁止照搬 | 不得把项目示意当原作截图或游戏正式资产，也不得把星界间隙风格复制为黑门 |
+| 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
+| 本地文件 | [打开本地文件](<../calibration/black_gate_otherworld_comparison.svg>)<br><code>docs/art/calibration/black_gate_otherworld_comparison.svg</code> |
+| 备注 | 项目自制分析基线；原作截图校色、不同规模动画和生态家族仍待补。 |
 
 #### megastructure
 
-##### <code>REF-PROJECT-ARTIFACT-004</code> · 命运观测塔 Blender 建模方案
+##### <code>REF-PROJECT-ARTIFACT-004</code> · 命运观测塔已废弃旧案
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 巨构环体、观测模块与 LOD 规划 |
-| 角色／阵营 | 爱缪莎与中央庭 |
-| 来源 | project_created · <code>项目设计文档与 Blockout 方案</code> |
-| 权利与用途 | project_created · project_development_reference |
-| 视觉角色 | <code>technical_reference</code> |
-| 审核状态 | <code>supporting</code> |
-| 标签 | 视觉：观测塔;多层环;空间尺度;LOD<br>配色：深蓝;银白;冰蓝;局部金<br>形状：中央塔体;同心与偏轴环;观测臂<br>材质：金属;陶瓷;半透明投影<br>构图：星系级中心构图 |
-| 可学习 | 学习巨构拆分、环体动画和性能层级 |
-| 禁止照搬 | 不得把早期太阳冠、纯金白或神殿化倾向自动定为最终方向 |
-| 关联 Moodboard | ARTIFACT_TECHNOLOGY |
+| 对象 | 旧太阳冠、多层环与 Blockout 方案的历史记录 |
+| 角色／阵营 | 历史旧案 |
+| 来源 | project_created · <code>项目旧设计文档与 Blockout 方案</code> |
+| 权利与用途 | project_created · historical_record_and_anti_reference |
+| 视觉角色 | <code>anti_reference</code> |
+| 审核状态 | <code>rejected</code> |
+| 标签 | 视觉：废弃观测塔;太阳冠;多层环;旧Blockout<br>配色：深蓝;银白;冰蓝;局部金<br>形状：中央塔体;同心与偏轴环;观测臂<br>材质：金属;陶瓷;半透明投影<br>构图：星系级中心构图 |
+| 可学习 | 识别旧案中造型先行、神圣化和角色符号扩张的问题，并保留拆件与 LOD 流程历史 |
+| 禁止照搬 | 不得继续生成、精修、换色或把任何旧造型当作未来命运观测塔依据 |
+| 关联 Moodboard | ARTIFACT_TECHNOLOGY;DESTINY_SOVEREIGN |
 | 本地文件 | [打开本地文件](<../../../assets/ai_generated/destiny_observatory/DESTINY_OBSERVATORY_BLENDER_PLAN.md>)<br><code>assets/ai_generated/destiny_observatory/DESTINY_OBSERVATORY_BLENDER_PLAN.md</code> |
-| 备注 | 当前只有方案与脚本，完整概念图和三维预览仍缺失。 |
+| 备注 | 2026-07-22 裁定废弃；未来命运观测塔从零重设，旧文件只保留历史与反面审计。 |
 
 #### moodboard
 
@@ -468,41 +620,39 @@
 
 #### ships
 
-##### <code>REF-PROJECT-DESTINY-001</code> · 命运之主 Stage 9 精修预览
+##### <code>REF-PROJECT-DESTINY-001</code> · 旧 Stage 9 舰体精修预览
 
-![命运之主 Stage 9 精修预览](<../../../assets/ai_generated/destiny_lord/destiny_lord_stage9_refined_A_preview.png>)
+![旧 Stage 9 舰体精修预览](<../../../assets/ai_generated/destiny_lord/destiny_lord_stage9_refined_A_preview.png>)
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 主舰剪影、环体与发光问题 |
-| 角色／阵营 | 爱缪莎 |
+| 对象 | 遗留舰体剪影、环体和发光的技术记录 |
+| 角色／阵营 | 待定舰种 |
 | 来源 | project_created · <code>项目 Blender Stage 9 预览</code> |
-| 权利与用途 | project_created · project_development_reference |
-| 视觉角色 | <code>primary_anchor</code> |
+| 权利与用途 | project_created · project_technical_reference_only |
+| 视觉角色 | <code>technical_reference</code> |
 | 审核状态 | <code>supporting</code> |
-| 标签 | 视觉：旗舰;宽翼;中央环;月牙;发光槽<br>配色：近黑;深蓝;冰蓝;局部珊瑚红<br>形状：宽楔舰体;中央环;双侧环;三段舰体<br>材质：陶瓷装甲;发光结构<br>构图：三分之四俯视;大轮廓优先 |
-| 可学习 | 学习当前真实可建模剪影、环体层级和战略缩放下的问题 |
-| 禁止照搬 | 不得把当前过亮白环、珊瑚红武器或尚未完成的细节直接冻结为最终规范 |
-| 关联 Moodboard | DESTINY_SOVEREIGN;AEMUSA |
+| 标签 | 视觉：遗留旗舰;宽翼;中央环;发光槽;游戏内尺度<br>配色：近黑;深蓝;冰蓝;局部珊瑚红<br>形状：宽楔舰体;中央环;双侧环;三段舰体<br>材质：陶瓷装甲;发光结构<br>构图：三分之四俯视;大轮廓优先 |
+| 可学习 | 学习真实可建模网格、预览审计和战略缩放中的技术问题 |
+| 禁止照搬 | 不得称为命运之主、不得作为爱缪莎视觉锚点，也不得复用剪影后换色作为新版方案 |
 | 本地文件 | [打开本地文件](<../../../assets/ai_generated/destiny_lord/destiny_lord_stage9_refined_A_preview.png>)<br><code>assets/ai_generated/destiny_lord/destiny_lord_stage9_refined_A_preview.png</code> |
-| 备注 | 过程锚点，不代表已通过最终美术审核。 |
+| 备注 | 2026-07-22 起退出命运之主身份；保留模型并等待改作其他舰船。 |
 
-##### <code>REF-PROJECT-DESTINY-002</code> · 命运之主 Stage 9 Blender 源文件
+##### <code>REF-PROJECT-DESTINY-002</code> · 旧 Stage 9 舰体 Blender 源文件
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 真实几何、三段舰体、LOD 与定位器 |
-| 角色／阵营 | 爱缪莎 |
+| 对象 | 遗留几何、三段舰体、LOD 与定位器 |
+| 角色／阵营 | 待定舰种 |
 | 来源 | project_created · <code>项目 Blender 建模源文件</code> |
-| 权利与用途 | project_created · project_development_reference |
+| 权利与用途 | project_created · project_technical_reference_only |
 | 视觉角色 | <code>technical_reference</code> |
 | 审核状态 | <code>supporting</code> |
 | 标签 | 视觉：Blender;舰体分段;LOD;定位器<br>配色：不适用<br>形状：三段舰体;环体;翼面;炮列<br>材质：网格;UV;材质槽<br>构图：三维技术结构 |
-| 可学习 | 学习可导出网格、section 边界和 LOD 预算 |
-| 禁止照搬 | 不得把源文件当作外部风格证据，也不得跳过性能和武器定位审核 |
-| 关联 Moodboard | DESTINY_SOVEREIGN |
+| 可学习 | 学习可导出网格、section 边界、LOD 预算与 PDX 流程 |
+| 禁止照搬 | 不得把源文件当作命运之主造型证据或跳过未来舰种重新命名与美术审核 |
 | 本地文件 | [打开本地文件](<../../../assets/ai_generated/destiny_lord/destiny_lord_stage9_refined_A.blend>)<br><code>assets/ai_generated/destiny_lord/destiny_lord_stage9_refined_A.blend</code> |
-| 备注 | 非图片技术参考，索引只提供文件入口而不生成预览。 |
+| 备注 | 非图片技术参考；身份待重新分配，运行时路径暂不改。 |
 
 #### ui_and_icons
 
@@ -582,24 +732,23 @@
 | 本地文件 | [打开本地文件](<../../../mod/gfx/interface/icons/districts/district_artifact_nexus.png>)<br><code>mod/gfx/interface/icons/districts/district_artifact_nexus.png</code> |
 | 备注 | 正式资产与参考来源分层；对应资产另见 ASSET_REGISTRY.csv。 |
 
-##### <code>REF-PROJECT-DESTINY-004</code> · 命运之主反应堆组件图标
+##### <code>REF-PROJECT-DESTINY-004</code> · 现有命运之主反应堆组件图标
 
-![命运之主反应堆组件图标](<../../../mod/gfx/interface/icons/ship_parts/ship_part_artifact_destiny_lord_reactor.png>)
+![现有命运之主反应堆组件图标](<../../../mod/gfx/interface/icons/ship_parts/ship_part_artifact_destiny_lord_reactor.png>)
 
 | 字段 | 内容 |
 | --- | --- |
-| 对象 | 专属组件功能轮廓 |
-| 角色／阵营 | 爱缪莎 |
+| 对象 | 当前运行时组件功能轮廓与迁移审计 |
+| 角色／阵营 | 现有运行时命运之主系统 |
 | 来源 | project_created · <code>项目自制正式资产的美术复盘入口</code> |
 | 权利与用途 | project_created · project_review_and_style_audit |
 | 视觉角色 | <code>secondary_reference</code> |
 | 审核状态 | <code>supporting</code> |
-| 标签 | 视觉：旗舰组件;反应堆;命运科技<br>配色：深蓝;青蓝;紫<br>形状：核心装置;方形边框<br>材质：数字绘画;发光金属<br>构图：中心式组件图标 |
-| 可学习 | 学习现有命运组件的图标层级与功能区分 |
-| 禁止照搬 | 不得把单个组件图标直接放大成舰体装甲或证明全套图标已统一 |
-| 关联 Moodboard | DESTINY_SOVEREIGN |
+| 标签 | 视觉：运行时组件;反应堆;命运科技<br>配色：深蓝;青蓝;紫<br>形状：核心装置;方形边框<br>材质：数字绘画;发光金属<br>构图：中心式组件图标 |
+| 可学习 | 记录当前运行时图标的功能层级与未来迁移范围 |
+| 禁止照搬 | 不得据此推导新版命运之主舰体、公共神器配色或新版组件风格 |
 | 本地文件 | [打开本地文件](<../../../mod/gfx/interface/icons/ship_parts/ship_part_artifact_destiny_lord_reactor.png>)<br><code>mod/gfx/interface/icons/ship_parts/ship_part_artifact_destiny_lord_reactor.png</code> |
-| 备注 | 对应正式资产另见 ASSET_REGISTRY.csv。 |
+| 备注 | 当前仍被游戏资源使用；未来命运之主重设计时必须重新审核。 |
 
 ##### <code>REF-PROJECT-OLDWORLD-003</code> · 记忆殿堂现有建筑图标
 

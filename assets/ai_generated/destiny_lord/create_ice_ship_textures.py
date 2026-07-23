@@ -1,5 +1,7 @@
 ﻿# 为命运之主生成可重复平铺的冰蓝未来科技舰体 DDS 贴图。
 # 贴图不依赖单一 UV 图集，因此可安全用于所有独立舰体部件。
+# 遗留声明：这些贴图只维护旧 Stage 9 舰体，不属于新版命运之主配色。
+# 中文注释：未来转用为其他舰种时必须重新命名、迁移路径并重新审核。
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFilter

@@ -6,8 +6,8 @@
 
 ## 当前仓库审计
 
-- `assets/ai_generated/destiny_observatory/DESTINY_OBSERVATORY_BLENDER_PLAN.md` 已提出“中央塔 + 多层环 + 底部锚定尖塔”、低模预算、LOD 与慢速环体动画方案。
-- 该方案仍是项目设计稿，其中“神圣未来科技”“太阳冠”等表述尚不能视为批准锚点；必须经中央庭、神器科技和命运路线 Moodboard 复核，尤其避免纯金白泛神圣化。
+- `assets/ai_generated/destiny_observatory/DESTINY_OBSERVATORY_BLENDER_PLAN.md` 记录了“中央塔 + 多层环 + 底部锚定尖塔”、低模预算、LOD 与慢速环体动画的旧流程。
+- 该方案已经废弃。“神圣未来科技”“太阳冠”、旧环体比例与旧配色均不得作为批准锚点；未来命运观测塔必须从功能、尺度和全新灰模重新设计。
 - `mod/common/megastructures/aemusa_fate_observatory.txt` 已有玩法定义，但审计范围内未发现对应的正式巨构模型目录。
 - 当前没有独立整理的《群星》巨构截图参考集。
 

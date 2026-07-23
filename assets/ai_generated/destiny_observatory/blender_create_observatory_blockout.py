@@ -8,6 +8,9 @@ import bpy
 # 不得继续执行本方案，也不得把其中太阳冠、环体或材质结论复制到未来重设计中。
 # 新命运观测塔应在全新概念审核通过后另建脚本。
 
+# 中文注释：废案脚本默认硬停止，防止双击运行或在 Blender 中误执行后重新生成旧造型。
+ARCHIVED_LEGACY_SCRIPT = True
+
 
 ASSET_DIR = Path(r"C:\Users\Admin\Desktop\ppt\simple_leader_edict\assets\ai_generated\destiny_observatory")
 OUTPUT = ASSET_DIR / "destiny_observatory_blockout.blend"
@@ -339,5 +342,7 @@ def main():
 
 
 if __name__ == "__main__":
+    if ARCHIVED_LEGACY_SCRIPT:
+        raise RuntimeError("命运观测塔旧案已废弃：禁止继续生成。请为未来新方案另建脚本。")
     main()
 

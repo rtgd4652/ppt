@@ -4,6 +4,9 @@ from pathlib import Path
 
 import bpy
 
+# 遗留声明：当前运行时路径仍沿用 destiny_lord，但不代表未来舰种身份。
+# 中文注释：仅在明确维护当前遗留版本时执行；未来改舰种前必须改名、迁移路径并重新审核。
+
 
 ASSET_DIR = Path(r"C:\Users\Admin\Desktop\ppt\simple_leader_edict\assets\ai_generated\destiny_lord")
 MOD_DIR = Path(r"C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod")
