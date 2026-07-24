@@ -12,6 +12,9 @@
 - `knowledge/story/pages/`：灰机 Wiki 剧情页的 clean 正文层；每页都对应 `raw/huiji/stories/` 与 `indexes/story_pages/`。
 - `knowledge/story/curated/days/`：按单日逐步建立的结构化剧情整理层；每份文件必须在 `tools/knowledge/data/story_curated_manifest_v0.1.json` 中登记后再同步入库。
 - `story_choice_trees`：SQLite 中保存已验证的剧情选择树结构索引；记录来源结构、分支类别、可重复标记、选项、结束选项与识别状态，正文仍以 clean Markdown 为准。
+- `tools/knowledge/data/core_terms_v0.1.json`：核心术语的结构化唯一种子；保存定义层级、审核状态、别名、来源与术语关系。
+- `knowledge/curated/glossary/core_terms_v0.1.md`：核心术语的人工可读版本；数据库只建立索引，不在同步时改写本文档。
+- `glossary_terms` 及其子表：SQLite 中的术语检索层；按 `manifest_id` 隔离管理，不能把待审核术语自动视为原作事实。
 
 ## 常用命令
 
@@ -23,7 +26,23 @@ node tools/knowledge/scripts/export-main-story-catalog.js
 node tools/knowledge/scripts/check-knowledge-db.js
 node tools/knowledge/scripts/sync-wiki-story-sources.js
 node tools/knowledge/scripts/check-wiki-story-text.js
+node tools/knowledge/scripts/sync-core-terms.js
 ```
+
+`init-knowledge-db.js` 会先同步角色与剧情来源，再同步核心术语。这样术语中的
+`wiki_story_page`、`wiki_character_page` 和 curated 文档引用才能解析到既有来源。
+`sync-core-terms.js` 只执行术语同步，不访问网络，也不改写剧情、角色或术语 Markdown。
+
+## 核心术语规则
+
+- `original_fact`：原作事实层；标记为 `human_confirmed` 时必须具有可解析来源。
+- `project_interpretation`：项目对原作信息的整理或解释，不能伪装成原文定义。
+- `mod_design_decision`：Mod 自身设定或系统边界；使用 `project_defined` 与原作事实明确分层。
+- Wiki 剧情页引用按 `story_pages.title` 解析。
+- curated 或项目文档引用使用仓库相对路径，文件必须存在；已进入通用文档索引时同时保存 `document_id`。
+- 同步采用单一事务，只更新 `core-terms-v0.1` 清单管理的术语；旧库中同 ID 且 `manifest_id` 为空的记录可由当前清单安全接管，已归属其他清单的记录会被拒绝。
+- 同步只清理当前清单术语发出的关系，不删除其他清单的入站关系；若待删除术语仍被外部关系引用，整批同步会回滚并要求先处理引用。
+- 任一引用、关系或归属无效时整批回滚。
 
 长视频人工审核需要临时画面抽样时，可传入页面地址和一个或多个秒数：
 

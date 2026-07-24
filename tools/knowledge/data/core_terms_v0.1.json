@@ -1,0 +1,1195 @@
+{
+  "schema_version": "1.0",
+  "manifest_id": "core-terms-v0.1",
+  "purpose": "为《神器使》Stellaris Mod 登记核心术语的标准名称、知识层级、定义边界、来源与相互关系。术语状态不得脱离证据自动升级。",
+  "terms": [
+    {
+      "term_id": "TERM-BLACK-GATE",
+      "title": "黑门",
+      "aliases": ["异界黑门"],
+      "domain": "world",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "连接现实与异界、会释放怪物和异常影响的空间现象；其完整本质仍未确认。",
+      "usage_note": "描述原作灾害时使用“黑门”；不得直接等同普通虫洞、《群星》星界裂隙、灵能门或神器。",
+      "references": [
+        {
+          "reference_id": "TERMREF-BLACK-GATE-001",
+          "reference_type": "wiki_story_page",
+          "source_locator": "正轨的箱庭/剧情/第七天",
+          "source_section": "黑门与区域行动说明",
+          "evidence_role": "definition",
+          "review_status": "under_review",
+          "notes": "页面直接说明黑门与异界怪物、区域威胁的关系；宇宙层面的本质没有被定义。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-OTHERWORLD",
+          "relation_type": "connects_to",
+          "notes": "黑门是现实与异界发生接触的主要表现。"
+        },
+        {
+          "related_term_id": "TERM-BLACK-GATE-CORE",
+          "relation_type": "associated_with",
+          "notes": "区域黑门与黑门之核存在直接关联。"
+        }
+      ],
+      "notes": "角色关于黑门终极来源的说明必须保留说话者范围。",
+      "sort_order": 10
+    },
+    {
+      "term_id": "TERM-BLACK-GATE-DISASTER",
+      "title": "黑门灾难",
+      "aliases": ["黑门危机"],
+      "domain": "history",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "under_review",
+      "canonical_summary": "黑门大规模出现后造成的文明危机，也是人类建立异常应对与研究体系的历史转折点。",
+      "usage_note": "用于概括一段历史时期，不等同单个黑门事件，也不等同七日轮回。",
+      "references": [
+        {
+          "reference_id": "TERMREF-BLACK-GATE-DISASTER-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/timeline/timeline_bible_v0.1.md",
+          "source_section": "黑门灾难时期",
+          "evidence_role": "project_interpretation",
+          "review_status": "under_review",
+          "notes": "当前时间线圣经是项目整合层，原作细节仍需逐条来源复核。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-POST-DISASTER-CIVILIZATION",
+          "relation_type": "precedes",
+          "notes": "灾难经验构成灾后文明的历史前提。"
+        }
+      ],
+      "notes": "不得写成已经毁灭人类文明的事件。",
+      "sort_order": 20
+    },
+    {
+      "term_id": "TERM-OTHERWORLD",
+      "title": "异界",
+      "aliases": ["异世界"],
+      "domain": "world",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "经由黑门与现实发生接触的未知异常领域。",
+      "usage_note": "只描述来源中可观察到的未知领域；不得直接指定为虚境、另一颗行星、单一维度或全部黑门内部空间。",
+      "references": [
+        {
+          "reference_id": "TERMREF-OTHERWORLD-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/finales/被抛下的人_最终日_剧情整理_v0.1.md",
+          "source_section": "巨大黑门与高墙之后",
+          "evidence_role": "context",
+          "review_status": "under_review",
+          "notes": "该结局仅提供局部观察，不能概括异界全貌。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-BLACK-GATE",
+          "relation_type": "connected_by",
+          "notes": "现实通常通过黑门与异界发生接触。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 30
+    },
+    {
+      "term_id": "TERM-BORDER-CITY",
+      "title": "交界都市",
+      "aliases": [],
+      "domain": "location",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "黑门最早大规模出现、现实与异界现象共存，各国付出巨大牺牲后将黑门与怪物压制在其中的源头城市。",
+      "usage_note": "“源头城市”只作为来源中的描述语，不登记为全局别名；原作时间点的“约六个月前”等相对时间不得直接搬入后轮回时代；交界都市不等同异界或箱庭。",
+      "references": [
+        {
+          "reference_id": "TERMREF-BORDER-CITY-001",
+          "reference_type": "wiki_story_page",
+          "source_locator": "正轨的箱庭/剧情/第七天",
+          "source_section": "关于「交界都市」",
+          "evidence_role": "definition",
+          "review_status": "under_review",
+          "notes": "安托涅瓦在可重复问答中说明城市与黑门的背景。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-CENTRAL-COURT",
+          "relation_type": "contains",
+          "notes": "原作时期中央庭在交界都市组织行动。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 40
+    },
+    {
+      "term_id": "TERM-BLACK-GATE-CORE",
+      "title": "黑门之核",
+      "aliases": ["黑核"],
+      "domain": "anomaly",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "与区域黑门及其屏障直接关联、可被回收或净化的异常核心对象。",
+      "usage_note": "“核”只有在上下文明确时才可指黑门之核；“黑门核心”只作为解释性描述，不登记为稳定别名；不得与幻力结晶、神器核心或不死结晶混用。",
+      "references": [
+        {
+          "reference_id": "TERMREF-BLACK-GATE-CORE-001",
+          "reference_type": "wiki_story_page",
+          "source_locator": "正轨的箱庭/剧情/第七天",
+          "source_section": "黑门屏障与黑核净化",
+          "evidence_role": "definition",
+          "review_status": "under_review",
+          "notes": "页面直接呈现其与区域黑门屏障、回收和净化的关系。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-PURIFY-BLACK-GATE-CORE",
+          "relation_type": "processed_by",
+          "notes": "净化是黑门之核的一种处理方式。"
+        }
+      ],
+      "notes": "“八枚黑核”等数量是特定路线条件，不是所有时代的固定宇宙常数。",
+      "sort_order": 50
+    },
+    {
+      "term_id": "TERM-PURIFY-BLACK-GATE-CORE",
+      "title": "净化黑门之核",
+      "aliases": ["净化黑核"],
+      "domain": "anomaly",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "由具备相应能力者介入黑门之核、使其异常力量趋于稳定的处理过程。",
+      "usage_note": "净化不等于夺取、回收或单纯摧毁；代价、执行者与结果必须按具体剧情来源记录。",
+      "references": [
+        {
+          "reference_id": "TERMREF-PURIFY-BLACK-GATE-CORE-001",
+          "reference_type": "wiki_story_page",
+          "source_locator": "正轨的箱庭/剧情/第七天",
+          "source_section": "净化黑门之核",
+          "evidence_role": "definition",
+          "review_status": "under_review",
+          "notes": "来源直接说明指挥使可参与净化。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-COMMANDER",
+          "relation_type": "performed_by",
+          "notes": "指挥使是已知可执行者之一。"
+        },
+        {
+          "related_term_id": "TERM-LIFE-FORCE",
+          "relation_type": "may_consume",
+          "notes": "相关代价在剧情中以生命力描述，精确机制仍需来源审核。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 60
+    },
+    {
+      "term_id": "TERM-ARTIFACT",
+      "title": "神器",
+      "aliases": [],
+      "domain": "artifact_system",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "只在人类文明中出现、可与特定人类个体形成稳定共鸣并表现超常能力的现实异常现象与力量载体。",
+      "usage_note": "不是魔法、灵能、宗教神迹、普通武器或可批量生产的遗珍；项目对其科学化解释属于 MOD 转译层。",
+      "references": [
+        {
+          "reference_id": "TERMREF-ARTIFACT-001",
+          "reference_type": "wiki_story_page",
+          "source_locator": "正轨的箱庭/剧情/第七天",
+          "source_section": "关于「中央庭」",
+          "evidence_role": "basic_definition",
+          "review_status": "under_review",
+          "notes": "原作剧情把神器作为神器使操纵的特殊武器或力量载体；完整本质仍待角色资料交叉审核。"
+        },
+        {
+          "reference_id": "TERMREF-ARTIFACT-002",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/artifacts/artifact_bible_v0.1.md",
+          "source_section": "神器定义",
+          "evidence_role": "project_interpretation",
+          "review_status": "project_defined",
+          "notes": "用于约束 MOD 的科学化转译边界。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-ARTIFACT-WIELDER",
+          "relation_type": "used_by",
+          "notes": "神器经由与其建立联系的神器使表现能力。"
+        },
+        {
+          "related_term_id": "TERM-ARTIFACT-SCIENCE",
+          "relation_type": "studied_by",
+          "notes": "MOD 设定中神器被纳入科学研究。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 70
+    },
+    {
+      "term_id": "TERM-ARTIFACT-WIELDER",
+      "title": "神器使",
+      "aliases": [],
+      "domain": "character_system",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "与神器建立稳定共鸣或契约关系、能够使用神器力量的人类个体。",
+      "usage_note": "参与黑门应对是原作危机时期的重要历史职能，不是成为神器使的定义条件；世界观中神器使仍然是人类，不是独立生物物种或量产兵器；当前 Mod 的“物种”实现仅是 Stellaris 玩法映射。",
+      "references": [
+        {
+          "reference_id": "TERMREF-ARTIFACT-WIELDER-001",
+          "reference_type": "wiki_story_page",
+          "source_locator": "正轨的箱庭/剧情/第七天",
+          "source_section": "关于「中央庭」",
+          "evidence_role": "definition",
+          "review_status": "under_review",
+          "notes": "安托涅瓦在可重复问答中区分神器使与指挥使。"
+        },
+        {
+          "reference_id": "TERMREF-ARTIFACT-WIELDER-002",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/artifacts/artifact_bible_v0.1.md",
+          "source_section": "神器使诞生机制",
+          "evidence_role": "project_boundary",
+          "review_status": "project_defined",
+          "notes": "明确人类身份和非量产边界。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-CENTRAL-COURT",
+          "relation_type": "coordinated_by",
+          "notes": "原作时期中央庭负责组织其行动。"
+        },
+        {
+          "related_term_id": "TERM-LIVING-CORPSE-TRANSFORMATION",
+          "relation_type": "at_risk_of",
+          "notes": "活骸化是神器使面临的异常风险之一。"
+        }
+      ],
+      "notes": "所有国家、物种和领袖文案都必须保留这一层级差异。",
+      "sort_order": 80
+    },
+    {
+      "term_id": "TERM-COMMANDER",
+      "title": "指挥使",
+      "aliases": [],
+      "domain": "character_system",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "能为神器使提供特殊战斗支援、集中强化并参与黑核净化的异能力者。",
+      "usage_note": "不是普通军事指挥官、文明统治者或神器使的同义词；玩家身份与世界观职能应分开描述。",
+      "references": [
+        {
+          "reference_id": "TERMREF-COMMANDER-001",
+          "reference_type": "wiki_story_page",
+          "source_locator": "正轨的箱庭/剧情/第七天",
+          "source_section": "关于「中央庭」与首次战斗",
+          "evidence_role": "definition",
+          "review_status": "under_review",
+          "notes": "来源说明其战斗补给职能并与神器使区分。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-TACTICAL-TERMINAL",
+          "relation_type": "uses",
+          "notes": "战术终端是指挥使常用的行动接口。"
+        },
+        {
+          "related_term_id": "TERM-ARTIFACT-WIELDER",
+          "relation_type": "supports",
+          "notes": "其核心职能之一是支援神器使。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 90
+    },
+    {
+      "term_id": "TERM-TACTICAL-TERMINAL",
+      "title": "战术终端",
+      "aliases": [],
+      "domain": "technology",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "用于战斗、强化、召唤神器使等功能的专用终端芯片，可接入不同显示设备。",
+      "usage_note": "“终端芯片”是对本体形态的说明，不登记为全局别名；战术终端不是指挥使能力的来源，不等于一般通信终端、中央庭网络或白夜馆。",
+      "references": [
+        {
+          "reference_id": "TERMREF-TACTICAL-TERMINAL-001",
+          "reference_type": "wiki_story_page",
+          "source_locator": "正轨的箱庭/剧情/第七天",
+          "source_section": "关于「战术终端」",
+          "evidence_role": "definition",
+          "review_status": "under_review",
+          "notes": "安托涅瓦在可重复问答中给出设备说明。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-WHITE-NIGHT-HALL",
+          "relation_type": "not_equivalent_to",
+          "notes": "战术终端是世界内设备，白夜馆是 Mod 功能入口。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 100
+    },
+    {
+      "term_id": "TERM-PHANTOM-ENERGY",
+      "title": "幻力",
+      "aliases": [],
+      "domain": "artifact_system",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "与神器使及神器活动相关、能够被观测并影响个体状态的特殊力量或异常能量现象。",
+      "usage_note": "不等于生命力、灵能、魔力或 Stellaris 能源点；幻力失衡与活骸化的因果目前主要来自角色说明。",
+      "references": [
+        {
+          "reference_id": "TERMREF-PHANTOM-ENERGY-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/无垢的人偶_第六天_剧情整理_v0.1.md",
+          "source_section": "赛哈姆袭击与活骸信息",
+          "evidence_role": "character_claim",
+          "review_status": "under_review",
+          "notes": "希罗与安对幻力失衡的解释保留说话者范围。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-LIFE-FORCE",
+          "relation_type": "not_equivalent_to",
+          "notes": "二者在剧情中被区分，不能建立无证据的固定换算。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 110
+    },
+    {
+      "term_id": "TERM-LIFE-FORCE",
+      "title": "生命力",
+      "aliases": [],
+      "domain": "character_system",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "角色用于描述个体生命状态及黑核净化代价的概念。",
+      "usage_note": "不等于幻力、游戏生命值或可自由交易的能源；相关转换关系必须标记为角色主张。",
+      "references": [
+        {
+          "reference_id": "TERMREF-LIFE-FORCE-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/无垢的人偶_第五天_剧情整理_v0.1.md",
+          "source_section": "希罗的黑核理论",
+          "evidence_role": "character_claim",
+          "review_status": "under_review",
+          "notes": "该段理论没有独立实验记录完成验证。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-PHANTOM-ENERGY",
+          "relation_type": "not_equivalent_to",
+          "notes": "禁止未经证据建立固定换算。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 120
+    },
+    {
+      "term_id": "TERM-LIVING-CORPSE",
+      "title": "活骸",
+      "aliases": [],
+      "domain": "character_system",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "神器使在异常转化后形成的危险状态或存在，可能伴随结晶化、意识错位和敌对行为。",
+      "usage_note": "不是亡灵种族、普通怪物或所有受伤神器使的统称；部分个体仍可能保留意识。",
+      "references": [
+        {
+          "reference_id": "TERMREF-LIVING-CORPSE-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/无垢的人偶_第六天_剧情整理_v0.1.md",
+          "source_section": "赛哈姆袭击与活骸信息",
+          "evidence_role": "scene_and_character_claim",
+          "review_status": "under_review",
+          "notes": "场景确认赛哈姆状态；可逆性和普遍规律仍按角色说明处理。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-LIVING-CORPSE-TRANSFORMATION",
+          "relation_type": "result_of",
+          "notes": "活骸化是通向活骸状态的过程。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 130
+    },
+    {
+      "term_id": "TERM-LIVING-CORPSE-TRANSFORMATION",
+      "title": "活骸化",
+      "aliases": ["活骸转化"],
+      "domain": "character_system",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "神器使逐步向活骸状态变化的异常过程。",
+      "usage_note": "不等于已经完成转化，也不等于“失控”的所有用法；原作时期的不可逆判断不能升级为永久宇宙规律。",
+      "references": [
+        {
+          "reference_id": "TERMREF-LIVING-CORPSE-TRANSFORMATION-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/无垢的人偶_第六天_剧情整理_v0.1.md",
+          "source_section": "中央庭处置规则",
+          "evidence_role": "character_claim",
+          "review_status": "under_review",
+          "notes": "净化和时间回溯的效果与局限按当时角色认知记录。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-LIVING-CORPSE",
+          "relation_type": "transforms_into",
+          "notes": "术语区分过程与结果。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 140
+    },
+    {
+      "term_id": "TERM-CENTRAL-COURT",
+      "title": "中央庭",
+      "aliases": [],
+      "domain": "organization",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "under_review",
+      "canonical_summary": "原作时期，中央庭管理、支援神器使与指挥使并组织交界都市的黑门应对；后轮回时代，它由危机协调机构发展为灾后人类文明的治理与统筹核心。",
+      "usage_note": "本条是原作职能与 Mod 后轮回时代设定的分层整合，不是单纯军队、神器使事务所、白夜馆或个人政权。",
+      "references": [
+        {
+          "reference_id": "TERMREF-CENTRAL-COURT-001",
+          "reference_type": "wiki_story_page",
+          "source_locator": "正轨的箱庭/剧情/第七天",
+          "source_section": "关于「中央庭」",
+          "evidence_role": "definition",
+          "review_status": "under_review",
+          "notes": "来源直接说明管理神器使、指挥使并持续对抗黑门的职能。"
+        },
+        {
+          "reference_id": "TERMREF-CENTRAL-COURT-002",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/organizations/organization_bible_v0.1.md",
+          "source_section": "中央庭",
+          "evidence_role": "project_interpretation",
+          "review_status": "project_defined",
+          "notes": "用于约束后轮回时代的文明治理转译。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-CENTRAL-COURT-SEVEN",
+          "relation_type": "historically_includes",
+          "notes": "七人众是原作危机时期的重要管理群体。"
+        },
+        {
+          "related_term_id": "TERM-WHITE-NIGHT-HALL",
+          "relation_type": "not_equivalent_to",
+          "notes": "白夜馆不是中央庭机构。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 150
+    },
+    {
+      "term_id": "TERM-CENTRAL-COURT-SEVEN",
+      "title": "中央庭七人众",
+      "aliases": ["七人众"],
+      "domain": "organization",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "黑门危机时期参与中央庭管理与行动的核心神器使群体。",
+      "usage_note": "不自动等于后轮回时代的正式政府，不得写成七人平级统治；具体成员和阵营变化按路线证据记录。",
+      "references": [
+        {
+          "reference_id": "TERMREF-CENTRAL-COURT-SEVEN-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/正轨的箱庭_第五天_剧情整理_v0.1.md",
+          "source_section": "七人众会议",
+          "evidence_role": "context",
+          "review_status": "under_review",
+          "notes": "来源呈现会议、分裂与角色立场，但不能只凭站位提前归队。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-CENTRAL-COURT",
+          "relation_type": "part_of",
+          "notes": "其历史职能存在于中央庭体系内。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 160
+    },
+    {
+      "term_id": "TERM-SEVEN-DAY-LOOP",
+      "title": "七日轮回",
+      "aliases": ["七日循环", "七天轮回"],
+      "domain": "timeline",
+      "knowledge_layer": "original_fact",
+      "review_status": "human_confirmed",
+      "canonical_summary": "故事以连续七日为一个循环单位；第一天结束后进入结局节点，挑战失败时系统执行世界重构并开启新的七日循环。",
+      "usage_note": "在 Mod 开局前已经结束；不等于单条路线、一个周目、世界线或黑门灾难。",
+      "references": [
+        {
+          "reference_id": "TERMREF-SEVEN-DAY-LOOP-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md",
+          "source_section": "游戏基础结构",
+          "evidence_role": "direct_system_and_manual_confirmation",
+          "review_status": "human_confirmed",
+          "notes": "由项目人工确认并根据 Wiki 系统文本校订。"
+        },
+        {
+          "reference_id": "TERMREF-SEVEN-DAY-LOOP-002",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/timeline/timeline_bible_v0.1.md",
+          "source_section": "轮回结束与新世界",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": "支持“七日轮回在 Mod 开局前已经结束”的项目正史边界。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-WORLD-RECONSTRUCTION",
+          "relation_type": "may_trigger",
+          "notes": "挑战失败后可能进入世界重构。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 170
+    },
+    {
+      "term_id": "TERM-WORLD-RECONSTRUCTION",
+      "title": "世界重构",
+      "aliases": ["世界重置"],
+      "domain": "timeline",
+      "knowledge_layer": "original_fact",
+      "review_status": "human_confirmed",
+      "canonical_summary": "挑战失败后出现数据删除、重新加载、将时间设置为七日并重新启动世界的系统过程。",
+      "usage_note": "目前不能确认它等同时间旅行、宇宙重建、模拟重置或普通读档。",
+      "references": [
+        {
+          "reference_id": "TERMREF-WORLD-RECONSTRUCTION-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md",
+          "source_section": "零周目与多周目开场",
+          "evidence_role": "direct_system_and_manual_confirmation",
+          "review_status": "human_confirmed",
+          "notes": "系统提示与人工结构确认共同支持。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-ZERO-CYCLE",
+          "relation_type": "follows",
+          "notes": "零周目最终战失败后触发。"
+        },
+        {
+          "related_term_id": "TERM-MULTI-CYCLE",
+          "relation_type": "opens",
+          "notes": "后续周目以该系统序列开场。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 180
+    },
+    {
+      "term_id": "TERM-ZERO-CYCLE",
+      "title": "零周目",
+      "aliases": ["初始周目"],
+      "domain": "narrative_structure",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "human_confirmed",
+      "canonical_summary": "初次游玩的收束阶段，从一轮七日抵达第一天结束后的最终战开始，失败后才进入首次完整展示的七日重构。",
+      "usage_note": "不是普通第七天，也不是玩家已经完整经历过的一条七日路线。",
+      "references": [
+        {
+          "reference_id": "TERMREF-ZERO-CYCLE-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md",
+          "source_section": "零周目的定位",
+          "evidence_role": "manual_confirmation",
+          "review_status": "human_confirmed",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-MULTI-CYCLE",
+          "relation_type": "precedes",
+          "notes": "零周目最终战失败并执行世界重构后进入后续周目。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 190
+    },
+    {
+      "term_id": "TERM-MULTI-CYCLE",
+      "title": "多周目",
+      "aliases": ["后续周目"],
+      "domain": "narrative_structure",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "human_confirmed",
+      "canonical_summary": "零周目之后的循环轮次，开场省略零周目最终战，直接呈现失败记录、数据重载与世界重构。",
+      "usage_note": "不代表每轮事件完全一致，也不等于多个平行世界线。",
+      "references": [
+        {
+          "reference_id": "TERMREF-MULTI-CYCLE-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md",
+          "source_section": "多周目开场的定位",
+          "evidence_role": "manual_confirmation",
+          "review_status": "human_confirmed",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-SEVEN-DAY-LOOP",
+          "relation_type": "instance_of",
+          "notes": "每个周目都在七日循环框架内展开。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 200
+    },
+    {
+      "term_id": "TERM-WORLD-LINE",
+      "title": "世界线",
+      "aliases": ["另一世界线"],
+      "domain": "world",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "under_review",
+      "canonical_summary": "角色用于指称存在另一位安托涅瓦的另一个世界或历史状态；该场景确认方舟能够与其发生联系，但世界线的总体机制尚未解释。",
+      "usage_note": "不等于玩家周目、剧情路线、结局分支或普通时间回溯。",
+      "references": [
+        {
+          "reference_id": "TERMREF-WORLD-LINE-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/避世的方舟_第七天_剧情整理_v0.1.md",
+          "source_section": "调查幽灵与跨世界线方舟",
+          "evidence_role": "direct_scene",
+          "review_status": "under_review",
+          "notes": "该场景确认另一世界线安托涅瓦出现；总体机制仍未解释。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-NOAH-ARK",
+          "relation_type": "connected_by",
+          "notes": "方舟在该路线中承担跨世界线联系。"
+        },
+        {
+          "related_term_id": "TERM-STORY-ROUTE",
+          "relation_type": "not_equivalent_to",
+          "notes": "路线是玩家叙事结构，世界线是故事内时空概念。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 210
+    },
+    {
+      "term_id": "TERM-BOX-GARDEN",
+      "title": "箱庭",
+      "aliases": [],
+      "domain": "world",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "pending_source_review",
+      "canonical_summary": "在当前资料中用于描述可被外部观察、干涉或封存之世界的受限舞台意象；本质尚未确认。",
+      "usage_note": "不得直接等同交界都市、七日轮回、模拟世界或整个宇宙。",
+      "references": [
+        {
+          "reference_id": "TERMREF-BOX-GARDEN-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md",
+          "source_section": "使用边界",
+          "evidence_role": "context",
+          "review_status": "pending_source_review",
+          "notes": "路线标题和叙事意象存在，但缺少可无条件采用的机制定义。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-BORDER-CITY",
+          "relation_type": "not_equivalent_to",
+          "notes": "交界都市是具体地点，箱庭是尚待确认的世界观概念。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 220
+    },
+    {
+      "term_id": "TERM-NOAH-ARK",
+      "title": "方舟・诺亚方舟",
+      "aliases": ["方舟"],
+      "domain": "artifact_system",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review",
+      "canonical_summary": "安托涅瓦的神器；原作资料记载其能力为自由来往任意空间，并以末日中的庇护与生命保存为核心象征；在《避世的方舟》特定情境中表现出跨世界线联系。",
+      "usage_note": "不是普通宇宙飞船、通用方舟巨构或《避世的方舟》路线的别名；简称“方舟”必须有安托涅瓦语境。",
+      "references": [
+        {
+          "reference_id": "TERMREF-NOAH-ARK-001",
+          "reference_type": "wiki_character_page",
+          "source_locator": "安托涅瓦",
+          "source_section": "基本资料、神器与神器故事",
+          "evidence_role": "definition_and_character_material",
+          "review_status": "under_review",
+          "notes": "支持神器名称、归属、空间能力与庇护象征。"
+        },
+        {
+          "reference_id": "TERMREF-NOAH-ARK-002",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/避世的方舟_第七天_剧情整理_v0.1.md",
+          "source_section": "“调查幽灵”与跨世界线方舟",
+          "evidence_role": "direct_scene",
+          "review_status": "under_review",
+          "notes": "场景直接出现来自另一世界线的安托涅瓦及方舟装置。"
+        },
+        {
+          "reference_id": "TERMREF-NOAH-ARK-003",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/避世的方舟_第七天_剧情整理_v0.1.md",
+          "source_section": "“调查幽灵”与跨世界线方舟",
+          "evidence_role": "character_claim",
+          "review_status": "under_review",
+          "notes": "“连接不同空间与次元”、信息渗透与能量消耗属于另一世界线安托涅瓦的角色说明。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-ARTIFACT",
+          "relation_type": "instance_of",
+          "notes": "它是安托涅瓦的个人神器。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 230
+    },
+    {
+      "term_id": "TERM-MYSTERIOUS-GIRL",
+      "title": "神秘少女",
+      "aliases": [],
+      "domain": "character",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "pending_source_review",
+      "canonical_summary": "本项目用于登记各路线中身份未确认女性形象的描述性暂称；只有正文明确使用“再次”“反复”等连续性线索时才在同一路线内关联，不同路线中的同名记录不保证为同一主体。",
+      "usage_note": "在来源公开身份前只使用描述性称呼；不得直接等同塞拉菲姆、世界之主或某位已知神器使，也不得把梦中少女、高处观察者和无署名收束声音自动合并。",
+      "references": [
+        {
+          "reference_id": "TERMREF-MYSTERIOUS-GIRL-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/无垢的人偶_第五天_剧情整理_v0.1.md",
+          "source_section": "未知少女的梦",
+          "evidence_role": "direct_scene",
+          "review_status": "pending_source_review",
+          "notes": "页面没有公开其身份。"
+        },
+        {
+          "reference_id": "TERMREF-MYSTERIOUS-GIRL-002",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/days/深渊的步伐_第二天_剧情整理_v0.1.md",
+          "source_section": "梦境与地下通道",
+          "evidence_role": "direct_scene",
+          "review_status": "pending_source_review",
+          "notes": "正文以“再次出现在梦中”建立《深渊的步伐》同一路线内的连续性。"
+        },
+        {
+          "reference_id": "TERMREF-MYSTERIOUS-GIRL-003",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/finales/神的棋盘_最终日_剧情整理_v0.1.md",
+          "source_section": "胜利分支：神秘少女与崩裂的箱庭",
+          "evidence_role": "direct_scene",
+          "review_status": "pending_source_review",
+          "notes": "该结局明确称其为梦中反复出现的神秘少女，但仍未公开正式身份。"
+        },
+        {
+          "reference_id": "TERMREF-MYSTERIOUS-GIRL-004",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/无垢的人偶_分支与结局结构_v0.1.md",
+          "source_section": "文档范围与来源边界",
+          "evidence_role": "unification_boundary",
+          "review_status": "pending_source_review",
+          "notes": "不同路线中的梦中少女、高处观察者和无署名声音在身份确认前不得合并。"
+        }
+      ],
+      "relations": [],
+      "notes": "“？？？”是多处未署名说话人的通用标记，不登记为该角色的全局别名。",
+      "sort_order": 240
+    },
+    {
+      "term_id": "TERM-ARTIFACT-SCIENCE",
+      "title": "神器科学",
+      "aliases": [],
+      "domain": "science",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "人类对神器现象进行观测、建模、验证与安全应用的跨学科科学方向。",
+      "usage_note": "不是宗教、神秘学或普通科技的替代品；属于 Mod 对后轮回时代的正式转译。",
+      "references": [
+        {
+          "reference_id": "TERMREF-ARTIFACT-SCIENCE-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/artifacts/artifact_bible_v0.1.md",
+          "source_section": "神器科学体系",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-ARTIFACT-RESEARCH-SYSTEM",
+          "relation_type": "implemented_by",
+          "notes": "研究体系承担制度、组织与实践层工作。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 250
+    },
+    {
+      "term_id": "TERM-ARTIFACT-RESEARCH-SYSTEM",
+      "title": "神器研究体系",
+      "aliases": [],
+      "domain": "organization",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "在人类科学与伦理框架内研究神器、共鸣、风险及应用的科研体系。",
+      "usage_note": "不是宗教、独立文明或中央庭本身，也不等同黑门研究体系。",
+      "references": [
+        {
+          "reference_id": "TERMREF-ARTIFACT-RESEARCH-SYSTEM-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/organizations/organization_bible_v0.1.md",
+          "source_section": "神器研究体系",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-BLACK-GATE-RESEARCH-SYSTEM",
+          "relation_type": "overlaps_with",
+          "notes": "研究对象存在交叉，但两者不是同一体系。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 260
+    },
+    {
+      "term_id": "TERM-BLACK-GATE-RESEARCH-SYSTEM",
+      "title": "黑门研究体系",
+      "aliases": [],
+      "domain": "organization",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "研究黑门、异常空间、污染、预警与风险控制的科研体系。",
+      "usage_note": "与神器研究存在交叉但不是同一体系；不是独立文明或宗教组织。",
+      "references": [
+        {
+          "reference_id": "TERMREF-BLACK-GATE-RESEARCH-SYSTEM-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/organizations/organization_bible_v0.1.md",
+          "source_section": "黑门研究体系",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-BLACK-GATE",
+          "relation_type": "studies",
+          "notes": "黑门及其风险是主要研究对象。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 270
+    },
+    {
+      "term_id": "TERM-HOLY-STAR-CHURCH",
+      "title": "圣星教会",
+      "aliases": [],
+      "domain": "organization",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "本 Mod 中用于描述人类面对未知力量时形成的文化与精神体系。",
+      "usage_note": "这是组织圣经已经采纳的项目设定，不代表原作来源已经完成复核；它不是神器研究机构、政府或中央庭部门。",
+      "references": [
+        {
+          "reference_id": "TERMREF-HOLY-STAR-CHURCH-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/organizations/organization_bible_v0.1.md",
+          "source_section": "圣星教会",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": "组织圣经已采纳该项目定位；原作来源充分性另行审核。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-ARTIFACT-RESEARCH-SYSTEM",
+          "relation_type": "not_equivalent_to",
+          "notes": "文化精神体系与科研体系必须分开。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 280
+    },
+    {
+      "term_id": "TERM-POST-DISASTER-CIVILIZATION",
+      "title": "灾后文明",
+      "aliases": [],
+      "domain": "project_world",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "人类在黑门危机和轮回结束后，通过重建、科学研究与制度建设形成的连续文明状态。",
+      "usage_note": "不是废土残民、已经解决全部异常的理想社会或银河霸权。",
+      "references": [
+        {
+          "reference_id": "TERMREF-POST-DISASTER-CIVILIZATION-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/world/lore_bible_v0.1.md",
+          "source_section": "黑门灾难与灾后文明",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-POST-DISASTER-RECONSTRUCTION",
+          "relation_type": "formed_through",
+          "notes": "灾后重建是形成该文明状态的重要阶段。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 290
+    },
+    {
+      "term_id": "TERM-POST-DISASTER-RECONSTRUCTION",
+      "title": "灾后重建",
+      "aliases": [],
+      "domain": "timeline",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "轮回结束后，人类恢复城市、制度、科研和长期历史积累的文明阶段。",
+      "usage_note": "不是一次性建筑工程，也不表示黑门与神器风险已经消失。",
+      "references": [
+        {
+          "reference_id": "TERMREF-POST-DISASTER-RECONSTRUCTION-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/timeline/timeline_bible_v0.1.md",
+          "source_section": "灾后重建时代",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-INTERSTELLAR-ERA",
+          "relation_type": "precedes",
+          "notes": "重建与科研积累为进入星际时代提供前提。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 300
+    },
+    {
+      "term_id": "TERM-INTERSTELLAR-ERA",
+      "title": "星际时代",
+      "aliases": ["Stellaris 开局时代"],
+      "domain": "timeline",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "七日轮回结束后，人类恢复连续历史并刚刚进入银河的 Mod 当前时代。",
+      "usage_note": "人类仍是年轻星际文明，不是银河霸主；该时代属于 Mod 正史延展，不是原作已发生事实。",
+      "references": [
+        {
+          "reference_id": "TERMREF-INTERSTELLAR-ERA-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/timeline/timeline_bible_v0.1.md",
+          "source_section": "Stellaris 开局时代",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-SEVEN-DAY-LOOP",
+          "relation_type": "follows_end_of",
+          "notes": "Mod 开局前提是七日轮回已经结束。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 310
+    },
+    {
+      "term_id": "TERM-WHITE-NIGHT-HALL",
+      "title": "白夜馆",
+      "aliases": [],
+      "domain": "game_system",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "玩家访问神器使招募、联络、档案、信息展示与管理功能的统一系统入口。",
+      "usage_note": "仅为系统入口，不是组织、地点、势力、中央庭下属机构、科研单位或剧情行动者。",
+      "references": [
+        {
+          "reference_id": "TERMREF-WHITE-NIGHT-HALL-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/systems/white_night_hall.md",
+          "source_section": "白夜馆定位",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-CENTRAL-COURT",
+          "relation_type": "not_equivalent_to",
+          "notes": "白夜馆不属于中央庭。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 320
+    },
+    {
+      "term_id": "TERM-STORY-ROUTE",
+      "title": "剧情路线",
+      "aliases": ["路线"],
+      "domain": "narrative_structure",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "human_confirmed",
+      "canonical_summary": "由跨日状态、关键选择及经来源或后续正文确认的剧情衔接组织起来的一组七日叙事路径。",
+      "usage_note": "不等于结局、周目或世界线；路线特有事实不能覆盖角色共通档案或 Mod 正史。",
+      "references": [
+        {
+          "reference_id": "TERMREF-STORY-ROUTE-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/无垢的人偶_分支与结局结构_v0.1.md",
+          "source_section": "总体路线图",
+          "evidence_role": "curated_structure",
+          "review_status": "human_confirmed",
+          "notes": "《无垢的人偶》的路线状态与分支结构。"
+        },
+        {
+          "reference_id": "TERMREF-STORY-ROUTE-002",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/避世的方舟_分支与结局结构_v0.1.md",
+          "source_section": "总体路线图",
+          "evidence_role": "curated_structure",
+          "review_status": "human_confirmed",
+          "notes": "《避世的方舟》的路线状态与分支结构。"
+        },
+        {
+          "reference_id": "TERMREF-STORY-ROUTE-003",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/深渊的步伐_分支与结局结构_v0.1.md",
+          "source_section": "总体路线图",
+          "evidence_role": "curated_structure",
+          "review_status": "human_confirmed",
+          "notes": "《深渊的步伐》的路线状态与分支结构。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-FINAL-DAY",
+          "relation_type": "may_end_in",
+          "notes": "正式路线通常进入最终日收束。"
+        },
+        {
+          "related_term_id": "TERM-SPECIAL-ANNIHILATION",
+          "relation_type": "may_be_cut_off_by",
+          "notes": "未满足条件时可能提前进入特殊灭世。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 330
+    },
+    {
+      "term_id": "TERM-FINAL-DAY",
+      "title": "最终日",
+      "aliases": [],
+      "domain": "narrative_structure",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "human_confirmed",
+      "canonical_summary": "第一天之后的路线收束阶段，可继续包含选择、战斗和结局判定。",
+      "usage_note": "“结局日”只作为编辑描述，不登记为原作别名；最终日不是“第零天”，也不等于正式结局本身。",
+      "references": [
+        {
+          "reference_id": "TERMREF-FINAL-DAY-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/避世的方舟_分支与结局结构_v0.1.md",
+          "source_section": "三个最终日与结果",
+          "evidence_role": "curated_structure",
+          "review_status": "human_confirmed",
+          "notes": ""
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-STORY-ROUTE",
+          "relation_type": "part_of",
+          "notes": "最终日是路线中的收束阶段。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 340
+    },
+    {
+      "term_id": "TERM-SPECIAL-ANNIHILATION",
+      "title": "特殊灭世",
+      "aliases": [],
+      "domain": "narrative_structure",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "human_confirmed",
+      "canonical_summary": "前置要求未满足、关键行动失败或路线被提前截断时进入的特殊世界毁灭结果页。",
+      "usage_note": "“特殊失败页”只作为知识库页面类型说明，不登记为原作别名；特殊灭世不等于每条路线的正式结局，也不能把所有特殊灭世笼统写成同一个 Bad End。",
+      "references": [
+        {
+          "reference_id": "TERMREF-SPECIAL-ANNIHILATION-001",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/深渊的步伐_分支与结局结构_v0.1.md",
+          "source_section": "三个特殊灭世",
+          "evidence_role": "curated_structure",
+          "review_status": "human_confirmed",
+          "notes": "不同特殊灭世条件和结果必须分别保存。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-FINAL-DAY",
+          "relation_type": "not_equivalent_to",
+          "notes": "特殊灭世可提前截断路线，不必进入正式最终日。"
+        }
+      ],
+      "notes": "",
+      "sort_order": 350
+    }
+  ]
+}

@@ -139,10 +139,51 @@ function ensureSchema(database) {
       term_id TEXT PRIMARY KEY,
       title TEXT NOT NULL,
       domain TEXT NOT NULL,
+      knowledge_layer TEXT NOT NULL DEFAULT 'original_fact',
       review_status TEXT NOT NULL,
       canonical_summary TEXT,
+      usage_note TEXT NOT NULL DEFAULT '',
+      manifest_id TEXT NOT NULL DEFAULT '',
+      sort_order INTEGER NOT NULL DEFAULT 0,
+      notes TEXT NOT NULL DEFAULT '',
       created_at TEXT NOT NULL,
       updated_at TEXT NOT NULL
+    );
+
+    CREATE TABLE IF NOT EXISTS glossary_aliases (
+      term_id TEXT NOT NULL,
+      alias TEXT NOT NULL,
+      alias_type TEXT NOT NULL DEFAULT 'alias',
+      notes TEXT NOT NULL DEFAULT '',
+      PRIMARY KEY (term_id, alias),
+      FOREIGN KEY (term_id) REFERENCES glossary_terms(term_id) ON DELETE CASCADE
+    );
+
+    CREATE TABLE IF NOT EXISTS glossary_term_references (
+      reference_id TEXT PRIMARY KEY,
+      term_id TEXT NOT NULL,
+      reference_no INTEGER NOT NULL,
+      reference_type TEXT NOT NULL,
+      source_locator TEXT NOT NULL,
+      source_id TEXT,
+      document_id TEXT,
+      source_section TEXT,
+      evidence_role TEXT NOT NULL,
+      review_status TEXT NOT NULL,
+      notes TEXT NOT NULL DEFAULT '',
+      FOREIGN KEY (term_id) REFERENCES glossary_terms(term_id) ON DELETE CASCADE,
+      FOREIGN KEY (source_id) REFERENCES source_records(source_id),
+      FOREIGN KEY (document_id) REFERENCES knowledge_documents(document_id)
+    );
+
+    CREATE TABLE IF NOT EXISTS glossary_relations (
+      term_id TEXT NOT NULL,
+      related_term_id TEXT NOT NULL,
+      relation_type TEXT NOT NULL,
+      notes TEXT NOT NULL DEFAULT '',
+      PRIMARY KEY (term_id, related_term_id, relation_type),
+      FOREIGN KEY (term_id) REFERENCES glossary_terms(term_id) ON DELETE CASCADE,
+      FOREIGN KEY (related_term_id) REFERENCES glossary_terms(term_id)
     );
 
     CREATE TABLE IF NOT EXISTS knowledge_documents (
@@ -197,6 +238,34 @@ function ensureSchema(database) {
       note TEXT,
       reviewed_at TEXT NOT NULL
     );
+  `);
+
+  // 旧数据库中已经存在精简版 glossary_terms。这里采用幂等增列迁移，
+  // 不重建数据库，也不触碰既有剧情、角色、事实或证据记录。
+  const glossaryColumns = database
+    .prepare("PRAGMA table_info(glossary_terms)")
+    .all()
+    .map((column) => column.name);
+  const glossaryMigrations = [
+    ["knowledge_layer", "TEXT NOT NULL DEFAULT 'original_fact'"],
+    ["usage_note", "TEXT NOT NULL DEFAULT ''"],
+    ["manifest_id", "TEXT NOT NULL DEFAULT ''"],
+    ["sort_order", "INTEGER NOT NULL DEFAULT 0"],
+    ["notes", "TEXT NOT NULL DEFAULT ''"],
+  ];
+  for (const [columnName, definition] of glossaryMigrations) {
+    if (!glossaryColumns.includes(columnName)) {
+      database.exec(`ALTER TABLE glossary_terms ADD COLUMN ${columnName} ${definition};`);
+    }
+  }
+
+  database.exec(`
+    CREATE INDEX IF NOT EXISTS idx_glossary_terms_manifest
+      ON glossary_terms(manifest_id, sort_order, title);
+    CREATE INDEX IF NOT EXISTS idx_glossary_references_term
+      ON glossary_term_references(term_id, reference_no);
+    CREATE INDEX IF NOT EXISTS idx_glossary_relations_related
+      ON glossary_relations(related_term_id);
   `);
 }
 

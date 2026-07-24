@@ -38,6 +38,9 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 
 开发约定：
 
+- 所有项目会话必须在北京时间 23:00 前结束并保存进度；23:00 是完成截止时间，不是开始收尾时间。
+- 最迟在 22:30 前进入收尾，复杂任务应更早预留验证、中文提交和状态回报时间。
+- 详细共享代理规则见仓库根目录 `AGENTS.md`。
 - Stellaris 脚本继续添加中文注释。
 - Git 提交信息使用中文。
 - `.txt`、`.gfx`、`.asset`、`.gui` 使用 UTF-8 无 BOM。

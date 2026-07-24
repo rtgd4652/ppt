@@ -13,6 +13,16 @@ const {
   loadMainStoryRouteComparison,
   openKnowledgeDatabase,
 } = require("./knowledge-db");
+const {
+  CORE_TERMS_DOCUMENT_PATH,
+  CORE_TERMS_DOCUMENT_RELATIVE_PATH,
+  CORE_TERMS_MANIFEST_ID,
+  getCoreTermRows,
+  getCoreTermsDatabaseSummary,
+  loadCoreTermsManifest,
+  resolveReference,
+  validateCoreTermsManifest,
+} = require("./glossary-db");
 
 const REQUIRED_OUTPUTS = [
   path.join(REPOSITORY_ROOT, "knowledge", "curated", "sources", "bilibili_main_story_BV17M4y1w7rr.md"),
@@ -36,9 +46,14 @@ if (!fs.existsSync(DATABASE_PATH)) {
 } else {
   const catalog = loadMainStoryCatalog();
   const routeComparisonSeed = loadMainStoryRouteComparison();
+  const coreTermsManifest = validateCoreTermsManifest(loadCoreTermsManifest());
   const database = openKnowledgeDatabase();
 
   try {
+    const foreignKeyProblems = database.prepare("PRAGMA foreign_key_check").all();
+    if (foreignKeyProblems.length > 0) {
+      fail(`SQLite 存在 ${foreignKeyProblems.length} 条外键孤儿记录。`);
+    }
     const source = database.prepare("SELECT source_id FROM source_records WHERE source_id = ?").get(catalog.source.id);
     const rows = getCatalogRows(database, catalog.source.id);
     const characterSources = getCharacterSourceRows(database);
@@ -72,6 +87,11 @@ if (!fs.existsSync(DATABASE_PATH)) {
     const p08Review = reviewRows.find((review) => review.episode_no === 8);
     const p09Review = reviewRows.find((review) => review.episode_no === 9);
     const p10Review = reviewRows.find((review) => review.episode_no === 10);
+    const coreTermRows = getCoreTermRows(database, CORE_TERMS_MANIFEST_ID);
+    const coreTermSummary = getCoreTermsDatabaseSummary(
+      database,
+      CORE_TERMS_MANIFEST_ID
+    );
 
     if (!source) {
       fail(`缺少来源记录：${catalog.source.id}`);
@@ -259,6 +279,203 @@ if (!fs.existsSync(DATABASE_PATH)) {
     if (characterSources.length !== expectedCharacterSourceCount) {
       fail(`灰机角色来源应为 ${expectedCharacterSourceCount} 条，实际为 ${characterSources.length}。`);
     }
+
+    // 核心术语必须与已提交 JSON 种子逐项一致；不把待审核术语自动提升为确认事实。
+    const expectedTermCount = coreTermsManifest.terms.length;
+    const expectedAliasCount = coreTermsManifest.terms.reduce(
+      (total, term) => total + term.aliases.length,
+      0
+    );
+    const expectedReferenceCount = coreTermsManifest.terms.reduce(
+      (total, term) => total + term.references.length,
+      0
+    );
+    const expectedRelationCount = coreTermsManifest.terms.reduce(
+      (total, term) => total + term.relations.length,
+      0
+    );
+    if (
+      coreTermSummary.termCount !== expectedTermCount ||
+      coreTermSummary.aliasCount !== expectedAliasCount ||
+      coreTermSummary.referenceCount !== expectedReferenceCount ||
+      coreTermSummary.relationCount !== expectedRelationCount
+    ) {
+      fail(
+        `核心术语 SQLite 计数与种子不一致：` +
+          `术语 ${coreTermSummary.termCount}/${expectedTermCount}，` +
+          `别名 ${coreTermSummary.aliasCount}/${expectedAliasCount}，` +
+          `引用 ${coreTermSummary.referenceCount}/${expectedReferenceCount}，` +
+          `关系 ${coreTermSummary.relationCount}/${expectedRelationCount}。`
+      );
+    }
+    if (
+      !coreTermSummary.document ||
+      coreTermSummary.document.document_type !== "glossary" ||
+      coreTermSummary.document.layer !== "curated" ||
+      coreTermSummary.document.file_path !== CORE_TERMS_DOCUMENT_RELATIVE_PATH
+    ) {
+      fail("核心术语 Markdown 尚未正确登记到 knowledge_documents。");
+    }
+    if (!fs.existsSync(CORE_TERMS_DOCUMENT_PATH)) {
+      fail(`核心术语 Markdown 文件不存在：${CORE_TERMS_DOCUMENT_RELATIVE_PATH}`);
+    } else {
+      const glossaryMarkdown = fs.readFileSync(CORE_TERMS_DOCUMENT_PATH, "utf8");
+      const requiredMetadata = [
+        "manifest_id: core-terms-v0.1",
+        "status: active",
+        `- ${expectedTermCount} 个规范术语。`,
+        `- ${expectedAliasCount} 个可检索别名。`,
+        `- ${expectedReferenceCount} 条来源引用。`,
+        `- ${expectedRelationCount} 条术语关系。`,
+      ];
+      for (const metadata of requiredMetadata) {
+        if (!glossaryMarkdown.includes(metadata)) {
+          fail(`核心术语 Markdown 元数据或计数漂移：${metadata}`);
+        }
+      }
+      for (const term of coreTermsManifest.terms) {
+        if (
+          !glossaryMarkdown.includes(`| ${term.title} |`) ||
+          !glossaryMarkdown.includes(term.canonical_summary)
+        ) {
+          fail(`核心术语 Markdown 缺少规范词或定义：${term.term_id}`);
+        }
+      }
+    }
+
+    const getAliases = database.prepare(`
+      SELECT alias, alias_type, notes
+      FROM glossary_aliases
+      WHERE term_id = ?
+      ORDER BY alias
+    `);
+    const getReferences = database.prepare(`
+      SELECT
+        reference_id, reference_no, reference_type, source_locator,
+        source_id, document_id, source_section, evidence_role,
+        review_status, notes
+      FROM glossary_term_references
+      WHERE term_id = ?
+      ORDER BY reference_no
+    `);
+    const getRelations = database.prepare(`
+      SELECT related_term_id, relation_type, notes
+      FROM glossary_relations
+      WHERE term_id = ?
+      ORDER BY related_term_id, relation_type
+    `);
+
+    for (const expectedTerm of coreTermsManifest.terms) {
+      const storedTerm = coreTermRows.find(
+        (term) => term.term_id === expectedTerm.term_id
+      );
+      if (
+        !storedTerm ||
+        storedTerm.title !== expectedTerm.title ||
+        storedTerm.domain !== expectedTerm.domain ||
+        storedTerm.knowledge_layer !== expectedTerm.knowledge_layer ||
+        storedTerm.review_status !== expectedTerm.review_status ||
+        (storedTerm.canonical_summary || "") !== expectedTerm.canonical_summary ||
+        storedTerm.usage_note !== expectedTerm.usage_note ||
+        storedTerm.sort_order !== expectedTerm.sort_order ||
+        storedTerm.notes !== expectedTerm.notes
+      ) {
+        fail(`核心术语未按种子写入或字段漂移：${expectedTerm.term_id}`);
+        continue;
+      }
+
+      // SQLite 的默认二进制排序与 JavaScript 的中文 localeCompare 顺序可能不同。
+      // 两侧使用同一个确定性比较器，避免把正确数据误报成字段漂移。
+      const compareAlias = (left, right) =>
+        left.alias < right.alias ? -1 : left.alias > right.alias ? 1 : 0;
+      const storedAliases = getAliases.all(expectedTerm.term_id).sort(compareAlias);
+      const expectedAliases = [...expectedTerm.aliases].sort(compareAlias);
+      if (
+        storedAliases.length !== expectedAliases.length ||
+        storedAliases.some(
+          (alias, index) =>
+            alias.alias !== expectedAliases[index].alias ||
+            alias.alias_type !== expectedAliases[index].alias_type ||
+            alias.notes !== expectedAliases[index].notes
+        )
+      ) {
+        fail(`核心术语别名与种子不一致：${expectedTerm.term_id}`);
+      }
+
+      const storedReferences = getReferences.all(expectedTerm.term_id);
+      if (storedReferences.length !== expectedTerm.references.length) {
+        fail(`核心术语来源引用数量不一致：${expectedTerm.term_id}`);
+      } else {
+        for (const [referenceIndex, reference] of expectedTerm.references.entries()) {
+          const storedReference = storedReferences[referenceIndex];
+          const expectedResolvedReference = resolveReference(database, reference);
+          if (
+            storedReference.reference_id !== reference.reference_id ||
+            storedReference.reference_no !== referenceIndex + 1 ||
+            storedReference.reference_type !== reference.reference_type ||
+            storedReference.source_locator !==
+              expectedResolvedReference.sourceLocator ||
+            storedReference.source_id !== expectedResolvedReference.sourceId ||
+            storedReference.document_id !== expectedResolvedReference.documentId ||
+            storedReference.source_section !== reference.source_section ||
+            storedReference.evidence_role !== reference.evidence_role ||
+            storedReference.review_status !==
+              (reference.review_status || expectedTerm.review_status) ||
+            storedReference.notes !== reference.notes
+          ) {
+            fail(
+              `核心术语第 ${referenceIndex + 1} 条来源引用字段漂移：${expectedTerm.term_id}`
+            );
+          }
+          if (
+            ["wiki_story_page", "wiki_character_page", "video_supplement"].includes(
+              reference.reference_type
+            ) &&
+            !storedReference.source_id
+          ) {
+            fail(
+              `核心术语来源没有解析到 source_records：${expectedTerm.term_id} / ${reference.source_locator}`
+            );
+          }
+          if (
+            ["curated_document", "project_document"].includes(
+              reference.reference_type
+            )
+          ) {
+            const localPath = storedReference.source_locator.split("#", 1)[0];
+            if (
+              !localPath ||
+              !fs.existsSync(
+                path.join(REPOSITORY_ROOT, ...localPath.replace(/\\/g, "/").split("/"))
+              )
+            ) {
+              fail(
+                `核心术语本地文档引用不存在：${expectedTerm.term_id} / ${localPath || "未填写"}`
+              );
+            }
+          }
+        }
+      }
+
+      const storedRelations = getRelations.all(expectedTerm.term_id);
+      const expectedRelations = [...expectedTerm.relations].sort((left, right) =>
+        `${left.related_term_id}:${left.relation_type}`.localeCompare(
+          `${right.related_term_id}:${right.relation_type}`
+        )
+      );
+      if (
+        storedRelations.length !== expectedRelations.length ||
+        storedRelations.some(
+          (relation, index) =>
+            relation.related_term_id !== expectedRelations[index].related_term_id ||
+            relation.relation_type !== expectedRelations[index].relation_type ||
+            relation.notes !== expectedRelations[index].notes
+        )
+      ) {
+        fail(`核心术语关系与种子不一致：${expectedTerm.term_id}`);
+      }
+    }
+
     for (const outputPath of REQUIRED_OUTPUTS) {
       if (!fs.existsSync(outputPath)) {
         fail(`缺少导出文档：${outputPath}`);
@@ -273,6 +490,8 @@ if (!fs.existsSync(DATABASE_PATH)) {
       console.log(`首批队列：${priority.length}`);
       console.log(`人工审核记录：${reviewRows.length}`);
       console.log(`灰机角色来源：${characterSources.length}`);
+      console.log(`核心术语：${coreTermSummary.termCount}`);
+      console.log(`术语来源引用：${coreTermSummary.referenceCount}`);
     }
   } finally {
     database.close();
