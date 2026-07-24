@@ -201,6 +201,174 @@
       "source_page_title": "深渊的步伐/剧情/特殊灭世3",
       "document_status": "source_structured",
       "notes": "记录被抛下的人要求未达成后的收束；不从台词反推完整黑核、活骸数量。"
+    },
+    {
+      "id": "story-secluded-ark-day-7-curated-v0.1",
+      "title": "避世的方舟：第七天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/避世的方舟_第七天_剧情整理_v0.1.md",
+      "source_page_title": "避世的方舟/剧情/第七天",
+      "document_status": "source_structured",
+      "notes": "区分零周目背景、调查幽灵选择与跨世界线方舟信息；不把失败入口并入成功经历。"
+    },
+    {
+      "id": "story-secluded-ark-day-6-curated-v0.1",
+      "title": "避世的方舟：第六天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/避世的方舟_第六天_剧情整理_v0.1.md",
+      "source_page_title": "避世的方舟/剧情/第六天",
+      "document_status": "source_structured",
+      "notes": "区分高校解放状态、安托涅瓦实情选择及希罗相关嵌套选择，不补写空缺状态正文。"
+    },
+    {
+      "id": "story-secluded-ark-day-5-curated-v0.1",
+      "title": "避世的方舟：第五天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/避世的方舟_第五天_剧情整理_v0.1.md",
+      "source_page_title": "避世的方舟/剧情/第五天",
+      "document_status": "source_structured",
+      "notes": "保留神器使失踪、方舟碎片与路线选择的来源边界，不把不同区域状态拼接为单一路径。"
+    },
+    {
+      "id": "story-secluded-ark-day-4-curated-v0.1",
+      "title": "避世的方舟：第四天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/避世的方舟_第四天_剧情整理_v0.1.md",
+      "source_page_title": "避世的方舟/剧情/第四天",
+      "document_status": "source_structured",
+      "notes": "按状态页签与玩家选择分别整理零、活骸及方舟研究信息，不把互斥版本合并。"
+    },
+    {
+      "id": "story-secluded-ark-day-3-curated-v0.1",
+      "title": "避世的方舟：第三天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/避世的方舟_第三天_剧情整理_v0.1.md",
+      "source_page_title": "避世的方舟/剧情/第三天",
+      "document_status": "source_structured",
+      "notes": "保留空选项卡、不巡查中央庭分支及进入后续页面的证据等级，不替来源补齐去向。"
+    },
+    {
+      "id": "story-secluded-ark-day-2-curated-v0.1",
+      "title": "避世的方舟：第二天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/避世的方舟_第二天_剧情整理_v0.1.md",
+      "source_page_title": "避世的方舟/剧情/第二天",
+      "document_status": "source_structured",
+      "notes": "区分急救、科技与战斗状态文本；治疗公式和数值关系保留人工确认。"
+    },
+    {
+      "id": "story-secluded-ark-day-1-curated-v0.1",
+      "title": "避世的方舟：第一天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/避世的方舟_第一天_剧情整理_v0.1.md",
+      "source_page_title": "避世的方舟/剧情/第一天",
+      "document_status": "source_structured",
+      "notes": "整理突袭、黑核与最终日入口材料；三项结局的精确条件仍按来源证据保留待核。"
+    },
+    {
+      "id": "story-secluded-ark-final-deep-blue-star-curated-v0.1",
+      "title": "深蓝之星：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/深蓝之星_最终日_剧情整理_v0.1.md",
+      "source_page_title": "深蓝之星/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "按战斗胜负整理最终日，并保留牺牲对象具体状态尚未由来源确认的边界。"
+    },
+    {
+      "id": "story-secluded-ark-final-dark-figure-curated-v0.1",
+      "title": "黑暗中的身影：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/黑暗中的身影_最终日_剧情整理_v0.1.md",
+      "source_page_title": "黑暗中的身影/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "保留唯一胜负树、未知声音与零双人格自述边界；胜利后不增设不存在的玩家选择。"
+    },
+    {
+      "id": "story-secluded-ark-final-termination-curated-v0.1",
+      "title": "终结（避世的方舟）：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/终结（避世的方舟）_最终日_剧情整理_v0.1.md",
+      "source_page_title": "终结（避世的方舟）/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "记录无选择树的单线失败收束；与正轨箱庭的同名终结页严格区分。"
+    },
+    {
+      "id": "story-uncorrupted-doll-day-7-curated-v0.1",
+      "title": "无垢的人偶：第七天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/无垢的人偶_第七天_剧情整理_v0.1.md",
+      "source_page_title": "无垢的人偶/剧情/第七天",
+      "document_status": "source_structured",
+      "notes": "区分主线内容与条件性成长支线，三个一次性选项卡保持独立。"
+    },
+    {
+      "id": "story-uncorrupted-doll-day-6-curated-v0.1",
+      "title": "无垢的人偶：第六天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/无垢的人偶_第六天_剧情整理_v0.1.md",
+      "source_page_title": "无垢的人偶/剧情/第六天",
+      "document_status": "source_structured",
+      "notes": "按状态、来源版本和玩家选择整理八棵树，并保留前往希罗处的唯一嵌套结构。"
+    },
+    {
+      "id": "story-uncorrupted-doll-day-5-curated-v0.1",
+      "title": "无垢的人偶：第五天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/无垢的人偶_第五天_剧情整理_v0.1.md",
+      "source_page_title": "无垢的人偶/剧情/第五天",
+      "document_status": "source_structured",
+      "notes": "把跟随希罗保留为失败尝试而非成功路线，两项选择后的共同战斗单独整理。"
+    },
+    {
+      "id": "story-uncorrupted-doll-day-4-curated-v0.1",
+      "title": "无垢的人偶：第四天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/无垢的人偶_第四天_剧情整理_v0.1.md",
+      "source_page_title": "无垢的人偶/剧情/第四天",
+      "document_status": "source_structured",
+      "notes": "区分中央庭信用恢复与好感满值下的安身份分支，不把状态条件改写为现场选择。"
+    },
+    {
+      "id": "story-uncorrupted-doll-day-3-curated-v0.1",
+      "title": "无垢的人偶：第三天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/无垢的人偶_第三天_剧情整理_v0.1.md",
+      "source_page_title": "无垢的人偶/剧情/第三天",
+      "document_status": "source_structured",
+      "notes": "恢复平级选择与仅在指定回应下出现的嵌套树，避免把页面顺序误作父子关系。"
+    },
+    {
+      "id": "story-uncorrupted-doll-day-2-curated-v0.1",
+      "title": "无垢的人偶：第二天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/无垢的人偶_第二天_剧情整理_v0.1.md",
+      "source_page_title": "无垢的人偶/剧情/第二天",
+      "document_status": "source_structured",
+      "notes": "按无页签结构整理剧情；信任度增量仅作为满值条件线索，不反推完整公式。"
+    },
+    {
+      "id": "story-uncorrupted-doll-day-1-travel-curated-v0.1",
+      "title": "两个人的旅途：第一天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/两个人的旅途_第一天_剧情整理_v0.1.md",
+      "source_page_title": "两个人的旅途/剧情/第一天",
+      "document_status": "source_structured",
+      "notes": "记录一次性路线分流及共同监禁结果；残余镜头与晏华判断保持不同证据层级。"
+    },
+    {
+      "id": "story-uncorrupted-doll-day-1-eternal-curated-v0.1",
+      "title": "永恒的终焉：第一天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/永恒的终焉_第一天_剧情整理_v0.1.md",
+      "source_page_title": "永恒的终焉/剧情/第一天",
+      "document_status": "source_structured",
+      "notes": "区分信任度已满与未满状态，并保留已满状态下的嵌套回应及共同收束。"
+    },
+    {
+      "id": "story-uncorrupted-doll-final-travel-curated-v0.1",
+      "title": "两个人的旅途：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/两个人的旅途_最终日_剧情整理_v0.1.md",
+      "source_page_title": "两个人的旅途/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "三次同名离开选择按深度保存；任一留下转永恒，连续离开后才进入胜负状态。"
+    },
+    {
+      "id": "story-uncorrupted-doll-final-eternal-curated-v0.1",
+      "title": "永恒的终焉：最终日剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/永恒的终焉_最终日_剧情整理_v0.1.md",
+      "source_page_title": "永恒的终焉/剧情/最终日",
+      "document_status": "source_structured",
+      "notes": "区分旅途条件状态、三层选择与两种脱困版本；任一留下只汇合一次永恒收束。"
+    },
+    {
+      "id": "story-uncorrupted-doll-special-destruction-1-curated-v0.1",
+      "title": "无垢的人偶：特殊灭世 1 剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/finales/无垢的人偶_特殊灭世1_剧情整理_v0.1.md",
+      "source_page_title": "无垢的人偶/剧情/特殊灭世1",
+      "document_status": "source_structured",
+      "notes": "两项一次性选择均汇合拘禁与供能；确认安的尸体但不反推死因、责任人或其他角色下落。"
     }
   ]
 }
