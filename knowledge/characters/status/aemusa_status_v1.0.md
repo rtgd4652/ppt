@@ -32,6 +32,7 @@ last_reviewed: "2026-07-25"
 - [角色视觉规范](../../../docs/art/characters/AEMUSA_STYLE.md)
 - [1.0 叙事约束](../../../docs/design/v1.0_narrative_constraints.md)
 - [1.0 主线章节总纲审核草案](../../../docs/design/aemusa_main_story_chapter_outline_v1.0.md)
+- [1.0 主线章节总纲正式审核记录](../../curated/reviews/aemusa_main_story_outline_review_v1.0.md)
 
 ## 3. 1.0 叙事定位
 
@@ -42,6 +43,7 @@ last_reviewed: "2026-07-25"
 - 命运主宰不等于世界之主、全知者、宇宙创造者或中央庭统治者。
 - “序幕 + 六幕”主线章节总纲已经形成审核草案；失落帝国篇、四个顺序可变的原版天灾模块、专属终局天灾占位与终局沟通均已进入结构设计。
 - 总纲尚未获人工批准，因此事件、危机和机制实现继续冻结。
+- 正式审核已经开始，当前审核项为 `AMR-001`；只有逐项审核和跨文档复核完成后才可解除实现冻结。
 
 ## 4. 游戏实现状态
 
