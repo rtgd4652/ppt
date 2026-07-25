@@ -14,12 +14,14 @@ const {
   openKnowledgeDatabase,
 } = require("./knowledge-db");
 const {
+  CORE_TERMS_DOCUMENT_ID,
   CORE_TERMS_DOCUMENT_PATH,
   CORE_TERMS_DOCUMENT_RELATIVE_PATH,
   CORE_TERMS_MANIFEST_ID,
   getCoreTermRows,
   getCoreTermsDatabaseSummary,
   loadCoreTermsManifest,
+  normalizeSearchTerm,
   resolveReference,
   validateCoreTermsManifest,
 } = require("./glossary-db");
@@ -50,9 +52,56 @@ if (!fs.existsSync(DATABASE_PATH)) {
   const database = openKnowledgeDatabase();
 
   try {
+    const integrityResult = database.prepare("PRAGMA integrity_check").get();
+    if (integrityResult.integrity_check !== "ok") {
+      fail(`SQLite 完整性检查失败：${integrityResult.integrity_check}`);
+    }
     const foreignKeyProblems = database.prepare("PRAGMA foreign_key_check").all();
     if (foreignKeyProblems.length > 0) {
       fail(`SQLite 存在 ${foreignKeyProblems.length} 条外键孤儿记录。`);
+    }
+    const unownedTerms = database
+      .prepare("SELECT term_id FROM glossary_terms WHERE manifest_id = ''")
+      .all();
+    if (unownedTerms.length > 0) {
+      fail(
+        `SQLite 仍有 ${unownedTerms.length} 个未归属术语：` +
+          unownedTerms.map((term) => term.term_id).join("、")
+      );
+    }
+
+    // 标题和别名共同构成全库检索入口，任意清单之间都不得出现规范化后的歧义。
+    const searchEntries = database
+      .prepare(`
+        SELECT term_id, manifest_id, title AS value, 'title' AS value_type
+        FROM glossary_terms
+        UNION ALL
+        SELECT term.term_id, term.manifest_id, alias.alias AS value, 'alias' AS value_type
+        FROM glossary_aliases AS alias
+        INNER JOIN glossary_terms AS term ON term.term_id = alias.term_id
+      `)
+      .all();
+    const searchEntriesByKey = new Map();
+    for (const entry of searchEntries) {
+      const key = normalizeSearchTerm(entry.value);
+      if (!searchEntriesByKey.has(key)) {
+        searchEntriesByKey.set(key, []);
+      }
+      searchEntriesByKey.get(key).push(entry);
+    }
+    for (const [key, entries] of searchEntriesByKey.entries()) {
+      if (entries.length < 2) {
+        continue;
+      }
+      fail(
+        `术语全库检索词冲突“${key}”：` +
+          entries
+            .map(
+              (entry) =>
+                `${entry.manifest_id}/${entry.term_id}/${entry.value_type}:${entry.value}`
+            )
+            .join("；")
+      );
     }
     const source = database.prepare("SELECT source_id FROM source_records WHERE source_id = ?").get(catalog.source.id);
     const rows = getCatalogRows(database, catalog.source.id);
@@ -310,6 +359,7 @@ if (!fs.existsSync(DATABASE_PATH)) {
     }
     if (
       !coreTermSummary.document ||
+      coreTermSummary.document.document_id !== CORE_TERMS_DOCUMENT_ID ||
       coreTermSummary.document.document_type !== "glossary" ||
       coreTermSummary.document.layer !== "curated" ||
       coreTermSummary.document.file_path !== CORE_TERMS_DOCUMENT_RELATIVE_PATH

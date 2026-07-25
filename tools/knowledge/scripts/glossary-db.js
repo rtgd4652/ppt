@@ -135,17 +135,25 @@ function validateCoreTermsManifest(manifest) {
     const canonicalSummary = String(term?.canonical_summary || "").trim();
     const usageNote = String(term?.usage_note || "").trim();
     const notes = String(term?.notes || "").trim();
-    const suppliedSortOrder = Number(term?.sort_order);
-    const sortOrder =
-      Number.isInteger(suppliedSortOrder) && suppliedSortOrder > 0
-        ? suppliedSortOrder
-        : termIndex + 1;
+    const sortOrder = term?.sort_order;
 
     if (!/^TERM-[A-Z0-9-]+$/.test(termId)) {
       throw new Error(`第 ${termIndex + 1} 个术语的 term_id 无效：${termId || "未填写"}`);
     }
     if (termIds.has(termId)) {
       throw new Error(`核心术语 term_id 重复：${termId}`);
+    }
+    if (!Number.isInteger(sortOrder) || sortOrder <= 0) {
+      throw new Error(
+        `${termId || `第 ${termIndex + 1} 个术语`} 的 sort_order 必须是正整数。`
+      );
+    }
+    for (const field of ["aliases", "references", "relations"]) {
+      if (!Array.isArray(term?.[field])) {
+        throw new Error(
+          `${termId || `第 ${termIndex + 1} 个术语`} 的 ${field} 必须是数组。`
+        );
+      }
     }
     if (sortOrders.has(sortOrder)) {
       throw new Error(`核心术语 sort_order 重复：${sortOrder}`);
@@ -169,7 +177,7 @@ function validateCoreTermsManifest(manifest) {
       throw new Error(`${termId} 已确认或已由项目定义，但 canonical_summary 为空。`);
     }
 
-    const normalizedTitle = title.toLocaleLowerCase("zh-CN");
+    const normalizedTitle = normalizeSearchTerm(title);
     if (titles.has(normalizedTitle)) {
       throw new Error(`核心术语标题重复：${title}`);
     }
@@ -177,17 +185,11 @@ function validateCoreTermsManifest(manifest) {
     termIds.add(termId);
     sortOrders.add(sortOrder);
 
-    const normalizedAliases = (Array.isArray(term.aliases) ? term.aliases : []).map(
-      normalizeAlias
-    );
-    const normalizedReferences = (
-      Array.isArray(term.references) ? term.references : []
-    ).map((reference, index) =>
+    const normalizedAliases = term.aliases.map(normalizeAlias);
+    const normalizedReferences = term.references.map((reference, index) =>
       normalizeReference(termId, reference, index + 1)
     );
-    const normalizedRelations = (
-      Array.isArray(term.relations) ? term.relations : []
-    ).map(normalizeRelation);
+    const normalizedRelations = term.relations.map(normalizeRelation);
 
     if (
       reviewStatus === "human_confirmed" &&
@@ -201,7 +203,7 @@ function validateCoreTermsManifest(manifest) {
       if (!alias.alias || !alias.alias_type) {
         throw new Error(`${termId} 含有空别名或空 alias_type。`);
       }
-      const normalizedAlias = alias.alias.toLocaleLowerCase("zh-CN");
+      const normalizedAlias = normalizeSearchTerm(alias.alias);
       if (aliases.has(normalizedAlias)) {
         throw new Error(`核心术语别名重复：${alias.alias}`);
       }
@@ -248,10 +250,10 @@ function validateCoreTermsManifest(manifest) {
   }
 
   // 标题和别名在整个清单内必须唯一，防止同一个检索词指向两个概念。
-  for (const [normalizedAlias, aliasTermId] of aliases.entries()) {
+  for (const normalizedAlias of aliases.keys()) {
     const titleTermId = titles.get(normalizedAlias);
-    if (titleTermId && titleTermId !== aliasTermId) {
-      throw new Error(`术语别名与另一术语标题冲突：${normalizedAlias}`);
+    if (titleTermId) {
+      throw new Error(`术语别名与术语标题冲突：${normalizedAlias}`);
     }
   }
 
@@ -309,6 +311,95 @@ function normalizeRepositoryPath(sourceLocator) {
   };
 }
 
+function stripMarkdownHeadingPrefix(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .trim()
+    .replace(/^\s{0,3}#{1,6}\s+/u, "")
+    .replace(/^\d+(?:\.\d+)*(?:[.、]\s*|\s+)/u, "")
+    .trim();
+}
+
+function normalizeMarkdownHeading(value) {
+  return stripMarkdownHeadingPrefix(value)
+    .replace(/[\p{P}\p{Z}\s]/gu, "")
+    .toLocaleLowerCase("zh-CN");
+}
+
+function getMarkdownHeadingKeys(value) {
+  const heading = stripMarkdownHeadingPrefix(value);
+  const keys = new Set([normalizeMarkdownHeading(heading)]);
+  const withoutTrailingNote = heading
+    .replace(/\s*[（(][^（）()]*[）)]\s*$/u, "")
+    .trim();
+  if (withoutTrailingNote !== heading) {
+    keys.add(normalizeMarkdownHeading(withoutTrailingNote));
+  }
+  return [...keys].filter(Boolean);
+}
+
+function extractMarkdownHeadings(markdown) {
+  const headings = [];
+  let fenceCharacter = "";
+  let fenceLength = 0;
+
+  // 代码围栏中的 # 只是示例文本，不能被误判为可引用的真实章节标题。
+  for (const line of String(markdown || "").split(/\r?\n/u)) {
+    const fenceMatch = line.match(/^\s*(`{3,}|~{3,})/u);
+    if (fenceMatch) {
+      const marker = fenceMatch[1];
+      if (!fenceCharacter) {
+        fenceCharacter = marker[0];
+        fenceLength = marker.length;
+      } else if (
+        marker[0] === fenceCharacter &&
+        marker.length >= fenceLength
+      ) {
+        fenceCharacter = "";
+        fenceLength = 0;
+      }
+      continue;
+    }
+    if (!fenceCharacter && /^\s{0,3}#{1,6}\s+/u.test(line)) {
+      headings.push(line);
+    }
+  }
+
+  return headings;
+}
+
+function validateLocalReferenceSection(reference, local) {
+  if (!reference.source_section) {
+    throw new Error(
+      `本地来源 ${local.relativePath} 的 source_section 不得为空。`
+    );
+  }
+
+  const requestedKey = normalizeMarkdownHeading(reference.source_section);
+  const headings = extractMarkdownHeadings(
+    fs.readFileSync(local.fullPath, "utf8")
+  )
+    .map((line) => ({
+      raw: stripMarkdownHeadingPrefix(line),
+      keys: getMarkdownHeadingKeys(line),
+    }));
+  const matches = headings.filter((heading) =>
+    heading.keys.includes(requestedKey)
+  );
+
+  if (matches.length === 0) {
+    throw new Error(
+      `本地来源 ${local.relativePath} 中不存在章节“${reference.source_section}”。`
+    );
+  }
+  if (matches.length > 1) {
+    throw new Error(
+      `本地来源 ${local.relativePath} 中章节“${reference.source_section}”匹配到多个标题：` +
+        matches.map((match) => match.raw).join("、")
+    );
+  }
+}
+
 function resolveReference(database, reference) {
   if (reference.reference_type === "wiki_story_page") {
     const story = database
@@ -361,6 +452,7 @@ function resolveReference(database, reference) {
     ["curated_document", "project_document"].includes(reference.reference_type)
   ) {
     const local = normalizeRepositoryPath(reference.source_locator);
+    validateLocalReferenceSection(reference, local);
     const document = database
       .prepare("SELECT document_id FROM knowledge_documents WHERE file_path = ?")
       .get(local.relativePath);
@@ -416,6 +508,146 @@ function resolveReference(database, reference) {
     sourceId: null,
     documentId: null,
   };
+}
+
+function normalizeSearchTerm(value) {
+  return String(value || "")
+    .normalize("NFKC")
+    .trim()
+    .toLocaleLowerCase("zh-CN");
+}
+
+function validateLegacyTermAdoption(database, manifest) {
+  const legacyById = new Map(
+    database
+      .prepare(`
+        SELECT term_id, title, domain, knowledge_layer
+        FROM glossary_terms
+        WHERE manifest_id = ''
+      `)
+      .all()
+      .map((row) => [row.term_id, row])
+  );
+
+  for (const term of manifest.terms) {
+    const legacy = legacyById.get(term.term_id);
+    if (!legacy) {
+      continue;
+    }
+
+    // 旧库只允许接管身份字段一致的空归属记录；定义、审核状态和排序可由新清单更新。
+    const identityMatches =
+      normalizeSearchTerm(legacy.title) === normalizeSearchTerm(term.title) &&
+      legacy.domain === term.domain &&
+      legacy.knowledge_layer === term.knowledge_layer;
+    if (!identityMatches) {
+      throw new Error(
+        `${term.term_id} 对应的空归属旧记录与当前清单身份不一致，拒绝自动接管。`
+      );
+    }
+  }
+}
+
+function validateDatabaseSearchTermConflicts(database, manifest) {
+  const currentTermIds = new Set(manifest.terms.map((term) => term.term_id));
+  const currentSearchTerms = new Map();
+
+  for (const term of manifest.terms) {
+    currentSearchTerms.set(normalizeSearchTerm(term.title), {
+      termId: term.term_id,
+      label: `标题“${term.title}”`,
+    });
+    for (const alias of term.aliases) {
+      currentSearchTerms.set(normalizeSearchTerm(alias.alias), {
+        termId: term.term_id,
+        label: `别名“${alias.alias}”`,
+      });
+    }
+  }
+
+  const externalSearchTerms = new Map();
+  const registerExternal = (row, value, valueType) => {
+    // 身份一致的同 ID 空归属记录会由当前清单接管，不作为外部检索词。
+    if (row.manifest_id === "" && currentTermIds.has(row.term_id)) {
+      return;
+    }
+    const normalized = normalizeSearchTerm(value);
+    if (!normalized || externalSearchTerms.has(normalized)) {
+      return;
+    }
+    externalSearchTerms.set(normalized, {
+      termId: row.term_id,
+      manifestId: row.manifest_id || "未归属",
+      label: `${valueType}“${value}”`,
+    });
+  };
+
+  for (const row of database
+    .prepare(`
+      SELECT term_id, title, manifest_id
+      FROM glossary_terms
+      WHERE manifest_id <> ?
+    `)
+    .all(manifest.manifest_id)) {
+    registerExternal(row, row.title, "标题");
+  }
+  for (const row of database
+    .prepare(`
+      SELECT alias.term_id, alias.alias, term.manifest_id
+      FROM glossary_aliases AS alias
+      INNER JOIN glossary_terms AS term ON term.term_id = alias.term_id
+      WHERE term.manifest_id <> ?
+    `)
+    .all(manifest.manifest_id)) {
+    registerExternal(row, row.alias, "别名");
+  }
+
+  for (const [normalized, current] of currentSearchTerms.entries()) {
+    const external = externalSearchTerms.get(normalized);
+    if (!external) {
+      continue;
+    }
+    throw new Error(
+      `${current.termId} 的${current.label}与清单 ${external.manifestId} 中 ` +
+        `${external.termId} 的${external.label}冲突。`
+    );
+  }
+}
+
+function validateGlossaryDocumentIdentity(database) {
+  const documentAtPath = database
+    .prepare(`
+      SELECT document_id
+      FROM knowledge_documents
+      WHERE file_path = ?
+    `)
+    .get(CORE_TERMS_DOCUMENT_RELATIVE_PATH);
+  if (
+    documentAtPath &&
+    documentAtPath.document_id !== CORE_TERMS_DOCUMENT_ID
+  ) {
+    throw new Error(
+      `核心术语文档路径已由 ${documentAtPath.document_id} 占用，` +
+        `预期为 ${CORE_TERMS_DOCUMENT_ID}。`
+    );
+  }
+
+  const documentById = database
+    .prepare(`
+      SELECT file_path
+      FROM knowledge_documents
+      WHERE document_id = ?
+    `)
+    .get(CORE_TERMS_DOCUMENT_ID);
+  if (
+    documentById &&
+    documentById.file_path !== CORE_TERMS_DOCUMENT_RELATIVE_PATH
+  ) {
+    throw new Error(
+      `核心术语文档 ID 已绑定到 ${documentById.file_path}，` +
+        `预期为 ${CORE_TERMS_DOCUMENT_RELATIVE_PATH}。`
+    );
+  }
 }
 
 function getManagedTermIds(database, manifestId) {
@@ -565,6 +797,11 @@ function syncCoreTerms(database) {
 
   database.exec("BEGIN IMMEDIATE;");
   try {
+    // 任何清理或覆盖发生前，先确认旧记录可安全迁移且全库检索词没有跨清单歧义。
+    validateLegacyTermAdoption(database, manifest);
+    validateDatabaseSearchTermConflicts(database, manifest);
+    validateGlossaryDocumentIdentity(database);
+
     // 先清理本清单术语拥有的子记录，防止删改别名、证据或关系后留下陈旧索引。
     // 关系只删除本术语发出的记录；其他清单指向本术语的入站关系不属于本清单，
     // 不能在同步时被静默删除。
@@ -699,10 +936,18 @@ module.exports = {
   CORE_TERMS_DOCUMENT_RELATIVE_PATH,
   CORE_TERMS_MANIFEST_ID,
   CORE_TERMS_MANIFEST_PATH,
+  extractMarkdownHeadings,
   getCoreTermRows,
   getCoreTermsDatabaseSummary,
+  getMarkdownHeadingKeys,
   loadCoreTermsManifest,
+  normalizeMarkdownHeading,
+  normalizeSearchTerm,
   resolveReference,
   syncCoreTerms,
+  validateDatabaseSearchTermConflicts,
+  validateGlossaryDocumentIdentity,
+  validateLegacyTermAdoption,
+  validateLocalReferenceSection,
   validateCoreTermsManifest,
 };

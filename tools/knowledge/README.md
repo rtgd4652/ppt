@@ -27,11 +27,13 @@ node tools/knowledge/scripts/check-knowledge-db.js
 node tools/knowledge/scripts/sync-wiki-story-sources.js
 node tools/knowledge/scripts/check-wiki-story-text.js
 node tools/knowledge/scripts/sync-core-terms.js
+node --test tools/knowledge/tests/glossary-db.test.js
 ```
 
 `init-knowledge-db.js` 会先同步角色与剧情来源，再同步核心术语。这样术语中的
 `wiki_story_page`、`wiki_character_page` 和 curated 文档引用才能解析到既有来源。
 `sync-core-terms.js` 只执行术语同步，不访问网络，也不改写剧情、角色或术语 Markdown。
+术语回归测试复制本地数据库到系统临时目录运行，不修改正式 SQLite、JSON 种子或 Markdown。
 
 ## 核心术语规则
 
@@ -40,7 +42,9 @@ node tools/knowledge/scripts/sync-core-terms.js
 - `mod_design_decision`：Mod 自身设定或系统边界；使用 `project_defined` 与原作事实明确分层。
 - Wiki 剧情页引用按 `story_pages.title` 解析。
 - curated 或项目文档引用使用仓库相对路径，文件必须存在；已进入通用文档索引时同时保存 `document_id`。
-- 同步采用单一事务，只更新 `core-terms-v0.1` 清单管理的术语；旧库中同 ID 且 `manifest_id` 为空的记录可由当前清单安全接管，已归属其他清单的记录会被拒绝。
+- 同步采用单一事务，只更新 `core-terms-v0.1` 清单管理的术语；旧库中同 ID、`manifest_id` 为空且标题、领域、知识层身份一致的记录才可安全接管，身份不一致或已归属其他清单的记录会被拒绝。
+- 标题和别名先经过 NFKC、去首尾空白与小写规范化；同一清单和不同清单之间都不允许同一个检索词指向多个概念。
+- curated 与项目文档的 `source_section` 必须唯一匹配真实 Markdown 标题；跨多个章节的证据应拆成多条引用，不能拼接不存在的章节名。
 - 同步只清理当前清单术语发出的关系，不删除其他清单的入站关系；若待删除术语仍被外部关系引用，整批同步会回滚并要求先处理引用。
 - 任一引用、关系或归属无效时整批回滚。
 

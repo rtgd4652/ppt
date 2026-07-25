@@ -82,7 +82,7 @@
           "reference_id": "TERMREF-OTHERWORLD-001",
           "reference_type": "curated_document",
           "source_locator": "knowledge/story/curated/finales/被抛下的人_最终日_剧情整理_v0.1.md",
-          "source_section": "巨大黑门与高墙之后",
+          "source_section": "中央庭追击与异界风险争议",
           "evidence_role": "context",
           "review_status": "under_review",
           "notes": "该结局仅提供局部观察，不能概括异界全貌。"
@@ -390,7 +390,7 @@
           "reference_id": "TERMREF-LIFE-FORCE-001",
           "reference_type": "curated_document",
           "source_locator": "knowledge/story/curated/days/无垢的人偶_第五天_剧情整理_v0.1.md",
-          "source_section": "希罗的黑核理论",
+          "source_section": "希罗提出的世界融合理由",
           "evidence_role": "character_claim",
           "review_status": "under_review",
           "notes": "该段理论没有独立实验记录完成验证。"
@@ -450,7 +450,7 @@
           "reference_id": "TERMREF-LIVING-CORPSE-TRANSFORMATION-001",
           "reference_type": "curated_document",
           "source_locator": "knowledge/story/curated/days/无垢的人偶_第六天_剧情整理_v0.1.md",
-          "source_section": "中央庭处置规则",
+          "source_section": "赛哈姆袭击与活骸信息",
           "evidence_role": "character_claim",
           "review_status": "under_review",
           "notes": "净化和时间回溯的效果与局限按当时角色认知记录。"
@@ -524,7 +524,7 @@
           "reference_id": "TERMREF-CENTRAL-COURT-SEVEN-001",
           "reference_type": "curated_document",
           "source_locator": "knowledge/story/curated/days/正轨的箱庭_第五天_剧情整理_v0.1.md",
-          "source_section": "七人众会议",
+          "source_section": "当日开场：赛哈姆记录与会议召集",
           "evidence_role": "context",
           "review_status": "under_review",
           "notes": "来源呈现会议、分裂与角色立场，但不能只凭站位提前归队。"
@@ -593,10 +593,19 @@
           "reference_id": "TERMREF-WORLD-RECONSTRUCTION-001",
           "reference_type": "curated_document",
           "source_locator": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md",
-          "source_section": "零周目与多周目开场",
+          "source_section": "零周目的定位",
           "evidence_role": "direct_system_and_manual_confirmation",
           "review_status": "human_confirmed",
           "notes": "系统提示与人工结构确认共同支持。"
+        },
+        {
+          "reference_id": "TERMREF-WORLD-RECONSTRUCTION-002",
+          "reference_type": "curated_document",
+          "source_locator": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md",
+          "source_section": "多周目开场的定位",
+          "evidence_role": "direct_system_and_manual_confirmation",
+          "review_status": "human_confirmed",
+          "notes": "多周目只保留失败记录、系统重载与世界重构提示。"
         }
       ],
       "relations": [
@@ -722,8 +731,8 @@
         {
           "reference_id": "TERMREF-BOX-GARDEN-001",
           "reference_type": "curated_document",
-          "source_locator": "knowledge/story/curated/structure/正轨的箱庭_七日轮回结构_v0.1.md",
-          "source_section": "使用边界",
+          "source_locator": "knowledge/story/curated/finales/箱庭风景_最终日_剧情整理_v0.1.md",
+          "source_section": "剧情战胜利：黑门深处与箱庭景象",
           "evidence_role": "context",
           "review_status": "pending_source_review",
           "notes": "路线标题和叙事意象存在，但缺少可无条件采用的机制定义。"
