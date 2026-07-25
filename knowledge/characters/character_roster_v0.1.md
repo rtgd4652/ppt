@@ -3,6 +3,8 @@
 > 本文档是角色知识库的索引与整理进度表。
 >
 > 它不新增角色设定、游戏机制、技能数值或剧情内容；角色事实应以各自的 clean、mod_ready 与标准角色档案为准。
+>
+> **历史版本说明：**本页保留 v0.1 八人资料阶段记录。1.0 锁定名单与当前状态请以 [`character_roster_v1.0.md`](character_roster_v1.0.md) 及 [`status/README.md`](status/README.md) 为准。
 
 ## 1. 名册使用说明
 

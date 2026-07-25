@@ -140,7 +140,9 @@
 #### 角色标准资料
 
 - [角色设计统一模板](characters/character_design_template_v0.1.md)
-- [角色名单](characters/character_roster_v0.1.md)
+- [1.0 十名神器使锁定名册](characters/character_roster_v1.0.md)
+- [1.0 十名角色状态档案](characters/status/README.md)
+- [v0.1 历史角色名单](characters/character_roster_v0.1.md)
 - [核心人物关系圣经](characters/character_relationship_bible_v0.1.md)
 - [爱缪莎标准角色档案](characters/aemusa_character_v0.1.md)
 - [安托涅瓦标准角色档案](characters/antoniva_character_v0.1.md)
@@ -163,6 +165,8 @@
 #### 仓库设计文档
 
 具体游戏设计、美术规范、路线图和版本计划位于仓库 [`../docs/`](../docs/)。进入代码或资产制作前，应同时核对相应设计文档与本知识库中的事实边界。
+
+1.0 角色、主线、危机、宇宙论揭示、命名和旧资产边界统一以仓库 [《1.0 叙事约束》](../docs/design/v1.0_narrative_constraints.md) 为准。
 
 ### 第五步：数据库与工具索引
 

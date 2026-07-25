@@ -1,5 +1,7 @@
 # ROADMAP
 
+> **历史里程碑说明：**本页的 `v0.x` 是内部开发阶段。当前对外目标是大型 1.0；角色名单和叙事范围以 [`design/v1.0_narrative_constraints.md`](design/v1.0_narrative_constraints.md) 为准。下方旧舰船、旧巨构与公开版本表述只作为历史任务记录，不代表仍获批准。
+
 ## v0.1.0：稳定基线
 
 - [x] 完成仓库结构重构。

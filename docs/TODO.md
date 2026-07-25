@@ -1,5 +1,7 @@
 # TODO
 
+> **历史任务说明：**本页主要记录 v0.1 原型封版工作。当前 1.0 角色与叙事范围以 [`design/v1.0_narrative_constraints.md`](design/v1.0_narrative_constraints.md) 为准；旧“命运之主”和“命运观测塔”任务不得直接恢复为正式方案。
+
 ## v0.1.0 封版候选
 
 - [x] 建立修改前安全快照。
