@@ -10,6 +10,7 @@ character_bible_status: "complete"
 implementation_status: "partial"
 art_status: "partial"
 narrative_status: "approved"
+main_story_outline_status: "draft_for_human_review"
 test_status: "partial"
 last_reviewed: "2026-07-25"
 ---
@@ -30,6 +31,7 @@ last_reviewed: "2026-07-25"
 - [核心人物关系圣经](../character_relationship_bible_v0.1.md)
 - [角色视觉规范](../../../docs/art/characters/AEMUSA_STYLE.md)
 - [1.0 叙事约束](../../../docs/design/v1.0_narrative_constraints.md)
+- [1.0 主线章节总纲审核草案](../../../docs/design/aemusa_main_story_chapter_outline_v1.0.md)
 
 ## 3. 1.0 叙事定位
 
@@ -38,6 +40,8 @@ last_reviewed: "2026-07-25"
 - 主线压力必须依次覆盖失落帝国觉醒与宣战、原版四大天灾和本 Mod 专属终局天灾。
 - 只有在战胜挑战、窥见终局真相并与玩家完成关键沟通后，才可成为命运主宰。
 - 命运主宰不等于世界之主、全知者、宇宙创造者或中央庭统治者。
+- “序幕 + 六幕”主线章节总纲已经形成审核草案；失落帝国篇、四个顺序可变的原版天灾模块、专属终局天灾占位与终局沟通均已进入结构设计。
+- 总纲尚未获人工批准，因此事件、危机和机制实现继续冻结。
 
 ## 4. 游戏实现状态
 
@@ -69,4 +73,5 @@ last_reviewed: "2026-07-25"
 
 - 专属天灾身份与宇宙真相尚未确定。
 - 命运主宰能力最终边界尚待主线设计批准。
+- “序幕 + 六幕”结构、危机模块顺序、埃索林出场方式、失败分支和终局揭示层级尚待人工审核。
 - 爱缪莎专属舰与命运类巨构需要重新设计，不沿用旧案。

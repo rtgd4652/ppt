@@ -23,6 +23,7 @@
 - `knowledge/characters/character_roster_v1.0.md`
 - `knowledge/characters/status/README.md`
 - `docs/design/v1.0_narrative_constraints.md`
+- `docs/design/aemusa_main_story_chapter_outline_v1.0.md`（待人工审核；审核前禁止进入实现）
 
 ## 安装方法
 
@@ -60,6 +61,7 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 - 内部基线：保留现有四名可玩领袖与文明系统，完成回归测试。
 - 1.0 角色闭环：补齐十名神器使资料、标准档案、白夜馆接入、立绘、本地化和测试。
 - 1.0 主线闭环：完成爱缪莎从有限观测到“命运主宰”的完整路线。
+- 当前主线阶段：章节总纲草案已经建立，事件、危机和机制实现继续冻结，等待人工审核。
 - 美术与模型：按 Art Bible 重新设计爱缪莎专属舰与命运类巨构；旧 Stage 9 舰体改作其他舰船。
 
 详细内容见 `docs/ROADMAP.md`。
@@ -105,7 +107,10 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 
 ## 开发计划
 
-当前阶段只允许封版修复，不增加角色、剧情、舰船武器槽或正式图标。
+当前分为两个受控范围：
+
+- `0.1.0` 可玩原型只允许封版修复，不增加角色、剧情、舰船武器槽或正式图标。
+- `1.0` 当前只完善知识库与叙事设计。爱缪莎主线章节总纲通过人工审核前，不开始事件、危机和机制实现。
 
 封版流程：
 
