@@ -5,6 +5,8 @@
 > 本文只整理历史背景和时代划分，不新增游戏机制、不编写事件脚本、不设计数值或任务流程。
 >
 > 本文与 `knowledge/world/lore_bible_v0.1.md`、`knowledge/artifacts/artifact_bible_v0.1.md`、`knowledge/organizations/organization_bible_v0.1.md` 保持一致。
+>
+> 轮回结束至 Stellaris 开局的阶段门槛、并行发展链和未决年表问题，已细化至 [`post_disaster_to_interstellar_timeline_v0.1.md`](post_disaster_to_interstellar_timeline_v0.1.md)。本文继续作为时代总纲，不覆盖该专题文档。
 
 ## 1. 黑门灾难前时代
 

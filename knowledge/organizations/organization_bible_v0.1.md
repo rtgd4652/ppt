@@ -3,6 +3,8 @@
 > 本文档整理真正参与《神器使》Stellaris Mod 世界观、文明治理与社会关系的组织体系。
 >
 > 本文不包含白夜馆。白夜馆是玩家访问神器使功能的系统入口，不是世界观中的组织、势力或政治实体；具体说明见 `knowledge/systems/white_night_hall.md`。
+>
+> 中央庭从危机协调组织发展为星际国家治理核心后的国家性质、制度成熟阶段、权力边界与开放事项，已细化至 [`central_court_state_bible_v0.1.md`](central_court_state_bible_v0.1.md)。本文继续作为组织体系总纲。
 
 ## 1. 中央庭
 

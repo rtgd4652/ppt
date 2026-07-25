@@ -59,10 +59,13 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 
 当前知识重建工作线独立于 Mod 功能开发，使用 Markdown + 本地 SQLite 索引的双层结构：
 
+- 知识库总索引：`knowledge/README.md`
 - 工作说明：`docs/project/knowledge_rebuild_v0.1.md`
 - 人工确认层：`knowledge/curated/README.md`
 - 数据库说明：`knowledge/database/README.md`
 - 工具说明：`tools/knowledge/README.md`
+
+当前世界观基础文档包括事实／正史／谜团矩阵、灾后至星际时代详细时间线、中央庭国家制度圣经和宇宙论圣经；推荐从 `knowledge/README.md` 按顺序阅读。
 
 当前已索引 85 集视频目录，以及 47 个灰机 Wiki 主线剧情页面、129 棵剧情选择树和七名角色来源。已完成《正轨的箱庭》《无垢的人偶》《避世的方舟》《深渊的步伐》四条早期主线的逐页采集；Wiki 文本是当前剧情正文主来源，视频只作为人工审核后的补充叙事证据。
 

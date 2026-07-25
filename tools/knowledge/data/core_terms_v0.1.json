@@ -749,6 +749,50 @@
       "sort_order": 220
     },
     {
+      "term_id": "TERM-WORLD-LORD",
+      "title": "世界之主",
+      "aliases": [],
+      "domain": "world",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "human_confirmed",
+      "canonical_summary": "项目人工确认的原作身份称谓：塞拉菲姆是七日之都世界的世界之主／神；本项目将其整理为能够接触世界边界与维护层、并承担世界连续性责任的角色或权限位置。",
+      "usage_note": "身份链已获人工确认，但相关原作页面尚未全部完成逐页校订；不得据此推导全知全能、宇宙创造权、人类政治统治权，或把任意神秘少女自动认定为塞拉菲姆。",
+      "references": [
+        {
+          "reference_id": "TERMREF-WORLD-LORD-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/curated/decisions/project_editorial_decisions_v0.1.md",
+          "source_section": "ED-006：世界之主身份链与世界管理交接",
+          "evidence_role": "human_confirmation_boundary",
+          "review_status": "human_confirmed",
+          "notes": "固定塞拉菲姆、里见茜与埃索林的身份链，同时保留权限与交接机制为开放谜团。"
+        },
+        {
+          "reference_id": "TERMREF-WORLD-LORD-002",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/world/cosmology_bible_v0.1.md",
+          "source_section": "“世界之主”在本项目中的定义（WM）",
+          "evidence_role": "project_interpretation",
+          "review_status": "project_defined",
+          "notes": "提供世界之主在本 Mod 宇宙论中的最小工作定义。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-BOX-GARDEN",
+          "relation_type": "associated_with",
+          "notes": "世界之主与箱庭维护、修正语境有关，但精确机制仍未确认。"
+        },
+        {
+          "related_term_id": "TERM-MYSTERIOUS-GIRL",
+          "relation_type": "not_automatically_equivalent_to",
+          "notes": "任何未署名神秘少女都不能仅凭功能或画面自动认定为世界之主。"
+        }
+      ],
+      "notes": "塞拉菲姆的身份与世界之主权限的完整理论必须分开审核。",
+      "sort_order": 225
+    },
+    {
       "term_id": "TERM-NOAH-ARK",
       "title": "方舟・诺亚方舟",
       "aliases": ["方舟"],
@@ -846,6 +890,99 @@
       "relations": [],
       "notes": "“？？？”是多处未署名说话人的通用标记，不登记为该角色的全局别名。",
       "sort_order": 240
+    },
+    {
+      "term_id": "TERM-FATE-RULES",
+      "title": "命运规则",
+      "aliases": [],
+      "domain": "world",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "本 Mod 对银河尺度命运叙事采用的工作定义：未来由因果关系、选择、观察、资源和世界结构共同形成多种可能性，并在条件作用下表现出向特定结果收敛的约束。",
+      "usage_note": "不是原作已经证实的普遍宇宙定律，不是单一既定未来、人格神或普通概率的同义词；危机接连发生也不自动证明命运具有独立意志。",
+      "references": [
+        {
+          "reference_id": "TERMREF-FATE-RULES-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/world/cosmology_bible_v0.1.md",
+          "source_section": "项目工作定义（WM）",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": "定义 1.0 主线使用的命运规则工作模型。"
+        },
+        {
+          "reference_id": "TERMREF-FATE-RULES-002",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/curated/decisions/project_editorial_decisions_v0.1.md",
+          "source_section": "ED-007：爱缪莎 1.0 命运主线终点",
+          "evidence_role": "project_scope",
+          "review_status": "project_defined",
+          "notes": "固定 1.0 主线方向，并保留命运是否具有独立意志为开放谜团。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-WORLD-LINE",
+          "relation_type": "not_equivalent_to",
+          "notes": "命运描述可能性与因果约束；世界线描述不同世界或历史状态，二者不能混写。"
+        },
+        {
+          "related_term_id": "TERM-BOX-GARDEN",
+          "relation_type": "not_equivalent_to",
+          "notes": "命运规则不是箱庭边界或世界容器的同义词。"
+        },
+        {
+          "related_term_id": "TERM-FATE-SOVEREIGN",
+          "relation_type": "supports_narrative_progression_to",
+          "notes": "命运规则是爱缪莎终局成长使用的项目工作模型，但不会自动授予终局身份。"
+        }
+      ],
+      "notes": "爱缪莎的终局身份已经确认称为“命运主宰”；舰船不得继续以近似称号混淆角色身份。",
+      "sort_order": 245
+    },
+    {
+      "term_id": "TERM-FATE-SOVEREIGN",
+      "title": "命运主宰",
+      "aliases": [],
+      "domain": "character_role",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined",
+      "canonical_summary": "爱缪莎完成 1.0 命运主线后取得的终局角色身份：她能够理解并有限介入银河尺度的可能性与因果约束，同时仍必须承担选择后果，并不成为全知全能者。",
+      "usage_note": "只用于爱缪莎 1.0 主线终点，不是开局身份、等级自动称号、世界之主、中央庭统治职位或舰船名称；不得写成取消他人意志的绝对命运控制。",
+      "references": [
+        {
+          "reference_id": "TERMREF-FATE-SOVEREIGN-001",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/curated/decisions/project_editorial_decisions_v0.1.md",
+          "source_section": "ED-008：爱缪莎终局称号与舰船名称分离",
+          "evidence_role": "human_confirmed_project_naming",
+          "review_status": "project_defined",
+          "notes": "固定角色终局称号，并要求舰船另行命名。"
+        },
+        {
+          "reference_id": "TERMREF-FATE-SOVEREIGN-002",
+          "reference_type": "project_document",
+          "source_locator": "knowledge/world/cosmology_bible_v0.1.md",
+          "source_section": "命运主宰（PC）",
+          "evidence_role": "project_definition",
+          "review_status": "project_defined",
+          "notes": "规定其能力边界及与世界之主的区别。"
+        }
+      ],
+      "relations": [
+        {
+          "related_term_id": "TERM-FATE-RULES",
+          "relation_type": "develops_within",
+          "notes": "该身份在项目命运规则工作模型内发展，但不等于掌握全部宇宙规律。"
+        },
+        {
+          "related_term_id": "TERM-WORLD-LORD",
+          "relation_type": "not_equivalent_to",
+          "notes": "命运主宰处理可能性与选择责任，不自动获得世界维护权限。"
+        }
+      ],
+      "notes": "当前旧舰船名称“命运之主”需要另行迁移；本术语本身不触发 Mod 代码改名。",
+      "sort_order": 247
     },
     {
       "term_id": "TERM-ARTIFACT-SCIENCE",

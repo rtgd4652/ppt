@@ -62,7 +62,10 @@ C:\Users\Admin\Desktop\ppt\simple_leader_edict\mod
 
 ## 本地知识库
 
+- 知识库总索引：`knowledge/README.md`
 - 知识重建工作线：`docs/project/knowledge_rebuild_v0.1.md`
 - 人工确认知识层：`knowledge/curated/README.md`
 - 本地 SQLite 数据库说明：`knowledge/database/README.md`
 - 知识库工具：`tools/knowledge/README.md`
+
+事实／正史／谜团矩阵、灾后至星际时代详细时间线、中央庭国家制度圣经和宇宙论圣经已经建立；数据库仅作为可重建索引，不替代 Markdown、JSON 与来源资料。
