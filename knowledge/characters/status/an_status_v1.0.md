@@ -6,12 +6,12 @@ release_target: "1.0"
 roster_status: "locked"
 source_status: "complete"
 mod_ready_status: "complete"
-character_bible_status: "missing"
+character_bible_status: "complete"
 implementation_status: "not_started"
 art_status: "missing"
 narrative_status: "partial"
 test_status: "not_tested"
-last_reviewed: "2026-07-25"
+last_reviewed: "2026-07-29"
 ---
 
 # 安 1.0 角色状态档案
@@ -26,8 +26,9 @@ last_reviewed: "2026-07-25"
 
 - [Clean 资料](../安.md)
 - [Mod Ready 摘要](../../mod_ready/characters/安.mod.md)
+- [标准角色档案](../an_character_v0.1.md)
 
-当前尚无标准角色档案、独立美术规范或完整游戏实现。原作资料虽已采集，但与主线中的具体时间、轮回和人物成长关系仍需在标准档案中人工对齐。
+标准角色档案已经建立，并明确有限时间回溯不得扩写为世界线、世界重构或七日轮回控制权。当前仍无独立美术规范或完整游戏实现。
 
 ## 3. 1.0 叙事定位
 
@@ -56,5 +57,5 @@ last_reviewed: "2026-07-25"
 
 ## 7. 当前阻塞项
 
-- 标准角色档案和视觉锚点缺失。
+- 视觉锚点缺失。
 - 时间能力在 Stellaris 中的叙事与玩法边界尚未批准。

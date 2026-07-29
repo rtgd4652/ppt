@@ -35,18 +35,18 @@
 
 ## 3. 当前状态总表
 
-状态解释见 [`status/README.md`](status/README.md)。
+状态解释见 [`status/README.md`](status/README.md)，逐项完成关卡见 [`v1.0_character_completion_matrix.md`](v1.0_character_completion_matrix.md)。
 
 | 角色 | 原作资料 | Mod Ready | 标准档案 | 游戏内接入 | 美术锚点 | 1.0 状态档案 |
 | --- | --- | --- | --- | --- | --- | --- |
 | 安托涅瓦 | 已有 | 已有 | 已有 | 未开始 | 部分完成 | [查看](status/antoniva_status_v1.0.md) |
 | 爱缪莎 | 已有 | 已有 | 已有 | 已可用，主线未完成 | 部分完成 | [查看](status/aemusa_status_v1.0.md) |
 | 晏华 | 已有 | 已有 | 已有 | 未开始 | 未建立 | [查看](status/yanhua_status_v1.0.md) |
-| 安 | 已有 | 已有 | 未建立 | 未开始 | 未建立 | [查看](status/an_status_v1.0.md) |
-| 赛斯 | 已有 | 已有 | 未建立 | 已可用 | 未建立 | [查看](status/seth_status_v1.0.md) |
-| 幽桐 | 已有 | 已有 | 未建立 | 已可用 | 未建立 | [查看](status/yutong_status_v1.0.md) |
-| 拉比 | 已有 | 已有 | 未建立 | 已可用 | 未建立 | [查看](status/rabi_status_v1.0.md) |
-| 格蕾莎 | 已有 | 已有 | 未建立 | 未开始 | 未建立 | [查看](status/greysa_status_v1.0.md) |
+| 安 | 已有 | 已有 | 已有 | 未开始 | 未建立 | [查看](status/an_status_v1.0.md) |
+| 赛斯 | 已有 | 已有 | 已有 | 已可用 | 未建立 | [查看](status/seth_status_v1.0.md) |
+| 幽桐 | 已有 | 已有 | 已有 | 已可用 | 未建立 | [查看](status/yutong_status_v1.0.md) |
+| 拉比 | 已有 | 已有 | 已有 | 已可用 | 未建立 | [查看](status/rabi_status_v1.0.md) |
+| 格蕾莎 | 已有 | 已有 | 已有 | 未开始 | 未建立 | [查看](status/greysa_status_v1.0.md) |
 | 雯梓 | 待采集 | 待建立 | 待建立 | 未开始 | 未建立 | [查看](status/wenzi_status_v1.0.md) |
 | 里见茜 | 身份链已确认，角色资料待采集 | 待建立 | 待建立 | 未开始 | 延期 | [查看](status/satomi_akane_status_v1.0.md) |
 

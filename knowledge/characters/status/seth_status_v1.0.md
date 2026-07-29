@@ -6,12 +6,12 @@ release_target: "1.0"
 roster_status: "locked"
 source_status: "complete"
 mod_ready_status: "complete"
-character_bible_status: "missing"
+character_bible_status: "complete"
 implementation_status: "playable"
 art_status: "missing"
 narrative_status: "partial"
 test_status: "partial"
-last_reviewed: "2026-07-25"
+last_reviewed: "2026-07-29"
 ---
 
 # 赛斯 1.0 角色状态档案
@@ -26,8 +26,9 @@ last_reviewed: "2026-07-25"
 
 - [Clean 资料](../赛斯.md)
 - [Mod Ready 摘要](../../mod_ready/characters/赛斯.mod.md)
+- [标准角色档案](../seth_character_v0.1.md)
 
-当前缺少标准角色档案、独立关系档案与正式视觉锚点。
+标准角色档案已经建立，并明确“微小愿望”不能扩张为无代价许愿能力。当前仍缺少独立关系档案与正式视觉锚点。
 
 ## 3. 1.0 叙事定位
 
@@ -56,5 +57,5 @@ last_reviewed: "2026-07-25"
 
 ## 7. 当前阻塞项
 
-- 标准角色档案与美术锚点缺失。
+- 美术锚点缺失。
 - 当前“可玩”不等于 1.0 回归验证通过。

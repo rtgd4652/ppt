@@ -6,12 +6,12 @@ release_target: "1.0"
 roster_status: "locked"
 source_status: "complete"
 mod_ready_status: "complete"
-character_bible_status: "missing"
+character_bible_status: "complete"
 implementation_status: "not_started"
 art_status: "missing"
 narrative_status: "partial"
 test_status: "not_tested"
-last_reviewed: "2026-07-25"
+last_reviewed: "2026-07-29"
 ---
 
 # 格蕾莎 1.0 角色状态档案
@@ -25,8 +25,9 @@ last_reviewed: "2026-07-25"
 
 - [Clean 资料](../格蕾莎.md)
 - [Mod Ready 摘要](../../mod_ready/characters/格蕾莎.mod.md)
+- [标准角色档案](../greysa_character_v0.1.md)
 
-当前缺少标准角色档案、独立关系档案与正式视觉锚点。
+标准角色档案已经建立，并明确生命力量不能被写成无条件复活或永生。当前仍缺少独立关系档案与正式视觉锚点。
 
 ## 3. 1.0 叙事定位
 
@@ -54,5 +55,5 @@ last_reviewed: "2026-07-25"
 
 ## 7. 当前阻塞项
 
-- 标准角色档案、美术锚点和职业决定缺失。
+- 美术锚点和职业决定缺失。
 - 现有白夜馆占位不能计为已实装。
