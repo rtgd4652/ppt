@@ -1,0 +1,6 @@
+# 旗舰被真正摧毁时，this 为受害舰所属国家，fromfrom 为被摧毁舰船。
+on_ship_destroyed_victim = {
+	events = {
+		aemusa_fp.100
+	}
+}

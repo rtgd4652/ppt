@@ -35,3 +35,7 @@ knowledge/database/*.sqlite-wal
 # 本地视觉参考缓存：允许下载或复制来源待核验的图片，但绝不提交二进制参考素材。
 art/reference_library/**
 !art/reference_library/README.md
+
+# 爱缪莎旗舰隔离原型的本地组装与测试产物；源骨架仍纳入版本控制。
+tools/prototypes/aemusa_flagship/build/
+tools/prototypes/aemusa_flagship/test_output/

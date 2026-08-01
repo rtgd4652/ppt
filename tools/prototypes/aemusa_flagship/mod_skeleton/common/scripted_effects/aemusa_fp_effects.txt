@@ -1,0 +1,92 @@
+# 集中写入国家生命周期数值，普通事件不得直接跨越状态。
+aemusa_fp_set_lifecycle_state_effect = {
+	set_variable = { which = aemusa_fp_lifecycle_state value = $STATE$ }
+}
+
+# 生成一艘带生命周期标记的原型旗舰；调用作用域必须是国家。
+aemusa_fp_spawn_flagship_effect = {
+	# 从玩家当前拥有的该舰种设计中选取一个。只有一个设计时可精确恢复；多设计行为需实机记录。
+	random_owned_design = {
+		limit = { is_ship_size = aemusa_fp_flagship }
+		save_event_target_as = aemusa_fp_selected_design
+	}
+
+	if = {
+		limit = { exists = event_target:aemusa_fp_selected_design }
+		save_event_target_as = aemusa_fp_owner
+		capital_scope = {
+			solar_system = {
+				create_fleet = {
+					name = "NAME_AEMUSA_FP_FLEET"
+					effect = {
+						set_owner = event_target:aemusa_fp_owner
+						set_fleet_flag = aemusa_fp_independent_fleet
+						create_ship = {
+							name = "NAME_AEMUSA_FP_FLAGSHIP"
+							design = event_target:aemusa_fp_selected_design
+							prefix = no
+							upgradable = yes
+							effect = {
+								set_ship_flag = aemusa_fp_unique_flagship
+								save_event_target_as = aemusa_fp_active_ship
+							}
+						}
+					}
+				}
+			}
+		}
+		set_country_flag = aemusa_fp_flagship_active
+		remove_country_flag = aemusa_fp_flagship_reconstructing
+		remove_country_flag = aemusa_fp_spawn_failed
+	}
+	else = {
+		# 设计尚未生成时不创建替代舰，保留显式失败状态供审计和日志定位。
+		set_country_flag = aemusa_fp_spawn_failed
+		remove_country_flag = aemusa_fp_flagship_active
+	}
+}
+
+# 启动只读国家局势；局势不得成为舰船生命周期的权威来源。
+aemusa_fp_start_status_situation_effect = {
+	if = {
+		limit = {
+			NOT = {
+				any_situation = { is_situation_type = situation_aemusa_fp_flagship_status }
+			}
+		}
+		start_situation = { type = situation_aemusa_fp_flagship_status }
+	}
+}
+
+# 统一清除派生状态，随后依据实际舰船数量重建国家账本。
+aemusa_fp_rebuild_ledger_effect = {
+	remove_country_flag = aemusa_fp_audit_ok
+	remove_country_flag = aemusa_fp_audit_missing
+	remove_country_flag = aemusa_fp_audit_duplicate
+
+	if = {
+		limit = {
+			count_owned_ship = {
+				count = 1
+				limit = { has_ship_flag = aemusa_fp_unique_flagship }
+			}
+		}
+		set_country_flag = aemusa_fp_audit_ok
+		set_country_flag = aemusa_fp_flagship_active
+		remove_country_flag = aemusa_fp_flagship_reconstructing
+	}
+	else_if = {
+		limit = {
+			count_owned_ship = {
+				count > 1
+				limit = { has_ship_flag = aemusa_fp_unique_flagship }
+			}
+		}
+		set_country_flag = aemusa_fp_audit_duplicate
+		remove_country_flag = aemusa_fp_flagship_active
+	}
+	else = {
+		set_country_flag = aemusa_fp_audit_missing
+		remove_country_flag = aemusa_fp_flagship_active
+	}
+}

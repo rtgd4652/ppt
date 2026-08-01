@@ -1,0 +1,212 @@
+namespace = aemusa_fp
+
+# 开发入口：开启舰种、刷新自动设计并启动状态局势。
+country_event = {
+	id = aemusa_fp.1
+	title = aemusa_fp.1.name
+	desc = aemusa_fp.1.desc
+	picture = GFX_evt_mercenary_fleet
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = aemusa_fp_enabled
+		if = {
+			limit = { NOT = { is_variable_set = aemusa_fp_lifecycle_state } }
+			aemusa_fp_set_lifecycle_state_effect = { STATE = 10 }
+			set_variable = { which = aemusa_fp_destroyed_serial value = 0 }
+			set_variable = { which = aemusa_fp_processed_serial value = 0 }
+		}
+		refresh_auto_generated_ship_designs = yes
+		aemusa_fp_start_status_situation_effect = yes
+	}
+
+	option = {
+		name = aemusa_fp.1.a
+		country_event = { id = aemusa_fp.2 days = 1 }
+	}
+}
+
+# 等待自动设计刷新后建立首个唯一实例。
+country_event = {
+	id = aemusa_fp.2
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = aemusa_fp_enabled
+		NOT = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+	}
+
+	immediate = {
+		aemusa_fp_set_lifecycle_state_effect = { STATE = 20 }
+		aemusa_fp_spawn_flagship_effect = yes
+		aemusa_fp_rebuild_ledger_effect = yes
+		if = {
+			limit = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+			set_country_flag = aemusa_fp_first_build_completed
+			aemusa_fp_set_lifecycle_state_effect = { STATE = 30 }
+		}
+		else = {
+			aemusa_fp_set_lifecycle_state_effect = { STATE = 10 }
+		}
+	}
+}
+
+# 人工审计入口：按照实际舰船数量重建账本并显示结果。
+country_event = {
+	id = aemusa_fp.10
+	title = aemusa_fp.10.name
+	desc = {
+		trigger = {
+			count_owned_ship = {
+				count = 1
+				limit = { has_ship_flag = aemusa_fp_unique_flagship }
+			}
+		}
+		text = aemusa_fp.10.desc_ok
+	}
+	desc = {
+		trigger = {
+			count_owned_ship = {
+				count > 1
+				limit = { has_ship_flag = aemusa_fp_unique_flagship }
+			}
+		}
+		text = aemusa_fp.10.desc_duplicate
+	}
+	desc = { text = aemusa_fp.10.desc_missing }
+	picture = GFX_evt_mercenary_fleet
+	is_triggered_only = yes
+
+	immediate = { aemusa_fp_rebuild_ledger_effect = yes }
+
+	option = { name = aemusa_fp.close }
+}
+
+# 故障注入菜单：只供隔离原型验证恢复、重复和部署状态。
+country_event = {
+	id = aemusa_fp.20
+	title = aemusa_fp.20.name
+	desc = aemusa_fp.20.desc
+	picture = GFX_evt_mercenary_fleet
+	is_triggered_only = yes
+
+	option = {
+		name = aemusa_fp.20.destroy
+		trigger = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+		random_owned_ship = {
+			limit = { has_ship_flag = aemusa_fp_unique_flagship }
+			destroy_ship = this
+		}
+	}
+	option = {
+		name = aemusa_fp.20.silent_delete
+		trigger = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+		random_owned_ship = {
+			limit = { has_ship_flag = aemusa_fp_unique_flagship }
+			fleet = { delete_fleet = this }
+		}
+		country_event = { id = aemusa_fp.110 days = 1 }
+	}
+	option = {
+		name = aemusa_fp.20.duplicate
+		aemusa_fp_spawn_flagship_effect = yes
+		country_event = { id = aemusa_fp.10 days = 1 }
+	}
+	option = {
+		name = aemusa_fp.20.deploy
+		trigger = { NOT = { has_country_flag = aemusa_fp_flagship_deployed } }
+		set_country_flag = aemusa_fp_flagship_deployed
+		every_owned_ship = {
+			limit = { has_ship_flag = aemusa_fp_unique_flagship }
+			set_disabled = yes
+		}
+	}
+	option = {
+		name = aemusa_fp.20.recall
+		trigger = { has_country_flag = aemusa_fp_flagship_deployed }
+		remove_country_flag = aemusa_fp_flagship_deployed
+		every_owned_ship = {
+			limit = { has_ship_flag = aemusa_fp_unique_flagship }
+			set_disabled = no
+		}
+	}
+	option = {
+		name = aemusa_fp.close
+	}
+}
+
+# 摧毁监听：只接受带原型唯一标记的目标，并进入延迟重构状态。
+country_event = {
+	id = aemusa_fp.100
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = aemusa_fp_enabled
+		fromfrom = { has_ship_flag = aemusa_fp_unique_flagship }
+	}
+
+	immediate = {
+		remove_country_flag = aemusa_fp_flagship_active
+		remove_country_flag = aemusa_fp_flagship_deployed
+		set_country_flag = aemusa_fp_flagship_reconstructing
+		change_variable = { which = aemusa_fp_destroyed_serial value = 1 }
+		aemusa_fp_set_lifecycle_state_effect = { STATE = 40 }
+		country_event = { id = aemusa_fp.101 days = 10 }
+	}
+}
+
+# 延迟重构：若期间已经出现有效实例则只修复账本，不再生成第二艘。
+country_event = {
+	id = aemusa_fp.101
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_country_flag = aemusa_fp_enabled }
+
+	immediate = {
+		# 以序号差判断是否存在未提交的真正摧毁事务，避免重复回调生成第二艘。
+		set_variable = { which = aemusa_fp_pending_serial_delta value = aemusa_fp_destroyed_serial }
+		subtract_variable = { which = aemusa_fp_pending_serial_delta value = aemusa_fp_processed_serial }
+		if = {
+			limit = {
+				check_variable = { which = aemusa_fp_pending_serial_delta value > 0 }
+				NOT = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+			}
+			aemusa_fp_set_lifecycle_state_effect = { STATE = 50 }
+			aemusa_fp_spawn_flagship_effect = yes
+		}
+		aemusa_fp_rebuild_ledger_effect = yes
+		if = {
+			limit = {
+				check_variable = { which = aemusa_fp_pending_serial_delta value > 0 }
+				count_owned_ship = {
+					count = 1
+					limit = { has_ship_flag = aemusa_fp_unique_flagship }
+				}
+			}
+			set_variable = { which = aemusa_fp_processed_serial value = aemusa_fp_destroyed_serial }
+			aemusa_fp_set_lifecycle_state_effect = { STATE = 30 }
+			remove_country_flag = aemusa_fp_flagship_reconstructing
+		}
+		clear_variable = aemusa_fp_pending_serial_delta
+	}
+}
+
+# 人工无回调缺失审计：只标记异常，不补舰，也不伪造真正摧毁记录。
+country_event = {
+	id = aemusa_fp.110
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = aemusa_fp_enabled
+		NOT = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+	}
+
+	immediate = {
+		aemusa_fp_rebuild_ledger_effect = yes
+		aemusa_fp_set_lifecycle_state_effect = { STATE = 0 }
+	}
+}
