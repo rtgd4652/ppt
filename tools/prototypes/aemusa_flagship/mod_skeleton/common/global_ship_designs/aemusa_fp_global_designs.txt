@@ -1,6 +1,7 @@
 # 方案 B 固定预制设计：重构始终恢复此方案，不尝试猜测被摧毁舰采用的玩家设计。
 ship_design = {
-	name = "NAME_AEMUSA_FP_PRESET_DESIGN"
+	# V2 使用新的内部设计键，绕开旧存档中已经持久化的同名空设计。
+	name = "NAME_AEMUSA_FP_PRESET_DESIGN_V2"
 	ship_size = aemusa_fp_flagship
 	role = artillery
 	use_design_name = yes

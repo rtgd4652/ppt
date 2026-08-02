@@ -2,6 +2,7 @@
  aemusa_fp_flagship: "爱缪莎旗舰原型"
  aemusa_fp_flagship_plural: "爱缪莎旗舰原型"
  NAME_AEMUSA_FP_PRESET_DESIGN: "规则验证预制型"
+ NAME_AEMUSA_FP_PRESET_DESIGN_V2: "规则验证预制型 II"
  AEMUSA_FP_FLAGSHIP_SECTION: "规则验证舰体"
  AEMUSA_FP_REACTOR: "原型规则反应堆"
  AEMUSA_FP_REACTOR_DESC: "为隔离原型提供稳定能源的测试反应堆。"

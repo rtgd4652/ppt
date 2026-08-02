@@ -84,8 +84,8 @@ if ($AllText -notmatch 'graphical_culture\s*=\s*no') {
 if ($AllText -match 'random_owned_design') {
     $Errors.Add("方案 B 不得使用 random_owned_design")
 }
-if ($AllText -notmatch 'design\s*=\s*"NAME_AEMUSA_FP_PRESET_DESIGN"') {
-    $Errors.Add("方案 B 生成效果没有引用固定预制设计")
+if ($AllText -notmatch 'design\s*=\s*"NAME_AEMUSA_FP_PRESET_DESIGN_V2"') {
+    $Errors.Add("方案 B 生成效果没有引用 V2 固定预制设计")
 }
 if ($AllText -match 'allow_buildable_trigger\s*=\s*\{') {
     $Errors.Add("全局舰船设计不得把 allow_buildable_trigger 写成内联触发块")
