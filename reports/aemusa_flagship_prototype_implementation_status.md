@@ -65,6 +65,13 @@
 - 通过：最新 `error.log` 不再包含原型 MIA、实体和局势方案错误。
 - 详细证据见 `reports/aemusa_flagship_prototype_test_round_2.md`。
 
+## 第三轮实机结果（2026-08-02）
+
+- 失败：故障菜单的 `destroy_ship` 删除原舰后没有触发战斗摧毁回调，首都未生成新舰。
+- 已区分：脚本故障注入不能冒充真实战斗摧毁回调测试。
+- 已修订：故障菜单先登记损毁事务再删除舰船；真实战斗回调复用同一集中事务入口。
+- 详细证据见 `reports/aemusa_flagship_prototype_test_round_3.md`。
+
 ## 下一步
 
 1. 保持当前已安装的第一轮修订版，不接入正式 `mod/`。

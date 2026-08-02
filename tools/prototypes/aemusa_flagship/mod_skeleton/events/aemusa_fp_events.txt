@@ -94,6 +94,8 @@ country_event = {
 	option = {
 		name = aemusa_fp.20.destroy
 		trigger = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+		# destroy_ship 不保证触发战斗摧毁 on_action；故障注入先显式登记事务，再删除测试舰。
+		aemusa_fp_begin_reconstruction_effect = yes
 		random_owned_ship = {
 			limit = { has_ship_flag = aemusa_fp_unique_flagship }
 			destroy_ship = this
@@ -148,12 +150,7 @@ country_event = {
 	}
 
 	immediate = {
-		remove_country_flag = aemusa_fp_flagship_active
-		remove_country_flag = aemusa_fp_flagship_deployed
-		set_country_flag = aemusa_fp_flagship_reconstructing
-		change_variable = { which = aemusa_fp_destroyed_serial value = 1 }
-		aemusa_fp_set_lifecycle_state_effect = { STATE = 40 }
-		country_event = { id = aemusa_fp.101 days = 10 }
+		aemusa_fp_begin_reconstruction_effect = yes
 	}
 }
 

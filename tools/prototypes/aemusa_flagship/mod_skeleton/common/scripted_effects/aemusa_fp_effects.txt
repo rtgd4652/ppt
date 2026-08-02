@@ -3,6 +3,20 @@ aemusa_fp_set_lifecycle_state_effect = {
 	set_variable = { which = aemusa_fp_lifecycle_state value = $STATE$ }
 }
 
+# 集中开启一次损毁重构事务；真实战斗回调和脚本故障注入都必须调用此入口。
+aemusa_fp_begin_reconstruction_effect = {
+	# 若同一损毁同时被故障注入和引擎回调捕获，只允许第一次登记序号并安排处理器。
+	if = {
+		limit = { NOT = { has_country_flag = aemusa_fp_flagship_reconstructing } }
+		remove_country_flag = aemusa_fp_flagship_active
+		remove_country_flag = aemusa_fp_flagship_deployed
+		set_country_flag = aemusa_fp_flagship_reconstructing
+		change_variable = { which = aemusa_fp_destroyed_serial value = 1 }
+		aemusa_fp_set_lifecycle_state_effect = { STATE = 40 }
+		country_event = { id = aemusa_fp.101 days = 10 }
+	}
+}
+
 # 生成一艘带生命周期标记的原型旗舰；调用作用域必须是国家。
 aemusa_fp_spawn_flagship_effect = {
 	# 从玩家当前拥有的该舰种设计中选取一个。只有一个设计时可精确恢复；多设计行为需实机记录。
