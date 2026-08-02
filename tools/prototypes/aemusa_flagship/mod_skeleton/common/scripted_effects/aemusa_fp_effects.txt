@@ -15,6 +15,8 @@ aemusa_fp_spawn_flagship_effect = {
 		limit = { exists = event_target:aemusa_fp_selected_design }
 		save_event_target_as = aemusa_fp_owner
 		capital_scope = {
+			# 保存首都行星作为星系内坐标锚点；仅切入 solar_system 不会自动赋予舰队有效坐标。
+			save_event_target_as = aemusa_fp_spawn_anchor
 			solar_system = {
 				create_fleet = {
 					name = "NAME_AEMUSA_FP_FLEET"
@@ -30,6 +32,12 @@ aemusa_fp_spawn_flagship_effect = {
 								set_ship_flag = aemusa_fp_unique_flagship
 								save_event_target_as = aemusa_fp_active_ship
 							}
+						}
+						# 明确放置在首都行星附近，避免引擎将无坐标舰队判定为星系外失踪并强制返航。
+						set_location = {
+							target = event_target:aemusa_fp_spawn_anchor
+							distance = 20
+							angle = random
 						}
 					}
 				}

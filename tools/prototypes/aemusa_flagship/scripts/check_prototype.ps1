@@ -69,6 +69,16 @@ if ($AllText -notmatch 'jumpdrive\s*=\s*yes') {
     $Errors.Add("原型跃迁核心缺少 jumpdrive = yes")
 }
 
+# 舰队必须拥有明确的星系内位置，否则引擎会将其强制送入失踪返航。
+if ($AllText -notmatch 'set_location\s*=\s*\{') {
+    $Errors.Add("原型生成效果缺少明确 set_location，舰队可能被判定为星系外失踪")
+}
+
+# 隔离原型固定使用已存在实体，禁止再次按图形文化拼接不存在的自定义舰种实体名。
+if ($AllText -notmatch 'graphical_culture\s*=\s*no') {
+    $Errors.Add("原型舰种未关闭图形文化实体拼接")
+}
+
 # 多设计精确恢复仍是开放验证项，静态检查必须持续提醒而不能误报为完成。
 $Warnings.Add("多份同舰种设计下的精确恢复尚需实机验证。")
 $Warnings.Add("玩家手动合并舰队无法由已验证的通用字段禁止。")

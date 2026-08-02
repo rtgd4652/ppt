@@ -2,6 +2,9 @@
 aemusa_fp_flagship = {
 	# 复用原版泰坦舰名池，避免原型为一次性舰种额外维护名称生成器。
 	use_shipnames_from = titan
+	# 固定使用一个确实存在的原版实体，不让引擎按图形文化拼接不存在的舰种实体名。
+	graphical_culture = no
+	entity = "mammalian_01_battleship_entity"
 	formation_priority = 100
 	max_speed = 35
 	acceleration = 0.20
@@ -12,7 +15,7 @@ aemusa_fp_flagship = {
 	map_counter_icon = ship_counter_64
 	icon = ship_size_military_16
 	fleet_slot_size = 16
-	section_slots = { "ship" = { locator = "frame_ship" } }
+	section_slots = { "ship" = { locator = "part1" } }
 	num_target_locators = 4
 	is_space_station = no
 	base_buildtime = 360

@@ -49,3 +49,4 @@
  aemusa_fp_stage_status_desc: "进度条固定，仅作为隔离原型的状态容器。"
  aemusa_fp_approach_observe: "只读监测"
  aemusa_fp_approach_observe_desc: "不改变生命周期，只显示由事件账本写入的状态。"
+ aemusa_fp_approach_observe_effect: "该方案仅用于显示状态，不执行任何生命周期效果。"

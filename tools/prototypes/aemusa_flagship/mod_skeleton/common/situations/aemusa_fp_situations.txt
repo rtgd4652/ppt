@@ -40,6 +40,8 @@ situation_aemusa_fp_flagship_status = {
 
 	approach = {
 		name = aemusa_fp_approach_observe
+		# 只读方案不执行状态修改；提示文本用于满足局势方案必须具有可见效果说明的要求。
+		on_select = { custom_tooltip = aemusa_fp_approach_observe_effect }
 		icon = GFX_situation_approach_research
 		icon_background = GFX_situation_approach_bg_green
 		default = yes

@@ -4,7 +4,8 @@ ship_section_template = {
 	ship_size = aemusa_fp_flagship
 	fits_on_slot = "ship"
 	should_draw_components = yes
-	entity = "battleship_bow_L1M1S2_entity"
+	# 舰种关闭图形文化拼接，因此这里也使用完整且已存在的哺乳类实体名。
+	entity = "mammalian_01_battleship_bow_L1M1S2_entity"
 	icon = "GFX_ship_part_core_mid"
 	ai_tags = { artillery gunship }
 
