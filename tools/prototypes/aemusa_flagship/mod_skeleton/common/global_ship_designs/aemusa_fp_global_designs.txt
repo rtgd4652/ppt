@@ -6,7 +6,6 @@ ship_design = {
 	use_design_name = yes
 	is_event_design = yes
 	is_special_buildable = no
-	allow_buildable_trigger = { always = no }
 
 	section = {
 		template = "AEMUSA_FP_FLAGSHIP_SECTION"

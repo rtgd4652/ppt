@@ -87,6 +87,9 @@ if ($AllText -match 'random_owned_design') {
 if ($AllText -notmatch 'design\s*=\s*"NAME_AEMUSA_FP_PRESET_DESIGN"') {
     $Errors.Add("方案 B 生成效果没有引用固定预制设计")
 }
+if ($AllText -match 'allow_buildable_trigger\s*=\s*\{') {
+    $Errors.Add("全局舰船设计不得把 allow_buildable_trigger 写成内联触发块")
+}
 $Warnings.Add("玩家手动合并舰队无法由已验证的通用字段禁止。")
 
 foreach ($Warning in $Warnings) {
