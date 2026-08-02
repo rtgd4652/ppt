@@ -11,6 +11,7 @@ $RequiredFiles = @(
     "descriptor.mod",
     "common/ship_sizes/aemusa_fp_ship_size.txt",
     "common/section_templates/aemusa_fp_sections.txt",
+    "common/global_ship_designs/aemusa_fp_global_designs.txt",
     "common/component_templates/aemusa_fp_components.txt",
     "common/scripted_effects/aemusa_fp_effects.txt",
     "common/on_actions/aemusa_fp_on_actions.txt",
@@ -79,8 +80,13 @@ if ($AllText -notmatch 'graphical_culture\s*=\s*no') {
     $Errors.Add("原型舰种未关闭图形文化实体拼接")
 }
 
-# 多设计精确恢复仍是开放验证项，静态检查必须持续提醒而不能误报为完成。
-$Warnings.Add("多份同舰种设计下的精确恢复尚需实机验证。")
+# 方案 B 必须使用固定预制型，禁止重新引入随机玩家设计选择。
+if ($AllText -match 'random_owned_design') {
+    $Errors.Add("方案 B 不得使用 random_owned_design")
+}
+if ($AllText -notmatch 'design\s*=\s*"NAME_AEMUSA_FP_PRESET_DESIGN"') {
+    $Errors.Add("方案 B 生成效果没有引用固定预制设计")
+}
 $Warnings.Add("玩家手动合并舰队无法由已验证的通用字段禁止。")
 
 foreach ($Warning in $Warnings) {

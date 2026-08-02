@@ -19,53 +19,40 @@ aemusa_fp_begin_reconstruction_effect = {
 
 # 生成一艘带生命周期标记的原型旗舰；调用作用域必须是国家。
 aemusa_fp_spawn_flagship_effect = {
-	# 从玩家当前拥有的该舰种设计中选取一个。只有一个设计时可精确恢复；多设计行为需实机记录。
-	random_owned_design = {
-		limit = { is_ship_size = aemusa_fp_flagship }
-		save_event_target_as = aemusa_fp_selected_design
-	}
-
-	if = {
-		limit = { exists = event_target:aemusa_fp_selected_design }
-		save_event_target_as = aemusa_fp_owner
-		capital_scope = {
-			# 保存首都行星作为星系内坐标锚点；仅切入 solar_system 不会自动赋予舰队有效坐标。
-			save_event_target_as = aemusa_fp_spawn_anchor
-			solar_system = {
-				create_fleet = {
-					name = "NAME_AEMUSA_FP_FLEET"
-					effect = {
-						set_owner = event_target:aemusa_fp_owner
-						set_fleet_flag = aemusa_fp_independent_fleet
-						create_ship = {
-							name = "NAME_AEMUSA_FP_FLAGSHIP"
-							design = event_target:aemusa_fp_selected_design
-							prefix = no
-							upgradable = yes
-							effect = {
-								set_ship_flag = aemusa_fp_unique_flagship
-								save_event_target_as = aemusa_fp_active_ship
-							}
+	# 方案 B：无论玩家保存了多少自定义设计，首次生成与重构都使用同一固定预制型。
+	save_event_target_as = aemusa_fp_owner
+	capital_scope = {
+		# 保存首都行星作为星系内坐标锚点；仅切入 solar_system 不会自动赋予舰队有效坐标。
+		save_event_target_as = aemusa_fp_spawn_anchor
+		solar_system = {
+			create_fleet = {
+				name = "NAME_AEMUSA_FP_FLEET"
+				effect = {
+					set_owner = event_target:aemusa_fp_owner
+					set_fleet_flag = aemusa_fp_independent_fleet
+					create_ship = {
+						name = "NAME_AEMUSA_FP_FLAGSHIP"
+						design = "NAME_AEMUSA_FP_PRESET_DESIGN"
+						prefix = no
+						upgradable = yes
+						effect = {
+							set_ship_flag = aemusa_fp_unique_flagship
+							save_event_target_as = aemusa_fp_active_ship
 						}
-						# 明确放置在首都行星附近，避免引擎将无坐标舰队判定为星系外失踪并强制返航。
-						set_location = {
-							target = event_target:aemusa_fp_spawn_anchor
-							distance = 20
-							angle = random
-						}
+					}
+					# 明确放置在首都行星附近，避免引擎将无坐标舰队判定为星系外失踪并强制返航。
+					set_location = {
+						target = event_target:aemusa_fp_spawn_anchor
+						distance = 20
+						angle = random
 					}
 				}
 			}
 		}
-		set_country_flag = aemusa_fp_flagship_active
-		remove_country_flag = aemusa_fp_flagship_reconstructing
-		remove_country_flag = aemusa_fp_spawn_failed
 	}
-	else = {
-		# 设计尚未生成时不创建替代舰，保留显式失败状态供审计和日志定位。
-		set_country_flag = aemusa_fp_spawn_failed
-		remove_country_flag = aemusa_fp_flagship_active
-	}
+	set_country_flag = aemusa_fp_flagship_active
+	remove_country_flag = aemusa_fp_flagship_reconstructing
+	remove_country_flag = aemusa_fp_spawn_failed
 }
 
 # 启动只读国家局势；局势不得成为舰船生命周期的权威来源。
