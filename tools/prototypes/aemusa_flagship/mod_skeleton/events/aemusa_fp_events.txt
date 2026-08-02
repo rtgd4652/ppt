@@ -80,6 +80,35 @@ country_event = {
 
 	immediate = { aemusa_fp_rebuild_ledger_effect = yes }
 
+	option = {
+		name = aemusa_fp.10.recover
+		trigger = {
+			has_country_flag = aemusa_fp_enabled
+			NOT = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+		}
+
+		# 开发期补偿入口：继续既有生命周期，不新增摧毁序号，也不生成第二艘合法旗舰。
+		set_country_flag = aemusa_fp_flagship_reconstructing
+		aemusa_fp_set_lifecycle_state_effect = { STATE = 50 }
+		aemusa_fp_spawn_flagship_effect = yes
+		aemusa_fp_rebuild_ledger_effect = yes
+		if = {
+			limit = {
+				count_owned_ship = {
+					count = 1
+					limit = { has_ship_flag = aemusa_fp_unique_flagship }
+				}
+			}
+			set_variable = { which = aemusa_fp_processed_serial value = aemusa_fp_destroyed_serial }
+			set_country_flag = aemusa_fp_first_build_completed
+			aemusa_fp_set_lifecycle_state_effect = { STATE = 30 }
+			remove_country_flag = aemusa_fp_flagship_reconstructing
+		}
+		else = {
+			aemusa_fp_set_lifecycle_state_effect = { STATE = 40 }
+		}
+		country_event = { id = aemusa_fp.10 days = 1 }
+	}
 	option = { name = aemusa_fp.close }
 }
 

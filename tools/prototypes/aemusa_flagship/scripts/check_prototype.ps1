@@ -90,6 +90,12 @@ if ($AllText -notmatch 'design\s*=\s*"NAME_AEMUSA_FP_PRESET_DESIGN_V2"') {
 if ($AllText -match 'allow_buildable_trigger\s*=\s*\{') {
     $Errors.Add("全局舰船设计不得把 allow_buildable_trigger 写成内联触发块")
 }
+if ($AllText -notmatch 'set_country_flag\s*=\s*aemusa_fp_spawn_failed') {
+    $Errors.Add("生成效果缺少失败账本标记，可能把空实例误报为现役")
+}
+if ($AllText -notmatch 'name\s*=\s*aemusa_fp\.10\.recover') {
+    $Errors.Add("人工审计缺少既有事务恢复入口")
+}
 $Warnings.Add("玩家手动合并舰队无法由已验证的通用字段禁止。")
 
 foreach ($Warning in $Warnings) {

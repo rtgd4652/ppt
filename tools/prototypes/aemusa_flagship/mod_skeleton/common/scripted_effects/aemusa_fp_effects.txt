@@ -50,9 +50,18 @@ aemusa_fp_spawn_flagship_effect = {
 			}
 		}
 	}
-	set_country_flag = aemusa_fp_flagship_active
-	remove_country_flag = aemusa_fp_flagship_reconstructing
-	remove_country_flag = aemusa_fp_spawn_failed
+	# 只有实际生成并挂上唯一舰船标记后才能结算重构；失败时保留事务，禁止账本虚报现役。
+	if = {
+		limit = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+		set_country_flag = aemusa_fp_flagship_active
+		remove_country_flag = aemusa_fp_flagship_reconstructing
+		remove_country_flag = aemusa_fp_spawn_failed
+	}
+	else = {
+		remove_country_flag = aemusa_fp_flagship_active
+		set_country_flag = aemusa_fp_flagship_reconstructing
+		set_country_flag = aemusa_fp_spawn_failed
+	}
 }
 
 # 启动只读国家局势；局势不得成为舰船生命周期的权威来源。

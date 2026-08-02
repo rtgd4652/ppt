@@ -30,6 +30,7 @@
  aemusa_fp.10.desc_ok: "审计结果：恰有一艘带唯一标记的有效旗舰，账本一致。"
  aemusa_fp.10.desc_duplicate: "审计结果：发现多个带唯一标记的旗舰实例。原型不会自动删除它们，以便保留故障现场。"
  aemusa_fp.10.desc_missing: "审计结果：没有发现带唯一标记的有效旗舰。请检查设计生成或恢复事件。"
+ aemusa_fp.10.recover: "继续既有事务，在首都恢复缺失旗舰。"
  aemusa_fp.20.name: "旗舰故障注入"
  aemusa_fp.20.desc: "以下操作仅用于隔离测试。每次操作后都应检查国家局势、舰队数量与 error.log。"
  aemusa_fp.20.destroy: "登记损毁事务并摧毁实例，验证自动重构。"
