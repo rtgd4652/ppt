@@ -3,6 +3,30 @@ aemusa_fp_set_lifecycle_state_effect = {
 	set_variable = { which = aemusa_fp_lifecycle_state value = $STATE$ }
 }
 
+# 仅在“标记舰队中恰有一艘原型舰”时恢复舰船身份；多个候选必须保留现场并交由人工审计。
+aemusa_fp_adopt_single_unmarked_candidate_effect = {
+	if = {
+		limit = {
+			NOT = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+			count_owned_ship = {
+				count = 1
+				limit = {
+					is_ship_size = aemusa_fp_flagship
+					fleet = { has_fleet_flag = aemusa_fp_independent_fleet }
+				}
+			}
+		}
+		random_owned_ship = {
+			limit = {
+				is_ship_size = aemusa_fp_flagship
+				fleet = { has_fleet_flag = aemusa_fp_independent_fleet }
+			}
+			set_ship_flag = aemusa_fp_unique_flagship
+			save_event_target_as = aemusa_fp_active_ship
+		}
+	}
+}
+
 # 集中开启一次损毁重构事务；真实战斗回调和脚本故障注入都必须调用此入口。
 aemusa_fp_begin_reconstruction_effect = {
 	# 若同一损毁同时被故障注入和引擎回调捕获，只允许第一次登记序号并安排处理器。

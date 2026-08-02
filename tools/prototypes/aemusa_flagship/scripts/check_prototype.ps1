@@ -96,6 +96,9 @@ if ($AllText -notmatch 'set_country_flag\s*=\s*aemusa_fp_spawn_failed') {
 if ($AllText -notmatch 'name\s*=\s*aemusa_fp\.10\.recover') {
     $Errors.Add("人工审计缺少既有事务恢复入口")
 }
+if ($AllText -notmatch 'aemusa_fp_adopt_single_unmarked_candidate_effect') {
+    $Errors.Add("缺失恢复没有接管标记舰队中的唯一无标记候选舰")
+}
 $Warnings.Add("玩家手动合并舰队无法由已验证的通用字段禁止。")
 
 foreach ($Warning in $Warnings) {

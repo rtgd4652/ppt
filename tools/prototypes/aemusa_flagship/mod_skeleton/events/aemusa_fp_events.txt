@@ -90,7 +90,12 @@ country_event = {
 		# 开发期补偿入口：继续既有生命周期，不新增摧毁序号，也不生成第二艘合法旗舰。
 		set_country_flag = aemusa_fp_flagship_reconstructing
 		aemusa_fp_set_lifecycle_state_effect = { STATE = 50 }
-		aemusa_fp_spawn_flagship_effect = yes
+		# 先接管标记舰队中唯一的无标记原型舰；确实没有候选时才补发新舰。
+		aemusa_fp_adopt_single_unmarked_candidate_effect = yes
+		if = {
+			limit = { NOT = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } } }
+			aemusa_fp_spawn_flagship_effect = yes
+		}
 		aemusa_fp_rebuild_ledger_effect = yes
 		if = {
 			limit = {
