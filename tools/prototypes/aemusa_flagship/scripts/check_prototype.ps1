@@ -97,7 +97,10 @@ if ($AllText -notmatch 'name\s*=\s*aemusa_fp\.10\.recover') {
     $Errors.Add("人工审计缺少既有事务恢复入口")
 }
 if ($AllText -notmatch 'aemusa_fp_adopt_single_unmarked_candidate_effect') {
-    $Errors.Add("缺失恢复没有接管标记舰队中的唯一无标记候选舰")
+    $Errors.Add("缺失恢复没有接管唯一无标记候选舰")
+}
+if ($AllText -notmatch 'count_owned_ship\s*=\s*\{\s*count\s*=\s*1\s*limit\s*=\s*\{\s*is_ship_size\s*=\s*aemusa_fp_flagship') {
+    $Errors.Add("旧存档恢复没有按唯一原型舰种识别候选舰")
 }
 if ($AllText -notmatch 'id\s*=\s*aemusa_fp\.11') {
     $Errors.Add("缺少绕过界面选项条件的独立旧存档恢复事件")

@@ -3,26 +3,22 @@ aemusa_fp_set_lifecycle_state_effect = {
 	set_variable = { which = aemusa_fp_lifecycle_state value = $STATE$ }
 }
 
-# 仅在“标记舰队中恰有一艘原型舰”时恢复舰船身份；多个候选必须保留现场并交由人工审计。
+# 仅在国家恰有一艘该原型舰种时恢复身份；该舰种只存在于隔离原型，多个候选必须保留现场并交由人工审计。
 aemusa_fp_adopt_single_unmarked_candidate_effect = {
 	if = {
 		limit = {
 			NOT = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
 			count_owned_ship = {
 				count = 1
-				limit = {
-					is_ship_size = aemusa_fp_flagship
-					fleet = { has_fleet_flag = aemusa_fp_independent_fleet }
-				}
+				limit = { is_ship_size = aemusa_fp_flagship }
 			}
 		}
 		random_owned_ship = {
-			limit = {
-				is_ship_size = aemusa_fp_flagship
-				fleet = { has_fleet_flag = aemusa_fp_independent_fleet }
-			}
+			limit = { is_ship_size = aemusa_fp_flagship }
 			set_ship_flag = aemusa_fp_unique_flagship
 			save_event_target_as = aemusa_fp_active_ship
+			# 同步修复辅助编队标记；永久身份仍以舰船标记和国家账本为准。
+			fleet = { set_fleet_flag = aemusa_fp_independent_fleet }
 		}
 	}
 }
