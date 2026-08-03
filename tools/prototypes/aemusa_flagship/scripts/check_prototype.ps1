@@ -99,6 +99,9 @@ if ($AllText -notmatch 'name\s*=\s*aemusa_fp\.10\.recover') {
 if ($AllText -notmatch 'aemusa_fp_adopt_single_unmarked_candidate_effect') {
     $Errors.Add("缺失恢复没有接管标记舰队中的唯一无标记候选舰")
 }
+if ($AllText -notmatch 'id\s*=\s*aemusa_fp\.11') {
+    $Errors.Add("缺少绕过界面选项条件的独立旧存档恢复事件")
+}
 $Warnings.Add("玩家手动合并舰队无法由已验证的通用字段禁止。")
 
 foreach ($Warning in $Warnings) {
