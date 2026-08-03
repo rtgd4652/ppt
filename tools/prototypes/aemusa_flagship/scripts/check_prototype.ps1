@@ -102,6 +102,9 @@ if ($AllText -notmatch 'aemusa_fp_adopt_single_unmarked_candidate_effect') {
 if ($AllText -notmatch 'id\s*=\s*aemusa_fp\.11') {
     $Errors.Add("缺少绕过界面选项条件的独立旧存档恢复事件")
 }
+if ($AllText -notmatch 'last_created_ship\s*=\s*\{[\s\S]*?set_ship_flag\s*=\s*aemusa_fp_unique_flagship') {
+    $Errors.Add("旗舰生成后没有通过 last_created_ship 写入唯一身份标记")
+}
 $Warnings.Add("玩家手动合并舰队无法由已验证的通用字段禁止。")
 
 foreach ($Warning in $Warnings) {

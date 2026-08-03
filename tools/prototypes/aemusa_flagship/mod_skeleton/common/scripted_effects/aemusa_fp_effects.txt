@@ -59,10 +59,11 @@ aemusa_fp_spawn_flagship_effect = {
 						design = "NAME_AEMUSA_FP_PRESET_DESIGN_V2"
 						prefix = no
 						upgradable = yes
-						effect = {
-							set_ship_flag = aemusa_fp_unique_flagship
-							save_event_target_as = aemusa_fp_active_ship
-						}
+					}
+					# 对照原版舰队生成事件：舰船创建完成后通过 last_created_ship 写入持久身份。
+					last_created_ship = {
+						set_ship_flag = aemusa_fp_unique_flagship
+						save_event_target_as = aemusa_fp_active_ship
 					}
 					# 明确放置在首都行星附近，避免引擎将无坐标舰队判定为星系外失踪并强制返航。
 					set_location = {
