@@ -103,11 +103,14 @@ aemusa_fp_rebuild_ledger_effect = {
 	remove_country_flag = aemusa_fp_audit_missing
 	remove_country_flag = aemusa_fp_audit_duplicate
 
+	# 专属舰种是跨改装、读档与设计替换后仍可识别的主身份；恰有一艘时自动补回运行期 ship flag。
+	aemusa_fp_adopt_single_unmarked_candidate_effect = yes
+
 	if = {
 		limit = {
 			count_owned_ship = {
 				count = 1
-				limit = { has_ship_flag = aemusa_fp_unique_flagship }
+				limit = { is_ship_size = aemusa_fp_flagship }
 			}
 		}
 		set_country_flag = aemusa_fp_audit_ok
@@ -118,7 +121,7 @@ aemusa_fp_rebuild_ledger_effect = {
 		limit = {
 			count_owned_ship = {
 				count > 1
-				limit = { has_ship_flag = aemusa_fp_unique_flagship }
+				limit = { is_ship_size = aemusa_fp_flagship }
 			}
 		}
 		set_country_flag = aemusa_fp_audit_duplicate
