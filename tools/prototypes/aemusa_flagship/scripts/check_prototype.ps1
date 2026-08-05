@@ -13,6 +13,7 @@ $RequiredFiles = @(
     "common/section_templates/aemusa_fp_sections.txt",
     "common/global_ship_designs/aemusa_fp_global_designs.txt",
     "common/component_templates/aemusa_fp_components.txt",
+    "common/static_modifiers/aemusa_fp_static_modifiers.txt",
     "common/scripted_effects/aemusa_fp_effects.txt",
     "common/on_actions/aemusa_fp_on_actions.txt",
     "common/situations/aemusa_fp_situations.txt",
@@ -104,6 +105,15 @@ if ($AllText -notmatch 'count_owned_ship\s*=\s*\{\s*count\s*=\s*1\s*limit\s*=\s*
 }
 if ($AllText -notmatch 'id\s*=\s*aemusa_fp\.11') {
     $Errors.Add("缺少绕过界面选项条件的独立旧存档恢复事件")
+}
+if ($AllText -notmatch 'id\s*=\s*aemusa_fp\.12') {
+    $Errors.Add("缺少解除旧版 set_disabled 状态的安全救援事件")
+}
+if ($AllText -match 'set_disabled\s*=\s*yes') {
+    $Errors.Add("部署锁定不得继续使用 set_disabled = yes 隐藏旗舰")
+}
+if ($AllText -notmatch 'aemusa_fp_deployment_lock\s*=\s*\{[\s\S]*?ship_speed_mult\s*=\s*-1') {
+    $Errors.Add("缺少非隐藏部署锁定静态修正")
 }
 if ($AllText -notmatch 'last_created_ship\s*=\s*\{[\s\S]*?set_ship_flag\s*=\s*aemusa_fp_unique_flagship') {
     $Errors.Add("旗舰生成后没有通过 last_created_ship 写入唯一身份标记")

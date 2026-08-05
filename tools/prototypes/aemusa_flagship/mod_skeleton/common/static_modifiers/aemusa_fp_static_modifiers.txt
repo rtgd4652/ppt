@@ -1,0 +1,8 @@
+# 部署锁定候选修正：保持舰船可见、可受击并可原地开火，只压制航行、跃迁和撤退。
+# 该修正仍需实机验证命令按钮行为，不代表正式机制已经批准。
+aemusa_fp_deployment_lock = {
+	ship_speed_mult = -1
+	ship_ftl_jumpdrive_range_mult = -1
+	ship_disengage_chance_mult = -1
+	ship_emergency_ftl_min_days_mult = 100
+}
