@@ -133,3 +133,10 @@
 - 双光环实战通过：友军校准与敌军扰动效果均正常生效。
 - 最新日志通过：未发现 `aemusa_fp`、`AemusaFlagshipPrototype` 或原型旗舰相关错误。
 - 第七轮生命周期与光环验证已经完成，详细结果见 `reports/aemusa_flagship_prototype_test_round_7.md`。
+
+## 第八轮部署锁定测试（2026-08-05）
+
+- 当前目标：验证部署期间禁止移动、超空间航行、跃迁和撤退，同时保留原地自卫能力。
+- 当前实现：通过 `set_disabled = yes/no` 模拟部署与解除部署。
+- 关键风险：引擎可能同时禁止原地开火；若发生，则当前部署实现必须更换。
+- 测试清单见 `reports/aemusa_flagship_prototype_test_round_8.md`。
