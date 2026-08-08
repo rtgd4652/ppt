@@ -242,7 +242,8 @@ class CleanCharacterParser {
     }
 
     const advanced = this.sectionContent(sections, ["高阶档案", "回忆"]);
-    return this.extractLabeledFragments(advanced, ["回忆片段"]);
+    // 回忆片段也可能嵌在高阶档案中；回退路径必须执行同一套“回顾”尾缀清洗。
+    return this.cleanMemoryText(this.extractLabeledFragments(advanced, ["回忆片段"]));
   }
 
   buildCompanionReviews(sections) {
