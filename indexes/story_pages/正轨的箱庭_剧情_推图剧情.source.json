@@ -1,0 +1,321 @@
+{
+  "title": "正轨的箱庭/剧情/推图剧情",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E6%AD%A3%E8%BD%A8%E7%9A%84%E7%AE%B1%E5%BA%AD%2F%E5%89%A7%E6%83%85%2F%E6%8E%A8%E5%9B%BE%E5%89%A7%E6%83%85",
+  "page_id": 17939,
+  "touched": "2026-08-08T14:13:02Z",
+  "last_sync": "2026-08-08T14:54:07.904Z",
+  "story_scope": "main_story",
+  "route": "正轨的箱庭",
+  "chapter": "主线剧情 1",
+  "day": "推图剧情",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "高校学园",
+      "character_count": 679
+    },
+    {
+      "level": 4,
+      "title": "选项：好，我等一下就去中央庭找你",
+      "character_count": 244
+    },
+    {
+      "level": 4,
+      "title": "选项：第一次占卜",
+      "character_count": 428
+    },
+    {
+      "level": 4,
+      "title": "选项：占卜",
+      "character_count": 352
+    },
+    {
+      "level": 4,
+      "title": "选项：不占卜",
+      "character_count": 2
+    },
+    {
+      "level": 4,
+      "title": "选项：（没有360000金币）",
+      "character_count": 76
+    },
+    {
+      "level": 4,
+      "title": "选项：已占卜过一次",
+      "character_count": 122
+    },
+    {
+      "level": 4,
+      "title": "选项：我不需要帮助",
+      "character_count": 39
+    },
+    {
+      "level": 3,
+      "title": "学园",
+      "character_count": 512
+    },
+    {
+      "level": 3,
+      "title": "黄昏校舍",
+      "character_count": 1410
+    },
+    {
+      "level": 3,
+      "title": "室内体育馆",
+      "character_count": 1537
+    },
+    {
+      "level": 3,
+      "title": "回廊校舍",
+      "character_count": 573
+    },
+    {
+      "level": 3,
+      "title": "学园后门",
+      "character_count": 960
+    },
+    {
+      "level": 4,
+      "title": "选项：当前为一周目",
+      "character_count": 132
+    },
+    {
+      "level": 4,
+      "title": "选项：当前为多周目",
+      "character_count": 478
+    },
+    {
+      "level": 4,
+      "title": "选项：已获得占卜",
+      "character_count": 401
+    },
+    {
+      "level": 3,
+      "title": "高校学园黑门",
+      "character_count": 383
+    },
+    {
+      "level": 4,
+      "title": "选项：第一次接受占卜",
+      "character_count": 127
+    },
+    {
+      "level": 4,
+      "title": "选项：已占卜过一次",
+      "character_count": 82
+    },
+    {
+      "level": 4,
+      "title": "选项：未获得占卜",
+      "character_count": 192
+    },
+    {
+      "level": 3,
+      "title": "高校学园黑门",
+      "character_count": 1347
+    },
+    {
+      "level": 4,
+      "title": "选项：东方古街",
+      "character_count": 28
+    },
+    {
+      "level": 4,
+      "title": "选项：中央城区",
+      "character_count": 276
+    },
+    {
+      "level": 2,
+      "title": "东方古街",
+      "character_count": 0
+    },
+    {
+      "level": 2,
+      "title": "中央城区",
+      "character_count": 0
+    },
+    {
+      "level": 2,
+      "title": "研究所",
+      "character_count": 0
+    },
+    {
+      "level": 2,
+      "title": "海湾侧城",
+      "character_count": 0
+    },
+    {
+      "level": 2,
+      "title": "旧城区",
+      "character_count": 0
+    },
+    {
+      "level": 2,
+      "title": "港湾区",
+      "character_count": 0
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "好，我等一下就去中央庭找你",
+        "我不需要帮助"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "第一次占卜",
+        "已占卜过一次"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 1,
+      "parent_option": "好，我等一下就去中央庭找你",
+      "depth": 1,
+      "tree_index": 2
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "占卜",
+        "不占卜",
+        "（没有360000金币）"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 2,
+      "parent_option": "第一次占卜",
+      "depth": 2,
+      "tree_index": 3
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "当前为一周目",
+        "当前为多周目"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 4
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "已获得占卜",
+        "未获得占卜"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 5
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "第一次接受占卜",
+        "已占卜过一次"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 5,
+      "parent_option": "已获得占卜",
+      "depth": 1,
+      "tree_index": 6
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "东方古街",
+        "中央城区"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 7
+    }
+  ],
+  "article_links": [
+    "「刀神」珈儿",
+    "「真言」西比尔"
+  ],
+  "image_names": [
+    "Dialogue_icon_安托涅瓦.png",
+    "Dialogue_icon_.png",
+    "Dialogue_icon_晏华.png",
+    "Item_event_014.png",
+    "Bg_event_show.png",
+    "Mission_type_Side.png",
+    "Dialogue_icon_爱缪莎.png",
+    "Dialogue_icon_指挥使.png",
+    "Buliding_part_高校学园.png",
+    "Fight-level.png",
+    "Fight-level-none.png",
+    "Fight-boss-none.png",
+    "Monster_mini_icon_幻瞳.png",
+    "Icon_Boss_style.png",
+    "Item_rare_无.png",
+    "Monster_mini_icon_风镰.png",
+    "Monster_mini_icon_蛮骨.png",
+    "Monster_mini_icon_α尘鱼.png",
+    "Monster_mini_icon_β尘鱼.png",
+    "Dialogue_icon_安.png",
+    "Char_mini_icon_「刀神」珈儿.png",
+    "Monster_mini_icon_聚晶鸟.png",
+    "Dialogue_icon_珈儿.png",
+    "Dialogue_icon_泰丝拉.png",
+    "CG_47.png",
+    "Monster_mini_icon_天使.png",
+    "Monster_mini_icon_巨阙.png",
+    "Char_mini_icon_「真言」西比尔.png",
+    "Monster_mini_icon_赤骸.png",
+    "Dialogue_icon_西比尔.png",
+    "CG_45.png",
+    "CG_46.png",
+    "Fight-boss.png",
+    "Monster_mini_icon_鬼哭.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/正轨的箱庭_剧情_推图剧情.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/正轨的箱庭_剧情_推图剧情.md"
+}
