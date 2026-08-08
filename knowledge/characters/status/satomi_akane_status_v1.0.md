@@ -4,14 +4,14 @@ type: "character_status"
 character: "里见茜"
 release_target: "1.0"
 roster_status: "locked"
-source_status: "partial"
-mod_ready_status: "missing"
-character_bible_status: "missing"
+source_status: "collected_pending_human_review"
+mod_ready_status: "complete"
+character_bible_status: "draft_for_human_review"
 implementation_status: "not_started"
 art_status: "deferred"
 narrative_status: "partial"
 test_status: "not_tested"
-last_reviewed: "2026-07-26"
+last_reviewed: "2026-08-08"
 ---
 
 # 里见茜 1.0 角色状态档案
@@ -27,8 +27,11 @@ last_reviewed: "2026-07-26"
 - [项目编辑决定 ED-006](../../curated/decisions/project_editorial_decisions_v0.1.md)
 - [宇宙论圣经](../../world/cosmology_bible_v0.1.md)
 - [里见茜／塞拉菲姆视觉边界](../../../docs/art/characters/SATOMI_AKANE_SERAPHIM_STYLE.md)
+- [里见茜 Clean 资料](../里见茜.md)
+- [里见茜 Mod Ready 摘要](../../mod_ready/characters/里见茜.mod.md)
+- [里见茜标准角色档案草案](../satomi_akane_character_v0.1.md)
 
-目前只有经人工确认的身份链和部分剧情来源入口，尚无里见茜独立 raw、clean、图片索引、Mod Ready 摘要或标准角色档案。
+里见茜独立 Raw、Clean、图片索引和 Mod Ready 摘要已经生成，标准角色档案草案已经建立。角色页只证明里见茜当前身份资料，并明确其“并非真正意义上的神器使”、而是通过不可重复实验获得不完整能力；塞拉菲姆身份连续性仍单独依据项目人工确认，不能冒充角色页事实。以上成果均待人工校订与批准。
 
 ## 3. 1.0 叙事定位
 
@@ -53,13 +56,16 @@ last_reviewed: "2026-07-26"
 
 ## 6. 1.0 完成条件
 
-- 完成独立角色采集三件套、Mod Ready 摘要和标准角色档案。
+- [x] 完成独立角色采集三件套、Mod Ready 摘要和标准角色档案草案。
+- [ ] 人工校订 Clean 与 Mod Ready，并批准标准角色档案。
 - 决定她在 T9 开局前已经是神器使，还是通过 1.0 剧情解锁。
 - 建立独立视觉锚点和角色风格页。
 - 完成白夜馆接入、身份阶段保护、职业、核心机制、立绘、本地化和专项测试。
 
 ## 7. 当前阻塞项
 
-- 独立来源、角色档案与视觉锚点缺失。
+- 独立来源已经采集，但人工事实审核与档案批准尚未完成。
+- 原作“非真正意义上的神器使”与项目 1.0 招募分类之间的设定解释尚未批准。
+- 独立视觉锚点仍缺失。
 - 身份转换相对 T9 的时间位置未定。
 - 招募条件不能在时间线决定前实现为既定正史。
