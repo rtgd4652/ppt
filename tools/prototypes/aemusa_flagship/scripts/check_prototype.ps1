@@ -78,6 +78,9 @@ if ($AllText -notmatch 'id\s*=\s*aemusa_fp\.21' -or $AllText -notmatch 'clear_or
 if ($AllText -match 'aemusa_fp\.20\.deploy[\s\S]{0,1200}set_disabled\s*=\s*yes') {
     $Errors.Add("部署入口重新使用 set_disabled，会导致原舰从正常界面消失")
 }
+if ($AllText -match '(any|every|random|count)_owned_ship') {
+    $Errors.Add("旗舰生命周期仍在使用 owned_ship；特殊军事舰必须统一按 controlled_ship 识别")
+}
 
 # 舰队必须拥有明确的星系内位置，否则引擎会将其强制送入失踪返航。
 if ($AllText -notmatch 'set_location\s*=\s*\{') {
@@ -108,7 +111,7 @@ if ($AllText -notmatch 'name\s*=\s*aemusa_fp\.10\.recover') {
 if ($AllText -notmatch 'aemusa_fp_adopt_single_unmarked_candidate_effect') {
     $Errors.Add("缺失恢复没有接管唯一无标记候选舰")
 }
-if ($AllText -notmatch 'count_owned_ship\s*=\s*\{\s*count\s*=\s*1\s*limit\s*=\s*\{\s*is_ship_size\s*=\s*aemusa_fp_flagship') {
+if ($AllText -notmatch 'count_controlled_ship\s*=\s*\{\s*count\s*=\s*1\s*limit\s*=\s*\{\s*is_ship_size\s*=\s*aemusa_fp_flagship') {
     $Errors.Add("旧存档恢复没有按唯一原型舰种识别候选舰")
 }
 if ($AllText -notmatch 'id\s*=\s*aemusa_fp\.11') {

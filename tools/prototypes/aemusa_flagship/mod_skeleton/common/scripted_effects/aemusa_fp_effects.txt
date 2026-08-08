@@ -7,13 +7,13 @@ aemusa_fp_set_lifecycle_state_effect = {
 aemusa_fp_adopt_single_unmarked_candidate_effect = {
 	if = {
 		limit = {
-			NOT = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
-			count_owned_ship = {
+			NOT = { any_controlled_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+			count_controlled_ship = {
 				count = 1
 				limit = { is_ship_size = aemusa_fp_flagship }
 			}
 		}
-		random_owned_ship = {
+		random_controlled_ship = {
 			limit = { is_ship_size = aemusa_fp_flagship }
 			set_ship_flag = aemusa_fp_unique_flagship
 			save_event_target_as = aemusa_fp_active_ship
@@ -73,7 +73,7 @@ aemusa_fp_spawn_flagship_effect = {
 	}
 	# 只有实际生成并挂上唯一舰船标记后才能结算重构；失败时保留事务，禁止账本虚报现役。
 	if = {
-		limit = { any_owned_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
+		limit = { any_controlled_ship = { has_ship_flag = aemusa_fp_unique_flagship } }
 		set_country_flag = aemusa_fp_flagship_active
 		remove_country_flag = aemusa_fp_flagship_reconstructing
 		remove_country_flag = aemusa_fp_spawn_failed
@@ -108,7 +108,7 @@ aemusa_fp_rebuild_ledger_effect = {
 
 	if = {
 		limit = {
-			count_owned_ship = {
+			count_controlled_ship = {
 				count = 1
 				limit = { is_ship_size = aemusa_fp_flagship }
 			}
@@ -119,7 +119,7 @@ aemusa_fp_rebuild_ledger_effect = {
 	}
 	else_if = {
 		limit = {
-			count_owned_ship = {
+			count_controlled_ship = {
 				count > 1
 				limit = { is_ship_size = aemusa_fp_flagship }
 			}

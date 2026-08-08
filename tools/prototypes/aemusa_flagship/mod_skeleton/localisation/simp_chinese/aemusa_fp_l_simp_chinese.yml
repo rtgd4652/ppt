@@ -20,6 +20,7 @@
  AEMUSA_FP_AURA_HOSTILE_DESC: "用于验证第二个光环槽的低强度敌军光环。"
  aemusa_fp_aura_friendly: "原型友军校准场"
  aemusa_fp_aura_hostile: "原型敌军扰动场"
+ aemusa_fp_deployment_lock: "现场部署锁定"
  NAME_AEMUSA_FP_FLEET: "命运验证独立编队"
  NAME_AEMUSA_FP_FLAGSHIP: "未定名终局旗舰原型"
 
