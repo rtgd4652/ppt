@@ -10,7 +10,7 @@
 
 | 字段 | 可用状态 | 含义 |
 | --- | --- | --- |
-| 名单状态 | `locked` | 已进入 1.0 不可替换基线 |
+| 名单状态 | `locked` / `excluded_from_v1.0` | 已进入 1.0 基线／资料保留但不在当前版本范围 |
 | 原作资料 | `complete` / `partial` / `missing` | clean 与来源链是否足以支撑设计 |
 | Mod Ready | `complete` / `partial` / `missing` | 是否已有结构化转化摘要 |
 | 标准角色档案 | `complete` / `partial` / `missing` | 是否已按统一模板完成角色档案 |
@@ -32,7 +32,11 @@
 - [拉比](rabi_status_v1.0.md)
 - [格蕾莎](greysa_status_v1.0.md)
 - [雯梓](wenzi_status_v1.0.md)
-- [里见茜](satomi_akane_status_v1.0.md)
+- [丽](li_status_v1.0.md)
+
+## 历史与未来储备
+
+- [里见茜](satomi_akane_status_v1.0.md)：不在 1.0 名单；资料保留，塞拉菲姆仅作为过去历史人物。
 
 ## 更新纪律
 
@@ -40,4 +44,4 @@
 2. 每次状态变化必须注明验证依据或文件路径。
 3. 发现原作事实冲突时，回到来源与人工校订层解决；不要直接在状态档案中选择答案。
 4. 游戏实现完成后仍需通过唯一招募、职业、特质、立绘、本地化、读档与 `error.log` 测试，才能将测试状态改为 `passed`。
-5. 1.0 名单由 [`ED-009`](../../curated/decisions/project_editorial_decisions_v0.1.md) 锁定，状态档案无权自行增删角色。
+5. 1.0 名单由 [`ED-009`](../../curated/decisions/project_editorial_decisions_v0.1.md) 与 `ED-064` 锁定，状态档案无权自行增删角色。
