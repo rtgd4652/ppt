@@ -71,6 +71,14 @@ if ($AllText -notmatch 'jumpdrive\s*=\s*yes') {
     $Errors.Add("原型跃迁核心缺少 jumpdrive = yes")
 }
 
+# 部署锁定不能再次退回会隐藏舰船的 set_disabled；当前候选必须包含单链命令监视器。
+if ($AllText -notmatch 'id\s*=\s*aemusa_fp\.21' -or $AllText -notmatch 'clear_orders\s*=\s*yes') {
+    $Errors.Add("部署锁定缺少 aemusa_fp.21 命令监视器或 clear_orders")
+}
+if ($AllText -match 'aemusa_fp\.20\.deploy[\s\S]{0,1200}set_disabled\s*=\s*yes') {
+    $Errors.Add("部署入口重新使用 set_disabled，会导致原舰从正常界面消失")
+}
+
 # 舰队必须拥有明确的星系内位置，否则引擎会将其强制送入失踪返航。
 if ($AllText -notmatch 'set_location\s*=\s*\{') {
     $Errors.Add("原型生成效果缺少明确 set_location，舰队可能被判定为星系外失踪")

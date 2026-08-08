@@ -235,9 +235,20 @@ country_event = {
 		set_country_flag = aemusa_fp_flagship_deployed
 		every_owned_ship = {
 			limit = { is_ship_size = aemusa_fp_flagship }
-			# 部署锁定只压制航行与撤退能力，不再隐藏舰船或中断原地战斗。
+			# 先清除部署前已经排入队列的移动、跃迁与其他舰队行动。
+			fleet = {
+				clear_orders = yes
+				clear_fleet_actions = this
+			}
+			# 静态修正仅负责降低部署期间的意外位移，不再单独承担命令锁定。
 			remove_modifier = aemusa_fp_deployment_lock
 			add_modifier = { modifier = aemusa_fp_deployment_lock days = -1 }
+		}
+		# 监视器只在部署期间运行，并且每个国家最多保留一条事件链。
+		if = {
+			limit = { NOT = { has_country_flag = aemusa_fp_deployment_watchdog_running } }
+			set_country_flag = aemusa_fp_deployment_watchdog_running
+			country_event = { id = aemusa_fp.21 days = 1 }
 		}
 	}
 	option = {
@@ -251,6 +262,33 @@ country_event = {
 	}
 	option = {
 		name = aemusa_fp.close
+	}
+}
+
+# 部署命令监视器：每天只检查本国唯一旗舰并撤销玩家新下达的移动或跃迁命令。
+# 原版没有“下达舰队命令”on_action，因此这里用单国单舰的轻量事件链替代全银河轮询。
+country_event = {
+	id = aemusa_fp.21
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { has_country_flag = aemusa_fp_enabled }
+
+	immediate = {
+		if = {
+			limit = { has_country_flag = aemusa_fp_flagship_deployed }
+			every_owned_ship = {
+				limit = { is_ship_size = aemusa_fp_flagship }
+				fleet = {
+					clear_orders = yes
+					clear_fleet_actions = this
+				}
+			}
+			country_event = { id = aemusa_fp.21 days = 1 }
+		}
+		else = {
+			remove_country_flag = aemusa_fp_deployment_watchdog_running
+		}
 	}
 }
 
