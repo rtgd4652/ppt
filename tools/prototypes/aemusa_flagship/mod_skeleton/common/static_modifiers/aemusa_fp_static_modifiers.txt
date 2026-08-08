@@ -4,5 +4,7 @@ aemusa_fp_deployment_lock = {
 	ship_speed_mult = -1
 	ship_ftl_jumpdrive_range_mult = -1
 	ship_disengage_chance_mult = -1
+	# 原版行为层的 allow_emergency_ftl 无法按部署状态动态切换，因此用极长等待期阻止现场紧急跃迁。
+	ship_emergency_ftl_min_days_add = 100000
 	ship_emergency_ftl_min_days_mult = 100
 }
