@@ -1,0 +1,322 @@
+{
+  "title": "正轨的箱庭/剧情/回收黑核",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E6%AD%A3%E8%BD%A8%E7%9A%84%E7%AE%B1%E5%BA%AD%2F%E5%89%A7%E6%83%85%2F%E5%9B%9E%E6%94%B6%E9%BB%91%E6%A0%B8",
+  "page_id": 15431,
+  "touched": "2023-04-19T16:02:36Z",
+  "last_sync": "2026-08-09T04:14:13.193Z",
+  "story_scope": "main_story",
+  "route": "正轨的箱庭",
+  "chapter": "主线剧情 1",
+  "day": "回收黑核",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "解放高校学园后",
+      "character_count": 0
+    },
+    {
+      "level": 3,
+      "title": "私信：净化高校学园的黑核",
+      "character_count": 111
+    },
+    {
+      "level": 4,
+      "title": "选项：净化黑核还需要额外的巡查？",
+      "character_count": 56
+    },
+    {
+      "level": 4,
+      "title": "选项：明白！",
+      "character_count": 56
+    },
+    {
+      "level": 3,
+      "title": "巡查：高校学园",
+      "character_count": 232
+    },
+    {
+      "level": 4,
+      "title": "选项：很有趣的比喻……",
+      "character_count": 72
+    },
+    {
+      "level": 4,
+      "title": "选项：……",
+      "character_count": 82
+    },
+    {
+      "level": 2,
+      "title": "解放东方古街后",
+      "character_count": 34
+    },
+    {
+      "level": 4,
+      "title": "选项：首先解放东方古街",
+      "character_count": 0
+    },
+    {
+      "level": 3,
+      "title": "私信：净化东方古街的黑核",
+      "character_count": 93
+    },
+    {
+      "level": 3,
+      "title": "巡查：东方古街（未巡查 “与雯梓的洽谈”）",
+      "character_count": 128
+    },
+    {
+      "level": 3,
+      "title": "巡查：东方古街",
+      "character_count": 183
+    },
+    {
+      "level": 4,
+      "title": "选项：传统？",
+      "character_count": 42
+    },
+    {
+      "level": 4,
+      "title": "选项：固执？",
+      "character_count": 42
+    },
+    {
+      "level": 4,
+      "title": "选项：不太知道……",
+      "character_count": 214
+    },
+    {
+      "level": 4,
+      "title": "选项：或许我们可以改变大家的想法",
+      "character_count": 23
+    },
+    {
+      "level": 4,
+      "title": "选项：……",
+      "character_count": 126
+    },
+    {
+      "level": 3,
+      "title": "巡查：东方古街（已巡查 “与雯梓的洽谈”）",
+      "character_count": 141
+    },
+    {
+      "level": 4,
+      "title": "选项：嗯，多多少少猜到了",
+      "character_count": 26
+    },
+    {
+      "level": 4,
+      "title": "选项：真的吗……",
+      "character_count": 239
+    },
+    {
+      "level": 4,
+      "title": "选项：首先解放中央城区",
+      "character_count": 0
+    },
+    {
+      "level": 3,
+      "title": "私信：净化东方古街的黑核",
+      "character_count": 86
+    },
+    {
+      "level": 3,
+      "title": "巡查：东方古街（未巡查 “与钟函谷的洽谈”）",
+      "character_count": 220
+    },
+    {
+      "level": 3,
+      "title": "巡查：东方古街",
+      "character_count": 203
+    },
+    {
+      "level": 4,
+      "title": "选项：传统？",
+      "character_count": 43
+    },
+    {
+      "level": 4,
+      "title": "选项：固执？",
+      "character_count": 43
+    },
+    {
+      "level": 4,
+      "title": "选项：不太知道……",
+      "character_count": 214
+    },
+    {
+      "level": 4,
+      "title": "选项：或许我们可以改变大家的想法",
+      "character_count": 30
+    },
+    {
+      "level": 4,
+      "title": "选项：……",
+      "character_count": 167
+    },
+    {
+      "level": 3,
+      "title": "巡查：东方古街（已巡查 “与钟函谷的洽谈”）",
+      "character_count": 100
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "净化黑核还需要额外的巡查？",
+        "明白！"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "很有趣的比喻……",
+        "……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 2
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "首先解放东方古街",
+        "首先解放中央城区"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 3
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "传统？",
+        "固执？",
+        "不太知道……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 3,
+      "parent_option": "首先解放东方古街",
+      "depth": 1,
+      "tree_index": 4
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "或许我们可以改变大家的想法",
+        "……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 3,
+      "parent_option": "首先解放东方古街",
+      "depth": 1,
+      "tree_index": 5
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "嗯，多多少少猜到了",
+        "真的吗……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 3,
+      "parent_option": "首先解放东方古街",
+      "depth": 1,
+      "tree_index": 6
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "传统？",
+        "固执？",
+        "不太知道……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 3,
+      "parent_option": "首先解放中央城区",
+      "depth": 1,
+      "tree_index": 7
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "或许我们可以改变大家的想法",
+        "……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 3,
+      "parent_option": "首先解放中央城区",
+      "depth": 1,
+      "tree_index": 8
+    }
+  ],
+  "article_links": [],
+  "image_names": [
+    "Dialogue_icon_晏华.png",
+    "Mission_type_Core.png",
+    "Dialogue_icon_.png",
+    "Dialogue_icon_珈儿.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_雯梓.png",
+    "Dialogue_icon_钟函谷.png",
+    "Dialogue_icon_丽.png",
+    "Dialogue_icon_赛斯.png",
+    "Dialogue_icon_羽弥.png",
+    "Dialogue_icon_黑影1.png",
+    "Dialogue_icon_阿岚.png",
+    "Dialogue_icon_艾露比.png",
+    "Dialogue_icon_男2.png",
+    "Dialogue_icon_雷切尔.png",
+    "Dialogue_icon_濑由衣.png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/正轨的箱庭_剧情_回收黑核.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/正轨的箱庭_剧情_回收黑核.md"
+}

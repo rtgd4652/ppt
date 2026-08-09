@@ -387,6 +387,14 @@
       "notes": "以 Wiki 回收条件校准 P07 视频节点；视频继续用于补充人物对白、演出和选择树。"
     },
     {
+      "id": "story-main-01-academy-old-street-black-core-curated-v0.1",
+      "title": "正轨的箱庭：高校学园与东方古街黑核回收剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_高校与东方古街_黑核回收剧情整理_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/回收黑核",
+      "document_status": "source_structured",
+      "notes": "保留高校学园两组回应，以及东方古街雯梓／钟函谷互斥状态路线和嵌套选择。"
+    },
+    {
       "id": "story-uncorrupted-doll-final-travel-curated-v0.1",
       "title": "两个人的旅途：最终日剧情整理 v0.1",
       "file_path": "knowledge/story/curated/finales/两个人的旅途_最终日_剧情整理_v0.1.md",
