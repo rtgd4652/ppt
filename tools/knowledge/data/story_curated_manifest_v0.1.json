@@ -425,6 +425,62 @@
       "source_page_title": "无垢的人偶/剧情/特殊灭世1",
       "document_status": "source_structured",
       "notes": "两项一次性选择均汇合拘禁与供能；确认安的尸体但不反推死因、责任人或其他角色下落。"
+    },
+    {
+      "id": "story-main-01-academy-regional-summary-v0.1",
+      "title": "正轨的箱庭：高校学园地区剧情摘要 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_高校学园_地区剧情摘要_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/推图剧情",
+      "document_status": "source_structured",
+      "notes": "合并高校学园讨伐正文与黑核回收结构；保留占卜状态和西比尔生死两种互斥结果。"
+    },
+    {
+      "id": "story-main-01-eastern-old-street-regional-summary-v0.1",
+      "title": "正轨的箱庭：东方古街地区剧情摘要 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_东方古街_地区剧情摘要_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/推图剧情",
+      "document_status": "human_reviewed_structure",
+      "notes": "讨伐使用 P05/P06 结构证据，回收使用 Wiki 正文；保留雯梓／钟函谷互斥状态路线。"
+    },
+    {
+      "id": "story-main-01-central-district-regional-summary-v0.1",
+      "title": "正轨的箱庭：中央城区地区剧情摘要 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_中央城区_地区剧情摘要_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/推图剧情",
+      "document_status": "human_reviewed_structure",
+      "notes": "讨伐使用 P06 结构证据，回收使用 Wiki 正文；丽与黄金伞关系已确认，完整行动因果仍保留缺口。"
+    },
+    {
+      "id": "story-main-01-research-institute-regional-summary-v0.1",
+      "title": "正轨的箱庭：研究所地区剧情摘要 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_研究所_地区剧情摘要_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/回收黑核",
+      "document_status": "human_reviewed_structure",
+      "notes": "讨伐使用 P05 结构证据，回收使用 Wiki 正文；不从设施画面推定实验目的和异常因果。"
+    },
+    {
+      "id": "story-main-01-bayside-city-regional-summary-v0.1",
+      "title": "正轨的箱庭：海湾侧城地区剧情摘要 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_海湾侧城_地区剧情摘要_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/回收黑核",
+      "document_status": "human_reviewed_structure",
+      "notes": "讨伐使用 P05 结构证据，回收使用 Wiki 正文；保留阿岚选择树和海湾侧城／海湾区命名差异。"
+    },
+    {
+      "id": "story-main-01-old-district-regional-summary-v0.1",
+      "title": "正轨的箱庭：旧城区地区剧情摘要 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_旧城区_地区剧情摘要_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/回收黑核",
+      "document_status": "human_reviewed_structure",
+      "notes": "讨伐使用 P05 结构证据；P07 确认艾露比十万金币即时回收路线，晏华延时路线仍作为有效互斥分支保留。"
+    },
+    {
+      "id": "story-main-01-harbor-regional-summary-v0.1",
+      "title": "正轨的箱庭：港湾区地区剧情摘要 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_港湾区_地区剧情摘要_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/回收黑核",
+      "document_status": "human_reviewed_structure",
+      "notes": "讨伐使用 P05 结构证据；P07 确认雷切尔工程图、深海潜艇和濑由衣同行路线。"
     }
   ]
 }
