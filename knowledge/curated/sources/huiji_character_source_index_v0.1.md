@@ -12,3 +12,5 @@
 | SRC-HUIJI-CHAR-72569ABCA023 | 格蕾莎 | https://f7d.huijiwiki.com/wiki/%E6%A0%BC%E8%95%BE%E8%8E%8E |
 | SRC-HUIJI-CHAR-4F52C76A704A | 爱缪莎 | https://f7d.huijiwiki.com/wiki/%E7%88%B1%E7%BC%AA%E8%8E%8E |
 | SRC-HUIJI-CHAR-B8584AA1F387 | 赛斯 | https://f7d.huijiwiki.com/wiki/%E8%B5%9B%E6%96%AF |
+| SRC-HUIJI-CHAR-3E5AB5EC8769 | 里见茜 | https://f7d.huijiwiki.com/wiki/%E9%87%8C%E8%A7%81%E8%8C%9C |
+| SRC-HUIJI-CHAR-010DB42AAC39 | 雯梓 | https://f7d.huijiwiki.com/wiki/%E9%9B%AF%E6%A2%93 |
