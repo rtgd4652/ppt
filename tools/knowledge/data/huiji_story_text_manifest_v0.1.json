@@ -591,6 +591,19 @@
       "notes": "正式最终日；玩家选择与剧情战胜败状态已分开登记。"
     },
     {
+      "id": "huiji-story-main-01-regional-conquest",
+      "title": "正轨的箱庭/剧情/推图剧情",
+      "story_scope": "main_story_regional",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "地区讨伐",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P05、P06 用于补充区域选择差异，P07 用于补充各地区黑核回收；视频候选须经人工确认"
+      ],
+      "notes": "Wiki 只完整提供高校学园；其余六地区为空标题。已核验原始 Wikitext，不存在隐藏模板或子页面引用。"
+    },
+    {
       "id": "huiji-story-abyss-steps-special-annihilation-1",
       "title": "深渊的步伐/剧情/特殊灭世1",
       "story_scope": "main_story",

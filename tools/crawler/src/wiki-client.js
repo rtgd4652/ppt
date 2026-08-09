@@ -78,6 +78,27 @@ class WikiClient {
     };
   }
 
+  // 获取页面原始 Wiki 文本。该接口仅用于检查模板、子页面与条件分支，
+  // 不负责解析正文，也不会自动递归采集被引用页面。
+  async get_wikitext(title) {
+    const response = await this.request({
+      action: "parse",
+      page: title,
+      prop: "wikitext",
+      redirects: "1",
+    });
+
+    if (!response.parse) {
+      throw new Error(`无法取得页面 Wiki 文本：${title}`);
+    }
+
+    return {
+      title: response.parse.title || title,
+      pageid: response.parse.pageid || null,
+      wikitext: response.parse.wikitext || "",
+    };
+  }
+
   // 搜索页面。第一版只作为调试/人工定位入口，不用于全站同步。
   async search(keyword, limit = 10) {
     const response = await this.request({

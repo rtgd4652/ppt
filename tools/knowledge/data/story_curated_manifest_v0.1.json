@@ -347,6 +347,30 @@
       "notes": "区分信任度已满与未满状态，并保留已满状态下的嵌套回应及共同收束。"
     },
     {
+      "id": "story-main-01-regional-conquest-structure-v0.1",
+      "title": "正轨的箱庭：地区讨伐结构与缺失矩阵 v0.1",
+      "file_path": "knowledge/story/curated/structure/正轨的箱庭_地区讨伐结构与缺失矩阵_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/推图剧情",
+      "document_status": "source_gap_mapped",
+      "notes": "高校学园使用 Wiki 正文；其余六地区以 P05-P07 既有视频证据建立待校订矩阵，不提升未确认候选。"
+    },
+    {
+      "id": "story-main-01-academy-regional-curated-v0.1",
+      "title": "正轨的箱庭：高校学园讨伐剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_高校学园_讨伐剧情整理_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/推图剧情",
+      "document_status": "source_structured",
+      "notes": "保留六个解放节点、爱缪莎占卜嵌套分支、周目状态和西比尔两种互斥结果。"
+    },
+    {
+      "id": "story-main-01-central-district-video-evidence-v0.1",
+      "title": "正轨的箱庭：中央城区讨伐视频证据 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_中央城区_讨伐视频证据_v0.1.md",
+      "source_id": "SRC-BILI-BV17M4Y1W7RR",
+      "document_status": "partially_human_confirmed",
+      "notes": "P06 中央城区证据；丽的身份与分支定位已人工确认，其余对白、职责、敌人和汇合点待校订。"
+    },
+    {
       "id": "story-uncorrupted-doll-final-travel-curated-v0.1",
       "title": "两个人的旅途：最终日剧情整理 v0.1",
       "file_path": "knowledge/story/curated/finales/两个人的旅途_最终日_剧情整理_v0.1.md",

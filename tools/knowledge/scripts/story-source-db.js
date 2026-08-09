@@ -232,18 +232,21 @@ function syncStoryCuratedDocuments(database) {
     for (const document of documents) {
       const filePath = String(document.file_path || "").trim();
       const sourcePageTitle = String(document.source_page_title || "").trim();
-      if (!filePath || !sourcePageTitle) {
-        throw new Error("剧情整理清单缺少 file_path 或 source_page_title。");
+      const explicitSourceId = String(document.source_id || "").trim();
+      if (!filePath || (!sourcePageTitle && !explicitSourceId)) {
+        throw new Error("剧情整理清单缺少 file_path，或没有提供 source_page_title/source_id。");
       }
       if (!fs.existsSync(path.join(REPOSITORY_ROOT, filePath))) {
         throw new Error(`剧情整理文件不存在：${filePath}`);
       }
 
-      const sourceId = stableId("SRC-HUIJI-STORY", sourcePageTitle);
+      // Wiki 整理继续从页面标题生成稳定来源编号；视频补缺等非 Wiki 整理
+      // 可以显式绑定已经登记的 source_id，避免把视频证据伪装成 Wiki 正文。
+      const sourceId = explicitSourceId || stableId("SRC-HUIJI-STORY", sourcePageTitle);
       if (!getSource.get(sourceId)) {
-        throw new Error(`剧情整理引用了尚未登记的来源页面：${sourcePageTitle}`);
+        throw new Error(`剧情整理引用了尚未登记的来源：${explicitSourceId || sourcePageTitle}`);
       }
-      const sourceIndex = readStoryIndex(sourcePageTitle)?.data || {};
+      const sourceIndex = sourcePageTitle ? readStoryIndex(sourcePageTitle)?.data || {} : {};
       upsertDocument.run(
         document.id || stableId("DOC-STORY-CURATED", filePath),
         "story",
