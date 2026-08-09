@@ -325,12 +325,17 @@ function parseCleanCharacterFrontmatter(markdown) {
 }
 
 function listCleanCharacterFiles() {
-  // 只把自动采集后的 clean 角色资料纳入来源索引，排除标准角色档案与关系文档。
+  // 只把 Front Matter 明确声明为 character 的 Clean 资料纳入来源索引。
+  // 文件名排除规则无法覆盖完成矩阵等后续文档，因此必须以文档类型作为权威判断。
   return fs
     .readdirSync(CLEAN_CHARACTER_DIR, { withFileTypes: true })
     .filter((entry) => entry.isFile() && entry.name.endsWith(".md"))
     .map((entry) => entry.name)
-    .filter((name) => !name.includes("_character_") && !name.startsWith("character_"));
+    .filter((name) => {
+      const markdown = fs.readFileSync(path.join(CLEAN_CHARACTER_DIR, name), "utf8");
+      const frontmatter = /^---\s*\r?\n([\s\S]*?)\r?\n---/u.exec(markdown)?.[1] || "";
+      return /^type:\s*["']?character["']?\s*$/mu.test(frontmatter);
+    });
 }
 
 function syncExistingCharacterSources(database) {

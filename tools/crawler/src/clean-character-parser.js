@@ -438,16 +438,64 @@ class CleanCharacterParser {
   }
 
   cleanBlock(text) {
-    return String(text || "")
+    const lines = String(text || "")
       .replace(/\u00a0/g, " ")
       .replace(/[ \t]+/g, " ")
       .replace(/\n{3,}/g, "\n\n")
       .split(/\r?\n/)
       .map((line) => this.cleanInline(line))
       .filter((line) => !this.isNoiseLine(line))
-      .filter((line, index, lines) => line || lines[index - 1])
+      .filter((line, index, sourceLines) => line || sourceLines[index - 1]);
+
+    // 灰机 Wiki 的角色页会把职业、伤害类型和联动分类导航嵌入正文。
+    // 仅移除由这些短标签组成且长度足够的连续区段，保留正文中孤立出现的同名词语。
+    return this.removeTaxonomyNavigationRuns(lines)
       .join("\n")
       .trim();
+  }
+
+  removeTaxonomyNavigationRuns(lines) {
+    const taxonomyLabels = new Set([
+      "神器使",
+      "战士",
+      "坦克",
+      "法师",
+      "影袭",
+      "射手",
+      "辅助",
+      "物理",
+      "法术",
+      "联动",
+      "异界体",
+    ]);
+    const cleaned = [];
+
+    for (let index = 0; index < lines.length;) {
+      if (!taxonomyLabels.has(lines[index])) {
+        cleaned.push(lines[index]);
+        index += 1;
+        continue;
+      }
+
+      let cursor = index;
+      while (cursor < lines.length && taxonomyLabels.has(lines[cursor])) {
+        cursor += 1;
+      }
+
+      const run = lines.slice(index, cursor);
+      const hasNavigationPattern =
+        run.length >= 6 &&
+        run.includes("神器使") &&
+        run.some((line) => ["战士", "坦克", "法师", "影袭", "射手", "辅助"].includes(line)) &&
+        run.some((line) => ["物理", "法术"].includes(line));
+
+      if (!hasNavigationPattern) {
+        cleaned.push(...run);
+      }
+      index = cursor;
+    }
+
+    return cleaned;
   }
 
   cleanInline(text) {
