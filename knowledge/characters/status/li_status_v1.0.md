@@ -5,9 +5,9 @@ character: "丽"
 affiliation: "黄金伞"
 release_target: "1.0"
 roster_status: "locked"
-source_status: "complete_pending_human_review"
+source_status: "complete_current_scope"
 mod_ready_status: "complete"
-character_bible_status: "draft_for_human_review"
+character_bible_status: "complete"
 implementation_status: "not_started"
 art_status: "missing"
 narrative_status: "partial_source_only"
@@ -65,16 +65,15 @@ last_reviewed: "2026-08-09"
 
 - [x] 采集独立角色页面并生成 Raw、Clean 与图片索引。
 - [x] 同步中央城区讨伐与黑核回收的地区剧情证据。
-- [ ] 人工校订角色事实。
+- [x] 人工校订角色事实。
 - [x] 生成 Mod Ready 摘要和标准角色档案草案。
-- [ ] 人工审核并批准 Mod Ready 摘要和标准角色档案。
+- [x] 人工审核并批准 Mod Ready 摘要和标准角色档案。
 - [ ] 建立原作视觉锚点与星际时代转译边界。
 - [ ] 批准领袖职业与一个核心机制。
 - [ ] 完成白夜馆接入、唯一招募、立绘、本地化和专项测试。
 
 ## 7. 当前阻塞项
 
-- 自动采集的神器、能力、经历、关系与人格资料尚未完成人工核验。
-- 角色事实已经拆分为 `LFR-001` 至 `LFR-007`，等待用户逐项审核。
-- 标准角色档案和最低时间连续性尚未批准。
+- 自动采集的神器、能力、经历、关系与人格资料已经完成 `LFR-001` 至 `LFR-007` 全部人工核验。
+- 标准角色档案已经批准；最低时间连续性仍待独立审核。
 - 领袖职业、核心机制、视觉方向与实现均未批准。

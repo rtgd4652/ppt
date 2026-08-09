@@ -4,9 +4,9 @@ type: "character_status"
 character: "雯梓"
 release_target: "1.0"
 roster_status: "locked"
-source_status: "partial"
+source_status: "complete_current_scope"
 mod_ready_status: "complete"
-character_bible_status: "partial"
+character_bible_status: "complete"
 implementation_status: "not_started"
 art_status: "missing"
 narrative_status: "partial"
@@ -73,13 +73,12 @@ last_reviewed: "2026-08-09"
 - [x] 完成 raw、clean、图片索引三件套采集。
 - [x] 完成 Mod Ready 摘要。
 - [x] 完成东方古街地区剧情与黑核回收证据同步。
-- [ ] 人工校订 Clean 资料并批准标准角色档案草案。
+- [x] 人工校订 Clean 资料并批准标准角色档案草案。
 - 建立原作视觉锚点与角色风格边界。
 - 批准领袖职业与一个核心机制。
 - 完成白夜馆接入、唯一招募、本地化、立绘和专项测试。
 
 ## 7. 当前阻塞项
 
-- Clean 资料和标准角色档案草案尚未完成人工确认。
-- 角色事实已经拆分为 `WFR-001` 至 `WFR-007`，等待用户逐项审核。
+- Clean 资料和标准角色档案已经完成 `WFR-001` 至 `WFR-007` 全部人工审核。
 - 领袖职业、一个核心机制和视觉方向仍未批准。
