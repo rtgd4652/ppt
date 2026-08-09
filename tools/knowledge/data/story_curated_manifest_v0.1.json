@@ -371,6 +371,22 @@
       "notes": "P06 中央城区证据；丽的身份与分支定位已人工确认，其余对白、职责、敌人和汇合点待校订。"
     },
     {
+      "id": "story-main-01-p05-regional-boundary-evidence-v0.1",
+      "title": "正轨的箱庭：P05 地区边界候选 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_P05_地区边界候选_v0.1.md",
+      "source_id": "SRC-BILI-BV17M4Y1W7RR",
+      "document_status": "pending_human_confirmation",
+      "notes": "将 P05 按场景分为东方古街入口、设施研究、轨道仓储及水岸港口候选段，避免整集误标为东方古街。"
+    },
+    {
+      "id": "story-main-01-p07-black-core-recovery-evidence-v0.1",
+      "title": "正轨的箱庭：P07 黑核回收视频证据 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_P07_黑核回收视频证据_v0.1.md",
+      "source_page_title": "黑核",
+      "document_status": "partially_human_confirmed",
+      "notes": "以 Wiki 回收条件校准 P07 视频节点；视频继续用于补充人物对白、演出和选择树。"
+    },
+    {
       "id": "story-uncorrupted-doll-final-travel-curated-v0.1",
       "title": "两个人的旅途：最终日剧情整理 v0.1",
       "file_path": "knowledge/story/curated/finales/两个人的旅途_最终日_剧情整理_v0.1.md",

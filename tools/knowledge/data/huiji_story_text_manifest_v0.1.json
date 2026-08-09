@@ -19,6 +19,19 @@
   },
   "pages": [
     {
+      "id": "huiji-reference-black-core-recovery",
+      "title": "黑核",
+      "story_scope": "gameplay_story_reference",
+      "route": "正轨的箱庭",
+      "chapter": "主线剧情 1",
+      "day": "地区黑核回收条件",
+      "status": "collected",
+      "legacy_video_evidence": [
+        "SRC-BILI-BV17M4Y1W7RR：P07 用于补充回收人物、对白与演出"
+      ],
+      "notes": "保存各地区黑核回收方法；属于玩法与剧情前置参考，不替代 P07 完整对白。"
+    },
+    {
       "id": "huiji-story-regular-garden-day-7",
       "title": "正轨的箱庭/剧情/第七天",
       "story_scope": "main_story",
