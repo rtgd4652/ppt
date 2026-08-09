@@ -7,6 +7,7 @@
     "check:f7d": "node scripts/check-f7d.js",
     "probe:f7d": "node scripts/probe-f7d.js",
     "test:aemusa": "node scripts/test-aemusa.js",
+    "test:story-parser": "node scripts/test-story-parser.js",
     "collect:character": "node scripts/collect-character.js",
     "collect:story": "node scripts/collect-story-page.js",
     "discover:story": "node scripts/discover-story-links.js",

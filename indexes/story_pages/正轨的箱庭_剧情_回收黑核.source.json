@@ -3,7 +3,7 @@
   "source_url": "https://f7d.huijiwiki.com/wiki/%E6%AD%A3%E8%BD%A8%E7%9A%84%E7%AE%B1%E5%BA%AD%2F%E5%89%A7%E6%83%85%2F%E5%9B%9E%E6%94%B6%E9%BB%91%E6%A0%B8",
   "page_id": 15431,
   "touched": "2023-04-19T16:02:36Z",
-  "last_sync": "2026-08-09T04:14:13.193Z",
+  "last_sync": "2026-08-09T04:49:41.021Z",
   "story_scope": "main_story",
   "route": "正轨的箱庭",
   "chapter": "主线剧情 1",
@@ -159,6 +159,221 @@
       "level": 3,
       "title": "巡查：东方古街（已巡查 “与钟函谷的洽谈”）",
       "character_count": 100
+    },
+    {
+      "level": 2,
+      "title": "解放中央城区后",
+      "character_count": 0
+    },
+    {
+      "level": 3,
+      "title": "私信：净化中央城区的黑核",
+      "character_count": 114
+    },
+    {
+      "level": 3,
+      "title": "巡查：中央城区（背包里无蜂蜜蛋糕）",
+      "character_count": 181
+    },
+    {
+      "level": 3,
+      "title": "巡查：中央城区",
+      "character_count": 114
+    },
+    {
+      "level": 4,
+      "title": "选项：鸽污恩……",
+      "character_count": 76
+    },
+    {
+      "level": 4,
+      "title": "选项：别来恶心我了……我说还不行吗……",
+      "character_count": 25
+    },
+    {
+      "level": 4,
+      "title": "选项：我认输……是关于黑核的事情……",
+      "character_count": 25
+    },
+    {
+      "level": 4,
+      "title": "选项：关于黑核……",
+      "character_count": 293
+    },
+    {
+      "level": 3,
+      "title": "巡查：中央城区（背包里有蜂蜜蛋糕）",
+      "character_count": 465
+    },
+    {
+      "level": 2,
+      "title": "解放研究所后",
+      "character_count": 0
+    },
+    {
+      "level": 3,
+      "title": "私信：净化研究所的黑核",
+      "character_count": 87
+    },
+    {
+      "level": 3,
+      "title": "巡查：研究所（未开发研究所）",
+      "character_count": 230
+    },
+    {
+      "level": 3,
+      "title": "开发研究所至二级",
+      "character_count": 20
+    },
+    {
+      "level": 3,
+      "title": "巡查：研究所（已开发研究所）",
+      "character_count": 294
+    },
+    {
+      "level": 4,
+      "title": "选项：真是人渣！",
+      "character_count": 82
+    },
+    {
+      "level": 4,
+      "title": "选项：羽弥你是怎么想的呢……",
+      "character_count": 142
+    },
+    {
+      "level": 4,
+      "title": "选项：不，这根本不是爱！",
+      "character_count": 7
+    },
+    {
+      "level": 4,
+      "title": "选项：爱你的话就不会伤害你！",
+      "character_count": 82
+    },
+    {
+      "level": 2,
+      "title": "解放海湾侧城后",
+      "character_count": 0
+    },
+    {
+      "level": 3,
+      "title": "私信：净化海湾侧城的黑核",
+      "character_count": 177
+    },
+    {
+      "level": 3,
+      "title": "巡查：海湾侧城（未巡查 “阿岚的心事”）",
+      "character_count": 124
+    },
+    {
+      "level": 3,
+      "title": "巡查：东方古街",
+      "character_count": 157
+    },
+    {
+      "level": 4,
+      "title": "选项：因为你穿女装啊！而且很可爱啊！",
+      "character_count": 12
+    },
+    {
+      "level": 4,
+      "title": "选项：要不不穿女装试试？",
+      "character_count": 126
+    },
+    {
+      "level": 4,
+      "title": "选项：女装也没什么不好嘛！",
+      "character_count": 58
+    },
+    {
+      "level": 4,
+      "title": "选项：别人的眼光并不重要，重要的是你自己",
+      "character_count": 189
+    },
+    {
+      "level": 3,
+      "title": "巡查：海湾侧城（已巡查 “阿岚的心事”、未建设购物中心）",
+      "character_count": 79
+    },
+    {
+      "level": 3,
+      "title": "巡查：海湾侧城（已巡查 “阿岚的心事”、已建设购物中心）",
+      "character_count": 208
+    },
+    {
+      "level": 2,
+      "title": "解放旧城区后",
+      "character_count": 0
+    },
+    {
+      "level": 3,
+      "title": "私信：净化旧城区的黑核",
+      "character_count": 97
+    },
+    {
+      "level": 3,
+      "title": "巡查：旧城区",
+      "character_count": 477
+    },
+    {
+      "level": 4,
+      "title": "选项：好吧……",
+      "character_count": 79
+    },
+    {
+      "level": 4,
+      "title": "选项：不给！",
+      "character_count": 93
+    },
+    {
+      "level": 3,
+      "title": "巡查：中央庭",
+      "character_count": 133
+    },
+    {
+      "level": 3,
+      "title": "巡查：旧城区",
+      "character_count": 86
+    },
+    {
+      "level": 2,
+      "title": "解放港湾区后",
+      "character_count": 0
+    },
+    {
+      "level": 3,
+      "title": "私信：净化港湾区的黑核",
+      "character_count": 112
+    },
+    {
+      "level": 3,
+      "title": "巡查：港湾区（未建设潜水艇）",
+      "character_count": 150
+    },
+    {
+      "level": 3,
+      "title": "巡查：研究所",
+      "character_count": 258
+    },
+    {
+      "level": 4,
+      "title": "选项：深海潜艇",
+      "character_count": 11
+    },
+    {
+      "level": 4,
+      "title": "选项：强电流拘束装置",
+      "character_count": 14
+    },
+    {
+      "level": 4,
+      "title": "选项：急速风箱",
+      "character_count": 43
+    },
+    {
+      "level": 3,
+      "title": "巡查：港湾区（已建设潜水艇）",
+      "character_count": 240
     }
   ],
   "choice_trees": [
@@ -291,6 +506,135 @@
       "parent_option": "首先解放中央城区",
       "depth": 1,
       "tree_index": 8
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "鸽污恩……",
+        "关于黑核……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 9
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "别来恶心我了……我说还不行吗……",
+        "我认输……是关于黑核的事情……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 9,
+      "parent_option": "鸽污恩……",
+      "depth": 1,
+      "tree_index": 10
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "真是人渣！",
+        "羽弥你是怎么想的呢……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 11
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "不，这根本不是爱！",
+        "爱你的话就不会伤害你！"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 11,
+      "parent_option": "羽弥你是怎么想的呢……",
+      "depth": 1,
+      "tree_index": 12
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "因为你穿女装啊！而且很可爱啊！",
+        "要不不穿女装试试？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 13
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "女装也没什么不好嘛！",
+        "别人的眼光并不重要，重要的是你自己"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 14
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "好吧……",
+        "不给！"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 15
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "深海潜艇",
+        "强电流拘束装置",
+        "急速风箱"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 16
     }
   ],
   "article_links": [],

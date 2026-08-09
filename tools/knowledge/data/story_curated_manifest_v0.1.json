@@ -382,9 +382,9 @@
       "id": "story-main-01-p07-black-core-recovery-evidence-v0.1",
       "title": "正轨的箱庭：P07 黑核回收视频证据 v0.1",
       "file_path": "knowledge/story/curated/regions/正轨的箱庭_P07_黑核回收视频证据_v0.1.md",
-      "source_page_title": "黑核",
-      "document_status": "partially_human_confirmed",
-      "notes": "以 Wiki 回收条件校准 P07 视频节点；视频继续用于补充人物对白、演出和选择树。"
+      "source_page_title": "正轨的箱庭/剧情/回收黑核",
+      "document_status": "wiki_text_confirmed_video_timing_pending",
+      "notes": "Wiki 已覆盖七区回收正文与选择树；P07 只保留为时间码、画面状态和人物视觉身份的补充证据。"
     },
     {
       "id": "story-main-01-academy-old-street-black-core-curated-v0.1",
@@ -393,6 +393,14 @@
       "source_page_title": "正轨的箱庭/剧情/回收黑核",
       "document_status": "source_structured",
       "notes": "保留高校学园两组回应，以及东方古街雯梓／钟函谷互斥状态路线和嵌套选择。"
+    },
+    {
+      "id": "story-main-01-eight-black-core-recovery-curated-v0.1",
+      "title": "正轨的箱庭：八处黑核回收剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/regions/正轨的箱庭_八处黑核回收剧情整理_v0.1.md",
+      "source_page_title": "正轨的箱庭/剧情/回收黑核",
+      "document_status": "source_structured",
+      "notes": "汇总中央庭初始黑核和七个解放地区的回收结构；保留互斥状态、前置设施与嵌套选择，不把不同路线文本混写。"
     },
     {
       "id": "story-uncorrupted-doll-final-travel-curated-v0.1",

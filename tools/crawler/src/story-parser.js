@@ -330,14 +330,23 @@ class StoryParser {
           return {
             option: option.label,
             inner_html: pane.inner_html,
+            pane_bounds: pane.bounds,
           };
         })
         .filter(Boolean);
 
       if (options.length >= 2 && branches.length === options.length) {
+        // 部分灰机 Wiki 页面生成的 tab-content 外层 <div> 存在不规范嵌套。
+        // 若直接采用外层容器的匹配终点，解析器可能把后续整页正文都当成当前选择树并跳过。
+        // 因此只消费到最后一个实际分支面板自身的结尾；遗留的外层闭合标签不会产生正文，
+        // 但位于面板之后、错误包在 tab-content 内的有效标题与剧情必须继续交给后续解析。
+        const lastPaneEnd = Math.max(...branches.map((branch) => branch.pane_bounds.end));
         return {
           nav_start: navStart,
-          content_bounds: contentBounds,
+          content_bounds: {
+            ...contentBounds,
+            end: Math.min(contentBounds.end, lastPaneEnd),
+          },
           branches,
         };
       }
@@ -503,6 +512,8 @@ class StoryParser {
       panes.push({
         id: this.readHtmlAttribute(match[0], "id"),
         inner_html: html.slice(paneBounds.open_end, paneBounds.close_start),
+        // 保留实际面板边界，以便外层容器结构异常时精确确定本选择树的消费范围。
+        bounds: paneBounds,
       });
       divPattern.lastIndex = paneBounds.end;
     }

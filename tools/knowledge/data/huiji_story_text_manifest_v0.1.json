@@ -40,9 +40,20 @@
       "day": "地区黑核回收",
       "status": "collected",
       "legacy_video_evidence": [
-        "SRC-BILI-BV17M4Y1W7RR：P07 仅补充视频演出与未被 Wiki 覆盖的地区"
+        "SRC-BILI-BV17M4Y1W7RR：P07 仅补充时间码、画面状态与人物视觉身份"
       ],
-      "notes": "完整保存高校学园与东方古街回收正文、状态分支和嵌套选择树。"
+      "notes": "完整保存中央庭初始黑核之外七个地区的回收正文、状态分支和嵌套选择树；中央庭初始黑核仍由通用“黑核”页补充。"
+    },
+    {
+      "id": "huiji-story-garden-key-black-core-recovery-comparison",
+      "title": "箱庭之钥/剧情/回收黑核",
+      "story_scope": "route_comparison",
+      "route": "箱庭之钥",
+      "chapter": "路线对照资料",
+      "day": "地区黑核回收",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "仅作为不同路线的对照证据保存，不得替代或混入“正轨的箱庭”剧情正文。"
     },
     {
       "id": "huiji-story-regular-garden-day-7",
@@ -627,7 +638,7 @@
       "legacy_video_evidence": [
         "SRC-BILI-BV17M4Y1W7RR：P05、P06 用于补充区域选择差异，P07 用于补充各地区黑核回收；视频候选须经人工确认"
       ],
-      "notes": "Wiki 只完整提供高校学园；其余六地区为空标题。已核验原始 Wikitext，不存在隐藏模板或子页面引用。"
+      "notes": "Wiki 推图页只完整提供高校学园；其余六地区为空标题。此缺失仅指地区讨伐正文，不包括已经由独立“回收黑核”页面完整保存的七区黑核回收剧情。"
     },
     {
       "id": "huiji-story-abyss-steps-special-annihilation-1",
