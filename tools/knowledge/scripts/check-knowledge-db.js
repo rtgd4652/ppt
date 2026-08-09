@@ -260,12 +260,17 @@ if (!fs.existsSync(DATABASE_PATH)) {
     ) {
       fail("P06 中央城区区域剧情分支的全片 00:00–25:17 审核记录缺失或不完整。");
     }
-    // P07 已完成全片审核；整体黑核回收定位已人工确认，人物与区域细节仍保留为候选事实。
+    // P07 已完成全片结构、实际路线与主要人物视觉审核；少数具体好感度回答仍保留为未确认。
     if (
       !p07Review ||
-      p07Review.review_status !== "partially_human_confirmed" ||
-      p07Review.segments.length !== 1 ||
-      p07Review.segments[0]?.end_second !== 689
+      p07Review.review_status !== "human_reviewed_structure" ||
+      p07Review.segments.length !== 7 ||
+      p07Review.segments[0]?.start_second !== 0 ||
+      p07Review.segments[0]?.end_second !== 44 ||
+      p07Review.segments[1]?.start_second !== 45 ||
+      p07Review.segments[5]?.start_second !== 510 ||
+      p07Review.segments[6]?.start_second !== 605 ||
+      p07Review.segments.at(-1)?.end_second !== 689
     ) {
       fail("P07 黑核回收后续的全片 00:00–11:29 审核记录缺失或不完整。");
     }
