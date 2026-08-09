@@ -29,6 +29,7 @@ last_reviewed: "2026-08-09"
 - [Clean 角色资料](../雯梓.md)
 - [Mod Ready 摘要](../../mod_ready/characters/雯梓.mod.md)
 - [标准角色档案草案](../wenzi_character_v0.1.md)
+- [雯梓与丽角色事实审核记录](../../curated/reviews/wenzi_li_character_fact_review_v1.0.md)
 - [东方古街地区剧情摘要](../../story/curated/regions/正轨的箱庭_东方古街_地区剧情摘要_v0.1.md)
 - [东方古街黑核回收正文](../../story/pages/正轨的箱庭_剧情_回收黑核.md)
 - `raw/huiji/characters/雯梓.raw.md`
@@ -80,4 +81,5 @@ last_reviewed: "2026-08-09"
 ## 7. 当前阻塞项
 
 - Clean 资料和标准角色档案草案尚未完成人工确认。
+- 角色事实已经拆分为 `WFR-001` 至 `WFR-007`，等待用户逐项审核。
 - 领袖职业、一个核心机制和视觉方向仍未批准。
