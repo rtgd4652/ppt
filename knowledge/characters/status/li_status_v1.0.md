@@ -5,14 +5,14 @@ character: "丽"
 affiliation: "黄金伞"
 release_target: "1.0"
 roster_status: "locked"
-source_status: "missing_independent_collection"
+source_status: "partial_story_evidence"
 mod_ready_status: "missing"
 character_bible_status: "missing"
 implementation_status: "not_started"
 art_status: "missing"
 narrative_status: "partial_source_only"
 test_status: "not_tested"
-last_reviewed: "2026-08-08"
+last_reviewed: "2026-08-09"
 ---
 
 # 丽 1.0 角色状态档案
@@ -32,13 +32,18 @@ last_reviewed: "2026-08-08"
 - [`避世的方舟／第一天`](../../story/pages/避世的方舟_剧情_第一天.md)：包含丽在中央城区相关冲突中的对话，并出现“黄金姬”称号。
 - [`深渊的步伐／第四天`](../../story/pages/深渊的步伐_剧情_第四天.md)：提及中央城区黑核与黄金伞总部。
 - [`深渊的步伐／第一天`](../../story/pages/深渊的步伐_剧情_第一天.md)：包含丽在相关调查中的出场。
+- [中央城区地区剧情摘要](../../story/curated/regions/正轨的箱庭_中央城区_地区剧情摘要_v0.1.md)：人工确认赛斯称丽为“黄金伞那个大小姐”，丽参与当地异常与战斗流程；完整行动因果仍待逐句校订。
+- [`正轨的箱庭／回收黑核`](../../story/pages/正轨的箱庭_剧情_回收黑核.md)：确认中央城区黑核位于丽的实验室；取得蜂蜜蛋糕后，丽把已无研究用途的黑核作为回礼交出。
 - 项目人工确认：丽作为 1.0 第十名神器使。
 
 当前证据只足以锁定名单席位和最低语境，不能替代独立角色页面采集与人工校订。
 
+地区证据新增确认：丽与黄金伞存在明确关联，她在中央城区拥有实验室语境并研究过黑核。当前材料仍不足以确定其神器、正式职务、完整能力、研究领域或与赛斯的私人关系。
+
 ## 3. 1.0 叙事定位
 
 - 作为中央城区与黄金伞相关的神器使人物进入 1.0 名单。
+- 可确认她具备独立判断、直接交涉和研究黑核的行为表现；这些行为仍不能直接映射为 Stellaris 职业或核心机制。
 - 她是否承担地区治理、战斗、经济或其他文明职责，必须等待角色资料后审核。
 - 她不因补位而自动进入爱缪莎大型主线的关键节点。
 
@@ -55,6 +60,7 @@ last_reviewed: "2026-08-08"
 ## 6. 1.0 完成条件
 
 - [ ] 采集独立角色页面并生成 Raw、Clean 与图片索引。
+- [x] 同步中央城区讨伐与黑核回收的地区剧情证据。
 - [ ] 人工校订角色事实。
 - [ ] 生成并审核 Mod Ready 摘要和标准角色档案。
 - [ ] 建立原作视觉锚点与星际时代转译边界。

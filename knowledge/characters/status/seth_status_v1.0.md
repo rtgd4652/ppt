@@ -11,7 +11,7 @@ implementation_status: "playable"
 art_status: "missing"
 narrative_status: "partial"
 test_status: "partial"
-last_reviewed: "2026-07-29"
+last_reviewed: "2026-08-09"
 ---
 
 # 赛斯 1.0 角色状态档案
@@ -27,8 +27,11 @@ last_reviewed: "2026-07-29"
 - [Clean 资料](../赛斯.md)
 - [Mod Ready 摘要](../../mod_ready/characters/赛斯.mod.md)
 - [标准角色档案](../seth_character_v0.1.md)
+- [中央城区地区剧情摘要](../../story/curated/regions/正轨的箱庭_中央城区_地区剧情摘要_v0.1.md)
 
 标准角色档案已经建立，并明确“微小愿望”不能扩张为无代价许愿能力。当前仍缺少独立关系档案与正式视觉锚点。
+
+中央城区地区证据补充确认：赛斯受安排在中央公园接应指挥使，参与异常调查，并在丽的黑核回收链中提供她偏好蜂蜜甜食的实用情报。该证据只支持任务协作与信息支援，不证明两人存在未经来源确认的私人关系。
 
 ## 3. 1.0 叙事定位
 

@@ -11,7 +11,7 @@ implementation_status: "playable"
 art_status: "missing"
 narrative_status: "partial"
 test_status: "partial"
-last_reviewed: "2026-07-29"
+last_reviewed: "2026-08-09"
 ---
 
 # 幽桐 1.0 角色状态档案
@@ -27,8 +27,11 @@ last_reviewed: "2026-07-29"
 - [Clean 资料](../幽桐.md)
 - [Mod Ready 摘要](../../mod_ready/characters/幽桐.mod.md)
 - [标准角色档案](../yutong_character_v0.1.md)
+- [港湾区地区剧情摘要](../../story/curated/regions/正轨的箱庭_港湾区_地区剧情摘要_v0.1.md)
 
 标准角色档案已经建立，并明确责任心不能被写成无限自我牺牲许可。当前仍缺少独立关系档案与正式视觉锚点。
+
+P05 结构级证据确认幽桐在港湾区讨伐模块中出现，但现有材料尚未提供足以确认其任务职责、个人战果或与利维坦关系的逐句对白。因此该出场只登记为地区经历证据，不改变现有角色定位。
 
 ## 3. 1.0 叙事定位
 
