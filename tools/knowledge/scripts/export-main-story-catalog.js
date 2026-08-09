@@ -42,6 +42,7 @@ function reviewStatusLabel(status) {
     context_only: "仅上下文（项目人工确认）",
     in_progress: "审核中",
     human_confirmed: "已人工确认",
+    human_reviewed_structure: "结构已人工审核",
     partially_human_confirmed: "部分已人工确认",
     pending_human_confirmation: "待人工确认",
     excluded: "排除（项目人工确认）",

@@ -237,22 +237,25 @@ if (!fs.existsSync(DATABASE_PATH)) {
     ) {
       fail("P04 结局 2 的全片 00:00–43:44 审核记录缺失或不完整。");
     }
-    // P05 是“东方古街”区域剧情分支，必须完整录入，但不能与主线本体或结局线混写。
+    // P05 已完成地区结构级审核；九个旧时间段继续保留逐句校订素材。
     if (
       !p05Review ||
-      p05Review.review_status !== "pending_human_confirmation" ||
+      p05Review.review_status !== "human_reviewed_structure" ||
       p05Review.segments.length !== 9 ||
       p05Review.segments[0]?.end_second !== 720 ||
       p05Review.segments.at(-1)?.end_second !== 5936
     ) {
       fail("P05 东方古街区域剧情分支的全片 00:00–01:38:56 审核记录缺失或不完整。");
     }
-    // P06 是第二次讨伐选择中央城区的区域分支；全片必须保留，并与 P05 的东方古街选择分开审核。
+    // P06 已按任务交接、中央城区独有段与共同后续完成结构级审核。
     if (
       !p06Review ||
-      p06Review.review_status !== "pending_human_confirmation" ||
+      p06Review.review_status !== "human_reviewed_structure" ||
       p06Review.segments.length !== 3 ||
-      p06Review.segments[0]?.end_second !== 720 ||
+      p06Review.segments[0]?.end_second !== 400 ||
+      p06Review.segments[1]?.start_second !== 400 ||
+      p06Review.segments[1]?.end_second !== 1190 ||
+      p06Review.segments[2]?.start_second !== 1190 ||
       p06Review.segments.at(-1)?.end_second !== 1517
     ) {
       fail("P06 中央城区区域剧情分支的全片 00:00–25:17 审核记录缺失或不完整。");

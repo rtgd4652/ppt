@@ -351,8 +351,8 @@
       "title": "正轨的箱庭：地区讨伐结构与缺失矩阵 v0.1",
       "file_path": "knowledge/story/curated/structure/正轨的箱庭_地区讨伐结构与缺失矩阵_v0.1.md",
       "source_page_title": "正轨的箱庭/剧情/推图剧情",
-      "document_status": "source_gap_mapped",
-      "notes": "高校学园使用 Wiki 正文；其余六地区以 P05-P07 既有视频证据建立待校订矩阵，不提升未确认候选。"
+      "document_status": "human_reviewed_structure",
+      "notes": "高校学园使用 Wiki 正文；P05、P06 已完成地区结构级视频校订，P07 使用 Wiki 黑核回收正文。逐句讨伐对白仍保留为待校订缺口。"
     },
     {
       "id": "story-main-01-academy-regional-curated-v0.1",
@@ -367,16 +367,16 @@
       "title": "正轨的箱庭：中央城区讨伐视频证据 v0.1",
       "file_path": "knowledge/story/curated/regions/正轨的箱庭_中央城区_讨伐视频证据_v0.1.md",
       "source_id": "SRC-BILI-BV17M4Y1W7RR",
-      "document_status": "partially_human_confirmed",
-      "notes": "P06 中央城区证据；丽的身份与分支定位已人工确认，其余对白、职责、敌人和汇合点待校订。"
+      "document_status": "human_reviewed_structure",
+      "notes": "P06 中央城区结构已完成全片审核；丽与黄金伞关系、黑门消失及约 19:50–20:00 汇合边界已确认，逐句对白与完整因果仍待补充。"
     },
     {
       "id": "story-main-01-p05-regional-boundary-evidence-v0.1",
-      "title": "正轨的箱庭：P05 地区边界候选 v0.1",
+      "title": "正轨的箱庭：P05 地区讨伐结构 v0.1",
       "file_path": "knowledge/story/curated/regions/正轨的箱庭_P05_地区边界候选_v0.1.md",
       "source_id": "SRC-BILI-BV17M4Y1W7RR",
-      "document_status": "pending_human_confirmation",
-      "notes": "将 P05 按场景分为东方古街入口、设施研究、轨道仓储及水岸港口候选段，避免整集误标为东方古街。"
+      "document_status": "human_reviewed_structure",
+      "notes": "P05 已完成全片地区结构审核，确认高校学园、东方古街、研究所、海湾侧城、旧城区、港湾区及中央庭公共过场的顺序和边界；逐句对白仍待补充。"
     },
     {
       "id": "story-main-01-p07-black-core-recovery-evidence-v0.1",
