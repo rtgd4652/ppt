@@ -12,7 +12,7 @@ implementation_status: "not_started"
 art_status: "missing"
 narrative_status: "partial_source_only"
 test_status: "not_tested"
-last_reviewed: "2026-08-09"
+last_reviewed: "2026-08-10"
 ---
 
 # 丽 1.0 角色状态档案
@@ -38,7 +38,7 @@ last_reviewed: "2026-08-09"
 - [丽 Mod Ready 摘要](../../mod_ready/characters/丽.mod.md)：由 Clean 资料机械整理的转化摘要，不代表职业或机制已经批准。
 - [丽标准角色档案草案](../li_character_v0.1.md)：已建立灾后与星际时代转化边界，状态为待人工审核。
 - [雯梓与丽角色事实审核记录](../../curated/reviews/wenzi_li_character_fact_review_v1.0.md)：已将事实、路线、关系与转化边界拆分为可逐项裁定的审核项。
-- [丽灰机 Wiki 补充资料审核](../../curated/reviews/li_wiki_supplement_review_v1.0.md)：登记基础档案、财团与慈善、机甲企业及皇室血统表述，等待独立人工审核。
+- [丽灰机 Wiki 补充资料审核](../../curated/reviews/li_wiki_supplement_review_v1.0.md)：基础档案、财团、慈善与机甲企业资料已获批准；缺乏交叉证据的争议身份修饰语已从项目设定层排除。
 - 项目人工确认：丽作为 1.0 第十名神器使。
 
 独立角色来源链已经建立，但自动采集事实与标准档案草案仍需人工校订和批准。
@@ -77,5 +77,5 @@ last_reviewed: "2026-08-09"
 
 - 自动采集的神器、能力、经历、关系与人格资料已经完成 `LFR-001` 至 `LFR-007` 全部人工核验。
 - 标准角色档案已经批准；最低时间连续性仍待独立审核。
-- Wiki 补充资料 `LWS-001` 至 `LWS-005` 尚待人工审核，不影响已批准事实，但决定后续档案能否扩充。
+- Wiki 补充资料 `LWS-001` 至 `LWS-004` 已获人工批准，`LWS-005` 已按用户决定排除；补充资料审核阻塞已关闭。
 - 领袖职业、核心机制、视觉方向与实现均未批准。
