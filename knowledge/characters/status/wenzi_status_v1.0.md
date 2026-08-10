@@ -9,9 +9,9 @@ mod_ready_status: "complete"
 character_bible_status: "complete"
 implementation_status: "not_started"
 art_status: "missing"
-narrative_status: "partial"
+narrative_status: "minimum_continuity_approved"
 test_status: "not_tested"
-last_reviewed: "2026-08-09"
+last_reviewed: "2026-08-10"
 ---
 
 # 雯梓 1.0 角色状态档案
@@ -74,11 +74,13 @@ last_reviewed: "2026-08-09"
 - [x] 完成 Mod Ready 摘要。
 - [x] 完成东方古街地区剧情与黑核回收证据同步。
 - [x] 人工校订 Clean 资料并批准标准角色档案草案。
-- 建立原作视觉锚点与角色风格边界。
-- 批准领袖职业与一个核心机制。
-- 完成白夜馆接入、唯一招募、本地化、立绘和专项测试。
+- [x] 批准轮回结束至 Stellaris 开局的最低时间连续性。
+- [ ] 建立原作视觉锚点与角色风格边界。
+- [ ] 批准领袖职业与一个核心机制。
+- [ ] 完成白夜馆接入、唯一招募、本地化、立绘和专项测试。
 
 ## 7. 当前阻塞项
 
 - Clean 资料和标准角色档案已经完成 `WFR-001` 至 `WFR-007` 全部人工审核。
+- 最低时间连续性已经完成 `CCR-001`、`WCR-001` 与 `WCR-002` 人工审核；精确年龄、寿命机制、正式官职和具体星际工程经历继续保持开放。
 - 领袖职业、一个核心机制和视觉方向仍未批准。
