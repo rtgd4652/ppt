@@ -96,6 +96,24 @@ class ModChecks(unittest.TestCase):
         self.write("mod/common/scripted_triggers/test.txt", 'aemusa_ms_test = { check_variable = { which = aemusa_ms_country_pending_index value = 0 } }')
         self.assertEqual(self.codes(), set())
 
+    def test_zero_duration_edict_crash_is_rejected(self):
+        # 同时拦截直接数值与本文件常量，错误位置必须指向法令的 length 行。
+        for duration in ("0", "0.0", "@instant", "@alias"):
+            with self.subTest(duration=duration):
+                self.write("mod/common/edicts/test.txt", f"@instant = 0\n@alias = @instant\nfixture = {{\n length = {duration}\n}}")
+                errors = check(self.root)["errors"]
+                self.assertEqual(len(errors), 1)
+                self.assertEqual(errors[0]["code"], "zero_duration_edict")
+                self.assertEqual(errors[0]["line"], 4)
+
+    def test_edict_duration_guard_stays_within_its_scope(self):
+        # 常规时长、永久法令和非时长字段不受影响；不把未解析常量当成零。
+        for duration in ("1", "-1", "@perpetual", "@external", "@cycle"):
+            with self.subTest(duration=duration):
+                self.write("mod/common/edicts/test.txt", f"@perpetual = -1\n@cycle = @cycle\nfixture = {{ length = {duration} modifier = {{ length = 0 }} }}")
+                self.write("mod/common/scripted_effects/test.txt", "fixture_effect = { length = 0 }")
+                self.assertEqual(self.codes(), set())
+
 
 class WorkspaceSnapshot(unittest.TestCase):
     def test_binary_modified_new_and_deleted_files_are_preserved(self):

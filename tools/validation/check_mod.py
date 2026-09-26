@@ -180,7 +180,20 @@ def check(root, game_dir=None):
 
     events, namespaces, interfaces, sprites = {}, set(), {}, set()
     for file, entries in scripts.items():
+        local_constants = {e.key: e.value for e in entries if e.key.startswith("@") and isinstance(e.value, str)}
         for entry in entries:
+            # 4.5.1 实测：激活零时长法令后打开内阁会触发整数除零崩溃。
+            if file.startswith("mod/common/edicts/") and isinstance(entry.value, list):
+                duration = next((e for e in entry.value if e.key == "length" and isinstance(e.value, str)), None)
+                if duration:
+                    value, seen = duration.value, set()
+                    # 只解析本文件常量；循环或外部常量交由引擎语义验收，不猜测数值。
+                    while value in local_constants and value not in seen:
+                        seen.add(value)
+                        value = local_constants[value]
+                    if re.fullmatch(r"[+-]?0+(?:\.0+)?", value):
+                        issue("zero_duration_edict", file, duration.line,
+                              f"法令 {entry.key} 的 length 为 0，会触发 4.5.1 内阁崩溃；即时入口应保留至少 1 天有效期")
             if entry.key == "namespace" and isinstance(entry.value, str):
                 namespaces.add(entry.value)
             if file.startswith("mod/events/") and entry.key.endswith("_event") and isinstance(entry.value, list):

@@ -1,7 +1,7 @@
 # 一次性法令：支付凝聚力后招募一名 11 级官员领袖。
 
 edict_summon_stellar_administrator = {
-    length = 0 # 0 表示即时生效、不会持续占用法令栏。
+    length = 1 # 效果点击时立即执行；保留一天有效期，避免 4.5.1 在激活零时长法令后打开内阁时崩溃。
     icon = "GFX_edict_type_policy" # 临时使用原版占位图标，避免自定义图标 sprite 未注册时崩溃。
 
     resources = {
@@ -42,7 +42,7 @@ edict_summon_stellar_administrator = {
 
 # 白夜馆入口法令：打开统一通讯菜单，后续五名领袖也从这里接入。
 edict_contact_white_night_pavilion = {
-    length = 0 # 即时打开白夜馆通讯，不产生持续效果。
+    length = 1 # 立即打开通讯，一天后可再次启用；实测激活零时长法令后打开 4.5.1 内阁会崩溃。
     icon = "GFX_edict_type_policy" # 临时使用原版占位图标，缺失图标后续再补。
 
     potential = {
@@ -65,7 +65,7 @@ edict_contact_white_night_pavilion = {
 
 # 通讯法令：打开爱缪莎的职责选择对话。
 edict_contact_aemusa = {
-    length = 0 # 即时打开对话，不产生持续效果。
+    length = 1 # 立即打开对话，一天后可再次启用；避免零时长法令的内阁崩溃。
     icon = "GFX_edict_type_policy" # 临时使用原版占位图标，避免自定义图标 sprite 未注册时崩溃。
 
     potential = {
@@ -86,7 +86,7 @@ edict_contact_aemusa = {
 
 # 临时测试法令：给玩家快速灌入测试资源、永久超频修正，并把神器使领袖补到 30 级。
 edict_aemusa_debug_overdrive = {
-	length = 0 # 即时触发，不占用法令栏；永久效果通过国家修正保存。
+	length = 1 # 立即触发，一天后法令到期；永久效果通过国家修正保存，避免零时长崩溃。
 	icon = "GFX_edict_type_policy" # 临时使用原版占位图标，避免自定义图标 sprite 未注册时崩溃。
 
 	potential = {
@@ -146,7 +146,7 @@ edict_aemusa_debug_overdrive = {
 
 # 科技档案法令：旧版兼容入口已停用，避免绕过爱缪莎飞升解锁科技线的规则。
 edict_artifact_research_archive = {
-	length = 0
+	length = 1 # 停用入口也保留安全时长，防止未来重新启用时触发零时长崩溃。
 	icon = "GFX_edict_type_policy"
 	resources = {
 		category = edicts
