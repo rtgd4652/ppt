@@ -311,25 +311,44 @@ country_event = {
 		aemusa_ms_country_can_enter_prologue = yes
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_00_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_00_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_00_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_00_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_00_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_00_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.200.continue
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_00_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_00_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_00_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_00_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_00_done
-		}
-		country_event = {
-			id = aemusa_ms.210
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_00_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_00_done
+			}
+			country_event = {
+				id = aemusa_ms.210
+			}
 		}
 	}
 }
@@ -342,46 +361,83 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_prologue = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_pro_00_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_pro_10_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_pro_00_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_pro_10_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.210.uncertain
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
-		}
-		country_event = {
-			id = aemusa_ms.220
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+			}
+			country_event = {
+				id = aemusa_ms.220
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.210.oracle
-		set_country_flag = aemusa_ms_country_prologue_oracle_demand_recorded
-		set_country_flag = aemusa_ms_country_responsibility_disagreement_recorded
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
-		}
-		country_event = {
-			id = aemusa_ms.220
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+				}
+			}
+			set_country_flag = aemusa_ms_country_prologue_oracle_demand_recorded
+			set_country_flag = aemusa_ms_country_responsibility_disagreement_recorded
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+			}
+			country_event = {
+				id = aemusa_ms.220
+			}
 		}
 	}
 }
@@ -394,31 +450,55 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_prologue = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_pro_10_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_pro_20_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_20_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_pro_10_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_pro_20_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_20_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.220.record
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_20_done
-		}
-		country_event = {
-			id = aemusa_ms.230
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_20_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_20_done
+			}
+			country_event = {
+				id = aemusa_ms.230
+			}
 		}
 	}
 }
@@ -431,52 +511,89 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_prologue = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_pro_20_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_pro_30_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_pro_20_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_pro_30_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.230.confidential
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_civilization_information_policy_index
-			VALUE = 1
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
-		}
-		country_event = {
-			id = aemusa_ms.290
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_civilization_information_policy_index
+				VALUE = 1
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
+			}
+			country_event = {
+				id = aemusa_ms.290
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.230.disclosure
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_civilization_information_policy_index
-			VALUE = 2
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
-		}
-		country_event = {
-			id = aemusa_ms.290
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_civilization_information_policy_index
+				VALUE = 2
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
+			}
+			country_event = {
+				id = aemusa_ms.290
+			}
 		}
 	}
 }
@@ -489,30 +606,54 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_prologue = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_pro_30_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_pro_90_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_90_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_90_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_90_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_90_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_90_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_pro_30_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_pro_90_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_90_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_90_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_90_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_90_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_90_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.290.finish
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_90_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_90_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_90_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_90_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_90_done
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_90_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_90_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_90_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_90_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_90_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_90_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_90_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_90_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_90_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_90_done
+			}
+			aemusa_ms_settle_prologue_once = yes
 		}
-		aemusa_ms_settle_prologue_once = yes
 	}
 }
 
@@ -527,25 +668,44 @@ country_event = {
 		aemusa_ms_country_can_enter_chapter_01 = yes
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_00_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_00_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_00_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_00_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_00_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_00_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.300.continue
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_00_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_00_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_00_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_00_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_00_done
-		}
-		country_event = {
-			id = aemusa_ms.310
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_01_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_00_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_00_done
+			}
+			country_event = {
+				id = aemusa_ms.310
+			}
 		}
 	}
 }
@@ -558,52 +718,89 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_01 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_01_00_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_01_10_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_01_00_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_01_10_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.310.cautious
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_civilization_action_tempo_index
-			VALUE = 1
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
-		}
-		country_event = {
-			id = aemusa_ms.320
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_civilization_action_tempo_index
+				VALUE = 1
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
+			}
+			country_event = {
+				id = aemusa_ms.320
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.310.limited
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_civilization_action_tempo_index
-			VALUE = 2
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
-		}
-		country_event = {
-			id = aemusa_ms.320
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_civilization_action_tempo_index
+				VALUE = 2
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
+			}
+			country_event = {
+				id = aemusa_ms.320
+			}
 		}
 	}
 }
@@ -616,52 +813,89 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_01 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_01_10_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_01_20_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_01_10_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_01_20_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.320.internal
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_civilization_responsibility_radius_index
-			VALUE = 1
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
-		}
-		country_event = {
-			id = aemusa_ms.390
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_civilization_responsibility_radius_index
+				VALUE = 1
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
+			}
+			country_event = {
+				id = aemusa_ms.390
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.320.expanded
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_civilization_responsibility_radius_index
-			VALUE = 2
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
-		}
-		country_event = {
-			id = aemusa_ms.390
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_civilization_responsibility_radius_index
+				VALUE = 2
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
+			}
+			country_event = {
+				id = aemusa_ms.390
+			}
 		}
 	}
 }
@@ -674,30 +908,54 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_01 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_01_20_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_01_90_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_90_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_90_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_90_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_90_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_90_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_01_20_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_01_90_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_90_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_90_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_90_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_90_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_90_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.390.finish
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_90_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_90_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_90_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_90_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_90_done
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_01_90_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_90_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_90_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_90_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_90_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_01_90_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_90_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_90_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_90_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_90_done
+			}
+			aemusa_ms_settle_chapter_01_once = yes
 		}
-		aemusa_ms_settle_chapter_01_once = yes
 	}
 }
 
@@ -712,25 +970,44 @@ country_event = {
 		aemusa_ms_country_can_enter_chapter_02 = yes
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_00_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_00_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_00_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_00_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_00_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_02_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_00_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.400.continue
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_00_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_00_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_00_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_00_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_00_done
-		}
-		country_event = {
-			id = aemusa_ms.410
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_02_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_00_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_02_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_00_done
+			}
+			country_event = {
+				id = aemusa_ms.410
+			}
 		}
 	}
 }
@@ -743,31 +1020,55 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_02 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_02_00_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_02_10_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_10_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_02_00_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_02_10_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_02_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_10_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.410.continue
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_10_done
-		}
-		country_event = {
-			id = aemusa_ms.420
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_02_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_10_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_02_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_10_done
+			}
+			country_event = {
+				id = aemusa_ms.420
+			}
 		}
 	}
 }
@@ -780,53 +1081,90 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_02 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_02_10_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_02_20_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_02_10_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_02_20_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.420.optimum
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_first_responsibility_application_index
-			VALUE = 1
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
-		}
-		country_event = {
-			id = aemusa_ms.430
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_first_responsibility_application_index
+				VALUE = 1
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
+			}
+			country_event = {
+				id = aemusa_ms.430
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.420.external
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_first_responsibility_application_index
-			VALUE = 2
-		}
-		set_country_flag = aemusa_ms_country_responsibility_sacrifice_recorded
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
-		}
-		country_event = {
-			id = aemusa_ms.430
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_first_responsibility_application_index
+				VALUE = 2
+			}
+			set_country_flag = aemusa_ms_country_responsibility_sacrifice_recorded
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
+			}
+			country_event = {
+				id = aemusa_ms.430
+			}
 		}
 	}
 }
@@ -839,30 +1177,54 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_02 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_02_20_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_02_30_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_30_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_30_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_30_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_30_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_30_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_02_20_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_02_30_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_02_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_30_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.430.finish
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_30_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_30_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_30_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_30_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_30_done
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_02_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_30_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_02_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_30_done
+			}
+			aemusa_ms_settle_chapter_02_once = yes
 		}
-		aemusa_ms_settle_chapter_02_once = yes
 	}
 }
 
@@ -877,25 +1239,44 @@ country_event = {
 		aemusa_ms_country_can_enter_chapter_03 = yes
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_00_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_00_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_00_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_00_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_00_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_00_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.500.continue
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_00_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_00_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_00_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_00_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_00_done
-		}
-		country_event = {
-			id = aemusa_ms.510
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_00_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_00_done
+			}
+			country_event = {
+				id = aemusa_ms.510
+			}
 		}
 	}
 }
@@ -908,31 +1289,55 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_03 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_03_00_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_03_10_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_10_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_03_00_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_10_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_10_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.510.continue
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_10_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_10_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_10_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_10_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_10_done
-		}
-		country_event = {
-			id = aemusa_ms.520
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_10_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_10_done
+			}
+			country_event = {
+				id = aemusa_ms.520
+			}
 		}
 	}
 }
@@ -945,84 +1350,134 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_03 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_03_10_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_03_20_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_03_10_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_20_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.520.adopt
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_first_intervention_decision_index
-			VALUE = 1
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
-		}
-		country_event = {
-			id = aemusa_ms.530
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_first_intervention_decision_index
+				VALUE = 1
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+			}
+			country_event = {
+				id = aemusa_ms.530
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.520.narrow
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_first_intervention_decision_index
-			VALUE = 2
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
-		}
-		country_event = {
-			id = aemusa_ms.530
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_first_intervention_decision_index
+				VALUE = 2
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+			}
+			country_event = {
+				id = aemusa_ms.530
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.520.reject
-		aemusa_ms_record_initial_choice_once = {
-			VARIABLE = aemusa_ms_country_first_intervention_decision_index
-			VALUE = 3
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
-		}
-		# 拒绝路线仍为 AED-03-30 留下明确的“未执行”唯一结算，避免伪造现实贡献。
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
-		}
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
-		}
-		country_event = {
-			id = aemusa_ms.540
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+				}
+			}
+			aemusa_ms_record_initial_choice_once = {
+				VARIABLE = aemusa_ms_country_first_intervention_decision_index
+				VALUE = 3
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+			}
+			# 拒绝路线仍为 AED-03-30 留下明确的“未执行”唯一结算，避免伪造现实贡献。
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+			}
+			country_event = {
+				id = aemusa_ms.540
+			}
 		}
 	}
 }
@@ -1035,33 +1490,57 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_03 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_03_20_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_03_30_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_03_20_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_30_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.530.execute
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
-		}
-		set_country_flag = aemusa_ms_country_first_intervention_operation_pending
-		country_event = {
-			id = aemusa_ms.540
-			days = 30
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+			}
+			set_country_flag = aemusa_ms_country_first_intervention_operation_pending
+			country_event = {
+				id = aemusa_ms.540
+				days = 30
+			}
 		}
 	}
 }
@@ -1086,47 +1565,84 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_03 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_03_30_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_03_40_settled
 		}
 	}
 	immediate = {
-		remove_country_flag = aemusa_ms_country_first_intervention_operation_pending
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_03_30_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_40_settled
+				}
+			}
+			remove_country_flag = aemusa_ms_country_first_intervention_operation_pending
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.540.disclose
-		set_country_flag = aemusa_ms_country_first_intervention_secondary_cost_disclosed
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
-		}
-		country_event = {
-			id = aemusa_ms.550
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
+				}
+			}
+			set_country_flag = aemusa_ms_country_first_intervention_secondary_cost_disclosed
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
+			}
+			country_event = {
+				id = aemusa_ms.550
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.540.minimize
-		set_country_flag = aemusa_ms_country_responsibility_disagreement_recorded
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
-		}
-		country_event = {
-			id = aemusa_ms.550
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
+				}
+			}
+			set_country_flag = aemusa_ms_country_responsibility_disagreement_recorded
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
+			}
+			country_event = {
+				id = aemusa_ms.550
+			}
 		}
 	}
 }
@@ -1139,47 +1655,84 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_03 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_03_40_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_03_50_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_03_40_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_50_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.550.correct
-		set_country_flag = aemusa_ms_country_first_intervention_attribution_corrected
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
-		}
-		country_event = {
-			id = aemusa_ms.590
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
+				}
+			}
+			set_country_flag = aemusa_ms_country_first_intervention_attribution_corrected
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
+			}
+			country_event = {
+				id = aemusa_ms.590
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.550.oracle
-		set_country_flag = aemusa_ms_country_first_intervention_oracle_narrative_recorded
-		set_country_flag = aemusa_ms_country_responsibility_disagreement_recorded
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
-		}
-		country_event = {
-			id = aemusa_ms.590
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
+				}
+			}
+			set_country_flag = aemusa_ms_country_first_intervention_oracle_narrative_recorded
+			set_country_flag = aemusa_ms_country_responsibility_disagreement_recorded
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
+			}
+			country_event = {
+				id = aemusa_ms.590
+			}
 		}
 	}
 }
@@ -1192,29 +1745,53 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
+		aemusa_ms_country_can_enter_chapter_03 = yes
 		has_country_flag = aemusa_ms_country_cluster_aed_03_50_settled
 		NOT = {
 			has_country_flag = aemusa_ms_country_cluster_aed_03_90_settled
 		}
 	}
 	immediate = {
-		aemusa_ms_begin_story_cluster = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_90_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_90_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_90_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_90_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_90_done
+		# 写入前再次核对章节与前置，强制打开事件也不能补写未来事实。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				has_country_flag = aemusa_ms_country_cluster_aed_03_50_settled
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_90_settled
+				}
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_90_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_90_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_90_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_90_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_90_done
+			}
 		}
 	}
 	option = {
 		name = aemusa_ms.590.finish
-		aemusa_ms_finalize_story_cluster_once = {
-			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_90_started
-			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_90_in_progress
-			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_90_completed
-			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_90_settled
-			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_90_done
+		# 整组选项副作用只执行一次；旧窗口只能关闭，不能追加历史或重新排队。
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				aemusa_ms_country_can_complete_story_cluster = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_03_90_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_90_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_90_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_90_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_90_done
+				}
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_03_90_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_90_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_90_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_90_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_90_done
+			}
+			aemusa_ms_settle_chapter_03_once = yes
 		}
-		aemusa_ms_settle_chapter_03_once = yes
 	}
 }

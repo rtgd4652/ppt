@@ -332,3 +332,9 @@ AWP-02 已通过静态门禁，运行时状态仍为 `pending`。必须完成 `r
 - AWP-03、04 与 06 的额外适配测试见 [专项测试计划](../../reports/aemusa_main_story_adapter_test_plan_v1.0.md)，均未执行。
 - 资产依赖见 [生产清单](../art/ASSET_PRODUCTION_PLAN.md)；旧载体不会因本清单恢复。
 - 机器检查入口为 `python -B tools/validation/check_mod.py`，它不能自动变更任何运行验收状态。
+
+## 19. 2026-09-26 AWP-02 开发续接
+
+用户要求继续 Mod 开发后，在 AWP-02 范围内修复旧事件窗口的重复选择与实际写入保护：覆盖 20 个叙事事件、29 个选项。新增账本回归覆盖 192 组选择组合、强制跳章和旧等待窗口，连同原检查器测试共 18 项通过；原事件内容与状态标识保留。
+
+本机游戏已更新到 4.5.1，原目标为 4.4.3；本轮目标版本尚待用户答复。当前仍为 `implemented_static_pass_runtime_pending`，完整证据、版本差异及追加的运行测试步骤见 [AWP-02 验证报告](../../reports/aemusa_main_story_awp_02_validation_report.md)。
