@@ -10,6 +10,21 @@ on_leader_level_up = {
 on_game_start_country = {
 	events = {
 		aemusa_origin.1 # 为神器使起源的首都放置专属建筑和区划。
+		aemusa_ms.1 # 为玩家控制的神器使国家初始化爱缪莎 1.0 主线路线账本。
+	}
+}
+
+# 记录玩家完成的星系调查；根作用域为实际取得调查状态的国家。
+on_system_survey = {
+	events = {
+		aemusa_ms.110 # 只写入“真实银河参与”事实，不自动开始第一章。
+	}
+}
+
+# 记录玩家实际启动的殖民行动；根作用域为被殖民行星，由事件读取其拥有者。
+on_colonization_started = {
+	events = {
+		aemusa_ms.111 # 与调查适配器共同构成第一章的多来源资格。
 	}
 }
 

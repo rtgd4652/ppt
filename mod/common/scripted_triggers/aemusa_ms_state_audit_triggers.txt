@@ -1,0 +1,457 @@
+# 爱缪莎 1.0 主线只读状态审计。
+# 本文件只读取 flag 与 variable，不写入、不修复，也不推进任何剧情。
+
+# 检查单个事件簇的四阶段事实与独立结算保护是否一致。
+# 调用者必须传入扩展登记表中的五个显式 key，禁止在运行时拼接名称。
+aemusa_ms_cluster_state_is_consistent = {
+	NOR = {
+		# 进入进行中阶段前必须已经记录开始事实。
+		AND = {
+			has_country_flag = $IN_PROGRESS_FLAG$
+			NOT = { has_country_flag = $STARTED_FLAG$ }
+		}
+		# 完成后不得仍处于进行中阶段，并且必须保留开始事实。
+		AND = {
+			has_country_flag = $COMPLETED_FLAG$
+			OR = {
+				has_country_flag = $IN_PROGRESS_FLAG$
+				NOT = { has_country_flag = $STARTED_FLAG$ }
+			}
+		}
+		# 结算事实必须同时拥有完成事实和独立结算保护。
+		AND = {
+			has_country_flag = $SETTLED_FLAG$
+			OR = {
+				NOT = { has_country_flag = $COMPLETED_FLAG$ }
+				NOT = { has_country_flag = $SETTLEMENT_FLAG$ }
+			}
+		}
+		# 结算保护存在时必须已经完成，避免保护标记被提前占用。
+		AND = {
+			has_country_flag = $SETTLEMENT_FLAG$
+			NOT = { has_country_flag = $COMPLETED_FLAG$ }
+		}
+	}
+}
+
+# 原版天灾路线枚举只允许未设置或 0 至 4。
+aemusa_ms_country_has_valid_vanilla_crisis_route_index = {
+	OR = {
+		NOT = { is_variable_set = aemusa_ms_country_vanilla_crisis_route_index }
+		check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 0 }
+		check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 1 }
+		check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 2 }
+		check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 3 }
+		check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 4 }
+	}
+}
+
+# 章节索引允许未设置或 0 至 18；对应序章、第 01-16 章与尾声。
+aemusa_ms_country_has_valid_chapter_index = {
+	OR = {
+		NOT = { is_variable_set = aemusa_ms_country_chapter_index }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 0 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 1 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 2 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 3 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 4 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 5 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 6 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 7 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 8 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 9 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 10 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 11 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 12 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 13 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 14 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 15 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 16 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 17 }
+		check_variable = { which = aemusa_ms_country_chapter_index value = 18 }
+	}
+}
+
+# 幕索引允许未设置或 0 至 6。
+aemusa_ms_country_has_valid_act_index = {
+	OR = {
+		NOT = { is_variable_set = aemusa_ms_country_act_index }
+		check_variable = { which = aemusa_ms_country_act_index value = 0 }
+		check_variable = { which = aemusa_ms_country_act_index value = 1 }
+		check_variable = { which = aemusa_ms_country_act_index value = 2 }
+		check_variable = { which = aemusa_ms_country_act_index value = 3 }
+		check_variable = { which = aemusa_ms_country_act_index value = 4 }
+		check_variable = { which = aemusa_ms_country_act_index value = 5 }
+		check_variable = { which = aemusa_ms_country_act_index value = 6 }
+	}
+}
+
+# 专属危机主状态复用已批准的 ASM 十档编号，禁止写入其他临时数值。
+aemusa_ms_country_has_valid_exclusive_crisis_phase_index = {
+	OR = {
+		NOT = { is_variable_set = aemusa_ms_crisis_exclusive_phase_index }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 0 }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 10 }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 20 }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 30 }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 40 }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 50 }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 60 }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 70 }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 80 }
+		check_variable = { which = aemusa_ms_crisis_exclusive_phase_index value = 90 }
+	}
+}
+
+# 尾声语气允许未设置或 0 至 3；非零语气只能属于完整成功路线。
+aemusa_ms_country_has_valid_epilogue_tone_index = {
+	OR = {
+		NOT = { is_variable_set = aemusa_ms_country_epilogue_tone_index }
+		AND = {
+			check_variable = { which = aemusa_ms_country_epilogue_tone_index value = 0 }
+			NOT = { has_country_flag = aemusa_ms_country_epilogue_settled }
+		}
+		AND = {
+			OR = {
+				check_variable = { which = aemusa_ms_country_epilogue_tone_index value = 1 }
+				check_variable = { which = aemusa_ms_country_epilogue_tone_index value = 2 }
+				check_variable = { which = aemusa_ms_country_epilogue_tone_index value = 3 }
+			}
+			has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+		}
+	}
+}
+
+# 失落帝国战争历史必须按“开始→完成→结算”单向成立。
+aemusa_ms_country_has_valid_fallen_empire_war_history = {
+	NOR = {
+		AND = {
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+			NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_started }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_settled
+			NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed }
+		}
+	}
+}
+
+# 原版天灾只能锁定一条枚举路线，并按“锁定→开始→完成→结算”推进。
+aemusa_ms_country_has_valid_vanilla_crisis_history = {
+	aemusa_ms_country_has_valid_vanilla_crisis_route_index = yes
+	NOR = {
+		AND = {
+			has_country_flag = aemusa_ms_country_history_vanilla_crisis_locked
+			NOT = {
+				OR = {
+					check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 1 }
+					check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 2 }
+					check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 3 }
+					check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 4 }
+				}
+			}
+		}
+		AND = {
+			OR = {
+				check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 1 }
+				check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 2 }
+				check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 3 }
+				check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 4 }
+			}
+			NOT = { has_country_flag = aemusa_ms_country_history_vanilla_crisis_locked }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+			NOT = { has_country_flag = aemusa_ms_country_history_vanilla_crisis_locked }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_history_vanilla_crisis_completed
+			NOT = { has_country_flag = aemusa_ms_country_history_vanilla_crisis_started }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+			NOT = { has_country_flag = aemusa_ms_country_history_vanilla_crisis_completed }
+		}
+	}
+}
+
+# 专属危机的胜利和不可逆失败互斥；已结算胜利必须有真实完成事实。
+aemusa_ms_country_has_valid_exclusive_crisis_history = {
+	NOR = {
+		AND = {
+			has_country_flag = aemusa_ms_crisis_exclusive_completed
+			NOT = { has_country_flag = aemusa_ms_crisis_exclusive_initialized }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_crisis_exclusive_settled
+			NOT = { has_country_flag = aemusa_ms_crisis_exclusive_completed }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_crisis_exclusive_irreversible_failure
+			OR = {
+				has_country_flag = aemusa_ms_crisis_exclusive_completed
+				has_country_flag = aemusa_ms_crisis_exclusive_settled
+			}
+		}
+	}
+}
+
+# 已公开的弱点资料必须先经过验证；巨构占领不会删除既有验证资料。
+aemusa_ms_country_has_valid_crisis_knowledge = {
+	NOR = {
+		AND = {
+			has_country_flag = aemusa_ms_crisis_weakness_published
+			NOT = { has_country_flag = aemusa_ms_crisis_weakness_verified }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_loss_ledger_locked_for_ending
+			NOT = { has_country_flag = aemusa_ms_crisis_exclusive_settled }
+		}
+		# 已完成的责任修复必须保留“曾经需要修复”的历史，不能抹去裂痕来源。
+		AND = {
+			has_country_flag = aemusa_ms_country_responsibility_repair_completed
+			NOT = { has_country_flag = aemusa_ms_country_responsibility_repair_required }
+		}
+	}
+}
+
+# 世界差异与玩家连续在同一场终局互认中成立，任何一项都不能单独出现。
+aemusa_ms_country_has_valid_truth_state = {
+	NOR = {
+		AND = {
+			has_country_flag = aemusa_ms_truth_world_difference_mutually_confirmed
+			NOT = { has_country_flag = aemusa_ms_truth_player_continuity_mutually_confirmed }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_truth_player_continuity_mutually_confirmed
+			NOT = { has_country_flag = aemusa_ms_truth_world_difference_mutually_confirmed }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_truth_world_difference_mutually_confirmed
+			NOT = { has_country_flag = aemusa_ms_crisis_exclusive_settled }
+		}
+	}
+}
+
+# 双方决定总体枚举允许 0 至 5，且必须与四个独立来源事实逐项对应。
+aemusa_ms_country_has_valid_joint_decision_state = {
+	OR = {
+		AND = {
+			NOT = { is_variable_set = aemusa_ms_decision_joint_state_index }
+			NOT = { has_country_flag = aemusa_ms_decision_player_authorized }
+			NOT = { has_country_flag = aemusa_ms_decision_player_refused }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_accepted }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_refused }
+		}
+		AND = {
+			check_variable = { which = aemusa_ms_decision_joint_state_index value = 0 }
+			NOT = { has_country_flag = aemusa_ms_decision_player_authorized }
+			NOT = { has_country_flag = aemusa_ms_decision_player_refused }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_accepted }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_refused }
+		}
+		AND = {
+			check_variable = { which = aemusa_ms_decision_joint_state_index value = 1 }
+			NOT = { has_country_flag = aemusa_ms_decision_player_authorized }
+			NOT = { has_country_flag = aemusa_ms_decision_player_refused }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_accepted }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_refused }
+		}
+		AND = {
+			check_variable = { which = aemusa_ms_decision_joint_state_index value = 2 }
+			has_country_flag = aemusa_ms_decision_player_refused
+			NOT = { has_country_flag = aemusa_ms_decision_player_authorized }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_accepted }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_refused }
+		}
+		AND = {
+			check_variable = { which = aemusa_ms_decision_joint_state_index value = 3 }
+			has_country_flag = aemusa_ms_decision_player_authorized
+			NOT = { has_country_flag = aemusa_ms_decision_player_refused }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_accepted }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_refused }
+		}
+		AND = {
+			check_variable = { which = aemusa_ms_decision_joint_state_index value = 4 }
+			has_country_flag = aemusa_ms_decision_player_authorized
+			has_country_flag = aemusa_ms_decision_aemusa_refused
+			NOT = { has_country_flag = aemusa_ms_decision_player_refused }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_accepted }
+		}
+		AND = {
+			check_variable = { which = aemusa_ms_decision_joint_state_index value = 5 }
+			has_country_flag = aemusa_ms_decision_player_authorized
+			has_country_flag = aemusa_ms_decision_aemusa_accepted
+			NOT = { has_country_flag = aemusa_ms_decision_player_refused }
+			NOT = { has_country_flag = aemusa_ms_decision_aemusa_refused }
+		}
+	}
+}
+
+# 汇总资格只能在五项独立资格全部成立后出现。
+aemusa_ms_country_has_valid_final_gate_state = {
+	NOR = {
+		AND = {
+			has_country_flag = aemusa_ms_country_final_gate_history_complete
+			NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_settled }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_final_gate_crises_complete
+			OR = {
+				NOT = { has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled }
+				NOT = { has_country_flag = aemusa_ms_crisis_exclusive_settled }
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_final_gate_truth_complete
+			OR = {
+				NOT = { has_country_flag = aemusa_ms_truth_world_difference_mutually_confirmed }
+				NOT = { has_country_flag = aemusa_ms_truth_player_continuity_mutually_confirmed }
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_final_gate_responsibility_complete
+			NOT = { has_country_flag = aemusa_ms_country_responsibility_final_review_completed }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_final_gate_all_met
+			OR = {
+				NOT = { has_country_flag = aemusa_ms_country_final_gate_level_30_met }
+				NOT = { has_country_flag = aemusa_ms_country_final_gate_history_complete }
+				NOT = { has_country_flag = aemusa_ms_country_final_gate_crises_complete }
+				NOT = { has_country_flag = aemusa_ms_country_final_gate_truth_complete }
+				NOT = { has_country_flag = aemusa_ms_country_final_gate_responsibility_complete }
+			}
+		}
+	}
+}
+
+# 三种正式结局互斥，并分别要求其真实决定来源。
+aemusa_ms_country_has_valid_ending_state = {
+	NOR = {
+		AND = {
+			has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+			has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+			has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+			has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+			NOT = { has_country_flag = aemusa_ms_decision_player_refused }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+			OR = {
+				NOT = { has_country_flag = aemusa_ms_decision_player_authorized }
+				NOT = { has_country_flag = aemusa_ms_decision_aemusa_refused }
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+			OR = {
+				NOT = { has_country_flag = aemusa_ms_country_final_gate_all_met }
+				NOT = { has_country_flag = aemusa_ms_decision_player_authorized }
+				NOT = { has_country_flag = aemusa_ms_decision_aemusa_accepted }
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_fate_sovereign_authority_active
+			NOT = { has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_epilogue_settled
+			OR = {
+				NOT = { has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled }
+				NOT = { is_variable_set = aemusa_ms_country_epilogue_tone_index }
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_story_v1_complete
+			NOT = {
+				OR = {
+					has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+					has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+					has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+				}
+			}
+		}
+		# 任一正式结局都必须同步形成路线完成事实。
+		AND = {
+			OR = {
+				has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+				has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+				has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+			}
+			NOT = { has_country_flag = aemusa_ms_country_story_v1_complete }
+		}
+	}
+}
+
+# 暂停与硬冲突使用不同账本；布尔状态必须与非零原因编号一致。
+aemusa_ms_country_has_valid_pause_and_conflict_state = {
+	NOR = {
+		AND = {
+			has_country_flag = aemusa_ms_country_pause_active
+			OR = {
+				NOT = { is_variable_set = aemusa_ms_country_pause_reason_index }
+				check_variable = { which = aemusa_ms_country_pause_reason_index value = 0 }
+			}
+		}
+		AND = {
+			NOT = { has_country_flag = aemusa_ms_country_pause_active }
+			is_variable_set = aemusa_ms_country_pause_reason_index
+			check_variable = { which = aemusa_ms_country_pause_reason_index value > 0 }
+		}
+		AND = {
+			is_variable_set = aemusa_ms_country_pause_reason_index
+			NOT = {
+				OR = {
+					check_variable = { which = aemusa_ms_country_pause_reason_index value = 0 }
+					check_variable = { which = aemusa_ms_country_pause_reason_index value = 1 }
+					check_variable = { which = aemusa_ms_country_pause_reason_index value = 2 }
+					check_variable = { which = aemusa_ms_country_pause_reason_index value = 3 }
+					check_variable = { which = aemusa_ms_country_pause_reason_index value = 4 }
+					check_variable = { which = aemusa_ms_country_pause_reason_index value = 5 }
+					check_variable = { which = aemusa_ms_country_pause_reason_index value = 6 }
+					check_variable = { which = aemusa_ms_country_pause_reason_index value = 7 }
+				}
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_consistency_conflict_active
+			OR = {
+				NOT = { is_variable_set = aemusa_ms_country_consistency_conflict_index }
+				check_variable = { which = aemusa_ms_country_consistency_conflict_index value = 0 }
+			}
+		}
+		AND = {
+			NOT = { has_country_flag = aemusa_ms_country_consistency_conflict_active }
+			is_variable_set = aemusa_ms_country_consistency_conflict_index
+			check_variable = { which = aemusa_ms_country_consistency_conflict_index value > 0 }
+		}
+	}
+}
+
+# AWP-00 全线只读审计入口。它只组合已登记的不变量，不改变任何状态。
+aemusa_ms_country_state_is_consistent = {
+	aemusa_ms_country_has_valid_route_version_v1 = yes
+	aemusa_ms_country_has_valid_chapter_index = yes
+	aemusa_ms_country_has_valid_act_index = yes
+	aemusa_ms_country_has_valid_exclusive_crisis_phase_index = yes
+	aemusa_ms_country_has_valid_epilogue_tone_index = yes
+	aemusa_ms_country_has_valid_fallen_empire_war_history = yes
+	aemusa_ms_country_has_valid_vanilla_crisis_history = yes
+	aemusa_ms_country_has_valid_exclusive_crisis_history = yes
+	aemusa_ms_country_has_valid_crisis_knowledge = yes
+	aemusa_ms_country_has_valid_truth_state = yes
+	aemusa_ms_country_has_valid_joint_decision_state = yes
+	aemusa_ms_country_has_valid_final_gate_state = yes
+	aemusa_ms_country_has_valid_ending_state = yes
+	aemusa_ms_country_has_valid_pause_and_conflict_state = yes
+}

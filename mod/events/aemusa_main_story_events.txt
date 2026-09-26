@@ -1,0 +1,128 @@
+# 爱缪莎 1.0 主线最小运行骨架。
+# AWP-01 只验证初始化、只读入口与生命周期，不包含任何正式剧情正文。
+namespace = aemusa_ms
+# 新开局路线初始化；由 on_game_start_country 调用，重复触发保持幂等。
+country_event = {
+	id = aemusa_ms.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		aemusa_ms_country_can_initialize_route_v1 = yes
+	}
+	immediate = {
+		aemusa_ms_initialize_route_v1_once = yes
+	}
+}
+
+# 白夜馆只读路由器；AWP-02 编排器根据永久账本定位最近合法入口。
+country_event = {
+	id = aemusa_ms.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		aemusa_ms_country_has_nearest_legal_story_entry = yes
+	}
+	immediate = {
+		country_event = {
+			id = aemusa_ms.100
+		}
+	}
+}
+
+# 骨架状态页保留为兼容回退；正常 AWP-02 路由不会再直接打开本页。
+country_event = {
+	id = aemusa_ms.3
+	title = aemusa_ms.3.title
+	desc = aemusa_ms.3.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	option = {
+		name = aemusa_ms.3.close
+		default_hide_option = yes
+	}
+}
+
+# 控制台测试探针：仅限测试存档，以 AED-PRO-10 验证“开始”接口。
+country_event = {
+	id = aemusa_ms.90
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		aemusa_ms_country_has_nearest_legal_story_entry = yes
+		aemusa_ms_country_can_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+		country_event = {
+			id = aemusa_ms.91
+			days = 1
+		}
+	}
+}
+
+# 控制台测试探针第二步：记录完成，但不在同一步执行结算。
+country_event = {
+	id = aemusa_ms.91
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		aemusa_ms_country_can_complete_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+	}
+	immediate = {
+		aemusa_ms_complete_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+		country_event = {
+			id = aemusa_ms.92
+			days = 1
+		}
+	}
+}
+
+# 控制台测试探针第三步：执行唯一结算并输出只读验证日志。
+country_event = {
+	id = aemusa_ms.92
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		aemusa_ms_country_can_settle_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+	}
+	immediate = {
+		aemusa_ms_settle_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+		aemusa_ms_log_awp_01_probe = yes
+	}
+}

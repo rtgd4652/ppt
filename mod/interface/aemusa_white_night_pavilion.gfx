@@ -5,26 +5,7 @@ spriteTypes = {
         texturefile = "gfx/event_pictures/aemusa_white_night_pavilion.dds"
     }
 
-    # 势力详情页：左侧势力大卡、右侧人物档案卡，供名册分类事件使用。
-    spriteType = {
-        name = "GFX_evt_aemusa_white_night_faction_central_church"
-        texturefile = "gfx/event_pictures/aemusa_white_night_faction_central_church_clean.dds"
-    }
-
-    spriteType = {
-        name = "GFX_evt_aemusa_white_night_faction_memory_palace"
-        texturefile = "gfx/event_pictures/aemusa_white_night_faction_memory_palace_clean.dds"
-    }
-
-    spriteType = {
-        name = "GFX_evt_aemusa_white_night_faction_white_night_gap"
-        texturefile = "gfx/event_pictures/aemusa_white_night_faction_white_night_gap_clean.dds"
-    }
-
-    spriteType = {
-        name = "GFX_evt_aemusa_white_night_faction_collaboration"
-        texturefile = "gfx/event_pictures/aemusa_white_night_faction_collaboration_clean.dds"
-    }
+    # 各名册分类页已统一使用上面的公共背景；旧分类背景资源与声明不再保留。
 
     # 白夜馆法令图标：在法令栏中标记统一通讯入口。
     spriteType = {

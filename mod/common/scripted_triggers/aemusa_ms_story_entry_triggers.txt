@@ -1,0 +1,187 @@
+# 爱缪莎 1.0 主线最小入口与生命周期触发器。
+# 本文件只读取路线账本，不写入状态，也不推断未登记事实。
+# 仅玩家控制的神器使主物种国家可以初始化爱缪莎 1.0 主线。
+aemusa_ms_country_can_initialize_route_v1 = {
+	is_ai = no
+	owner_main_species = {
+		is_species_class = "ARTIFACT_USER"
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_route_initialized
+	}
+	NOT = {
+		is_variable_set = aemusa_ms_country_route_version_index
+	}
+}
+
+# 路线未初始化时不得存在版本变量；初始化后版本必须严格等于 1。
+aemusa_ms_country_has_valid_route_version_v1 = {
+	OR = {
+		AND = {
+			NOT = {
+				has_country_flag = aemusa_ms_country_route_initialized
+			}
+			NOT = {
+				is_variable_set = aemusa_ms_country_route_version_index
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_route_initialized
+			check_variable = {
+				which = aemusa_ms_country_route_version_index
+				value = 1
+			}
+		}
+	}
+}
+
+# 白夜馆只读取最近合法入口；事件路由器负责定位当前事件簇，不在触发器中写入状态。
+aemusa_ms_country_has_nearest_legal_story_entry = {
+	is_ai = no
+	has_country_flag = aemusa_ms_country_route_initialized
+	check_variable = {
+		which = aemusa_ms_country_route_version_index
+		value = 1
+	}
+	exists = event_target:aemusa_leader
+	NOT = {
+		has_country_flag = aemusa_ms_country_consistency_conflict_active
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_story_v1_complete
+	}
+}
+
+# 序章只能从章节索引 0 开始；已完成序章的存档不能重新进入。
+aemusa_ms_country_can_enter_prologue = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 0
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_chapter_00_completed
+	}
+}
+
+# 第一章要求序章已结算，并且帝国已经留下真实银河参与记录。
+aemusa_ms_country_can_enter_chapter_01 = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 1
+	}
+	has_country_flag = aemusa_ms_country_chapter_00_completed
+	has_country_flag = aemusa_ms_country_galactic_participation_recorded
+	NOT = {
+		has_country_flag = aemusa_ms_country_chapter_01_completed
+	}
+}
+
+# 第二章读取第一章建立的联合样本和首次责任半径，不重新询问同一原则选择。
+aemusa_ms_country_can_enter_chapter_02 = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 2
+	}
+	has_country_flag = aemusa_ms_country_chapter_01_completed
+	check_variable = {
+		which = aemusa_ms_country_civilization_responsibility_radius_index
+		value > 0
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_chapter_02_completed
+	}
+}
+
+# 第三章只使用第一幕内部的有限案例，不读取失落帝国战争或任何天灾状态。
+aemusa_ms_country_can_enter_chapter_03 = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 3
+	}
+	has_country_flag = aemusa_ms_country_chapter_02_completed
+	NOT = {
+		has_country_flag = aemusa_ms_country_chapter_03_completed
+	}
+}
+
+# 第一章尚未开放时，白夜馆可以透明说明缺少真实银河参与记录。
+aemusa_ms_country_is_waiting_for_galactic_participation = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 1
+	}
+	has_country_flag = aemusa_ms_country_chapter_00_completed
+	NOT = {
+		has_country_flag = aemusa_ms_country_galactic_participation_recorded
+	}
+}
+
+# 事件簇只有在路线已初始化、没有硬冲突且从未开始时才能进入进行中。
+aemusa_ms_country_can_begin_story_cluster = {
+	has_country_flag = aemusa_ms_country_route_initialized
+	check_variable = {
+		which = aemusa_ms_country_route_version_index
+		value = 1
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_consistency_conflict_active
+	}
+	NOT = {
+		has_country_flag = $STARTED_FLAG$
+	}
+	NOT = {
+		has_country_flag = $IN_PROGRESS_FLAG$
+	}
+	NOT = {
+		has_country_flag = $COMPLETED_FLAG$
+	}
+	NOT = {
+		has_country_flag = $SETTLED_FLAG$
+	}
+	NOT = {
+		has_country_flag = $SETTLEMENT_FLAG$
+	}
+}
+
+# 事件簇完成只接受“已开始且仍在进行中”的合法状态。
+aemusa_ms_country_can_complete_story_cluster = {
+	has_country_flag = aemusa_ms_country_route_initialized
+	NOT = {
+		has_country_flag = aemusa_ms_country_consistency_conflict_active
+	}
+	has_country_flag = $STARTED_FLAG$
+	has_country_flag = $IN_PROGRESS_FLAG$
+	NOT = {
+		has_country_flag = $COMPLETED_FLAG$
+	}
+	NOT = {
+		has_country_flag = $SETTLED_FLAG$
+	}
+	NOT = {
+		has_country_flag = $SETTLEMENT_FLAG$
+	}
+}
+
+# 事件簇结算必须已经完成，并且结果事实与独立结算保护均不存在。
+aemusa_ms_country_can_settle_story_cluster = {
+	has_country_flag = aemusa_ms_country_route_initialized
+	NOT = {
+		has_country_flag = aemusa_ms_country_consistency_conflict_active
+	}
+	has_country_flag = $STARTED_FLAG$
+	NOT = {
+		has_country_flag = $IN_PROGRESS_FLAG$
+	}
+	has_country_flag = $COMPLETED_FLAG$
+	NOT = {
+		has_country_flag = $SETTLED_FLAG$
+	}
+	NOT = {
+		has_country_flag = $SETTLEMENT_FLAG$
+	}
+}

@@ -1,0 +1,434 @@
+# 爱缪莎 1.0 主线最小生命周期写接口。
+# 所有调用者必须传入扩展登记表中的显式 key，禁止运行时拼接状态名。
+# 将符合资格的玩家国家初始化为路线版本 1；重复调用不会再次写入。
+aemusa_ms_initialize_route_v1_once = {
+	if = {
+		limit = {
+			aemusa_ms_country_can_initialize_route_v1 = yes
+		}
+		set_country_flag = aemusa_ms_country_route_initialized
+		set_variable = {
+			which = aemusa_ms_country_route_version_index
+			value = 1
+		}
+		set_variable = {
+			which = aemusa_ms_country_chapter_index
+			value = 0
+		}
+		set_variable = {
+			which = aemusa_ms_country_act_index
+			value = 0
+		}
+	}
+}
+
+# 从未开始进入进行中；非法或重复调用保持原状态不变。
+aemusa_ms_begin_story_cluster = {
+	if = {
+		limit = {
+			aemusa_ms_country_can_begin_story_cluster = {
+				STARTED_FLAG = $STARTED_FLAG$
+				IN_PROGRESS_FLAG = $IN_PROGRESS_FLAG$
+				COMPLETED_FLAG = $COMPLETED_FLAG$
+				SETTLED_FLAG = $SETTLED_FLAG$
+				SETTLEMENT_FLAG = $SETTLEMENT_FLAG$
+			}
+		}
+		set_country_flag = $STARTED_FLAG$
+		set_country_flag = $IN_PROGRESS_FLAG$
+	}
+}
+
+# 完成事件簇叙事步骤，但不执行不可逆结算。
+aemusa_ms_complete_story_cluster = {
+	if = {
+		limit = {
+			aemusa_ms_country_can_complete_story_cluster = {
+				STARTED_FLAG = $STARTED_FLAG$
+				IN_PROGRESS_FLAG = $IN_PROGRESS_FLAG$
+				COMPLETED_FLAG = $COMPLETED_FLAG$
+				SETTLED_FLAG = $SETTLED_FLAG$
+				SETTLEMENT_FLAG = $SETTLEMENT_FLAG$
+			}
+		}
+		remove_country_flag = $IN_PROGRESS_FLAG$
+		set_country_flag = $COMPLETED_FLAG$
+	}
+}
+
+# 一次性写入结算保护与结算结果；再次调用不会重复结算。
+aemusa_ms_settle_story_cluster_once = {
+	if = {
+		limit = {
+			aemusa_ms_country_can_settle_story_cluster = {
+				STARTED_FLAG = $STARTED_FLAG$
+				IN_PROGRESS_FLAG = $IN_PROGRESS_FLAG$
+				COMPLETED_FLAG = $COMPLETED_FLAG$
+				SETTLED_FLAG = $SETTLED_FLAG$
+				SETTLEMENT_FLAG = $SETTLEMENT_FLAG$
+			}
+		}
+		set_country_flag = $SETTLEMENT_FLAG$
+		set_country_flag = $SETTLED_FLAG$
+	}
+}
+
+# 在一个正式事件选项中完成并唯一结算事件簇；两步仍分别通过生命周期门禁。
+aemusa_ms_finalize_story_cluster_once = {
+	aemusa_ms_complete_story_cluster = {
+		STARTED_FLAG = $STARTED_FLAG$
+		IN_PROGRESS_FLAG = $IN_PROGRESS_FLAG$
+		COMPLETED_FLAG = $COMPLETED_FLAG$
+		SETTLED_FLAG = $SETTLED_FLAG$
+		SETTLEMENT_FLAG = $SETTLEMENT_FLAG$
+	}
+	aemusa_ms_settle_story_cluster_once = {
+		STARTED_FLAG = $STARTED_FLAG$
+		IN_PROGRESS_FLAG = $IN_PROGRESS_FLAG$
+		COMPLETED_FLAG = $COMPLETED_FLAG$
+		SETTLED_FLAG = $SETTLED_FLAG$
+		SETTLEMENT_FLAG = $SETTLEMENT_FLAG$
+	}
+}
+
+# 写入首次文明选择；变量一旦存在便永久保留，后续修订不得覆盖历史。
+aemusa_ms_record_initial_choice_once = {
+	if = {
+		limit = {
+			OR = {
+				NOT = {
+					is_variable_set = $VARIABLE$
+				}
+				check_variable = {
+					which = $VARIABLE$
+					value = 0
+				}
+			}
+		}
+		set_variable = {
+			which = $VARIABLE$
+			value = $VALUE$
+		}
+	}
+}
+
+# 章节唯一结算：要求全部必需事件簇已经结算，并严格按索引单调推进。
+aemusa_ms_settle_chapter_once = {
+	if = {
+		limit = {
+			has_country_flag = $LAST_CLUSTER_SETTLED_FLAG$
+			check_variable = {
+				which = aemusa_ms_country_chapter_index
+				value = $EXPECTED_INDEX$
+			}
+			NOT = {
+				has_country_flag = $CHAPTER_COMPLETED_FLAG$
+			}
+			NOT = {
+				has_country_flag = $CHAPTER_SETTLEMENT_FLAG$
+			}
+		}
+		set_country_flag = $CHAPTER_SETTLEMENT_FLAG$
+		set_country_flag = $CHAPTER_COMPLETED_FLAG$
+		set_variable = {
+			which = aemusa_ms_country_chapter_index
+			value = $NEXT_INDEX$
+		}
+	}
+}
+
+# 序章结算同时初始化责任与损失账本，但不凭叙事伪造永久伤亡。
+aemusa_ms_settle_prologue_once = {
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_00_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_10_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_20_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_30_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_90_settled
+			check_variable = {
+				which = aemusa_ms_country_civilization_information_policy_index
+				value > 0
+			}
+		}
+		aemusa_ms_settle_chapter_once = {
+			LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_90_settled
+			EXPECTED_INDEX = 0
+			NEXT_INDEX = 1
+			CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_00_completed
+			CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_00_done
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_chapter_00_completed
+		}
+		set_country_flag = aemusa_ms_country_responsibility_ledger_initialized
+		set_country_flag = aemusa_ms_country_loss_ledger_initialized
+	}
+}
+
+# 第一章结算后进入第二章，首次行动节奏与责任半径必须已经登记。
+aemusa_ms_settle_chapter_01_once = {
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_cluster_aed_01_00_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_01_10_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_01_20_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_01_90_settled
+			check_variable = {
+				which = aemusa_ms_country_civilization_action_tempo_index
+				value > 0
+			}
+			check_variable = {
+				which = aemusa_ms_country_civilization_responsibility_radius_index
+				value > 0
+			}
+		}
+		aemusa_ms_settle_chapter_once = {
+			LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_90_settled
+			EXPECTED_INDEX = 1
+			NEXT_INDEX = 2
+			CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_01_completed
+			CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_01_done
+		}
+	}
+}
+
+# 第二章结算保存首次责任应用，不覆盖第一章确定的责任半径。
+aemusa_ms_settle_chapter_02_once = {
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_cluster_aed_02_00_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_02_10_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_02_20_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_02_30_settled
+			check_variable = {
+				which = aemusa_ms_country_first_responsibility_application_index
+				value > 0
+			}
+		}
+		aemusa_ms_settle_chapter_once = {
+			LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_30_settled
+			EXPECTED_INDEX = 2
+			NEXT_INDEX = 3
+			CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_02_completed
+			CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_02_done
+		}
+	}
+}
+
+# 第三章完成第一幕；此处只确认“有限观测参与”，不授予主动命运干涉能力。
+aemusa_ms_settle_chapter_03_once = {
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_cluster_aed_03_00_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_03_10_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_03_20_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_03_30_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_03_40_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_03_50_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_03_90_settled
+			check_variable = {
+				which = aemusa_ms_country_first_intervention_decision_index
+				value > 0
+			}
+			NOT = {
+				has_country_flag = aemusa_ms_country_first_intervention_operation_pending
+			}
+		}
+		aemusa_ms_settle_chapter_once = {
+			LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_90_settled
+			EXPECTED_INDEX = 3
+			NEXT_INDEX = 4
+			CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_03_completed
+			CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_03_done
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_chapter_03_completed
+		}
+		set_variable = {
+			which = aemusa_ms_country_act_index
+			value = 1
+		}
+	}
+}
+
+# 输出 AWP-02 完成态审计；只读日志，不补写选择、章节或事件簇事实。
+aemusa_ms_log_awp_02_audit = {
+	log = "AEMUSA-MS|AWP-02|audit begin; scope=country"
+	if = {
+		limit = {
+			check_variable = {
+				which = aemusa_ms_country_route_version_index
+				value = 1
+			}
+			check_variable = {
+				which = aemusa_ms_country_chapter_index
+				value = 4
+			}
+			check_variable = {
+				which = aemusa_ms_country_act_index
+				value = 1
+			}
+		}
+		log = "AEMUSA-MS|PASS|awp_02_route_position"
+	}
+	else = {
+		log = "AEMUSA-MS|FAIL|awp_02_route_position"
+	}
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_chapter_00_completed
+			has_country_flag = aemusa_ms_country_settlement_chapter_00_done
+			has_country_flag = aemusa_ms_country_chapter_01_completed
+			has_country_flag = aemusa_ms_country_settlement_chapter_01_done
+			has_country_flag = aemusa_ms_country_chapter_02_completed
+			has_country_flag = aemusa_ms_country_settlement_chapter_02_done
+			has_country_flag = aemusa_ms_country_chapter_03_completed
+			has_country_flag = aemusa_ms_country_settlement_chapter_03_done
+		}
+		log = "AEMUSA-MS|PASS|awp_02_chapter_settlements"
+	}
+	else = {
+		log = "AEMUSA-MS|FAIL|awp_02_chapter_settlements"
+	}
+	if = {
+		limit = {
+			OR = {
+				check_variable = {
+					which = aemusa_ms_country_civilization_information_policy_index
+					value = 1
+				}
+				check_variable = {
+					which = aemusa_ms_country_civilization_information_policy_index
+					value = 2
+				}
+			}
+			OR = {
+				check_variable = {
+					which = aemusa_ms_country_civilization_action_tempo_index
+					value = 1
+				}
+				check_variable = {
+					which = aemusa_ms_country_civilization_action_tempo_index
+					value = 2
+				}
+			}
+			OR = {
+				check_variable = {
+					which = aemusa_ms_country_civilization_responsibility_radius_index
+					value = 1
+				}
+				check_variable = {
+					which = aemusa_ms_country_civilization_responsibility_radius_index
+					value = 2
+				}
+			}
+		}
+		log = "AEMUSA-MS|PASS|awp_02_civilization_choices"
+	}
+	else = {
+		log = "AEMUSA-MS|FAIL|awp_02_civilization_choices"
+	}
+	if = {
+		limit = {
+			OR = {
+				check_variable = {
+					which = aemusa_ms_country_first_responsibility_application_index
+					value = 1
+				}
+				check_variable = {
+					which = aemusa_ms_country_first_responsibility_application_index
+					value = 2
+				}
+			}
+			OR = {
+				check_variable = {
+					which = aemusa_ms_country_first_intervention_decision_index
+					value = 1
+				}
+				check_variable = {
+					which = aemusa_ms_country_first_intervention_decision_index
+					value = 2
+				}
+				check_variable = {
+					which = aemusa_ms_country_first_intervention_decision_index
+					value = 3
+				}
+			}
+		}
+		log = "AEMUSA-MS|PASS|awp_02_case_choices"
+	}
+	else = {
+		log = "AEMUSA-MS|FAIL|awp_02_case_choices"
+	}
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = aemusa_ms_country_first_intervention_operation_pending
+			}
+			NOT = {
+				has_country_flag = aemusa_ms_country_consistency_conflict_active
+			}
+			NOT = {
+				has_country_flag = aemusa_ms_country_chapter_04_completed
+			}
+			NOT = {
+				has_country_flag = aemusa_ms_truth_world_difference_mutually_confirmed
+			}
+		}
+		log = "AEMUSA-MS|PASS|awp_02_scope_boundary"
+	}
+	else = {
+		log = "AEMUSA-MS|FAIL|awp_02_scope_boundary"
+	}
+	log = "AEMUSA-MS|AWP-02|audit end; writes=none"
+}
+
+# 输出 AWP-01 探针状态；只读日志，不修改路线账本。
+aemusa_ms_log_awp_01_probe = {
+	log = "AEMUSA-MS|AWP-01|probe begin; scope=country"
+	if = {
+		limit = {
+			aemusa_ms_country_has_valid_route_version_v1 = yes
+		}
+		log = "AEMUSA-MS|PASS|awp_01_route_version"
+	}
+	else = {
+		log = "AEMUSA-MS|FAIL|awp_01_route_version"
+	}
+	if = {
+		limit = {
+			aemusa_ms_cluster_state_is_consistent = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+			}
+		}
+		log = "AEMUSA-MS|PASS|awp_01_probe_consistency"
+	}
+	else = {
+		log = "AEMUSA-MS|FAIL|awp_01_probe_consistency"
+	}
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_10_started
+			NOT = {
+				has_country_flag = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			}
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_10_completed
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_10_settled
+			has_country_flag = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+		log = "AEMUSA-MS|PASS|awp_01_probe_settled"
+	}
+	else = {
+		log = "AEMUSA-MS|FAIL|awp_01_probe_settled"
+	}
+	log = "AEMUSA-MS|AWP-01|probe end; writes=none"
+}

@@ -1,0 +1,86 @@
+# 爱缪莎 1.0 主线状态诊断输出。
+# 本文件只向 game.log 输出结果，不写 flag、variable、event target 或剧情事实。
+
+aemusa_ms_log_state_audit = {
+	# 不在 scripted effect 日志中嵌入作用域宏，避免加载阶段的 metascript 误报。
+	log = "AEMUSA-MS|AWP-00|audit begin; scope=country"
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_route_version_v1 = yes }
+		log = "AEMUSA-MS|PASS|route_version_state"
+	}
+	else = { log = "AEMUSA-MS|FAIL|route_version_state" }
+
+	if = {
+		limit = {
+			aemusa_ms_country_has_valid_chapter_index = yes
+			aemusa_ms_country_has_valid_act_index = yes
+			aemusa_ms_country_has_valid_exclusive_crisis_phase_index = yes
+			aemusa_ms_country_has_valid_epilogue_tone_index = yes
+		}
+		log = "AEMUSA-MS|PASS|registered_enum_values"
+	}
+	else = { log = "AEMUSA-MS|FAIL|registered_enum_values" }
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_fallen_empire_war_history = yes }
+		log = "AEMUSA-MS|PASS|fallen_empire_war_history"
+	}
+	else = { log = "AEMUSA-MS|FAIL|fallen_empire_war_history" }
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_vanilla_crisis_history = yes }
+		log = "AEMUSA-MS|PASS|vanilla_crisis_history"
+	}
+	else = { log = "AEMUSA-MS|FAIL|vanilla_crisis_history" }
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_exclusive_crisis_history = yes }
+		log = "AEMUSA-MS|PASS|exclusive_crisis_history"
+	}
+	else = { log = "AEMUSA-MS|FAIL|exclusive_crisis_history" }
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_crisis_knowledge = yes }
+		log = "AEMUSA-MS|PASS|crisis_knowledge_and_losses"
+	}
+	else = { log = "AEMUSA-MS|FAIL|crisis_knowledge_and_losses" }
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_truth_state = yes }
+		log = "AEMUSA-MS|PASS|truth_state"
+	}
+	else = { log = "AEMUSA-MS|FAIL|truth_state" }
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_joint_decision_state = yes }
+		log = "AEMUSA-MS|PASS|joint_decision_state"
+	}
+	else = { log = "AEMUSA-MS|FAIL|joint_decision_state" }
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_final_gate_state = yes }
+		log = "AEMUSA-MS|PASS|final_gate_state"
+	}
+	else = { log = "AEMUSA-MS|FAIL|final_gate_state" }
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_ending_state = yes }
+		log = "AEMUSA-MS|PASS|ending_and_authority_state"
+	}
+	else = { log = "AEMUSA-MS|FAIL|ending_and_authority_state" }
+
+	if = {
+		limit = { aemusa_ms_country_has_valid_pause_and_conflict_state = yes }
+		log = "AEMUSA-MS|PASS|pause_and_conflict_state"
+	}
+	else = { log = "AEMUSA-MS|FAIL|pause_and_conflict_state" }
+
+	if = {
+		limit = { aemusa_ms_country_state_is_consistent = yes }
+		log = "AEMUSA-MS|PASS|aggregate_state_consistency"
+	}
+	else = { log = "AEMUSA-MS|FAIL|aggregate_state_consistency; hard_block_required=yes" }
+
+	log = "AEMUSA-MS|AWP-00|audit end; writes=none"
+}

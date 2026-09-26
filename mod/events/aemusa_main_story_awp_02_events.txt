@@ -1,0 +1,1220 @@
+# 爱缪莎 1.0 主线 AWP-02：序章至第三章。
+# 本文件只使用基础通讯表现，不接入失落帝国、天灾、专属资产或主动命运干涉。
+namespace = aemusa_ms
+# 星系调查适配器：on_system_survey 的根作用域就是完成调查的国家。
+country_event = {
+	id = aemusa_ms.110
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = aemusa_ms_country_route_initialized
+		NOT = {
+			has_country_flag = aemusa_ms_country_galactic_participation_recorded
+		}
+	}
+	immediate = {
+		set_country_flag = aemusa_ms_country_galactic_participation_recorded
+	}
+}
+
+# 殖民适配器：on_colonization_started 的根作用域为行星，只向真实拥有者写入资格。
+planet_event = {
+	id = aemusa_ms.111
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = owner
+		owner = {
+			has_country_flag = aemusa_ms_country_route_initialized
+			NOT = {
+				has_country_flag = aemusa_ms_country_galactic_participation_recorded
+			}
+		}
+	}
+	immediate = {
+		owner = {
+			set_country_flag = aemusa_ms_country_galactic_participation_recorded
+		}
+	}
+}
+
+# 最近合法入口编排器：严格按章节索引和事件簇结算标记恢复进度。
+country_event = {
+	id = aemusa_ms.100
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = aemusa_ms_country_first_intervention_operation_pending
+			}
+			country_event = {
+				id = aemusa_ms.535
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_pro_00_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.200
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_pro_10_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.210
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_pro_20_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.220
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_pro_30_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.230
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_prologue = yes
+			}
+			country_event = {
+				id = aemusa_ms.290
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_is_waiting_for_galactic_participation = yes
+			}
+			country_event = {
+				id = aemusa_ms.101
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_01_00_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.300
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_01_10_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.310
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_01_20_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.320
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_01 = yes
+			}
+			country_event = {
+				id = aemusa_ms.390
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_02_00_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.400
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_02_10_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.410
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_02_20_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.420
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_02 = yes
+			}
+			country_event = {
+				id = aemusa_ms.430
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_00_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.500
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_10_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.510
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_20_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.520
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_30_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.530
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_40_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.540
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_cluster_aed_03_50_settled
+				}
+			}
+			country_event = {
+				id = aemusa_ms.550
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_03 = yes
+			}
+			country_event = {
+				id = aemusa_ms.590
+			}
+		}
+		else = {
+			country_event = {
+				id = aemusa_ms.102
+			}
+		}
+	}
+}
+
+# 第一章等待页：不伪造现实参与，也不自动推进章节。
+country_event = {
+	id = aemusa_ms.101
+	title = aemusa_ms.101.title
+	desc = aemusa_ms.101.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	option = {
+		name = aemusa_ms.close
+	}
+}
+
+# AWP-02 终点页：第三章已完成，第四章尚未接入。
+country_event = {
+	id = aemusa_ms.102
+	title = aemusa_ms.102.title
+	desc = aemusa_ms.102.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	option = {
+		name = aemusa_ms.close
+	}
+}
+
+# 序章 AED-PRO-00：从一局公平的牌开始，而不是从神谕或终局能力开始。
+country_event = {
+	id = aemusa_ms.200
+	title = aemusa_ms.200.title
+	desc = aemusa_ms.200.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_prologue = yes
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_00_done
+		}
+	}
+	option = {
+		name = aemusa_ms.200.continue
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_00_done
+		}
+		country_event = {
+			id = aemusa_ms.210
+		}
+	}
+}
+
+# 序章 AED-PRO-10：承认有限观测，或留下曾要求确定答案的可修复记录。
+country_event = {
+	id = aemusa_ms.210
+	title = aemusa_ms.210.title
+	desc = aemusa_ms.210.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_pro_00_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_10_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+	}
+	option = {
+		name = aemusa_ms.210.uncertain
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+		country_event = {
+			id = aemusa_ms.220
+		}
+	}
+	option = {
+		name = aemusa_ms.210.oracle
+		set_country_flag = aemusa_ms_country_prologue_oracle_demand_recorded
+		set_country_flag = aemusa_ms_country_responsibility_disagreement_recorded
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_10_done
+		}
+		country_event = {
+			id = aemusa_ms.220
+		}
+	}
+}
+
+# 序章 AED-PRO-20：一次范围有限但不可从历史中删除的现实代价。
+country_event = {
+	id = aemusa_ms.220
+	title = aemusa_ms.220.title
+	desc = aemusa_ms.220.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_pro_10_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_20_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_20_done
+		}
+	}
+	option = {
+		name = aemusa_ms.220.record
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_20_done
+		}
+		country_event = {
+			id = aemusa_ms.230
+		}
+	}
+}
+
+# 序章 AED-PRO-30：首次信息治理选择，仅保存首次决定。
+country_event = {
+	id = aemusa_ms.230
+	title = aemusa_ms.230.title
+	desc = aemusa_ms.230.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_pro_20_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_30_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
+		}
+	}
+	option = {
+		name = aemusa_ms.230.confidential
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_civilization_information_policy_index
+			VALUE = 1
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
+		}
+		country_event = {
+			id = aemusa_ms.290
+		}
+	}
+	option = {
+		name = aemusa_ms.230.disclosure
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_civilization_information_policy_index
+			VALUE = 2
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_30_done
+		}
+		country_event = {
+			id = aemusa_ms.290
+		}
+	}
+}
+
+# 序章 AED-PRO-90：建立审查、责任和损失账本，开放第一章资格等待。
+country_event = {
+	id = aemusa_ms.290
+	title = aemusa_ms.290.title
+	desc = aemusa_ms.290.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_pro_30_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_pro_90_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_90_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_90_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_90_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_90_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_90_done
+		}
+	}
+	option = {
+		name = aemusa_ms.290.finish
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_pro_90_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_pro_90_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_pro_90_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_pro_90_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_pro_90_done
+		}
+		aemusa_ms_settle_prologue_once = yes
+	}
+}
+
+# 第一章 AED-01-00：只消费由现实 on_action 写入的银河参与事实。
+country_event = {
+	id = aemusa_ms.300
+	title = aemusa_ms.300.title
+	desc = aemusa_ms.300.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_chapter_01 = yes
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_00_done
+		}
+	}
+	option = {
+		name = aemusa_ms.300.continue
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_00_done
+		}
+		country_event = {
+			id = aemusa_ms.310
+		}
+	}
+}
+
+# 第一章 AED-01-10：首次行动节奏选择。
+country_event = {
+	id = aemusa_ms.310
+	title = aemusa_ms.310.title
+	desc = aemusa_ms.310.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_01_00_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_01_10_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
+		}
+	}
+	option = {
+		name = aemusa_ms.310.cautious
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_civilization_action_tempo_index
+			VALUE = 1
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
+		}
+		country_event = {
+			id = aemusa_ms.320
+		}
+	}
+	option = {
+		name = aemusa_ms.310.limited
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_civilization_action_tempo_index
+			VALUE = 2
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_10_done
+		}
+		country_event = {
+			id = aemusa_ms.320
+		}
+	}
+}
+
+# 第一章 AED-01-20：首次责任半径选择。
+country_event = {
+	id = aemusa_ms.320
+	title = aemusa_ms.320.title
+	desc = aemusa_ms.320.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_01_10_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_01_20_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
+		}
+	}
+	option = {
+		name = aemusa_ms.320.internal
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_civilization_responsibility_radius_index
+			VALUE = 1
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
+		}
+		country_event = {
+			id = aemusa_ms.390
+		}
+	}
+	option = {
+		name = aemusa_ms.320.expanded
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_civilization_responsibility_radius_index
+			VALUE = 2
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_20_done
+		}
+		country_event = {
+			id = aemusa_ms.390
+		}
+	}
+}
+
+# 第一章 AED-01-90：确认相关性存在，但因果与银河命运本体仍保持未知。
+country_event = {
+	id = aemusa_ms.390
+	title = aemusa_ms.390.title
+	desc = aemusa_ms.390.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_01_20_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_01_90_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_90_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_90_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_90_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_90_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_90_done
+		}
+	}
+	option = {
+		name = aemusa_ms.390.finish
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_01_90_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_01_90_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_01_90_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_01_90_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_01_90_done
+		}
+		aemusa_ms_settle_chapter_01_once = yes
+	}
+}
+
+# 第二章 AED-02-00：把多结果、受影响者与现实约束带入同一份责任记录。
+country_event = {
+	id = aemusa_ms.400
+	title = aemusa_ms.400.title
+	desc = aemusa_ms.400.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_chapter_02 = yes
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_00_done
+		}
+	}
+	option = {
+		name = aemusa_ms.400.continue
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_00_done
+		}
+		country_event = {
+			id = aemusa_ms.410
+		}
+	}
+}
+
+# 第二章 AED-02-10：没有无成本正确答案，爱缪莎也不替受影响者决定。
+country_event = {
+	id = aemusa_ms.410
+	title = aemusa_ms.410.title
+	desc = aemusa_ms.410.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_02_00_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_02_10_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_10_done
+		}
+	}
+	option = {
+		name = aemusa_ms.410.continue
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_10_done
+		}
+		country_event = {
+			id = aemusa_ms.420
+		}
+	}
+}
+
+# 第二章 AED-02-20：责任半径的首次现实应用，不覆盖第一章的原则记录。
+country_event = {
+	id = aemusa_ms.420
+	title = aemusa_ms.420.title
+	desc = aemusa_ms.420.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_02_10_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_02_20_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
+		}
+	}
+	option = {
+		name = aemusa_ms.420.optimum
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_first_responsibility_application_index
+			VALUE = 1
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
+		}
+		country_event = {
+			id = aemusa_ms.430
+		}
+	}
+	option = {
+		name = aemusa_ms.420.external
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_first_responsibility_application_index
+			VALUE = 2
+		}
+		set_country_flag = aemusa_ms_country_responsibility_sacrifice_recorded
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_20_done
+		}
+		country_event = {
+			id = aemusa_ms.430
+		}
+	}
+}
+
+# 第二章 AED-02-30：登记受益者、承担者与未解决代价。
+country_event = {
+	id = aemusa_ms.430
+	title = aemusa_ms.430.title
+	desc = aemusa_ms.430.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_02_20_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_02_30_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_30_done
+		}
+	}
+	option = {
+		name = aemusa_ms.430.finish
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_02_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_02_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_02_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_02_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_02_30_done
+		}
+		aemusa_ms_settle_chapter_02_once = yes
+	}
+}
+
+# 第三章 AED-03-00：锁定一项第一幕内部的有限救援案例。
+country_event = {
+	id = aemusa_ms.500
+	title = aemusa_ms.500.title
+	desc = aemusa_ms.500.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_chapter_03 = yes
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_00_done
+		}
+	}
+	option = {
+		name = aemusa_ms.500.continue
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_00_done
+		}
+		country_event = {
+			id = aemusa_ms.510
+		}
+	}
+}
+
+# 第三章 AED-03-10：方案公开误差、停止条件和二次代价。
+country_event = {
+	id = aemusa_ms.510
+	title = aemusa_ms.510.title
+	desc = aemusa_ms.510.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_03_00_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_03_10_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_10_done
+		}
+	}
+	option = {
+		name = aemusa_ms.510.continue
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_10_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_10_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_10_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_10_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_10_done
+		}
+		country_event = {
+			id = aemusa_ms.520
+		}
+	}
+}
+
+# 第三章 AED-03-20：首次有限干预选择；没有“保证成功”选项。
+country_event = {
+	id = aemusa_ms.520
+	title = aemusa_ms.520.title
+	desc = aemusa_ms.520.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_03_10_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_03_20_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+		}
+	}
+	option = {
+		name = aemusa_ms.520.adopt
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_first_intervention_decision_index
+			VALUE = 1
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+		}
+		country_event = {
+			id = aemusa_ms.530
+		}
+	}
+	option = {
+		name = aemusa_ms.520.narrow
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_first_intervention_decision_index
+			VALUE = 2
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+		}
+		country_event = {
+			id = aemusa_ms.530
+		}
+	}
+	option = {
+		name = aemusa_ms.520.reject
+		aemusa_ms_record_initial_choice_once = {
+			VARIABLE = aemusa_ms_country_first_intervention_decision_index
+			VALUE = 3
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_20_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_20_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_20_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_20_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_20_done
+		}
+		# 拒绝路线仍为 AED-03-30 留下明确的“未执行”唯一结算，避免伪造现实贡献。
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+		}
+		country_event = {
+			id = aemusa_ms.540
+		}
+	}
+}
+
+# 第三章 AED-03-30：现实救援需要时间，通讯入口在等待期间只显示状态。
+country_event = {
+	id = aemusa_ms.530
+	title = aemusa_ms.530.title
+	desc = aemusa_ms.530.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_03_20_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_03_30_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+		}
+	}
+	option = {
+		name = aemusa_ms.530.execute
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_30_done
+		}
+		set_country_flag = aemusa_ms_country_first_intervention_operation_pending
+		country_event = {
+			id = aemusa_ms.540
+			days = 30
+		}
+	}
+}
+
+# 行动等待页：只读，不提前生成结果。
+country_event = {
+	id = aemusa_ms.535
+	title = aemusa_ms.535.title
+	desc = aemusa_ms.535.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	option = {
+		name = aemusa_ms.close
+	}
+}
+
+# 第三章 AED-03-40：展示主要结果和二次代价，拒绝路线同样保留现实后果。
+country_event = {
+	id = aemusa_ms.540
+	title = aemusa_ms.540.title
+	desc = aemusa_ms.540.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_03_30_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_03_40_settled
+		}
+	}
+	immediate = {
+		remove_country_flag = aemusa_ms_country_first_intervention_operation_pending
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
+		}
+	}
+	option = {
+		name = aemusa_ms.540.disclose
+		set_country_flag = aemusa_ms_country_first_intervention_secondary_cost_disclosed
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
+		}
+		country_event = {
+			id = aemusa_ms.550
+		}
+	}
+	option = {
+		name = aemusa_ms.540.minimize
+		set_country_flag = aemusa_ms_country_responsibility_disagreement_recorded
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_40_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_40_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_40_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_40_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_40_done
+		}
+		country_event = {
+			id = aemusa_ms.550
+		}
+	}
+}
+
+# 第三章 AED-03-50：区分观测、普通行动和偶然条件，保留错误归因历史。
+country_event = {
+	id = aemusa_ms.550
+	title = aemusa_ms.550.title
+	desc = aemusa_ms.550.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_03_40_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_03_50_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
+		}
+	}
+	option = {
+		name = aemusa_ms.550.correct
+		set_country_flag = aemusa_ms_country_first_intervention_attribution_corrected
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
+		}
+		country_event = {
+			id = aemusa_ms.590
+		}
+	}
+	option = {
+		name = aemusa_ms.550.oracle
+		set_country_flag = aemusa_ms_country_first_intervention_oracle_narrative_recorded
+		set_country_flag = aemusa_ms_country_responsibility_disagreement_recorded
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_50_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_50_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_50_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_50_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_50_done
+		}
+		country_event = {
+			id = aemusa_ms.590
+		}
+	}
+}
+
+# 第三章 AED-03-90：恢复节拍与第一幕结算，不设置任务奖励画面。
+country_event = {
+	id = aemusa_ms.590
+	title = aemusa_ms.590.title
+	desc = aemusa_ms.590.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		has_country_flag = aemusa_ms_country_cluster_aed_03_50_settled
+		NOT = {
+			has_country_flag = aemusa_ms_country_cluster_aed_03_90_settled
+		}
+	}
+	immediate = {
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_90_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_90_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_90_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_90_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_90_done
+		}
+	}
+	option = {
+		name = aemusa_ms.590.finish
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_03_90_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_03_90_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_03_90_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_03_90_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_03_90_done
+		}
+		aemusa_ms_settle_chapter_03_once = yes
+	}
+}

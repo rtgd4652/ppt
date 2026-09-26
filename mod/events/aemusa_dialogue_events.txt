@@ -37,6 +37,18 @@ country_event = {
     }
 
     option = {
+        name = aemusa_dialogue.1.aemusa_main_story # 爱缪莎 1.0 主线只读入口。
+        trigger = {
+            aemusa_ms_country_has_nearest_legal_story_entry = yes # 只读取最近合法入口，不修改路线状态。
+        }
+        hidden_effect = {
+            country_event = {
+                id = aemusa_ms.2 # 由主线编排器打开当前合法的骨架状态页。
+            }
+        }
+    }
+
+    option = {
         name = aemusa_dialogue.1.goodbye # 关闭白夜馆通讯。
         default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
     }
