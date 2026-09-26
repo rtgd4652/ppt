@@ -2,21 +2,21 @@
 portraits = {
 	# 神器使物种在帝国创建界面中使用的基础肖像。
 	aemusa_species_portrait = {
-		texturefile = "gfx/models/portraits/aemusa_portrait_upper_dxt1.dds"
+		texturefile = "gfx/models/portraits/aemusa_portrait_ui.dds"
 	}
 
 	# 神器使物种在帝国创建界面中的都市背景肖像。
 	aemusa_species_portrait_city = {
-		texturefile = "gfx/models/portraits/aemusa_portrait_upper_dxt1.dds"
+		texturefile = "gfx/models/portraits/aemusa_portrait_ui.dds"
 	}
 
 	# 11 至 29 级使用的通讯肖像。
 	aemusa_portrait = {
-		texturefile = "gfx/models/portraits/aemusa_portrait_upper_dxt1.dds"
+		texturefile = "gfx/models/portraits/aemusa_portrait_ui.dds"
 	}
 
 	# 爱缪莎升至 30 级后使用的成长版专属肖像。
 	aemusa_portrait_level_30 = {
-		texturefile = "gfx/models/portraits/aemusa_portrait_level_30_upper_dxt1.dds"
+		texturefile = "gfx/models/portraits/aemusa_portrait_level_30_ui.dds"
 	}
 }

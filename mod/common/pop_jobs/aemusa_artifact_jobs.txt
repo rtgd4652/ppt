@@ -1,5 +1,11 @@
 # 塔罗分析员：将神器使的直觉、黑门记录与高维传感数据转化为三系研究。
 artifact_tarot_analyst = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = physicist
+		}
+	}
 	category = specialist
 	tags = { research unity }
 
@@ -41,6 +47,12 @@ artifact_tarot_analyst = {
 
 # 神器铸造师：把神器共鸣稳定写入合金结构，为后期舰队与命运之主提供工业底座。
 artifact_relic_artificer = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = foundry
+		}
+	}
 	category = specialist
 	tags = { alloys }
 
@@ -80,6 +92,12 @@ artifact_relic_artificer = {
 
 # 黑门守望者：维持都市秩序、预警疏散与神器使调度，是中央庭行星治理的核心职业。
 artifact_black_gate_warden = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = enforcer
+		}
+	}
 	category = specialist
 	tags = { unity amenities enforcer }
 
@@ -118,6 +136,12 @@ artifact_black_gate_warden = {
 
 # 中央庭研究主管：后期科研建筑的核心职业，集中处理命运观测塔前置演算。
 artifact_destiny_researcher = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = physicist
+		}
+	}
 	category = specialist
 	tags = { research unity }
 
@@ -157,6 +181,12 @@ artifact_destiny_researcher = {
 
 # 共鸣合金师：后期合金职业，以神器共鸣提升舰队工业规模。
 artifact_resonance_metallurgist = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = foundry
+		}
+	}
 	category = specialist
 	tags = { alloys }
 
@@ -194,6 +224,12 @@ artifact_resonance_metallurgist = {
 
 # 神器工艺师：将神器纹样和城市工业结合，生产高价值消费品。
 artifact_civic_artisan = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = artisan
+		}
+	}
 	category = specialist
 	tags = { consumer_goods unity }
 
@@ -231,6 +267,12 @@ artifact_civic_artisan = {
 
 # 相位供能师：利用黑门相位涨落稳定输出能量。
 artifact_phase_technician = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = technician
+		}
+	}
 	category = specialist
 	tags = { energy }
 
@@ -267,6 +309,12 @@ artifact_phase_technician = {
 
 # 交界贸易协调员：把城市商业街、神器使巡查和星际贸易合并为高效率贸易岗位。
 artifact_crossing_merchant = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = merchant
+		}
+	}
 	category = specialist
 	tags = { trade amenities }
 
@@ -303,6 +351,12 @@ artifact_crossing_merchant = {
 
 # 相位采掘员：开采被神器共鸣稳定的深层矿脉。
 artifact_phase_miner = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = miner
+		}
+	}
 	category = specialist
 	tags = { minerals }
 
@@ -339,6 +393,12 @@ artifact_phase_miner = {
 
 # 稀有共鸣精炼师：从黑门残响与相位材料中稳定提取三类基础稀有资源。
 artifact_rare_resonator = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = gas_refiner
+		}
+	}
 	category = specialist
 	tags = { strategic_resource volatile_motes rare_crystals exotic_gases }
 
@@ -377,6 +437,12 @@ artifact_rare_resonator = {
 
 # 中央庭记述官：把都市记忆、神器使档案和七日记录转化为凝聚力。
 artifact_memory_curator = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = culture_worker
+		}
+	}
 	category = specialist
 	tags = { unity amenities }
 
@@ -413,6 +479,12 @@ artifact_memory_curator = {
 
 # 星海契约使：以中央庭契约制度协调星际承认、特许与政治影响力。
 artifact_covenant_envoy = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = priest
+		}
+	}
 	category = specialist
 	tags = { unity }
 
@@ -450,6 +522,12 @@ artifact_covenant_envoy = {
 
 # 旧日文物编录师：筛选、修复并登记可用于神器使工程的古代文物。
 artifact_relic_curator = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = bureaucrat
+		}
+	}
 	category = specialist
 	tags = { minor_artifacts research }
 
@@ -488,6 +566,12 @@ artifact_relic_curator = {
 
 # 生命巡礼师：在命运都市中维护有机生态、食物供给与人口增长环境。
 artifact_life_cultivator = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = healthcare
+		}
+	}
 	category = specialist
 	tags = { food pop_growth amenities }
 
@@ -525,6 +609,12 @@ artifact_life_cultivator = {
 
 # 命运舰务官：将命运都市的预警网络转化为舰队容量与军务调度能力。
 artifact_fleet_coordinator = {
+	# 暂用相近职能的原版图标，保留本岗位名称、描述与数值。
+	swappable_data = {
+		default = {
+			icon = soldier
+		}
+	}
 	category = specialist
 	tags = { soldier unity }
 

@@ -1,0 +1,68 @@
+[
+  {
+    "source": "mod/gfx/event_pictures/aemusa_white_night_pavilion.png",
+    "source_sha256": "02ae69f6ccd7390db84696275bc2aa4acaadfef215011698289271a89f61bd81",
+    "crop_box": [
+      40,
+      75,
+      850,
+      345
+    ],
+    "output": "mod/gfx/event_pictures/aemusa_white_night_pavilion_event.dds",
+    "size": [
+      450,
+      150
+    ],
+    "subject_bounds": [
+      0,
+      0,
+      450,
+      150
+    ],
+    "output_sha256": "b648e1e2617ddb2ce782f038de2a51d4e0dda7ade6d0bd5b1c215a3bc8444f0e"
+  },
+  {
+    "source": "mod/gfx/models/portraits/aemusa_portrait_upper_dxt1.png",
+    "source_sha256": "a8b714f541a21b0fcb13fa000d1d633280bff7f2cdcfd42ccb987eeadc4fc659",
+    "crop_box": [
+      300,
+      0,
+      540,
+      400
+    ],
+    "output": "mod/gfx/models/portraits/aemusa_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "subject_bounds": [
+      182,
+      30,
+      392,
+      380
+    ],
+    "output_sha256": "ebff6130d2e9b5aedc87d51c8defd91768cb2572549dce90e5936ac0fcf97b20"
+  },
+  {
+    "source": "mod/gfx/models/portraits/aemusa_portrait_level_30.png",
+    "source_sha256": "e95f2134d372d987be4bc98577d4e60738bd21f9731ed54773a062e903d5b52b",
+    "crop_box": [
+      342,
+      452,
+      657,
+      975
+    ],
+    "output": "mod/gfx/models/portraits/aemusa_portrait_level_30_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "subject_bounds": [
+      182,
+      31,
+      392,
+      380
+    ],
+    "output_sha256": "b245edd1bba51ec0bc7dc9948b9ef308cd6a410334f0d17902e02881901be1ff"
+  }
+]

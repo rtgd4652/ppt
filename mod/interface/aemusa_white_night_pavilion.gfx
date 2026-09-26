@@ -1,8 +1,10 @@
 spriteTypes = {
-    # 白夜馆事件背景：用于主菜单与名册页的自定义 UI 氛围图。
+    # 固定为原版 450×150 事件图片规格，原画与导出参数保留在构建脚本中。
     spriteType = {
         name = "GFX_evt_aemusa_white_night_pavilion"
-        texturefile = "gfx/event_pictures/aemusa_white_night_pavilion.dds"
+        texturefile = "gfx/event_pictures/aemusa_white_night_pavilion_event.dds"
+        masking_texture = "gfx/interface/situation_log/event_mask.dds"
+        alwaystransparent = yes
     }
 
     # 各名册分类页已统一使用上面的公共背景；旧分类背景资源与声明不再保留。

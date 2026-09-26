@@ -271,7 +271,7 @@ def check(root, game_dir=None):
             "counts": {"script_files": len(scripts), "events": len(events), "localization_keys": len(localizations),
                        "registered_states": len(states), "referenced_states": len(referenced_states)},
             "limitations": ["仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
-                            "未校验引擎隐式岗位、修正、trait、outliner 图标；既有 41 项美术缺口仍须人工验收。",
+                            "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
                             "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"]}
 
 

@@ -110,6 +110,11 @@ class Ledger:
                 if not branch_taken and (key == "else" or self.condition(child(value, "limit"))):
                     self.execute([item for item in value if item.key != "limit"])
                     branch_taken = True
+            elif key == "hidden_effect":
+                # 隐藏提示只影响表现，账本仍须执行并验证其中的全部副作用。
+                self.execute(value)
+            elif key == "custom_tooltip":
+                pass
             elif key in EFFECTS:
                 arguments = {item.key: item.value for item in value} if isinstance(value, list) else {}
                 self.execute(expand(EFFECTS[key], arguments))

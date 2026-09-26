@@ -1,5 +1,7 @@
 # 神器使专属物种特质；设计灵感来自《永远的七日之都》中与神器缔结契约、守护都市的神器使。
 trait_artifact_resonance = {
+	# 暂借原版坚韧图标；专属美术验收另行进行。
+	icon = "gfx/interface/icons/traits/trait_resilient.dds"
 	# 特质点数保持克制，使其可与普通物种特质搭配使用。
 	cost = 1
 	initial = yes

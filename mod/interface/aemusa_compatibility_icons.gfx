@@ -1,0 +1,81 @@
+spriteTypes = {
+	# 岗位修正使用原版同职能图标；正式专属图标仍按资产清单验收。
+	spriteType = {
+		name = "GFX_mod_job_artifact_tarot_analyst_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_physicist_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_relic_artificer_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_foundry_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_black_gate_warden_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_enforcer_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_destiny_researcher_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_physicist_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_resonance_metallurgist_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_foundry_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_civic_artisan_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_artisan_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_phase_technician_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_technician_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_crossing_merchant_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_merchant_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_phase_miner_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_miner_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_rare_resonator_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_gas_refiner_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_memory_curator_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_culture_worker_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_covenant_envoy_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_priest_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_relic_curator_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_bureaucrat_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_life_cultivator_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_healthcare_add.dds"
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_fleet_coordinator_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_soldier_add.dds"
+	}
+
+	# 仅补齐仍存在的旧塔兼容资源，不接入新版主线或新增建造入口。
+	spriteType = {
+		name = "GFX_artifact_fate_observatory_0_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/think_tank.dds"
+	}
+	spriteType = {
+		name = "GFX_artifact_fate_observatory_1_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/think_tank.dds"
+	}
+	spriteType = {
+		name = "GFX_artifact_fate_observatory_2_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/think_tank.dds"
+	}
+	spriteType = {
+		name = "GFX_artifact_fate_observatory_3_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/think_tank.dds"
+	}
+}

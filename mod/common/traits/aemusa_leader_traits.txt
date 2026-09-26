@@ -1,5 +1,9 @@
 # 指挥官专属特质：适用于爱缪莎指挥舰队时。
 leader_trait_aemusa_commander = {
+    # 沿用原版分层图标接口，避免引擎寻找不存在的同名 DDS。
+    icon = {
+        layer = { icon = "GFX_leader_trait_unyielding" }
+    }
     cost = 0 # 专属特质不占用特质点。
     initial = no # 不在常规领袖生成界面中出现。
     randomized = no # 不允许其他领袖随机获得。
@@ -12,6 +16,9 @@ leader_trait_aemusa_commander = {
 
 # 行政官专属特质：适用于爱缪莎担任总督时。
 leader_trait_aemusa_official = {
+    icon = {
+        layer = { icon = "GFX_leader_trait_intellectual" }
+    }
     cost = 0 # 专属特质不占用特质点。
     initial = no # 不在常规领袖生成界面中出现。
     randomized = no # 不允许其他领袖随机获得。
@@ -25,6 +32,9 @@ leader_trait_aemusa_official = {
 
 # 科学家专属特质：适用于爱缪莎指挥科学船时。
 leader_trait_aemusa_scientist = {
+    icon = {
+        layer = { icon = "GFX_leader_trait_inspired" }
+    }
     cost = 0 # 专属特质不占用特质点。
     initial = no # 不在常规领袖生成界面中出现。
     randomized = no # 不允许其他领袖随机获得。
@@ -42,6 +52,9 @@ leader_trait_aemusa_scientist = {
 
 # 赛斯专属特质：依据原作“辅助型神官”与神器“羽蛇神杖”映射为随等级成长的殖民地治疗和安抚能力。
 leader_trait_seth_official = {
+    icon = {
+        layer = { icon = "GFX_leader_trait_charismatic" }
+    }
     cost = 0 # 专属特质不占用特质点。
     initial = no # 不在常规领袖生成界面中出现。
     randomized = no # 不允许其他领袖随机获得。
@@ -65,6 +78,9 @@ leader_trait_seth_official = {
 
 # 幽桐专属特质：依据原作“射手”“巧属性”与神器“神弓・甘狄拔”映射为随等级成长的舰队远程压制能力。
 leader_trait_yutong_commander = {
+    icon = {
+        layer = { icon = "GFX_leader_trait_unyielding" }
+    }
     cost = 0 # 专属特质不占用特质点。
     initial = no # 不在常规领袖生成界面中出现。
     randomized = no # 不允许其他领袖随机获得。
@@ -81,6 +97,9 @@ leader_trait_yutong_commander = {
 
 # 拉比专属特质：依据原作“战士”“刚属性”与神器“怪兽・阿米特”映射为随等级成长的地面突破能力。
 leader_trait_rabi_commander = {
+    icon = {
+        layer = { icon = "GFX_leader_trait_resilient" }
+    }
     cost = 0 # 专属特质不占用特质点。
     initial = no # 不在常规领袖生成界面中出现。
     randomized = no # 不允许其他领袖随机获得。
