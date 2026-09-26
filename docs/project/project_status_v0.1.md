@@ -1,5 +1,7 @@
 # 《神器使》Stellaris Mod 项目状态 v0.1.0
 
+> 历史文档：保留原阶段语境。2026-09-26 起当前状态见 [PROJECT_STATUS](../PROJECT_STATUS.md)，当前计划见 [ROADMAP](../ROADMAP.md)。本页不授权恢复旧任务、合并或发布。
+
 > 更新时间：2026-07-11
 > 状态：封版候选，等待游戏内复测
 > 当前开发分支：`parallel/v1-integration`

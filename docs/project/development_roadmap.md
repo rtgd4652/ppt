@@ -1,5 +1,7 @@
 # 后续开发优先级
 
+> 历史文档：保留原阶段语境。2026-09-26 起当前状态见 [PROJECT_STATUS](../PROJECT_STATUS.md)，当前计划见 [ROADMAP](../ROADMAP.md)。本页不授权恢复旧任务、合并或发布。
+
 ## Phase 1（当前）
 
 ### v0.1 稳定版本
