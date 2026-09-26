@@ -34,6 +34,8 @@ def main():
             crop_box = tuple(round(n * original.size[i % 2]) for i, n in enumerate(box))
             cropped = original.convert("RGBA").crop(crop_box)
         if subject_size:
+            # 肖像源图必须有真实透明背景，防止重新导出带矩形背景的原图。
+            assert cropped.getchannel("A").getextrema() == (0, 255), source
             subject = ImageOps.contain(cropped, subject_size, Image.Resampling.LANCZOS)
             texture = Image.new("RGBA", canvas_size, (0, 0, 0, 0))
             texture.alpha_composite(subject, ((canvas_size[0] - subject.width) // 2,
@@ -46,6 +48,13 @@ def main():
             assert decoded.size == canvas_size, output
             assert decoded.convert("RGBA").getbbox(), output
             decoded.save(preview_dir / (output_path.stem + ".png"))
+            if subject_size:
+                # 浅、深底色都预览，暴露抠图色边及 DDS 透明通道问题。
+                for label, color in (("light", (232, 236, 242, 255)),
+                                     ("dark", (16, 27, 38, 255))):
+                    backdrop = Image.new("RGBA", canvas_size, color)
+                    backdrop.alpha_composite(decoded.convert("RGBA"))
+                    backdrop.convert("RGB").save(preview_dir / (output_path.stem + "_" + label + ".png"))
         records.append({"source": source, "source_sha256": digest(source_path),
                         "crop_box": crop_box, "output": output,
                         "size": canvas_size, "subject_bounds": texture.getbbox(),
@@ -57,12 +66,12 @@ def main():
            (40 / 1024, 75 / 512, 850 / 1024, 345 / 512), (450, 150))
     # 575×380 为原版 character 画布；210×350 同时适配内阁和领袖故事左栏。
     # 收窄取景而非压扁原画，保留头部与躯干高度，避免盖住右侧正文。
-    export("mod/gfx/models/portraits/aemusa_portrait_upper_dxt1.png",
+    export("art/portraits/aemusa_ui/aemusa_base_cutout.png",
            "mod/gfx/models/portraits/aemusa_portrait_ui.dds",
            (300 / 700, 0, 540 / 700, 1), (575, 380), (210, 350))
-    export("mod/gfx/models/portraits/aemusa_portrait_level_30.png",
+    export("art/portraits/aemusa_ui/aemusa_level_30_cutout.png",
            "mod/gfx/models/portraits/aemusa_portrait_level_30_ui.dds",
-           (0.345, 0.285, 0.662, 0.615), (575, 380), (210, 350))
+           (0.327, 0, 0.645, 0.333), (575, 380), (210, 350))
     manifest = ROOT / "tools/build/ui_assets_manifest.json"
     manifest.write_text(json.dumps(records, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(json.dumps({"exported": len(records), "manifest": str(manifest),

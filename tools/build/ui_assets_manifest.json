@@ -22,13 +22,13 @@
     "output_sha256": "b648e1e2617ddb2ce782f038de2a51d4e0dda7ade6d0bd5b1c215a3bc8444f0e"
   },
   {
-    "source": "mod/gfx/models/portraits/aemusa_portrait_upper_dxt1.png",
-    "source_sha256": "a8b714f541a21b0fcb13fa000d1d633280bff7f2cdcfd42ccb987eeadc4fc659",
+    "source": "art/portraits/aemusa_ui/aemusa_base_cutout.png",
+    "source_sha256": "9a664baa3fbfe11d4c4694d392d3325b72b661d628b1456734f386b56dd27a2f",
     "crop_box": [
-      300,
+      711,
       0,
-      540,
-      400
+      1280,
+      948
     ],
     "output": "mod/gfx/models/portraits/aemusa_portrait_ui.dds",
     "size": [
@@ -41,16 +41,16 @@
       392,
       380
     ],
-    "output_sha256": "ebff6130d2e9b5aedc87d51c8defd91768cb2572549dce90e5936ac0fcf97b20"
+    "output_sha256": "22c99db88b8d012252bc7a2b246663a4d7e091640dfde349185b44e71b655450"
   },
   {
-    "source": "mod/gfx/models/portraits/aemusa_portrait_level_30.png",
-    "source_sha256": "e95f2134d372d987be4bc98577d4e60738bd21f9731ed54773a062e903d5b52b",
+    "source": "art/portraits/aemusa_ui/aemusa_level_30_cutout.png",
+    "source_sha256": "da6061c5f8296dabc8ebfc6bc928bb354887388bfcf60a312e21b4cef957d041",
     "crop_box": [
-      342,
-      452,
-      657,
-      975
+      325,
+      0,
+      640,
+      527
     ],
     "output": "mod/gfx/models/portraits/aemusa_portrait_level_30_ui.dds",
     "size": [
@@ -58,11 +58,11 @@
       380
     ],
     "subject_bounds": [
-      182,
-      31,
+      183,
+      30,
       392,
       380
     ],
-    "output_sha256": "b245edd1bba51ec0bc7dc9948b9ef308cd6a410334f0d17902e02881901be1ff"
+    "output_sha256": "6fe0e46f13f6f6edcf48ac353ebb9ad85093c7eb91a00ff623502dc58502ec86"
   }
 ]
