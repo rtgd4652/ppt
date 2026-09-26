@@ -678,6 +678,215 @@
         "SRC-BILI-BV17M4Y1W7RR：视频合集不保证覆盖该失败状态，Wiki 正文为主要来源"
       ],
       "notes": "被抛下的人要求未达成的特殊灭世页；原页面无 Tab 选择树，未人工补造分支。"
+    },
+    {
+      "id": "huiji-character-side-story-aemusa",
+      "title": "爱缪莎/支线剧情",
+      "story_scope": "character_side_story",
+      "route": "爱缪莎",
+      "chapter": "爱缪莎个人支线",
+      "day": "完整支线",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "个人支线完整对白与选择树；人物事实仍需人工校订。"
+    },
+    {
+      "id": "huiji-character-side-story-yanhua",
+      "title": "晏华/支线剧情",
+      "story_scope": "character_side_story",
+      "route": "晏华",
+      "chapter": "晏华个人支线",
+      "day": "完整支线",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "个人支线完整对白与选择树；人物事实仍需人工校订。"
+    },
+    {
+      "id": "huiji-character-side-story-seth",
+      "title": "赛斯/支线剧情",
+      "story_scope": "character_side_story",
+      "route": "赛斯",
+      "chapter": "赛斯个人支线",
+      "day": "完整支线",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "个人支线完整对白与选择树；人物事实仍需人工校订。"
+    },
+    {
+      "id": "huiji-character-side-story-yutong",
+      "title": "幽桐/支线剧情",
+      "story_scope": "character_side_story",
+      "route": "幽桐",
+      "chapter": "幽桐个人支线",
+      "day": "完整支线",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "个人支线完整对白与选择树；人物事实仍需人工校订。"
+    },
+    {
+      "id": "huiji-character-side-story-labi",
+      "title": "拉比/支线剧情",
+      "story_scope": "character_side_story",
+      "route": "拉比",
+      "chapter": "拉比个人支线",
+      "day": "完整支线",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "个人支线完整对白与选择树；人物事实仍需人工校订。"
+    },
+    {
+      "id": "huiji-character-side-story-gretel",
+      "title": "格蕾莎/支线剧情",
+      "story_scope": "character_side_story",
+      "route": "格蕾莎",
+      "chapter": "格蕾莎个人支线",
+      "day": "完整支线",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "个人支线完整对白与选择树；人物事实仍需人工校订。"
+    },
+    {
+      "id": "huiji-character-side-story-wenzi",
+      "title": "雯梓/支线剧情",
+      "story_scope": "character_side_story",
+      "route": "雯梓",
+      "chapter": "雯梓个人支线",
+      "day": "完整支线",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "个人支线完整对白与选择树；人物事实仍需人工校订。"
+    },
+    {
+      "id": "huiji-character-side-story-li",
+      "title": "丽/支线剧情",
+      "story_scope": "character_side_story",
+      "route": "丽",
+      "chapter": "丽个人支线",
+      "day": "完整支线",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "个人支线完整对白与选择树；人物事实仍需人工校订。"
+    },
+    {
+      "id": "huiji-story-free-roamer-day-7",
+      "title": "飘零的自由者/剧情/第七天",
+      "story_scope": "main_story",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "第七天",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "拒绝加入中央庭后的路线起点；保留引导者、居民愿望和地区移动相关正文。"
+    },
+    {
+      "id": "huiji-story-free-roamer-day-6",
+      "title": "飘零的自由者/剧情/第六天",
+      "story_scope": "main_story",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "第六天",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "保存不属于中央庭体系时在战区行动所受限制的正文。"
+    },
+    {
+      "id": "huiji-story-free-roamer-day-5",
+      "title": "飘零的自由者/剧情/第五天",
+      "story_scope": "main_story",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "第五天",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "保存中央庭会面及路线人物交流正文。"
+    },
+    {
+      "id": "huiji-story-free-roamer-day-4",
+      "title": "飘零的自由者/剧情/第四天",
+      "story_scope": "main_story",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "第四天",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "保存旧城区隧道、记忆缺口和玫瑰花瓣线索；其因果仍待人工校订。"
+    },
+    {
+      "id": "huiji-story-free-roamer-day-3",
+      "title": "飘零的自由者/剧情/第三天",
+      "story_scope": "main_story",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "第三天",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "页面正文较少；愿望链主体另见记忆的种子主线剧情页。"
+    },
+    {
+      "id": "huiji-story-free-roamer-day-2",
+      "title": "飘零的自由者/剧情/第二天",
+      "story_scope": "main_story",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "第二天",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "页面正文较少；不从导航结构补写缺失剧情。"
+    },
+    {
+      "id": "huiji-story-free-roamer-day-1",
+      "title": "飘零的自由者/剧情/第一天",
+      "story_scope": "main_story",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "第一天",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "保存三个最终日入口的来源结构。"
+    },
+    {
+      "id": "huiji-story-free-roamer-memory-seed-main",
+      "title": "记忆的种子/剧情/主线剧情",
+      "story_scope": "main_story_branch",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "主线剧情补充（记忆的种子）",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "保存五段濯樱祭愿望链及分支选择；角色出现顺序不等同于固定招募名单。"
+    },
+    {
+      "id": "huiji-story-free-roamer-memory-seed-finale",
+      "title": "记忆的种子/剧情/最终日",
+      "story_scope": "main_story_finale",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "最终日（记忆的种子）",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "保存濯樱祭、另一世界的记忆碎片和记忆种子的收束；原作白夜馆称谓不自动等同于 Mod 系统入口。"
+    },
+    {
+      "id": "huiji-story-free-roamer-two-person-city-finale",
+      "title": "两个人的城市/剧情/最终日",
+      "story_scope": "main_story_finale",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "最终日（两个人的城市）",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "人工确认 22 个一级标题是姓名首字母索引；当前仅整理本项目十人名单中拥有个人支线的八人。"
+    },
+    {
+      "id": "huiji-story-free-roamer-termination-finale",
+      "title": "终结（飘零的自由者）/剧情/最终日",
+      "story_scope": "main_story_finale",
+      "route": "飘零的自由者",
+      "chapter": "主线剧情 5",
+      "day": "最终日（终结）",
+      "status": "collected",
+      "legacy_video_evidence": [],
+      "notes": "保存独自迎接终结和世界重构的失败收束。"
     }
   ]
 }

@@ -1,0 +1,220 @@
+{
+  "title": "飘零的自由者/剧情/第七天",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E9%A3%98%E9%9B%B6%E7%9A%84%E8%87%AA%E7%94%B1%E8%80%85%2F%E5%89%A7%E6%83%85%2F%E7%AC%AC%E4%B8%83%E5%A4%A9",
+  "page_id": 8963,
+  "touched": "2024-05-03T15:43:55Z",
+  "last_sync": "2026-08-17T12:36:51.405Z",
+  "story_scope": "main_story",
+  "route": "飘零的自由者",
+  "chapter": "主线剧情 5",
+  "day": "第七天",
+  "categories": [],
+  "sections": [
+    {
+      "level": 2,
+      "title": "第七天",
+      "character_count": 34
+    },
+    {
+      "level": 4,
+      "title": "选项：我要加入中央庭",
+      "character_count": 13
+    },
+    {
+      "level": 4,
+      "title": "选项：我需要考虑一下",
+      "character_count": 237
+    },
+    {
+      "level": 4,
+      "title": "选项：为什么要对我这么好……",
+      "character_count": 14
+    },
+    {
+      "level": 4,
+      "title": "选项：这都可以？",
+      "character_count": 109
+    },
+    {
+      "level": 4,
+      "title": "选项：我要加入中央庭",
+      "character_count": 13
+    },
+    {
+      "level": 4,
+      "title": "选项：我还是当个自由人吧",
+      "character_count": 381
+    },
+    {
+      "level": 4,
+      "title": "选项：她……",
+      "character_count": 130
+    },
+    {
+      "level": 4,
+      "title": "选项：你是谁？",
+      "character_count": 1269
+    },
+    {
+      "level": 2,
+      "title": "领取补给",
+      "character_count": 34
+    },
+    {
+      "level": 4,
+      "title": "选项：这是哪里？",
+      "character_count": 1260
+    },
+    {
+      "level": 2,
+      "title": "领取补给",
+      "character_count": 34
+    },
+    {
+      "level": 4,
+      "title": "选项：他……",
+      "character_count": 130
+    },
+    {
+      "level": 4,
+      "title": "选项：你是谁？",
+      "character_count": 1262
+    },
+    {
+      "level": 2,
+      "title": "领取补给",
+      "character_count": 34
+    },
+    {
+      "level": 4,
+      "title": "选项：这是哪里？",
+      "character_count": 1253
+    },
+    {
+      "level": 2,
+      "title": "领取补给",
+      "character_count": 34
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "我要加入中央庭",
+        "我需要考虑一下"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "为什么要对我这么好……",
+        "这都可以？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 1,
+      "parent_option": "我需要考虑一下",
+      "depth": 1,
+      "tree_index": 2
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "我要加入中央庭",
+        "我还是当个自由人吧"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 1,
+      "parent_option": "我需要考虑一下",
+      "depth": 1,
+      "tree_index": 3
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "她……",
+        "他……"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 3,
+      "parent_option": "我还是当个自由人吧",
+      "depth": 2,
+      "tree_index": 4
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "你是谁？",
+        "这是哪里？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 4,
+      "parent_option": "她……",
+      "depth": 3,
+      "tree_index": 5
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "你是谁？",
+        "这是哪里？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 4,
+      "parent_option": "他……",
+      "depth": 3,
+      "tree_index": 6
+    }
+  ],
+  "article_links": [
+    "正轨的箱庭/剧情",
+    "飘零的自由者/剧情",
+    "飘零的自由者/剧情/第六天"
+  ],
+  "image_names": [
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_安托涅瓦.png",
+    "Dialogue_icon_.png",
+    "Dialogue_icon_指挥使(女)(黑影).png",
+    "Dialogue_icon_雷切尔.png",
+    "手账CG_两个人的城市.png",
+    "手账text_两个人的城市.png",
+    "Dialogue_icon_智能机.png",
+    "Dialogue_icon_指挥使(男)(黑影).png"
+  ],
+  "legacy_video_evidence": [
+    "Bilibili BV17M4y1w7rr：仅保留为既有补充记录，不作为正文主来源"
+  ],
+  "manual_structure_note": "",
+  "manual_structure_reference": "",
+  "raw_markdown_path": "raw/huiji/stories/飘零的自由者_剧情_第七天.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/飘零的自由者_剧情_第七天.md"
+}

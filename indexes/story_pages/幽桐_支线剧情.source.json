@@ -1,0 +1,211 @@
+{
+  "title": "幽桐/支线剧情",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E5%B9%BD%E6%A1%90%2F%E6%94%AF%E7%BA%BF%E5%89%A7%E6%83%85",
+  "page_id": 8013,
+  "touched": "2026-03-07T04:20:02Z",
+  "last_sync": "2026-08-10T05:25:29.503Z",
+  "story_scope": "character_side_story",
+  "route": "幽桐",
+  "chapter": "幽桐个人支线",
+  "day": "完整支线",
+  "categories": [
+    "使用tbui时间轴的页面"
+  ],
+  "sections": [
+    {
+      "level": 2,
+      "title": "幽桐，逃亡中！",
+      "character_count": 1629
+    },
+    {
+      "level": 2,
+      "title": "圣人与否",
+      "character_count": 648
+    },
+    {
+      "level": 3,
+      "title": "剧情战",
+      "character_count": 61
+    },
+    {
+      "level": 4,
+      "title": "剧情战结束前",
+      "character_count": 754
+    },
+    {
+      "level": 4,
+      "title": "剧情战结束后",
+      "character_count": 522
+    },
+    {
+      "level": 2,
+      "title": "给父亲的礼物",
+      "character_count": 400
+    },
+    {
+      "level": 4,
+      "title": "选项：好羡慕！",
+      "character_count": 59
+    },
+    {
+      "level": 4,
+      "title": "选项：资金没问题吗？",
+      "character_count": 1342
+    },
+    {
+      "level": 4,
+      "title": "选项：只偷走了音乐有关的东西？",
+      "character_count": 67
+    },
+    {
+      "level": 4,
+      "title": "选项：凶器不对？",
+      "character_count": 28
+    },
+    {
+      "level": 4,
+      "title": "选项：倒下的地点不对？",
+      "character_count": 185
+    },
+    {
+      "level": 4,
+      "title": "选项：凶器不对？",
+      "character_count": 70
+    },
+    {
+      "level": 4,
+      "title": "选项：只偷走了音乐有关的东西？",
+      "character_count": 18
+    },
+    {
+      "level": 4,
+      "title": "选项：倒下的地点不对？",
+      "character_count": 185
+    },
+    {
+      "level": 4,
+      "title": "选项：倒下的地点不对？",
+      "character_count": 185
+    },
+    {
+      "level": 2,
+      "title": "自导自演的闹剧",
+      "character_count": 1463
+    },
+    {
+      "level": 2,
+      "title": "天才，圣者",
+      "character_count": 1213
+    },
+    {
+      "level": 4,
+      "title": "选项：当然没问题",
+      "character_count": 46
+    },
+    {
+      "level": 4,
+      "title": "选项：请手下留情",
+      "character_count": 51
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "好羡慕！",
+        "资金没问题吗？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "只偷走了音乐有关的东西？",
+        "凶器不对？",
+        "倒下的地点不对？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 2
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "凶器不对？",
+        "倒下的地点不对？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 2,
+      "parent_option": "只偷走了音乐有关的东西？",
+      "depth": 1,
+      "tree_index": 3
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "只偷走了音乐有关的东西？",
+        "倒下的地点不对？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 2,
+      "parent_option": "凶器不对？",
+      "depth": 1,
+      "tree_index": 4
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "当然没问题",
+        "请手下留情"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 5
+    }
+  ],
+  "article_links": [],
+  "image_names": [
+    "CG_clear.png",
+    "CG_39.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_.png",
+    "Dialogue_icon_幽桐.png",
+    "Dialogue_icon_晏华.png",
+    "Dialogue_icon_濑由衣.png",
+    "Dialogue_icon_妮维.png",
+    "Dialogue_icon_保镖.png"
+  ],
+  "legacy_video_evidence": [],
+  "manual_structure_note": "保留页面中的对白、剧情段落与选择树；攻略条件不自动转化为人物事实。",
+  "manual_structure_reference": "支线剧情/神器使",
+  "raw_markdown_path": "raw/huiji/stories/幽桐_支线剧情.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/幽桐_支线剧情.md"
+}

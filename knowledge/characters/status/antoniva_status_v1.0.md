@@ -8,10 +8,11 @@ source_status: "complete"
 mod_ready_status: "complete"
 character_bible_status: "complete"
 implementation_status: "not_started"
+leader_design_status: "design_approved"
 art_status: "partial"
 narrative_status: "approved"
 test_status: "not_tested"
-last_reviewed: "2026-07-25"
+last_reviewed: "2026-08-10"
 ---
 
 # 安托涅瓦 1.0 角色状态档案
@@ -29,6 +30,7 @@ last_reviewed: "2026-07-25"
 - [标准角色档案](../antoniva_character_v0.1.md)
 - [核心人物关系圣经](../character_relationship_bible_v0.1.md)
 - [角色视觉规范](../../../docs/art/characters/ANTONIVA_STYLE.md)
+- [领袖职业与核心机制设计草案](../../../docs/design/characters/antoniva_leader_core_design_v1.0.md)
 
 原作资料、结构化摘要与标准档案均已存在；具体主线事实仍须遵守各路线的人工校订范围。
 
@@ -43,7 +45,9 @@ last_reviewed: "2026-07-25"
 
 - 白夜馆招募：未开始。
 - 独特领袖创建：未开始。
-- 职业与核心特质：待设计审核。
+- 职业与核心机制：已完成人工整体审核，批准进入机制可行性设计。
+- 职业边界：不被单一职业定义；按照公共规则，指挥官形态必须可用，底层主 class 与其他职业仍须经原型验证确定。
+- 核心机制：方舟时空支配，统一涵盖战略穿界、方舟庇护与虚空放逐。
 - 唯一招募与持久化引用：未开始。
 - 立绘、本地化与通讯：未开始。
 
@@ -54,12 +58,12 @@ last_reviewed: "2026-07-25"
 ## 6. 1.0 完成条件
 
 - 完成白夜馆招募、通讯和档案。
-- 确认领袖职业与一个核心机制。
+- 已确认职业边界与一个核心机制。
 - 完成唯一招募、读档与死亡状态处理。
 - 完成正式立绘、本地化和专项测试。
 - 确认所有文本均保持“制度化核心领袖”边界。
 
 ## 7. 当前阻塞项
 
-- 职业与核心机制尚未在 1.0 设计层批准。
+- 底层 class、具体作用域、触发条件、数值和存读档实现尚待 Stellaris 4.4.3 可行性验证。
 - 游戏实现和测试尚未开始。

@@ -1,14 +1,16 @@
 ---
 title: "爱缪莎专属终局天灾联合设计 v1.0"
 type: "joint_narrative_design"
-status: "approved_for_mechanism_blueprint"
+status: "approved_narrative_reference_with_asset_override"
 release_target: "1.0"
 implementation_gate: "closed"
 current_review_item: "complete"
-last_updated: "2026-07-29"
+last_updated: "2026-08-16"
 ---
 
 # 爱缪莎专属终局天灾联合设计 v1.0
+
+> **现行覆盖决定（`APM-R006`、`APM-R008`，2026-08-16）：**本文批准的专属终局天灾身份、三阶段结构、非对称双钥匙、终局锚点、无人格投影、专属巨构职责和真相边界继续有效。本文以“专属舰”描述的现场局部恒定职责继续有效，但专属舰现有原型、唯一舰、独立编队、摧毁重现、部署方式和正式实现均已暂停，不再是 1.0 主线成立条件。未来可以重新设计专属舰，也可以另审更稳定的载体。本文后续保留的舰船细节均视为历史技术方案，不覆盖已终审的制作矩阵。
 
 ## 1. 文档职责
 

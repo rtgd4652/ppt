@@ -15,6 +15,7 @@
 | Mod Ready | `complete` / `partial` / `missing` | 是否已有结构化转化摘要 |
 | 标准角色档案 | `complete` / `partial` / `missing` | 是否已按统一模板完成角色档案 |
 | 游戏实现 | `playable` / `partial` / `not_started` | 是否已能在游戏内完整招募与使用 |
+| 领袖设计 | `design_approved` / `approved_special_route` / `pending_review` | 职业与唯一人物核心是否已经人工批准；专项大型路线可单独标记 |
 | 美术锚点 | `approved` / `partial` / `deferred` / `missing` | 原作视觉依据与制作边界状态 |
 | 叙事设计 | `approved` / `partial` / `blocked` | 角色在 1.0 中的叙事职责是否确定 |
 | 测试状态 | `passed` / `partial` / `not_tested` | 1.0 角色专项测试状态 |

@@ -1,0 +1,117 @@
+{
+  "title": "爱缪莎/支线剧情",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E7%88%B1%E7%BC%AA%E8%8E%8E%2F%E6%94%AF%E7%BA%BF%E5%89%A7%E6%83%85",
+  "page_id": 7701,
+  "touched": "2021-03-11T05:03:24Z",
+  "last_sync": "2026-08-10T05:25:26.355Z",
+  "story_scope": "character_side_story",
+  "route": "爱缪莎",
+  "chapter": "爱缪莎个人支线",
+  "day": "完整支线",
+  "categories": [
+    "使用tbui时间轴的页面"
+  ],
+  "sections": [
+    {
+      "level": 2,
+      "title": "生意人的邀请",
+      "character_count": 1289
+    },
+    {
+      "level": 2,
+      "title": "目标，爱缪莎！",
+      "character_count": 1778
+    },
+    {
+      "level": 2,
+      "title": "轻而易举",
+      "character_count": 122
+    },
+    {
+      "level": 4,
+      "title": "选项：虽然确实最近空闲了一些…… 但只想宅在家里休息一下，不想去那么远的地方啊。",
+      "character_count": 171
+    },
+    {
+      "level": 4,
+      "title": "选项：好吧，我就跟你一起去一下好了。",
+      "character_count": 44
+    },
+    {
+      "level": 4,
+      "title": "选项：真的不去啦，在说神器使跟柔弱什么的一点儿都不搭边吧。 你就自己去吧，我要休息了。",
+      "character_count": 2
+    },
+    {
+      "level": 4,
+      "title": "选项：什么？可以当做约会！ 太棒了！去去去，当然去！打断腿也要去！",
+      "character_count": 1866
+    },
+    {
+      "level": 2,
+      "title": "难度增加了的迷宫",
+      "character_count": 2613
+    },
+    {
+      "level": 2,
+      "title": "打赌",
+      "character_count": 911
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "虽然确实最近空闲了一些…… 但只想宅在家里休息一下，不想去那么远的地方啊。",
+        "什么？可以当做约会！ 太棒了！去去去，当然去！打断腿也要去！"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "好吧，我就跟你一起去一下好了。",
+        "真的不去啦，在说神器使跟柔弱什么的一点儿都不搭边吧。 你就自己去吧，我要休息了。"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": 1,
+      "parent_option": "虽然确实最近空闲了一些…… 但只想宅在家里休息一下，不想去那么远的地方啊。",
+      "depth": 1,
+      "tree_index": 2
+    }
+  ],
+  "article_links": [],
+  "image_names": [
+    "CG_clear.png",
+    "CG_26.png",
+    "Mission_type_Role.png",
+    "Dialogue_icon_爱缪莎.png",
+    "Dialogue_icon_.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_老板1.png",
+    "Dialogue_icon_男6.png",
+    "Dialogue_icon_保镖.png",
+    "Dialogue_icon_快递员.png",
+    "Dialogue_icon_裂晶鸟.png",
+    "Item_event_065.png",
+    "Bg_event_show.png",
+    "Item_event_064.png"
+  ],
+  "legacy_video_evidence": [],
+  "manual_structure_note": "保留页面中的对白、剧情段落与选择树；攻略条件不自动转化为人物事实。",
+  "manual_structure_reference": "支线剧情/神器使",
+  "raw_markdown_path": "raw/huiji/stories/爱缪莎_支线剧情.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/爱缪莎_支线剧情.md"
+}

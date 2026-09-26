@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "source_root": "https://f7d.huijiwiki.com/wiki/支线剧情",
+  "scope": "《神器使》Mod 1.0 核心角色的原作个人支线叙事证据",
+  "collection_policy": [
+    "只采集清单中明确列出的页面，不进行全站同步。",
+    "raw 层保留页面自动转换文本，clean 层只做机械清洗与选择树结构化。",
+    "攻略条件、好感度、建设值和战斗要求不自动转化为人物事实。",
+    "人物动机、关系与项目正史结论必须在后续人工校订中确认。"
+  ],
+  "collected_characters": [
+    { "character": "爱缪莎", "page_title": "爱缪莎/支线剧情" },
+    { "character": "晏华", "page_title": "晏华/支线剧情" },
+    { "character": "赛斯", "page_title": "赛斯/支线剧情" },
+    { "character": "幽桐", "page_title": "幽桐/支线剧情" },
+    { "character": "拉比", "page_title": "拉比/支线剧情" },
+    { "character": "格蕾莎", "page_title": "格蕾莎/支线剧情" },
+    { "character": "雯梓", "page_title": "雯梓/支线剧情" },
+    { "character": "丽", "page_title": "丽/支线剧情" }
+  ],
+  "known_exceptions": [
+    {
+      "character": "安托涅瓦",
+      "status": "no_personal_side_story",
+      "reason": "原作以《避世的方舟》主线承载其核心剧情，不生成空白个人支线页。"
+    },
+    {
+      "character": "安",
+      "status": "no_personal_side_story",
+      "reason": "原作以《无垢的人偶》主线承载其核心剧情；本条作为来源边界记录，不生成空白个人支线页。"
+    }
+  ],
+  "separate_source_scope": [
+    {
+      "character": "冈部伦太郎",
+      "status": "collaboration_story_separate",
+      "reason": "联动角色剧情不属于本次原作神器使个人支线页面范围，需使用联动剧情来源单独整理。"
+    }
+  ]
+}

@@ -7,11 +7,13 @@ roster_status: "locked"
 source_status: "complete"
 mod_ready_status: "complete"
 character_bible_status: "complete"
-implementation_status: "not_started"
-art_status: "missing"
+implementation_status: "design_approved"
+leader_design_status: "design_approved"
+mechanic_responsibility_status: "approved_for_isolated_prototype"
+art_status: "approved_anchor"
 narrative_status: "partial"
 test_status: "not_tested"
-last_reviewed: "2026-07-29"
+last_reviewed: "2026-08-15"
 ---
 
 # 安 1.0 角色状态档案
@@ -27,8 +29,10 @@ last_reviewed: "2026-07-29"
 - [Clean 资料](../安.md)
 - [Mod Ready 摘要](../../mod_ready/characters/安.mod.md)
 - [标准角色档案](../an_character_v0.1.md)
+- [1.0 领袖职业与核心机制设计](../../../docs/design/characters/an_leader_core_design_v1.0.md)
+- [角色视觉规范](../../../docs/art/characters/AN_STYLE.md)
 
-标准角色档案已经建立，并明确有限时间回溯不得扩写为世界线、世界重构或七日轮回控制权。当前仍无独立美术规范或完整游戏实现。
+标准角色档案已经建立，并明确有限时间回溯不得扩写为世界线、世界重构或七日轮回控制权。独立角色视觉规范、人物形态锚点和时光之刃器物锚点已经建立，游戏实现尚未开始。
 
 ## 3. 1.0 叙事定位
 
@@ -40,22 +44,29 @@ last_reviewed: "2026-07-29"
 ## 4. 游戏实现状态
 
 - 白夜馆招募、通讯和档案：未开始。
-- 职业与核心机制：待标准档案完成后设计。
+- 职业与核心机制：行政官／指挥官双职业与“时序学习”已获人工批准，等待可行性设计。
+- [时序学习机制责任卡](../../../docs/mechanics/characters/an_mechanic_responsibility_card_v1.0.md)：ATM-001～ATM-006 已整体批准，允许进入无正式收益的隔离技术原型。
 - 独特领袖、唯一招募、立绘和本地化：未开始。
 - 测试：未开始。
 
 ## 5. 美术状态
 
-尚未建立原作视觉锚点与角色风格页。正式制作前必须核验基础立绘、时光之刃、个人颜色和不同剧情状态，不得把爱缪莎的命运视觉或通用时间齿轮直接套用为安的个人设计。
+- `「光荣女仆」安` 已批准为 1.0 基础形态主锚点；`安-觉醒.jpg` 与 `安觉醒设计.png` 已批准为觉醒形态辅助锚点。
+- `女仆的假日`、`暗月礼花`、`黑雪姬` 已归类为皮肤／活动形态，不得反向改写基础形态。
+- 时光之刃的双刃钟面结构、固有色关系和五类时间能力阶段已经通过 `AFA-003` 人工审核。
+- 回溯只作用于已记录的局部状态；不得重启世界、任意改写历史、恢复全部损失或控制七日轮回。
+- 时间表现必须克制并服务有限回溯与人格成长，不得套用爱缪莎的命运视觉、通用时间齿轮或世界重构界面。
+- CVA-002 方案 A 已批准人物外貌与原作固有色：鲑粉／蜜桃粉过腰长发、灰褐眼睛，以及象牙白、酒红褐、深棕、暖金和少量青蓝宝石构成的基础形态均已锁定。
+- 基础形态不是蓝白科幻女仆；觉醒形态的深巧克力棕主体、大型头饰和复杂时间环体不得反向改写基础形态。
 
 ## 6. 1.0 完成条件
 
 - 按统一模板完成标准角色档案。
 - 建立原作视觉锚点和风格边界。
-- 批准 Stellaris 领袖职业和一个核心机制。
+- 已批准 Stellaris 领袖职业和一个核心机制。
 - 完成白夜馆接入、唯一招募、立绘、本地化和专项测试。
 
 ## 7. 当前阻塞项
 
-- 视觉锚点缺失。
-- 时间能力在 Stellaris 中的叙事与玩法边界尚未批准。
+- 时光之刃在全身立绘中的长度比例、收纳方式和非战斗携带状态仍待补充证据；正式制作阶段仍需技术色板采样和显示校色。
+- 正式数值、事件脚本和视觉方案尚未设计与审核。

@@ -123,13 +123,23 @@ class StoryParser {
       "讨论",
     ]);
     const fileOnlyPattern = /^(?:File|文件):.+\.(?:png|jpe?g|gif|webp|svg|ogg|mp3|wav)$/i;
-    const visualAssetPrefix = /^(?:(?:Dialogue[ _-]?icon|CG|Alter[ _-]?selector|Buliding[ _-]?part|Fight[ _-]?level|Monster[ _-]?mini[ _-]?icon|Icon[ _-]?Boss[ _-]?style|Item[ _-]?rare|Mission[ _-]?type[ _-]?Main|手账(?:CG|text))[\s\S]*?\.(?:png|jpe?g|gif|webp|svg)\s*)/i;
+    const visualAssetPrefix = /^(?:(?:Dialogue[ _-]?icon|CG|Alter[ _-]?selector|Buliding[ _-]?part|Fight[ _-]?level|Monster[ _-]?mini[ _-]?icon|Icon[ _-]?Boss[ _-]?style|Item[ _-]?rare|Mission[ _-]?type[ _-]?(?:Main|Role)|手账(?:CG|text))[\s\S]*?\.(?:png|jpe?g|gif|webp|svg)\s*)/i;
     const inlineInfoIcon = /(?:^|\s)Info[ _-]?.{0,60}?icon\.(?:png|jpe?g|gif|webp|svg)\s*/gi;
+    // 不吞掉文件名后的分隔空格，确保同一行连续出现的多个视觉资源都能被全局匹配。
+    const inlineVisualAsset = /(?:^|\s)(?:CG[ _-]?(?:clear|\d+)|Item[ _-]?event[ _-]?\d+|Bg[ _-]?event[ _-]?show)\.(?:png|jpe?g|gif|webp|svg)/gi;
     const lines = String(markdown || "")
       .replace(/\u00a0/g, " ")
       .split(/\r?\n/)
       // 剧情页会把头像、CG 与按钮图片的 alt 文本混入正文；只剥离文件名，保留同一行紧随其后的说明文字。
-      .map((line) => line.replace(visualAssetPrefix, "").replace(inlineInfoIcon, " ").replace(/[ \t]+/g, " ").trim())
+      .map((line) => line
+        // 标题中的任务类型图片位于 Markdown 标题符号之后，需要保留标题层级并单独剥离文件名。
+        .replace(/^(#{1,6}\s+)Mission[ _-]?type[ _-]?Role\.png\s*/i, "$1")
+        .replace(visualAssetPrefix, "")
+        .replace(inlineInfoIcon, " ")
+        // 清除正文行尾的 CG、事件道具和背景按钮文件名；原始文件仍在 raw 层完整保留。
+        .replace(inlineVisualAsset, " ")
+        .replace(/[ \t]+/g, " ")
+        .trim())
       .filter((line) => !navigationOnlyLines.has(line))
       .filter((line) => !/^-\s*(?:目录|上一天|下一天|返回顶部|返回剧情目录)\s*$/.test(line))
       .filter((line) => line !== "|")

@@ -1,0 +1,328 @@
+{
+  "title": "丽/支线剧情",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E4%B8%BD%2F%E6%94%AF%E7%BA%BF%E5%89%A7%E6%83%85",
+  "page_id": 8028,
+  "touched": "2023-04-19T16:09:54Z",
+  "last_sync": "2026-08-10T05:25:34.154Z",
+  "story_scope": "character_side_story",
+  "route": "丽",
+  "chapter": "丽个人支线",
+  "day": "完整支线",
+  "categories": [
+    "使用tbui时间轴的页面"
+  ],
+  "sections": [
+    {
+      "level": 4,
+      "title": "选项：正确选项",
+      "character_count": 75
+    },
+    {
+      "level": 4,
+      "title": "选项：错误选项",
+      "character_count": 734
+    },
+    {
+      "level": 2,
+      "title": "『募捐』请救救旧城区，救救城市的历史！",
+      "character_count": 153
+    },
+    {
+      "level": 4,
+      "title": "选项：现在就捐（需要20W金币）",
+      "character_count": 168
+    },
+    {
+      "level": 4,
+      "title": "选项：先不捐了",
+      "character_count": 74
+    },
+    {
+      "level": 2,
+      "title": "偶遇？还是刻意？",
+      "character_count": 161
+    },
+    {
+      "level": 4,
+      "title": "选项：想捐就捐了",
+      "character_count": 27
+    },
+    {
+      "level": 4,
+      "title": "选项：不能让别人看扁了",
+      "character_count": 26
+    },
+    {
+      "level": 4,
+      "title": "选项：因为是必要的",
+      "character_count": 433
+    },
+    {
+      "level": 4,
+      "title": "选项：这、这么多",
+      "character_count": 11
+    },
+    {
+      "level": 4,
+      "title": "选项：全都要看吗？",
+      "character_count": 204
+    },
+    {
+      "level": 4,
+      "title": "选项：没事的，我相信你",
+      "character_count": 10
+    },
+    {
+      "level": 4,
+      "title": "选项：没事的，我看过了",
+      "character_count": 1045
+    },
+    {
+      "level": 3,
+      "title": "履行合约吧。",
+      "character_count": 166
+    },
+    {
+      "level": 4,
+      "title": "选项：我知道了……",
+      "character_count": 42
+    },
+    {
+      "level": 4,
+      "title": "选项：那些人本来就无家可归了，再赶出去太残忍了。",
+      "character_count": 75
+    },
+    {
+      "level": 2,
+      "title": "旧城区的见闻",
+      "character_count": 1807
+    },
+    {
+      "level": 3,
+      "title": "关于土地的事情……",
+      "character_count": 159
+    },
+    {
+      "level": 4,
+      "title": "选项：当然可以！",
+      "character_count": 14
+    },
+    {
+      "level": 4,
+      "title": "选项：我有点忙。",
+      "character_count": 18
+    },
+    {
+      "level": 2,
+      "title": "孤儿院的见闻",
+      "character_count": 735
+    },
+    {
+      "level": 4,
+      "title": "选项：你连小孩子都不放过啊",
+      "character_count": 11
+    },
+    {
+      "level": 4,
+      "title": "选项：跟小孩子的合同是无效的",
+      "character_count": 1968
+    },
+    {
+      "level": 3,
+      "title": "有线索了",
+      "character_count": 83
+    },
+    {
+      "level": 2,
+      "title": "地下停车场的对话",
+      "character_count": 1963
+    },
+    {
+      "level": 2,
+      "title": "雷切尔的提议",
+      "character_count": 356
+    },
+    {
+      "level": 2,
+      "title": "前往废墟工厂",
+      "character_count": 485
+    },
+    {
+      "level": 4,
+      "title": "选项：用声音吓唬他们",
+      "character_count": 56
+    },
+    {
+      "level": 4,
+      "title": "选项：露出身形",
+      "character_count": 890
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "正确选项",
+        "错误选项"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "现在就捐（需要20W金币）",
+        "先不捐了"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 2
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "想捐就捐了",
+        "不能让别人看扁了",
+        "因为是必要的"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 3
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "这、这么多",
+        "全都要看吗？"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 4
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "没事的，我相信你",
+        "没事的，我看过了"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 5
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "我知道了……",
+        "那些人本来就无家可归了，再赶出去太残忍了。"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 6
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "当然可以！",
+        "我有点忙。"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 7
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "你连小孩子都不放过啊",
+        "跟小孩子的合同是无效的"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 8
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "用声音吓唬他们",
+        "露出身形"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 9
+    }
+  ],
+  "article_links": [],
+  "image_names": [
+    "CG_clear.png",
+    "CG_31.png",
+    "Dialogue_icon_.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_女4.png",
+    "Dialogue_icon_黑影1.png",
+    "Dialogue_icon_黑影3.png",
+    "Dialogue_icon_丽.png",
+    "Dialogue_icon_黑影6.png",
+    "Dialogue_icon_黑影2.png",
+    "Dialogue_icon_莱奥斯.png",
+    "Dialogue_icon_雷切尔.png"
+  ],
+  "legacy_video_evidence": [],
+  "manual_structure_note": "保留页面中的对白、剧情段落与选择树；攻略条件不自动转化为人物事实。",
+  "manual_structure_reference": "支线剧情/神器使",
+  "raw_markdown_path": "raw/huiji/stories/丽_支线剧情.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/丽_支线剧情.md"
+}

@@ -37,6 +37,50 @@
     "深渊的步伐/剧情/特殊灭世2": {
       "manual_structure_note": "本页汇总神的棋盘、零的故事和被抛下的人最终战失败结果；零的故事还分希罗死亡／存活两种状态，不能合并为一个通用灭世段。",
       "manual_structure_reference": "knowledge/story/curated/finales/深渊的步伐_特殊灭世2_剧情整理_v0.1.md"
+    },
+    "两个人的城市/剧情/最终日": {
+      "manual_structure_note": "人工确认：页面保存 21 个字母候选索引，连同最终日总标题可计为 22 个同级标题，并非连续剧情。结局允许玩家与本周目已攻略的一名神器使共度最后一天；当前十人名单中整理爱缪莎、晏华、赛斯、幽桐、拉比、格蕾莎、雯梓和丽。页面只有公共结局正文，确认共同面对末日与遗忘，不代表逃离轮回、保存记忆或确立唯一伴侣。",
+      "manual_structure_reference": "knowledge/story/curated/finales/飘零的自由者_两个人的城市_最终日_剧情整理_v0.1.md"
+    },
+    "记忆的种子/剧情/最终日": {
+      "manual_structure_note": "人工确认：濯樱祭完成后世界在白光中逐渐融化、消失；引导者的他／她是第七天状态对应的两套表现，不是两个不同人物。引导者自称另一个世界中曾拒绝安托涅瓦并孤独终结的指挥使，在满足未公开的苛刻条件后委托白夜馆中的那一位保留极少量记忆信息。伙伴记忆凝结为种子并超越轮回保存，但新轮回醒来后仍会遗忘，不代表完整记忆恢复或末日被阻止。",
+      "manual_structure_reference": "knowledge/story/curated/finales/飘零的自由者_记忆的种子_最终日_剧情整理_v0.1.md"
+    },
+    "飘零的自由者/剧情/第七天": {
+      "manual_structure_note": "人工确认：本页包含两次是否加入中央庭的路线选择，只有第二次坚持当自由人才正式进线；两种即时提问和两种记忆空间问句各自存在共同续段。她／他属于未知人影的男女表现版本，不是玩家主动选择其性别；四次领取补给标题是组合版本复制同一尾段，不是四次连续事件。安托涅瓦对自由的羡慕只作为指挥使感受记录，雷切尔区域传送仍属于测试技术。",
+      "manual_structure_reference": "knowledge/story/curated/days/飘零的自由者_第七天_剧情整理_v0.1.md"
+    },
+    "飘零的自由者/剧情/第六天": {
+      "manual_structure_note": "人工确认：本页没有选择树，学园的战斗是单线支线。赛哈姆先消除飞石威胁、再拒绝指挥使介入中央庭战斗，体现组织距离而非私人敌意；页面没有说明她是否知道指挥使仍保留权限，也没有公开该支线与结局条件的精确关系。",
+      "manual_structure_reference": "knowledge/story/curated/days/飘零的自由者_第六天_剧情整理_v0.1.md"
+    },
+    "飘零的自由者/剧情/第五天": {
+      "manual_structure_note": "人工确认：本页没有选择树，中央庭例会是单线支线。安托涅瓦尊重指挥使的自由选择，但只在万不得已时保留未具体说明的强制措施；奥露西娅关于被喜欢的人拒绝属于调侃，突然亲吻是直接事件，希罗称其热情只是评价；安托涅瓦心事重重仍是指挥使观察。",
+      "manual_structure_reference": "knowledge/story/curated/days/飘零的自由者_第五天_剧情整理_v0.1.md"
+    },
+    "飘零的自由者/剧情/第四天": {
+      "manual_structure_note": "人工确认：本页没有选择树，神秘的地道是单线支线。近期有人使用属于指挥使推测；紫黑晶体保持未鉴定，不自动等同其他物质；石块撞击和脑震荡只是医疗判断，不能填补记忆空白；智力说法按调侃记录；玫瑰花瓣只提示奥露西娅关联，不确认其为幕后行动者。",
+      "manual_structure_reference": "knowledge/story/curated/days/飘零的自由者_第四天_剧情整理_v0.1.md"
+    },
+    "飘零的自由者/剧情/第三天": {
+      "manual_structure_note": "人工确认：本页没有独立支线和选择树，只保存自由行动框架。来源正文空白不代表正史中当天无事发生；濯樱祭愿望链按进度独立记录，不在缺少日期证据时机械分配到第三天。",
+      "manual_structure_reference": "knowledge/story/curated/days/飘零的自由者_第三天_剧情整理_v0.1.md"
+    },
+    "飘零的自由者/剧情/第二天": {
+      "manual_structure_note": "人工确认：本页没有独立支线和选择树，只保存自由行动框架。来源正文空白不代表当天没有发生自由行动或进度事件；没有明确证据时，不把特定神器使、居民愿望或结局条件固定分配到第二天。",
+      "manual_structure_reference": "knowledge/story/curated/days/飘零的自由者_第二天_剧情整理_v0.1.md"
+    },
+    "飘零的自由者/剧情/第一天": {
+      "manual_structure_note": "人工确认：本页没有独立支线和选择树，只保存末日前环境、自由行动和结局导航。终结、两个人的城市与记忆的种子是三个互斥结局；页面不公开完整判定公式。还有明天是指挥使的希望表达，天气异常和城市恐惧的成因及居民认知程度仍未知。",
+      "manual_structure_reference": "knowledge/story/curated/days/飘零的自由者_第一天_剧情整理_v0.1.md"
+    },
+    "记忆的种子/剧情/主线剧情": {
+      "manual_structure_note": "五阶段愿望链叙事已全部完成人工校订。第五阶段确认地下黑门是樱花枯萎的直接原因，清除后樱花在现实中复苏；巴里隐瞒枯萎但萝拉早已察觉，火灾后萝拉与巴里共同重种花林；萝拉所说看见樱花不代表视力恢复。精确日期、未公开条件和记忆集成系统跨路线验证继续作为开放证据问题。",
+      "manual_structure_reference": "knowledge/story/curated/structure/飘零的自由者_濯樱祭愿望链_v0.1.md"
+    },
+    "终结（飘零的自由者）/剧情/最终日": {
+      "manual_structure_note": "人工确认：城市在突然降临的末日中毁灭，指挥使感到似曾相识并消极接受结局；最高楼顶有一名正文称为她的未知人物。页面明确孤独结局和新轮回开始，但没有公开灾难来源、楼顶人物身份、熟悉感来源或结局入口公式。",
+      "manual_structure_reference": "knowledge/story/curated/finales/飘零的自由者_终结_最终日_剧情整理_v0.1.md"
     }
   },
   "claims": [
@@ -147,6 +191,222 @@
       "page_title": "神的棋盘/剧情/最终日",
       "source_section": "最终战胜利与神秘少女出现",
       "evidence_note": "依据正文说话者标签和收束描述人工校订；不以资源文件名替代叙事证据。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-TWO-PERSON-CITY-INDEX-001",
+      "domain": "main_story_structure",
+      "subject": "两个人的城市：候选神器使索引与项目读取范围",
+      "statement": "两个人的城市允许玩家与本周目已攻略的一名神器使共度最后一天。页面保存 21 个字母候选索引，连同最终日总标题可计为 22 个同级标题，并非连续剧情；当前项目读取八名有效候选。公共结局确认共同面对末日与遗忘，不代表阻止毁灭、逃离轮回、保存记忆或确立唯一伴侣。",
+      "claim_type": "route_and_character_index_structure",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "两个人的城市/剧情/最终日",
+      "source_section": "按姓名首字母分类的神器使候选列表",
+      "evidence_note": "FRC-001 至 FRC-009 已于 2026-08-22 人工确认；不把字母索引和最终日总标题误写为 22 段连续剧情。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-MEMORY-SEED-FINALE-001",
+      "domain": "main_story_finale_memory_and_cycle_boundary",
+      "subject": "飘零的自由者结局：记忆的种子",
+      "statement": "濯樱祭完成后，引导者以他／她两套表现自称另一个世界中曾孤独终结的指挥使，并说明自己在满足未公开条件后委托白夜馆中的那一位保留极少量记忆信息。伙伴共同记忆凝结为种子并超越轮回存在，但新轮回开始后当前认知仍会遗忘；页面没有确认完整记忆恢复、末日停止或委托对象身份。",
+      "claim_type": "finale_identity_memory_persistence_and_unknown_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "记忆的种子/剧情/最终日",
+      "source_section": "最终日",
+      "evidence_note": "FRM-001 至 FRM-011 已于 2026-08-22 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-DAY7-ROUTE-TREE-001",
+      "domain": "main_story_structure",
+      "subject": "飘零的自由者第七天：进线选择与共同续段",
+      "statement": "第七天两次选择加入中央庭都会返回正轨的箱庭，只有第二次坚持当自由人才正式进入飘零的自由者；两组问句之后分别汇入共同续段。",
+      "claim_type": "route_and_choice_tree_structure",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第七天",
+      "source_section": "第七天路线入口",
+      "evidence_note": "FRD-7-001、FRD-7-002、FRD-7-003 与 FRD-7-005 已于 2026-08-17 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-DAY7-PRESENTATION-001",
+      "domain": "main_story_structure",
+      "subject": "飘零的自由者第七天：未知人影版本与重复尾段",
+      "statement": "她与他属于未知人影的女性和男性表现版本，不是玩家主动选择其性别；页面四次领取补给来自组合版本复制同一尾段，不是连续发生四次补给。",
+      "claim_type": "presentation_state_and_duplicate_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第七天",
+      "source_section": "未知人影与领取补给",
+      "evidence_note": "FRD-7-004 与 FRD-7-006 已于 2026-08-17 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-DAY7-FACT-BOUNDARY-001",
+      "domain": "character_and_technology_boundary",
+      "subject": "飘零的自由者第七天：人物感受与区域传送边界",
+      "statement": "安托涅瓦羡慕自由仅是指挥使的主观感受；雷切尔的区域传送仍是有风险和行动限制的测试技术，不能据此认定已经成熟普及。",
+      "claim_type": "narrative_and_technology_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第七天",
+      "source_section": "宿舍离别与区域传送",
+      "evidence_note": "FRD-7-007 与 FRD-7-008 已于 2026-08-17 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-DAY6-SEHAM-001",
+      "domain": "main_story_and_character_boundary",
+      "subject": "飘零的自由者第六天：赛哈姆与自由人指挥使",
+      "statement": "学园的战斗是没有选择树的单线支线。赛哈姆既消除飞石威胁又拒绝指挥使参与中央庭战斗，体现组织距离而非私人敌意；页面没有证明她知晓保留权限、权限已经撤销或该支线决定结局。",
+      "claim_type": "scene_structure_and_motive_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第六天",
+      "source_section": "支线：学园的战斗",
+      "evidence_note": "FRD-6-001 至 FRD-6-005 已于 2026-08-17 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-DAY5-MEETING-001",
+      "domain": "main_story_and_character_boundary",
+      "subject": "飘零的自由者第五天：中央庭例会与人物评价边界",
+      "statement": "中央庭例会是单线支线。安托涅瓦尊重指挥使自由选择但保留未具体说明的危急强制措施；奥露西娅的感情调侃、希罗的热情评价和指挥使对安托涅瓦心事的观察均不提升为无条件事实。",
+      "claim_type": "scene_structure_and_character_evidence_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第五天",
+      "source_section": "支线：中央庭例会",
+      "evidence_note": "FRD-5-001 至 FRD-5-005 已于 2026-08-18 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-DAY4-TUNNEL-001",
+      "domain": "main_story_evidence_boundary",
+      "subject": "飘零的自由者第四天：地道、记忆空白与玫瑰线索",
+      "statement": "神秘的地道是单线支线。通道使用痕迹、紫黑晶体、医疗判断和玫瑰花瓣属于不同证据层；它们不足以确认物质性质、失忆完整原因或奥露西娅为幕后行动者。",
+      "claim_type": "scene_structure_and_evidence_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第四天",
+      "source_section": "支线：神秘的地道",
+      "evidence_note": "FRD-4-001 至 FRD-4-006 已于 2026-08-18 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-DAY3-SOURCE-GAP-001",
+      "domain": "main_story_source_boundary",
+      "subject": "飘零的自由者第三天：来源空白与进度事件边界",
+      "statement": "第三天来源页只保存自由行动框架；正文空白不证明当天无事发生。濯樱祭愿望链按进度独立记录，在没有日期证据时不得固定分配到第三天。",
+      "claim_type": "source_gap_and_timeline_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第三天",
+      "source_section": "第三天与领取补给",
+      "evidence_note": "FRD-3-001 至 FRD-3-004 已于 2026-08-18 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-DAY2-SOURCE-GAP-001",
+      "domain": "main_story_source_boundary",
+      "subject": "飘零的自由者第二天：来源空白与进度事件边界",
+      "statement": "第二天来源页只保存自由行动框架；正文空白不证明当天无事发生。没有明确证据时，不把特定神器使、居民愿望或结局条件固定分配到第二天。",
+      "claim_type": "source_gap_and_timeline_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第二天",
+      "source_section": "第二天与领取补给",
+      "evidence_note": "FRD-2-001 至 FRD-2-003 已于 2026-08-18 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-DAY1-FINALE-ENTRY-001",
+      "domain": "main_story_structure",
+      "subject": "飘零的自由者第一天：末日前状态与三个结局入口",
+      "statement": "第一天来源页没有独立支线和选择树；终结、两个人的城市与记忆的种子是三个互斥结局。页面未公开完整判定公式，异常天气、城市恐惧和还有明天不得被扩写为未被来源确认的成因或认知事实。",
+      "claim_type": "finale_entry_and_evidence_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第一天",
+      "source_section": "第一天与最终日导航",
+      "evidence_note": "FRD-1-001 至 FRD-1-005 已于 2026-08-18 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-WISH1-DUANMU-001",
+      "domain": "main_story_progress_and_memory_boundary",
+      "subject": "飘零的自由者愿望链第一阶段：端木教授与濯樱祭",
+      "statement": "第一阶段在攻略成功第一名神器使后触发。端木教授重办濯樱祭是为了完成对亡女的未兑现约定并面对悔恨，不是复活妻女；答应与拒绝汇入同一任务。记忆现象直接发生，但系统原理仅由未知人影解释。",
+      "claim_type": "progress_trigger_character_motive_and_system_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "记忆的种子/剧情/主线剧情",
+      "source_section": "攻略成功第一个神器使后",
+      "evidence_note": "FRW-1-001 至 FRW-1-008 已于 2026-08-18 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-WISH2-CHUNYUAN-001",
+      "domain": "main_story_memory_relationship_and_outcome_boundary",
+      "subject": "飘零的自由者愿望链第二阶段：春原、杏与失落记忆",
+      "statement": "第二阶段在攻略成功第二名神器使后触发。春原寻找杏是确认婚前反复梦见的失落记忆，不是放弃未婚妻；两个询问选项汇入同一调查。杏患原因未明的嗜睡怪病且多年未醒，病床反应和记忆同调不等于现实苏醒；濯樱祭可能使其醒来的说法仅为角色希望。",
+      "claim_type": "progress_trigger_relationship_choice_and_outcome_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "记忆的种子/剧情/主线剧情",
+      "source_section": "攻略成功第二个神器使后",
+      "evidence_note": "FRW-2-001 至 FRW-2-009 已于 2026-08-18 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-WISH3-XIAOBU-LUOKE-001",
+      "domain": "main_story_identity_death_and_festival_boundary",
+      "subject": "飘零的自由者愿望链第三阶段：小布与洛可",
+      "statement": "第三阶段在攻略成功第三名神器使后触发。洛可失踪后以怪物外形返回，但具体转化机制未知；它引导救援小布并留下阻挡追兵，最终恢复小狗原貌后明确死亡并被安葬。小布的愿望是归来与告别，濯樱祭重逢说法是安慰和思念表达，不是复活事实。",
+      "claim_type": "progress_trigger_identity_death_and_festival_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "记忆的种子/剧情/主线剧情",
+      "source_section": "攻略成功第三个神器使后",
+      "evidence_note": "FRW-3-001 至 FRW-3-009 已于 2026-08-19 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-WISH4-JINGTA-XIAOYE-001",
+      "domain": "main_story_prerequisite_memory_and_death_boundary",
+      "subject": "飘零的自由者愿望链第四阶段：鲸太与小叶的咖喱",
+      "statement": "第四阶段在攻略成功第四名神器使后触发，并明示要求海湾侧城发展度达到 4 级。鲸太所谓秘诀香料最终确认只是葱末，其作用是推动小叶找回信心；记忆同调揭示咖喱承载童年店主的善意与梦想肯定。鲸太自述病重并乘船离开，但页面未确认其死亡。",
+      "claim_type": "progress_trigger_prerequisite_memory_and_death_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "记忆的种子/剧情/主线剧情",
+      "source_section": "攻略成功第四个神器使后",
+      "evidence_note": "FRW-4-001 至 FRW-4-010 已于 2026-08-22 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-WISH5-BARRY-LAURA-001",
+      "domain": "main_story_black_gate_memory_and_perception_boundary",
+      "subject": "飘零的自由者愿望链第五阶段：巴里、萝拉与樱花林",
+      "statement": "第五阶段在攻略成功第五名神器使后触发。地下黑门是樱花枯萎的直接原因，清除后樱花在现实中恢复；巴里隐瞒枯萎但萝拉早已察觉，火灾毁林后两人曾共同重种。萝拉结尾所说看见樱花是感官、记忆与情感体验，页面未确认其视力恢复。",
+      "claim_type": "progress_trigger_cause_memory_and_perception_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "记忆的种子/剧情/主线剧情",
+      "source_section": "攻略成功第五个神器使后",
+      "evidence_note": "FRW-5-001 至 FRW-5-012 已于 2026-08-22 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-TERMINATION-FINALE-001",
+      "domain": "main_story_finale_outcome_and_unknown_boundary",
+      "subject": "飘零的自由者结局：终结",
+      "statement": "末日使城市毁灭，指挥使产生来源不明的似曾相识感并消极接受结果；最高楼顶存在一名身份未知、正文称为她的人物。页面明确这是孤独结局且新轮回开始，但没有选择树、灾难解释或入口公式。",
+      "claim_type": "finale_outcome_perception_and_entry_boundary",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "终结（飘零的自由者）/剧情/最终日",
+      "source_section": "最终日",
+      "evidence_note": "FRT-001 至 FRT-007 已于 2026-08-22 人工确认。"
+    },
+    {
+      "claim_id": "CLAIM-STORY-FREE-ROAMER-ROUTE-STRUCTURE-001",
+      "domain": "main_story_route_structure",
+      "subject": "飘零的自由者：七日、愿望链与三个最终日",
+      "statement": "路线由第七天两次选择后坚持不加入中央庭正式进入，七日日页与按攻略人数推进的五阶段濯樱祭愿望链共同构成主体，并在第一天导向终结、两个人的城市或记忆的种子三个互斥最终日。来源没有公开三个结局的完整数值公式和优先级；结局主题不得反推隐藏条件。",
+      "claim_type": "route_entry_progression_and_finale_structure",
+      "review_status": "human_confirmed",
+      "reviewer": "项目人工确认",
+      "page_title": "飘零的自由者/剧情/第七天",
+      "source_section": "整条路线综合结构",
+      "evidence_note": "FRR-001 至 FRR-015 已于 2026-08-22 人工确认。"
     }
   ]
 }

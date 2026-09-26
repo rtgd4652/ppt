@@ -1,0 +1,135 @@
+{
+  "title": "赛斯/支线剧情",
+  "source_url": "https://f7d.huijiwiki.com/wiki/%E8%B5%9B%E6%96%AF%2F%E6%94%AF%E7%BA%BF%E5%89%A7%E6%83%85",
+  "page_id": 399,
+  "touched": "2023-04-19T16:03:55Z",
+  "last_sync": "2026-08-10T05:25:28.288Z",
+  "story_scope": "character_side_story",
+  "route": "赛斯",
+  "chapter": "赛斯个人支线",
+  "day": "完整支线",
+  "categories": [
+    "使用tbui时间轴的页面"
+  ],
+  "sections": [
+    {
+      "level": 2,
+      "title": "神官的工作",
+      "character_count": 1844
+    },
+    {
+      "level": 2,
+      "title": "奇怪的来信",
+      "character_count": 546
+    },
+    {
+      "level": 2,
+      "title": "赛斯在这里吗？",
+      "character_count": 34
+    },
+    {
+      "level": 4,
+      "title": "选项：正确巡查点",
+      "character_count": 128
+    },
+    {
+      "level": 4,
+      "title": "选项：错误巡查点",
+      "character_count": 24
+    },
+    {
+      "level": 2,
+      "title": "信徒的愿望",
+      "character_count": 147
+    },
+    {
+      "level": 4,
+      "title": "选项：好吧，我考虑一下，有空就来。",
+      "character_count": 49
+    },
+    {
+      "level": 4,
+      "title": "选项：……动机不纯，反而不想来帮忙了。",
+      "character_count": 1006
+    },
+    {
+      "level": 2,
+      "title": "完美的潜行",
+      "character_count": 681
+    },
+    {
+      "level": 3,
+      "title": "剧情战",
+      "character_count": 241
+    },
+    {
+      "level": 2,
+      "title": "神的仆人",
+      "character_count": 1253
+    },
+    {
+      "level": 3,
+      "title": "剧情战",
+      "character_count": 304
+    },
+    {
+      "level": 2,
+      "title": "神官的休憩",
+      "character_count": 821
+    }
+  ],
+  "choice_trees": [
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "正确巡查点",
+        "错误巡查点"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 1
+    },
+    {
+      "source_structure": "html_tab",
+      "branch_type": "player_or_dialogue_choice",
+      "repeatable": false,
+      "options": [
+        "好吧，我考虑一下，有空就来。",
+        "……动机不纯，反而不想来帮忙了。"
+      ],
+      "exit_option": "",
+      "has_shared_continuation": false,
+      "extraction_status": "parsed_from_html_tab",
+      "parent_tree_index": null,
+      "parent_option": "",
+      "depth": 0,
+      "tree_index": 2
+    }
+  ],
+  "article_links": [],
+  "image_names": [
+    "CG_clear.png",
+    "CG_23.png",
+    "Mission_type_Role.png",
+    "Dialogue_icon_.png",
+    "Dialogue_icon_赛斯.png",
+    "Dialogue_icon_指挥使.png",
+    "Dialogue_icon_晏华.png",
+    "Dialogue_icon_黑影4.png",
+    "Item_event_018.png",
+    "Bg_event_show.png",
+    "Dialogue_icon_尘鱼.png",
+    "Dialogue_icon_爷爷2.png"
+  ],
+  "legacy_video_evidence": [],
+  "manual_structure_note": "保留页面中的对白、剧情段落与选择树；攻略条件不自动转化为人物事实。",
+  "manual_structure_reference": "支线剧情/神器使",
+  "raw_markdown_path": "raw/huiji/stories/赛斯_支线剧情.raw.md",
+  "clean_markdown_path": "knowledge/story/pages/赛斯_支线剧情.md"
+}

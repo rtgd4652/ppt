@@ -1,16 +1,18 @@
 ---
 title: "爱缪莎专属命运稳定旗舰机制职责卡 v1.0"
 type: "mechanism_responsibility_card"
-status: "approved"
+status: "historical_approved_route_paused"
 release_target: "1.0"
 official_ship_name: "TBD"
 implementation_gate: "closed"
 prototype_gate: "closed"
 current_review_item: "complete"
-last_updated: "2026-08-01"
+last_updated: "2026-08-16"
 ---
 
 # 1. 文档目的
+
+> **暂停说明（`APM-R006`、`APM-R008`，2026-08-16）：**本职责卡保留为已完成审核的历史技术路线和未来候选参考，不再代表 1.0 当前必须实现的专属舰方案。现有原型与正式实现暂停；主线只继承“现场恒定局部命运并形成可处理窗口”的叙事职责，唯一舰、建造、部署、摧毁、首都重现和存档恢复方案均不得据本文直接进入实现。
 
 本职责卡定义爱缪莎专属命运稳定旗舰在 1.0 主线中的身份、唯一性、建造、部署、恒定、作战、摧毁、首都重现和存档恢复边界。
 

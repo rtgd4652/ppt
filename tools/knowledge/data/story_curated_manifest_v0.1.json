@@ -3,6 +3,70 @@
   "purpose": "登记基于已采集 Wiki 剧情正文制作的结构化整理层。该层不覆盖 raw 或 clean 来源文本，并按来源页面写入本地知识库数据库。",
   "documents": [
     {
+      "id": "story-character-side-li-curated-v0.1",
+      "title": "丽：个人支线剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/characters/丽_个人支线_剧情整理_v0.1.md",
+      "source_page_title": "丽/支线剧情",
+      "document_status": "human_review_approved",
+      "notes": "八阶段个人支线、攻略失败与选择边界、慈善重建、家庭经历、受助者名单危机及皇室血统禁用项已于 2026-08-10 完成人工审核；LIS-004 与 LIS-005 按人工意见确认为丽的傲娇、毒舌、嘴硬及关系优势表达。"
+    },
+    {
+      "id": "story-character-side-wenzi-curated-v0.1",
+      "title": "雯梓：个人支线剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/characters/雯梓_个人支线_剧情整理_v0.1.md",
+      "source_page_title": "雯梓/支线剧情",
+      "document_status": "human_review_approved",
+      "notes": "六阶段个人支线、版本差异与连续选择结构、东方古街治理、苍柯自主选择和十五年前旧人身份边界已于 2026-08-10 完成人工审核。"
+    },
+    {
+      "id": "story-character-side-gresa-curated-v0.1",
+      "title": "格蕾莎：个人支线剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/characters/格蕾莎_个人支线_剧情整理_v0.1.md",
+      "source_page_title": "格蕾莎/支线剧情",
+      "document_status": "human_review_approved",
+      "notes": "五阶段支线、军医经历、身体幼化、战争创伤、医疗能力和强制试药的伦理边界已于 2026-08-10 完成人工审核。"
+    },
+    {
+      "id": "story-character-side-labi-curated-v0.1",
+      "title": "拉比：个人支线剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/characters/拉比_个人支线_剧情整理_v0.1.md",
+      "source_page_title": "拉比/支线剧情",
+      "document_status": "human_review_approved",
+      "notes": "五段个人支线、两处选择、贫困与偷窃责任、阿米特关系以及黑雾重现的机制边界已于 2026-08-10 完成人工审核。"
+    },
+    {
+      "id": "story-character-side-youtong-curated-v0.1",
+      "title": "幽桐：个人支线剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/characters/幽桐_个人支线_剧情整理_v0.1.md",
+      "source_page_title": "幽桐/支线剧情",
+      "document_status": "human_review_approved",
+      "notes": "五段个人支线、三处功能选择结构、父子冲突、作品盗用与拒绝圣者身份的角色转变已于 2026-08-10 完成人工审核。"
+    },
+    {
+      "id": "story-character-side-seth-curated-v0.1",
+      "title": "赛斯：个人支线剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/characters/赛斯_个人支线_剧情整理_v0.1.md",
+      "source_page_title": "赛斯/支线剧情",
+      "document_status": "human_review_approved",
+      "notes": "七个页面段落、两类选择结构、神官职责、愿望责任与人物反差已于 2026-08-10 完成人工审核。"
+    },
+    {
+      "id": "story-character-side-yanhua-curated-v0.1",
+      "title": "晏华：个人支线剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/characters/晏华_个人支线_剧情整理_v0.1.md",
+      "source_page_title": "晏华/支线剧情",
+      "document_status": "human_review_approved",
+      "notes": "五段个人支线、两处选择结构、推理链与能力边界已于 2026-08-10 完成人工审核；页面导语和绝对化评价不直接提升为正史。"
+    },
+    {
+      "id": "story-character-side-aemusa-curated-v0.1",
+      "title": "爱缪莎：个人支线剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/characters/爱缪莎_个人支线_剧情整理_v0.1.md",
+      "source_page_title": "爱缪莎/支线剧情",
+      "document_status": "human_review_approved",
+      "notes": "五段个人支线、两层邀请选择树、能力边界和人物事实候选已于 2026-08-10 完成人工审核；缺失分支不补写。"
+    },
+    {
       "id": "story-regular-garden-day-6-curated-v0.1",
       "title": "正轨的箱庭：第六天剧情整理 v0.1",
       "file_path": "knowledge/story/curated/days/正轨的箱庭_第六天_剧情整理_v0.1.md",
@@ -481,6 +545,102 @@
       "source_page_title": "正轨的箱庭/剧情/回收黑核",
       "document_status": "human_reviewed_structure",
       "notes": "讨伐使用 P05 结构证据；P07 确认雷切尔工程图、深海潜艇和濑由衣同行路线。"
+    },
+    {
+      "id": "story-main-05-free-roamer-route-structure-v0.1",
+      "title": "飘零的自由者：分支与结局结构 v0.1",
+      "file_path": "knowledge/story/curated/structure/飘零的自由者_分支与结局结构_v0.1.md",
+      "source_page_title": "飘零的自由者/剧情/第七天",
+      "document_status": "human_review_approved",
+      "notes": "FRR-001 至 FRR-015 已人工确认：进线选择、七日日页、五阶段愿望链及三个互斥最终日的叙事结构已完成综合审核；结局公式、状态绑定、白夜馆未知人物和跨轮回机制继续保持开放。"
+    },
+    {
+      "id": "story-main-05-free-roamer-wish-chain-v0.1",
+      "title": "飘零的自由者：濯樱祭愿望链 v0.1",
+      "file_path": "knowledge/story/curated/structure/飘零的自由者_濯樱祭愿望链_v0.1.md",
+      "source_page_title": "记忆的种子/剧情/主线剧情",
+      "document_status": "human_review_approved",
+      "notes": "五阶段愿望链叙事已逐项人工确认。攻略人数门槛按页面记录，不把角色出场顺序误写成固定招募名单；精确日期、未公开条件和记忆集成系统跨路线验证仍为开放证据问题。"
+    },
+    {
+      "id": "story-main-05-two-person-city-finale-v0.1",
+      "title": "飘零的自由者：两个人的城市最终日 v0.1",
+      "file_path": "knowledge/story/curated/finales/飘零的自由者_两个人的城市_最终日_剧情整理_v0.1.md",
+      "source_page_title": "两个人的城市/剧情/最终日",
+      "document_status": "human_review_approved",
+      "notes": "已确认 21 个字母索引加最终日总标题并非连续章节；当前摘要整理十人名单中的八名有效候选。公共结局确认共同面对末日与遗忘，不代表逃离轮回、保存记忆或确立唯一伴侣。"
+    },
+    {
+      "id": "story-main-05-memory-seed-finale-v0.1",
+      "title": "飘零的自由者：记忆的种子最终日 v0.1",
+      "file_path": "knowledge/story/curated/finales/飘零的自由者_记忆的种子_最终日_剧情整理_v0.1.md",
+      "source_page_title": "记忆的种子/剧情/最终日",
+      "document_status": "human_review_approved",
+      "notes": "FRM-001 至 FRM-011 已人工确认：濯樱祭、另一个世界的指挥使、他／她表现状态、白夜馆未知委托对象、伙伴记忆凝结及跨轮回保存边界均已校订；不等同于完整恢复记忆、阻止末日或 Mod 白夜馆实体。"
+    },
+    {
+      "id": "story-main-05-termination-finale-v0.1",
+      "title": "飘零的自由者：终结最终日 v0.1",
+      "file_path": "knowledge/story/curated/finales/飘零的自由者_终结_最终日_剧情整理_v0.1.md",
+      "source_page_title": "终结（飘零的自由者）/剧情/最终日",
+      "document_status": "human_review_approved",
+      "notes": "已人工确认城市毁灭、孤独收束、楼顶未知女性和轮回重启；灾难来源、熟悉感来源、人物身份及入口公式保持未知。"
+    },
+    {
+      "id": "story-main-05-free-roamer-day-7-curated-v0.1",
+      "title": "飘零的自由者：第七天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/飘零的自由者_第七天_剧情整理_v0.1.md",
+      "source_page_title": "飘零的自由者/剧情/第七天",
+      "document_status": "human_review_approved",
+      "notes": "两次中央庭路线选择、未知人影男女表现状态、问句共同续段、重复补给段及区域传送边界已于 2026-08-17 完成人工确认。"
+    },
+    {
+      "id": "story-main-05-free-roamer-day-6-curated-v0.1",
+      "title": "飘零的自由者：第六天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/飘零的自由者_第六天_剧情整理_v0.1.md",
+      "source_page_title": "飘零的自由者/剧情/第六天",
+      "document_status": "human_review_approved",
+      "notes": "学园战区、赛哈姆救援与拒绝介入、组织距离和权限证据边界已于 2026-08-17 完成人工确认。"
+    },
+    {
+      "id": "story-main-05-free-roamer-day-5-curated-v0.1",
+      "title": "飘零的自由者：第五天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/飘零的自由者_第五天_剧情整理_v0.1.md",
+      "source_page_title": "飘零的自由者/剧情/第五天",
+      "document_status": "human_review_approved",
+      "notes": "中央庭例会、安托涅瓦选择边界、奥露西娅登场及人物评价边界已于 2026-08-18 完成人工确认。"
+    },
+    {
+      "id": "story-main-05-free-roamer-day-4-curated-v0.1",
+      "title": "飘零的自由者：第四天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/飘零的自由者_第四天_剧情整理_v0.1.md",
+      "source_page_title": "飘零的自由者/剧情/第四天",
+      "document_status": "human_review_approved",
+      "notes": "旧城区地道、记忆中断、医疗判断、紫黑晶体与玫瑰花瓣的证据边界已于 2026-08-18 完成人工确认。"
+    },
+    {
+      "id": "story-main-05-free-roamer-day-3-curated-v0.1",
+      "title": "飘零的自由者：第三天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/飘零的自由者_第三天_剧情整理_v0.1.md",
+      "source_page_title": "飘零的自由者/剧情/第三天",
+      "document_status": "human_review_approved",
+      "notes": "自由行动框架、来源空白边界及愿望链不得机械分配到固定日期已于 2026-08-18 完成人工确认。"
+    },
+    {
+      "id": "story-main-05-free-roamer-day-2-curated-v0.1",
+      "title": "飘零的自由者：第二天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/飘零的自由者_第二天_剧情整理_v0.1.md",
+      "source_page_title": "飘零的自由者/剧情/第二天",
+      "document_status": "human_review_approved",
+      "notes": "自由行动框架、来源空白边界及不得固定分配人物、愿望和结局条件已于 2026-08-18 完成人工确认。"
+    },
+    {
+      "id": "story-main-05-free-roamer-day-1-curated-v0.1",
+      "title": "飘零的自由者：第一天剧情整理 v0.1",
+      "file_path": "knowledge/story/curated/days/飘零的自由者_第一天_剧情整理_v0.1.md",
+      "source_page_title": "飘零的自由者/剧情/第一天",
+      "document_status": "human_review_approved",
+      "notes": "末日前城市状态、三个互斥结局入口及解锁公式证据边界已于 2026-08-18 完成人工确认。"
     }
   ]
 }

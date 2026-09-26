@@ -61,6 +61,12 @@ const PAGE_CONTEXTS = new Map([
   ["深渊的步伐/剧情/特殊灭世1", { route: "深渊的步伐", chapter: "主线剧情 4", day: "特殊灭世 1（研究所被中央庭攻占）" }],
   ["深渊的步伐/剧情/特殊灭世2", { route: "深渊的步伐", chapter: "主线剧情 4", day: "特殊灭世 2（剧情战失败）" }],
   ["深渊的步伐/剧情/特殊灭世3", { route: "深渊的步伐", chapter: "主线剧情 4", day: "特殊灭世 3（被抛下的人要求未达成）" }],
+  // “飘零的自由者”拥有三个独立最终日页面；结局名不是新的主线路线。
+  // “记忆的种子/剧情/主线剧情”是结局相关补充正文，单独归档以免误作普通日期页。
+  ["记忆的种子/剧情/主线剧情", { route: "飘零的自由者", chapter: "主线剧情 5", day: "主线剧情补充（记忆的种子）" }],
+  ["记忆的种子/剧情/最终日", { route: "飘零的自由者", chapter: "主线剧情 5", day: "最终日（记忆的种子）" }],
+  ["两个人的城市/剧情/最终日", { route: "飘零的自由者", chapter: "主线剧情 5", day: "最终日（两个人的城市）" }],
+  ["终结（飘零的自由者）/剧情/最终日", { route: "飘零的自由者", chapter: "主线剧情 5", day: "最终日（终结）" }],
 ]);
 
 // 已确认章节归属的主线名称集中维护：采集器只写入已有人工作为依据的分类，
@@ -70,10 +76,26 @@ const ROUTE_CONTEXTS = new Map([
   ["无垢的人偶", { chapter: "主线剧情 2" }],
   ["避世的方舟", { chapter: "主线剧情 3" }],
   ["深渊的步伐", { chapter: "主线剧情 4" }],
+  ["飘零的自由者", { chapter: "主线剧情 5" }],
 ]);
 
 // 从标准“路线/剧情/阶段”页面名提取元数据，避免把第七天的标签错误复用到后续页面。
 function inferStoryOptions(pageTitle) {
+  // 个人支线页面统一登记为角色叙事证据，避免被主线章节规则误归类。
+  const personalSideStoryMatch = pageTitle.match(/^(.+)\/支线剧情$/u);
+  if (personalSideStoryMatch) {
+    const character = personalSideStoryMatch[1].trim();
+    return {
+      storyScope: "character_side_story",
+      route: character,
+      chapter: `${character}个人支线`,
+      day: "完整支线",
+      legacyVideoEvidence: [],
+      manualStructureNote: "保留页面中的对白、剧情段落与选择树；攻略条件不自动转化为人物事实。",
+      manualStructureReference: "支线剧情/神器使",
+    };
+  }
+
   const pageContext = PAGE_CONTEXTS.get(pageTitle);
   const marker = "/剧情/";
   const markerIndex = pageTitle.indexOf(marker);
