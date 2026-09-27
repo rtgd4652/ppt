@@ -66,6 +66,17 @@ country_event = {
 	trigger = {
 		is_ai = no
 		has_country_flag = aemusa_ms_country_route_initialized
+		# 已登记国家再次收到同一场战争通知时直接忽略，避免误写防守受阻旁证。
+		# 还要核对本国主防身份，避免吞掉已有战争记录的玩家在另一场标记战争中的盟友旁证。
+		NOT = {
+			AND = {
+				has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+				from = {
+					has_war_flag = aemusa_ms_qualified_fe_war
+					any_defender = { is_same_value = root is_war_leader = yes }
+				}
+			}
+		}
 		from = {
 			OR = {
 				any_attacker = { is_country_type = awakened_fallen_empire }
