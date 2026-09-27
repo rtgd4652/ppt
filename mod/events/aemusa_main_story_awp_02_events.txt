@@ -306,6 +306,81 @@ country_event = {
 			limit = { aemusa_ms_country_can_enter_chapter_04 = yes }
 			country_event = { id = aemusa_ms.740 }
 		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_05 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_05_00_settled }
+			}
+			country_event = { id = aemusa_ms.800 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_05 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_05_10_settled }
+			}
+			country_event = { id = aemusa_ms.810 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_05 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_05_20_settled }
+			}
+			country_event = { id = aemusa_ms.820 }
+		}
+		else_if = {
+			limit = { aemusa_ms_country_is_waiting_for_fe_war_victory = yes }
+			country_event = { id = aemusa_ms.104 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_05 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_05_30_settled }
+			}
+			country_event = { id = aemusa_ms.830 }
+		}
+		else_if = {
+			limit = { aemusa_ms_country_can_enter_chapter_05 = yes }
+			country_event = { id = aemusa_ms.840 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_06 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_06_00_settled }
+			}
+			country_event = { id = aemusa_ms.900 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_06 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_06_10_settled }
+			}
+			country_event = { id = aemusa_ms.910 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_06 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_06_20_settled }
+			}
+			country_event = { id = aemusa_ms.920 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_06 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_06_30_settled }
+			}
+			country_event = { id = aemusa_ms.930 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_06 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_06_40_settled }
+			}
+			country_event = { id = aemusa_ms.940 }
+		}
+		else_if = {
+			limit = { aemusa_ms_country_can_enter_chapter_06 = yes }
+			country_event = { id = aemusa_ms.990 }
+		}
 		else = {
 			country_event = {
 				id = aemusa_ms.102
@@ -326,7 +401,7 @@ country_event = {
 	}
 }
 
-# 当前内容终点页：第四章已结算，后续战争章节尚未接入。
+# 当前内容终点页：第二幕已结算，后续危机章节尚未接入。
 country_event = {
 	id = aemusa_ms.102
 	title = aemusa_ms.102.title
@@ -343,6 +418,16 @@ country_event = {
 	id = aemusa_ms.103
 	title = aemusa_ms.103.title
 	desc = aemusa_ms.103.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	option = { name = aemusa_ms.close }
+}
+
+# 同场胜利等待页：当前历史若为战败或维持现状，不将其改写成胜利。
+country_event = {
+	id = aemusa_ms.104
+	title = aemusa_ms.104.title
+	desc = aemusa_ms.104.desc
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	option = { name = aemusa_ms.close }

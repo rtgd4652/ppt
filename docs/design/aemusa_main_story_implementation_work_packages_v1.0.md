@@ -10,7 +10,7 @@ awp_01_status: "completed_runtime_pass"
 awp_02_implementation_authorized: true
 awp_02_status: "completed_runtime_pass"
 awp_03_implementation_authorized: true
-awp_03_status: "chapter_04_static_load_smoke_pass_chapter_05_06_pending_callbacks_pending"
+awp_03_status: "chapters_04_06_static_load_smoke_pass_callbacks_pending"
 last_updated: "2026-09-27"
 ---
 
@@ -405,4 +405,10 @@ AWP-02 已通过静态门禁，并于 2026-09-27 补齐新开局、跳章阻断�
 
 第四章 AED-04-00～40 已按修订口径重写：第三章结算且适配器记录合格开战后，白夜馆才进入开战事实、公众知情、证据分层、中央庭公开责任选择和唯一章节结算。无战等待页不写状态；首次选择只记录公开节奏，不写战争结果。原制作卡中战前要求与接受／拒绝选项继续作为历史设计，不进入现行脚本。
 
-项目静态检查、25 项工具测试和 4.5.1（`375f`）冷启动／原档载入冒烟已通过；原档没有合格战争，第四章窗口和真实回调仍未测试。详见[第四章报告](../../reports/aemusa_main_story_awp_03_chapter_04_static_report.md)。当前 `awp_03_status` 为 `chapter_04_static_load_smoke_pass_chapter_05_06_pending_callbacks_pending`；第五、第六章及专项运行验收继续留在本包。
+该批项目静态检查、25 项工具测试和 4.5.1（`375f`）冷启动／原档载入冒烟通过；原档没有合格战争，第四章窗口和真实回调仍未测试。详见[第四章报告](../../reports/aemusa_main_story_awp_03_chapter_04_static_report.md)。此处记录当时的 `awp_03_status`：`chapter_04_static_load_smoke_pass_chapter_05_06_pending_callbacks_pending`；后续进度见第 28 节。
+
+## 28. 2026-09-27 第五、六章同场胜利门禁与恢复期
+
+第五章 AED-05-00～40 已在第四章结算后接入。中央庭只记录战时责任优先级；未获同一场合格战争真实胜利时停在等待页，战败或维持现状不被改写为胜利。第六章 AED-06-00～90 只在第五章结算和同场胜利后开放，记录战后公开与恢复优先级，唯一结算第二幕并开启可无限期停留的恢复期，不自动选择或生成天灾。战况、伤亡、撤离与补偿数字缺少可信接口时保持待核实。
+
+项目静态检查、30 项账本测试和 4.5.1（`1d14`）冷启动／原档载入冒烟已通过；原档没有合格战争，新事件窗口与真实回调均未测试。详见[第五六章报告](../../reports/aemusa_main_story_awp_03_chapter_05_06_static_report.md)。当前 `awp_03_status` 为 `chapters_04_06_static_load_smoke_pass_callbacks_pending`；FEA-01～06 与 T002～T004 专项运行验收仍留在本包。
