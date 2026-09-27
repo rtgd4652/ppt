@@ -60,8 +60,12 @@ last_updated: 2026-09-27
 
 用户载入 `AWP03-ch06-done-2216.sav` 后没有重弹爱缪莎主线，执行只读 `effect aemusa_ms_log_awp_03_audit = yes`，再另存 `AWP03-ch06-reloaded-2216.sav`（SHA-256 `2BE2ECFF729D09DFC3B9CD3FA1EAC46289071C889EF7978418D50EB9D2295DE4`）。两档的第五章和第六章结算、第二幕完成、恢复期、胜利旗标及章／幕索引 `7`／`2` 全部一致，均只出现一次。游戏停在 `2216.04.01` 并保持暂停；再存档不是直接覆盖完成档。
 
-旧进程 13:54:24 的审计日志先显示 `PASS|awp_03_registered_state`、`OBSERVED|awp_03_qualified_war_ended`、`OBSERVED|awp_03_player_victory`，却还显示 `BLOCK|awp_03_war_attacker_missing`。证据表明存档仍保留指向国家 `16777223` 的全局事件目标记录，但该国家已在原版灭亡事件后不再是存活国家，故 `exists = event_target:...` 为假。该目标只供审计读取，不参与开战战争标记、同场胜利结果或章节门禁。已修改只读审计：战争未完成而目标缺失时仍报 `BLOCK`；战争已完成且目标不可用时改报 `OBSERVED|awp_03_war_attacker_unavailable_after_result`。项目静态检查通过（57 个脚本文件、80 个事件、676 个登记状态），30 项工具测试通过，`git diff --check` 通过；**当前游戏仍加载修改前脚本，新审计分支须冷重启复核**。读档审计日志副本 SHA-256 为 `31EE5E52624366967C80589C1D29FEA8B31A8E56608603D36B3468500BB91E6A`，与读档存档副本同在忽略证据目录。
+旧进程 13:54:24 的审计日志先显示 `PASS|awp_03_registered_state`、`OBSERVED|awp_03_qualified_war_ended`、`OBSERVED|awp_03_player_victory`，却还显示 `BLOCK|awp_03_war_attacker_missing`。证据表明存档仍保留指向国家 `16777223` 的全局事件目标记录，但该国家已在原版灭亡事件后不再是存活国家，故 `exists = event_target:...` 为假。该目标只供审计读取，不参与开战战争标记、同场胜利结果或章节门禁。已修改只读审计：战争未完成而目标缺失时仍报 `BLOCK`；战争已完成且目标不可用时改报 `OBSERVED|awp_03_war_attacker_unavailable_after_result`。项目静态检查通过（57 个脚本文件、80 个事件、676 个登记状态），30 项工具测试通过，`git diff --check` 通过。该次游戏仍加载修改前脚本；读档审计日志副本 SHA-256 为 `31EE5E52624366967C80589C1D29FEA8B31A8E56608603D36B3468500BB91E6A`，与读档存档副本同在忽略证据目录。
+
+## 战后审计冷重启复核
+
+14:26:22 群星 4.5.1 新进程启动，`dlc_load.json` 只启用本 Mod，描述文件指向本仓库 `mod` 目录。用户载入 `AWP03-ch06-done-2216.sav` 且保持暂停；14:49:20 在游戏日期 `2216.04.01` 执行只读审计。新 `game.log` 明确引用修复后脚本第 120 行，输出 `PASS|awp_03_registered_state`、`OBSERVED|awp_03_war_attacker_unavailable_after_result`、`OBSERVED|awp_03_qualified_war_ended`、`OBSERVED|awp_03_player_victory` 和 `audit end; writes=none`，没有 `BLOCK` 或 `FAIL`。因此本例的战后审计误报已在冷重启进程中消除；这仍只是受控胜利档，不代表自然战争通过。日志副本 SHA-256 为 `2F7E7BF75E0CB8978F2C0847A697169C763C455C22AE15DCB642F7FBAC4CE4D9`，连同加载配置及 `error.log` 副本保存在 `temp/awp03-451-20260927/run-1426-cold-audit/`。错误日志只发现未启用的其他 Mod 描述文件报错，未检出本 Mod 的脚本或事件报错。
 
 ## 待验证
 
-脚本触发的战争只验证引擎回调路径，不计作自然外交与宣战的 FEA-01～03 验收。当前隔离档的第四至第六章正常结算路径、第五章等待态与第六章完成态读档已有证据，但 FEA-01～06 尚未整项通过。下一步冷重启复核审计及误标晚加入修复，独立测试战败、维持现状、并发战争和其他反例，再补自然战争证据。全包验收不能仅凭此受控战争判为通过。
+脚本触发的战争只验证引擎回调路径，不计作自然外交与宣战的 FEA-01～03 验收。当前隔离档的第四至第六章正常结算路径、第五章等待态与第六章完成态读档已有证据，战后审计修复已冷重启复核，但 FEA-01～06 尚未整项通过。下一步从战前隔离档复核开战时不再误记晚加入，独立测试战败、维持现状、并发战争和其他反例，再补自然战争证据。全包验收不能仅凭此受控战争判为通过。
