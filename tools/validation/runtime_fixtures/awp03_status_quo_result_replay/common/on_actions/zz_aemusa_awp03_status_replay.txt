@@ -1,0 +1,31 @@
+# 仅供隔离测试：原版维持现状回调由正式适配器先写入结果。
+on_status_quo = {
+	events = {
+		aemusa_awp03_status_replay.1
+	}
+}
+
+# 自定义列表只重放本包结果处理器，不产生新的战争或和平协议。
+on_aemusa_awp03_status_replay_duplicate = {
+	events = {
+		aemusa_awp03_status_replay.10
+		aemusa_ms.622
+		aemusa_awp03_status_replay.99
+	}
+}
+
+on_aemusa_awp03_status_replay_conflicting_victory = {
+	events = {
+		aemusa_awp03_status_replay.11
+		aemusa_ms.620
+		aemusa_awp03_status_replay.99
+	}
+}
+
+on_aemusa_awp03_status_replay_conflicting_defeat = {
+	events = {
+		aemusa_awp03_status_replay.12
+		aemusa_ms.621
+		aemusa_awp03_status_replay.99
+	}
+}

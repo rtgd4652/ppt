@@ -1,0 +1,157 @@
+# 仅供隔离运行验证；只在原版真实维持现状回调内派发重复和冲突结果通知。
+namespace = aemusa_awp03_status_replay
+
+# 4.5.1 原版：root=提出方，from=接收方，fromfrom=原始主攻，
+# fromfromfrom=原始主防，fromfromfromfrom=战争。
+country_event = {
+	id = aemusa_awp03_status_replay.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		fromfromfrom = {
+			is_ai = no
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+		}
+		fromfromfromfrom = { has_war_flag = aemusa_ms_qualified_fe_war }
+	}
+	immediate = {
+		log = "AEMUSA-STATUS-REPLAY|native_status_quo_callback"
+		if = {
+			limit = {
+				fromfromfrom = {
+					has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+					has_country_flag = aemusa_ms_country_fe_war_status_quo
+					NOR = {
+						has_country_flag = aemusa_ms_country_fe_war_player_victory
+						has_country_flag = aemusa_ms_country_fe_war_player_defeat
+					}
+				}
+			}
+			log = "AEMUSA-STATUS-REPLAY|begin_after_recorded_status_quo"
+			fromfromfrom = { aemusa_ms_log_awp_03_audit = yes }
+
+			# 原版停战回调的五个作用域原样派发给正式 .622。
+			log = "AEMUSA-STATUS-REPLAY|dispatch_duplicate_status_quo"
+			fire_on_action = {
+				on_action = on_aemusa_awp03_status_replay_duplicate
+				scopes = {
+					from = from
+					fromfrom = fromfrom
+					fromfromfrom = fromfromfrom
+					fromfromfromfrom = fromfromfromfrom
+				}
+			}
+
+			# 胜负处理器必须在玩家主防作用域读取同一战争对象。
+			log = "AEMUSA-STATUS-REPLAY|dispatch_conflicting_victory"
+			fromfromfrom = {
+				fire_on_action = {
+					on_action = on_aemusa_awp03_status_replay_conflicting_victory
+					scopes = {
+						from = fromfrom
+						fromfrom = fromfromfromfrom
+					}
+				}
+			}
+
+			log = "AEMUSA-STATUS-REPLAY|dispatch_conflicting_defeat"
+			fromfromfrom = {
+				fire_on_action = {
+					on_action = on_aemusa_awp03_status_replay_conflicting_defeat
+					scopes = {
+						from = fromfrom
+						fromfrom = fromfromfromfrom
+					}
+				}
+			}
+
+			fromfromfrom = {
+				aemusa_ms_log_awp_03_audit = yes
+				if = {
+					limit = {
+						has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+						has_country_flag = aemusa_ms_country_fe_war_status_quo
+						NOR = {
+							has_country_flag = aemusa_ms_country_fe_war_player_victory
+							has_country_flag = aemusa_ms_country_fe_war_player_defeat
+						}
+					}
+					log = "AEMUSA-STATUS-REPLAY|PASS|only_status_quo_remains"
+				}
+				else = { log = "AEMUSA-STATUS-REPLAY|FAIL|result_changed" }
+			}
+			log = "AEMUSA-STATUS-REPLAY|end"
+		}
+		# 不假定文件合并顺序，正式结算未先发生时明确失败。
+		else = { log = "AEMUSA-STATUS-REPLAY|FAIL|native_status_quo_not_recorded_first" }
+	}
+}
+
+# 三个不同正对照分别验证重复停战及两种冲突结果的作用域。
+country_event = {
+	id = aemusa_awp03_status_replay.10
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		fromfromfrom = {
+			is_ai = no
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+			has_country_flag = aemusa_ms_country_fe_war_status_quo
+		}
+		fromfromfromfrom = {
+			has_war_flag = aemusa_ms_qualified_fe_war
+			any_defender = {
+				is_same_value = fromfromfrom
+				is_war_leader = yes
+			}
+		}
+	}
+	immediate = { log = "AEMUSA-STATUS-REPLAY|PASS|duplicate_status_quo_scope" }
+}
+
+country_event = {
+	id = aemusa_awp03_status_replay.11
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+		has_country_flag = aemusa_ms_country_fe_war_status_quo
+		fromfrom = {
+			has_war_flag = aemusa_ms_qualified_fe_war
+			any_defender = {
+				is_same_value = root
+				is_war_leader = yes
+			}
+		}
+	}
+	immediate = { log = "AEMUSA-STATUS-REPLAY|PASS|conflicting_victory_scope" }
+}
+
+country_event = {
+	id = aemusa_awp03_status_replay.12
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+		has_country_flag = aemusa_ms_country_fe_war_status_quo
+		fromfrom = {
+			has_war_flag = aemusa_ms_qualified_fe_war
+			any_defender = {
+				is_same_value = root
+				is_war_leader = yes
+			}
+		}
+	}
+	immediate = { log = "AEMUSA-STATUS-REPLAY|PASS|conflicting_defeat_scope" }
+}
+
+# 负对照不得执行；若出现该行则说明正式事件的触发条件被绕过。
+country_event = {
+	id = aemusa_awp03_status_replay.99
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+	immediate = { log = "AEMUSA-STATUS-REPLAY|FAIL|trigger_was_bypassed" }
+}
