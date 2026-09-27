@@ -34,3 +34,50 @@ on_ship_destroyed_victim = {
 		aemusa_destiny_lord.1
 	}
 }
+
+# AWP-03：逐月寻找可定位发起者的原版失落帝国要求，不推断未发生的外交。
+on_monthly_pulse_country = {
+	events = {
+		aemusa_ms.600
+		aemusa_ms.601
+	}
+}
+
+# AWP-03：开战回调逐个国家执行，事件严格筛选玩家与已锁定主体。
+on_war_beginning = {
+	events = {
+		aemusa_ms.610
+	}
+}
+
+# 晚加入只记录旁证，不升级为原始防守战争领袖。
+on_entering_war = {
+	events = {
+		aemusa_ms.611
+	}
+}
+
+# 结果回调携带战争作用域；不使用缺少战争作用域的 on_war_ended 推断胜利。
+on_war_won = {
+	events = {
+		aemusa_ms.620
+	}
+}
+
+on_war_lost = {
+	events = {
+		aemusa_ms.621
+	}
+}
+
+on_status_quo = {
+	events = {
+		aemusa_ms.622
+	}
+}
+
+on_status_quo_forced = {
+	events = {
+		aemusa_ms.622
+	}
+}

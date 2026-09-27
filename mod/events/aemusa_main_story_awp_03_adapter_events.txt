@@ -1,0 +1,191 @@
+# AWP-03：只记录原版外交和战争事实；所有章节推进由独立剧情事件决定。
+namespace = aemusa_ms
+
+# 原版失落帝国要求在玩家作答后留下与具体发起者关联的关系修正。
+# 每月仅捕获仍能查到该证据的一次来源；没有证据时保持第四章阻断。
+country_event = {
+	id = aemusa_ms.600
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		aemusa_ms_country_has_unrecorded_fe_intervention = yes
+	}
+	immediate = {
+		random_country = {
+			limit = {
+				aemusa_ms_fe_has_demand_response_with_player = yes
+			}
+			# 以玩家身份后缀保存，避免多个人类路线国家互相覆盖锁定对象。
+			save_global_event_target_as = aemusa_ms_fe_intervenor@root
+			root = {
+				remove_country_flag = aemusa_ms_country_fe_intervention_ambiguous
+				set_country_flag = aemusa_ms_country_fe_intervention_recorded
+				if = {
+					limit = { prev = { aemusa_ms_fe_has_multiple_demand_response_types_with_player = yes } }
+					set_variable = { which = aemusa_ms_country_fe_intervention_source_index value = 4 }
+				}
+				else_if = {
+					limit = { prev = { has_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_demand } } }
+					set_variable = { which = aemusa_ms_country_fe_intervention_source_index value = 1 }
+				}
+				else_if = {
+					limit = { prev = { has_opinion_modifier = { who = root modifier = opinion_refused_fallen_empire_request } } }
+					set_variable = { which = aemusa_ms_country_fe_intervention_source_index value = 2 }
+				}
+				else = {
+					set_variable = { which = aemusa_ms_country_fe_intervention_source_index value = 3 }
+				}
+				log = "AEMUSA-MS|AWP-03|fe_intervention_recorded"
+			}
+		}
+	}
+}
+
+# 多个失落帝国留下同类原版回应时只记歧义，不随机锁定主体。
+country_event = {
+	id = aemusa_ms.601
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		NOT = { has_country_flag = aemusa_ms_country_fe_intervention_ambiguous }
+		aemusa_ms_country_has_ambiguous_fe_intervention = yes
+	}
+	immediate = {
+		set_country_flag = aemusa_ms_country_fe_intervention_ambiguous
+		log = "AEMUSA-MS|AWP-03|fe_intervention_ambiguous"
+	}
+}
+
+# 开战时仅锁定同一主体直接攻击、玩家为原始防守战争领袖的战争。
+country_event = {
+	id = aemusa_ms.610
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_route_initialized
+		has_country_flag = aemusa_ms_country_fe_intervention_recorded
+		exists = event_target:aemusa_ms_fe_intervenor@root
+		from = {
+			OR = {
+				any_attacker = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+				any_defender = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+			}
+		}
+	}
+	immediate = {
+		if = {
+			limit = { aemusa_ms_country_can_record_fe_war_start = yes }
+			from = { set_war_flag = aemusa_ms_qualified_fe_war }
+			set_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+			log = "AEMUSA-MS|AWP-03|qualified_fe_war_started"
+		}
+		else_if = {
+			limit = {
+				from = {
+					any_defender = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+					any_attacker = { is_same_value = root is_war_leader = yes }
+				}
+			}
+			set_country_flag = aemusa_ms_country_fe_war_player_attack_recorded
+			log = "AEMUSA-MS|AWP-03|player_attack_unqualified"
+		}
+		else_if = {
+			limit = {
+				from = {
+					any_attacker = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+					any_defender = { is_same_value = root is_war_leader = no }
+				}
+			}
+			set_country_flag = aemusa_ms_country_fe_war_ally_defense_recorded
+			log = "AEMUSA-MS|AWP-03|ally_defense_unqualified"
+		}
+		else_if = {
+			limit = {
+				from = {
+					any_attacker = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+					any_defender = { is_same_value = root is_war_leader = yes }
+				}
+			}
+			set_country_flag = aemusa_ms_country_fe_war_blocked_defense_recorded
+			log = "AEMUSA-MS|AWP-03|defense_blocked_by_precondition"
+		}
+	}
+}
+
+# 晚加入对已锁定主体的战争不追认开战资格；此回调没有战争作用域。
+country_event = {
+	id = aemusa_ms.611
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_fe_intervention_recorded
+		exists = event_target:aemusa_ms_fe_intervenor@root
+		from = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+	}
+	immediate = {
+		set_country_flag = aemusa_ms_country_fe_war_late_join_recorded
+		log = "AEMUSA-MS|AWP-03|late_join_unqualified"
+	}
+}
+
+# on_war_won 的根作用域即胜方战争领袖；战争标记将结果绑定到开战实例。
+country_event = {
+	id = aemusa_ms.620
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+		NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed }
+		fromfrom = { has_war_flag = aemusa_ms_qualified_fe_war }
+	}
+	immediate = {
+		set_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+		set_country_flag = aemusa_ms_country_fe_war_player_victory
+		log = "AEMUSA-MS|AWP-03|qualified_fe_war_player_victory"
+	}
+}
+
+# 战败也是原战争真实结束，但不取得第六章资格。
+country_event = {
+	id = aemusa_ms.621
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+		NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed }
+		fromfrom = { has_war_flag = aemusa_ms_qualified_fe_war }
+	}
+	immediate = {
+		set_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+		set_country_flag = aemusa_ms_country_fe_war_player_defeat
+		log = "AEMUSA-MS|AWP-03|qualified_fe_war_player_defeat"
+	}
+}
+
+# 两种维持现状回调都把玩家作为主防方读取，同一战争只写一次结果。
+country_event = {
+	id = aemusa_ms.622
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		fromfromfrom = {
+			is_ai = no
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+			NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed }
+		}
+		fromfromfromfrom = { has_war_flag = aemusa_ms_qualified_fe_war }
+	}
+	immediate = {
+		fromfromfrom = {
+			set_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+			set_country_flag = aemusa_ms_country_fe_war_status_quo
+			log = "AEMUSA-MS|AWP-03|qualified_fe_war_status_quo"
+		}
+	}
+}

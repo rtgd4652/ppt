@@ -9,6 +9,8 @@ awp_01_implementation_authorized: true
 awp_01_status: "completed_runtime_pass"
 awp_02_implementation_authorized: true
 awp_02_status: "completed_runtime_pass"
+awp_03_implementation_authorized: true
+awp_03_status: "adapter_static_pass_chapter_04_detail_blocked_runtime_pending"
 last_updated: "2026-09-27"
 ---
 
@@ -280,7 +282,7 @@ last_updated: "2026-09-27"
 8. 旧存档只能恢复能够证明的事实，不得猜测玩家选择、爱缪莎决定或路线进度；
 9. 工作包计划获批不等于实现授权，每个 AWP 开始前仍需用户单独批准。
 
-本文自此成为爱缪莎 1.0 主线实现工作包基线。总体授权不得替代逐包授权：AWP-00、AWP-01 与 AWP-02 已完成运行验收；AWP-03 至 AWP-12 仍需各自单独授权，不得据此修改 `mod/`。
+本文自此成为爱缪莎 1.0 主线实现工作包基线。总体授权不得替代逐包授权：AWP-00、AWP-01 与 AWP-02 已完成运行验收；AWP-03 于 2026-09-27 获用户单独选择先推进，且参战／结果资格已获批准；AWP-04 至 AWP-12 仍需各自单独授权，不得据此修改 `mod/`。
 
 ## 15. AWP-00 执行记录
 
@@ -382,3 +384,11 @@ AWP-02 已通过静态门禁，并于 2026-09-27 补齐新开局、跳章阻断�
 验收合并独立批次：T001／T004、03-30／03-90 重开和完成态 5 PASS／0 FAIL 审计来自 `83b2`；跳章、六项旧窗口和其余重开来自 `8664`。本次未重新执行 `8664` 完成态审计，不把离线选择组合视为全分支引擎覆盖。完整矩阵、日期、证据哈希和限制见 [AWP-02 报告第 13 节](../../reports/aemusa_main_story_awp_02_validation_report.md)。
 
 收尾已载回原 `2212.12.29` 正常完成档并暂停，原档哈希未变。全部岗位／特质曝光、自然成长形态切换、历史空 sprite 根因和全 Mod 兼容验收继续作为后续事项；本包通过不代表 1.0 发布验收完成。AWP-03 的依赖已满足，实施仍需该工作包单独授权，本批次没有开始其代码。
+
+## 25. 2026-09-27 AWP-03 续接与适配设计
+
+用户在本日明确选择“先推进 AWP-03”。该答复在 AWP-02 运行验收通过之后单独给出，记录为 AWP-03 工作包授权；不延伸至后续工作包。第四至第六章及失落帝国战争是本包范围，现有 FEA-02／03 测试计划仍要求参战与结果资格先完成适配设计审核。
+
+已核对本机 4.5.1 原版 `on_war_beginning`、`on_entering_war`、`on_war_won`、`on_war_lost`、`on_status_quo` 和 `on_war_ended` 的作用域，形成[战争事实适配与资格判定方案](aemusa_main_story_awp_03_war_adapter_proposal.md)。用户明确回复“批准建议口径（建议）”：只接受已锁定觉醒失落帝国直接对玩家宣战、玩家为原始防守战争领袖，以及同一战争中的玩家领袖胜利；其他结果保留事实而不推进。本批准覆盖 FEA-02／03 判定；第四章的真实干预来源仍待证明，静态与游戏内验收均未执行。
+
+本日首批运行脚本已接入三种原版外交要求回应关系修正、开战、晚加入、胜利、战败与维持现状回调，并登记新增状态及战争结果互斥审计。多主体来源会明确阻断，同一主体多种修正不会冒充唯一回应。[静态报告](../../reports/aemusa_main_story_awp_03_adapter_static_report.md)记录检查及 4.5.1 最新代码冷启动／旧档载入冒烟通过和未测边界。关系修正可证明某失落帝国确实对玩家提出过要求并记录回应，却不能无歧义还原具体要求 ID／正文；因此第四章仍不结算，战争适配器也不会自行推进章节。当前 `awp_03_status` 为 `adapter_static_and_load_smoke_pass_chapter_04_detail_blocked_callbacks_pending`，FEA-01～06 均未测试。

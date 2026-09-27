@@ -122,7 +122,33 @@ aemusa_ms_country_has_valid_epilogue_tone_index = {
 	}
 }
 
-# 失落帝国战争历史必须按“开始→完成→结算”单向成立。
+# 第四章来源类型与歧义标记必须一致；目标被原版消灭后仍保留已发生的事实。
+aemusa_ms_country_has_valid_fe_intervention_source = {
+	NOR = {
+		AND = {
+			has_country_flag = aemusa_ms_country_fe_intervention_recorded
+			has_country_flag = aemusa_ms_country_fe_intervention_ambiguous
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_fe_intervention_recorded
+			NOT = {
+				OR = {
+					check_variable = { which = aemusa_ms_country_fe_intervention_source_index value = 1 }
+					check_variable = { which = aemusa_ms_country_fe_intervention_source_index value = 2 }
+					check_variable = { which = aemusa_ms_country_fe_intervention_source_index value = 3 }
+					check_variable = { which = aemusa_ms_country_fe_intervention_source_index value = 4 }
+				}
+			}
+		}
+		AND = {
+			NOT = { has_country_flag = aemusa_ms_country_fe_intervention_recorded }
+			is_variable_set = aemusa_ms_country_fe_intervention_source_index
+			check_variable = { which = aemusa_ms_country_fe_intervention_source_index value > 0 }
+		}
+	}
+}
+
+# 失落帝国战争历史必须按“开始→完成→结算”单向成立，且结果唯一。
 aemusa_ms_country_has_valid_fallen_empire_war_history = {
 	NOR = {
 		AND = {
@@ -131,6 +157,37 @@ aemusa_ms_country_has_valid_fallen_empire_war_history = {
 		}
 		AND = {
 			has_country_flag = aemusa_ms_country_history_fallen_empire_war_settled
+			NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+			NOT = { has_country_flag = aemusa_ms_country_chapter_04_completed }
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+			NOR = {
+				has_country_flag = aemusa_ms_country_fe_war_player_victory
+				has_country_flag = aemusa_ms_country_fe_war_player_defeat
+				has_country_flag = aemusa_ms_country_fe_war_status_quo
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_fe_war_player_victory
+			OR = {
+				NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed }
+				has_country_flag = aemusa_ms_country_fe_war_player_defeat
+				has_country_flag = aemusa_ms_country_fe_war_status_quo
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_fe_war_player_defeat
+			OR = {
+				NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed }
+				has_country_flag = aemusa_ms_country_fe_war_status_quo
+			}
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_fe_war_status_quo
 			NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed }
 		}
 	}
@@ -443,6 +500,7 @@ aemusa_ms_country_state_is_consistent = {
 	aemusa_ms_country_has_valid_route_version_v1 = yes
 	aemusa_ms_country_has_valid_chapter_index = yes
 	aemusa_ms_country_has_valid_act_index = yes
+	aemusa_ms_country_has_valid_fe_intervention_source = yes
 	aemusa_ms_country_has_valid_exclusive_crisis_phase_index = yes
 	aemusa_ms_country_has_valid_epilogue_tone_index = yes
 	aemusa_ms_country_has_valid_fallen_empire_war_history = yes
