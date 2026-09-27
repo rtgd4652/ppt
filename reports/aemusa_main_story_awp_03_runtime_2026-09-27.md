@@ -2,7 +2,7 @@
 title: "AWP-03 4.5.1 战争运行测试记录"
 work_package: AWP-03
 runtime_status: in_progress
-war_callback_status: scripted_victory_observed
+war_callback_status: scripted_victory_defeat_status_quo_observed
 last_updated: 2026-09-27
 ---
 
@@ -76,6 +76,14 @@ last_updated: 2026-09-27
 
 在已备份的 `AWP03-cold-war-start-2215.sav` 分支，用户保持暂停并执行原版控制台 `surrender 0 0`（玩家国家索引 `0`、战争 `0`）。15:13:05 `game.log` 触发 `AEMUSA-MS|AWP-03|qualified_fe_war_player_defeat`；原版随后弹出“信号传输输入”。玩家未点击该窗口，另存 `AWP03-cold-defeat-2215.sav`（SHA-256 `157DA5011FEA6B921887909A18ACED6B1A3585B96620BE5859E24D89AD0C66A6`）。存档内原战争 `0` 保留合格标记，且记录 `defenders_surrendered=yes`、`end=yes`；玩家开战、完成、战败旗标各一次，胜利及维持现状旗标均不存在，第六章完成旗标也不存在。15:14:18 的只读审计新增 `OBSERVED|awp_03_qualified_war_ended` 和 `OBSERVED|awp_03_player_defeat`；同进程之前已打印的相同审计行没有重复输出，不能把缺少重复 `PASS` 行当作本次失败。审计后日志副本 SHA-256 为 `C382DAF1B1FBEC650FCB39E2AB88FD7A41094C8F6A8076152CD2B9DFCBA74204`，存于上述冷重启战争证据目录。本项证明同场战败结果回调和互斥账本路径，不替代第五章等待页的运行验证，也不代表自然战争反例完成。
 
+## 同场受控维持现状反例
+
+从未覆盖的 `AWP03-cold-war-start-2215.sav` 另起隔离分支，玩家先提交一次维持现状提案；觉醒失落帝国在 `2215.12.23` 明确拒绝，战争仍在。开启原版 `debug_yesmen` 后重新提交同类提案，游戏在 `2216.01.08` 结束该战争，`game.log` 由 `events/aemusa_main_story_awp_03_adapter_events.txt:188` 写出 `AEMUSA-MS|AWP-03|qualified_fe_war_status_quo`。原版结果窗口明确显示“与安迪贡吉遗迹帝国通过维持现状结束战争”，战争图标消失；该结果窗口在 `2216.01.10` 仍打开时，玩家另存 `AWP03-cold-status-quo-2216.sav`（SHA-256 `219125C3171DBC9B75E3D34E7E5F3CB24AB0FC76DA8469270952CFF3C20F0360`）。随后关闭结果窗口，将 `debug_yesmen` 关闭，执行只读审计；用户确认控制台显示 `Yesmen turned off`。
+
+新档的 `gamestate` 中，合格开战历史、战争完成历史、维持现状旗标各一次，胜利、战败、旧晚加入及第六章完成旗标均不存在。战争结束后存档不再保留已结束的战争对象和其临时标记，不能用临时标记缺席否定此前的回调。15:39:26 的审计给出 `PASS|awp_03_registered_state`、攻击者锁定／合格战争结束／维持现状三项 `OBSERVED`，以 `audit end; writes=none` 结束，没有 `BLOCK` 或 `FAIL`。审计后 `game.log` 副本 SHA-256 为 `5206B7E02FC7F06E7B6250CD76F196EA5868BB71818D8EEB3302A0614133C939`；存档与日志副本均在 `temp/awp03-451-20260927/run-1508-cold-war/`。本轮 `error.log` 未检出本 Mod 或维持现状回调相关错误；原正常档 `2215.11.25.sav` 的 SHA-256 仍为 `75D5AA8188649BD399003C16BFB0FF11E4C11E491C3170BD95993A8152F6C94C`。
+
+该隔离分支没有结算第四、第五章，故只证明维持现状的战争结果适配和互斥账本，不能算作第五章战败／维持现状等待页测试，也不能代表自然战争议和结果验收。载入旧战中档时，旧事件窗口队列已存在；在本隔离分支逐个关闭，未用其状态判断和平回调。
+
 ## 待验证
 
-脚本触发的战争只验证引擎回调路径，不计作自然外交与宣战的 FEA-01～03 验收。当前隔离档的第四至第六章正常结算路径、第五章等待态与第六章完成态读档已有证据，战后审计修复和开战误记晚加入修复均已冷重启复核，但 FEA-01～06 尚未整项通过。下一步独立测试战败、维持现状、并发战争和其他反例，再补自然战争证据。全包验收不能仅凭此受控战争判为通过。
+脚本触发的战争只验证引擎回调路径，不计作自然外交与宣战的 FEA-01～03 验收。当前隔离档的第四至第六章正常结算路径、第五章等待态与第六章完成态读档已有证据；同场受控胜利、战败、维持现状三个结果已分别记录，战后审计修复和开战误记晚加入修复均已冷重启复核，但 FEA-01～06 尚未整项通过。下一步使用已结算第五章战时选择的隔离档，测试战败／维持现状后等待页及读档；再核并发战争、其他反例和自然战争。全包验收不能仅凭此受控战争判为通过。
