@@ -14,7 +14,7 @@
 | AWP-00 状态登记与审计 | 已批准 | 已完成 | 通过 | 既有报告通过 | [AWP-00](../reports/aemusa_main_story_awp_00_validation_report.md) |
 | AWP-01 最小主线骨架 | 已批准 | 已完成 | 通过 | 既有报告通过 | [AWP-01](../reports/aemusa_main_story_awp_01_validation_report.md) |
 | AWP-02 序章至第三章 | 已批准且已有单独实施授权 | 已完成 | 通过 | `pass`；T001～T004 通过 | [AWP-02](../reports/aemusa_main_story_awp_02_validation_report.md) |
-| AWP-03 第四至第六章及失落帝国战争 | 已单独授权；开战／胜利口径获用户修订 | 开战／结果适配与第四至第六章事件簇已写 | 脚本静态通过 | 冷启动与旧档载入；FEA-01～06 和新章节正常流程未执行 | [修订适配方案](design/aemusa_main_story_awp_03_war_adapter_proposal.md)、[战争链对照](../reports/aemusa_main_story_awp_03_war_chain_comparison_2026-09-27.md)、[第五六章报告](../reports/aemusa_main_story_awp_03_chapter_05_06_static_report.md) |
+| AWP-03 第四至第六章及失落帝国战争 | 已单独授权；开战／胜利口径获用户修订 | 开战／结果适配与第四至第六章事件簇已写 | 脚本静态通过 | 冷启动、旧档载入与无战争只读审计；FEA-01～06 和新章节正常流程未执行 | [修订适配方案](design/aemusa_main_story_awp_03_war_adapter_proposal.md)、[战争链对照](../reports/aemusa_main_story_awp_03_war_chain_comparison_2026-09-27.md)、[第五六章报告](../reports/aemusa_main_story_awp_03_chapter_05_06_static_report.md)、[运行基线](../reports/aemusa_main_story_awp_03_runtime_2026-09-27.md) |
 | AWP-04 至 AWP-12 | 分包基线已批准 | 未完成；尚未逐包授权实施 | 不适用 | 未执行 | [工作包记录](design/aemusa_main_story_implementation_work_packages_v1.0.md) |
 | 本轮架构、进度与检查工具整理 | 本轮用户授权 | 已完成 | 工具测试与项目静态检查见报告 | 未执行游戏测试 | [整理报告](../reports/project_architecture_review_2026-09-26.md) |
 
