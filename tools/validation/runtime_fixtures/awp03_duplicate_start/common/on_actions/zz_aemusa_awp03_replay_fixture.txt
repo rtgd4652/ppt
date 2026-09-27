@@ -1,0 +1,16 @@
+# 仅供隔离运行验证：测试后必须从正式 mod 目录移除本文件。
+# 4.5.1 原版声明该读档回调无作用域；只由下面的全局事件选择玩家。
+on_single_player_save_game_load = {
+	events = {
+		aemusa_awp03_replay.1
+	}
+}
+
+# 独立列表只重放本包正式处理器，避免重放原版战争奖励或通知。
+on_aemusa_awp03_replay_war_start = {
+	events = {
+		aemusa_awp03_replay.10
+		aemusa_ms.610
+		aemusa_awp03_replay.99
+	}
+}

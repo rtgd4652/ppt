@@ -196,7 +196,8 @@ def check(root, game_dir=None):
                               f"法令 {entry.key} 的 length 为 0，会触发 4.5.1 内阁崩溃；即时入口应保留至少 1 天有效期")
             if entry.key == "namespace" and isinstance(entry.value, str):
                 namespaces.add(entry.value)
-            if file.startswith("mod/events/") and entry.key.endswith("_event") and isinstance(entry.value, list):
+            # 原版无作用域事件使用 event，国家等有作用域事件使用 *_event。
+            if file.startswith("mod/events/") and (entry.key == "event" or entry.key.endswith("_event")) and isinstance(entry.value, list):
                 event_id = scalar(entry.value, "id")
                 if not event_id or not EVENT_ID.fullmatch(event_id):
                     issue("event_id", file, entry.line, "事件缺少有效 ID")

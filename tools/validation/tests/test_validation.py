@@ -62,6 +62,14 @@ class ModChecks(unittest.TestCase):
         self.write("mod/common/on_actions/test.txt", 'on_game_start_country = { events = { aemusa_ms.99 } }')
         self.assertIn("missing_event", self.codes())
 
+    def test_global_event_is_resolved_and_duplicate_checked(self):
+        # 读档回调引用无作用域 event，仍须检查 ID 引用与跨类型重名。
+        self.write("mod/events/global.txt", 'event = { id = aemusa_ms.2 hide_window = yes is_triggered_only = yes }')
+        self.write("mod/common/on_actions/test.txt", 'on_single_player_save_game_load = { events = { aemusa_ms.2 } }')
+        self.assertEqual(self.codes(), set())
+        self.write("mod/events/duplicate_global.txt", 'country_event = { id = aemusa_ms.2 }')
+        self.assertIn("duplicate_event", self.codes())
+
     def test_missing_localization(self):
         self.write("mod/events/story.txt", 'namespace = aemusa_ms country_event = { id = aemusa_ms.1 title = aemusa_ms.missing }')
         self.assertIn("missing_localization", self.codes())

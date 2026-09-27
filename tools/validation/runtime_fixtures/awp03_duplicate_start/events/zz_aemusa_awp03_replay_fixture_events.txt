@@ -1,0 +1,95 @@
+# 仅供隔离运行验证；不宣战、不补旗标、不推进时间、不修改正式处理器。
+namespace = aemusa_awp03_replay
+
+event = {
+	id = aemusa_awp03_replay.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		log = "AEMUSA-REPLAY|load_fixture"
+		every_country = {
+			limit = {
+				is_ai = no
+				has_country_flag = aemusa_ms_country_route_initialized
+			}
+			country_event = { id = aemusa_awp03_replay.2 }
+		}
+	}
+}
+
+# 新建国家事件根作用域，确保正式处理器收到 root=玩家、from=当前战争。
+country_event = {
+	id = aemusa_awp03_replay.2
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+				NOR = {
+					has_country_flag = aemusa_ms_country_fe_war_blocked_defense_recorded
+					has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+				}
+				any_war = {
+					has_war_flag = aemusa_ms_qualified_fe_war
+					any_defender = { is_same_value = root is_war_leader = yes }
+				}
+			}
+			log = "AEMUSA-REPLAY|begin"
+			aemusa_ms_log_awp_03_audit = yes
+			random_war = {
+				limit = {
+					has_war_flag = aemusa_ms_qualified_fe_war
+					any_defender = { is_same_value = root is_war_leader = yes }
+				}
+				prev = {
+					log = "AEMUSA-REPLAY|dispatch"
+					fire_on_action = {
+						on_action = on_aemusa_awp03_replay_war_start
+						scopes = { from = prev }
+					}
+				}
+			}
+			aemusa_ms_log_awp_03_audit = yes
+			if = {
+				limit = {
+					NOR = {
+						has_country_flag = aemusa_ms_country_fe_war_blocked_defense_recorded
+						has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+					}
+				}
+				log = "AEMUSA-REPLAY|PASS|no_blocked_defense_or_result"
+			}
+			else = { log = "AEMUSA-REPLAY|FAIL|unexpected_story_write" }
+			log = "AEMUSA-REPLAY|end"
+		}
+		else = { log = "AEMUSA-REPLAY|SKIP|baseline_preconditions_not_met" }
+	}
+}
+
+# 正对照：每轮实际执行证明该次通知携带了正确的玩家与战争作用域。
+country_event = {
+	id = aemusa_awp03_replay.10
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+		from = {
+			has_war_flag = aemusa_ms_qualified_fe_war
+			any_defender = { is_same_value = root is_war_leader = yes }
+			any_attacker = { is_country_type = awakened_fallen_empire is_war_leader = yes }
+		}
+	}
+	immediate = { log = "AEMUSA-REPLAY|PASS|player_and_qualified_war_scope" }
+}
+
+# 负对照：若该行出现，则调用方式绕过了 trigger，本次测试无效。
+country_event = {
+	id = aemusa_awp03_replay.99
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+	immediate = { log = "AEMUSA-REPLAY|FAIL|trigger_was_bypassed" }
+}
