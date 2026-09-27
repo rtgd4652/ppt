@@ -112,6 +112,14 @@ aemusa_ms_log_awp_03_audit = {
 		log = "AEMUSA-MS|OBSERVED|awp_03_war_attacker_locked"
 	}
 	else_if = {
+		# 原版灭国可使已保存的目标对象在战后失效，不影响同场战争结果。
+		limit = {
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+		}
+		log = "AEMUSA-MS|OBSERVED|awp_03_war_attacker_unavailable_after_result"
+	}
+	else_if = {
 		limit = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_started }
 		log = "AEMUSA-MS|BLOCK|awp_03_war_attacker_missing"
 	}
