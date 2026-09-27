@@ -1,12 +1,12 @@
 ---
 title: "AWP-03 失落帝国战争事实适配与资格判定方案"
 work_package: AWP-03
-status: "war_start_victory_approved_chapters_04_06_static_load_smoke_pass_callbacks_pending"
+status: "war_start_victory_approved_chapters_04_06_controlled_runtime_partial"
 package_authorization: "2026-09-27 用户选择先推进 AWP-03"
 qualification_approval: "2026-09-27 用户批准建议口径"
 adapter_static_status: pass
 chapter_04_exact_demand_status: not_required_by_2026_09_27_user_revision
-runtime_status: partial_scripted_start_observed
+runtime_status: partial_controlled_start_victory_chapters_04_06_reloaded
 last_updated: 2026-09-27
 ---
 
@@ -20,7 +20,7 @@ AWP-02 的 AED-T001～T004 已通过，见 [验收报告](../../reports/aemusa_m
 
 ## 2. 已核实的 4.5.1 脚本入口
 
-以下来自本机 Stellaris 4.5.1 原版 `F:/steam/steamapps/common/Stellaris/common/on_actions/00_on_actions.txt`，只是脚本声明的作用域，尚未通过本 Mod 的运行测试：
+以下作用域来自本机 Stellaris 4.5.1 原版 `F:/steam/steamapps/common/Stellaris/common/on_actions/00_on_actions.txt`。本 Mod 已在隔离档观察到合格开战与同场胜利回调；战败、维持现状和自然宣战尚未通过运行测试：
 
 | 回调 | 原版注释中的作用域 | 本包可记录的事实 |
 | --- | --- | --- |
@@ -31,7 +31,7 @@ AWP-02 的 AED-T001～T004 已通过，见 [验收报告](../../reports/aemusa_m
 | `on_status_quo`／`on_status_quo_forced`（3163～3199 行） | 包含主攻、防双方及战争作用域 | 维持现状事实；不等于获胜 |
 | `on_war_ended`（2623～2646 行） | `Root` 为败方，`From` 为主要胜方；此回调未声明战争作用域 | 结束可作辅助审计，不作为唯一胜利或战争身份来源 |
 
-原版 `common/scripted_triggers/00_scripted_triggers.txt` 分开识别 `fallen_empire` 与 `awakened_fallen_empire`；不能仅凭泛称“失落帝国”推断两者均满足第五章。原版存在战争对象标记的使用例（`set_war_flag`、`has_war_flag`），但本包还需在目标回调中实测标记能否随存档和结束回调正确匹配。
+原版 `common/scripted_triggers/00_scripted_triggers.txt` 分开识别 `fallen_empire` 与 `awakened_fallen_empire`；不能仅凭泛称“失落帝国”推断两者均满足第五章。受控战争的战中存档已确认战争实例标记，玩家同场胜利回调也已触发；战败、维持现状和多战争并发的标记匹配仍待核对。
 
 2026-09-27 的[同类模组战争链对照](../../reports/aemusa_main_story_awp_03_war_chain_comparison_2026-09-27.md)进一步核对了原版 `nomads` 和本机已安装的战争事件链：战争对象打标、结果回调核对同一标记是可用模式。其他模组主动创建或强制结束战争的做法不适合本包；特殊战争漏回调只能记作结果未确认，不能借此推定玩家获胜。对照不构成 AWP-03 的运行通过证据。
 
@@ -60,7 +60,7 @@ AWP-02 的 AED-T001～T004 已通过，见 [验收报告](../../reports/aemusa_m
 1. `aemusa_ms.600`／`.601` 仍可记录部分原版外交回应，供历史旁证或旧存档审计；它们不再决定战争或章节资格，也不能证明要求正文。
 2. `aemusa_ms.610` 在战争开始时识别原始攻守战争领袖，给该战争对象打标，并保存觉醒失落帝国攻击者；`.620`～`.622` 只对带标记的同一战争写入胜利、战败或维持现状。外部适配器不直接结算章节。
 3. 第四章 AED-04-00～40 从真实开战进入；第五章 AED-05-00～40 记录战时责任优先级并等待同一场战争由玩家获胜；第六章 AED-06-00～90 只在该胜利后记录问责与恢复优先级。玩家选择与战争事实分开记录，剧情按钮不制造战争或结果。战况、伤亡和撤离数字缺少可靠接口，暂保持待核实。
-4. 用隔离测试存档与游戏日志执行 FEA-01～06，并复核战争前／中／后读档、重复回调、并发战争、战败及维持现状。控制台注入可检验接口，不能冒充自然发生证据。2026-09-27 已在受控脚本开战中观察到合格开战回调与第四章正常结算；第五章窗口之后的存档缺少状态，结果回调未测，详见[运行记录](../../reports/aemusa_main_story_awp_03_runtime_2026-09-27.md)。
+4. 用隔离测试存档与游戏日志执行 FEA-01～06，并复核战争前／中／后读档、重复回调、并发战争、战败及维持现状。控制台注入可检验接口，不能冒充自然发生证据。2026-09-27 已在受控脚本战争中观察到合格开战、同场玩家胜利及第四至第六章正常结算；第六章完成态读档账本一致。首轮第五章两份存档缺少状态，后续逐窗重试未复现，原因仍未知。战后审计误报的代码修复与停用晚加入旁证均待冷重启验证，详见[运行记录](../../reports/aemusa_main_story_awp_03_runtime_2026-09-27.md)。
 
 ## 5. 用户决定与叙事边界
 

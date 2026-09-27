@@ -2,7 +2,7 @@
 title: "AWP-03 外交与战争事实适配首批静态报告"
 work_package: AWP-03
 status: implemented_static_pass_runtime_partial
-runtime_status: scripted_start_observed
+runtime_status: controlled_start_victory_chapters_04_06_reloaded_partial
 last_updated: 2026-09-27
 ---
 
@@ -26,7 +26,7 @@ last_updated: 2026-09-27
 
 `aemusa_ms_country_has_valid_fe_intervention_source` 仅检查可选外交旁证的枚举与歧义状态；`aemusa_ms_country_has_valid_fallen_empire_war_history` 检查结果互斥、完成必须有结果及开战时路线已初始化。战争、结果与第四章剧情状态分离；回调本身不推进章节。
 
-另有只读 `aemusa_ms_log_awp_03_audit`，供隔离测试存档在玩家国家作用域输出 `PASS`、`OBSERVED`、`WAIT`、`BLOCK` 与 `CHECK`；它会检查战争攻击者目标是否存在，不把可选外交旁证的歧义当作阻断。该命令尚未在游戏执行；其日志结果也不能代替原版战争回调证据。
+另有只读 `aemusa_ms_log_awp_03_audit`，供隔离测试存档在玩家国家作用域输出 `PASS`、`OBSERVED`、`WAIT`、`BLOCK` 与 `CHECK`；它会检查战争攻击者目标是否存在，不把可选外交旁证的歧义当作阻断。本首批静态快照时该命令尚未在游戏执行；后续已在战前、战中和完成态执行，详见[运行记录](aemusa_main_story_awp_03_runtime_2026-09-27.md)。审计日志不能代替原版战争回调证据。
 
 ## 静态验证
 
@@ -44,4 +44,4 @@ last_updated: 2026-09-27
 
 ## 运行追补与未验证项
 
-2026-09-27，隔离档的受控脚本开战已触发 `qualified_fe_war_started`；战中存档确认战争标记、玩家开战旗标及攻击者目标，第四章五窗正常结算。此运行结果修正了本报告早期“尚未测试”的时间截面，但不构成自然外交与宣战验收。`on_entering_war` 还在原始开战瞬间误写晚加入旗标，源代码现已停用该旁证，须重启验证。第五章窗口后的存档缺少其事件簇状态，结果回调、FEA-01～06、章节 T002～T004、攻击者目标跨读档、战争实例标记在胜利／战败／维持现状回调中的可见性，以及多战争并发仍待核对。详见[运行记录](aemusa_main_story_awp_03_runtime_2026-09-27.md)。
+2026-09-27，隔离档的受控脚本开战触发 `qualified_fe_war_started`；战中存档确认战争标记、玩家开战旗标及攻击者目标。控制台令该同场战争中的失落帝国投降后，玩家胜利回调触发；第四至第六章按正常窗口依次结算，完成态读档账本一致。这些结果修正了本报告早期“尚未测试”的时间截面，但不构成自然外交、宣战或胜利验收。`on_entering_war` 在原始开战瞬间误写晚加入旗标，源代码现已停用该旁证，须重启验证。首轮两份第五章存档缺状态的原因仍未知，后续逐窗重试未复现。旧进程的战后审计因攻击者灭国误报 `BLOCK`，只读审计代码已修，须冷重启复核。FEA-01～06 尚未整项通过；战败、维持现状、多战争并发与自然战争仍待核对。详见[运行记录](aemusa_main_story_awp_03_runtime_2026-09-27.md)。
