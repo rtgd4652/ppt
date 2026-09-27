@@ -161,7 +161,7 @@ aemusa_ms_country_has_valid_fallen_empire_war_history = {
 		}
 		AND = {
 			has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
-			NOT = { has_country_flag = aemusa_ms_country_chapter_04_completed }
+			NOT = { has_country_flag = aemusa_ms_country_route_initialized }
 		}
 		AND = {
 			has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed

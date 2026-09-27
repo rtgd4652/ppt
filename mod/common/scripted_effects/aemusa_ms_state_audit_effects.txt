@@ -91,14 +91,13 @@ aemusa_ms_log_state_audit = {
 	log = "AEMUSA-MS|AWP-00|audit end; writes=none"
 }
 
-# AWP-03 只读诊断：分别报告事实、等待和歧义，不把尚未发生的战争算作失败。
+# AWP-03 只读诊断：分别报告事实、等待和攻击者目标缺失，不把尚未发生的战争算作失败。
 # 控制台在玩家国家作用域执行：effect aemusa_ms_log_awp_03_audit = yes
 aemusa_ms_log_awp_03_audit = {
 	log = "AEMUSA-MS|AWP-03|audit begin; scope=country"
 	if = {
 		limit = {
 			has_country_flag = aemusa_ms_country_route_initialized
-			aemusa_ms_country_has_valid_fe_intervention_source = yes
 			aemusa_ms_country_has_valid_fallen_empire_war_history = yes
 		}
 		log = "AEMUSA-MS|PASS|awp_03_registered_state"
@@ -106,21 +105,17 @@ aemusa_ms_log_awp_03_audit = {
 	else = { log = "AEMUSA-MS|FAIL|awp_03_registered_state" }
 
 	if = {
-		limit = { has_country_flag = aemusa_ms_country_fe_intervention_ambiguous }
-		log = "AEMUSA-MS|BLOCK|awp_03_multiple_fe_sources"
-	}
-	else_if = {
 		limit = {
-			has_country_flag = aemusa_ms_country_fe_intervention_recorded
-			exists = event_target:aemusa_ms_fe_intervenor@root
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+			exists = event_target:aemusa_ms_fe_war_attacker@root
 		}
-		log = "AEMUSA-MS|OBSERVED|awp_03_fe_actor_locked"
+		log = "AEMUSA-MS|OBSERVED|awp_03_war_attacker_locked"
 	}
 	else_if = {
-		limit = { has_country_flag = aemusa_ms_country_fe_intervention_recorded }
-		log = "AEMUSA-MS|BLOCK|awp_03_fe_actor_missing"
+		limit = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_started }
+		log = "AEMUSA-MS|BLOCK|awp_03_war_attacker_missing"
 	}
-	else = { log = "AEMUSA-MS|WAIT|awp_03_fe_source_not_seen" }
+	else = { log = "AEMUSA-MS|WAIT|awp_03_war_not_started" }
 
 	if = {
 		limit = {

@@ -10,7 +10,7 @@ awp_01_status: "completed_runtime_pass"
 awp_02_implementation_authorized: true
 awp_02_status: "completed_runtime_pass"
 awp_03_implementation_authorized: true
-awp_03_status: "adapter_static_pass_chapter_04_detail_blocked_runtime_pending"
+awp_03_status: "war_start_victory_adapter_load_smoke_pass_story_pending_callbacks_pending"
 last_updated: "2026-09-27"
 ---
 
@@ -387,8 +387,16 @@ AWP-02 已通过静态门禁，并于 2026-09-27 补齐新开局、跳章阻断�
 
 ## 25. 2026-09-27 AWP-03 续接与适配设计
 
+本节是精确外交来源仍作为前置时的历史检查点；当前口径以第 26 节及修订适配方案为准。
+
 用户在本日明确选择“先推进 AWP-03”。该答复在 AWP-02 运行验收通过之后单独给出，记录为 AWP-03 工作包授权；不延伸至后续工作包。第四至第六章及失落帝国战争是本包范围，现有 FEA-02／03 测试计划仍要求参战与结果资格先完成适配设计审核。
 
 已核对本机 4.5.1 原版 `on_war_beginning`、`on_entering_war`、`on_war_won`、`on_war_lost`、`on_status_quo` 和 `on_war_ended` 的作用域，形成[战争事实适配与资格判定方案](aemusa_main_story_awp_03_war_adapter_proposal.md)。用户明确回复“批准建议口径（建议）”：只接受已锁定觉醒失落帝国直接对玩家宣战、玩家为原始防守战争领袖，以及同一战争中的玩家领袖胜利；其他结果保留事实而不推进。本批准覆盖 FEA-02／03 判定；第四章的真实干预来源仍待证明，静态与游戏内验收均未执行。
 
 本日首批运行脚本已接入三种原版外交要求回应关系修正、开战、晚加入、胜利、战败与维持现状回调，并登记新增状态及战争结果互斥审计。多主体来源会明确阻断，同一主体多种修正不会冒充唯一回应。[静态报告](../../reports/aemusa_main_story_awp_03_adapter_static_report.md)记录检查及 4.5.1 最新代码冷启动／旧档载入冒烟通过和未测边界。关系修正可证明某失落帝国确实对玩家提出过要求并记录回应，却不能无歧义还原具体要求 ID／正文；因此第四章仍不结算，战争适配器也不会自行推进章节。当前 `awp_03_status` 为 `adapter_static_and_load_smoke_pass_chapter_04_detail_blocked_callbacks_pending`，FEA-01～06 均未测试。
+
+## 26. 2026-09-27 AWP-03 开战／胜利口径修订
+
+用户随后明确：“不需要精确回调，只要确定开战和胜利就可以了。”因此第四章具体外交要求不再是门槛；以觉醒失落帝国真实直接宣战、玩家为原始防守战争领袖作为第四章的战事实入口，攻击者在开战回调中直接锁定。第五章只读该战争的真实经过，第六章只在玩家作为胜方战争领袖赢得同一战争后开放。旧外交关系修正仅为可选旁证，不得叙述成精确要求或玩家回应。原始攻守领袖和同一战争胜利的保守限制继续有效。
+
+修订后的事实适配已通过项目静态检查和 20 项工具测试；4.5.1（`c957`）第四次冷启动与原档载入冒烟通过，原存档哈希不变。章节剧情和 FEA-01～06 真实回调验证仍待完成。`awp_03_status` 为 `war_start_victory_adapter_load_smoke_pass_story_pending_callbacks_pending`；载入通过不等于战争回调已通过。

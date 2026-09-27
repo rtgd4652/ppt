@@ -2,7 +2,7 @@
 namespace = aemusa_ms
 
 # 原版失落帝国要求在玩家作答后留下与具体发起者关联的关系修正。
-# 每月仅捕获仍能查到该证据的一次来源；没有证据时保持第四章阻断。
+# 每月仅捕获仍能查到该证据的一次来源；没有证据时不影响开战与章节资格。
 country_event = {
 	id = aemusa_ms.600
 	hide_window = yes
@@ -58,7 +58,7 @@ country_event = {
 	}
 }
 
-# 开战时仅锁定同一主体直接攻击、玩家为原始防守战争领袖的战争。
+# 开战时直接从战争双方锁定觉醒失落帝国，不依赖此前是否收到原版要求。
 country_event = {
 	id = aemusa_ms.610
 	hide_window = yes
@@ -66,26 +66,37 @@ country_event = {
 	trigger = {
 		is_ai = no
 		has_country_flag = aemusa_ms_country_route_initialized
-		has_country_flag = aemusa_ms_country_fe_intervention_recorded
-		exists = event_target:aemusa_ms_fe_intervenor@root
 		from = {
 			OR = {
-				any_attacker = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
-				any_defender = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+				any_attacker = { is_country_type = awakened_fallen_empire }
+				any_defender = { is_country_type = awakened_fallen_empire }
 			}
 		}
 	}
 	immediate = {
 		if = {
 			limit = { aemusa_ms_country_can_record_fe_war_start = yes }
-			from = { set_war_flag = aemusa_ms_qualified_fe_war }
+			from = {
+				set_war_flag = aemusa_ms_qualified_fe_war
+				# 原始攻击领袖唯一；保存对象只供叙事与审计，不充当胜利证明。
+				random_attacker = {
+					limit = {
+						is_country_type = awakened_fallen_empire
+						is_war_leader = yes
+					}
+					save_global_event_target_as = aemusa_ms_fe_war_attacker@root
+				}
+			}
 			set_country_flag = aemusa_ms_country_history_fallen_empire_war_started
 			log = "AEMUSA-MS|AWP-03|qualified_fe_war_started"
 		}
 		else_if = {
 			limit = {
 				from = {
-					any_defender = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+					any_defender = {
+						is_country_type = awakened_fallen_empire
+						is_war_leader = yes
+					}
 					any_attacker = { is_same_value = root is_war_leader = yes }
 				}
 			}
@@ -95,7 +106,10 @@ country_event = {
 		else_if = {
 			limit = {
 				from = {
-					any_attacker = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+					any_attacker = {
+						is_country_type = awakened_fallen_empire
+						is_war_leader = yes
+					}
 					any_defender = { is_same_value = root is_war_leader = no }
 				}
 			}
@@ -105,7 +119,10 @@ country_event = {
 		else_if = {
 			limit = {
 				from = {
-					any_attacker = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+					any_attacker = {
+						is_country_type = awakened_fallen_empire
+						is_war_leader = yes
+					}
 					any_defender = { is_same_value = root is_war_leader = yes }
 				}
 			}
@@ -115,16 +132,15 @@ country_event = {
 	}
 }
 
-# 晚加入对已锁定主体的战争不追认开战资格；此回调没有战争作用域。
+# 晚加入对觉醒失落帝国的战争不追认开战资格；此回调没有战争作用域。
 country_event = {
 	id = aemusa_ms.611
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
 		is_ai = no
-		has_country_flag = aemusa_ms_country_fe_intervention_recorded
-		exists = event_target:aemusa_ms_fe_intervenor@root
-		from = { is_same_value = event_target:aemusa_ms_fe_intervenor@root }
+		has_country_flag = aemusa_ms_country_route_initialized
+		from = { is_country_type = awakened_fallen_empire }
 	}
 	immediate = {
 		set_country_flag = aemusa_ms_country_fe_war_late_join_recorded

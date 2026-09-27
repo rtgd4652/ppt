@@ -49,23 +49,15 @@ aemusa_ms_country_has_ambiguous_fe_intervention = {
 }
 
 # 调用位置：on_war_beginning 的国家事件，root 为玩家、from 为本次战争。
-# 双方必须从开战起就是领袖；代理战争不算该主体向玩家直接宣战。
+# 宣战本身锁定真实攻击者；不以前置外交回应或第四章结算倒推战争资格。
 aemusa_ms_country_can_record_fe_war_start = {
 	is_ai = no
 	has_country_flag = aemusa_ms_country_route_initialized
-	has_country_flag = aemusa_ms_country_fe_intervention_recorded
-	has_country_flag = aemusa_ms_country_chapter_04_completed
-	has_country_flag = aemusa_ms_country_settlement_chapter_04_done
-	check_variable = { which = aemusa_ms_country_chapter_index value = 5 }
 	NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_started }
-	exists = event_target:aemusa_ms_fe_intervenor@root
-	event_target:aemusa_ms_fe_intervenor@root = {
-		is_country_type = awakened_fallen_empire
-	}
 	from = {
 		NOT = { is_from_proxy_war = yes }
 		any_attacker = {
-			is_same_value = event_target:aemusa_ms_fe_intervenor@root
+			is_country_type = awakened_fallen_empire
 			is_war_leader = yes
 		}
 		any_defender = {
