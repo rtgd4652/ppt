@@ -1,0 +1,31 @@
+# 仅供隔离测试：正式战败回调已经写入结果后，重放本包处理器。
+on_war_lost = {
+	events = {
+		aemusa_awp03_result_replay.1
+	}
+}
+
+# 自定义列表不包含原版奖励或通知，也不触发新的战争。
+on_aemusa_awp03_replay_duplicate_defeat = {
+	events = {
+		aemusa_awp03_result_replay.10
+		aemusa_ms.621
+		aemusa_awp03_result_replay.99
+	}
+}
+
+on_aemusa_awp03_replay_conflicting_victory = {
+	events = {
+		aemusa_awp03_result_replay.11
+		aemusa_ms.620
+		aemusa_awp03_result_replay.99
+	}
+}
+
+on_aemusa_awp03_replay_conflicting_status_quo = {
+	events = {
+		aemusa_awp03_result_replay.12
+		aemusa_ms.622
+		aemusa_awp03_result_replay.99
+	}
+}

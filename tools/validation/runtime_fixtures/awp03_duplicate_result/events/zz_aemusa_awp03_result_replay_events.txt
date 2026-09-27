@@ -1,0 +1,148 @@
+# 仅供隔离运行验证；只在原版真实战败回调内派发重复和冲突结果通知。
+namespace = aemusa_awp03_result_replay
+
+# 4.5.1 原版 on_war_lost：root=败方领袖，from=胜方领袖，fromfrom=战争。
+country_event = {
+	id = aemusa_awp03_result_replay.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+		fromfrom = { has_war_flag = aemusa_ms_qualified_fe_war }
+	}
+	immediate = {
+		log = "AEMUSA-RESULT-REPLAY|native_defeat_callback"
+		if = {
+			limit = {
+				has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+				has_country_flag = aemusa_ms_country_fe_war_player_defeat
+				NOR = {
+					has_country_flag = aemusa_ms_country_fe_war_player_victory
+					has_country_flag = aemusa_ms_country_fe_war_status_quo
+				}
+			}
+			log = "AEMUSA-RESULT-REPLAY|begin_after_recorded_defeat"
+			aemusa_ms_log_awp_03_audit = yes
+
+			# 原始结果已由正式回调记录；重复通知保留原来的国家和战争作用域。
+			log = "AEMUSA-RESULT-REPLAY|dispatch_duplicate_defeat"
+			fire_on_action = {
+				on_action = on_aemusa_awp03_replay_duplicate_defeat
+				scopes = {
+					from = from
+					fromfrom = fromfrom
+				}
+			}
+
+			# 故障注入：同一败方收到冲突胜利通知，必须被完成门禁拒绝。
+			log = "AEMUSA-RESULT-REPLAY|dispatch_conflicting_victory"
+			fire_on_action = {
+				on_action = on_aemusa_awp03_replay_conflicting_victory
+				scopes = {
+					from = from
+					fromfrom = fromfrom
+				}
+			}
+
+			# 停战接口使用四层来源；玩家为原始主防，战争仍取自真实结果回调。
+			log = "AEMUSA-RESULT-REPLAY|dispatch_conflicting_status_quo"
+			fire_on_action = {
+				on_action = on_aemusa_awp03_replay_conflicting_status_quo
+				scopes = {
+					from = from
+					fromfrom = from
+					fromfromfrom = root
+					fromfromfromfrom = fromfrom
+				}
+			}
+
+			aemusa_ms_log_awp_03_audit = yes
+			if = {
+				limit = {
+					has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+					has_country_flag = aemusa_ms_country_fe_war_player_defeat
+					NOR = {
+						has_country_flag = aemusa_ms_country_fe_war_player_victory
+						has_country_flag = aemusa_ms_country_fe_war_status_quo
+					}
+				}
+				log = "AEMUSA-RESULT-REPLAY|PASS|only_defeat_remains"
+			}
+			else = { log = "AEMUSA-RESULT-REPLAY|FAIL|result_changed" }
+			log = "AEMUSA-RESULT-REPLAY|end"
+		}
+		# 不假定 on_action 文件合并顺序；正式结算尚未发生时明确判无效。
+		else = { log = "AEMUSA-RESULT-REPLAY|FAIL|native_defeat_not_recorded_first" }
+	}
+}
+
+# 三个独立正对照分别证明通知确实到达、身份及战争来源有效。
+country_event = {
+	id = aemusa_awp03_result_replay.10
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+		has_country_flag = aemusa_ms_country_fe_war_player_defeat
+		fromfrom = {
+			has_war_flag = aemusa_ms_qualified_fe_war
+			any_defender = {
+				is_same_value = root
+				is_war_leader = yes
+			}
+		}
+	}
+	immediate = { log = "AEMUSA-RESULT-REPLAY|PASS|duplicate_defeat_scope" }
+}
+
+country_event = {
+	id = aemusa_awp03_result_replay.11
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+		has_country_flag = aemusa_ms_country_fe_war_player_defeat
+		fromfrom = {
+			has_war_flag = aemusa_ms_qualified_fe_war
+			any_defender = {
+				is_same_value = root
+				is_war_leader = yes
+			}
+		}
+	}
+	immediate = { log = "AEMUSA-RESULT-REPLAY|PASS|conflicting_victory_scope" }
+}
+
+country_event = {
+	id = aemusa_awp03_result_replay.12
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		fromfromfrom = {
+			is_same_value = root
+			is_ai = no
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
+			has_country_flag = aemusa_ms_country_fe_war_player_defeat
+		}
+		fromfromfromfrom = {
+			has_war_flag = aemusa_ms_qualified_fe_war
+			any_defender = {
+				is_same_value = root
+				is_war_leader = yes
+			}
+		}
+	}
+	immediate = { log = "AEMUSA-RESULT-REPLAY|PASS|conflicting_status_quo_scope" }
+}
+
+# 负对照不得执行；出现该行说明测试绕过了正式事件触发条件。
+country_event = {
+	id = aemusa_awp03_result_replay.99
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { always = no }
+	immediate = { log = "AEMUSA-RESULT-REPLAY|FAIL|trigger_was_bypassed" }
+}
