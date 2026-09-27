@@ -66,6 +66,16 @@ last_updated: 2026-09-27
 
 14:26:22 群星 4.5.1 新进程启动，`dlc_load.json` 只启用本 Mod，描述文件指向本仓库 `mod` 目录。用户载入 `AWP03-ch06-done-2216.sav` 且保持暂停；14:49:20 在游戏日期 `2216.04.01` 执行只读审计。新 `game.log` 明确引用修复后脚本第 120 行，输出 `PASS|awp_03_registered_state`、`OBSERVED|awp_03_war_attacker_unavailable_after_result`、`OBSERVED|awp_03_qualified_war_ended`、`OBSERVED|awp_03_player_victory` 和 `audit end; writes=none`，没有 `BLOCK` 或 `FAIL`。因此本例的战后审计误报已在冷重启进程中消除；这仍只是受控胜利档，不代表自然战争通过。日志副本 SHA-256 为 `2F7E7BF75E0CB8978F2C0847A697169C763C455C22AE15DCB642F7FBAC4CE4D9`，连同加载配置及 `error.log` 副本保存在 `temp/awp03-451-20260927/run-1426-cold-audit/`。错误日志只发现未启用的其他 Mod 描述文件报错，未检出本 Mod 的脚本或事件报错。
 
+## 开战误记晚加入的冷重启复核
+
+用户重新载入原正常档 `2215.11.25.sav`，立即另存 `AWP03-cold-prewar-2215.sav`（SHA-256 `C8CFB292845AFD7E0FACEDABFC433B4CEEA98B156A8E3ADA3687531F2B51E527`）。新档与原档均为 `2215.11.25`，只有一个未觉醒失落帝国；玩家没有本包开战、旧晚加入或战争实例标记。原档 SHA-256 仍为 `75D5AA8188649BD399003C16BFB0FF11E4C11E491C3170BD95993A8152F6C94C`。
+
+15:10，用户在新进程、暂停的隔离档中使用原版 `set_country_type` 与 `declare_war` 将唯一失落帝国转为觉醒类型并向玩家宣战。`game.log` 只新增 `AEMUSA-MS|AWP-03|qualified_fe_war_started`，没有旧 `late_join_unqualified`。另存 `AWP03-cold-war-start-2215.sav`（SHA-256 `9DEE69C72D5BCE5424406EC9AA58432E95547301A2F6A38172471B9F1E942BB3`）；存档内战争 0 的原始主攻为国家 `16777223`、原始主防为玩家 `0`，战争对象有且仅有一次 `aemusa_ms_qualified_fe_war` 标记，玩家开战旗标一次，旧 `aemusa_ms_country_fe_war_late_join_recorded` 不存在。15:11:50 的只读审计输出登记状态 `PASS`、攻击者锁定和合格战争活跃 `OBSERVED`、未有战争结果 `WAIT`。因此停用 `.611` 后，原始防守参战误记晚加入在同一受控开战路径中未再出现。审计后 `game.log` 副本 SHA-256 为 `299E63BABB9356AF582CD42C167AE3C21BF094A2CCFBE9504F136132DA978A57`，存档及日志副本位于 `temp/awp03-451-20260927/run-1508-cold-war/`。这仍不代表自然战争和盟友晚加入反例已测试。
+
+## 同场受控战败反例
+
+在已备份的 `AWP03-cold-war-start-2215.sav` 分支，用户保持暂停并执行原版控制台 `surrender 0 0`（玩家国家索引 `0`、战争 `0`）。15:13:05 `game.log` 触发 `AEMUSA-MS|AWP-03|qualified_fe_war_player_defeat`；原版随后弹出“信号传输输入”。玩家未点击该窗口，另存 `AWP03-cold-defeat-2215.sav`（SHA-256 `157DA5011FEA6B921887909A18ACED6B1A3585B96620BE5859E24D89AD0C66A6`）。存档内原战争 `0` 保留合格标记，且记录 `defenders_surrendered=yes`、`end=yes`；玩家开战、完成、战败旗标各一次，胜利及维持现状旗标均不存在，第六章完成旗标也不存在。15:14:18 的只读审计新增 `OBSERVED|awp_03_qualified_war_ended` 和 `OBSERVED|awp_03_player_defeat`；同进程之前已打印的相同审计行没有重复输出，不能把缺少重复 `PASS` 行当作本次失败。审计后日志副本 SHA-256 为 `C382DAF1B1FBEC650FCB39E2AB88FD7A41094C8F6A8076152CD2B9DFCBA74204`，存于上述冷重启战争证据目录。本项证明同场战败结果回调和互斥账本路径，不替代第五章等待页的运行验证，也不代表自然战争反例完成。
+
 ## 待验证
 
-脚本触发的战争只验证引擎回调路径，不计作自然外交与宣战的 FEA-01～03 验收。当前隔离档的第四至第六章正常结算路径、第五章等待态与第六章完成态读档已有证据，战后审计修复已冷重启复核，但 FEA-01～06 尚未整项通过。下一步从战前隔离档复核开战时不再误记晚加入，独立测试战败、维持现状、并发战争和其他反例，再补自然战争证据。全包验收不能仅凭此受控战争判为通过。
+脚本触发的战争只验证引擎回调路径，不计作自然外交与宣战的 FEA-01～03 验收。当前隔离档的第四至第六章正常结算路径、第五章等待态与第六章完成态读档已有证据，战后审计修复和开战误记晚加入修复均已冷重启复核，但 FEA-01～06 尚未整项通过。下一步独立测试战败、维持现状、并发战争和其他反例，再补自然战争证据。全包验收不能仅凭此受控战争判为通过。
