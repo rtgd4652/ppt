@@ -14,7 +14,7 @@
 | AWP-00 状态登记与审计 | 已批准 | 已完成 | 通过 | 既有报告通过 | [AWP-00](../reports/aemusa_main_story_awp_00_validation_report.md) |
 | AWP-01 最小主线骨架 | 已批准 | 已完成 | 通过 | 既有报告通过 | [AWP-01](../reports/aemusa_main_story_awp_01_validation_report.md) |
 | AWP-02 序章至第三章 | 已批准且已有单独实施授权 | 已完成 | 通过 | `pass`；T001～T004 通过 | [AWP-02](../reports/aemusa_main_story_awp_02_validation_report.md) |
-| AWP-03 第四至第六章及失落帝国战争 | 已单独授权；开战／胜利口径获用户修订 | 开战／结果适配与第四至第六章事件簇已写 | 脚本静态通过 | 冷启动与旧档载入；FEA-01～06 和新章节正常流程未执行 | [修订适配方案](design/aemusa_main_story_awp_03_war_adapter_proposal.md)、[第五六章报告](../reports/aemusa_main_story_awp_03_chapter_05_06_static_report.md) |
+| AWP-03 第四至第六章及失落帝国战争 | 已单独授权；开战／胜利口径获用户修订 | 开战／结果适配与第四至第六章事件簇已写 | 脚本静态通过 | 冷启动与旧档载入；FEA-01～06 和新章节正常流程未执行 | [修订适配方案](design/aemusa_main_story_awp_03_war_adapter_proposal.md)、[战争链对照](../reports/aemusa_main_story_awp_03_war_chain_comparison_2026-09-27.md)、[第五六章报告](../reports/aemusa_main_story_awp_03_chapter_05_06_static_report.md) |
 | AWP-04 至 AWP-12 | 分包基线已批准 | 未完成；尚未逐包授权实施 | 不适用 | 未执行 | [工作包记录](design/aemusa_main_story_implementation_work_packages_v1.0.md) |
 | 本轮架构、进度与检查工具整理 | 本轮用户授权 | 已完成 | 工具测试与项目静态检查见报告 | 未执行游戏测试 | [整理报告](../reports/project_architecture_review_2026-09-26.md) |
 
@@ -41,6 +41,7 @@
 - AWP-03 首批事实适配读取原版失落帝国要求回应关系修正，仅在候选主体唯一时锁定；该外交来源现在只是可选旁证。按新口径，`on_war_beginning` 直接从真实战争中锁定觉醒失落帝国原始攻击领袖和玩家原始防守领袖，给战争实例打标；结果回调只读该战争标记。修订后项目静态检查、20 项工具测试通过，4.5.1（`c957`）完成冷启动及旧档载入冒烟；原正常存档哈希未变。诊断命令及真实战争回调仍未执行，详细限制见[静态报告](../reports/aemusa_main_story_awp_03_adapter_static_report.md)。
 - 第四章 AED-04-00～40 已改为真实开战后进入；无开战时白夜馆只显示等待页。五个事件簇保留证据边界和中央庭公开责任选择，结算不写战争结果。最新项目静态检查及 25 项工具测试通过，4.5.1（`375f`）冷启动、旧档载入冒烟通过；原档哈希不变。旧档没有合格战争，第四章实际窗口与回调仍未执行，详见[第四章报告](../reports/aemusa_main_story_awp_03_chapter_04_static_report.md)。
 - 第五章 AED-05-00～40 与第六章 AED-06-00～90 已接入：第五章先记录战时责任优先级，等待同一场合格战争真实获胜；战败或维持现状停在说明页。第六章只在该胜利后记录问责和恢复优先级，结算第二幕并开启可停留恢复期，不生成战果或天灾。项目静态检查及 30 项账本测试通过，4.5.1（`1d14`）冷启动、旧档载入冒烟通过；原档哈希不变。章节窗口与真实回调仍未测试，详见[第五六章报告](../reports/aemusa_main_story_awp_03_chapter_05_06_static_report.md)。
+- 已对照 4.5.1 原版及本机已安装的战争事件模组；当前按战争实例打标、在胜利回调读取同一标记的结构保留。特殊战争漏掉结果回调时只显示 `CHECK` 并保持第六章关闭，不从战争消失推断胜利。详见[战争链对照](../reports/aemusa_main_story_awp_03_war_chain_comparison_2026-09-27.md)；这项研究没有新增游戏内验收证据。
 
 ## 本次收工与下次续接
 

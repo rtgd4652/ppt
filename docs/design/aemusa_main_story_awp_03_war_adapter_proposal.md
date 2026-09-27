@@ -33,6 +33,8 @@ AWP-02 的 AED-T001～T004 已通过，见 [验收报告](../../reports/aemusa_m
 
 原版 `common/scripted_triggers/00_scripted_triggers.txt` 分开识别 `fallen_empire` 与 `awakened_fallen_empire`；不能仅凭泛称“失落帝国”推断两者均满足第五章。原版存在战争对象标记的使用例（`set_war_flag`、`has_war_flag`），但本包还需在目标回调中实测标记能否随存档和结束回调正确匹配。
 
+2026-09-27 的[同类模组战争链对照](../../reports/aemusa_main_story_awp_03_war_chain_comparison_2026-09-27.md)进一步核对了原版 `nomads` 和本机已安装的战争事件链：战争对象打标、结果回调核对同一标记是可用模式。其他模组主动创建或强制结束战争的做法不适合本包；特殊战争漏回调只能记作结果未确认，不能借此推定玩家获胜。对照不构成 AWP-03 的运行通过证据。
+
 以下外交来源研究保留作历史与可选旁证，**不再是第四章或战争资格的门槛**。`events/fallen_empire_tasks_events.txt` 的 `fallen_empires_tasks.3` 只覆盖部分要求，不能推广为所有失落帝国的通用入口。
 
 另一组候选位于原版 `events/fallen_empire_events.txt`：`fallen_empires.3` 会按失落帝国自身条件向玩家派发 `.4`～`.8` 要求事件，事件携带 `from = root.owner`（90～181 行）。`fe_demand_made` 与拒绝要求的意见修正也出现在该流程中。它们提供可调查的具体外交来源，但通用 `on_action` 清单未给出“玩家收到任一此类要求”的直接回调；仅看到旗标或敌意不能保证恢复具体发起者。本包不覆盖原版事件，也不以这组记录启动第四章。
