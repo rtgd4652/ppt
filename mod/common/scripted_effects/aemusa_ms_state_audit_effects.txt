@@ -23,6 +23,12 @@ aemusa_ms_log_state_audit = {
 	else = { log = "AEMUSA-MS|FAIL|registered_enum_values" }
 
 	if = {
+		limit = { aemusa_ms_country_has_valid_fe_intervention_source = yes }
+		log = "AEMUSA-MS|PASS|fallen_empire_intervention_source"
+	}
+	else = { log = "AEMUSA-MS|FAIL|fallen_empire_intervention_source" }
+
+	if = {
 		limit = { aemusa_ms_country_has_valid_fallen_empire_war_history = yes }
 		log = "AEMUSA-MS|PASS|fallen_empire_war_history"
 	}
@@ -83,4 +89,71 @@ aemusa_ms_log_state_audit = {
 	else = { log = "AEMUSA-MS|FAIL|aggregate_state_consistency; hard_block_required=yes" }
 
 	log = "AEMUSA-MS|AWP-00|audit end; writes=none"
+}
+
+# AWP-03 只读诊断：分别报告事实、等待和歧义，不把尚未发生的战争算作失败。
+# 控制台在玩家国家作用域执行：effect aemusa_ms_log_awp_03_audit = yes
+aemusa_ms_log_awp_03_audit = {
+	log = "AEMUSA-MS|AWP-03|audit begin; scope=country"
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_route_initialized
+			aemusa_ms_country_has_valid_fe_intervention_source = yes
+			aemusa_ms_country_has_valid_fallen_empire_war_history = yes
+		}
+		log = "AEMUSA-MS|PASS|awp_03_registered_state"
+	}
+	else = { log = "AEMUSA-MS|FAIL|awp_03_registered_state" }
+
+	if = {
+		limit = { has_country_flag = aemusa_ms_country_fe_intervention_ambiguous }
+		log = "AEMUSA-MS|BLOCK|awp_03_multiple_fe_sources"
+	}
+	else_if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_fe_intervention_recorded
+			exists = event_target:aemusa_ms_fe_intervenor@root
+		}
+		log = "AEMUSA-MS|OBSERVED|awp_03_fe_actor_locked"
+	}
+	else_if = {
+		limit = { has_country_flag = aemusa_ms_country_fe_intervention_recorded }
+		log = "AEMUSA-MS|BLOCK|awp_03_fe_actor_missing"
+	}
+	else = { log = "AEMUSA-MS|WAIT|awp_03_fe_source_not_seen" }
+
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+			any_war = { has_war_flag = aemusa_ms_qualified_fe_war }
+		}
+		log = "AEMUSA-MS|OBSERVED|awp_03_qualified_war_active"
+	}
+	else_if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+			NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed }
+		}
+		log = "AEMUSA-MS|CHECK|awp_03_started_war_not_active"
+	}
+	else_if = {
+		limit = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_started }
+		log = "AEMUSA-MS|OBSERVED|awp_03_qualified_war_ended"
+	}
+	else = { log = "AEMUSA-MS|WAIT|awp_03_qualified_war_not_started" }
+
+	if = {
+		limit = { has_country_flag = aemusa_ms_country_fe_war_player_victory }
+		log = "AEMUSA-MS|OBSERVED|awp_03_player_victory"
+	}
+	else_if = {
+		limit = { has_country_flag = aemusa_ms_country_fe_war_player_defeat }
+		log = "AEMUSA-MS|OBSERVED|awp_03_player_defeat"
+	}
+	else_if = {
+		limit = { has_country_flag = aemusa_ms_country_fe_war_status_quo }
+		log = "AEMUSA-MS|OBSERVED|awp_03_status_quo"
+	}
+	else = { log = "AEMUSA-MS|WAIT|awp_03_no_war_result" }
+	log = "AEMUSA-MS|AWP-03|audit end; writes=none"
 }

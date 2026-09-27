@@ -39,6 +39,8 @@ AWP-02 的 AED-T001～T004 已通过，见 [验收报告](../../reports/aemusa_m
 
 现已核对原版 `.4`～`.8` 的拒绝选项会对发起者写 `opinion_refused_fallen_empire_demand`；部分原版任务请求会对发起者写 `opinion_refused_fallen_empire_request` 或 `opinion_accepted_fallen_empire_request`。本包逐月仅从这些修正反查失落帝国和玩家；候选主体唯一时锁定，多个失落帝国同时留下修正时只记录歧义。同一主体若同时有多种修正，来源枚举记为“混合”，不把其中一种冒充唯一回应。**这些修正由多个原版事件共用，不能从修正本身恢复具体事件 ID 或要求正文**；因此这只是第四章来源的一部分，不足以结算 AED-04-00，也不应在剧情里编造要求类型。
 
+另有覆盖缺口：原版 `fallen_empires.4`～`.8` 的接受分支调用 `fallen_empire_humiliate_effect` 并清除通用 `fe_demand_made`，没有写入上述三种关系修正；虽然 `opinion_accepted_fallen_empire_demand` 在原版修正表中定义，本机 4.5.1 脚本未见其被调用。`humiliated` 也会来自战争等其他来源，不能据此反推具体发起者或要求。因此当前适配器**不能捕获这组一般要求的接受回应**；即使改用笼统呈现，也必须另行处理这一分支的来源缺失，不可把“未捕获”写成“玩家拒绝”。
+
 ## 3. 已批准的保守资格口径
 
 | 事实或场景 | 已批准处理 | 理由与后续状态 |
