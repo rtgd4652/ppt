@@ -53,7 +53,7 @@ def expand(entries, arguments):
 
 
 class Ledger:
-    def __init__(self):
+    def __init__(self, events=None):
         # 仅提供已初始化玩家国家及有效爱缪莎的测试前置，不调用生命周期探针。
         self.flags = {PREFIX + "route_initialized"}
         self.variables = {
@@ -63,6 +63,7 @@ class Ledger:
         }
         self.queue = []
         self.logs = []
+        self.events = EVENTS if events is None else events
 
     def snapshot(self):
         return deepcopy((self.flags, self.variables, self.queue, self.logs))
@@ -132,7 +133,7 @@ class Ledger:
                 raise AssertionError(f"未支持的效果：{key}")
 
     def open(self, event, forced=False):
-        body = EVENTS[event]
+        body = self.events[event]
         if forced or self.condition(child(body, "trigger")):
             self.execute(child(body, "immediate"))
             return True
@@ -140,7 +141,7 @@ class Ledger:
 
     def choose(self, event, suffix):
         name = event + "." + suffix
-        option = next(entry.value for entry in EVENTS[event]
+        option = next(entry.value for entry in self.events[event]
                       if entry.key == "option" and scalar(entry.value, "name") == name)
         self.execute([entry for entry in option if entry.key != "name"])
 

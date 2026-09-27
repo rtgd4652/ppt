@@ -256,6 +256,31 @@ aemusa_ms_settle_chapter_03_once = {
 	}
 }
 
+# 第四章只结算战事实已开始后的公共责任决定；不写入战争结果。
+aemusa_ms_settle_chapter_04_once = {
+	if = {
+		limit = {
+			aemusa_ms_country_can_enter_chapter_04 = yes
+			has_country_flag = aemusa_ms_country_cluster_aed_04_00_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_04_10_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_04_20_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_04_30_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_04_40_settled
+			OR = {
+				check_variable = { which = aemusa_ms_country_fe_war_public_accountability_index value = 1 }
+				check_variable = { which = aemusa_ms_country_fe_war_public_accountability_index value = 2 }
+			}
+		}
+		aemusa_ms_settle_chapter_once = {
+			LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_04_40_settled
+			EXPECTED_INDEX = 4
+			NEXT_INDEX = 5
+			CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_04_completed
+			CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_04_done
+		}
+	}
+}
+
 # 输出 AWP-02 完成态审计；只读日志，不补写选择、章节或事件簇事实。
 aemusa_ms_log_awp_02_audit = {
 	log = "AEMUSA-MS|AWP-02|audit begin; scope=country"

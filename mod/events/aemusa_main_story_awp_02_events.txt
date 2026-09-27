@@ -268,6 +268,44 @@ country_event = {
 				id = aemusa_ms.590
 			}
 		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_is_waiting_for_fe_war_start = yes
+			}
+			country_event = { id = aemusa_ms.103 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_04 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_04_00_settled }
+			}
+			country_event = { id = aemusa_ms.700 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_04 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_04_10_settled }
+			}
+			country_event = { id = aemusa_ms.710 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_04 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_04_20_settled }
+			}
+			country_event = { id = aemusa_ms.720 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_chapter_04 = yes
+				NOT = { has_country_flag = aemusa_ms_country_cluster_aed_04_30_settled }
+			}
+			country_event = { id = aemusa_ms.730 }
+		}
+		else_if = {
+			limit = { aemusa_ms_country_can_enter_chapter_04 = yes }
+			country_event = { id = aemusa_ms.740 }
+		}
 		else = {
 			country_event = {
 				id = aemusa_ms.102
@@ -288,7 +326,7 @@ country_event = {
 	}
 }
 
-# AWP-02 终点页：第三章已完成，第四章尚未接入。
+# 当前内容终点页：第四章已结算，后续战争章节尚未接入。
 country_event = {
 	id = aemusa_ms.102
 	title = aemusa_ms.102.title
@@ -298,6 +336,16 @@ country_event = {
 	option = {
 		name = aemusa_ms.close
 	}
+}
+
+# 第四章等待页：缺少真实宣战时只提示条件，不写战争或外交事实。
+country_event = {
+	id = aemusa_ms.103
+	title = aemusa_ms.103.title
+	desc = aemusa_ms.103.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	option = { name = aemusa_ms.close }
 }
 
 # 序章 AED-PRO-00：从一局公平的牌开始，而不是从神谕或终局能力开始。

@@ -122,7 +122,7 @@ aemusa_ms_country_has_valid_epilogue_tone_index = {
 	}
 }
 
-# 第四章来源类型与歧义标记必须一致；目标被原版消灭后仍保留已发生的事实。
+# 可选外交旁证的来源类型与歧义标记必须一致；目标失效后仍保留已发生的事实。
 aemusa_ms_country_has_valid_fe_intervention_source = {
 	NOR = {
 		AND = {

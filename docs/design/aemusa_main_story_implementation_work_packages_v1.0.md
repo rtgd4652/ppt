@@ -10,7 +10,7 @@ awp_01_status: "completed_runtime_pass"
 awp_02_implementation_authorized: true
 awp_02_status: "completed_runtime_pass"
 awp_03_implementation_authorized: true
-awp_03_status: "war_start_victory_adapter_load_smoke_pass_story_pending_callbacks_pending"
+awp_03_status: "chapter_04_static_load_smoke_pass_chapter_05_06_pending_callbacks_pending"
 last_updated: "2026-09-27"
 ---
 
@@ -400,3 +400,9 @@ AWP-02 已通过静态门禁，并于 2026-09-27 补齐新开局、跳章阻断�
 用户随后明确：“不需要精确回调，只要确定开战和胜利就可以了。”因此第四章具体外交要求不再是门槛；以觉醒失落帝国真实直接宣战、玩家为原始防守战争领袖作为第四章的战事实入口，攻击者在开战回调中直接锁定。第五章只读该战争的真实经过，第六章只在玩家作为胜方战争领袖赢得同一战争后开放。旧外交关系修正仅为可选旁证，不得叙述成精确要求或玩家回应。原始攻守领袖和同一战争胜利的保守限制继续有效。
 
 修订后的事实适配已通过项目静态检查和 20 项工具测试；4.5.1（`c957`）第四次冷启动与原档载入冒烟通过，原存档哈希不变。章节剧情和 FEA-01～06 真实回调验证仍待完成。`awp_03_status` 为 `war_start_victory_adapter_load_smoke_pass_story_pending_callbacks_pending`；载入通过不等于战争回调已通过。
+
+## 27. 2026-09-27 第四章开战后入口实现
+
+第四章 AED-04-00～40 已按修订口径重写：第三章结算且适配器记录合格开战后，白夜馆才进入开战事实、公众知情、证据分层、中央庭公开责任选择和唯一章节结算。无战等待页不写状态；首次选择只记录公开节奏，不写战争结果。原制作卡中战前要求与接受／拒绝选项继续作为历史设计，不进入现行脚本。
+
+项目静态检查、25 项工具测试和 4.5.1（`375f`）冷启动／原档载入冒烟已通过；原档没有合格战争，第四章窗口和真实回调仍未测试。详见[第四章报告](../../reports/aemusa_main_story_awp_03_chapter_04_static_report.md)。当前 `awp_03_status` 为 `chapter_04_static_load_smoke_pass_chapter_05_06_pending_callbacks_pending`；第五、第六章及专项运行验收继续留在本包。

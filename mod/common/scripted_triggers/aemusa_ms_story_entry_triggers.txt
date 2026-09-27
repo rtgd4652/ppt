@@ -108,6 +108,25 @@ aemusa_ms_country_can_enter_chapter_03 = {
 	}
 }
 
+# 第四章只由已记录的真实开战开启；第三章必须先完成，外交要求不作前置。
+aemusa_ms_country_can_enter_chapter_04 = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	check_variable = { which = aemusa_ms_country_chapter_index value = 4 }
+	has_country_flag = aemusa_ms_country_chapter_03_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_03_done
+	has_country_flag = aemusa_ms_country_history_fallen_empire_war_started
+	NOT = { has_country_flag = aemusa_ms_country_chapter_04_completed }
+}
+
+# 等待页只解释缺少战争事实，不凭外交旁证或时间推断宣战。
+aemusa_ms_country_is_waiting_for_fe_war_start = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	check_variable = { which = aemusa_ms_country_chapter_index value = 4 }
+	has_country_flag = aemusa_ms_country_chapter_03_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_03_done
+	NOT = { has_country_flag = aemusa_ms_country_history_fallen_empire_war_started }
+}
+
 # 第一章尚未开放时，白夜馆可以透明说明缺少真实银河参与记录。
 aemusa_ms_country_is_waiting_for_galactic_participation = {
 	aemusa_ms_country_has_nearest_legal_story_entry = yes

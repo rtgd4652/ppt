@@ -670,3 +670,4 @@
 "ASR-AWP03-011","aemusa_ms_fe_intervenor@root","外交旁证主体","global_event_target","event_target","unset","AWP-03 原版关系修正适配器","历史审计只读访问；不参与战争或章节资格","存档永久直到主体失效","用玩家 root 后缀隔离不同人类国家；仅对应可选外交旁证，不得冒充宣战者","可选旁证","FEA-06","formal_awp_03"
 "ASR-AWP03-012","aemusa_ms_country_fe_intervention_ambiguous","外交旁证","country","flag","no","AWP-03 原版关系修正适配器","历史审计只读访问；不参与章节资格","直到候选唯一并锁定主体","多个失落帝国同时留下要求回应时标记歧义；候选唯一时清除；不阻断真实开战","可选旁证","FEA-06","formal_awp_03"
 "ASR-AWP03-013","aemusa_ms_fe_war_attacker@root","战争攻击者","global_event_target","event_target","unset","AWP-03 合格开战适配器","战争审计与后续叙事只读访问","存档永久直到主体失效","从已标记战争中保存唯一的觉醒失落帝国原始攻击领袖；结果资格仍须读取同一战争标记","AED-04-00／06-00","FEA-02/03/05","formal_awp_03"
+"ASR-AWP03-014","aemusa_ms_country_fe_war_public_accountability_index","公共责任选择","country","variable","0","AED-04-30 首次选择接口","第四章结算与后续战后复盘只读访问","存档永久","枚举：0 未选择；1 即时公开已核实事实；2 分阶段公开并设独立监督。只记录通报节奏，不写战争结果","AED-04-30／04-40","T002/T003","formal_awp_03"
