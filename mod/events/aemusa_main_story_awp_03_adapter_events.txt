@@ -132,22 +132,6 @@ country_event = {
 	}
 }
 
-# 晚加入对觉醒失落帝国的战争不追认开战资格；此回调没有战争作用域。
-country_event = {
-	id = aemusa_ms.611
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		is_ai = no
-		has_country_flag = aemusa_ms_country_route_initialized
-		from = { is_country_type = awakened_fallen_empire }
-	}
-	immediate = {
-		set_country_flag = aemusa_ms_country_fe_war_late_join_recorded
-		log = "AEMUSA-MS|AWP-03|late_join_unqualified"
-	}
-}
-
 # on_war_won 的根作用域即胜方战争领袖；战争标记将结果绑定到开战实例。
 country_event = {
 	id = aemusa_ms.620

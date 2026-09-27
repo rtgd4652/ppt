@@ -662,7 +662,7 @@
 "ASR-AWP03-003","aemusa_ms_country_fe_war_player_attack_recorded","战争旁证","country","flag","no","AWP-03 开战适配器","FEA-02 审计只读访问","存档永久","玩家作为原始攻击领袖对觉醒失落帝国战争领袖开战；不取得主线资格","AED-04-00","FEA-02","formal_awp_03"
 "ASR-AWP03-004","aemusa_ms_country_fe_war_ally_defense_recorded","战争旁证","country","flag","no","AWP-03 开战适配器","FEA-02 审计只读访问","存档永久","玩家在觉醒失落帝国进攻战争中是非领袖防守参战者；不取得主线资格","AED-04-00","FEA-02","formal_awp_03"
 "ASR-AWP03-005","aemusa_ms_country_fe_war_blocked_defense_recorded","战争旁证","country","flag","no","AWP-03 开战适配器","FEA-02 审计只读访问","存档永久","玩家为原始防守领袖但本路线已登记合格战争等前置不满足；不把第二场战争拼为同一实例","AED-04-00","FEA-01/02/06","formal_awp_03"
-"ASR-AWP03-006","aemusa_ms_country_fe_war_late_join_recorded","战争旁证","country","flag","no","AWP-03 晚加入适配器","FEA-02 审计只读访问","存档永久","晚加入与觉醒失落帝国对立的战争；此回调无战争实例作用域，不追认原始开战资格","AED-04-00","FEA-02","formal_awp_03"
+"ASR-AWP03-006","aemusa_ms_country_fe_war_late_join_recorded","旧测试档旁证","country","flag","no","旧版 AWP-03 .611；当前不再写入","仅供旧测试档审计；不参与资格","仅旧测试档保留","4.5.1 实测 on_entering_war 在原始开战时也触发，旧旗标可能误标；当前已停用","AED-04-00","FEA-02","legacy_awp_03"
 "ASR-AWP03-007","aemusa_ms_country_fe_war_player_victory","战争结果","country","flag","no","AWP-03 玩家领袖胜利适配器","第六章入口只读访问","存档永久","仅与已标记合格战争相同的 on_war_won 且玩家为胜方战争领袖；不得由结束或停战推断","AED-06-00","FEA-03/04","formal_awp_03"
 "ASR-AWP03-008","aemusa_ms_country_fe_war_player_defeat","战争结果","country","flag","no","AWP-03 玩家领袖战败适配器","战后阻断审计只读访问","存档永久","同一合格战争的玩家领袖战败；与胜利和维持现状互斥，不取得第六章资格","AED-06-00","FEA-03","formal_awp_03"
 "ASR-AWP03-009","aemusa_ms_country_fe_war_status_quo","战争结果","country","flag","no","AWP-03 维持现状适配器","战后阻断审计只读访问","存档永久","同一合格战争以维持现状结束；与胜利和战败互斥，不取得第六章资格","AED-06-00","FEA-03","formal_awp_03"

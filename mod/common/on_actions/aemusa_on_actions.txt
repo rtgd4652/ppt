@@ -50,13 +50,6 @@ on_war_beginning = {
 	}
 }
 
-# 晚加入只记录旁证，不升级为原始防守战争领袖。
-on_entering_war = {
-	events = {
-		aemusa_ms.611
-	}
-}
-
 # 结果回调携带战争作用域；不使用缺少战争作用域的 on_war_ended 推断胜利。
 on_war_won = {
 	events = {
