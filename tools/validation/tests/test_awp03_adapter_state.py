@@ -70,8 +70,14 @@ class CallbackFixture:
             return scope[field] == (value == "yes")
         if key == "is_country_type":
             return scope["type"] == value
-        if key == "is_same_value" and value == "root":
-            return scope["id"] == self.player["id"]
+        if key == "is_same_value" and value in self.scopes:
+            return scope["id"] == self.scopes[value]["id"]
+        if key == "any_war":
+            if scope is not self.player:
+                raise AssertionError("本回放只支持从玩家国家查询参战战争")
+            if self.player not in self.war["attackers"] + self.war["defenders"]:
+                return False
+            return self.condition(value, self.war)
         if key in {"any_attacker", "any_defender"}:
             side = "attackers" if key == "any_attacker" else "defenders"
             return any(self.condition(value, country) for country in scope[side])
@@ -171,6 +177,36 @@ class WarAdapterStateTests(unittest.TestCase):
         self.assertNotIn(STARTED, fixture.player["flags"])
         self.assertIn(PREFIX + "fe_war_ally_defense_recorded", fixture.player["flags"])
         self.assertEqual(fixture.targets, {})
+
+    def test_original_defense_does_not_look_like_ally_entry(self):
+        fixture = CallbackFixture()
+        self.assertFalse(fixture.fire("611"))
+        self.assertTrue(fixture.fire("610"))
+        self.assertIn(STARTED, fixture.player["flags"])
+        self.assertNotIn(PREFIX + "fe_war_ally_defense_recorded", fixture.player["flags"])
+
+    def test_joining_same_war_as_nonleader_defender_records_only_bystander(self):
+        fixture = CallbackFixture()
+        fixture.player["leader"] = False
+        fixture.war["defenders"].append(dict(id="47", type="default", ai=True,
+                                               leader=True, flags=set()))
+        self.assertTrue(fixture.fire("611"))
+        self.assertIn(PREFIX + "fe_war_ally_defense_recorded", fixture.player["flags"])
+        self.assertNotIn(STARTED, fixture.player["flags"])
+        self.assertNotIn(WAR_FLAG, fixture.war["flags"])
+        before = fixture.snapshot()
+        self.assertFalse(fixture.fire("611"))
+        self.assertTrue(fixture.fire("610"))
+        self.assertEqual(fixture.snapshot(), before)
+
+    def test_entering_unrelated_war_does_not_record_fe_ally_defense(self):
+        fixture = CallbackFixture()
+        fixture.player["leader"] = False
+        fixture.enemy["type"] = "default"
+        fixture.war["defenders"].append(dict(id="47", type="default", ai=True,
+                                               leader=True, flags=set()))
+        self.assertFalse(fixture.fire("611"))
+        self.assertNotIn(PREFIX + "fe_war_ally_defense_recorded", fixture.player["flags"])
 
     def test_marked_ally_war_is_not_mistaken_for_players_own_war(self):
         fixture = CallbackFixture()

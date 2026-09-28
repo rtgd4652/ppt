@@ -50,6 +50,13 @@ on_war_beginning = {
 	}
 }
 
+# 晚加入战争不会再次触发 on_war_beginning；只记录玩家在觉醒帝国主攻战争中的非领袖防守参战。
+on_entering_war = {
+	events = {
+		aemusa_ms.611
+	}
+}
+
 # 结果回调携带战争作用域；不使用缺少战争作用域的 on_war_ended 推断胜利。
 on_war_won = {
 	events = {

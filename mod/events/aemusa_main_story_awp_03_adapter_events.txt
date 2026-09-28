@@ -116,6 +116,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
+				NOT = { has_country_flag = aemusa_ms_country_fe_war_ally_defense_recorded }
 				from = {
 					any_attacker = {
 						is_country_type = awakened_fallen_empire
@@ -140,6 +141,34 @@ country_event = {
 			set_country_flag = aemusa_ms_country_fe_war_blocked_defense_recorded
 			log = "AEMUSA-MS|AWP-03|defense_blocked_by_precondition"
 		}
+	}
+}
+
+# on_entering_war 的 from 是对方战争领袖；原始开战也会触发此回调。
+# 因此必须从玩家实际参与的同一战争核对觉醒帝国主攻和玩家非领袖主防，不能只凭回调当作晚加入。
+country_event = {
+	id = aemusa_ms.611
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_route_initialized
+		NOT = { has_country_flag = aemusa_ms_country_fe_war_ally_defense_recorded }
+		from = { is_country_type = awakened_fallen_empire }
+		any_war = {
+			any_attacker = {
+				is_same_value = from
+				is_war_leader = yes
+			}
+			any_defender = {
+				is_same_value = root
+				is_war_leader = no
+			}
+		}
+	}
+	immediate = {
+		set_country_flag = aemusa_ms_country_fe_war_ally_defense_recorded
+		log = "AEMUSA-MS|AWP-03|ally_defense_unqualified"
 	}
 }
 
