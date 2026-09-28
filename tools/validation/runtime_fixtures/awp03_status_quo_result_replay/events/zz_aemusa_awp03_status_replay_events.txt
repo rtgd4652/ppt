@@ -94,6 +94,8 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		fromfromfrom = {
+			# 本隔离轮由玩家提出议和；核实原始主防仍是同一玩家。
+			is_same_value = root
 			is_ai = no
 			has_country_flag = aemusa_ms_country_history_fallen_empire_war_completed
 			has_country_flag = aemusa_ms_country_fe_war_status_quo
@@ -101,7 +103,7 @@ country_event = {
 		fromfromfromfrom = {
 			has_war_flag = aemusa_ms_qualified_fe_war
 			any_defender = {
-				is_same_value = fromfromfrom
+				is_same_value = root
 				is_war_leader = yes
 			}
 		}
