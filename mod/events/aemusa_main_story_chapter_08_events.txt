@@ -1,0 +1,923 @@
+namespace = aemusa_ms
+# AWP-05：仅推进调查、受限通讯与共同准备，不授予最终权限。
+country_event = {
+	id = aemusa_ms.1300
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				has_country_flag = aemusa_ms_country_chapter_10_completed
+			}
+			country_event = {
+				id = aemusa_ms.1560
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_20 = yes
+				has_country_flag = aemusa_ms_country_investigation_operation_pending
+			}
+			country_event = {
+				id = aemusa_ms.1331
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_09_00 = yes
+				has_country_flag = aemusa_ms_country_boundary_verification_pending
+			}
+			country_event = {
+				id = aemusa_ms.1411
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_10_20 = yes
+				has_country_flag = aemusa_ms_country_investigation_repair_pending
+			}
+			country_event = {
+				id = aemusa_ms.1526
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_00 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1310
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_10 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1320
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_20 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1330
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_30 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1340
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_40 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1350
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_09_00 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1410
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_09_10 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1420
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_09_20 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1430
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_09_30 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1440
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_09_40 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1450
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_10_00 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1510
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_10_10 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1520
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_10_20 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1530
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_10_30 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1540
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_10_40 = yes
+			}
+			country_event = {
+				id = aemusa_ms.1550
+			}
+		}
+		else = {
+			country_event = {
+				id = aemusa_ms.1390
+			}
+		}
+	}
+}
+# AED-08-00：进入和实际写入均核对当前账本。
+country_event = {
+	id = aemusa_ms.1310
+	title = aemusa_ms.1310.title
+	desc = aemusa_ms.1310.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_08_00 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_00 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_08_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_00_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1310.later
+	}
+	option = {
+		name = aemusa_ms.1310.start
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_00 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_08_00_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_00_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_00_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_00_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_00_done
+					}
+				}
+				set_country_flag = aemusa_ms_country_investigation_limits_recorded
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_08_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_00_done
+				}
+				country_event = {
+					id = aemusa_ms.1300
+				}
+			}
+		}
+	}
+}
+# AED-08-10：进入和实际写入均核对当前账本。
+country_event = {
+	id = aemusa_ms.1320
+	title = aemusa_ms.1320.title
+	desc = aemusa_ms.1320.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_08_10 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_10 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_08_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_10_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1320.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1320.samples
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_10 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_08_10_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_10_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_10_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_10_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_10_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_investigation_priority_index
+					value = 1
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_08_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_10_done
+				}
+				country_event = {
+					id = aemusa_ms.1300
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1320.protection
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_10 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_08_10_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_10_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_10_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_10_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_10_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_investigation_priority_index
+					value = 2
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_08_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_10_done
+				}
+				country_event = {
+					id = aemusa_ms.1300
+				}
+			}
+		}
+	}
+}
+# AED-08-20：进入和实际写入均核对当前账本。
+country_event = {
+	id = aemusa_ms.1330
+	title = aemusa_ms.1330.title
+	desc = aemusa_ms.1330.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_08_20 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_20 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_08_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_20_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1330.later
+	}
+	option = {
+		name = aemusa_ms.1330.astronomy
+		trigger = {
+			NOT = {
+				has_country_flag = aemusa_ms_country_investigation_evidence_astronomy
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_ms.awp05.requirements
+				aemusa_ms_country_can_enter_08_20 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_investigation_operation_pending
+				}
+				NOT = {
+					has_country_flag = aemusa_ms_country_investigation_evidence_astronomy
+				}
+				resource_stockpile_compare = {
+					resource = energy
+					value >= 200
+				}
+				resource_stockpile_compare = {
+					resource = minerals
+					value >= 100
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_20 = yes
+					NOT = {
+						has_country_flag = aemusa_ms_country_investigation_operation_pending
+					}
+					NOT = {
+						has_country_flag = aemusa_ms_country_investigation_evidence_astronomy
+					}
+					resource_stockpile_compare = {
+						resource = energy
+						value >= 200
+					}
+					resource_stockpile_compare = {
+						resource = minerals
+						value >= 100
+					}
+				}
+				add_resource = {
+					energy = -200
+					minerals = -100
+				}
+				set_variable = {
+					which = aemusa_ms_country_investigation_active_source_index
+					value = 1
+				}
+				set_country_flag = aemusa_ms_country_investigation_operation_pending
+				set_timed_country_flag = {
+					flag = aemusa_ms_country_investigation_time_remaining
+					days = 30
+				}
+				log = "AEMUSA-MS|AWP-05|source_astronomy_started; cost=200_energy_100_minerals; days=30"
+				country_event = {
+					id = aemusa_ms.1331
+					days = 30
+				}
+				country_event = {
+					id = aemusa_ms.1335
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1330.laboratory
+		trigger = {
+			NOT = {
+				has_country_flag = aemusa_ms_country_investigation_evidence_laboratory
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_ms.awp05.requirements
+				aemusa_ms_country_can_enter_08_20 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_investigation_operation_pending
+				}
+				NOT = {
+					has_country_flag = aemusa_ms_country_investigation_evidence_laboratory
+				}
+				resource_stockpile_compare = {
+					resource = energy
+					value >= 200
+				}
+				resource_stockpile_compare = {
+					resource = minerals
+					value >= 100
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_20 = yes
+					NOT = {
+						has_country_flag = aemusa_ms_country_investigation_operation_pending
+					}
+					NOT = {
+						has_country_flag = aemusa_ms_country_investigation_evidence_laboratory
+					}
+					resource_stockpile_compare = {
+						resource = energy
+						value >= 200
+					}
+					resource_stockpile_compare = {
+						resource = minerals
+						value >= 100
+					}
+				}
+				add_resource = {
+					energy = -200
+					minerals = -100
+				}
+				set_variable = {
+					which = aemusa_ms_country_investigation_active_source_index
+					value = 2
+				}
+				set_country_flag = aemusa_ms_country_investigation_operation_pending
+				set_timed_country_flag = {
+					flag = aemusa_ms_country_investigation_time_remaining
+					days = 30
+				}
+				log = "AEMUSA-MS|AWP-05|source_laboratory_started; cost=200_energy_100_minerals; days=30"
+				country_event = {
+					id = aemusa_ms.1331
+					days = 30
+				}
+				country_event = {
+					id = aemusa_ms.1335
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1330.risk
+		trigger = {
+			NOT = {
+				has_country_flag = aemusa_ms_country_investigation_evidence_risk
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_ms.awp05.requirements
+				aemusa_ms_country_can_enter_08_20 = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_investigation_operation_pending
+				}
+				NOT = {
+					has_country_flag = aemusa_ms_country_investigation_evidence_risk
+				}
+				resource_stockpile_compare = {
+					resource = energy
+					value >= 200
+				}
+				resource_stockpile_compare = {
+					resource = minerals
+					value >= 100
+				}
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_20 = yes
+					NOT = {
+						has_country_flag = aemusa_ms_country_investigation_operation_pending
+					}
+					NOT = {
+						has_country_flag = aemusa_ms_country_investigation_evidence_risk
+					}
+					resource_stockpile_compare = {
+						resource = energy
+						value >= 200
+					}
+					resource_stockpile_compare = {
+						resource = minerals
+						value >= 100
+					}
+				}
+				add_resource = {
+					energy = -200
+					minerals = -100
+				}
+				set_variable = {
+					which = aemusa_ms_country_investigation_active_source_index
+					value = 3
+				}
+				set_country_flag = aemusa_ms_country_investigation_operation_pending
+				set_timed_country_flag = {
+					flag = aemusa_ms_country_investigation_time_remaining
+					days = 30
+				}
+				log = "AEMUSA-MS|AWP-05|source_risk_started; cost=200_energy_100_minerals; days=30"
+				country_event = {
+					id = aemusa_ms.1331
+					days = 30
+				}
+				country_event = {
+					id = aemusa_ms.1335
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1330.gather
+		trigger = {
+			has_country_flag = aemusa_ms_country_investigation_evidence_astronomy
+			has_country_flag = aemusa_ms_country_investigation_evidence_laboratory
+			has_country_flag = aemusa_ms_country_investigation_evidence_risk
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_20 = yes
+					has_country_flag = aemusa_ms_country_investigation_evidence_astronomy
+					has_country_flag = aemusa_ms_country_investigation_evidence_laboratory
+					has_country_flag = aemusa_ms_country_investigation_evidence_risk
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_08_20_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_20_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_20_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_20_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_20_done
+					}
+				}
+				set_country_flag = aemusa_ms_country_investigation_counterexamples_retained
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_08_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_20_done
+				}
+				country_event = {
+					id = aemusa_ms.1300
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_ms.1331
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_20 = yes
+				has_country_flag = aemusa_ms_country_investigation_operation_pending
+				NOT = {
+					has_country_flag = aemusa_ms_country_investigation_time_remaining
+				}
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = aemusa_ms_country_investigation_active_source_index
+						value = 1
+					}
+				}
+				set_country_flag = aemusa_ms_country_investigation_evidence_astronomy
+				log = "AEMUSA-MS|AWP-05|source_astronomy_completed"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = aemusa_ms_country_investigation_active_source_index
+						value = 2
+					}
+				}
+				set_country_flag = aemusa_ms_country_investigation_evidence_laboratory
+				log = "AEMUSA-MS|AWP-05|source_laboratory_completed"
+			}
+			if = {
+				limit = {
+					check_variable = {
+						which = aemusa_ms_country_investigation_active_source_index
+						value = 3
+					}
+				}
+				set_country_flag = aemusa_ms_country_investigation_evidence_risk
+				log = "AEMUSA-MS|AWP-05|source_risk_completed"
+			}
+			remove_country_flag = aemusa_ms_country_investigation_operation_pending
+			country_event = {
+				id = aemusa_ms.1332
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_20 = yes
+				has_country_flag = aemusa_ms_country_investigation_operation_pending
+			}
+			country_event = {
+				id = aemusa_ms.1335
+			}
+		}
+	}
+}
+# AED-辅助：进入和实际写入均核对当前账本。
+country_event = {
+	id = aemusa_ms.1332
+	title = aemusa_ms.1332.title
+	desc = {
+		trigger = {
+			check_variable = {
+				which = aemusa_ms_country_investigation_active_source_index
+				value = 1
+			}
+		}
+		text = aemusa_ms.1332.astronomy
+	}
+	desc = {
+		trigger = {
+			check_variable = {
+				which = aemusa_ms_country_investigation_active_source_index
+				value = 2
+			}
+		}
+		text = aemusa_ms.1332.laboratory
+	}
+	desc = {
+		trigger = {
+			check_variable = {
+				which = aemusa_ms_country_investigation_active_source_index
+				value = 3
+			}
+		}
+		text = aemusa_ms.1332.risk
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_08_20 = yes
+	}
+	option = {
+		name = aemusa_ms.1332.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1332.record
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_20 = yes
+				}
+				country_event = {
+					id = aemusa_ms.1300
+				}
+			}
+		}
+	}
+}
+# AED-辅助：进入和实际写入均核对当前账本。
+country_event = {
+	id = aemusa_ms.1335
+	title = aemusa_ms.1335.title
+	desc = aemusa_ms.1335.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_08_20 = yes
+		has_country_flag = aemusa_ms_country_investigation_operation_pending
+	}
+	option = {
+		name = aemusa_ms.1335.later
+	}
+}
+# AED-08-30：进入和实际写入均核对当前账本。
+country_event = {
+	id = aemusa_ms.1340
+	title = aemusa_ms.1340.title
+	desc = aemusa_ms.1340.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_08_30 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_30 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_08_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_30_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1340.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1340.limited
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_30 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_08_30_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_30_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_30_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_30_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_30_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_investigation_disclosure_index
+					value = 1
+				}
+				set_country_flag = aemusa_ms_country_investigation_governance_limits_confirmed
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_08_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_30_done
+				}
+				country_event = {
+					id = aemusa_ms.1300
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1340.phased
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_30 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_08_30_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_30_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_30_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_30_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_30_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_investigation_disclosure_index
+					value = 2
+				}
+				set_country_flag = aemusa_ms_country_investigation_governance_limits_confirmed
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_08_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_30_done
+				}
+				country_event = {
+					id = aemusa_ms.1300
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1340.public
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_30 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_08_30_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_30_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_30_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_30_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_30_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_investigation_disclosure_index
+					value = 3
+				}
+				set_country_flag = aemusa_ms_country_investigation_governance_limits_confirmed
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_08_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_30_done
+				}
+				country_event = {
+					id = aemusa_ms.1300
+				}
+			}
+		}
+	}
+}
+# AED-08-40：进入和实际写入均核对当前账本。
+country_event = {
+	id = aemusa_ms.1350
+	title = aemusa_ms.1350.title
+	desc = aemusa_ms.1350.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_08_40 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_08_40 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_08_40_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_40_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_40_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_40_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_40_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1350.later
+	}
+	option = {
+		name = aemusa_ms.1350.model
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_08_40 = yes
+					has_country_flag = aemusa_ms_country_investigation_governance_limits_confirmed
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_08_40_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_40_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_40_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_40_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_40_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_investigation_model_version
+					value = 1
+				}
+				set_country_flag = aemusa_ms_country_boundary_investigation_ready
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_08_40_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_08_40_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_08_40_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_40_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_08_40_done
+				}
+				aemusa_ms_settle_chapter_once = {
+					LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_08_40_settled
+					EXPECTED_INDEX = 8
+					NEXT_INDEX = 9
+					CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_08_completed
+					CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_08_done
+				}
+				log = "AEMUSA-MS|AWP-05|chapter_08_completed"
+				country_event = {
+					id = aemusa_ms.1300
+				}
+			}
+		}
+	}
+}
+# AED-辅助：进入和实际写入均核对当前账本。
+country_event = {
+	id = aemusa_ms.1390
+	title = aemusa_ms.1390.title
+	desc = aemusa_ms.1390.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	option = {
+		name = aemusa_ms.1390.later
+	}
+}

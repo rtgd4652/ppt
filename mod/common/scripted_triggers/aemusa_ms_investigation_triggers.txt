@@ -1,0 +1,191 @@
+# AWP-05 只读入口条件；已结算的来源、角色决定和最终权限分别管理。
+aemusa_ms_country_has_investigation_context = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	has_country_flag = aemusa_ms_country_chapter_07_completed
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+	has_country_flag = aemusa_ms_country_crisis_response_completed
+	has_country_flag = aemusa_ms_country_fe_war_recovery_reviewed
+	has_country_flag = aemusa_ms_country_crisis_anomaly_investigation_ready
+}
+aemusa_ms_country_can_enter_chapter_08 = {
+	aemusa_ms_country_has_investigation_context = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 8
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_chapter_08_completed
+	}
+}
+aemusa_ms_country_can_enter_08_00 = {
+	aemusa_ms_country_can_enter_chapter_08 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_08_00_settled
+	}
+}
+aemusa_ms_country_can_enter_08_10 = {
+	aemusa_ms_country_can_enter_chapter_08 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_08_10_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_08_00_settled
+}
+aemusa_ms_country_can_enter_08_20 = {
+	aemusa_ms_country_can_enter_chapter_08 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_08_20_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_08_10_settled
+}
+aemusa_ms_country_can_enter_08_30 = {
+	aemusa_ms_country_can_enter_chapter_08 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_08_30_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_08_20_settled
+	has_country_flag = aemusa_ms_country_investigation_evidence_astronomy
+	has_country_flag = aemusa_ms_country_investigation_evidence_laboratory
+	has_country_flag = aemusa_ms_country_investigation_evidence_risk
+}
+aemusa_ms_country_can_enter_08_40 = {
+	aemusa_ms_country_can_enter_chapter_08 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_08_40_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_08_30_settled
+	has_country_flag = aemusa_ms_country_investigation_evidence_astronomy
+	has_country_flag = aemusa_ms_country_investigation_evidence_laboratory
+	has_country_flag = aemusa_ms_country_investigation_evidence_risk
+}
+aemusa_ms_country_can_enter_chapter_09 = {
+	aemusa_ms_country_has_investigation_context = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 9
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_chapter_09_completed
+	}
+	has_country_flag = aemusa_ms_country_chapter_08_completed
+	check_variable = {
+		which = aemusa_ms_country_investigation_model_version
+		value = 1
+	}
+}
+aemusa_ms_country_can_enter_09_00 = {
+	aemusa_ms_country_can_enter_chapter_09 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_09_00_settled
+	}
+}
+aemusa_ms_country_can_enter_09_10 = {
+	aemusa_ms_country_can_enter_chapter_09 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_09_10_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_09_00_settled
+	has_country_flag = aemusa_ms_country_boundary_echo_verified
+}
+aemusa_ms_country_can_enter_09_20 = {
+	aemusa_ms_country_can_enter_chapter_09 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_09_20_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_09_10_settled
+	has_country_flag = aemusa_ms_country_boundary_echo_verified
+}
+aemusa_ms_country_can_enter_09_30 = {
+	aemusa_ms_country_can_enter_chapter_09 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_09_30_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_09_20_settled
+	has_country_flag = aemusa_ms_country_boundary_echo_verified
+}
+aemusa_ms_country_can_enter_09_40 = {
+	aemusa_ms_country_can_enter_chapter_09 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_09_40_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_09_30_settled
+	has_country_flag = aemusa_ms_country_boundary_echo_verified
+}
+aemusa_ms_country_can_enter_chapter_10 = {
+	aemusa_ms_country_has_investigation_context = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 10
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_chapter_10_completed
+	}
+	has_country_flag = aemusa_ms_country_chapter_08_completed
+	check_variable = {
+		which = aemusa_ms_country_investigation_model_version
+		value = 1
+	}
+	has_country_flag = aemusa_ms_country_chapter_09_completed
+	has_country_flag = aemusa_ms_country_boundary_contact_closed
+}
+aemusa_ms_country_can_enter_10_00 = {
+	aemusa_ms_country_can_enter_chapter_10 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_10_00_settled
+	}
+}
+aemusa_ms_country_can_enter_10_10 = {
+	aemusa_ms_country_can_enter_chapter_10 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_10_10_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_10_00_settled
+}
+aemusa_ms_country_can_enter_10_20 = {
+	aemusa_ms_country_can_enter_chapter_10 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_10_20_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_10_10_settled
+	has_country_flag = aemusa_ms_country_investigation_rights_protected
+}
+aemusa_ms_country_can_enter_10_30 = {
+	aemusa_ms_country_can_enter_chapter_10 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_10_30_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_10_20_settled
+	has_country_flag = aemusa_ms_country_investigation_rights_protected
+	check_variable = {
+		which = aemusa_ms_country_investigation_aemusa_decision_index
+		value = 1
+	}
+	has_country_flag = aemusa_ms_country_investigation_player_support_confirmed
+}
+aemusa_ms_country_can_enter_10_40 = {
+	aemusa_ms_country_can_enter_chapter_10 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_10_40_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_10_30_settled
+	has_country_flag = aemusa_ms_country_investigation_rights_protected
+	check_variable = {
+		which = aemusa_ms_country_investigation_aemusa_decision_index
+		value = 1
+	}
+	has_country_flag = aemusa_ms_country_investigation_player_support_confirmed
+	has_country_flag = aemusa_ms_country_investigation_joint_response_authorized
+}
+aemusa_ms_country_has_three_investigation_sources = {
+	has_country_flag = aemusa_ms_country_investigation_evidence_astronomy
+	has_country_flag = aemusa_ms_country_investigation_evidence_laboratory
+	has_country_flag = aemusa_ms_country_investigation_evidence_risk
+}
+aemusa_ms_country_investigation_needs_repair = {
+	has_country_flag = aemusa_ms_country_first_intervention_oracle_narrative_recorded
+	NOT = {
+		has_country_flag = aemusa_ms_country_first_intervention_attribution_corrected
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_investigation_repair_completed
+	}
+}

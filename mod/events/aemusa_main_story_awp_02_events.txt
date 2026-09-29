@@ -383,7 +383,7 @@ country_event = {
 		}
 		else_if = {
 			limit = { has_country_flag = aemusa_ms_country_chapter_07_completed }
-			country_event = { id = aemusa_ms.1260 }
+			country_event = { id = aemusa_ms.1300 }
 		}
 		else_if = {
 			limit = {

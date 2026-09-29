@@ -24,6 +24,7 @@ def read_script(relative):
     # 通用静态解析器不保留运算符；此测试显式保留唯一使用的比较形式。
     text = re.sub(r"\bvalue\s*>\s*0\b", "value_greater_than = 0", text)
     text = re.sub(r"\bvalue\s*>=\s*(\d+)\b", r"value_greater_equal = \1", text)
+    text = re.sub(r"\bhas_base_skill\s*>=\s*(\d+)\b", r"has_base_skill_greater_equal = \1", text)
     if re.search(r"[<>!]", re.sub(r"#[^\n]*", "", text)):
         raise AssertionError("账本测试遇到未支持的比较运算符")
     return parse(text)
@@ -39,6 +40,7 @@ TRIGGERS = {entry.key: entry.value for path in (
     "mod/common/scripted_triggers/aemusa_ms_story_entry_triggers.txt",
     "mod/common/scripted_triggers/aemusa_ms_crisis_entry_triggers.txt",
     "mod/common/scripted_triggers/aemusa_ms_crisis_story_triggers.txt",
+    "mod/common/scripted_triggers/aemusa_ms_investigation_triggers.txt",
 ) for entry in read_script(path)}
 EFFECTS = {entry.key: entry.value for path in (
     "mod/common/scripted_effects/aemusa_ms_story_lifecycle_effects.txt",

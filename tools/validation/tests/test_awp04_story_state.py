@@ -76,7 +76,7 @@ class Awp04StoryTests(unittest.TestCase):
         self.assertIn(PREFIX + "history_vanilla_crisis_settled", ledger.flags)
         self.assertNotIn(PREFIX + "fate_sovereign_authority_active", ledger.flags)
         ledger.open("aemusa_ms.100")
-        self.assertEqual(ledger.queue.pop(), ("aemusa_ms.1260", 0))
+        self.assertEqual(ledger.queue.pop(), ("aemusa_ms.1300", 0))
 
     def test_already_ended_and_aemusa_refusal_use_ordinary_actions(self):
         for ended, refuses, consent in ((True, False, 3), (False, True, 2)):
