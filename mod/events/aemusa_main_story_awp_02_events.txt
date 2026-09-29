@@ -381,6 +381,24 @@ country_event = {
 			limit = { aemusa_ms_country_can_enter_chapter_06 = yes }
 			country_event = { id = aemusa_ms.990 }
 		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_crisis_preparation = yes
+				has_country_flag = aemusa_ms_country_history_vanilla_crisis_locked
+			}
+			country_event = { id = aemusa_ms.1015 }
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_enter_crisis_preparation = yes
+				NOT = { has_country_flag = aemusa_ms_country_fe_war_recovery_reviewed }
+			}
+			country_event = { id = aemusa_ms.1000 }
+		}
+		else_if = {
+			limit = { aemusa_ms_country_can_choose_crisis_route = yes }
+			country_event = { id = aemusa_ms.1010 }
+		}
 		else = {
 			country_event = {
 				id = aemusa_ms.102
@@ -401,7 +419,7 @@ country_event = {
 	}
 }
 
-# 当前内容终点页：第二幕已结算，后续危机章节尚未接入。
+# 通用未接入／不满足当前入口的说明页；第二幕完成档转入 AWP-04 恢复回访。
 country_event = {
 	id = aemusa_ms.102
 	title = aemusa_ms.102.title

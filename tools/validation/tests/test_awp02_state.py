@@ -33,10 +33,15 @@ EVENTS = {
     for entry in read_script("mod/events/aemusa_main_story_awp_02_events.txt")
     if entry.key == "country_event"
 }
-TRIGGERS = {entry.key: entry.value for entry in read_script(
-    "mod/common/scripted_triggers/aemusa_ms_story_entry_triggers.txt")}
-EFFECTS = {entry.key: entry.value for entry in read_script(
-    "mod/common/scripted_effects/aemusa_ms_story_lifecycle_effects.txt")}
+# 旧主线路由也会读取新增入口，保持解释器可解析其真实依赖。
+TRIGGERS = {entry.key: entry.value for path in (
+    "mod/common/scripted_triggers/aemusa_ms_story_entry_triggers.txt",
+    "mod/common/scripted_triggers/aemusa_ms_crisis_entry_triggers.txt",
+) for entry in read_script(path)}
+EFFECTS = {entry.key: entry.value for path in (
+    "mod/common/scripted_effects/aemusa_ms_story_lifecycle_effects.txt",
+    "mod/common/scripted_effects/aemusa_ms_crisis_entry_effects.txt",
+) for entry in read_script(path)}
 
 
 def child(entries, key):

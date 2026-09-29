@@ -1,0 +1,57 @@
+# AWP-04 首批：第二幕之后的恢复回访与唯一原版天灾路线入口。
+# 原版事实来源：4.5.1 common/scripted_triggers/00_scripted_triggers.txt
+# 中的 crisis_happened_and_defeated。这里只读对应旗标，不生成危机。
+aemusa_ms_country_can_enter_crisis_preparation = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 7
+	}
+	has_country_flag = aemusa_ms_country_chapter_06_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_06_done
+	has_country_flag = aemusa_ms_country_act_02_completed
+	has_country_flag = aemusa_ms_country_fe_war_recovery_period_active
+}
+
+# 回访是恢复中的一次交谈，不表示战损或角色负荷已清空。
+aemusa_ms_country_can_choose_crisis_route = {
+	aemusa_ms_country_can_enter_crisis_preparation = yes
+	has_country_flag = aemusa_ms_country_fe_war_recovery_reviewed
+	NOT = {
+		has_country_flag = aemusa_ms_country_history_vanilla_crisis_locked
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_settlement_vanilla_crisis_route_done
+	}
+	OR = {
+		NOT = {
+			is_variable_set = aemusa_ms_country_vanilla_crisis_route_index
+		}
+		check_variable = {
+			which = aemusa_ms_country_vanilla_crisis_route_index
+			value = 0
+		}
+	}
+}
+
+# 仅实际发生过的危机可确认；随机设置下不会预选一个永不出现的模块。
+# 已结束的危机允许后续走调查与恢复责任，不因章节到达较晚而永久失去入口。
+aemusa_ms_country_can_choose_prethoryn = {
+	aemusa_ms_country_can_choose_crisis_route = yes
+	has_global_flag = prethoryn_invasion_happened
+}
+
+aemusa_ms_country_can_choose_unbidden = {
+	aemusa_ms_country_can_choose_crisis_route = yes
+	has_global_flag = extradimensional_invasion_happened
+}
+
+aemusa_ms_country_can_choose_contingency = {
+	aemusa_ms_country_can_choose_crisis_route = yes
+	has_global_flag = ai_invasion_happened
+}
+
+aemusa_ms_country_can_choose_cetana = {
+	aemusa_ms_country_can_choose_crisis_route = yes
+	has_global_flag = synth_queen_happened
+}

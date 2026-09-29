@@ -1,0 +1,50 @@
+# AWP-04 入口写接口：离开恢复回访只表示愿意准备，不核销恢复责任。
+aemusa_ms_review_fe_war_recovery_once = {
+	if = {
+		limit = {
+			aemusa_ms_country_can_enter_crisis_preparation = yes
+			NOT = {
+				has_country_flag = aemusa_ms_country_fe_war_recovery_reviewed
+			}
+		}
+		set_country_flag = aemusa_ms_country_fe_war_recovery_reviewed
+		country_event = {
+			id = aemusa_ms.1010
+		}
+	}
+}
+
+# 调用方传入四个明确的已登记路线编号和对应原版危机旗标。
+# 写入前再次核对，避免旧窗口在路线已锁定后改写决定。
+aemusa_ms_lock_vanilla_crisis_route_once = {
+	if = {
+		limit = {
+			aemusa_ms_country_can_choose_crisis_route = yes
+			has_global_flag = $HAPPENED_FLAG$
+		}
+		set_variable = {
+			which = aemusa_ms_country_vanilla_crisis_route_index
+			value = $ROUTE_INDEX$
+		}
+		set_country_flag = aemusa_ms_country_history_vanilla_crisis_locked
+		set_country_flag = aemusa_ms_country_settlement_vanilla_crisis_route_done
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_c_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_c_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_c_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_c_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_c_00_done
+		}
+		aemusa_ms_finalize_story_cluster_once = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_c_00_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_c_00_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_c_00_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_c_00_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_c_00_done
+		}
+		log = "AEMUSA-MS|AWP-04|vanilla_crisis_route_locked"
+		country_event = {
+			id = aemusa_ms.1015
+		}
+	}
+}

@@ -1,0 +1,146 @@
+namespace = aemusa_ms
+
+# 战后回访：可以随时结束通讯；退出不算同意进入下一段。
+country_event = {
+	id = aemusa_ms.1000
+	title = aemusa_ms.1000.title
+	desc = aemusa_ms.1000.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_crisis_preparation = yes
+		NOT = {
+			has_country_flag = aemusa_ms_country_fe_war_recovery_reviewed
+		}
+	}
+	option = {
+		name = aemusa_ms.1000.rest
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1000.prepare
+		hidden_effect = {
+			aemusa_ms_review_fe_war_recovery_once = yes
+		}
+	}
+}
+
+# AED-C-00：预案可提前查看；只在相应原版危机出现后确认一次。
+# 四项选项始终可见，暂不可用时由 allow 提供原因；关闭窗口不会锁定路线。
+country_event = {
+	id = aemusa_ms.1010
+	title = aemusa_ms.1010.title
+	desc = aemusa_ms.1010.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_choose_crisis_route = yes
+	}
+	option = {
+		name = aemusa_ms.1010.wait
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1010.prethoryn
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_ms.1010.prethoryn.requirement
+				aemusa_ms_country_can_choose_prethoryn = yes
+			}
+		}
+		custom_tooltip = aemusa_ms.1010.lock_hint
+		hidden_effect = {
+			aemusa_ms_lock_vanilla_crisis_route_once = {
+				HAPPENED_FLAG = prethoryn_invasion_happened
+				ROUTE_INDEX = 1
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1010.unbidden
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_ms.1010.unbidden.requirement
+				aemusa_ms_country_can_choose_unbidden = yes
+			}
+		}
+		custom_tooltip = aemusa_ms.1010.lock_hint
+		hidden_effect = {
+			aemusa_ms_lock_vanilla_crisis_route_once = {
+				HAPPENED_FLAG = extradimensional_invasion_happened
+				ROUTE_INDEX = 2
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1010.contingency
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_ms.1010.contingency.requirement
+				aemusa_ms_country_can_choose_contingency = yes
+			}
+		}
+		custom_tooltip = aemusa_ms.1010.lock_hint
+		hidden_effect = {
+			aemusa_ms_lock_vanilla_crisis_route_once = {
+				HAPPENED_FLAG = ai_invasion_happened
+				ROUTE_INDEX = 3
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1010.cetana
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_ms.1010.cetana.requirement
+				aemusa_ms_country_can_choose_cetana = yes
+			}
+		}
+		custom_tooltip = aemusa_ms.1010.lock_hint
+		hidden_effect = {
+			aemusa_ms_lock_vanilla_crisis_route_once = {
+				HAPPENED_FLAG = synth_queen_happened
+				ROUTE_INDEX = 4
+			}
+		}
+	}
+}
+
+# 已选路线回访：只展示固定决定，后续模块在下一批接入。
+country_event = {
+	id = aemusa_ms.1015
+	title = aemusa_ms.1015.title
+	desc = {
+		trigger = {
+			check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 1 }
+		}
+		text = aemusa_ms.1015.prethoryn
+	}
+	desc = {
+		trigger = {
+			check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 2 }
+		}
+		text = aemusa_ms.1015.unbidden
+	}
+	desc = {
+		trigger = {
+			check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 3 }
+		}
+		text = aemusa_ms.1015.contingency
+	}
+	desc = {
+		trigger = {
+			check_variable = { which = aemusa_ms_country_vanilla_crisis_route_index value = 4 }
+		}
+		text = aemusa_ms.1015.cetana
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_crisis_preparation = yes
+		has_country_flag = aemusa_ms_country_history_vanilla_crisis_locked
+	}
+	option = {
+		name = aemusa_ms.1015.close
+	}
+}

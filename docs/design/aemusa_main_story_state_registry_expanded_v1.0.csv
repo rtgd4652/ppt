@@ -675,3 +675,4 @@
 "ASR-AWP03-016","aemusa_ms_country_fe_war_postwar_disclosure_index","战后公开方式","country","variable","0","AED-06-20 首次选择接口","第六章结算只读访问","存档永久","枚举：0 未选择；1 立即公开已核实记录；2 分阶段公开并设独立监督。两者均保留追问，不改写战时选择","AED-06-20／06-90","T002/T003","formal_awp_03"
 "ASR-AWP03-017","aemusa_ms_country_fe_war_recovery_priority_index","恢复责任优先级","country","variable","0","AED-06-40 首次选择接口","第六章结算只读访问","存档永久","枚举：0 未选择；1 本国服务先行并保留盟友承诺；2 共同恢复先行并守住本国基本服务。不是即时完成恢复","AED-06-40／06-90","T002/T003","formal_awp_03"
 "ASR-AWP03-018","aemusa_ms_country_fe_war_recovery_period_active","恢复期已开启","country","flag","no","第六章唯一结算","后续危机入口只读访问","存档永久","第二幕已归档，允许无限期停留恢复期；不表示具体损失已核销或危机已选择","AED-06-90","T002/T003","formal_awp_03"
+"ASR-AWP04-001","aemusa_ms_country_fe_war_recovery_reviewed","战后恢复回访","country","flag","no","aemusa_ms_review_fe_war_recovery_once","原版危机路线入口只读访问","存档永久","第二幕完成后主动选择查阅预案；退出和继续休息不写入，不表示战损或人物负荷已清零","AED-06-90／AED-C-00","T005","formal_awp_04"
