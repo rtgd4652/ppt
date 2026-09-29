@@ -2,7 +2,7 @@
 
 《永远的七日之都》主题 Stellaris Mod，当前开发与运行验证目标为 Stellaris 4.5.1，对外目标为完整 1.0。描述文件仍保留原型的 `4.4.*` 声明，尚未完成全 Mod 的 4.5.1 兼容验收。
 
-仓库保留文明系统与四名领袖的可玩原型。1.0 背景准备、角色基础设计和主线设计已进入批准后的分包实现阶段。AWP-02（序章至第三章）已通过运行验收；当前推进 AWP-03（第四至第六章及失落帝国战争），已核对受控战争和章节正常路径，剩余反例与自然战争仍待验证。
+仓库保留文明系统与四名领袖的可玩原型。1.0 背景准备、角色基础设计和主线设计已进入批准后的分包实现阶段；当前完成层级、运行证据与下一工作包统一见 [项目进度](docs/PROJECT_STATUS.md)。
 
 `mod/descriptor.mod` 中的 `0.1.0` 是现有原型标识，不表示当前工作区已经冻结或发布。内部里程碑和正式发布按下列当前文档管理，不自动沿用历史标签发布流程。
 
@@ -10,8 +10,8 @@
 
 1. [当前进度](docs/PROJECT_STATUS.md)：当前工作包、完成层级、阻塞和下一步。
 2. [主线工作包](docs/design/aemusa_main_story_implementation_work_packages_v1.0.md)：范围、依赖与逐包授权记录。
-3. [AWP-03 运行记录](reports/aemusa_main_story_awp_03_runtime_2026-09-27.md)：当前 `runtime_status: in_progress`。
-4. [AWP-02 运行验收记录](reports/aemusa_main_story_awp_02_validation_report.md)：T001～T004 已通过，20/20 个事件簇完成后三次重开已核验。
+3. [AWP-06 机制提案](docs/design/aemusa_main_story_awp_06_mechanism_proposal.md)：下一包的具体方案与待确认范围。
+4. [AWP-05 运行记录](reports/aemusa_main_story_awp_05_flow_2026-09-29.md)：第八至第十章正常流程及关键存读档证据。
 
 需要理解整体设计时再阅读 [架构](docs/ARCHITECTURE.md)、[路线图](docs/ROADMAP.md)、[执行清单](docs/TODO.md) 和 [文档索引](docs/README.md)。共享规范见 [AGENTS.md](AGENTS.md)。
 

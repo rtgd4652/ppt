@@ -1,6 +1,6 @@
 # 项目文档索引
 
-更新：2026-09-26。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)。
+更新：2026-09-29。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)。
 
 ## 进入项目
 
@@ -14,6 +14,7 @@
 
 - [1.0 叙事约束](design/v1.0_narrative_constraints.md)
 - [主线工作包及授权记录](design/aemusa_main_story_implementation_work_packages_v1.0.md)
+- [AWP-06 专属危机机制提案](design/aemusa_main_story_awp_06_mechanism_proposal.md)
 - [主线接口契约](design/aemusa_main_story_implementation_interface_v1.0.md)
 - [机器可读状态登记](design/aemusa_main_story_state_registry_expanded_v1.0.csv)
 - [十名角色完成矩阵](../knowledge/characters/v1.0_character_completion_matrix.md)
