@@ -12,7 +12,7 @@ awp_02_status: "completed_runtime_pass"
 awp_03_implementation_authorized: true
 awp_03_status: "implemented_main_flow_accepted"
 awp_04_implementation_scope: "vanilla_crisis_common_flow_and_chapter_07"
-awp_04_status: "entry_save_load_pass_common_flow_runtime_pending"
+awp_04_status: "controlled_main_flow_and_save_load_pass"
 last_updated: "2026-09-29"
 ---
 
@@ -476,3 +476,9 @@ AWP-02 已通过静态门禁，并于 2026-09-27 补齐新开局、跳章阻断�
 用户再次保存后，`AWP03-ally-fixed-2215.sav` 已在本地确认，新增盟友旁证与真实日志一致；第 35 节未找到新档的限制至此解除，本例结束。
 
 21:00:18 冷启动 4.5.1（`4ae6`），从第六章完成档经白夜馆进入恢复回访及预案等待页。无天灾时路线不可选；等待页另存为 `2216.04.22.sav` 并从游戏菜单载回后正常恢复，章节／幕索引仍为 7／2、未锁路线。共同应对的资源投入、计时和第七章衔接待一条受控剧情流程确认，不追加自然天灾或选项组合穷举。
+
+## 38. 2026-09-29 AWP-04 受控主流程通过
+
+同一构建的隔离档以控制台模拟索林开始／结束标记，正常走完路线锁定、主题、双方意愿、停止条件、资源行动及第七章。500 能量／250 矿物的投入日志与界面减少一致；90 天由游戏实际推进，自动回报后仍等待危机结束。匹配结束标记经正常入口识别后才进入战后复盘，最终章节／幕索引为 8／3。
+
+完成态 `2216.08.19.sav` 从游戏菜单载回正常；结束已载回未模拟天灾的 `2216.04.22.sav` 并暂停。第 37 节的共同流程待确认项至此完成，AWP-04 满足当前轻量主流程标准；不等于自然天灾或全部路线组合通过。证据见[流程记录](../../reports/aemusa_main_story_awp_04_flow_2026-09-29.md)。AWP-05 第八至第十章及正式专属资产尚未开始。
