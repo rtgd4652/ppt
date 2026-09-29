@@ -15,7 +15,7 @@ awp_04_implementation_scope: "vanilla_crisis_common_flow_and_chapter_07"
 awp_04_status: "controlled_main_flow_and_save_load_pass"
 awp_05_implementation_authorized: true
 awp_05_implementation_scope: "chapters_08_10_and_limited_boundary_contact"
-awp_05_status: "implemented_static_pass_runtime_pending"
+awp_05_status: "main_flow_and_save_load_pass"
 last_updated: "2026-09-29"
 ---
 
@@ -490,4 +490,6 @@ AWP-02 已通过静态门禁，并于 2026-09-27 补齐新开局、跳章阻断�
 
 用户在 AWP-04 主流程通过后要求继续，并明确取消本晚时间限制。现按既有事件卡实现三路有投入与等待的调查、边界核验与埃索林受限通讯、独立意愿与共同责任、低等级可完成的终局准备；不生成专属资产或授予终局权限。
 
-静态检查与 52 项工具检查通过，运行检查待新进程从保留的第七章完成档正常进入。验收仍采用一条主流程和关键存读档，不恢复历史穷举要求。实际状态见[AWP-05 记录](../../reports/aemusa_main_story_awp_05_flow_2026-09-29.md)；AWP-06 以后未实施。
+静态检查与 52 项工具检查通过。4.5.1 新进程从保留的第七章完成档经白夜馆正常走完三路调查、受限通讯和共同责任准备；实际支出 800 能量、400 矿物并等待 135 天。调查等待态 `2216.09.15.sav` 与完成态 `2217.01.30.sav` 均保存并载回正常，最终章节／幕索引为 11／4，等级缺口仍保留，未写终局资格。测试结束已载回干净预案档 `2216.04.22.sav` 并暂停。
+
+AWP-05 满足一条主流程和关键存读档的轻量标准；拒绝修正、其他选择及高等级路径未完成游戏验证，不恢复历史穷举要求。实际状态见[AWP-05 记录](../../reports/aemusa_main_story_awp_05_flow_2026-09-29.md)。下一步先审核 AWP-06 具体机制，AWP-06 以后未实施。
