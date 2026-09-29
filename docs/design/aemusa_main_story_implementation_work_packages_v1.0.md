@@ -11,8 +11,8 @@ awp_02_implementation_authorized: true
 awp_02_status: "completed_runtime_pass"
 awp_03_implementation_authorized: true
 awp_03_status: "implemented_main_flow_accepted"
-awp_04_implementation_scope: "recovery_and_route_entry"
-awp_04_status: "entry_implemented_runtime_pending"
+awp_04_implementation_scope: "vanilla_crisis_common_flow_and_chapter_07"
+awp_04_status: "implemented_static_pass_runtime_pending"
 last_updated: "2026-09-29"
 ---
 
@@ -462,3 +462,11 @@ AWP-02 已通过静态门禁，并于 2026-09-27 补齐新开局、跳章阻断�
 本轮继续开发的具体范围为 AWP-04 恢复回访与唯一危机路线入口，已经写入 `mod/`。确认前可休息；预案先展示，只有本局实际发生过的危机可锁定。已结束危机可留待战后回应，不补造参战史。选择不会生成危机、结算危机或授予主动干涉／终局权限。
 
 入口静态及定向账本检查通过，游戏窗口检查待重启后一次正常流程。其余 C-10 至 C-50、四模块实际行动和第七章仍未实装；AWP-05 以后未开始。详见[本轮记录](../../reports/aemusa_main_story_development_2026-09-29.md)。
+
+## 36. 2026-09-29 继续接通原版危机共同流程与第七章
+
+用户在入口交付后要求继续。本轮已实现 C-10 至 C-50、四个独立主题与第七章六簇；原版开始／结束采用所选路线对应的原版持久标记，实际回应采用有扣费和 90 天计时的协调／调查行动，不依赖最后一击。
+
+玩家意愿、角色表态、停止条件分别记录。普通行动、角色拒绝或危机已经结束都可以复盘，不假授尚未发生的能力阶段。第七章只确认研究职责和后续调查准备，不批准或生成专属舰／巨构。
+
+静态检查与 48 项既有及定向工具检查通过，游戏流程待本轮重启后确认；详见[实现记录](../../reports/aemusa_main_story_awp_04_flow_2026-09-29.md)。第 35 节为上一批入口交付时的状态。AWP-05 以后未开始。

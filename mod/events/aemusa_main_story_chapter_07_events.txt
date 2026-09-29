@@ -1,0 +1,441 @@
+namespace = aemusa_ms
+
+# 第七章：事实复盘、自限、职责立项与恢复；不发放专属资产或终局权限。
+
+# AED-07-00：进入与提交分别检查前置。
+country_event = {
+	id = aemusa_ms.1200
+	title = aemusa_ms.1200.title
+	desc = aemusa_ms.1200.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_07_00 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_07_00 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_07_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_00_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1200.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1200.continue
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_07_00 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_07_00_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_00_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_00_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_00_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_00_done
+					}
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_07_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_00_done
+				}
+				country_event = {
+					id = aemusa_ms.1100
+				}
+			}
+		}
+	}
+}
+
+# AED-07-10：进入与提交分别检查前置。
+country_event = {
+	id = aemusa_ms.1210
+	title = aemusa_ms.1210.title
+	desc = aemusa_ms.1210.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_07_10 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_07_10 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_07_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_10_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1210.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1210.open
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_07_10 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_07_10_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_10_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_10_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_10_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_10_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_crisis_postwar_disclosure_index
+					value = 1
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_07_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_10_done
+				}
+				country_event = {
+					id = aemusa_ms.1100
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1210.phased
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_07_10 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_07_10_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_10_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_10_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_10_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_10_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_crisis_postwar_disclosure_index
+					value = 2
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_07_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_10_done
+				}
+				country_event = {
+					id = aemusa_ms.1100
+				}
+			}
+		}
+	}
+}
+
+# AED-07-20：进入与提交分别检查前置。
+country_event = {
+	id = aemusa_ms.1220
+	title = aemusa_ms.1220.title
+	desc = {
+		trigger = {
+			has_country_flag = aemusa_ms_country_crisis_intervention_performed
+		}
+		text = aemusa_ms.1220.attempted
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				has_country_flag = aemusa_ms_country_crisis_intervention_performed
+			}
+		}
+		text = aemusa_ms.1220.ordinary
+	}
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_07_20 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_07_20 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_07_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_20_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1220.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1220.respect
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_07_20 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_07_20_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_20_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_20_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_20_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_20_done
+					}
+				}
+				set_country_flag = aemusa_ms_country_crisis_subjectivity_respected
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_07_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_20_done
+				}
+				country_event = {
+					id = aemusa_ms.1100
+				}
+			}
+		}
+	}
+}
+
+# AED-07-30：进入与提交分别检查前置。
+country_event = {
+	id = aemusa_ms.1230
+	title = aemusa_ms.1230.title
+	desc = aemusa_ms.1230.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_07_30 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_07_30 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_07_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_30_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1230.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1230.local
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_07_30 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_07_30_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_30_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_30_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_30_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_30_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_crisis_research_priority_index
+					value = 1
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_07_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_30_done
+				}
+				country_event = {
+					id = aemusa_ms.1100
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1230.reference
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_07_30 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_07_30_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_30_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_30_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_30_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_30_done
+					}
+				}
+				set_variable = {
+					which = aemusa_ms_country_crisis_research_priority_index
+					value = 2
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_07_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_30_done
+				}
+				country_event = {
+					id = aemusa_ms.1100
+				}
+			}
+		}
+	}
+}
+
+# AED-07-40：进入与提交分别检查前置。
+country_event = {
+	id = aemusa_ms.1240
+	title = aemusa_ms.1240.title
+	desc = aemusa_ms.1240.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_07_40 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_07_40 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_07_40_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_40_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_40_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_40_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_40_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1240.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1240.continue
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_07_40 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_07_40_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_40_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_40_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_40_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_40_done
+					}
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_07_40_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_40_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_40_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_40_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_40_done
+				}
+				country_event = {
+					id = aemusa_ms.1100
+				}
+			}
+		}
+	}
+}
+
+# AED-07-50：进入与提交分别检查前置。
+country_event = {
+	id = aemusa_ms.1250
+	title = aemusa_ms.1250.title
+	desc = aemusa_ms.1250.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_country_can_enter_07_50 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_country_can_enter_07_50 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_07_50_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_50_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_50_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_50_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_50_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_ms.1250.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1250.finish
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_country_can_enter_07_50 = yes
+					aemusa_ms_country_can_complete_story_cluster = {
+						STARTED_FLAG = aemusa_ms_country_cluster_aed_07_50_started
+						IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_50_in_progress
+						COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_50_completed
+						SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_50_settled
+						SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_50_done
+					}
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_07_50_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_07_50_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_07_50_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_50_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_07_50_done
+				}
+				aemusa_ms_settle_chapter_07_once = yes
+				country_event = {
+					id = aemusa_ms.1100
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = aemusa_ms.1260
+	title = aemusa_ms.1260.title
+	desc = aemusa_ms.1260.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	option = {
+		name = aemusa_ms.1260.close
+	}
+}

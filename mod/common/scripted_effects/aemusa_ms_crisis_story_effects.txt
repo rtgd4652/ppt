@@ -1,0 +1,199 @@
+# AWP-04 写接口：原版危机结果、现实投入和剧情决定分别记录。
+
+aemusa_ms_refresh_selected_crisis_facts = {
+	if = {
+		limit = {
+			aemusa_ms_country_has_crisis_route = yes
+		}
+		if = {
+			limit = {
+				aemusa_ms_country_selected_crisis_happened = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+				}
+			}
+			set_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+			log = "AEMUSA-MS|AWP-04|selected_crisis_started"
+		}
+		if = {
+			limit = {
+				has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+				aemusa_ms_country_selected_crisis_defeated = yes
+				NOT = {
+					has_country_flag = aemusa_ms_country_history_vanilla_crisis_completed
+				}
+			}
+			set_country_flag = aemusa_ms_country_history_vanilla_crisis_completed
+			log = "AEMUSA-MS|AWP-04|selected_crisis_completed"
+		}
+	}
+}
+
+aemusa_ms_record_crisis_offer_once = {
+	if = {
+		limit = {
+			aemusa_ms_country_can_enter_c_20 = yes
+			NOT = {
+				is_variable_set = aemusa_ms_country_crisis_aemusa_consent_index
+			}
+		}
+		if = {
+			limit = {
+				has_country_flag = aemusa_ms_country_history_vanilla_crisis_completed
+			}
+			set_variable = {
+				which = aemusa_ms_country_crisis_aemusa_consent_index
+				value = 3
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_country_can_offer_crisis_intervention = yes
+			}
+			set_variable = {
+				which = aemusa_ms_country_crisis_aemusa_consent_index
+				value = 1
+			}
+		}
+		else = {
+			set_variable = {
+				which = aemusa_ms_country_crisis_aemusa_consent_index
+				value = 2
+			}
+		}
+	}
+}
+
+aemusa_ms_start_crisis_response_once = {
+	if = {
+		limit = {
+			aemusa_ms_country_can_start_crisis_response = yes
+		}
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_c_40_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_c_40_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_c_40_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_c_40_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_c_40_done
+		}
+		set_variable = {
+			which = aemusa_ms_country_crisis_response_kind_index
+			value = $KIND$
+		}
+		add_resource = {
+			energy = -500
+			minerals = -250
+		}
+		set_country_flag = aemusa_ms_country_crisis_response_pending
+		set_timed_country_flag = {
+			flag = aemusa_ms_country_crisis_response_time_remaining
+			days = 90
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = aemusa_ms_country_crisis_player_authorization_index
+					value = 1
+				}
+				check_variable = {
+					which = aemusa_ms_country_crisis_aemusa_consent_index
+					value = 1
+				}
+				has_country_flag = aemusa_ms_country_crisis_stopping_rules_confirmed
+				NOT = {
+					has_country_flag = aemusa_ms_country_history_vanilla_crisis_completed
+				}
+			}
+			set_country_flag = aemusa_ms_country_crisis_intervention_performed
+		}
+		log = "AEMUSA-MS|AWP-04|response_started; cost=500_energy_250_minerals; days=90"
+		country_event = {
+			id = aemusa_ms.1151
+			days = 90
+		}
+	}
+}
+
+# 停止只影响本次有限尝试；普通协调工作继续，已投入资源不退款，历史不删除。
+aemusa_ms_stop_crisis_intervention_once = {
+	if = {
+		limit = {
+			aemusa_ms_country_has_crisis_route = yes
+			has_country_flag = aemusa_ms_country_crisis_response_pending
+			has_country_flag = aemusa_ms_country_crisis_intervention_performed
+			NOT = { has_country_flag = aemusa_ms_country_crisis_intervention_stopped }
+		}
+		set_country_flag = aemusa_ms_country_crisis_intervention_stopped
+		log = "AEMUSA-MS|AWP-04|limited_intervention_stopped"
+	}
+}
+
+aemusa_ms_complete_crisis_response_if_due = {
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_history_vanilla_crisis_locked
+			has_country_flag = aemusa_ms_country_crisis_response_pending
+			NOT = {
+				has_country_flag = aemusa_ms_country_crisis_response_time_remaining
+			}
+			NOT = {
+				has_country_flag = aemusa_ms_country_crisis_response_completed
+			}
+		}
+		remove_country_flag = aemusa_ms_country_crisis_response_pending
+		set_country_flag = aemusa_ms_country_crisis_response_completed
+		set_country_flag = aemusa_ms_country_civilization_reality_contribution_recorded
+		log = "AEMUSA-MS|AWP-04|response_completed"
+	}
+}
+
+aemusa_ms_settle_selected_crisis_once = {
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_cluster_aed_c_50_settled
+			has_country_flag = aemusa_ms_country_history_vanilla_crisis_completed
+			has_country_flag = aemusa_ms_country_crisis_response_completed
+			NOT = {
+				has_country_flag = aemusa_ms_country_settlement_vanilla_crisis_done
+			}
+		}
+		set_country_flag = aemusa_ms_country_settlement_vanilla_crisis_done
+		set_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+		log = "AEMUSA-MS|AWP-04|selected_crisis_settled"
+	}
+}
+
+aemusa_ms_settle_chapter_07_once = {
+	if = {
+		limit = {
+			aemusa_ms_country_has_crisis_route = yes
+			has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_07_00_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_07_10_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_07_20_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_07_30_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_07_40_settled
+			has_country_flag = aemusa_ms_country_cluster_aed_07_50_settled
+		}
+		aemusa_ms_settle_chapter_once = {
+			LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_07_50_settled
+			EXPECTED_INDEX = 7
+			NEXT_INDEX = 8
+			CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_07_completed
+			CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_07_done
+		}
+		if = {
+			limit = {
+				has_country_flag = aemusa_ms_country_chapter_07_completed
+			}
+			set_variable = {
+				which = aemusa_ms_country_act_index
+				value = 3
+			}
+			set_country_flag = aemusa_ms_country_act_03_completed
+			set_country_flag = aemusa_ms_country_settlement_act_03_done
+			set_country_flag = aemusa_ms_country_crisis_anomaly_investigation_ready
+			log = "AEMUSA-MS|AWP-04|chapter_07_completed"
+		}
+	}
+}

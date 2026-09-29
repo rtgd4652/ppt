@@ -106,7 +106,7 @@ country_event = {
 	}
 }
 
-# 已选路线回访：只展示固定决定，后续模块在下一批接入。
+# 首次选定路线后展示固定决定，可继续对应危机的实际回应。
 country_event = {
 	id = aemusa_ms.1015
 	title = aemusa_ms.1015.title
@@ -142,5 +142,15 @@ country_event = {
 	}
 	option = {
 		name = aemusa_ms.1015.close
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_ms.1015.continue
+		hidden_effect = {
+			if = {
+				limit = { aemusa_ms_country_has_crisis_route = yes }
+				country_event = { id = aemusa_ms.1100 }
+			}
+		}
 	}
 }

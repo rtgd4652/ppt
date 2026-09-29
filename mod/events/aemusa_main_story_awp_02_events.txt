@@ -382,11 +382,15 @@ country_event = {
 			country_event = { id = aemusa_ms.990 }
 		}
 		else_if = {
+			limit = { has_country_flag = aemusa_ms_country_chapter_07_completed }
+			country_event = { id = aemusa_ms.1260 }
+		}
+		else_if = {
 			limit = {
 				aemusa_ms_country_can_enter_crisis_preparation = yes
 				has_country_flag = aemusa_ms_country_history_vanilla_crisis_locked
 			}
-			country_event = { id = aemusa_ms.1015 }
+			country_event = { id = aemusa_ms.1100 }
 		}
 		else_if = {
 			limit = {

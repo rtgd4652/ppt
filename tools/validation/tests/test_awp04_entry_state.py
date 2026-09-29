@@ -1,15 +1,18 @@
-"""仅检查新天灾入口的正常账本流程和路线锁定；不模拟游戏天灾或存读档。"""
+"""检查天灾入口和实际写入；不模拟游戏引擎、天灾生成或真实存读档。"""
 
 import unittest
 
 from test_awp02_state import EVENTS, Ledger, PREFIX, child, read_script, scalar
 
 
-CRISIS_EVENTS = {
-    scalar(entry.value, "id"): entry.value
-    for entry in read_script("mod/events/aemusa_main_story_awp_04_entry_events.txt")
-    if entry.key == "country_event"
-}
+CRISIS_EVENTS = {}
+for path in (
+    "mod/events/aemusa_main_story_awp_04_entry_events.txt",
+    "mod/events/aemusa_main_story_awp_04_story_events.txt",
+    "mod/events/aemusa_main_story_chapter_07_events.txt",
+):
+    CRISIS_EVENTS.update({scalar(entry.value, "id"): entry.value
+                         for entry in read_script(path) if entry.key == "country_event"})
 ROUTES = (
     ("prethoryn", "prethoryn_invasion", 1),
     ("unbidden", "extradimensional_invasion", 2),
@@ -22,13 +25,39 @@ class CrisisLedger(Ledger):
     def __init__(self):
         super().__init__(events={**EVENTS, **CRISIS_EVENTS})
         self.global_flags = set()
+        self.resources = {"energy": 1000, "minerals": 1000}
+        self.timers = {}
+
+    def snapshot(self):
+        return super().snapshot(), dict(self.resources), dict(self.timers)
 
     def term(self, entry):
         if entry.key == "has_global_flag":
             return entry.value in self.global_flags
         if entry.key == "custom_tooltip":
             return self.condition([item for item in entry.value if item.key != "fail_text"])
+        if entry.key == "resource_stockpile_compare":
+            return self.resources[scalar(entry.value, "resource")] >= float(scalar(entry.value, "value_greater_equal"))
         return super().term(entry)
+
+    def execute_extra(self, entry):
+        if entry.key == "add_resource":
+            for resource in entry.value:
+                self.resources[resource.key] += float(resource.value)
+        elif entry.key == "set_timed_country_flag":
+            name = scalar(entry.value, "flag")
+            self.flags.add(name)
+            self.timers[name] = int(scalar(entry.value, "days"))
+        else:
+            super().execute_extra(entry)
+
+    def elapse(self, days):
+        # 只核对源代码的计时条件；实际引擎延迟与存档另作一次运行检查。
+        for name in tuple(self.timers):
+            self.timers[name] -= days
+            if self.timers[name] <= 0:
+                del self.timers[name]
+                self.flags.discard(name)
 
     def option(self, event, suffix):
         return next(entry.value for entry in self.events[event]
@@ -96,7 +125,7 @@ class Awp04EntryTests(unittest.TestCase):
                 restored.flags = set(ledger.flags)
                 restored.variables = dict(ledger.variables)
                 restored.open("aemusa_ms.100")
-                self.assertEqual(restored.queue.pop(), ("aemusa_ms.1015", 0))
+                self.assertEqual(restored.queue.pop(), ("aemusa_ms.1100", 0))
 
     def test_forced_entry_without_second_act_cannot_lock_a_route(self):
         ledger = CrisisLedger()

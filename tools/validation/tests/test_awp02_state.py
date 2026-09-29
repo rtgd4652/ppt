@@ -23,6 +23,7 @@ def read_script(relative):
     text = (ROOT / relative).read_text(encoding="utf-8")
     # 通用静态解析器不保留运算符；此测试显式保留唯一使用的比较形式。
     text = re.sub(r"\bvalue\s*>\s*0\b", "value_greater_than = 0", text)
+    text = re.sub(r"\bvalue\s*>=\s*(\d+)\b", r"value_greater_equal = \1", text)
     if re.search(r"[<>!]", re.sub(r"#[^\n]*", "", text)):
         raise AssertionError("账本测试遇到未支持的比较运算符")
     return parse(text)
@@ -37,10 +38,12 @@ EVENTS = {
 TRIGGERS = {entry.key: entry.value for path in (
     "mod/common/scripted_triggers/aemusa_ms_story_entry_triggers.txt",
     "mod/common/scripted_triggers/aemusa_ms_crisis_entry_triggers.txt",
+    "mod/common/scripted_triggers/aemusa_ms_crisis_story_triggers.txt",
 ) for entry in read_script(path)}
 EFFECTS = {entry.key: entry.value for path in (
     "mod/common/scripted_effects/aemusa_ms_story_lifecycle_effects.txt",
     "mod/common/scripted_effects/aemusa_ms_crisis_entry_effects.txt",
+    "mod/common/scripted_effects/aemusa_ms_crisis_story_effects.txt",
 ) for entry in read_script(path)}
 
 
@@ -135,7 +138,11 @@ class Ledger:
             elif key == "log":
                 self.logs.append(value)
             else:
-                raise AssertionError(f"未支持的效果：{key}")
+                self.execute_extra(entry)
+
+    def execute_extra(self, entry):
+        # 新工作包仅显式扩展自己需要的原版原语；未知效果仍直接失败。
+        raise AssertionError(f"未支持的效果：{entry.key}")
 
     def open(self, event, forced=False):
         body = self.events[event]

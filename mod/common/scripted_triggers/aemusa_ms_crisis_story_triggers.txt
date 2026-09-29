@@ -1,0 +1,294 @@
+# AWP-04 与第七章：只读取当前路线、原版事实和已经执行的行动。
+
+aemusa_ms_country_has_crisis_route = {
+	aemusa_ms_country_can_enter_crisis_preparation = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_locked
+	has_country_flag = aemusa_ms_country_cluster_aed_c_00_settled
+}
+
+aemusa_ms_country_selected_crisis_happened = {
+	OR = {
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 1
+			}
+			has_global_flag = prethoryn_invasion_happened
+		}
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 2
+			}
+			has_global_flag = extradimensional_invasion_happened
+		}
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 3
+			}
+			has_global_flag = ai_invasion_happened
+		}
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 4
+			}
+			has_global_flag = synth_queen_happened
+		}
+	}
+}
+
+aemusa_ms_country_selected_crisis_defeated = {
+	OR = {
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 1
+			}
+			has_global_flag = prethoryn_invasion_defeated
+		}
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 2
+			}
+			has_global_flag = extradimensional_invasion_defeated
+		}
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 3
+			}
+			has_global_flag = ai_invasion_defeated
+		}
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 4
+			}
+			has_global_flag = synth_queen_defeated
+		}
+	}
+}
+
+aemusa_ms_country_can_enter_c_10 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_00_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_c_10_settled
+	}
+}
+
+aemusa_ms_country_can_enter_c_a = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_10_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_c_a_settled
+	}
+	check_variable = {
+		which = aemusa_ms_country_vanilla_crisis_route_index
+		value = 1
+	}
+}
+
+aemusa_ms_country_can_enter_c_b = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_10_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_c_b_settled
+	}
+	check_variable = {
+		which = aemusa_ms_country_vanilla_crisis_route_index
+		value = 2
+	}
+}
+
+aemusa_ms_country_can_enter_c_c = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_10_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_c_c_settled
+	}
+	check_variable = {
+		which = aemusa_ms_country_vanilla_crisis_route_index
+		value = 3
+	}
+}
+
+aemusa_ms_country_can_enter_c_d = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_10_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_c_d_settled
+	}
+	check_variable = {
+		which = aemusa_ms_country_vanilla_crisis_route_index
+		value = 4
+	}
+}
+
+aemusa_ms_country_can_enter_c_20 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_10_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_c_20_settled
+	}
+	OR = {
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 1
+			}
+			has_country_flag = aemusa_ms_country_cluster_aed_c_a_settled
+		}
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 2
+			}
+			has_country_flag = aemusa_ms_country_cluster_aed_c_b_settled
+		}
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 3
+			}
+			has_country_flag = aemusa_ms_country_cluster_aed_c_c_settled
+		}
+		AND = {
+			check_variable = {
+				which = aemusa_ms_country_vanilla_crisis_route_index
+				value = 4
+			}
+			has_country_flag = aemusa_ms_country_cluster_aed_c_d_settled
+		}
+	}
+}
+
+aemusa_ms_country_can_enter_c_30 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_20_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_c_30_settled
+	}
+}
+
+aemusa_ms_country_can_enter_c_40 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_30_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_c_40_settled
+	}
+}
+
+aemusa_ms_country_can_enter_c_50 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_40_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_c_50_settled
+	}
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_completed
+	has_country_flag = aemusa_ms_country_crisis_response_completed
+	has_country_flag = aemusa_ms_country_civilization_reality_contribution_recorded
+}
+
+aemusa_ms_country_can_enter_07_00 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_c_50_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_07_00_settled
+	}
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+}
+
+aemusa_ms_country_can_enter_07_10 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_07_00_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_07_10_settled
+	}
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+}
+
+aemusa_ms_country_can_enter_07_20 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_07_10_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_07_20_settled
+	}
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+}
+
+aemusa_ms_country_can_enter_07_30 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_07_20_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_07_30_settled
+	}
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+}
+
+aemusa_ms_country_can_enter_07_40 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_07_30_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_07_40_settled
+	}
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+}
+
+aemusa_ms_country_can_enter_07_50 = {
+	aemusa_ms_country_has_crisis_route = yes
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+	has_country_flag = aemusa_ms_country_cluster_aed_07_40_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_07_50_settled
+	}
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+}
+
+aemusa_ms_country_can_start_crisis_response = {
+	aemusa_ms_country_can_enter_c_40 = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_crisis_response_pending
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_crisis_response_completed
+	}
+	resource_stockpile_compare = {
+		resource = energy
+		value >= 500
+	}
+	resource_stockpile_compare = {
+		resource = minerals
+		value >= 250
+	}
+}
+
+aemusa_ms_country_can_offer_crisis_intervention = {
+	aemusa_ms_country_has_crisis_route = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_history_vanilla_crisis_completed
+	}
+	OR = {
+		NOT = {
+			has_country_flag = aemusa_ms_country_first_intervention_oracle_narrative_recorded
+		}
+		has_country_flag = aemusa_ms_country_first_intervention_attribution_corrected
+	}
+}
