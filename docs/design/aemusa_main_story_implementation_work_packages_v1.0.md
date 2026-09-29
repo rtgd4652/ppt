@@ -12,7 +12,7 @@ awp_02_status: "completed_runtime_pass"
 awp_03_implementation_authorized: true
 awp_03_status: "implemented_main_flow_accepted"
 awp_04_implementation_scope: "vanilla_crisis_common_flow_and_chapter_07"
-awp_04_status: "implemented_static_pass_runtime_pending"
+awp_04_status: "entry_save_load_pass_common_flow_runtime_pending"
 last_updated: "2026-09-29"
 ---
 
@@ -470,3 +470,9 @@ AWP-02 已通过静态门禁，并于 2026-09-27 补齐新开局、跳章阻断�
 玩家意愿、角色表态、停止条件分别记录。普通行动、角色拒绝或危机已经结束都可以复盘，不假授尚未发生的能力阶段。第七章只确认研究职责和后续调查准备，不批准或生成专属舰／巨构。
 
 静态检查与 48 项既有及定向工具检查通过，游戏流程待本轮重启后确认；详见[实现记录](../../reports/aemusa_main_story_awp_04_flow_2026-09-29.md)。第 35 节为上一批入口交付时的状态。AWP-05 以后未开始。
+
+## 37. 2026-09-29 正常入口与预案存读档
+
+用户再次保存后，`AWP03-ally-fixed-2215.sav` 已在本地确认，新增盟友旁证与真实日志一致；第 35 节未找到新档的限制至此解除，本例结束。
+
+21:00:18 冷启动 4.5.1（`4ae6`），从第六章完成档经白夜馆进入恢复回访及预案等待页。无天灾时路线不可选；等待页另存为 `2216.04.22.sav` 并从游戏菜单载回后正常恢复，章节／幕索引仍为 7／2、未锁路线。共同应对的资源投入、计时和第七章衔接待一条受控剧情流程确认，不追加自然天灾或选项组合穷举。
