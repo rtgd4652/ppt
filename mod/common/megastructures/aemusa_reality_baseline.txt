@@ -22,6 +22,12 @@ aemusa_reality_baseline_0 = {
 	}
 	potential = {
 		has_country_flag = aemusa_ms_country_baseline_authorized
+		# 对照原版宏伟档案馆：唯一名额限制菜单入口，不在施工有效性中否定自身。
+		NOR = {
+			has_country_flag = aemusa_ms_country_baseline_construction_started
+			has_country_flag = aemusa_ms_country_baseline_established
+			aemusa_ms_baseline_exists = yes
+		}
 	}
 	possible = {
 		hidden_trigger = {
@@ -31,17 +37,6 @@ aemusa_reality_baseline_0 = {
 			fail_text = "aemusa_baseline_requires_control"
 			is_inside_border = from
 			aemusa_ms_baseline_system_controlled = yes
-		}
-		custom_tooltip = {
-			fail_text = "aemusa_baseline_requires_unique"
-			from = {
-				has_country_flag = aemusa_ms_country_baseline_authorized
-				NOR = {
-					has_country_flag = aemusa_ms_country_baseline_construction_started
-					has_country_flag = aemusa_ms_country_baseline_established
-					aemusa_ms_baseline_exists = yes
-				}
-			}
 		}
 		custom_tooltip = {
 			fail_text = "requires_no_existing_megastructure"
@@ -86,13 +81,14 @@ aemusa_reality_baseline_0 = {
 					has_planet_flag = megastructure
 					has_planet_flag = has_megastructure
 				}
-				has_any_megastructure = no
+				# 同原版基址使用星系排他条件与已完成的行星旗，避免拒绝施工占位实体。
 			}
 		}
 	}
 	on_build_start = {
 		from = {
 			set_country_flag = aemusa_ms_country_baseline_construction_started
+			log = "AEMUSA-MS|AWP-06|baseline_construction_started"
 		}
 	}
 	on_build_cancel = {
@@ -104,6 +100,7 @@ aemusa_reality_baseline_0 = {
 					}
 				}
 				remove_country_flag = aemusa_ms_country_baseline_construction_started
+				log = "AEMUSA-MS|AWP-06|baseline_construction_cancelled"
 			}
 		}
 	}
