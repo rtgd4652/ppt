@@ -180,6 +180,9 @@ country_event = {
 			NOT = {
 				has_country_flag = aemusa_ms_country_exclusive_laboratory_verified
 			}
+		}
+		# 资金不足时保留可见选项和费用；实际执行仍在下方重新检查。
+		allow = {
 			has_resource = {
 				type = energy
 				amount >= 150
@@ -238,6 +241,8 @@ country_event = {
 			NOT = {
 				has_country_flag = aemusa_ms_country_exclusive_public_response_ready
 			}
+		}
+		allow = {
 			has_resource = {
 				type = energy
 				amount >= 200
@@ -283,6 +288,55 @@ country_event = {
 				country_event = {
 					id = aemusa_exclusive.1
 				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_exclusive.20.relocate
+		trigger = {
+			aemusa_ms_exclusive_active = yes
+			check_variable = {
+				which = aemusa_ms_country_anchor_stage
+				value = 10
+			}
+			NOT = { has_country_flag = aemusa_ms_country_anchor_warning_active }
+			OR = {
+				NOT = { aemusa_ms_anchor_host_intact = yes }
+				NOT = { aemusa_ms_anchor_controlled = yes }
+			}
+		}
+		custom_tooltip = aemusa_exclusive_relocate_hint
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_exclusive_context = yes
+					aemusa_ms_exclusive_active = yes
+					check_variable = {
+						which = aemusa_ms_country_anchor_stage
+						value = 10
+					}
+					NOT = { has_country_flag = aemusa_ms_country_anchor_warning_active }
+					OR = {
+						NOT = { aemusa_ms_anchor_host_intact = yes }
+						NOT = { aemusa_ms_anchor_controlled = yes }
+					}
+				}
+				# 只撤销预警前的失效测量；不清除已用目标、公共进度或历史损失。
+				if = {
+					limit = { has_special_project = AEMUSA_MS_ANCHOR_SURVEY }
+					abort_special_project = { type = AEMUSA_MS_ANCHOR_SURVEY }
+				}
+				if = {
+					limit = { exists = event_target:aemusa_ms_current_anchor_target }
+					event_target:aemusa_ms_current_anchor_target = {
+						remove_planet_flag = aemusa_ms_anchor_active
+					}
+				}
+				clear_global_event_target = aemusa_ms_current_anchor_target
+				remove_country_flag = aemusa_ms_country_anchor_baseline_recorded
+				set_variable = { which = aemusa_ms_country_anchor_stage value = 0 }
+				log = "AEMUSA-MS|AWP-06|prewarning_target_released"
+				country_event = { id = aemusa_exclusive.1 }
 			}
 		}
 	}

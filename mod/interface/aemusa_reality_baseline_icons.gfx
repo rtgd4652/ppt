@@ -1,0 +1,11 @@
+# 新基线枢纽的原版占位图标；正式外观交付时独立替换，不复用旧塔身份。
+spriteTypes = {
+	spriteType = {
+		name = "GFX_aemusa_reality_baseline_0_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/strategic_coordination_center.dds"
+	}
+	spriteType = {
+		name = "GFX_aemusa_reality_baseline_1_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/strategic_coordination_center.dds"
+	}
+}

@@ -66,10 +66,11 @@ class ExclusiveLedger(CrisisLedger):
         self.removed_deposits = []
         self.external_conditions = {name: True for name in self.EXTERNAL_CONDITIONS}
         self.external_requests = []
+        self.projects = set()
 
     def snapshot(self):
         return deepcopy((super().snapshot(), self.targets, self.planet_flags,
-                         self.deposits, self.removed_deposits, self.external_requests))
+                         self.deposits, self.removed_deposits, self.external_requests, self.projects))
 
     def in_scope(self, target, operation, entries):
         if target not in self.targets:
@@ -101,6 +102,9 @@ class ExclusiveLedger(CrisisLedger):
         if key == "has_deposit":
             assert self.scope == "planet"
             return value in self.deposits
+        if key == "has_special_project":
+            assert self.scope == "country"
+            return value in self.projects
         if key in ("check_variable", "has_resource"):
             if key == "check_variable":
                 assert self.scope == "country"
@@ -130,6 +134,11 @@ class ExclusiveLedger(CrisisLedger):
             self.variables[name] = self.variables.get(name, 0) + float(scalar(value, "value"))
         elif key == "save_global_event_target_as":
             self.targets.add("event_target:" + value)
+        elif key == "clear_global_event_target":
+            self.targets.discard("event_target:" + value)
+        elif key == "abort_special_project":
+            # 只核对请求取消哪项现有项目；不模拟引擎项目与科研船调度。
+            self.projects.discard(scalar(value, "type"))
         elif key in (HOST, OWNER):
             self.in_scope(key, self.execute, value)
         elif key == "remove_deposit":
@@ -164,6 +173,70 @@ def active_anchor():
 
 
 class Awp06CrisisStateTests(unittest.TestCase):
+    def test_preparation_actions_stay_visible_but_cannot_spend_missing_resources(self):
+        for action, energy, minerals, pending in (
+            ("laboratory", 150, 50, "exclusive_laboratory_pending"),
+            ("response", 200, 150, "exclusive_public_response_pending"),
+        ):
+            with self.subTest(action=action):
+                ledger = ExclusiveLedger()
+                ledger.effect("aemusa_ms_exclusive_initialize")
+                ledger.variables[PREFIX + "anchor_stage"] = 10
+                option = ledger.option("aemusa_exclusive.20", action)
+                ledger.resources = {"energy": energy - 1, "minerals": minerals}
+                self.assertTrue(ledger.condition(child(option, "trigger")))
+                self.assertFalse(ledger.condition(child(option, "allow")))
+                before = ledger.snapshot()
+                ledger.choose("aemusa_exclusive.20", action)
+                self.assertEqual(ledger.snapshot(), before)
+                ledger.resources["energy"] += 1
+                self.assertTrue(ledger.condition(child(option, "allow")))
+                ledger.choose("aemusa_exclusive.20", action)
+                self.assertEqual(ledger.resources, {"energy": 0, "minerals": 0})
+                self.assertIn(PREFIX + pending, ledger.flags)
+                self.assertFalse(ledger.condition(child(option, "trigger")))
+                before = ledger.snapshot()
+                ledger.choose("aemusa_exclusive.20", action)
+                self.assertEqual(ledger.snapshot(), before)
+
+    def test_only_invalid_pre_warning_target_can_be_released_without_resetting_progress(self):
+        ledger = ExclusiveLedger()
+        ledger.effect("aemusa_ms_exclusive_initialize")
+        ledger.variables[PREFIX + "anchor_stage"] = 10
+        ledger.variables[PREFIX + "anchor_losses"] = 1
+        ledger.flags.update(PREFIX + key for key in (
+            "exclusive_laboratory_verified", "exclusive_public_response_pending",
+            "loss_has_permanent_losses", "anchor_baseline_recorded",
+        ))
+        ledger.timers[PREFIX + "exclusive_public_response_timer"] = 12
+        ledger.planet_flags.add("aemusa_ms_anchor_used")
+        ledger.projects.add("AEMUSA_MS_ANCHOR_SURVEY")
+
+        # 有效目标不能靠旧选项重选；公开预警后的失效目标也不能重置计时。
+        before = ledger.snapshot()
+        ledger.choose("aemusa_exclusive.20", "relocate")
+        self.assertEqual(ledger.snapshot(), before)
+        ledger.deposits.remove("d_minerals_2")
+        warned = deepcopy(ledger)
+        warned.variables[PREFIX + "anchor_stage"] = 20
+        warned.flags.add(PREFIX + "anchor_warning_active")
+        before = warned.snapshot()
+        warned.choose("aemusa_exclusive.20", "relocate")
+        self.assertEqual(warned.snapshot(), before)
+
+        ledger.choose("aemusa_exclusive.20", "relocate")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_stage"], 0)
+        self.assertNotIn(HOST, ledger.targets)
+        self.assertNotIn("aemusa_ms_anchor_active", ledger.planet_flags)
+        self.assertIn("aemusa_ms_anchor_used", ledger.planet_flags)
+        self.assertNotIn("AEMUSA_MS_ANCHOR_SURVEY", ledger.projects)
+        self.assertNotIn(PREFIX + "anchor_baseline_recorded", ledger.flags)
+        self.assertIn(PREFIX + "exclusive_laboratory_verified", ledger.flags)
+        self.assertIn(PREFIX + "exclusive_public_response_pending", ledger.flags)
+        self.assertEqual(ledger.timers[PREFIX + "exclusive_public_response_timer"], 12)
+        self.assertEqual(ledger.variables[PREFIX + "anchor_losses"], 1)
+        self.assertEqual(ledger.queue[-1], ("aemusa_exclusive.1", 0))
+
     def test_initialization_requires_current_authority_and_never_resets_history(self):
         blocked = ExclusiveLedger()
         blocked.flags.discard(PREFIX + "investigation_joint_response_authorized")
