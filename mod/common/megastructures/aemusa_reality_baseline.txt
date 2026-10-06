@@ -20,13 +20,13 @@ aemusa_reality_baseline_0 = {
 			energy = 5
 		}
 	}
+	# 同原版宏伟档案馆，由引擎阻止同类基址并行施工；不使用开工旗否定当前订单。
+	construction_blocks_and_blocked_by = self_type
 	potential = {
 		has_country_flag = aemusa_ms_country_baseline_authorized
-		# 对照原版宏伟档案馆：唯一名额限制菜单入口，不在施工有效性中否定自身。
-		NOR = {
-			has_country_flag = aemusa_ms_country_baseline_construction_started
+		# 建成后锁定唯一名额，丢失实体后的重新开放由月度接口处理。
+		NOT = {
 			has_country_flag = aemusa_ms_country_baseline_established
-			aemusa_ms_baseline_exists = yes
 		}
 	}
 	possible = {
