@@ -632,4 +632,14 @@ country_event = {
 	option = {
 		name = aemusa_ms.1560.later
 	}
+	option = {
+		name = aemusa_ms.1560.exclusive
+		trigger = { aemusa_ms_exclusive_context = yes }
+		hidden_effect = {
+			if = {
+				limit = { aemusa_ms_exclusive_context = yes }
+				country_event = { id = aemusa_exclusive.1 }
+			}
+		}
+	}
 }

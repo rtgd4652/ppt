@@ -304,6 +304,7 @@ tech_artifact_fate_observatory = {
 	prerequisites = { "tech_artifact_destiny_economy" "tech_mega_engineering" }
 	weight = 15
 	potential = {
+		NOT = { has_country_flag = aemusa_ms_country_route_initialized }
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
 		has_ascension_perk = ap_artifact_court_destiny
 	}
@@ -327,6 +328,7 @@ tech_artifact_destiny_lord = {
 	}
 	weight = 10
 	potential = {
+		NOT = { has_country_flag = aemusa_ms_country_route_initialized }
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
 		has_ascension_perk = ap_artifact_court_destiny
 	}

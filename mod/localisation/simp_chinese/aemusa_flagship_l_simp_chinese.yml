@@ -1,0 +1,10 @@
+﻿l_simp_chinese:
+ aemusa_reality_flagship:0 "现实恒定旗舰"
+ aemusa_reality_flagship_plural:0 "现实恒定旗舰"
+ NAME_Aemusa_Reality_Flagship:0 "未闭合的航路"
+ NAME_Aemusa_Reality_Flagship_Fleet:0 "中央庭恒定支援舰队"
+ AEMUSA_REALITY_FLAGSHIP_BOW:0 "恒定支援舰艏"
+ AEMUSA_REALITY_FLAGSHIP_MID:0 "现实校准舰体"
+ AEMUSA_REALITY_FLAGSHIP_STERN:0 "协同作战舰尾"
+ aemusa_ms_flagship_capabilities:0 "获得唯一的§Y现实恒定旗舰§!。它能够参战，并在锚点所在星系提供现场恒定条件；锚点解除还需要普通舰队、巨构解析和现场作业。舰船毁损后免费恢复，初始冷却为§Y90日§!，随后在可用的首都重现；首都尚未恢复控制时会等待。现场恒定不要求爱缪莎占用本舰指挥官槽；若将她指派到本舰，系统会立即解除这一舰队任命，保留她的身份、经验与剧情进度。可为本舰指派普通指挥官。"
+ aemusa_ms_flagship_recovery_status:0 "恒定旗舰正在恢复。冷却结束后在安全首都免费重现；已发生的锚点损失不会随舰船恢复而撤销。"

@@ -1,0 +1,42 @@
+# 国家作用域；只在本国已有舰船中查找，退却中的同一舰船也阻止补建。
+aemusa_ms_has_flagship_instance = {
+	any_owned_ship = { is_ship_size = aemusa_reality_flagship }
+}
+
+aemusa_ms_has_operational_flagship = {
+	has_country_flag = aemusa_ms_country_flagship_commissioned
+	NOT = { has_country_flag = aemusa_ms_country_flagship_recovering }
+	any_owned_ship = {
+		is_ship_size = aemusa_reality_flagship
+		is_disabled = no
+	}
+}
+
+# 只把处于当前锚点星系的本国可用旗舰认作现场恒定载体。
+# 目标是该锚点宿主行星；不会按全银河舰队或击杀归属推断到场。
+aemusa_ms_flagship_at_current_anchor = {
+	exists = event_target:aemusa_ms_current_anchor_target
+	aemusa_ms_has_operational_flagship = yes
+	any_owned_ship = {
+		is_ship_size = aemusa_reality_flagship
+		is_disabled = no
+		exists = solar_system
+		solar_system = {
+			any_system_planet = {
+				is_same_value = event_target:aemusa_ms_current_anchor_target
+			}
+		}
+	}
+}
+
+# 国家→首都→星系→星港，prevprevprev 回到调用国家，避免使用不稳定的事件 root。
+aemusa_ms_flagship_has_safe_capital = {
+	exists = capital_scope
+	capital_scope = {
+		is_occupied_flag = no
+		solar_system = {
+			exists = starbase
+			starbase = { is_controlled_by = prevprevprev }
+		}
+	}
+}

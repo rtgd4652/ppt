@@ -1,0 +1,52 @@
+# 现实恒定旗舰：独立的新舰种，原版战列舰仅作开发期外观占位。
+# 固定事件设计与英雄舰限制维持单舰身份，不继承旧命运之主的舰体或数值。
+aemusa_reality_flagship = {
+	entity = "battleship_entity"
+	use_shipnames_from = battleship
+	formation_priority = 100
+	max_speed = 100
+	acceleration = 0.2
+	rotation_speed = 0.15
+	collision_radius = 4.5
+	max_hitpoints = 4000
+	modifier = { ship_evasion_add = 5 }
+	size_multiplier = 8
+	map_counter_icon = ship_counter_32
+	icon = ship_size_military_8
+	fleet_slot_size = 8
+	section_slots = {
+		"bow" = { locator = "part1" }
+		"mid" = { locator = "part2" }
+		"stern" = { locator = "part3" }
+	}
+	num_target_locators = 4
+	is_space_station = no
+	is_designable = no
+	can_have_federation_design = no
+	enable_default_design = no
+	enable_3dview_in_ship_browser = yes
+	default_behavior = artillery
+	role_background = "GFX_role_selection_battleship"
+	ship_roles = { artillery }
+	combat_disengage_chance = 1.25
+	class = shipclass_military
+	# 4.5.1 原生英雄舰禁止合并、拆分、转让、解散；仅保留普通修理。
+	hero_ship = {
+		capabilities = { can_repair }
+	}
+	# 唯一获取入口由章节授权提供，星港不能另造第二艘。
+	potential_country = { always = no }
+	base_buildtime = 360
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	resources = {
+		category = ships
+		upkeep = {
+			energy = 8
+			alloys = 2
+		}
+	}
+}

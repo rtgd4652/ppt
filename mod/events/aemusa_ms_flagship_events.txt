@@ -1,0 +1,64 @@
+namespace = aemusa_flagship
+
+# on_ship_destroyed_victim：本国为 this，被摧毁舰船为 fromfrom。
+country_event = {
+	id = aemusa_flagship.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = aemusa_ms_country_flagship_commissioned
+		fromfrom = { is_ship_size = aemusa_reality_flagship }
+	}
+	immediate = { aemusa_ms_flagship_begin_recovery = yes }
+}
+
+# 冷却结束只重建舰船；剧情进度、领袖身份和锚点损失不回退。
+country_event = {
+	id = aemusa_flagship.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = aemusa_ms_country_flagship_commissioned
+		has_country_flag = aemusa_ms_country_flagship_recovering
+	}
+	immediate = {
+		aemusa_ms_flagship_finish_recovery = yes
+		aemusa_ms_flagship_ensure_present = yes
+	}
+}
+
+# on_leader_assigned 在指派完成后以领袖为作用域。
+# 本舰的现场恒定能力不要求爱缪莎占用指挥官槽；立即解除该任命，保留原人物和经验。
+leader_event = {
+	id = aemusa_flagship.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_leader_flag = aemusa_unique_leader
+		exists = fleet
+		fleet = {
+			any_owned_ship = { is_ship_size = aemusa_reality_flagship }
+		}
+	}
+	immediate = {
+		unassign_leader = this
+		log = "AEMUSA-MS|AWP-06|flagship_aemusa_assignment_released"
+	}
+}
+
+# 兼容保存时已经带领袖的舰队；双方参战回调及月度补检共用这一个幂等处理器。
+# 只处理新旗舰上的爱缪莎，普通指挥官及爱缪莎在其他舰队的任命均不改动。
+fleet_event = {
+	id = aemusa_flagship.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		any_owned_ship = { is_ship_size = aemusa_reality_flagship }
+		exists = leader
+		leader = { has_leader_flag = aemusa_unique_leader }
+	}
+	immediate = {
+		leader = { unassign_leader = this }
+		log = "AEMUSA-MS|AWP-06|flagship_aemusa_assignment_released"
+	}
+}

@@ -1,0 +1,63 @@
+# 新旗舰使用可核对定位器的原版区段，正式模型在 1.0 美术阶段替换。
+ship_section_template = {
+	key = "AEMUSA_REALITY_FLAGSHIP_BOW"
+	ship_size = aemusa_reality_flagship
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "battleship_bow_L2_entity"
+	icon = "GFX_ship_part_core_bow"
+	ai_tags = { artillery }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+	large_utility_slots = 3
+}
+
+ship_section_template = {
+	key = "AEMUSA_REALITY_FLAGSHIP_MID"
+	ship_size = aemusa_reality_flagship
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "battleship_mid_L3_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { artillery }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		locatorname = "large_gun_03"
+	}
+	large_utility_slots = 3
+}
+
+ship_section_template = {
+	key = "AEMUSA_REALITY_FLAGSHIP_STERN"
+	ship_size = aemusa_reality_flagship
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "battleship_stern_L1_entity"
+	icon = "GFX_ship_part_core_stern"
+	ai_tags = { artillery }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	aux_utility_slots = 2
+}

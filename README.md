@@ -10,7 +10,7 @@
 
 1. [当前进度](docs/PROJECT_STATUS.md)：当前工作包、完成层级、阻塞和下一步。
 2. [主线工作包](docs/design/aemusa_main_story_implementation_work_packages_v1.0.md)：范围、依赖与逐包授权记录。
-3. [AWP-06 机制提案](docs/design/aemusa_main_story_awp_06_mechanism_proposal.md)：下一包的具体方案与待确认范围。
+3. [里程碑1实施方案](docs/design/aemusa_main_story_awp_06_mechanism_proposal.md)：已授权的新旗舰、新巨构与专属危机范围；[代码与运行续接](reports/aemusa_main_story_milestone_1_2026-10-06.md)。
 4. [AWP-05 运行记录](reports/aemusa_main_story_awp_05_flow_2026-09-29.md)：第八至第十章正常流程及关键存读档证据。
 
 需要理解整体设计时再阅读 [架构](docs/ARCHITECTURE.md)、[路线图](docs/ROADMAP.md)、[执行清单](docs/TODO.md) 和 [文档索引](docs/README.md)。共享规范见 [AGENTS.md](AGENTS.md)。

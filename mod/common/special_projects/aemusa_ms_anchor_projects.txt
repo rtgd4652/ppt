@@ -1,0 +1,58 @@
+# 科研船实际到场作业，不用通讯选项模拟项目完成。
+special_project = {
+	key = "AEMUSA_MS_ANCHOR_SURVEY"
+	cost = 0
+	days_to_research = 30
+	tech_department = physics_technology
+	picture = GFX_evt_landing_ship
+	event_scope = ship_event
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	on_success = {
+		ship_event = {
+			id = aemusa_exclusive.101
+		}
+	}
+	on_fail = {
+	}
+}
+special_project = {
+	key = "AEMUSA_MS_ANCHOR_FIELD"
+	cost = 0
+	days_to_research = 30
+	tech_department = physics_technology
+	picture = GFX_evt_landing_ship
+	event_scope = ship_event
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	on_success = {
+		ship_event = {
+			id = aemusa_exclusive.102
+		}
+	}
+	on_fail = {
+	}
+}
+special_project = {
+	key = "AEMUSA_MS_ANCHOR_ENGINEERING"
+	cost = 0
+	days_to_research = 30
+	tech_department = physics_technology
+	picture = GFX_evt_landing_ship
+	event_scope = ship_event
+	requirements = {
+		shipclass_science_ship = 1
+		leader = scientist
+	}
+	on_success = {
+		ship_event = {
+			id = aemusa_exclusive.103
+		}
+	}
+	on_fail = {
+	}
+}

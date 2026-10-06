@@ -1,0 +1,41 @@
+# 固定作战设计仅负责现场支援，锚点解除还需普通舰队、巨构解析和现场作业。
+# 原版事件设计同样直接指定核心组件；无需覆写原版组件的舰种触发器。
+ship_design = {
+	name = "NAME_Aemusa_Reality_Flagship"
+	ship_size = aemusa_reality_flagship
+	role = artillery
+	use_design_name = yes
+	is_event_design = yes
+	graphical_culture = "humanoid_01"
+	section = {
+		template = "AEMUSA_REALITY_FLAGSHIP_BOW"
+		slot = "bow"
+		component = { slot = "LARGE_GUN_01" template = "LARGE_GAMMA_LASER" }
+		component = { slot = "LARGE_GUN_02" template = "LARGE_MASS_DRIVER_5" }
+		component = { slot = "LARGE_UTILITY_1" template = "LARGE_ARMOR_4" }
+		component = { slot = "LARGE_UTILITY_2" template = "LARGE_SHIELD_4" }
+		component = { slot = "LARGE_UTILITY_3" template = "LARGE_ARMOR_4" }
+	}
+	section = {
+		template = "AEMUSA_REALITY_FLAGSHIP_MID"
+		slot = "mid"
+		component = { slot = "LARGE_GUN_01" template = "LARGE_MASS_DRIVER_5" }
+		component = { slot = "LARGE_GUN_02" template = "LARGE_GAMMA_LASER" }
+		component = { slot = "LARGE_GUN_03" template = "LARGE_MASS_DRIVER_5" }
+		component = { slot = "LARGE_UTILITY_1" template = "LARGE_SHIELD_4" }
+		component = { slot = "LARGE_UTILITY_2" template = "LARGE_ARMOR_4" }
+		component = { slot = "LARGE_UTILITY_3" template = "LARGE_SHIELD_4" }
+	}
+	section = {
+		template = "AEMUSA_REALITY_FLAGSHIP_STERN"
+		slot = "stern"
+		component = { slot = "LARGE_GUN_01" template = "LARGE_GAMMA_LASER" }
+		component = { slot = "AUX_UTILITY_1" template = "SHIELD_BOOSTER" }
+		component = { slot = "AUX_UTILITY_2" template = "SHIELD_BOOSTER" }
+	}
+	required_component = "BATTLESHIP_ZERO_POINT_REACTOR"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SHIP_THRUSTER_4"
+	required_component = "SENSOR_4"
+	required_component = "COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+}

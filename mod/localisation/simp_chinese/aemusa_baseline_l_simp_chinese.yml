@@ -1,0 +1,10 @@
+﻿l_simp_chinese:
+ aemusa_reality_baseline_0:0 "现实基线枢纽基址"
+ aemusa_reality_baseline_0_DESC:0 "将各观测站的记录接入同一条现实基线。基址需要继续升级为运行态，才能汇总现场资料、校准弱点解析。"
+ aemusa_reality_baseline_0_MEGASTRUCTURE_DETAILS:0 "§Y现实基线枢纽§!是中央庭应对终末锚点的专用工程。建设分为基址与运行态两步；帝国同时保留一个建造名额。失去控制时应夺回原设施；只有实体彻底消失后，才能重新施工。"
+ aemusa_reality_baseline_1:0 "现实基线枢纽"
+ aemusa_reality_baseline_1_DESC:0 "为舰队与现场小组提供共同的现实参照，汇总已取得的资料并推进弱点解析。所属星系的空间站被占领时，新增解析暂停；既有资料保留，恢复控制后继续。枢纽本身不会替代现场作业或消灭敌舰。"
+ aemusa_reality_baseline_1_MEGASTRUCTURE_DETAILS:0 "§Y现实基线枢纽§!需要保持本国所有并控制所在星系。已完成的解析资料由中央庭保存，不因临时占领而清空。"
+ aemusa_baseline_requires_control:0 "需要位于本国境内，且星系空间站由本国实际控制。"
+ aemusa_baseline_requires_unique:0 "需要取得现实基线工程授权，且尚未开工、建成或拥有另一座现实基线枢纽。"
+ aemusa_baseline_requires_safe_site:0 "需要无异常、无其他巨构的非宜居行星；不能是恒星、卫星、小行星、星界裂隙或环世界。"

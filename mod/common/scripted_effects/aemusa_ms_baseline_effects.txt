@@ -1,0 +1,68 @@
+# 国家作用域；由危机月度核对调用，建造完成时也刷新一次。
+# 本接口仅维护实体阶段、可恢复目标与解析可用性；绝不删除已解析的资料。
+# 单人路线的全局目标跟随实体保留；转让不释放唯一槽，实体真正消失后才允许重建。
+aemusa_ms_baseline_monthly_update = {
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_baseline_authorized
+		}
+		set_country_flag = aemusa_ms_crisis_megastructure_analysis_paused
+		if = {
+			limit = {
+				any_owned_megastructure = {
+					is_megastructure_type = aemusa_reality_baseline_1
+				}
+			}
+			set_variable = {
+				which = aemusa_ms_country_baseline_stage
+				value = 2
+			}
+			random_owned_megastructure = {
+				limit = {
+					is_megastructure_type = aemusa_reality_baseline_1
+				}
+				save_global_event_target_as = aemusa_ms_megastructure_target
+			}
+			if = {
+				limit = {
+					aemusa_ms_baseline_operational = yes
+				}
+				remove_country_flag = aemusa_ms_crisis_megastructure_analysis_paused
+			}
+		}
+		else_if = {
+			limit = {
+				any_owned_megastructure = {
+					is_megastructure_type = aemusa_reality_baseline_0
+				}
+			}
+			set_variable = {
+				which = aemusa_ms_country_baseline_stage
+				value = 1
+			}
+			random_owned_megastructure = {
+				limit = {
+					is_megastructure_type = aemusa_reality_baseline_0
+				}
+				save_global_event_target_as = aemusa_ms_megastructure_target
+			}
+		}
+		else = {
+			set_variable = {
+				which = aemusa_ms_country_baseline_stage
+				value = 0
+			}
+			if = {
+				limit = {
+					has_country_flag = aemusa_ms_country_baseline_established
+					NOT = {
+						exists = event_target:aemusa_ms_megastructure_target
+					}
+				}
+				# 不清除历史知识，也不替玩家免费再造；只恢复正常工程船建设入口。
+				remove_country_flag = aemusa_ms_country_baseline_established
+				log = "AEMUSA-MS|AWP-06|baseline_missing_rebuild_available"
+			}
+		}
+	}
+}

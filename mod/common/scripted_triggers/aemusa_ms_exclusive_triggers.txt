@@ -1,0 +1,235 @@
+# AWP-06/07：国家账本是进度来源，目标只负责定位；首版逐个处理三个资源节点。
+aemusa_ms_exclusive_context = {
+	aemusa_ms_country_has_nearest_legal_story_entry = yes
+	has_country_flag = aemusa_ms_country_chapter_10_completed
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+	has_country_flag = aemusa_ms_country_investigation_joint_response_authorized
+	NOT = {
+		has_country_flag = aemusa_ms_crisis_exclusive_irreversible_failure
+	}
+}
+aemusa_ms_exclusive_active = {
+	has_country_flag = aemusa_ms_crisis_exclusive_initialized
+	NOT = {
+		has_country_flag = aemusa_ms_crisis_exclusive_completed
+	}
+}
+# 行星作用域：只允许一个普通轨道矿藏，无人口和特殊遗址；不改造首都。
+aemusa_ms_anchor_host_eligible = {
+	is_colony = no
+	colonizable_planet = no
+	is_star = no
+	has_anomaly = no
+	NOT = {
+		exists = archaeological_site
+	}
+	NOT = {
+		is_planet_class = pc_habitat
+	}
+	NOT = {
+		has_planet_flag = aemusa_ms_anchor_used
+	}
+	num_deposits = 1
+	OR = {
+		has_deposit = d_minerals_1
+		has_deposit = d_minerals_2
+		has_deposit = d_minerals_3
+		has_deposit = d_minerals_4
+		has_deposit = d_minerals_5
+		has_deposit = d_energy_1
+		has_deposit = d_energy_2
+		has_deposit = d_energy_3
+		has_deposit = d_energy_4
+		has_deposit = d_energy_5
+	}
+	solar_system = {
+		is_capital_system = no
+		NOT = {
+			has_star_flag = aemusa_ms_anchor_system_used
+		}
+	}
+}
+# 星系作用域：拥有与控制一致才可部署；与巨构占领判定采用同一原版接口。
+aemusa_ms_anchor_system_controlled = {
+	exists = starbase
+	starbase = {
+		owner = {
+			is_same_value = event_target:aemusa_ms_crisis_route_owner
+		}
+		controller = {
+			is_same_value = event_target:aemusa_ms_crisis_route_owner
+		}
+	}
+}
+aemusa_ms_has_anchor_candidate = {
+	any_system_within_border = {
+		aemusa_ms_anchor_system_controlled = yes
+		any_system_planet = {
+			aemusa_ms_anchor_host_eligible = yes
+		}
+	}
+}
+aemusa_ms_anchor_located = {
+	exists = event_target:aemusa_ms_current_anchor_target
+	event_target:aemusa_ms_current_anchor_target = {
+		has_planet_flag = aemusa_ms_anchor_active
+	}
+}
+aemusa_ms_anchor_controlled = {
+	aemusa_ms_anchor_located = yes
+	event_target:aemusa_ms_current_anchor_target = {
+		solar_system = {
+			aemusa_ms_anchor_system_controlled = yes
+		}
+	}
+}
+aemusa_ms_anchor_host_intact = {
+	aemusa_ms_anchor_located = yes
+	event_target:aemusa_ms_current_anchor_target = {
+		is_colony = no
+		OR = {
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_minerals_1
+				has_deposit = d_minerals_1
+			}
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_minerals_2
+				has_deposit = d_minerals_2
+			}
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_minerals_3
+				has_deposit = d_minerals_3
+			}
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_minerals_4
+				has_deposit = d_minerals_4
+			}
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_minerals_5
+				has_deposit = d_minerals_5
+			}
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_energy_1
+				has_deposit = d_energy_1
+			}
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_energy_2
+				has_deposit = d_energy_2
+			}
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_energy_3
+				has_deposit = d_energy_3
+			}
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_energy_4
+				has_deposit = d_energy_4
+			}
+			AND = {
+				has_planet_flag = aemusa_ms_anchor_energy_5
+				has_deposit = d_energy_5
+			}
+		}
+	}
+}
+aemusa_ms_anchor_can_stabilize = {
+	aemusa_ms_exclusive_context = yes
+	aemusa_ms_exclusive_active = yes
+	check_variable = {
+		which = aemusa_ms_country_anchor_stage
+		value = 30
+	}
+	NOT = {
+		check_variable = {
+			which = aemusa_ms_country_anchor_result
+			value = 1
+		}
+	}
+	aemusa_ms_anchor_controlled = yes
+	OR = {
+		aemusa_ms_anchor_host_intact = yes
+		check_variable = {
+			which = aemusa_ms_country_anchor_result
+			value = 2
+		}
+	}
+	aemusa_ms_flagship_at_current_anchor = yes
+	has_resource = {
+		type = energy
+		amount >= 200
+	}
+	has_resource = {
+		type = minerals
+		amount >= 100
+	}
+}
+aemusa_ms_anchor_window_valid = {
+	has_country_flag = aemusa_ms_country_anchor_stabilization_window
+	aemusa_ms_flagship_at_current_anchor = yes
+	aemusa_ms_anchor_controlled = yes
+}
+aemusa_ms_anchor_analysis_ready = {
+	# 失败节点也能勘查残余资料，不复原资源；否则失败会卡住后续危机。
+	check_variable = {
+		which = aemusa_ms_country_anchor_stage
+		value = 30
+	}
+	has_country_flag = aemusa_ms_country_anchor_battle_won
+	has_country_flag = aemusa_ms_country_anchor_field_evidence
+	has_country_flag = aemusa_ms_country_anchor_stabilization_recorded
+	aemusa_ms_anchor_window_valid = yes
+	aemusa_ms_baseline_operational = yes
+}
+aemusa_ms_anchor_can_engineer = {
+	aemusa_ms_exclusive_context = yes
+	aemusa_ms_exclusive_active = yes
+	check_variable = {
+		which = aemusa_ms_country_anchor_result
+		value = 0
+	}
+	aemusa_ms_anchor_host_intact = yes
+	aemusa_ms_anchor_analysis_ready = yes
+	check_variable = {
+		which = aemusa_ms_country_anchor_analysis_ticks
+		value >= 3
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_anchor_engineering_completed
+	}
+	NOT = {
+		has_special_project = AEMUSA_MS_ANCHOR_ENGINEERING
+	}
+}
+aemusa_ms_anchor_can_liberate = {
+	aemusa_ms_exclusive_context = yes
+	aemusa_ms_exclusive_active = yes
+	check_variable = {
+		which = aemusa_ms_country_anchor_result
+		value = 0
+	}
+	aemusa_ms_anchor_analysis_ready = yes
+	has_country_flag = aemusa_ms_country_anchor_engineering_completed
+	check_variable = {
+		which = aemusa_ms_country_anchor_analysis_ticks
+		value >= 3
+	}
+	aemusa_ms_anchor_host_intact = yes
+}
+# 全部三个载体都有真实战斗记录；未来重开仍由另一个选项独立执行。
+aemusa_ms_exclusive_can_reopen_future = {
+	aemusa_ms_exclusive_context = yes
+	aemusa_ms_exclusive_active = yes
+	check_variable = {
+		which = aemusa_ms_country_anchors_archived
+		value = 3
+	}
+	check_variable = {
+		which = aemusa_ms_country_projections_defeated
+		value = 3
+	}
+	has_country_flag = aemusa_ms_crisis_weakness_verified
+	aemusa_ms_baseline_operational = yes
+	aemusa_ms_flagship_at_current_anchor = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_exclusive_future_reopened
+	}
+}

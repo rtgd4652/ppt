@@ -41,6 +41,8 @@ destiny_lord = {
 	required_component_set = "station_large_aura_components"
 
 	potential_country = {
+		# 正式新路线只取得新旗舰；既有旧舰与复活逻辑保留。
+		NOT = { has_country_flag = aemusa_ms_country_route_initialized }
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
 		has_ascension_perk = ap_artifact_court_destiny
 	}

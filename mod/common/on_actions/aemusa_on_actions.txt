@@ -32,6 +32,7 @@ on_colonization_started = {
 on_ship_destroyed_victim = {
 	events = {
 		aemusa_destiny_lord.1
+		aemusa_flagship.1 # 新旗舰独立90日恢复；不复用旧舰的即时重建。
 	}
 }
 
@@ -40,6 +41,7 @@ on_monthly_pulse_country = {
 	events = {
 		aemusa_ms.600
 		aemusa_ms.601
+		aemusa_exclusive.2 # 只核对本路线当前锚点、舰船和现实基线枢纽。
 	}
 }
 
@@ -80,4 +82,20 @@ on_status_quo_forced = {
 	events = {
 		aemusa_ms.622
 	}
+}
+
+# 被摧毁投影所属国收到回调，事件筛选带唯一投影旗标的真实舰队。
+on_fleet_destroyed_victim = {
+	events = { aemusa_exclusive.3 }
+}
+
+# 任命完成后立即拒绝把爱缪莎绑定到可摧毁的新旗舰；不改她在普通舰队的任命。
+on_leader_assigned = {
+	events = { aemusa_flagship.3 }
+}
+on_fleet_combat_joined_attacker = {
+	events = { aemusa_flagship.4 }
+}
+on_fleet_combat_joined_defender = {
+	events = { aemusa_flagship.4 }
 }

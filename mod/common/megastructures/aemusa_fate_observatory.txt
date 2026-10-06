@@ -9,6 +9,8 @@ artifact_fate_observatory_0 = {
 	prerequisites = { "tech_artifact_fate_observatory" }
 	possible = {
 		from = {
+			# 只关闭基址新建，既有旧塔升级仍保留。
+			NOT = { has_country_flag = aemusa_ms_country_route_initialized }
 			owner_main_species = { is_species_class = "ARTIFACT_USER" }
 			NOT = { has_country_flag = artifact_fate_observatory_built }
 		}

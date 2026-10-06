@@ -1,0 +1,42 @@
+# 现实基线枢纽：独立管理实体与控制权，不将建设账本当作实际运行证明。
+# 星系作用域。对照 4.5.1 原版 treasure_planet 的空间站 controller/owner 判定。
+# 展开作用域写法以避免依赖外部 root，也不使用点号作用域。
+aemusa_ms_baseline_system_controlled = {
+	exists = starbase
+	starbase = {
+		exists = owner
+		exists = controller
+		controller = {
+			prev = {
+				owner = {
+					is_same_value = prevprev
+				}
+			}
+		}
+	}
+}
+
+# 国家作用域。实体检查补足建设开始旗与完工旗，防止并行重复建设。
+aemusa_ms_baseline_exists = {
+	any_owned_megastructure = {
+		OR = {
+			is_megastructure_type = aemusa_reality_baseline_0
+			is_megastructure_type = aemusa_reality_baseline_1
+		}
+	}
+}
+
+# 国家作用域。运行态仍归本国、星系仍归本国、空间站未被占领才提供新增解析。
+# prevprevprev 在此指向调用本接口的国家，而不是事件的外层 root。
+aemusa_ms_baseline_operational = {
+	any_owned_megastructure = {
+		is_megastructure_type = aemusa_reality_baseline_1
+		solar_system = {
+			exists = owner
+			owner = {
+				is_same_value = prevprevprev
+			}
+			aemusa_ms_baseline_system_controlled = yes
+		}
+	}
+}

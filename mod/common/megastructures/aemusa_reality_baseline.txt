@@ -1,0 +1,175 @@
+# 现实基线枢纽：新危机设施；与旧命运观测塔保持独立身份。
+# 两阶段均由玩家实际建造。当前借用原版实体，正式新模型在 1.0 交付前替换。
+aemusa_reality_baseline_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = {
+		x = 0
+		y = -20
+	}
+	build_time = 180
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 250
+			unity = 100
+		}
+		upkeep = {
+			energy = 5
+		}
+	}
+	potential = {
+		has_country_flag = aemusa_ms_country_baseline_authorized
+	}
+	possible = {
+		hidden_trigger = {
+			exists = starbase
+		}
+		custom_tooltip = {
+			fail_text = "aemusa_baseline_requires_control"
+			is_inside_border = from
+			aemusa_ms_baseline_system_controlled = yes
+		}
+		custom_tooltip = {
+			fail_text = "aemusa_baseline_requires_unique"
+			from = {
+				has_country_flag = aemusa_ms_country_baseline_authorized
+				NOR = {
+					has_country_flag = aemusa_ms_country_baseline_construction_started
+					has_country_flag = aemusa_ms_country_baseline_established
+					aemusa_ms_baseline_exists = yes
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+			NOT = {
+				any_system_planet = {
+					is_planet_class = pc_cosmogenesis_world
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_survey_not_habitable"
+				is_surveyed = {
+					who = prev.from
+					status = yes
+				}
+				colonizable_planet = no
+			}
+			custom_tooltip = {
+				fail_text = "aemusa_baseline_requires_safe_site"
+				NOR = {
+					is_star = yes
+					is_asteroid = yes
+					is_moon = yes
+					is_astral_scar = yes
+					is_ringworld = yes
+					has_anomaly = yes
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+				}
+				has_any_megastructure = no
+			}
+		}
+	}
+	on_build_start = {
+		from = {
+			set_country_flag = aemusa_ms_country_baseline_construction_started
+		}
+	}
+	on_build_cancel = {
+		from = {
+			if = {
+				limit = {
+					NOT = {
+						has_country_flag = aemusa_ms_country_baseline_established
+					}
+				}
+				remove_country_flag = aemusa_ms_country_baseline_construction_started
+			}
+		}
+	}
+	on_build_complete = {
+		fromfrom = {
+			planet = {
+				set_planet_flag = has_megastructure
+			}
+			save_global_event_target_as = aemusa_ms_megastructure_target
+		}
+		from = {
+			remove_country_flag = aemusa_ms_country_baseline_construction_started
+			set_country_flag = aemusa_ms_country_baseline_established
+			aemusa_ms_baseline_monthly_update = yes
+			log = "AEMUSA-MS|AWP-06|baseline_foundation_completed"
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
+
+aemusa_reality_baseline_1 = {
+	entity = "strategic_coordination_center_stage_1_entity"
+	construction_entity = "strategic_coordination_center_stage_1_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = {
+		x = 0
+		y = -20
+	}
+	build_time = 180
+	resources = {
+		category = megastructures
+		cost = {
+			alloys = 500
+			unity = 200
+		}
+		upkeep = {
+			energy = 10
+		}
+	}
+	upgrade_from = {
+		aemusa_reality_baseline_0
+	}
+	potential = {
+		has_country_flag = aemusa_ms_country_baseline_authorized
+	}
+	possible = {
+		custom_tooltip = {
+			fail_text = "aemusa_baseline_requires_control"
+			is_inside_border = from
+			aemusa_ms_baseline_system_controlled = yes
+		}
+	}
+	on_build_complete = {
+		fromfrom = {
+			save_global_event_target_as = aemusa_ms_megastructure_target
+		}
+		from = {
+			set_country_flag = aemusa_ms_country_baseline_established
+			aemusa_ms_baseline_monthly_update = yes
+			log = "AEMUSA-MS|AWP-06|baseline_operational_completed"
+		}
+	}
+	ai_weight = {
+		factor = 0
+	}
+}
