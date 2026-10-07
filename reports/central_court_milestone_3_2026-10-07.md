@@ -43,3 +43,9 @@
 存档、只读JSON／玩家块、当次日志和真实截图位于 `temp/central-court-runtime-20261007/`，不随Git提交；当前取消后档备份名为 `integration-cancelled-reloaded-2240`。先前接入档备份名为 `integration-first-2240`。日志备份 `ui-fixes-cold-game.log`／`ui-fixes-cold-error.log` 对应c7b4冷进程。
 
 下一项只验证研判三个有效月到结论及一次正常对策。若为了隔离测试提供原版军事情报报告与补给，明确标为受控前置，不直接写进度或结论。穿界、MIA实际返回、完整class对比、生命周期及数值平衡仍待必要定向检查；不扩大为全十人或1.0通过。
+
+体验修正和上述证据已提交为 `e65277b`。随后正常载回2240.02.24并保持暂停，自动控制台开关未响应，已请求用户手动输入下列原版报告／补给命令，当前尚无提交日志。它调用已有只读定位接口，不写研判进度、结论或主线；报告期限180日、军事二级，能源30000只用于隔离测试。收到执行回报后先核对日志，再运行正常三个有效月和一次对策，另存结果。
+
+```text
+effect cc_rebind = yes add_resource = { energy = 30000 } add_intel_report = { who = event_target:cc_analysis_target category = military level = 2 days = 180 } log = "CC_ANALYSIS_TEST_READY"
+```
