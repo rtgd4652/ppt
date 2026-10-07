@@ -47,8 +47,12 @@ aemusa_ms_country_has_nearest_legal_story_entry = {
 	NOT = {
 		has_country_flag = aemusa_ms_country_consistency_conflict_active
 	}
-	NOT = {
-		has_country_flag = aemusa_ms_country_story_v1_complete
+	# 已结局时保留只读结果入口；终章路由不会重开永久决定。
+	OR = {
+		NOT = {
+			has_country_flag = aemusa_ms_country_story_v1_complete
+		}
+		aemusa_ms_finale_context = yes
 	}
 }
 

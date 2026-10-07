@@ -46,6 +46,14 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
+				aemusa_ms_finale_context = yes
+			}
+			country_event = {
+				id = aemusa_finale.1
+			}
+		}
+		else_if = {
+			limit = {
 				has_country_flag = aemusa_ms_country_first_intervention_operation_pending
 			}
 			country_event = {

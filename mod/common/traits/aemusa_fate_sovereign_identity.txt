@@ -1,0 +1,17 @@
+# 完整成功路线的独立身份标记；保留原职业、经验、肖像阶段及既有特质。
+# 图标沿用已验证的原版 GFX，不附加与命运领域无关的数值能力。
+leader_trait_aemusa_fate_sovereign = {
+    icon = {
+        layer = {
+            icon = "GFX_leader_trait_intellectual"
+        }
+    }
+    cost = 0
+    initial = no
+    randomized = no
+    leader_class = {
+        commander
+        official
+        scientist
+    }
+}

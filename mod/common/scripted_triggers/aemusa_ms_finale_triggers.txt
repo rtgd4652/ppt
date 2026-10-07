@@ -1,0 +1,493 @@
+# 里程碑2终章入口：只读现有真实历史、基础等级、责任与分立决定。
+aemusa_ms_finale_context = {
+	is_ai = no
+	has_country_flag = aemusa_ms_country_route_initialized
+	check_variable = {
+		which = aemusa_ms_country_route_version_index
+		value = 1
+	}
+	exists = event_target:aemusa_leader
+	has_country_flag = aemusa_ms_country_chapter_13_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_13_done
+	event_target:aemusa_leader = {
+		has_leader_flag = aemusa_unique_leader
+		owner = {
+			is_same_value = root
+		}
+	}
+}
+aemusa_ms_finale_records_consistent = {
+	NOT = {
+		has_country_flag = aemusa_ms_country_consistency_conflict_active
+	}
+	aemusa_ms_country_has_valid_joint_decision_state = yes
+	aemusa_ms_country_has_valid_ending_state = yes
+	NOT = {
+		has_country_flag = aemusa_ms_crisis_exclusive_irreversible_failure
+	}
+}
+aemusa_ms_finale_active = {
+	aemusa_ms_finale_context = yes
+	aemusa_ms_finale_records_consistent = yes
+	OR = {
+		NOT = {
+			has_country_flag = aemusa_ms_country_story_v1_complete
+		}
+		AND = {
+			has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+			NOT = {
+				has_country_flag = aemusa_ms_country_epilogue_settled
+			}
+		}
+	}
+}
+aemusa_ms_finale_level_ready = {
+	event_target:aemusa_leader = {
+		has_base_skill >= 30
+	}
+}
+aemusa_ms_finale_history_ready = {
+	has_country_flag = aemusa_ms_country_chapter_00_completed
+	has_country_flag = aemusa_ms_country_chapter_01_completed
+	has_country_flag = aemusa_ms_country_chapter_02_completed
+	has_country_flag = aemusa_ms_country_chapter_03_completed
+	has_country_flag = aemusa_ms_country_chapter_04_completed
+	has_country_flag = aemusa_ms_country_chapter_05_completed
+	has_country_flag = aemusa_ms_country_chapter_06_completed
+	has_country_flag = aemusa_ms_country_chapter_07_completed
+	has_country_flag = aemusa_ms_country_chapter_08_completed
+	has_country_flag = aemusa_ms_country_chapter_09_completed
+	has_country_flag = aemusa_ms_country_chapter_10_completed
+	has_country_flag = aemusa_ms_country_chapter_11_completed
+	has_country_flag = aemusa_ms_country_chapter_12_completed
+	has_country_flag = aemusa_ms_country_chapter_13_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_00_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_01_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_02_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_03_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_04_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_05_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_06_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_07_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_08_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_09_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_10_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_11_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_12_done
+	has_country_flag = aemusa_ms_country_settlement_chapter_13_done
+	has_country_flag = aemusa_ms_country_history_fallen_empire_war_settled
+}
+aemusa_ms_finale_crises_ready = {
+	has_country_flag = aemusa_ms_country_history_vanilla_crisis_settled
+	has_country_flag = aemusa_ms_crisis_exclusive_completed
+	has_country_flag = aemusa_ms_crisis_exclusive_settled
+	has_country_flag = aemusa_ms_country_exclusive_future_reopened
+}
+aemusa_ms_finale_responsibility_ready = {
+	has_country_flag = aemusa_ms_country_investigation_rights_protected
+	has_country_flag = aemusa_ms_country_investigation_player_support_confirmed
+	has_country_flag = aemusa_ms_country_investigation_joint_response_authorized
+	check_variable = {
+		which = aemusa_ms_country_investigation_aemusa_decision_index
+		value = 1
+	}
+	NOT = {
+		aemusa_ms_country_investigation_needs_repair = yes
+	}
+	OR = {
+		NOT = {
+			has_country_flag = aemusa_ms_country_responsibility_repair_required
+		}
+		has_country_flag = aemusa_ms_country_responsibility_repair_completed
+	}
+}
+aemusa_ms_finale_truth_ready = {
+	has_country_flag = aemusa_ms_truth_civilization_facts_settled
+	has_country_flag = aemusa_ms_truth_fate_is_impersonal_confirmed
+	has_country_flag = aemusa_ms_truth_boundary_layers_locked
+	has_country_flag = aemusa_ms_truth_open_mysteries_locked
+	has_country_flag = aemusa_ms_truth_world_difference_mutually_confirmed
+	has_country_flag = aemusa_ms_truth_player_continuity_mutually_confirmed
+}
+aemusa_ms_finale_all_gates_ready = {
+	aemusa_ms_finale_active = yes
+	aemusa_ms_finale_history_ready = yes
+	aemusa_ms_finale_crises_ready = yes
+	aemusa_ms_finale_truth_ready = yes
+	aemusa_ms_finale_level_ready = yes
+	aemusa_ms_finale_responsibility_ready = yes
+	has_country_flag = aemusa_ms_country_chapter_14_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_14_done
+	has_country_flag = aemusa_ms_country_responsibility_final_review_completed
+}
+aemusa_ms_finale_can_train = {
+	aemusa_ms_finale_active = yes
+	NOT = {
+		aemusa_ms_finale_level_ready = yes
+	}
+	NOT = {
+		has_country_flag = aemusa_ms_country_finale_training_pending
+	}
+	OR = {
+		check_variable = {
+			which = aemusa_ms_country_chapter_index
+			value = 14
+		}
+		check_variable = {
+			which = aemusa_ms_country_chapter_index
+			value = 15
+		}
+	}
+	resource_stockpile_compare = {
+		resource = unity
+		value >= 500
+	}
+	resource_stockpile_compare = {
+		resource = energy
+		value >= 200
+	}
+}
+aemusa_ms_finale_can_enter_14_00 = {
+	aemusa_ms_finale_active = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 14
+	}
+	aemusa_ms_finale_crises_ready = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_14_00_settled
+	}
+}
+aemusa_ms_finale_can_enter_14_10 = {
+	aemusa_ms_finale_active = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 14
+	}
+	aemusa_ms_finale_crises_ready = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_14_10_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_14_00_settled
+}
+aemusa_ms_finale_can_enter_14_20 = {
+	aemusa_ms_finale_active = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 14
+	}
+	aemusa_ms_finale_crises_ready = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_14_20_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_14_10_settled
+}
+aemusa_ms_finale_can_enter_14_30 = {
+	aemusa_ms_finale_active = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 14
+	}
+	aemusa_ms_finale_crises_ready = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_14_30_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_14_20_settled
+	aemusa_ms_finale_level_ready = yes
+	aemusa_ms_finale_responsibility_ready = yes
+}
+aemusa_ms_finale_player_undecided = {
+	aemusa_ms_finale_all_gates_ready = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 15
+	}
+	OR = {
+		NOT = {
+			is_variable_set = aemusa_ms_decision_joint_state_index
+		}
+		check_variable = {
+			which = aemusa_ms_decision_joint_state_index
+			value = 0
+		}
+		check_variable = {
+			which = aemusa_ms_decision_joint_state_index
+			value = 1
+		}
+	}
+	NOR = {
+		has_country_flag = aemusa_ms_decision_player_authorized
+		has_country_flag = aemusa_ms_decision_player_refused
+		has_country_flag = aemusa_ms_decision_aemusa_accepted
+		has_country_flag = aemusa_ms_decision_aemusa_refused
+	}
+}
+aemusa_ms_finale_no_ending = {
+	NOT = {
+		has_country_flag = aemusa_ms_country_story_v1_complete
+	}
+	NOR = {
+		has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+		has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+		has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+	}
+}
+aemusa_ms_finale_can_enter_15_00 = {
+	aemusa_ms_finale_active = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 15
+	}
+	has_country_flag = aemusa_ms_country_chapter_14_completed
+	aemusa_ms_finale_level_ready = yes
+	aemusa_ms_finale_history_ready = yes
+	aemusa_ms_finale_crises_ready = yes
+	aemusa_ms_finale_truth_ready = yes
+	aemusa_ms_finale_responsibility_ready = yes
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_15_00_settled
+	}
+}
+aemusa_ms_finale_can_enter_15_10 = {
+	aemusa_ms_finale_all_gates_ready = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 15
+	}
+	OR = {
+		NOT = {
+			is_variable_set = aemusa_ms_decision_joint_state_index
+		}
+		check_variable = {
+			which = aemusa_ms_decision_joint_state_index
+			value = 0
+		}
+		check_variable = {
+			which = aemusa_ms_decision_joint_state_index
+			value = 1
+		}
+	}
+	NOR = {
+		has_country_flag = aemusa_ms_decision_player_authorized
+		has_country_flag = aemusa_ms_decision_player_refused
+		has_country_flag = aemusa_ms_decision_aemusa_accepted
+		has_country_flag = aemusa_ms_decision_aemusa_refused
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_15_00_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_15_10_settled
+	}
+}
+aemusa_ms_finale_can_enter_15_20 = {
+	aemusa_ms_finale_all_gates_ready = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 15
+	}
+	OR = {
+		NOT = {
+			is_variable_set = aemusa_ms_decision_joint_state_index
+		}
+		check_variable = {
+			which = aemusa_ms_decision_joint_state_index
+			value = 0
+		}
+		check_variable = {
+			which = aemusa_ms_decision_joint_state_index
+			value = 1
+		}
+	}
+	NOR = {
+		has_country_flag = aemusa_ms_decision_player_authorized
+		has_country_flag = aemusa_ms_decision_player_refused
+		has_country_flag = aemusa_ms_decision_aemusa_accepted
+		has_country_flag = aemusa_ms_decision_aemusa_refused
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_15_10_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_15_20_settled
+	}
+}
+aemusa_ms_finale_can_enter_15_30 = {
+	aemusa_ms_finale_all_gates_ready = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 15
+	}
+	check_variable = {
+		which = aemusa_ms_decision_joint_state_index
+		value = 3
+	}
+	has_country_flag = aemusa_ms_decision_player_authorized
+	has_country_flag = aemusa_ms_country_cluster_aed_15_20_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_15_30_settled
+	}
+	NOR = {
+		has_country_flag = aemusa_ms_decision_player_refused
+		has_country_flag = aemusa_ms_decision_aemusa_accepted
+		has_country_flag = aemusa_ms_decision_aemusa_refused
+	}
+}
+aemusa_ms_finale_can_enter_15_40 = {
+	aemusa_ms_finale_all_gates_ready = yes
+	check_variable = {
+		which = aemusa_ms_decision_joint_state_index
+		value = 5
+	}
+	has_country_flag = aemusa_ms_decision_player_authorized
+	has_country_flag = aemusa_ms_decision_aemusa_accepted
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 15
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_15_30_settled
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_15_40_settled
+	}
+}
+aemusa_ms_finale_can_enter_nt_10 = {
+	aemusa_ms_finale_active = yes
+	aemusa_ms_finale_no_ending = yes
+	check_variable = {
+		which = aemusa_ms_decision_joint_state_index
+		value = 2
+	}
+	has_country_flag = aemusa_ms_decision_player_refused
+	has_country_flag = aemusa_ms_country_cluster_aed_15_20_settled
+}
+aemusa_ms_finale_can_enter_nt_20 = {
+	aemusa_ms_finale_active = yes
+	aemusa_ms_finale_no_ending = yes
+	check_variable = {
+		which = aemusa_ms_decision_joint_state_index
+		value = 4
+	}
+	has_country_flag = aemusa_ms_decision_player_authorized
+	has_country_flag = aemusa_ms_decision_aemusa_refused
+	has_country_flag = aemusa_ms_country_cluster_aed_15_30_settled
+}
+aemusa_ms_finale_can_enter_16_00 = {
+	aemusa_ms_finale_all_gates_ready = yes
+	check_variable = {
+		which = aemusa_ms_decision_joint_state_index
+		value = 5
+	}
+	has_country_flag = aemusa_ms_decision_player_authorized
+	has_country_flag = aemusa_ms_decision_aemusa_accepted
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 16
+	}
+	has_country_flag = aemusa_ms_country_chapter_15_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_15_done
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_16_00_settled
+	}
+}
+aemusa_ms_finale_can_enter_16_10 = {
+	aemusa_ms_finale_all_gates_ready = yes
+	check_variable = {
+		which = aemusa_ms_decision_joint_state_index
+		value = 5
+	}
+	has_country_flag = aemusa_ms_decision_player_authorized
+	has_country_flag = aemusa_ms_decision_aemusa_accepted
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 16
+	}
+	has_country_flag = aemusa_ms_country_chapter_15_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_15_done
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_16_10_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_16_00_settled
+	aemusa_ms_finale_no_ending = yes
+}
+aemusa_ms_finale_can_enter_16_20 = {
+	aemusa_ms_finale_all_gates_ready = yes
+	check_variable = {
+		which = aemusa_ms_decision_joint_state_index
+		value = 5
+	}
+	has_country_flag = aemusa_ms_decision_player_authorized
+	has_country_flag = aemusa_ms_decision_aemusa_accepted
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 16
+	}
+	has_country_flag = aemusa_ms_country_chapter_15_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_15_done
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_16_20_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_16_10_settled
+	has_country_flag = aemusa_ms_country_fate_sovereign_authority_active
+	has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+}
+aemusa_ms_finale_can_enter_16_30 = {
+	aemusa_ms_finale_all_gates_ready = yes
+	check_variable = {
+		which = aemusa_ms_decision_joint_state_index
+		value = 5
+	}
+	has_country_flag = aemusa_ms_decision_player_authorized
+	has_country_flag = aemusa_ms_decision_aemusa_accepted
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 16
+	}
+	has_country_flag = aemusa_ms_country_chapter_15_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_15_done
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_16_30_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_16_20_settled
+	has_country_flag = aemusa_ms_country_fate_sovereign_authority_active
+	has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+}
+aemusa_ms_finale_can_enter_epi_00 = {
+	aemusa_ms_finale_active = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 17
+	}
+	has_country_flag = aemusa_ms_country_chapter_16_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_16_done
+	has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+	has_country_flag = aemusa_ms_country_fate_sovereign_authority_active
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_epi_00_settled
+	}
+}
+aemusa_ms_finale_can_enter_epi_10 = {
+	aemusa_ms_finale_active = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 17
+	}
+	has_country_flag = aemusa_ms_country_chapter_16_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_16_done
+	has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+	has_country_flag = aemusa_ms_country_fate_sovereign_authority_active
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_epi_10_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_epi_00_settled
+}
+aemusa_ms_finale_can_enter_epi_20 = {
+	aemusa_ms_finale_active = yes
+	check_variable = {
+		which = aemusa_ms_country_chapter_index
+		value = 17
+	}
+	has_country_flag = aemusa_ms_country_chapter_16_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_16_done
+	has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+	has_country_flag = aemusa_ms_country_fate_sovereign_authority_active
+	NOT = {
+		has_country_flag = aemusa_ms_country_cluster_aed_epi_20_settled
+	}
+	has_country_flag = aemusa_ms_country_cluster_aed_epi_10_settled
+}

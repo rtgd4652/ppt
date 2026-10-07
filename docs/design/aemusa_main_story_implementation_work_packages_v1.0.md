@@ -20,9 +20,13 @@ awp_06_status: "playable_main_flow_and_key_risks_pass"
 awp_06_implementation_authorized: true
 awp_07_status: "playable_main_flow_and_key_risks_pass"
 awp_07_implementation_authorized: true
-current_milestone: "exclusive_crisis_playable"
-current_milestone_scope: "new_flagship_new_megastructure_finite_anchors_chapters_11_13"
-current_milestone_status: "completed_playable_runtime_pass"
+awp_08_implementation_authorized: true
+awp_08_status: "implemented_static_pass_runtime_pending"
+awp_09_implementation_authorized: true
+awp_09_status: "implemented_static_pass_runtime_pending"
+current_milestone: "aemusa_story_complete"
+current_milestone_scope: "chapters_14_16_three_endings_level_catch_up_epilogue"
+current_milestone_status: "implemented_static_pass_runtime_pending"
 last_updated: "2026-10-07"
 ---
 
@@ -553,3 +557,7 @@ AWP-06/07首版代码、静态及60项工具检查已有通过记录。4.5.1正�
 结合既有正常三节点闭环、两阶段巨构、完成档读回、旗舰缺失后的90日免费唯一重建、枢纽真实占领暂停／恢复证据，AWP-06/07满足第41节轻量标准，状态为 `playable_main_flow_and_key_risks_pass`。前两个候选矿藏、隔离补给、摧毁旗舰及占领战争为受控测试，不冒称完全自然游玩或战斗摧毁回调已实测。正式新模型、平衡和全Mod兼容及发布回归仍留在后续里程碑。
 
 临时屏幕边缘平移已恢复为开；游戏载回无测试战争的正常完成档，2238.07.10保持暂停。下一步只确认里程碑2范围一次，尚未实施第十四章以后，不重复里程碑1检查。证据及受控边界见[验收记录](../../reports/aemusa_main_story_milestone_1_2026-10-07.md)。
+
+## 46. 2026-10-07 里程碑2开始与首版实现
+
+用户在里程碑1收尾和下一步范围公布后回复“继续”，据此接续AWP-08/09。已写第十四至十六章、两种永久拒绝结局、成功身份、历史尾声、分期研修与白夜馆最近入口。玩家授权、角色回应、双重确认和身份成立独立结算；首版自主回应规则暂按明示谈话立场与既有责任共同判断，未把尚无回复的文本偏好问题记作专项剧情批准。静态及65项工具检查通过，实际运行尚待验收。详见[实施说明](aemusa_main_story_milestone_2_implementation.md)和[当日记录](../../reports/aemusa_main_story_milestone_2_2026-10-07.md)。

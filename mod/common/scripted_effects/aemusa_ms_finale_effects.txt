@@ -1,0 +1,168 @@
+# 里程碑2唯一写接口：研修与资格归档不授予终局身份或双方决定。
+aemusa_ms_finale_refresh_gates = {
+	if = {
+		limit = {
+			aemusa_ms_finale_context = yes
+		}
+		if = {
+			limit = {
+				aemusa_ms_finale_level_ready = yes
+			}
+			set_country_flag = aemusa_ms_country_final_gate_level_30_met
+		}
+		if = {
+			limit = {
+				aemusa_ms_finale_history_ready = yes
+			}
+			set_country_flag = aemusa_ms_country_final_gate_history_complete
+		}
+		if = {
+			limit = {
+				aemusa_ms_finale_crises_ready = yes
+			}
+			set_country_flag = aemusa_ms_country_final_gate_crises_complete
+		}
+		if = {
+			limit = {
+				aemusa_ms_finale_truth_ready = yes
+			}
+			set_country_flag = aemusa_ms_country_final_gate_truth_complete
+		}
+		if = {
+			limit = {
+				aemusa_ms_finale_responsibility_ready = yes
+				has_country_flag = aemusa_ms_country_responsibility_final_review_completed
+			}
+			set_country_flag = aemusa_ms_country_final_gate_responsibility_complete
+		}
+		if = {
+			limit = {
+				aemusa_ms_finale_all_gates_ready = yes
+			}
+			set_country_flag = aemusa_ms_country_final_gate_all_met
+		}
+	}
+}
+aemusa_ms_finale_start_training = {
+	if = {
+		limit = {
+			aemusa_ms_finale_can_train = yes
+		}
+		add_resource = {
+			unity = -500
+		}
+		add_resource = {
+			energy = -200
+		}
+		set_country_flag = aemusa_ms_country_finale_training_pending
+		set_timed_country_flag = {
+			flag = aemusa_ms_country_finale_training_time_remaining
+			days = 180
+		}
+		country_event = {
+			id = aemusa_finale.5
+			days = 180
+		}
+		log = "AEMUSA-MS|AWP-08|training_started"
+	}
+}
+aemusa_ms_finale_finish_training_if_due = {
+	if = {
+		limit = {
+			has_country_flag = aemusa_ms_country_finale_training_pending
+			NOT = {
+				has_country_flag = aemusa_ms_country_finale_training_time_remaining
+			}
+		}
+		remove_country_flag = aemusa_ms_country_finale_training_pending
+		if = {
+			limit = {
+				aemusa_ms_finale_active = yes
+				NOT = {
+					aemusa_ms_finale_level_ready = yes
+				}
+				OR = {
+					check_variable = {
+						which = aemusa_ms_country_chapter_index
+						value = 14
+					}
+					check_variable = {
+						which = aemusa_ms_country_chapter_index
+						value = 15
+					}
+				}
+			}
+			event_target:aemusa_leader = {
+				add_skill = 1
+			}
+			log = "AEMUSA-MS|AWP-08|training_completed"
+		}
+		if = {
+			limit = {
+				aemusa_ms_finale_context = yes
+				aemusa_ms_finale_level_ready = yes
+			}
+			event_target:aemusa_leader = {
+				set_leader_flag = aemusa_level_30_portrait
+				aemusa_refresh_portrait = yes
+			}
+		}
+	}
+}
+aemusa_ms_finale_resolve_aemusa_once = {
+	if = {
+		limit = {
+			aemusa_ms_finale_can_enter_15_30 = yes
+		}
+		aemusa_ms_begin_story_cluster = {
+			STARTED_FLAG = aemusa_ms_country_cluster_aed_15_30_started
+			IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_30_in_progress
+			COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_30_completed
+			SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_30_settled
+			SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_30_done
+		}
+		if = {
+			limit = {
+				check_variable = {
+					which = aemusa_ms_country_finale_authority_intent_index
+					value = 2
+				}
+			}
+			set_country_flag = aemusa_ms_decision_aemusa_refused
+			set_variable = {
+				which = aemusa_ms_decision_joint_state_index
+				value = 4
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_15_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_30_done
+			}
+			log = "AEMUSA-MS|AWP-08|aemusa_refused"
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = aemusa_ms_country_finale_authority_intent_index
+					value = 1
+				}
+				aemusa_ms_finale_responsibility_ready = yes
+			}
+			set_country_flag = aemusa_ms_decision_aemusa_accepted
+			set_variable = {
+				which = aemusa_ms_decision_joint_state_index
+				value = 5
+			}
+			aemusa_ms_finalize_story_cluster_once = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_15_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_30_done
+			}
+			log = "AEMUSA-MS|AWP-08|aemusa_accepted"
+		}
+	}
+}

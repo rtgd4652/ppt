@@ -912,6 +912,22 @@ country_event = {
 	option = {
 		name = aemusa_exclusive.90.close
 	}
+	option = {
+		name = aemusa_finale.90.begin
+		trigger = {
+			aemusa_ms_finale_context = yes
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_context = yes
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
 }
 ship_event = {
 	id = aemusa_exclusive.101

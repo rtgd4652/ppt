@@ -438,7 +438,8 @@ aemusa_ms_country_has_valid_ending_state = {
 				}
 			}
 		}
-		# 任一正式结局都必须同步形成路线完成事实。
+		# 非转变结局立即完成路线；成功身份成立后仍须完成第十六章关系与收束。
+		# 仅允许有真实身份结算来源的第十六章进行态暂未写入路线完成。
 		AND = {
 			OR = {
 				has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
@@ -446,6 +447,16 @@ aemusa_ms_country_has_valid_ending_state = {
 				has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
 			}
 			NOT = { has_country_flag = aemusa_ms_country_story_v1_complete }
+			NOT = {
+				AND = {
+					has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+					has_country_flag = aemusa_ms_country_fate_sovereign_authority_active
+					has_country_flag = aemusa_ms_country_cluster_aed_16_10_settled
+					has_country_flag = aemusa_ms_country_settlement_aed_16_10_done
+					check_variable = { which = aemusa_ms_country_chapter_index value = 16 }
+					NOT = { has_country_flag = aemusa_ms_country_chapter_16_completed }
+				}
+			}
 		}
 	}
 }

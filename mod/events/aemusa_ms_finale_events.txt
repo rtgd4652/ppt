@@ -1,0 +1,1645 @@
+# 里程碑2终章、三种结局与尾声；关闭窗口不构成授权。
+namespace = aemusa_finale
+country_event = {
+	id = aemusa_finale.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		aemusa_ms_finale_context = yes
+	}
+	immediate = {
+		aemusa_ms_finale_finish_training_if_due = yes
+		aemusa_ms_finale_refresh_gates = yes
+		if = {
+			limit = {
+				NOT = {
+					aemusa_ms_finale_records_consistent = yes
+				}
+			}
+			country_event = {
+				id = aemusa_finale.2
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_14_00 = yes
+			}
+			country_event = {
+				id = aemusa_finale.10
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_14_10 = yes
+			}
+			country_event = {
+				id = aemusa_finale.20
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_14_20 = yes
+			}
+			country_event = {
+				id = aemusa_finale.30
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_14_30 = yes
+			}
+			country_event = {
+				id = aemusa_finale.40
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = aemusa_ms_country_story_v1_complete
+				has_country_flag = aemusa_ms_country_epilogue_settled
+			}
+			country_event = {
+				id = aemusa_finale.200
+			}
+		}
+		else_if = {
+			limit = {
+				has_country_flag = aemusa_ms_country_story_v1_complete
+				OR = {
+					has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+					has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+				}
+			}
+			country_event = {
+				id = aemusa_finale.200
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_nt_10 = yes
+			}
+			country_event = {
+				id = aemusa_finale.100
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_nt_20 = yes
+			}
+			country_event = {
+				id = aemusa_finale.110
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_15_00 = yes
+			}
+			country_event = {
+				id = aemusa_finale.50
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_15_10 = yes
+			}
+			country_event = {
+				id = aemusa_finale.60
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_15_20 = yes
+			}
+			country_event = {
+				id = aemusa_finale.70
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_15_30 = yes
+			}
+			country_event = {
+				id = aemusa_finale.75
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_15_40 = yes
+			}
+			country_event = {
+				id = aemusa_finale.90
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_16_00 = yes
+			}
+			country_event = {
+				id = aemusa_finale.120
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_16_10 = yes
+			}
+			country_event = {
+				id = aemusa_finale.130
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_16_20 = yes
+			}
+			country_event = {
+				id = aemusa_finale.140
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_16_30 = yes
+			}
+			country_event = {
+				id = aemusa_finale.150
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_epi_00 = yes
+			}
+			country_event = {
+				id = aemusa_finale.160
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_epi_10 = yes
+			}
+			country_event = {
+				id = aemusa_finale.170
+			}
+		}
+		else_if = {
+			limit = {
+				aemusa_ms_finale_can_enter_epi_20 = yes
+			}
+			country_event = {
+				id = aemusa_finale.180
+			}
+		}
+		else = {
+			country_event = {
+				id = aemusa_finale.3
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.2
+	title = aemusa_finale.2.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_context = yes
+	}
+	desc = aemusa_finale.2.desc
+	option = {
+		name = aemusa_finale.2.close
+		default_hide_option = yes
+	}
+}
+country_event = {
+	id = aemusa_finale.3
+	title = aemusa_finale.3.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_context = yes
+	}
+	desc = {
+		trigger = {
+			has_country_flag = aemusa_ms_country_finale_training_pending
+		}
+		text = aemusa_finale.3.training
+	}
+	desc = {
+		trigger = {
+			NOT = {
+				aemusa_ms_finale_level_ready = yes
+			}
+			NOT = {
+				has_country_flag = aemusa_ms_country_finale_training_pending
+			}
+		}
+		text = aemusa_finale.3.level
+	}
+	desc = {
+		trigger = {
+			aemusa_ms_finale_level_ready = yes
+		}
+		text = aemusa_finale.3.ready
+	}
+	option = {
+		name = aemusa_finale.3.close
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.3.train
+		trigger = {
+			aemusa_ms_finale_active = yes
+			NOT = {
+				aemusa_ms_finale_level_ready = yes
+			}
+			NOT = {
+				has_country_flag = aemusa_ms_country_finale_training_pending
+			}
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_train = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_train = yes
+				}
+				aemusa_ms_finale_start_training = yes
+				country_event = {
+					id = aemusa_finale.3
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.5
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		aemusa_ms_finale_finish_training_if_due = yes
+	}
+}
+country_event = {
+	id = aemusa_finale.10
+	title = aemusa_finale.10.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_14_00 = yes
+	}
+	desc = aemusa_finale.10.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_14_00 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_14_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_14_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_14_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_14_00_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.10.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.10.review
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_14_00 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_14_00 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_14_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_14_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_14_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_14_00_done
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.20
+	title = aemusa_finale.20.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_14_10 = yes
+	}
+	desc = aemusa_finale.20.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_14_10 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_14_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_14_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_14_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_14_10_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.20.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.20.public
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_14_10 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_14_10 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_14_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_14_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_14_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_14_10_done
+				}
+				set_country_flag = aemusa_ms_truth_civilization_facts_settled
+				set_country_flag = aemusa_ms_truth_fate_is_impersonal_confirmed
+				set_variable = {
+					which = aemusa_ms_country_finale_disclosure_index
+					value = 1
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.20.bounded
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_14_10 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_14_10 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_14_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_14_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_14_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_14_10_done
+				}
+				set_country_flag = aemusa_ms_truth_civilization_facts_settled
+				set_country_flag = aemusa_ms_truth_fate_is_impersonal_confirmed
+				set_variable = {
+					which = aemusa_ms_country_finale_disclosure_index
+					value = 2
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.30
+	title = aemusa_finale.30.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_14_20 = yes
+	}
+	desc = aemusa_finale.30.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_14_20 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_14_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_14_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_14_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_14_20_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.30.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.30.boundaries
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_14_20 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_14_20 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_14_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_14_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_14_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_14_20_done
+				}
+				set_country_flag = aemusa_ms_truth_boundary_layers_locked
+				set_country_flag = aemusa_ms_truth_open_mysteries_locked
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.40
+	title = aemusa_finale.40.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_14_30 = yes
+	}
+	desc = aemusa_finale.40.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_14_30 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_14_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_14_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_14_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_14_30_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.40.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.40.recognize
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_14_30 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_14_30 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_14_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_14_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_14_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_14_30_done
+				}
+				set_country_flag = aemusa_ms_truth_world_difference_mutually_confirmed
+				set_country_flag = aemusa_ms_truth_player_continuity_mutually_confirmed
+				aemusa_ms_settle_chapter_once = {
+					LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_14_30_settled
+					EXPECTED_INDEX = 14
+					NEXT_INDEX = 15
+					CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_14_completed
+					CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_14_done
+				}
+				log = "AEMUSA-MS|AWP-08|chapter_14_completed"
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.50
+	title = aemusa_finale.50.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_15_00 = yes
+	}
+	desc = aemusa_finale.50.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_15_00 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_15_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_00_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.50.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.50.continue
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_15_00 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_15_00 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_15_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_00_done
+				}
+				set_country_flag = aemusa_ms_country_responsibility_final_review_completed
+				aemusa_ms_finale_refresh_gates = yes
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.90
+	title = aemusa_finale.90.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_15_40 = yes
+	}
+	desc = aemusa_finale.90.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_15_40 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_15_40_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_40_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_40_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_40_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_40_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.90.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.90.continue
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_15_40 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_15_40 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_15_40_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_40_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_40_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_40_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_40_done
+				}
+				aemusa_ms_settle_chapter_once = {
+					LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_40_settled
+					EXPECTED_INDEX = 15
+					NEXT_INDEX = 16
+					CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_15_completed
+					CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_15_done
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.120
+	title = aemusa_finale.120.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_16_00 = yes
+	}
+	desc = aemusa_finale.120.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_16_00 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_16_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_16_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_16_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_16_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_16_00_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.120.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.120.continue
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_16_00 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_16_00 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_16_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_16_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_16_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_16_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_16_00_done
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.130
+	title = aemusa_finale.130.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_16_10 = yes
+	}
+	desc = aemusa_finale.130.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_16_10 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_16_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_16_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_16_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_16_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_16_10_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.130.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.130.continue
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_16_10 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_16_10 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_16_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_16_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_16_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_16_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_16_10_done
+				}
+				set_country_flag = aemusa_ms_country_settlement_fate_sovereign_done
+				set_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+				set_country_flag = aemusa_ms_country_fate_sovereign_authority_active
+				event_target:aemusa_leader = {
+					set_leader_flag = aemusa_ms_leader_fate_sovereign
+					add_trait = leader_trait_aemusa_fate_sovereign
+				}
+				log = "AEMUSA-MS|AWP-08|fate_sovereign_established"
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.140
+	title = aemusa_finale.140.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_16_20 = yes
+	}
+	desc = aemusa_finale.140.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_16_20 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_16_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_16_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_16_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_16_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_16_20_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.140.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.140.continue
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_16_20 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_16_20 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_16_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_16_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_16_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_16_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_16_20_done
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.150
+	title = aemusa_finale.150.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_16_30 = yes
+	}
+	desc = aemusa_finale.150.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_16_30 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_16_30_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_16_30_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_16_30_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_16_30_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_16_30_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.150.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.150.continue
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_16_30 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_16_30 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_16_30_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_16_30_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_16_30_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_16_30_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_16_30_done
+				}
+				aemusa_ms_settle_chapter_once = {
+					LAST_CLUSTER_SETTLED_FLAG = aemusa_ms_country_cluster_aed_16_30_settled
+					EXPECTED_INDEX = 16
+					NEXT_INDEX = 17
+					CHAPTER_COMPLETED_FLAG = aemusa_ms_country_chapter_16_completed
+					CHAPTER_SETTLEMENT_FLAG = aemusa_ms_country_settlement_chapter_16_done
+				}
+				set_country_flag = aemusa_ms_country_story_v1_complete
+				set_variable = {
+					which = aemusa_ms_country_act_index
+					value = 6
+				}
+				set_country_flag = aemusa_ms_country_act_06_completed
+				set_country_flag = aemusa_ms_country_settlement_act_06_done
+				log = "AEMUSA-MS|AWP-08|chapter_16_completed"
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.170
+	title = aemusa_finale.170.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_epi_10 = yes
+	}
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_epi_10 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_epi_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_epi_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_epi_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_epi_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_epi_10_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.170.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.170.continue
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_epi_10 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_epi_10 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_epi_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_epi_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_epi_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_epi_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_epi_10_done
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+	desc = {
+		trigger = {
+			check_variable = {
+				which = aemusa_ms_country_epilogue_tone_index
+				value = 1
+			}
+		}
+		text = aemusa_finale.170.tone1
+	}
+	desc = {
+		trigger = {
+			check_variable = {
+				which = aemusa_ms_country_epilogue_tone_index
+				value = 2
+			}
+		}
+		text = aemusa_finale.170.tone2
+	}
+	desc = {
+		trigger = {
+			check_variable = {
+				which = aemusa_ms_country_epilogue_tone_index
+				value = 3
+			}
+		}
+		text = aemusa_finale.170.tone3
+	}
+}
+country_event = {
+	id = aemusa_finale.180
+	title = aemusa_finale.180.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_epi_20 = yes
+	}
+	desc = aemusa_finale.180.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_epi_20 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_epi_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_epi_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_epi_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_epi_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_epi_20_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.180.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.180.continue
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_epi_20 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_epi_20 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_epi_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_epi_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_epi_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_epi_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_epi_20_done
+				}
+				set_country_flag = aemusa_ms_country_epilogue_completed
+				set_country_flag = aemusa_ms_country_settlement_epilogue_chapter_done
+				set_country_flag = aemusa_ms_country_epilogue_settled
+				set_country_flag = aemusa_ms_country_settlement_epilogue_done
+				set_variable = {
+					which = aemusa_ms_country_chapter_index
+					value = 18
+				}
+				log = "AEMUSA-MS|AWP-09|epilogue_completed"
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.60
+	title = aemusa_finale.60.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_15_10 = yes
+	}
+	desc = aemusa_finale.60.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_15_10 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_15_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_10_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.60.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.60.possibilities
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_15_10 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_15_10 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_15_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_10_done
+				}
+				set_variable = {
+					which = aemusa_ms_country_finale_authority_intent_index
+					value = 1
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.60.certainty
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_15_10 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_15_10 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_15_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_10_done
+				}
+				set_variable = {
+					which = aemusa_ms_country_finale_authority_intent_index
+					value = 2
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.70
+	title = aemusa_finale.70.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_15_20 = yes
+	}
+	desc = aemusa_finale.70.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_15_20 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_15_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_20_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.70.defer
+		default_hide_option = yes
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_15_20 = yes
+				}
+				set_variable = {
+					which = aemusa_ms_decision_joint_state_index
+					value = 1
+				}
+				set_country_flag = aemusa_ms_country_pause_active
+				set_variable = {
+					which = aemusa_ms_country_pause_reason_index
+					value = 1
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.70.refuse
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_15_20 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_15_20 = yes
+				}
+				country_event = {
+					id = aemusa_finale.71
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.70.offer
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_15_20 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_15_20 = yes
+				}
+				country_event = {
+					id = aemusa_finale.72
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.71
+	title = aemusa_finale.71.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_15_20 = yes
+	}
+	desc = aemusa_finale.71.desc
+	option = {
+		name = aemusa_finale.71.back
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = {
+				id = aemusa_finale.1
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.71.refuse
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_15_20 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_15_20 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_15_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_20_done
+				}
+				set_country_flag = aemusa_ms_decision_player_refused
+				set_variable = {
+					which = aemusa_ms_decision_joint_state_index
+					value = 2
+				}
+				remove_country_flag = aemusa_ms_country_pause_active
+				set_variable = {
+					which = aemusa_ms_country_pause_reason_index
+					value = 0
+				}
+				log = "AEMUSA-MS|AWP-08|player_refused"
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.72
+	title = aemusa_finale.72.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_15_20 = yes
+	}
+	desc = aemusa_finale.72.desc
+	option = {
+		name = aemusa_finale.72.back
+		default_hide_option = yes
+		hidden_effect = {
+			country_event = {
+				id = aemusa_finale.1
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.72.authorize
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_15_20 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_15_20 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_15_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_15_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_15_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_15_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_15_20_done
+				}
+				set_country_flag = aemusa_ms_decision_player_authorized
+				set_variable = {
+					which = aemusa_ms_decision_joint_state_index
+					value = 3
+				}
+				remove_country_flag = aemusa_ms_country_pause_active
+				set_variable = {
+					which = aemusa_ms_country_pause_reason_index
+					value = 0
+				}
+				log = "AEMUSA-MS|AWP-08|player_authorized"
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.75
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		aemusa_ms_finale_can_enter_15_30 = yes
+	}
+	immediate = {
+		aemusa_ms_finale_resolve_aemusa_once = yes
+		if = {
+			limit = {
+				check_variable = {
+					which = aemusa_ms_decision_joint_state_index
+					value = 5
+				}
+			}
+			country_event = {
+				id = aemusa_finale.80
+			}
+		}
+		else_if = {
+			limit = {
+				check_variable = {
+					which = aemusa_ms_decision_joint_state_index
+					value = 4
+				}
+			}
+			country_event = {
+				id = aemusa_finale.110
+			}
+		}
+		else = {
+			country_event = {
+				id = aemusa_finale.2
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.80
+	title = aemusa_finale.80.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_all_gates_ready = yes
+		check_variable = {
+			which = aemusa_ms_decision_joint_state_index
+			value = 5
+		}
+		has_country_flag = aemusa_ms_decision_player_authorized
+		has_country_flag = aemusa_ms_decision_aemusa_accepted
+		check_variable = {
+			which = aemusa_ms_country_chapter_index
+			value = 15
+		}
+		has_country_flag = aemusa_ms_country_cluster_aed_15_30_settled
+	}
+	desc = aemusa_finale.80.desc
+	option = {
+		name = aemusa_finale.80.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.80.listen
+		hidden_effect = {
+			country_event = {
+				id = aemusa_finale.1
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.100
+	title = aemusa_finale.100.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_nt_10 = yes
+	}
+	desc = aemusa_finale.100.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_nt_10 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_nt_10_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_nt_10_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_nt_10_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_nt_10_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_nt_10_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.100.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.100.accept
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_nt_10 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_nt_10 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_nt_10_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_nt_10_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_nt_10_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_nt_10_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_nt_10_done
+				}
+				set_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+				set_country_flag = aemusa_ms_country_story_v1_complete
+				log = "AEMUSA-MS|AWP-08|non_transform_player_refusal_settled"
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.110
+	title = aemusa_finale.110.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_nt_20 = yes
+	}
+	desc = aemusa_finale.110.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_nt_20 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_nt_20_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_nt_20_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_nt_20_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_nt_20_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_nt_20_done
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.110.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.110.accept
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_nt_20 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_nt_20 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_nt_20_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_nt_20_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_nt_20_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_nt_20_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_nt_20_done
+				}
+				set_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+				set_country_flag = aemusa_ms_country_story_v1_complete
+				log = "AEMUSA-MS|AWP-08|non_transform_aemusa_refusal_settled"
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.160
+	title = aemusa_finale.160.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_can_enter_epi_00 = yes
+	}
+	desc = aemusa_finale.160.desc
+	immediate = {
+		if = {
+			limit = {
+				aemusa_ms_finale_can_enter_epi_00 = yes
+			}
+			aemusa_ms_begin_story_cluster = {
+				STARTED_FLAG = aemusa_ms_country_cluster_aed_epi_00_started
+				IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_epi_00_in_progress
+				COMPLETED_FLAG = aemusa_ms_country_cluster_aed_epi_00_completed
+				SETTLED_FLAG = aemusa_ms_country_cluster_aed_epi_00_settled
+				SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_epi_00_done
+			}
+			if = {
+				limit = {
+					OR = {
+						NOT = {
+							is_variable_set = aemusa_ms_country_epilogue_tone_index
+						}
+						check_variable = {
+							which = aemusa_ms_country_epilogue_tone_index
+							value = 0
+						}
+					}
+				}
+				if = {
+					limit = {
+						check_variable = {
+							which = aemusa_ms_country_civilization_responsibility_radius_index
+							value = 2
+						}
+						check_variable = {
+							which = aemusa_ms_country_finale_disclosure_index
+							value = 1
+						}
+					}
+					set_variable = {
+						which = aemusa_ms_country_epilogue_tone_index
+						value = 2
+					}
+				}
+				else_if = {
+					limit = {
+						check_variable = {
+							which = aemusa_ms_country_first_intervention_decision_index
+							value = 3
+						}
+					}
+					set_variable = {
+						which = aemusa_ms_country_epilogue_tone_index
+						value = 3
+					}
+				}
+				else = {
+					set_variable = {
+						which = aemusa_ms_country_epilogue_tone_index
+						value = 1
+					}
+				}
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.160.later
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.160.continue
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_finale.requirements
+				aemusa_ms_finale_can_enter_epi_00 = yes
+			}
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					aemusa_ms_finale_can_enter_epi_00 = yes
+				}
+				aemusa_ms_finalize_story_cluster_once = {
+					STARTED_FLAG = aemusa_ms_country_cluster_aed_epi_00_started
+					IN_PROGRESS_FLAG = aemusa_ms_country_cluster_aed_epi_00_in_progress
+					COMPLETED_FLAG = aemusa_ms_country_cluster_aed_epi_00_completed
+					SETTLED_FLAG = aemusa_ms_country_cluster_aed_epi_00_settled
+					SETTLEMENT_FLAG = aemusa_ms_country_settlement_aed_epi_00_done
+				}
+				country_event = {
+					id = aemusa_finale.1
+				}
+			}
+		}
+	}
+}
+country_event = {
+	id = aemusa_finale.200
+	title = aemusa_finale.200.title
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	trigger = {
+		aemusa_ms_finale_context = yes
+	}
+	desc = {
+		trigger = {
+			has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+		}
+		text = aemusa_finale.200.player
+	}
+	desc = {
+		trigger = {
+			has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+		}
+		text = aemusa_finale.200.aemusa
+	}
+	desc = {
+		trigger = {
+			has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+		}
+		text = aemusa_finale.200.sovereign
+	}
+	option = {
+		name = aemusa_finale.200.close
+		default_hide_option = yes
+	}
+}
