@@ -61,12 +61,29 @@ aemusa_ms_anchor_system_controlled = {
 		}
 	}
 }
+# 星系→路线国家→旗舰舰队；prevprev 始终指向待核对星系。
+# 原版 can_access_system 使用实际航路，放在廉价资格检查之后。
+aemusa_ms_anchor_system_reachable = {
+	event_target:aemusa_ms_crisis_route_owner = {
+		any_owned_fleet = {
+			has_fleet_flag = aemusa_reality_flagship
+			can_access_system = prevprev
+		}
+	}
+}
+aemusa_ms_anchor_reachable = {
+	aemusa_ms_anchor_located = yes
+	event_target:aemusa_ms_current_anchor_target = {
+		solar_system = { aemusa_ms_anchor_system_reachable = yes }
+	}
+}
 aemusa_ms_has_anchor_candidate = {
 	any_system_within_border = {
 		aemusa_ms_anchor_system_controlled = yes
 		any_system_planet = {
 			aemusa_ms_anchor_host_eligible = yes
 		}
+		aemusa_ms_anchor_system_reachable = yes
 	}
 }
 aemusa_ms_anchor_located = {

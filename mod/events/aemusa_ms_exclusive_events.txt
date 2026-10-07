@@ -303,6 +303,10 @@ country_event = {
 			OR = {
 				NOT = { aemusa_ms_anchor_host_intact = yes }
 				NOT = { aemusa_ms_anchor_controlled = yes }
+				AND = {
+					aemusa_ms_has_operational_flagship = yes
+					NOT = { aemusa_ms_anchor_reachable = yes }
+				}
 			}
 		}
 		custom_tooltip = aemusa_exclusive_relocate_hint
@@ -319,6 +323,10 @@ country_event = {
 					OR = {
 						NOT = { aemusa_ms_anchor_host_intact = yes }
 						NOT = { aemusa_ms_anchor_controlled = yes }
+						AND = {
+							aemusa_ms_has_operational_flagship = yes
+							NOT = { aemusa_ms_anchor_reachable = yes }
+						}
 					}
 				}
 				# 只撤销预警前的失效测量；不清除已用目标、公共进度或历史损失。
@@ -396,6 +404,7 @@ country_event = {
 			}
 			aemusa_ms_anchor_controlled = yes
 			aemusa_ms_anchor_host_intact = yes
+			aemusa_ms_anchor_reachable = yes
 			has_country_flag = aemusa_ms_country_anchor_baseline_recorded
 			has_country_flag = aemusa_ms_country_exclusive_laboratory_verified
 			has_country_flag = aemusa_ms_country_exclusive_public_response_ready
@@ -413,6 +422,7 @@ country_event = {
 					}
 					aemusa_ms_anchor_controlled = yes
 					aemusa_ms_anchor_host_intact = yes
+					aemusa_ms_anchor_reachable = yes
 					has_country_flag = aemusa_ms_country_anchor_baseline_recorded
 					has_country_flag = aemusa_ms_country_exclusive_laboratory_verified
 					has_country_flag = aemusa_ms_country_exclusive_public_response_ready

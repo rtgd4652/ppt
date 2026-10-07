@@ -45,6 +45,7 @@ class ExclusiveLedger(CrisisLedger):
     EXTERNAL_CONDITIONS = {
         "aemusa_ms_anchor_controlled", "aemusa_ms_flagship_at_current_anchor",
         "aemusa_ms_baseline_operational", "aemusa_ms_has_anchor_candidate",
+        "aemusa_ms_anchor_reachable", "aemusa_ms_has_operational_flagship",
     }
     EXTERNAL_EFFECTS = {
         "aemusa_ms_flagship_ensure_present", "aemusa_ms_flagship_monthly_update",
@@ -173,6 +174,34 @@ def active_anchor():
 
 
 class Awp06CrisisStateTests(unittest.TestCase):
+    def test_unreachable_pre_warning_target_can_relocate_but_recovery_cannot(self):
+        ledger = ExclusiveLedger()
+        ledger.effect("aemusa_ms_exclusive_initialize")
+        ledger.variables[PREFIX + "anchor_stage"] = 10
+        ledger.flags.update(PREFIX + name for name in (
+            "anchor_baseline_recorded", "exclusive_laboratory_verified",
+            "exclusive_public_response_ready"))
+        ledger.external_conditions["aemusa_ms_anchor_reachable"] = False
+        before = ledger.snapshot()
+        ledger.effect("aemusa_ms_anchor_confirm")
+        self.assertEqual(ledger.snapshot(), before)
+        recovering = deepcopy(ledger)
+        recovering.external_conditions["aemusa_ms_has_operational_flagship"] = False
+        before = recovering.snapshot()
+        recovering.choose("aemusa_exclusive.20", "relocate")
+        self.assertEqual(recovering.snapshot(), before)
+        warned = deepcopy(ledger)
+        warned.variables[PREFIX + "anchor_stage"] = 20
+        warned.flags.add(PREFIX + "anchor_warning_active")
+        before = warned.snapshot()
+        warned.choose("aemusa_exclusive.20", "relocate")
+        self.assertEqual(warned.snapshot(), before)
+        ledger.choose("aemusa_exclusive.20", "relocate")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_stage"], 0)
+        self.assertNotIn(PREFIX + "anchor_baseline_recorded", ledger.flags)
+        self.assertIn(PREFIX + "exclusive_laboratory_verified", ledger.flags)
+        self.assertIn(PREFIX + "exclusive_public_response_ready", ledger.flags)
+
     def test_preparation_actions_stay_visible_but_cannot_spend_missing_resources(self):
         for action, energy, minerals, pending in (
             ("laboratory", 150, 50, "exclusive_laboratory_pending"),

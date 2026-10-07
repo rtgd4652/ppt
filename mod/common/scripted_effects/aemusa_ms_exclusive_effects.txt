@@ -75,6 +75,7 @@ aemusa_ms_anchor_select = {
 				any_system_planet = {
 					aemusa_ms_anchor_host_eligible = yes
 				}
+				aemusa_ms_anchor_system_reachable = yes
 			}
 			random_system_planet = {
 				limit = {
@@ -219,6 +220,7 @@ aemusa_ms_anchor_confirm = {
 			}
 			aemusa_ms_anchor_controlled = yes
 			aemusa_ms_anchor_host_intact = yes
+			aemusa_ms_anchor_reachable = yes
 			has_country_flag = aemusa_ms_country_anchor_baseline_recorded
 			has_country_flag = aemusa_ms_country_exclusive_laboratory_verified
 			has_country_flag = aemusa_ms_country_exclusive_public_response_ready
