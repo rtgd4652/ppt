@@ -52,6 +52,10 @@ cc_analysis_start_available = {
     has_resource = { type = energy amount >= 250 }
     has_resource = { type = unity amount >= 250 }
 }
+cc_analysis_has_military_intel = {
+    # 二级是原版军事分类等级，常规情报值60起；不是总情报值2。
+    has_intel_level = { who = event_target:cc_analysis_target category = military level >= 2 }
+}
 cc_analysis_can_progress = {
     cc_yanhua_available = yes
     cc_analysis_target_valid = yes
@@ -59,7 +63,7 @@ cc_analysis_can_progress = {
         has_leader_flag = cc_yanhua_unique
         leader_class = official
     }
-    has_intel_level = { who = event_target:cc_analysis_target category = military level >= 2 }
+    cc_analysis_has_military_intel = yes
 }
 cc_analysis_can_claim = {
     cc_yanhua_available = yes

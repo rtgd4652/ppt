@@ -1,0 +1,8 @@
+# 起源旗标屏蔽原版通用物种叙述；此处挂接中央庭专属正文。
+part = {
+    location = 0
+    localization = "START_SCREEN_ARTIFACT_RESONANCE"
+    trigger = {
+        has_origin = origin_artifact_resonance
+    }
+}

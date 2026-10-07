@@ -3,6 +3,8 @@ origin_artifact_resonance = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origin_artifact_resonance.dds"
 	picture = GFX_origin_legendary_leader
+	# 使用本起源专属说明，避免原版通用文本把神器使写成远古演化物种。
+	flags = { custom_start_screen }
 
 	# 创建器会拒绝专属自定义母星偏好，开局先使用原版陆地星球保证预设帝国可见。
 	starting_colony = pc_continental

@@ -328,7 +328,22 @@ country_event = {
 country_event = {
     id = central_court.50
     title = cc.50.title
-    desc = { text = cc.50.collecting trigger = { has_country_flag = cc_analysis_collecting } }
+    desc = { text = cc.50.collecting trigger = { has_country_flag = cc_analysis_collecting cc_analysis_can_progress = yes } }
+    desc = {
+        text = cc.50.paused_class
+        trigger = {
+            has_country_flag = cc_analysis_collecting
+            NOT = { any_owned_leader = { has_leader_flag = cc_yanhua_unique leader_class = official } }
+        }
+    }
+    desc = {
+        text = cc.50.paused_intel
+        trigger = {
+            has_country_flag = cc_analysis_collecting
+            any_owned_leader = { has_leader_flag = cc_yanhua_unique leader_class = official }
+            cc_analysis_has_military_intel = no
+        }
+    }
     desc = { text = cc.50.ready trigger = { has_country_flag = cc_analysis_conclusion } }
     desc = { text = cc.50.desc trigger = { NOR = { has_country_flag = cc_analysis_collecting has_country_flag = cc_analysis_conclusion } } }
     picture = GFX_evt_aemusa_white_night_pavilion
@@ -344,6 +359,18 @@ country_event = {
         name = cc.show_conclusion
         trigger = { cc_analysis_can_claim = yes }
         hidden_effect = { country_event = { id = central_court.51 } }
+    }
+    option = {
+        name = cc.cancel_analysis
+        trigger = { has_country_flag = cc_analysis_collecting }
+        hidden_effect = {
+            # 主动止损只清理未完成研判，不退还成本，也不授予结论。
+            if = {
+                limit = { has_country_flag = cc_analysis_collecting }
+                cc_abort_analysis = yes
+            }
+            country_event = { id = central_court.50 }
+        }
     }
     option = {
         name = cc.back
@@ -372,7 +399,7 @@ country_event = {
     option = {
         name = cc.pick_assessment_again
         trigger = { cc_analysis_idle = yes }
-        hidden_effect = { cc_pick_analysis_candidate = yes country_event = { id = central_court.50 } }
+        hidden_effect = { cc_pick_analysis_candidate = yes country_event = { id = central_court.52 } }
     }
     option = {
         name = cc.back
