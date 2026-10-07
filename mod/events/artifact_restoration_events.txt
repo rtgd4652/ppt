@@ -332,7 +332,7 @@ country_event = {
         hidden_effect = { ar_greysa_emergency = yes country_event = { id = artifact_restoration.210 } }
     }
     option = { name = ar.greysa.archive
-        trigger = { has_country_flag = ar_greysa_completed }
+        trigger = { check_variable = { which = ar_greysa_completed_count value >= 1 } }
         hidden_effect = { country_event = { id = artifact_restoration.220 } }
     }
     option = { name = ar.withdraw
