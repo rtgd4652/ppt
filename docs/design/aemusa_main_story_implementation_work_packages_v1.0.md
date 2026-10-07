@@ -26,7 +26,7 @@ awp_09_implementation_authorized: true
 awp_09_status: "playable_main_flow_and_key_save_load_pass"
 current_milestone: "ten_characters_and_civilization"
 current_milestone_scope: "central_court_antoniva_yanhua_first_batch"
-current_milestone_status: "first_batch_runtime_partial_pass"
+current_milestone_status: "first_batch_lightweight_playable_pass"
 last_updated: "2026-10-07"
 ---
 
@@ -575,3 +575,9 @@ AWP-06/07首版代码、静态及60项工具检查已有通过记录。4.5.1正�
 用户在中央庭、安托涅瓦、晏华首批范围说明后回复“好的”，授权连续实现。公共协调政体与新开局、旧档主动接入、安托涅瓦唯一元首及共用冷却的方舟、晏华单目标研判和同实体职业切换已写首版，本地化随功能交付。底层职业、肖像和数值为可调原型，不改变已批准角色背景，不重写爱缪莎主线。范围见[首批方案](central_court_milestone_3_first_batch.md)。
 
 静态检查通过，既有65项工具检查复用。4.5.2已确认新预设与专属开局正文、正常旧档接入、唯一元首与晏华同实体职业往返、方舟庇护、整合档读回以及研判情报不足提示／主动取消。随后从保留起点正常完成三个有效月到研判结论及首都准备对策，`2240.05.01.sav` 读回后稳定度+5保留；军事二级报告和补给为受控前置，未直接写进度或结论。方舟经正常目的地决议和60日校准，于2241.04.01把原第1舰队传至杜乌加，原3艘护卫舰及指挥官保留；共有起点 `2241.01.25.sav` 与结果 `2241.06.05.sav` 已另存备份。MIA实际返回尚待验证；首批、完整里程碑3及1.0发布未整项完成。沿用轻量验收，不每窗保存、不例行计算哈希。见[当日记录](../../reports/central_court_milestone_3_2026-10-07.md)。
+
+## 49. 2026-10-07 首批轻量验收收口
+
+正常白夜馆选项完成临时放逐；原生MIA登记2241.04.25返回日期，正常运行后的 `2241.05.18.sav` 确认同一敌舰队、原8艘舰船和所属国保留、MIA已清除。战争定位为受控前置，未直接写完成或强制返回。放逐中档、结果档与日志已保存，随后正常载回无测试战争的 `2241.06.05.sav` 并暂停。
+
+中央庭、安托涅瓦与晏华首批达到轻量可玩标准；完整里程碑3、正式资产与1.0发布仍未完成。下一批按计划完善赛斯／幽桐／拉比，复用已通过的首批与主线证据。详见[本批记录](../../reports/central_court_milestone_3_2026-10-07.md)。
