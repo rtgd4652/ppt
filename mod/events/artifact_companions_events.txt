@@ -1,0 +1,608 @@
+namespace = artifact_companions
+# 首版只接本国殖民地和人物亲自指挥的舰队；三人的循环互不改写主线。
+
+country_event = {
+    id = artifact_companions.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        ac_player = yes
+        OR = {
+            ac_seth_available = yes
+            ac_yutong_available = yes
+            ac_rabi_available = yes
+            has_country_flag = ac_seth_recruited
+            has_country_flag = ac_yutong_recruited
+            has_country_flag = ac_rabi_recruited
+        }
+    }
+    immediate = {
+        ac_refresh = yes
+        if = {
+            limit = { NOT = { has_country_flag = ac_month_checked } }
+            set_timed_country_flag = {
+                flag = ac_month_checked
+                days = 28
+            }
+            ac_seth_monthly = yes
+            ac_yutong_monthly = yes
+            ac_rabi_apply_protection = yes
+        }
+    }
+}
+# 任职变化只清理不再成立的效果，不授予月度进度。
+country_event = {
+    id = artifact_companions.2
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = {
+        ac_refresh = yes
+        ac_yutong_apply_support = yes
+        ac_rabi_apply_protection = yes
+    }
+}
+leader_event = {
+    id = artifact_companions.3
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = owner
+        owner = { ac_player = yes }
+        OR = {
+            has_leader_flag = seth_unique_leader
+            has_leader_flag = yutong_unique_leader
+            has_leader_flag = rabi_unique_leader
+        }
+    }
+    immediate = { owner = { country_event = { id = artifact_companions.2 } } }
+}
+# 原版解除任职回调发生在实际解除之前，不能用当时仍有效的任职推断暂停。
+leader_event = {
+    id = artifact_companions.4
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = owner
+        owner = { ac_player = yes }
+        OR = {
+            has_leader_flag = yutong_unique_leader
+            has_leader_flag = rabi_unique_leader
+        }
+    }
+    immediate = {
+        save_event_target_as = ac_unassigned
+        owner = { country_event = { id = artifact_companions.5 } }
+    }
+}
+country_event = {
+    id = artifact_companions.5
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        ac_player = yes
+        exists = event_target:ac_unassigned
+    }
+    immediate = {
+        if = {
+            limit = { event_target:ac_unassigned = { has_leader_flag = yutong_unique_leader } }
+            ac_yutong_reset_calibration = yes
+        }
+        if = {
+            limit = { event_target:ac_unassigned = { has_leader_flag = rabi_unique_leader } }
+            ac_rabi_remove_support = yes
+            ac_rabi_clear_threat = yes
+        }
+    }
+}
+# 本机原版：this为实际参战舰队，from为对手。先转国家事件再使用国家根作用域。
+fleet_event = {
+    id = artifact_companions.10
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = owner
+        owner = {
+            ac_player = yes
+            OR = {
+                has_country_flag = ac_yutong_active
+                has_country_flag = ac_rabi_active
+            }
+        }
+        exists = from
+        from = { exists = owner }
+    }
+    immediate = {
+        save_event_target_as = ac_combat_force
+        from = { save_event_target_as = ac_combat_threat }
+        owner = { country_event = { id = artifact_companions.11 } }
+    }
+}
+country_event = {
+    id = artifact_companions.11
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        ac_player = yes
+        exists = event_target:ac_combat_force
+        exists = event_target:ac_combat_threat
+        event_target:ac_combat_threat = { owner = { NOT = { is_same_value = root } } }
+    }
+    immediate = {
+        ac_refresh = yes
+        if = {
+            limit = {
+                has_country_flag = ac_yutong_active
+                has_country_flag = ac_yutong_stable
+                ac_yutong_in_position = yes
+                event_target:ac_combat_force = { is_same_value = event_target:ac_yutong_force@root }
+                NOR = {
+                    has_country_flag = ac_yutong_recovery
+                    has_country_flag = ac_yutong_contact
+                    has_country_flag = ac_yutong_refused
+                }
+            }
+            set_timed_country_flag = {
+                flag = ac_yutong_contact
+                days = 30
+            }
+            country_event = { id = artifact_companions.211 }
+            log = "COMPANIONS|yutong_actual_combat"
+        }
+        if = {
+            limit = {
+                has_country_flag = ac_rabi_active
+                ac_rabi_on_duty = yes
+                event_target:ac_combat_force = { is_same_value = event_target:ac_rabi_force@root }
+                NOT = { has_country_flag = ac_rabi_threat_registered }
+            }
+            ac_rabi_clear_threat = yes
+            event_target:ac_combat_threat = {
+                set_fleet_flag = ac_rabi_threat@root
+                save_global_event_target_as = ac_rabi_threat@root
+            }
+            set_timed_country_flag = {
+                flag = ac_rabi_threat_registered
+                days = 90
+            }
+            ac_rabi_apply_protection = yes
+            if = {
+                limit = { ac_rabi_counter_available = yes }
+                country_event = { id = artifact_companions.320 }
+            }
+            log = "COMPANIONS|rabi_actual_threat"
+        }
+    }
+}
+
+country_event = {
+    id = artifact_companions.100
+    title = artifact_companions.100.title
+    desc = artifact_companions.100.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = { ac_refresh = yes }
+    option = {
+        name = artifact_companions.seth_start
+        trigger = { ac_seth_idle = yes }
+        hidden_effect = {
+            ac_seth_start_request = yes
+            country_event = { id = artifact_companions.110 }
+        }
+    }
+    option = {
+        name = artifact_companions.seth_public
+        trigger = { ac_seth_public_available = yes }
+        hidden_effect = {
+            ac_seth_start_public = yes
+            country_event = { id = artifact_companions.110 }
+        }
+    }
+    option = {
+        name = artifact_companions.seth_direct
+        trigger = { ac_seth_direct_available = yes }
+        hidden_effect = {
+            ac_seth_start_direct = yes
+            country_event = { id = artifact_companions.110 }
+        }
+    }
+    option = {
+        name = artifact_companions.seth_hasty
+        trigger = { ac_seth_hasty_available = yes }
+        hidden_effect = {
+            ac_seth_start_hasty = yes
+            country_event = { id = artifact_companions.110 }
+        }
+    }
+    option = {
+        name = artifact_companions.seth_secondary
+        trigger = {
+            has_country_flag = ac_seth_secondary
+            ac_seth_available = yes
+            ac_seth_target_accessible = yes
+            has_resource = { type = energy amount >= 200 }
+        }
+        hidden_effect = {
+            ac_seth_settle_secondary = yes
+            country_event = { id = artifact_companions.110 }
+        }
+    }
+    option = {
+        name = artifact_companions.seth_commander
+        trigger = { ac_seth_official = yes }
+        hidden_effect = {
+            ac_seth_switch_class = {
+                CLASS = commander
+                TRAIT = leader_trait_seth_commander
+            }
+            country_event = { id = artifact_companions.110 }
+        }
+    }
+    option = {
+        name = artifact_companions.seth_official
+        trigger = { ac_seth_commander = yes }
+        hidden_effect = {
+            ac_seth_switch_class = {
+                CLASS = official
+                TRAIT = leader_trait_seth_official
+            }
+            country_event = { id = artifact_companions.110 }
+        }
+    }
+    option = {
+        name = artifact_companions.status
+        hidden_effect = { country_event = { id = artifact_companions.110 } }
+    }
+    option = {
+        name = artifact_companions.withdraw
+        trigger = {
+            OR = {
+                has_country_flag = ac_seth_investigating
+                has_country_flag = ac_seth_ready
+                has_country_flag = ac_seth_working
+                has_country_flag = ac_seth_secondary
+            }
+        }
+        hidden_effect = {
+            ac_seth_close_request = yes
+            country_event = { id = artifact_companions.110 }
+        }
+    }
+    option = {
+        name = artifact_companions.close
+        default_hide_option = yes
+    }
+}
+country_event = {
+    id = artifact_companions.110
+    title = artifact_companions.110.title
+    desc = {
+        trigger = { has_country_flag = ac_seth_secondary }
+        text = artifact_companions.110.secondary
+    }
+    desc = {
+        trigger = { has_country_flag = ac_seth_working }
+        text = artifact_companions.110.working
+    }
+    desc = {
+        trigger = { has_country_flag = ac_seth_ready }
+        text = artifact_companions.110.ready
+    }
+    desc = {
+        trigger = { has_country_flag = ac_seth_investigating }
+        text = artifact_companions.110.investigating
+    }
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = ac_seth_secondary
+                has_country_flag = ac_seth_working
+                has_country_flag = ac_seth_ready
+                has_country_flag = ac_seth_investigating
+            }
+        }
+        text = artifact_companions.110.idle
+    }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = {
+        ac_refresh = yes
+        if = {
+            limit = { exists = event_target:ac_seth_target@root }
+            event_target:ac_seth_target@root = { save_event_target_as = ac_seth_target }
+        }
+    }
+    option = {
+        name = artifact_companions.back
+        hidden_effect = { country_event = { id = artifact_companions.100 } }
+    }
+    option = {
+        name = artifact_companions.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_companions.200
+    title = artifact_companions.200.title
+    desc = artifact_companions.200.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = { ac_refresh = yes }
+    option = {
+        name = artifact_companions.yutong_guard
+        trigger = { ac_yutong_start_available = yes }
+        hidden_effect = {
+            ac_yutong_start = { PRECISION = no }
+            country_event = { id = artifact_companions.210 }
+        }
+    }
+    option = {
+        name = artifact_companions.yutong_precision
+        trigger = { ac_yutong_start_available = yes }
+        hidden_effect = {
+            ac_yutong_start = { PRECISION = yes }
+            country_event = { id = artifact_companions.210 }
+        }
+    }
+    option = {
+        name = artifact_companions.yutong_exception
+        trigger = { ac_yutong_burst_available = yes }
+        hidden_effect = { country_event = { id = artifact_companions.211 } }
+    }
+    option = {
+        name = artifact_companions.status
+        hidden_effect = { country_event = { id = artifact_companions.210 } }
+    }
+    option = {
+        name = artifact_companions.withdraw
+        trigger = { has_country_flag = ac_yutong_active }
+        hidden_effect = {
+            ac_yutong_close = yes
+            country_event = { id = artifact_companions.210 }
+        }
+    }
+    option = {
+        name = artifact_companions.close
+        default_hide_option = yes
+    }
+}
+country_event = {
+    id = artifact_companions.210
+    title = artifact_companions.210.title
+    desc = {
+        trigger = { has_country_flag = ac_yutong_recovery }
+        text = artifact_companions.210.recovery
+    }
+    desc = {
+        trigger = {
+            has_country_flag = ac_yutong_stable
+            NOT = { has_country_flag = ac_yutong_recovery }
+        }
+        text = artifact_companions.210.stable
+    }
+    desc = {
+        trigger = {
+            has_country_flag = ac_yutong_active
+            NOR = {
+                has_country_flag = ac_yutong_stable
+                has_country_flag = ac_yutong_recovery
+            }
+        }
+        text = artifact_companions.210.calibrating
+    }
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = ac_yutong_active
+                has_country_flag = ac_yutong_recovery
+            }
+        }
+        text = artifact_companions.210.idle
+    }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = {
+        ac_refresh = yes
+        if = {
+            limit = { exists = event_target:ac_yutong_force@root }
+            event_target:ac_yutong_force@root = { save_event_target_as = ac_yutong_force }
+        }
+        if = {
+            limit = { exists = event_target:ac_yutong_anchor@root }
+            event_target:ac_yutong_anchor@root = { save_event_target_as = ac_yutong_anchor }
+        }
+    }
+    option = {
+        name = artifact_companions.back
+        hidden_effect = { country_event = { id = artifact_companions.200 } }
+    }
+    option = {
+        name = artifact_companions.close
+        default_hide_option = yes
+    }
+}
+country_event = {
+    id = artifact_companions.211
+    title = artifact_companions.211.title
+    desc = artifact_companions.211.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = { ac_refresh = yes }
+    option = {
+        name = artifact_companions.yutong_confirm
+        trigger = { ac_yutong_burst_available = yes }
+        hidden_effect = {
+            ac_yutong_burst = yes
+            country_event = { id = artifact_companions.210 }
+        }
+    }
+    option = {
+        name = artifact_companions.yutong_refuse
+        hidden_effect = {
+            remove_country_flag = ac_yutong_contact
+            set_timed_country_flag = {
+                flag = ac_yutong_refused
+                days = 90
+            }
+        }
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_companions.300
+    title = artifact_companions.300.title
+    desc = artifact_companions.300.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = { ac_refresh = yes }
+    option = {
+        name = artifact_companions.rabi_request
+        trigger = { ac_rabi_start_available = yes }
+        hidden_effect = {
+            ac_rabi_request = yes
+            country_event = { id = artifact_companions.302 }
+        }
+    }
+    option = {
+        name = artifact_companions.rabi_response
+        trigger = { has_country_flag = ac_rabi_requested }
+        hidden_effect = { country_event = { id = artifact_companions.302 } }
+    }
+    option = {
+        name = artifact_companions.rabi_counter_request
+        trigger = { ac_rabi_counter_available = yes }
+        hidden_effect = { country_event = { id = artifact_companions.320 } }
+    }
+    option = {
+        name = artifact_companions.status
+        hidden_effect = { country_event = { id = artifact_companions.310 } }
+    }
+    option = {
+        name = artifact_companions.withdraw
+        trigger = {
+            OR = {
+                has_country_flag = ac_rabi_requested
+                has_country_flag = ac_rabi_active
+            }
+        }
+        hidden_effect = {
+            ac_rabi_close = yes
+            country_event = { id = artifact_companions.310 }
+        }
+    }
+    option = {
+        name = artifact_companions.close
+        default_hide_option = yes
+    }
+}
+country_event = {
+    id = artifact_companions.302
+    title = artifact_companions.302.title
+    desc = artifact_companions.302.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = { ac_refresh = yes }
+    option = {
+        name = artifact_companions.rabi_confirm
+        trigger = {
+            has_country_flag = ac_rabi_requested
+            ac_rabi_available = yes
+            ac_rabi_on_duty = yes
+        }
+        hidden_effect = {
+            ac_rabi_confirm = yes
+            country_event = { id = artifact_companions.310 }
+        }
+    }
+    option = {
+        name = artifact_companions.rabi_refuse
+        hidden_effect = {
+            if = {
+                limit = { has_country_flag = ac_rabi_requested }
+                ac_rabi_close = yes
+            }
+        }
+        default_hide_option = yes
+    }
+}
+country_event = {
+    id = artifact_companions.310
+    title = artifact_companions.310.title
+    desc = {
+        trigger = { has_country_flag = ac_rabi_recovery }
+        text = artifact_companions.310.recovery
+    }
+    desc = {
+        trigger = {
+            has_country_flag = ac_rabi_active
+            NOT = { has_country_flag = ac_rabi_recovery }
+        }
+        text = artifact_companions.310.active
+    }
+    desc = {
+        trigger = {
+            NOR = {
+                has_country_flag = ac_rabi_active
+                has_country_flag = ac_rabi_recovery
+            }
+        }
+        text = artifact_companions.310.idle
+    }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = {
+        ac_refresh = yes
+        if = {
+            limit = { exists = event_target:ac_rabi_force@root }
+            event_target:ac_rabi_force@root = { save_event_target_as = ac_rabi_force }
+        }
+    }
+    option = {
+        name = artifact_companions.back
+        hidden_effect = { country_event = { id = artifact_companions.300 } }
+    }
+    option = {
+        name = artifact_companions.close
+        default_hide_option = yes
+    }
+}
+country_event = {
+    id = artifact_companions.320
+    title = artifact_companions.320.title
+    desc = artifact_companions.320.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { ac_player = yes }
+    immediate = { ac_refresh = yes }
+    option = {
+        name = artifact_companions.rabi_counter_confirm
+        trigger = { ac_rabi_counter_available = yes }
+        hidden_effect = {
+            ac_rabi_counter = yes
+            country_event = { id = artifact_companions.310 }
+        }
+    }
+    option = {
+        name = artifact_companions.rabi_counter_refuse
+        hidden_effect = {
+            if = {
+                limit = { has_country_flag = ac_rabi_active }
+                set_timed_country_flag = {
+                    flag = ac_rabi_refused
+                    days = 90
+                }
+            }
+        }
+        default_hide_option = yes
+    }
+}

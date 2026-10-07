@@ -25,8 +25,8 @@ awp_08_status: "playable_main_flow_and_key_save_load_pass"
 awp_09_implementation_authorized: true
 awp_09_status: "playable_main_flow_and_key_save_load_pass"
 current_milestone: "ten_characters_and_civilization"
-current_milestone_scope: "central_court_antoniva_yanhua_first_batch"
-current_milestone_status: "first_batch_lightweight_playable_pass"
+current_milestone_scope: "seth_yutong_rabi_second_batch"
+current_milestone_status: "second_batch_implemented_runtime_pending"
 last_updated: "2026-10-07"
 ---
 
@@ -581,3 +581,7 @@ AWP-06/07首版代码、静态及60项工具检查已有通过记录。4.5.1正�
 正常白夜馆选项完成临时放逐；原生MIA登记2241.04.25返回日期，正常运行后的 `2241.05.18.sav` 确认同一敌舰队、原8艘舰船和所属国保留、MIA已清除。战争定位为受控前置，未直接写完成或强制返回。放逐中档、结果档与日志已保存，随后正常载回无测试战争的 `2241.06.05.sav` 并暂停。
 
 中央庭、安托涅瓦与晏华首批达到轻量可玩标准；完整里程碑3、正式资产与1.0发布仍未完成。下一批按计划完善赛斯／幽桐／拉比，复用已通过的首批与主线证据。详见[本批记录](../../reports/central_court_milestone_3_2026-10-07.md)。
+
+## 50. 2026-10-07 里程碑3第二批实现
+
+首批完成后用户要求继续，按既定顺序接入赛斯、幽桐、拉比。已实现每人单任务核心、旧身份兼容、费用与月度工作、当次确认／拒绝、同实体转职及独立恢复期，中文文本随功能交付。原三名纯等级乘数调整为实际任务收益；首版数值可调，正式资产后置。静态与69项工具检查通过，新进程运行尚待本轮继续，不提前标可玩通过。见[范围](artifact_companions_milestone_3_second_batch.md)和[本批记录](../../reports/artifact_companions_milestone_3_2026-10-07.md)。

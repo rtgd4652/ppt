@@ -1,0 +1,585 @@
+# 入口先从当前国家的唯一身份重建人物引用；动态目标名避免借用别国人物。
+ac_rebind = {
+    if = {
+        limit = { NOT = { is_variable_set = ac_seth_completed_count } }
+        set_variable = {
+            which = ac_seth_completed_count
+            value = 0
+        }
+    }
+    clear_global_event_target = ac_seth@root
+    clear_global_event_target = ac_yutong@root
+    clear_global_event_target = ac_rabi@root
+    every_owned_leader = {
+        limit = { has_leader_flag = seth_unique_leader }
+        save_global_event_target_as = ac_seth@root
+        owner = { set_country_flag = ac_seth_recruited }
+    }
+    every_owned_leader = {
+        limit = { has_leader_flag = yutong_unique_leader }
+        save_global_event_target_as = ac_yutong@root
+        owner = { set_country_flag = ac_yutong_recruited }
+    }
+    every_owned_leader = {
+        limit = { has_leader_flag = rabi_unique_leader }
+        save_global_event_target_as = ac_rabi@root
+        owner = { set_country_flag = ac_rabi_recruited }
+    }
+}
+ac_seth_switch_class = {
+    if = {
+        limit = { ac_seth_available = yes }
+        every_owned_leader = {
+            limit = { has_leader_flag = seth_unique_leader }
+            unassign_leader = this
+            remove_trait = leader_trait_seth_official
+            remove_trait = leader_trait_seth_commander
+            change_leader_class = $CLASS$
+            add_trait = {
+                trait = $TRAIT$
+                consume_selection = yes
+            }
+        }
+        # 保留同一领袖ID、等级、愿望、已付资源和冷却。
+        ac_refresh = yes
+        log = "COMPANIONS|seth_class_changed"
+    }
+}
+ac_seth_clear_request = {
+    if = {
+        limit = { exists = event_target:ac_seth_target@root }
+        event_target:ac_seth_target@root = {
+            remove_planet_flag = ac_seth_request@root
+            remove_modifier = ac_seth_emergency_aid
+        }
+    }
+    clear_global_event_target = ac_seth_target@root
+    remove_country_flag = ac_seth_investigating
+    remove_country_flag = ac_seth_ready
+    remove_country_flag = ac_seth_working
+    remove_country_flag = ac_seth_public
+    remove_country_flag = ac_seth_direct
+    remove_country_flag = ac_seth_hasty
+    remove_country_flag = ac_seth_emergency
+    remove_country_flag = ac_seth_secondary
+    set_variable = {
+        which = ac_seth_progress
+        value = 0
+    }
+}
+ac_seth_close_request = {
+    ac_seth_clear_request = yes
+    set_timed_country_flag = {
+        flag = ac_seth_cooldown
+        days = 90
+    }
+    # 已投入的物资、已经发生的损失与有期限的完成效果不退还。
+    log = "COMPANIONS|seth_request_closed"
+}
+ac_seth_start_request = {
+    if = {
+        limit = { ac_seth_idle = yes }
+        ac_seth_clear_request = yes
+        # 先从本人管辖地接入；其次处理确有低稳定度或轰炸的殖民地。
+        random_owned_planet = {
+            limit = {
+                is_colony = yes
+                is_controlled_by = root
+                exists = leader
+                leader = { has_leader_flag = seth_unique_leader }
+            }
+            save_global_event_target_as = ac_seth_target@root
+        }
+        if = {
+            limit = { NOT = { exists = event_target:ac_seth_target@root } }
+            random_owned_planet = {
+                limit = {
+                    is_colony = yes
+                    is_controlled_by = root
+                    OR = {
+                        planet_stability < 50
+                        has_orbital_bombardment = yes
+                    }
+                }
+                save_global_event_target_as = ac_seth_target@root
+            }
+        }
+        if = {
+            limit = { NOT = { exists = event_target:ac_seth_target@root } }
+            random_owned_planet = {
+                limit = {
+                    is_colony = yes
+                    is_controlled_by = root
+                }
+                save_global_event_target_as = ac_seth_target@root
+            }
+        }
+        event_target:ac_seth_target@root = { set_planet_flag = ac_seth_request@root }
+        add_resource = { energy = -100 }
+        add_resource = { unity = -50 }
+        remove_country_flag = ac_seth_last_completed
+        set_country_flag = ac_seth_investigating
+        log = "COMPANIONS|seth_request_started"
+    }
+}
+ac_seth_start_public = {
+    if = {
+        limit = { ac_seth_public_available = yes }
+        add_resource = { energy = -300 }
+        add_resource = { consumer_goods = -100 }
+        remove_country_flag = ac_seth_ready
+        set_country_flag = ac_seth_working
+        set_country_flag = ac_seth_public
+        set_variable = {
+            which = ac_seth_progress
+            value = 0
+        }
+        log = "COMPANIONS|seth_public_started"
+    }
+}
+ac_seth_start_direct = {
+    if = {
+        limit = { ac_seth_direct_available = yes }
+        add_resource = { energy = -200 }
+        add_resource = { alloys = -50 }
+        remove_country_flag = ac_seth_ready
+        set_country_flag = ac_seth_working
+        set_country_flag = ac_seth_direct
+        set_variable = {
+            which = ac_seth_progress
+            value = 0
+        }
+        log = "COMPANIONS|seth_direct_started"
+    }
+}
+ac_seth_start_hasty = {
+    if = {
+        limit = { ac_seth_hasty_available = yes }
+        add_resource = { energy = -100 }
+        add_resource = { consumer_goods = -50 }
+        remove_country_flag = ac_seth_investigating
+        set_country_flag = ac_seth_working
+        set_country_flag = ac_seth_hasty
+        event_target:ac_seth_target@root = {
+            add_modifier = {
+                modifier = ac_seth_hasty_relief
+                days = 90
+            }
+        }
+        set_variable = {
+            which = ac_seth_progress
+            value = 0
+        }
+        log = "COMPANIONS|seth_hasty_started"
+    }
+}
+ac_seth_settle_secondary = {
+    if = {
+        limit = {
+            has_country_flag = ac_seth_secondary
+            ac_seth_available = yes
+            ac_seth_target_accessible = yes
+            has_resource = { type = energy amount >= 200 }
+        }
+        add_resource = { energy = -200 }
+        event_target:ac_seth_target@root = { remove_modifier = ac_seth_misallocation }
+        ac_seth_close_request = yes
+        log = "COMPANIONS|seth_secondary_settled"
+    }
+}
+ac_seth_monthly = {
+    if = {
+        limit = {
+            ac_seth_available = yes
+            ac_seth_target_accessible = yes
+            has_country_flag = ac_seth_investigating
+        }
+        change_variable = {
+            which = ac_seth_progress
+            value = 1
+        }
+        if = {
+            limit = { check_variable = { which = ac_seth_progress value >= 2 } }
+            remove_country_flag = ac_seth_investigating
+            set_country_flag = ac_seth_ready
+            log = "COMPANIONS|seth_investigation_ready"
+        }
+    }
+    else_if = {
+        limit = {
+            ac_seth_available = yes
+            ac_seth_target_accessible = yes
+            has_country_flag = ac_seth_working
+        }
+        if = {
+            limit = { event_target:ac_seth_target@root = { has_orbital_bombardment = yes } }
+            set_country_flag = ac_seth_emergency
+            event_target:ac_seth_target@root = {
+                add_modifier = {
+                    modifier = ac_seth_emergency_aid
+                    days = 35
+                }
+            }
+        }
+        else = {
+            remove_country_flag = ac_seth_emergency
+            event_target:ac_seth_target@root = { remove_modifier = ac_seth_emergency_aid }
+        }
+        if = {
+            limit = {
+                OR = {
+                    has_country_flag = ac_seth_hasty
+                    AND = {
+                        has_country_flag = ac_seth_public
+                        ac_seth_official = yes
+                        NOT = { has_country_flag = ac_seth_emergency }
+                    }
+                    AND = {
+                        has_country_flag = ac_seth_direct
+                        ac_seth_direct_present = yes
+                    }
+                }
+            }
+            change_variable = {
+                which = ac_seth_progress
+                value = 1
+            }
+            if = {
+                limit = { has_country_flag = ac_seth_hasty }
+                event_target:ac_seth_target@root = {
+                    add_modifier = {
+                        modifier = ac_seth_misallocation
+                        days = 180
+                    }
+                    remove_modifier = ac_seth_emergency_aid
+                }
+                remove_country_flag = ac_seth_working
+                remove_country_flag = ac_seth_hasty
+                remove_country_flag = ac_seth_emergency
+                set_country_flag = ac_seth_secondary
+                log = "COMPANIONS|seth_secondary_problem"
+            }
+            else_if = {
+                limit = {
+                    OR = {
+                        AND = {
+                            has_country_flag = ac_seth_public
+                            check_variable = { which = ac_seth_progress value >= 3 }
+                        }
+                        AND = {
+                            has_country_flag = ac_seth_direct
+                            check_variable = { which = ac_seth_progress value >= 2 }
+                        }
+                    }
+                }
+                event_target:ac_seth_target@root = {
+                    add_modifier = {
+                        modifier = ac_seth_fulfilled
+                        days = 360
+                    }
+                }
+                ac_seth_close_request = yes
+                set_country_flag = ac_seth_last_completed
+                change_variable = {
+                    which = ac_seth_completed_count
+                    value = 1
+                }
+                log = "COMPANIONS|seth_fulfilled"
+            }
+        }
+    }
+}
+# 清理只访问本任务的持久目标，不逐月扫描全银河。
+ac_yutong_remove_support = {
+    if = {
+        limit = { exists = event_target:ac_yutong_force@root }
+        event_target:ac_yutong_force@root = {
+            remove_modifier = ac_yutong_guard
+            remove_modifier = ac_yutong_precision
+            remove_modifier = ac_yutong_burst
+        }
+    }
+}
+ac_yutong_reset_calibration = {
+    ac_yutong_remove_support = yes
+    remove_country_flag = ac_yutong_stable
+    set_variable = {
+        which = ac_yutong_progress
+        value = 0
+    }
+}
+ac_yutong_close = {
+    ac_yutong_reset_calibration = yes
+    if = {
+        limit = { exists = event_target:ac_yutong_force@root }
+        event_target:ac_yutong_force@root = { remove_fleet_flag = ac_yutong_force@root }
+    }
+    if = {
+        limit = { exists = event_target:ac_yutong_anchor@root }
+        event_target:ac_yutong_anchor@root = { remove_star_flag = ac_yutong_anchor@root }
+    }
+    clear_global_event_target = ac_yutong_force@root
+    clear_global_event_target = ac_yutong_anchor@root
+    remove_country_flag = ac_yutong_active
+    remove_country_flag = ac_yutong_precision_order
+    remove_country_flag = ac_yutong_contact
+    set_timed_country_flag = {
+        flag = ac_yutong_cooldown
+        days = 90
+    }
+    # ac_yutong_recovery独立于任务，撤回和换舰均不能清除。
+    log = "COMPANIONS|yutong_boundary_released"
+}
+ac_yutong_start = {
+    if = {
+        limit = { ac_yutong_start_available = yes }
+        random_owned_fleet = {
+            limit = { ac_yutong_commanded_force = yes }
+            set_fleet_flag = ac_yutong_force@root
+            save_global_event_target_as = ac_yutong_force@root
+            solar_system = {
+                set_star_flag = ac_yutong_anchor@root
+                save_global_event_target_as = ac_yutong_anchor@root
+            }
+        }
+        add_resource = { energy = -200 }
+        set_country_flag = ac_yutong_active
+        # 原则只在首次成功登记时写入，旧窗口重复选择不能免费改原则。
+        if = {
+            limit = { always = $PRECISION$ }
+            set_country_flag = ac_yutong_precision_order
+        }
+        else = { remove_country_flag = ac_yutong_precision_order }
+        ac_yutong_reset_calibration = yes
+        log = "COMPANIONS|yutong_boundary_started"
+    }
+}
+ac_yutong_apply_support = {
+    if = {
+        limit = {
+            has_country_flag = ac_yutong_active
+            has_country_flag = ac_yutong_stable
+            ac_yutong_in_position = yes
+            NOT = { has_country_flag = ac_yutong_recovery }
+        }
+        event_target:ac_yutong_force@root = {
+            if = {
+                limit = { root = { has_country_flag = ac_yutong_precision_order } }
+                remove_modifier = ac_yutong_guard
+                add_modifier = {
+                    modifier = ac_yutong_precision
+                    days = 35
+                }
+            }
+            else = {
+                remove_modifier = ac_yutong_precision
+                add_modifier = {
+                    modifier = ac_yutong_guard
+                    days = 35
+                }
+            }
+        }
+    }
+}
+ac_yutong_monthly = {
+    if = {
+        limit = {
+            has_country_flag = ac_yutong_active
+            ac_yutong_in_position = yes
+            NOT = { has_country_flag = ac_yutong_recovery }
+            NOT = { has_country_flag = ac_yutong_stable }
+            event_target:ac_yutong_force@root = { is_in_combat = no }
+        }
+        change_variable = {
+            which = ac_yutong_progress
+            value = 1
+        }
+        if = {
+            limit = { check_variable = { which = ac_yutong_progress value >= 3 } }
+            set_country_flag = ac_yutong_stable
+            log = "COMPANIONS|yutong_boundary_stable"
+        }
+    }
+    ac_yutong_apply_support = yes
+}
+ac_yutong_burst = {
+    if = {
+        limit = { ac_yutong_burst_available = yes }
+        ac_yutong_reset_calibration = yes
+        event_target:ac_yutong_force@root = {
+            add_modifier = {
+                modifier = ac_yutong_burst
+                days = 30
+            }
+        }
+        set_timed_country_flag = {
+            flag = ac_yutong_recovery
+            days = 180
+        }
+        remove_country_flag = ac_yutong_contact
+        log = "COMPANIONS|yutong_boundary_exception"
+    }
+}
+ac_rabi_clear_threat = {
+    if = {
+        limit = { exists = event_target:ac_rabi_threat@root }
+        event_target:ac_rabi_threat@root = { remove_fleet_flag = ac_rabi_threat@root }
+    }
+    clear_global_event_target = ac_rabi_threat@root
+    remove_country_flag = ac_rabi_threat_registered
+}
+ac_rabi_remove_support = {
+    if = {
+        limit = { exists = event_target:ac_rabi_force@root }
+        event_target:ac_rabi_force@root = {
+            remove_modifier = ac_rabi_protection
+            remove_modifier = ac_rabi_counter
+        }
+    }
+}
+ac_rabi_close = {
+    ac_rabi_remove_support = yes
+    ac_rabi_clear_threat = yes
+    if = {
+        limit = { exists = event_target:ac_rabi_force@root }
+        event_target:ac_rabi_force@root = { remove_fleet_flag = ac_rabi_force@root }
+    }
+    clear_global_event_target = ac_rabi_force@root
+    remove_country_flag = ac_rabi_requested
+    remove_country_flag = ac_rabi_active
+    remove_country_flag = ac_rabi_confirmed
+    set_timed_country_flag = {
+        flag = ac_rabi_cooldown
+        days = 90
+    }
+    # 反击恢复期与拒绝记录不因结束任务而消失。
+    log = "COMPANIONS|rabi_rules_released"
+}
+ac_rabi_request = {
+    if = {
+        limit = { ac_rabi_start_available = yes }
+        random_owned_fleet = {
+            limit = { ac_rabi_commanded_force = yes }
+            set_fleet_flag = ac_rabi_force@root
+            save_global_event_target_as = ac_rabi_force@root
+        }
+        set_country_flag = ac_rabi_requested
+        log = "COMPANIONS|rabi_rules_requested"
+    }
+}
+ac_rabi_confirm = {
+    if = {
+        limit = {
+            has_country_flag = ac_rabi_requested
+            ac_rabi_available = yes
+            ac_rabi_on_duty = yes
+        }
+        remove_country_flag = ac_rabi_requested
+        set_country_flag = ac_rabi_confirmed
+        set_country_flag = ac_rabi_active
+        log = "COMPANIONS|rabi_rules_confirmed"
+    }
+}
+ac_rabi_apply_protection = {
+    if = {
+        limit = {
+            has_country_flag = ac_rabi_active
+            ac_rabi_available = yes
+            ac_rabi_on_duty = yes
+            ac_rabi_threat_valid = yes
+            event_target:ac_rabi_force@root = { is_in_combat = yes }
+        }
+        event_target:ac_rabi_force@root = {
+            add_modifier = {
+                modifier = ac_rabi_protection
+                days = 35
+            }
+        }
+    }
+}
+ac_rabi_counter = {
+    if = {
+        limit = { ac_rabi_counter_available = yes }
+        event_target:ac_rabi_force@root = {
+            add_modifier = {
+                modifier = ac_rabi_counter
+                days = 30
+            }
+        }
+        set_timed_country_flag = {
+            flag = ac_rabi_recovery
+            days = 180
+        }
+        log = "COMPANIONS|rabi_limited_counter"
+    }
+}
+# 生命周期只检查本国三个账本；人物死亡不招回，失控暂停，所有权丢失结束。
+ac_refresh = {
+    ac_rebind = yes
+    if = {
+        limit = {
+            OR = {
+                has_country_flag = ac_seth_investigating
+                has_country_flag = ac_seth_ready
+                has_country_flag = ac_seth_working
+                has_country_flag = ac_seth_secondary
+            }
+            OR = {
+                ac_seth_available = no
+                ac_seth_target_valid = no
+            }
+        }
+        ac_seth_close_request = yes
+        log = "COMPANIONS|seth_request_invalidated"
+    }
+    if = {
+        limit = {
+            ac_seth_target_valid = yes
+            ac_seth_target_accessible = no
+        }
+        event_target:ac_seth_target@root = { remove_modifier = ac_seth_emergency_aid }
+        remove_country_flag = ac_seth_emergency
+    }
+    if = {
+        limit = {
+            has_country_flag = ac_yutong_active
+            OR = {
+                ac_yutong_available = no
+                ac_yutong_target_valid = no
+            }
+        }
+        ac_yutong_close = yes
+    }
+    else_if = {
+        limit = {
+            has_country_flag = ac_yutong_active
+            ac_yutong_in_position = no
+        }
+        ac_yutong_reset_calibration = yes
+    }
+    if = {
+        limit = {
+            OR = {
+                has_country_flag = ac_rabi_active
+                has_country_flag = ac_rabi_requested
+            }
+            OR = {
+                ac_rabi_available = no
+                ac_rabi_target_valid = no
+            }
+        }
+        ac_rabi_close = yes
+    }
+    else_if = {
+        limit = {
+            has_country_flag = ac_rabi_active
+            OR = {
+                ac_rabi_on_duty = no
+                ac_rabi_threat_valid = no
+                event_target:ac_rabi_force@root = { is_in_combat = no }
+            }
+        }
+        ac_rabi_remove_support = yes
+        ac_rabi_clear_threat = yes
+    }
+}

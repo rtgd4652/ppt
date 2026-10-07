@@ -1,0 +1,34 @@
+# 仅作用于明确目标，数值为可调整的首版参数。
+ac_seth_fulfilled = {
+    planet_stability_add = 5
+    planet_amenities_add = 5
+}
+ac_seth_hasty_relief = {
+    planet_amenities_add = 10
+}
+ac_seth_misallocation = {
+    planet_stability_add = -3
+}
+ac_seth_emergency_aid = {
+    planet_orbital_bombardment_damage = -0.15
+    planet_amenities_add = 3
+}
+ac_yutong_guard = {
+    ship_tracking_add = 10
+    ship_fire_rate_mult = 0.05
+}
+ac_yutong_precision = {
+    ship_tracking_add = 5
+    ship_weapon_range_mult = 0.15
+}
+ac_yutong_burst = {
+    ship_tracking_add = 10
+    ship_fire_rate_mult = 0.25
+}
+ac_rabi_protection = {
+    ship_armor_mult = 0.10
+    ship_shield_mult = 0.10
+}
+ac_rabi_counter = {
+    ship_fire_rate_mult = 0.15
+}

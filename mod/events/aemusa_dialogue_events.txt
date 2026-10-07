@@ -143,7 +143,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.3.seth # 与已入驻的赛斯通讯。
         trigger = {
-            exists = event_target:seth_leader # 已招募赛斯时显示通讯入口。
+            ac_seth_available = yes # 已招募赛斯时显示通讯入口。
         }
         hidden_effect = {
             country_event = {
@@ -152,10 +152,19 @@ country_event = {
         }
     }
 
+    # 正式核心机制入口，旧档复用原人物。
+    option = {
+        name = artifact_companions.entry
+        trigger = { ac_seth_available = yes }
+        hidden_effect = {
+            country_event = { id = artifact_companions.100 }
+        }
+    }
+
     option = {
         name = aemusa_dialogue.3.yutong # 与已入驻的幽桐通讯。
         trigger = {
-            exists = event_target:yutong_leader # 已招募幽桐时显示通讯入口。
+            ac_yutong_available = yes # 已招募幽桐时显示通讯入口。
         }
         hidden_effect = {
             country_event = {
@@ -164,15 +173,33 @@ country_event = {
         }
     }
 
+    # 正式核心机制入口，旧档复用原人物。
+    option = {
+        name = artifact_companions.entry
+        trigger = { ac_yutong_available = yes }
+        hidden_effect = {
+            country_event = { id = artifact_companions.200 }
+        }
+    }
+
     option = {
         name = aemusa_dialogue.3.rabi # 与已入驻的拉比通讯。
         trigger = {
-            exists = event_target:rabi_leader # 已招募拉比时显示通讯入口。
+            ac_rabi_available = yes # 已招募拉比时显示通讯入口。
         }
         hidden_effect = {
             country_event = {
                 id = aemusa_dialogue.45 # 打开拉比通讯事件。
             }
+        }
+    }
+
+    # 正式核心机制入口，旧档复用原人物。
+    option = {
+        name = artifact_companions.entry
+        trigger = { ac_rabi_available = yes }
+        hidden_effect = {
+            country_event = { id = artifact_companions.300 }
         }
     }
 
@@ -182,15 +209,9 @@ country_event = {
             NOT = {
                 exists = event_target:aemusa_leader # 爱缪莎未接入。
             }
-            NOT = {
-                exists = event_target:seth_leader # 赛斯未接入。
-            }
-            NOT = {
-                exists = event_target:yutong_leader # 幽桐未接入。
-            }
-            NOT = {
-                exists = event_target:rabi_leader # 拉比未接入。
-            }
+            ac_seth_recruit_available = yes
+            ac_yutong_recruit_available = yes
+            ac_rabi_recruit_available = yes
         }
     }
 
@@ -220,7 +241,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.4.seth_memory # 查看赛斯回忆占位。
         trigger = {
-            exists = event_target:seth_leader # 赛斯接入后显示他的回忆档案入口。
+            ac_seth_available = yes # 赛斯接入后显示他的回忆档案入口。
         }
         hidden_effect = {
             country_event = {
@@ -232,7 +253,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.4.yutong_memory # 查看幽桐回忆占位。
         trigger = {
-            exists = event_target:yutong_leader # 幽桐接入后显示他的回忆档案入口。
+            ac_yutong_available = yes # 幽桐接入后显示他的回忆档案入口。
         }
         hidden_effect = {
             country_event = {
@@ -244,7 +265,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.4.rabi_memory # 查看拉比回忆占位。
         trigger = {
-            exists = event_target:rabi_leader # 拉比接入后显示他的回忆档案入口。
+            ac_rabi_available = yes # 拉比接入后显示他的回忆档案入口。
         }
         hidden_effect = {
             country_event = {
@@ -256,15 +277,9 @@ country_event = {
     option = {
         name = aemusa_dialogue.4.empty # 暂无回忆时显示占位。
         trigger = {
-            NOT = {
-                exists = event_target:seth_leader # 赛斯尚未接入时暂无可回放内容。
-            }
-            NOT = {
-                exists = event_target:yutong_leader # 幽桐尚未接入时暂无可回放内容。
-            }
-            NOT = {
-                exists = event_target:rabi_leader # 拉比尚未接入时暂无可回放内容。
-            }
+            ac_seth_recruit_available = yes
+            ac_yutong_recruit_available = yes
+            ac_rabi_recruit_available = yes
         }
     }
 
@@ -294,9 +309,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.40.seth_recruit # 邀请赛斯入驻白夜馆。
         trigger = {
-            NOT = {
-                exists = event_target:seth_leader # 未招募赛斯时显示邀请入口。
-            }
+            ac_seth_recruit_available = yes
         }
         hidden_effect = {
             country_event = {
@@ -308,7 +321,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.40.seth_contact # 与已入驻的赛斯通讯。
         trigger = {
-            exists = event_target:seth_leader # 已招募赛斯时显示通讯入口。
+            ac_seth_available = yes # 已招募赛斯时显示通讯入口。
         }
         hidden_effect = {
             country_event = {
@@ -356,9 +369,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.41.yutong_recruit # 邀请幽桐入驻白夜馆。
         trigger = {
-            NOT = {
-                exists = event_target:yutong_leader # 未招募幽桐时显示邀请入口。
-            }
+            ac_yutong_recruit_available = yes
         }
         hidden_effect = {
             country_event = {
@@ -370,7 +381,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.41.yutong_contact # 与已入驻的幽桐通讯。
         trigger = {
-            exists = event_target:yutong_leader # 已招募幽桐时显示通讯入口。
+            ac_yutong_available = yes # 已招募幽桐时显示通讯入口。
         }
         hidden_effect = {
             country_event = {
@@ -382,9 +393,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.41.rabi_recruit # 邀请拉比入驻白夜馆。
         trigger = {
-            NOT = {
-                exists = event_target:rabi_leader # 未招募拉比时显示邀请入口。
-            }
+            ac_rabi_recruit_available = yes
         }
         hidden_effect = {
             country_event = {
@@ -396,7 +405,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.41.rabi_contact # 与已入驻的拉比通讯。
         trigger = {
-            exists = event_target:rabi_leader # 已招募拉比时显示通讯入口。
+            ac_rabi_available = yes # 已招募拉比时显示通讯入口。
         }
         hidden_effect = {
             country_event = {
@@ -487,9 +496,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.30.accept # 确认招募赛斯。
         trigger = {
-            NOT = {
-                exists = event_target:seth_leader # 防止重复招募。
-            }
+            ac_seth_recruit_available = yes
         }
         hidden_effect = {
             seth_summon_leader = yes # 调用脚本化效果创建赛斯。
@@ -510,7 +517,7 @@ country_event = {
     }
 }
 
-# 赛斯通讯事件：展示赛斯当前定位，后续可在这里接职业选择与专属任务。
+# 赛斯通讯事件：展示赛斯当前定位，接入愿望履责、职业切换与支援记录。
 country_event = {
     id = aemusa_dialogue.31 # 赛斯通讯事件 ID。
     title = aemusa_dialogue.31.title # 标题本地化键。
@@ -625,9 +632,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.34.accept # 确认招募幽桐。
         trigger = {
-            NOT = {
-                exists = event_target:yutong_leader # 防止重复招募。
-            }
+            ac_yutong_recruit_available = yes
         }
         hidden_effect = {
             yutong_summon_leader = yes # 调用脚本化效果创建幽桐。
@@ -648,7 +653,7 @@ country_event = {
     }
 }
 
-# 幽桐通讯事件：展示幽桐当前定位，后续可在这里接远程压制任务。
+# 幽桐通讯事件：展示幽桐当前定位，接入自定射界与保护对象。
 country_event = {
     id = aemusa_dialogue.35 # 幽桐通讯事件 ID。
     title = aemusa_dialogue.35.title # 标题本地化键。
@@ -763,9 +768,7 @@ country_event = {
     option = {
         name = aemusa_dialogue.44.accept # 确认招募拉比。
         trigger = {
-            NOT = {
-                exists = event_target:rabi_leader # 防止重复招募。
-            }
+            ac_rabi_recruit_available = yes
         }
         hidden_effect = {
             rabi_summon_leader = yes # 调用脚本化效果创建拉比。
@@ -786,7 +789,7 @@ country_event = {
     }
 }
 
-# 拉比通讯事件：展示拉比当前定位，后续可在这里接地面突破任务。
+# 拉比通讯事件：展示拉比当前定位，接入阿米特的守则与有限反击。
 country_event = {
     id = aemusa_dialogue.45 # 拉比通讯事件 ID。
     title = aemusa_dialogue.45.title # 标题本地化键。

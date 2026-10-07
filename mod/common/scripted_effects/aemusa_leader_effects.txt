@@ -83,71 +83,86 @@ aemusa_refresh_portrait = {
     }
 }
 
-# 创建赛斯。赛斯作为白夜馆神官接入，初始为行政官并保存为全局事件目标。
+# 创建赛斯。赛斯作为圣星教会神官及中央庭协作者接入，初始为行政官并保存为全局事件目标。
 seth_summon_leader = {
-    create_leader = {
-        class = official # 初始职业：行政官。
-        name = "seth" # 使用本地化键显示姓名“赛斯”。
-        gender = male # 领袖性别。
-        species = owner_main_species # 使用帝国主物种，确保事件领袖属于当前神器使文明。
-        custom_description = seth_leader_background # 使用白夜馆神官的专属背景文本。
-        background_ethic = ethic_spiritualist # 以唯心背景强调神官、信仰与守护者身份。
-        event_leader = yes # 标记为事件领袖，便于作为独特角色管理。
-        skill = 7 # 初始等级为 7 级，低于爱缪莎但高于普通招募领袖。
-        randomize_traits = no # 禁止随机特质，确保只拥有专属技能。
-        skip_background_generation = yes # 不生成随机背景故事。
-        traits = {
-            trait = leader_trait_seth_official # 初始专属技能：羽蛇神杖。
-        }
-        effect = {
-            set_leader_flag = seth_unique_leader # 供后续逻辑识别此独特领袖。
-            save_global_event_target_as = seth_leader # 供白夜馆名册和后续互动持续定位赛斯。
+    # 已接入过的人物不会因离世或离开被重新创建。
+    if = {
+        limit = { ac_seth_recruit_available = yes }
+        set_country_flag = ac_seth_recruited
+        create_leader = {
+            class = official # 初始职业：行政官。
+            name = "seth" # 使用本地化键显示姓名“赛斯”。
+            gender = male # 领袖性别。
+            species = owner_main_species # 使用帝国主物种，确保事件领袖属于当前神器使文明。
+            custom_description = seth_leader_background # 使用圣星教会神官与中央庭协作的背景文本。
+            background_ethic = ethic_spiritualist # 以唯心背景强调神官、信仰与守护者身份。
+            event_leader = yes # 标记为事件领袖，便于作为独特角色管理。
+            skill = 7 # 初始等级为 7 级，低于爱缪莎但高于普通招募领袖。
+            randomize_traits = no # 禁止随机特质，确保只拥有专属技能。
+            skip_background_generation = yes # 不生成随机背景故事。
+            traits = {
+                trait = leader_trait_seth_official # 初始专属技能：羽蛇神杖。
+            }
+            effect = {
+                set_leader_flag = seth_unique_leader # 供后续逻辑识别此独特领袖。
+                save_global_event_target_as = seth_leader # 供白夜馆名册和后续互动持续定位赛斯。
+            }
         }
     }
 }
 
 # 创建幽桐。幽桐作为主线剧情与记忆殿堂档案接入，初始为指挥官并保存为全局事件目标。
 yutong_summon_leader = {
-    create_leader = {
-        class = commander # 初始职业：指挥官，对应原作射手定位。
-        name = "yutong" # 使用本地化键显示姓名“幽桐”。
-        gender = male # 领袖性别。
-        species = owner_main_species # 使用帝国主物种，确保事件领袖属于当前神器使文明。
-        custom_description = yutong_leader_background # 使用幽桐的专属背景文本。
-        background_ethic = ethic_militarist # 以尚武背景强调射手、战斗与远程压制定位。
-        event_leader = yes # 标记为事件领袖，便于作为独特角色管理。
-        skill = 7 # 初始等级为 7 级，与赛斯保持同一接入档位。
-        randomize_traits = no # 禁止随机特质，确保只拥有专属技能。
-        skip_background_generation = yes # 不生成随机背景故事。
-        traits = {
-            trait = leader_trait_yutong_commander # 初始专属技能：神弓・甘狄拔。
-        }
-        effect = {
-            set_leader_flag = yutong_unique_leader # 供后续逻辑识别此独特领袖。
-            save_global_event_target_as = yutong_leader # 供白夜馆名册和后续互动持续定位幽桐。
+    # 已接入过的人物不会因离世或离开被重新创建。
+    if = {
+        limit = { ac_yutong_recruit_available = yes }
+        set_country_flag = ac_yutong_recruited
+        create_leader = {
+            class = commander # 初始职业：指挥官，对应原作射手定位。
+            name = "yutong" # 使用本地化键显示姓名“幽桐”。
+            gender = male # 领袖性别。
+            species = owner_main_species # 使用帝国主物种，确保事件领袖属于当前神器使文明。
+            custom_description = yutong_leader_background # 使用幽桐的专属背景文本。
+            background_ethic = ethic_militarist # 以尚武背景强调射手、战斗与远程压制定位。
+            event_leader = yes # 标记为事件领袖，便于作为独特角色管理。
+            skill = 7 # 初始等级为 7 级，与赛斯保持同一接入档位。
+            randomize_traits = no # 禁止随机特质，确保只拥有专属技能。
+            skip_background_generation = yes # 不生成随机背景故事。
+            traits = {
+                trait = leader_trait_yutong_commander # 初始专属技能：神弓・甘狄拔。
+            }
+            effect = {
+                set_leader_flag = yutong_unique_leader # 供后续逻辑识别此独特领袖。
+                save_global_event_target_as = yutong_leader # 供白夜馆名册和后续互动持续定位幽桐。
+            }
         }
     }
 }
 
 # 创建拉比。拉比作为主线剧情与记忆殿堂档案接入，初始为指挥官并保存为全局事件目标。
 rabi_summon_leader = {
-    create_leader = {
-        class = commander # 初始职业：指挥官，对应原作战士定位。
-        name = "rabi" # 使用本地化键显示姓名“拉比”。
-        gender = male # 领袖性别。
-        species = owner_main_species # 使用帝国主物种，确保事件领袖属于当前神器使文明。
-        custom_description = rabi_leader_background # 使用拉比的专属背景文本。
-        background_ethic = ethic_militarist # 以尚武背景强调战士、刚属性与地面突破定位。
-        event_leader = yes # 标记为事件领袖，便于作为独特角色管理。
-        skill = 7 # 初始等级为 7 级，与赛斯、幽桐保持同一接入档位。
-        randomize_traits = no # 禁止随机特质，确保只拥有专属技能。
-        skip_background_generation = yes # 不生成随机背景故事。
-        traits = {
-            trait = leader_trait_rabi_commander # 初始专属技能：怪兽・阿米特。
-        }
-        effect = {
-            set_leader_flag = rabi_unique_leader # 供后续逻辑识别此独特领袖。
-            save_global_event_target_as = rabi_leader # 供白夜馆名册和后续互动持续定位拉比。
+    # 已接入过的人物不会因离世或离开被重新创建。
+    if = {
+        limit = { ac_rabi_recruit_available = yes }
+        set_country_flag = ac_rabi_recruited
+        create_leader = {
+            class = commander # 初始职业：指挥官，对应原作战士定位。
+            name = "rabi" # 使用本地化键显示姓名“拉比”。
+            gender = male # 领袖性别。
+            species = owner_main_species # 使用帝国主物种，确保事件领袖属于当前神器使文明。
+            custom_description = rabi_leader_background # 使用拉比的专属背景文本。
+            background_ethic = ethic_militarist # 以尚武背景强调战士、刚属性与地面突破定位。
+            event_leader = yes # 标记为事件领袖，便于作为独特角色管理。
+            skill = 7 # 初始等级为 7 级，与赛斯、幽桐保持同一接入档位。
+            randomize_traits = no # 禁止随机特质，确保只拥有专属技能。
+            skip_background_generation = yes # 不生成随机背景故事。
+            traits = {
+                trait = leader_trait_rabi_commander # 初始专属技能：怪兽・阿米特。
+            }
+            effect = {
+                set_leader_flag = rabi_unique_leader # 供后续逻辑识别此独特领袖。
+                save_global_event_target_as = rabi_leader # 供白夜馆名册和后续互动持续定位拉比。
+            }
         }
     }
 }

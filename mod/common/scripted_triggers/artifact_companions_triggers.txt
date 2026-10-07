@@ -1,0 +1,209 @@
+# 里程碑3第二批：国家账本与关系目标均按当前玩家隔离。
+ac_player = {
+    is_ai = no
+    has_origin = origin_artifact_resonance
+}
+ac_seth_available = {
+    any_owned_leader = { has_leader_flag = seth_unique_leader }
+}
+ac_yutong_available = {
+    any_owned_leader = { has_leader_flag = yutong_unique_leader }
+}
+ac_rabi_available = {
+    any_owned_leader = { has_leader_flag = rabi_unique_leader }
+}
+ac_seth_recruit_available = {
+    NOR = {
+        ac_seth_available = yes
+        has_country_flag = ac_seth_recruited
+    }
+}
+ac_yutong_recruit_available = {
+    NOR = {
+        ac_yutong_available = yes
+        has_country_flag = ac_yutong_recruited
+    }
+}
+ac_rabi_recruit_available = {
+    NOR = {
+        ac_rabi_available = yes
+        has_country_flag = ac_rabi_recruited
+    }
+}
+ac_seth_official = {
+    any_owned_leader = {
+        has_leader_flag = seth_unique_leader
+        leader_class = official
+    }
+}
+ac_seth_commander = {
+    any_owned_leader = {
+        has_leader_flag = seth_unique_leader
+        leader_class = commander
+    }
+}
+# 失去所有权结束请求；被占领只暂停，保留调查和已付费用。
+ac_seth_target_valid = {
+    exists = event_target:ac_seth_target@root
+    event_target:ac_seth_target@root = {
+        is_owned_by = root
+        is_colony = yes
+        has_planet_flag = ac_seth_request@root
+    }
+}
+ac_seth_target_accessible = {
+    ac_seth_target_valid = yes
+    event_target:ac_seth_target@root = { is_controlled_by = root }
+}
+ac_seth_idle = {
+    ac_player = yes
+    ac_seth_available = yes
+    NOR = {
+        has_country_flag = ac_seth_investigating
+        has_country_flag = ac_seth_ready
+        has_country_flag = ac_seth_working
+        has_country_flag = ac_seth_secondary
+        has_country_flag = ac_seth_cooldown
+    }
+    any_owned_planet = {
+        is_colony = yes
+        is_controlled_by = root
+    }
+    has_resource = { type = energy amount >= 100 }
+    has_resource = { type = unity amount >= 50 }
+}
+ac_seth_public_available = {
+    ac_seth_available = yes
+    ac_seth_official = yes
+    ac_seth_target_accessible = yes
+    has_country_flag = ac_seth_ready
+    has_resource = { type = energy amount >= 300 }
+    has_resource = { type = consumer_goods amount >= 100 }
+}
+ac_seth_direct_present = {
+    ac_seth_commander = yes
+    ac_seth_target_accessible = yes
+    any_owned_fleet = {
+        is_ship_class = shipclass_military
+        is_mobile = yes
+        is_controlled_by = root
+        exists = leader
+        leader = { has_leader_flag = seth_unique_leader }
+        solar_system = {
+            any_system_planet = { is_same_value = event_target:ac_seth_target@root }
+        }
+    }
+}
+ac_seth_direct_available = {
+    ac_seth_available = yes
+    ac_seth_direct_present = yes
+    has_country_flag = ac_seth_ready
+    has_resource = { type = energy amount >= 200 }
+    has_resource = { type = alloys amount >= 50 }
+}
+ac_seth_hasty_available = {
+    ac_seth_available = yes
+    ac_seth_target_accessible = yes
+    has_country_flag = ac_seth_investigating
+    has_resource = { type = energy amount >= 100 }
+    has_resource = { type = consumer_goods amount >= 50 }
+}
+# 军用舰队必须是人物实际带领、玩家拥有并控制的可移动舰队。
+ac_yutong_commanded_force = {
+    is_ship_class = shipclass_military
+    is_mobile = yes
+    is_owned_by = root
+    is_controlled_by = root
+    exists = solar_system
+    exists = leader
+    leader = { has_leader_flag = yutong_unique_leader }
+    NOT = { any_owned_ship = { is_ship_size = aemusa_reality_flagship } }
+}
+ac_yutong_start_available = {
+    ac_player = yes
+    ac_yutong_available = yes
+    NOR = {
+        has_country_flag = ac_yutong_active
+        has_country_flag = ac_yutong_cooldown
+    }
+    any_owned_fleet = { ac_yutong_commanded_force = yes }
+    has_resource = { type = energy amount >= 200 }
+}
+ac_yutong_target_valid = {
+    exists = event_target:ac_yutong_force@root
+    event_target:ac_yutong_force@root = {
+        is_owned_by = root
+        is_mobile = yes
+        has_fleet_flag = ac_yutong_force@root
+    }
+}
+ac_yutong_in_position = {
+    ac_yutong_target_valid = yes
+    event_target:ac_yutong_force@root = {
+        ac_yutong_commanded_force = yes
+        solar_system = { has_star_flag = ac_yutong_anchor@root }
+    }
+}
+ac_yutong_burst_available = {
+    has_country_flag = ac_yutong_active
+    has_country_flag = ac_yutong_stable
+    has_country_flag = ac_yutong_contact
+    ac_yutong_in_position = yes
+    NOT = { has_country_flag = ac_yutong_recovery }
+    event_target:ac_yutong_force@root = { is_in_combat = yes }
+}
+ac_rabi_commanded_force = {
+    is_ship_class = shipclass_military
+    is_mobile = yes
+    is_owned_by = root
+    is_controlled_by = root
+    exists = solar_system
+    exists = leader
+    leader = { has_leader_flag = rabi_unique_leader }
+    NOT = { any_owned_ship = { is_ship_size = aemusa_reality_flagship } }
+}
+ac_rabi_start_available = {
+    ac_player = yes
+    ac_rabi_available = yes
+    NOR = {
+        has_country_flag = ac_rabi_requested
+        has_country_flag = ac_rabi_active
+        has_country_flag = ac_rabi_cooldown
+    }
+    any_owned_fleet = { ac_rabi_commanded_force = yes }
+}
+ac_rabi_target_valid = {
+    exists = event_target:ac_rabi_force@root
+    event_target:ac_rabi_force@root = {
+        is_owned_by = root
+        is_mobile = yes
+        has_fleet_flag = ac_rabi_force@root
+    }
+}
+ac_rabi_on_duty = {
+    ac_rabi_target_valid = yes
+    event_target:ac_rabi_force@root = { ac_rabi_commanded_force = yes }
+}
+# 反击资格来自参战回调登记的真实对手；敌对外交状态本身不授予资格。
+ac_rabi_threat_valid = {
+    has_country_flag = ac_rabi_threat_registered
+    exists = event_target:ac_rabi_threat@root
+    event_target:ac_rabi_threat@root = {
+        has_fleet_flag = ac_rabi_threat@root
+        is_in_combat = yes
+        exists = owner
+        owner = { NOT = { is_same_value = root } }
+        solar_system = { any_fleet_in_system = { is_same_value = event_target:ac_rabi_force@root } }
+    }
+}
+ac_rabi_counter_available = {
+    has_country_flag = ac_rabi_active
+    ac_rabi_available = yes
+    ac_rabi_on_duty = yes
+    ac_rabi_threat_valid = yes
+    event_target:ac_rabi_force@root = { is_in_combat = yes }
+    NOR = {
+        has_country_flag = ac_rabi_recovery
+        has_country_flag = ac_rabi_refused
+    }
+}

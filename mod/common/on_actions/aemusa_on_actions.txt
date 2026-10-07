@@ -44,6 +44,7 @@ on_monthly_pulse_country = {
 		aemusa_ms.601
 		aemusa_exclusive.2 # 只核对本路线当前锚点、舰船和现实基线枢纽。
 		central_court.4 # 独立角色账本：情报核验和方舟校准。
+		artifact_companions.1 # 三人单队列履责、射界校准与实际威胁保护。
 	}
 }
 
@@ -93,11 +94,24 @@ on_fleet_destroyed_victim = {
 
 # 任命完成后立即拒绝把爱缪莎绑定到可摧毁的新旗舰；不改她在普通舰队的任命。
 on_leader_assigned = {
-	events = { aemusa_flagship.3 }
+	events = {
+		aemusa_flagship.3
+		artifact_companions.3
+	}
+}
+# 同一人物解除任职后及时暂停专属支援；不清除国家恢复期。
+on_leader_unassigned = {
+	events = { artifact_companions.4 }
 }
 on_fleet_combat_joined_attacker = {
-	events = { aemusa_flagship.4 }
+	events = {
+		aemusa_flagship.4
+		artifact_companions.10
+	}
 }
 on_fleet_combat_joined_defender = {
-	events = { aemusa_flagship.4 }
+	events = {
+		aemusa_flagship.4
+		artifact_companions.10
+	}
 }

@@ -50,7 +50,7 @@ leader_trait_aemusa_scientist = {
        }
 }
 
-# 赛斯专属特质：依据原作“辅助型神官”与神器“羽蛇神杖”映射为随等级成长的殖民地治疗和安抚能力。
+# 三人身份特质沿用旧键兼容存档；正式能力由独立任务和指定目标效果提供。
 leader_trait_seth_official = {
     icon = {
         layer = { icon = "GFX_leader_trait_charismatic" }
@@ -58,25 +58,21 @@ leader_trait_seth_official = {
     cost = 0 # 专属特质不占用特质点。
     initial = no # 不在常规领袖生成界面中出现。
     randomized = no # 不允许其他领袖随机获得。
-    leader_class = { official } # 赛斯当前作为行政官接入白夜馆。
-
-    triggered_planet_modifier = {
-        potential = { always = yes }
-        pop_happiness = 0.01 # 每级领袖等级使管辖行星人口幸福度 +1%，对应赛斯作为辅助型神官的安抚能力。
-        planet_amenities_add = 1 # 每级领袖等级使管辖行星舒适度 +1，对应治疗、祝福和避难点支援。
-        planet_stability_add = 1 # 每级领袖等级使管辖行星稳定度 +1，表现沦陷区救援后恢复秩序的能力。
-        mult = trigger:has_total_skill # 按领袖总等级放大上述管辖行星效果。
-    }
-
-    triggered_councilor_modifier = {
-        potential = { exists = owner }
-        country_unity_produces_mult = 0.01 # 每级领袖等级使任职议会时全国凝聚力产出 +1%，对应神官身份与圣星教会纽带。
-        country_edict_fund_add = 5 # 每级领袖等级使任职议会时法令经费 +5，表现白夜馆和中央庭的临时支援调度。
-        mult = trigger:has_total_skill # 按领袖总等级放大上述议会效果。
-    }
+    leader_class = { official }
 }
 
-# 幽桐专属特质：依据原作“射手”“巧属性”与神器“神弓・甘狄拔”映射为随等级成长的舰队远程压制能力。
+# 切换仍使用同一赛斯，不能随机获得其身份。
+leader_trait_seth_commander = {
+    icon = {
+        layer = { icon = "GFX_leader_trait_charismatic" }
+    }
+    cost = 0
+    initial = no
+    randomized = no
+    leader_class = { commander }
+}
+
+# 幽桐的校准收益只属于当前射界内的指定舰队。
 leader_trait_yutong_commander = {
     icon = {
         layer = { icon = "GFX_leader_trait_unyielding" }
@@ -84,18 +80,10 @@ leader_trait_yutong_commander = {
     cost = 0 # 专属特质不占用特质点。
     initial = no # 不在常规领袖生成界面中出现。
     randomized = no # 不允许其他领袖随机获得。
-    leader_class = { commander } # 幽桐当前作为指挥官接入白夜馆。
-
-    triggered_fleet_modifier = {
-        potential = { always = yes }
-        ship_fire_rate_mult = 0.05 # 每级领袖等级使所在舰队武器射速 +5%，表现幽桐稳定连射与精准支援。
-        ship_weapon_damage = 0.05 # 每级领袖等级使所在舰队武器伤害 +5%，对应神弓的精准打击。
-        ship_weapon_range_mult = 0.01 # 每级领袖等级使所在舰队武器射程 +1%，对应神弓的远距离压制。
-        mult = trigger:has_total_skill # 按领袖总等级放大上述舰队效果。
-    }
+    leader_class = { commander }
 }
 
-# 拉比专属特质：依据原作“战士”“刚属性”与神器“怪兽・阿米特”映射为随等级成长的地面突破能力。
+# 阿米特是共同履行保护约定的守护者，不额外创建领袖或舰船。
 leader_trait_rabi_commander = {
     icon = {
         layer = { icon = "GFX_leader_trait_resilient" }
@@ -103,13 +91,5 @@ leader_trait_rabi_commander = {
     cost = 0 # 专属特质不占用特质点。
     initial = no # 不在常规领袖生成界面中出现。
     randomized = no # 不允许其他领袖随机获得。
-    leader_class = { commander } # 拉比当前作为指挥官接入白夜馆。
-
-    triggered_army_modifier = {
-        potential = { leader_class = commander }
-        army_damage_mult = 0.05 # 每级领袖等级使所指挥陆军伤害 +5%，对应战士型神器使的正面突破。
-        army_morale = 0.03 # 每级领袖等级使所指挥陆军士气 +3%，表现拉比在近战中的压迫感。
-        army_health = 0.03 # 每级领袖等级使所指挥陆军生命值 +3%，对应怪兽・阿米特的坚韧特性。
-        mult = trigger:has_total_skill # 按领袖总等级放大上述陆军效果。
-    }
+    leader_class = { commander }
 }
