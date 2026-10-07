@@ -69,6 +69,12 @@ country_event = {
     picture = GFX_evt_aemusa_white_night_pavilion # 名册页沿用白夜馆前台事件图。
 
     option = {
+        name = ar.open_roster
+        trigger = { ar_player = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+
+    option = {
         name = aemusa_dialogue.2.central_church # 查看中央庭与圣星教会相关神器使。
         hidden_effect = {
             country_event = {
@@ -128,6 +134,20 @@ country_event = {
     picture = GFX_evt_aemusa_white_night_pavilion # 通讯台沿用白夜馆背景。
 
     option = {
+        name = ar.open_roster
+        trigger = {
+            ar_player = yes
+            OR = {
+                ar_an_available = yes
+                ar_greysa_available = yes
+                ar_wenzi_available = yes
+                ar_li_available = yes
+            }
+        }
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+
+    option = {
         name = aemusa_dialogue.3.aemusa # 转入爱缪莎职责通讯。
         trigger = {
             exists = event_target:aemusa_leader # 仅在爱缪莎已被召唤且仍存在时显示。
@@ -185,6 +205,12 @@ country_event = {
             ac_seth_recruit_available = yes
             ac_yutong_recruit_available = yes
             ac_rabi_recruit_available = yes
+            NOR = {
+                ar_an_available = yes
+                ar_greysa_available = yes
+                ar_wenzi_available = yes
+                ar_li_available = yes
+            }
         }
     }
 

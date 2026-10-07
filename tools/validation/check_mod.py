@@ -11,7 +11,7 @@ import sys
 
 
 SCRIPT_EXTENSIONS = {".txt", ".gfx", ".asset", ".gui", ".mod"}
-OWNED = re.compile(r"aemusa|artifact|destiny_lord|white_night", re.I)
+OWNED = re.compile(r"aemusa|artifact|destiny_lord|white_night|^ar[._]|^leader_trait_ar_", re.I)
 STATE = re.compile(r"aemusa_ms_(?:country|leader|truth|decision)_\w+\Z")
 EVENT_ID = re.compile(r"([A-Za-z_]\w*)\.\d+\Z")
 

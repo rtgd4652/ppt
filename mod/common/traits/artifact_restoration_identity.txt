@@ -1,0 +1,33 @@
+# 身份特质贯穿允许职业；任务收益来自有限目标，不附全局乘数。
+leader_trait_ar_an_identity = {
+    icon = { layer = { icon = "GFX_leader_trait_intellectual" } }
+    cost = 0
+    initial = no
+    randomized = no
+    leader_class = { official commander }
+}
+
+leader_trait_ar_greysa_identity = {
+    icon = { layer = { icon = "GFX_leader_trait_intellectual" } }
+    cost = 0
+    initial = no
+    randomized = no
+    leader_class = { scientist commander }
+}
+
+leader_trait_ar_wenzi_identity = {
+    icon = { layer = { icon = "GFX_leader_trait_intellectual" } }
+    cost = 0
+    initial = no
+    randomized = no
+    leader_class = { official commander }
+}
+
+leader_trait_ar_li_identity = {
+    icon = { layer = { icon = "GFX_leader_trait_intellectual" } }
+    cost = 0
+    initial = no
+    randomized = no
+    leader_class = { official scientist commander }
+}
+

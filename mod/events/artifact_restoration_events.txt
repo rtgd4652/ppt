@@ -1,0 +1,673 @@
+namespace = artifact_restoration
+# 第三批独立国家账本，复用白夜馆入口，不改主线。
+
+country_event = {
+    id = artifact_restoration.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        ar_player = yes
+        OR = { has_country_flag = ar_an_recruited has_country_flag = ar_greysa_recruited has_country_flag = ar_wenzi_recruited has_country_flag = ar_li_recruited }
+    }
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+        if = {
+            limit = { NOT = { has_country_flag = ar_month_checked } }
+            set_timed_country_flag = { flag = ar_month_checked days = 28 }
+            ar_an_monthly = yes
+            ar_greysa_monthly = yes
+            ar_li_monthly = yes
+        }
+    }
+}
+
+fleet_event = {
+    id = artifact_restoration.10
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        exists = owner
+        owner = { ar_player = yes has_country_flag = ar_an_active has_country_flag = ar_an_fleet }
+        exists = leader
+        leader = { has_leader_flag = ar_an_unique }
+        exists = from
+        from = { exists = owner }
+    }
+    immediate = {
+        save_event_target_as = ar_combat_force
+        from = { save_event_target_as = ar_combat_enemy }
+        owner = { country_event = { id = artifact_restoration.11 } }
+    }
+}
+
+country_event = {
+    id = artifact_restoration.11
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = {
+        ar_player = yes
+        has_country_flag = ar_an_active
+        has_country_flag = ar_an_fleet
+        ar_an_target_valid = yes
+        NOT = { has_country_flag = ar_an_combat_observed }
+        exists = event_target:ar_combat_force
+        exists = event_target:ar_combat_enemy
+        event_target:ar_combat_force = { is_same_value = event_target:ar_an_target@root ar_an_commanded_force = yes }
+        event_target:ar_combat_enemy = { owner = { NOT = { is_same_value = root } } }
+    }
+    immediate = {
+        event_target:ar_combat_enemy = { save_global_event_target_as = ar_an_observed_enemy@root }
+        set_country_flag = ar_an_combat_observed
+        log = "RESTORATION|an_actual_combat_observed"
+    }
+}
+
+country_event = {
+    id = artifact_restoration.20
+    title = ar.roster.title
+    desc = ar.roster.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.an.recruit
+        trigger = { ar_an_recruit_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.101 } }
+    }
+    option = { name = ar.an.contact
+        trigger = { ar_an_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.100 } }
+    }
+    option = { name = ar.greysa.recruit
+        trigger = { ar_greysa_recruit_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.201 } }
+    }
+    option = { name = ar.greysa.contact
+        trigger = { ar_greysa_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.200 } }
+    }
+    option = { name = ar.wenzi.recruit
+        trigger = { ar_wenzi_recruit_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.301 } }
+    }
+    option = { name = ar.wenzi.contact
+        trigger = { ar_wenzi_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.300 } }
+    }
+    option = { name = ar.li.recruit
+        trigger = { ar_li_recruit_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.401 } }
+    }
+    option = { name = ar.li.contact
+        trigger = { ar_li_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.400 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = aemusa_dialogue.2 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.101
+    title = ar.an.recruit.title
+    desc = ar.an.recruit.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.recruit_confirm
+        trigger = { ar_an_recruit_available = yes has_resource = { type = unity amount >= 500 } }
+        hidden_effect = { ar_an_recruit = yes country_event = { id = artifact_restoration.100 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.100
+    title = ar.an.contact.title
+    desc = ar.an.contact.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.an.task
+        trigger = { ar_an_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.110 } }
+    }
+    option = { name = ar.become_official
+        trigger = { ar_an_available = yes NOT = { ar_an_official = yes } }
+        hidden_effect = { ar_an_become_official = yes country_event = { id = artifact_restoration.100 } }
+    }
+
+    option = { name = ar.become_commander
+        trigger = { ar_an_available = yes NOT = { ar_an_commander = yes } }
+        hidden_effect = { ar_an_become_commander = yes country_event = { id = artifact_restoration.100 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.110
+    title = ar.an.task.title
+    desc = { trigger = { has_country_flag = ar_an_planet has_country_flag = ar_an_active } text = ar.an.task.planet.active }
+    desc = { trigger = { has_country_flag = ar_an_planet has_country_flag = ar_an_record_ready } text = ar.an.task.planet.record }
+    desc = { trigger = { has_country_flag = ar_an_fleet has_country_flag = ar_an_active NOT = { has_country_flag = ar_an_combat_observed } } text = ar.an.task.fleet.waiting }
+    desc = { trigger = { has_country_flag = ar_an_fleet has_country_flag = ar_an_active has_country_flag = ar_an_combat_observed } text = ar.an.task.fleet.active }
+    desc = { trigger = { has_country_flag = ar_an_fleet has_country_flag = ar_an_record_ready } text = ar.an.task.fleet.record }
+    desc = { trigger = { NOR = { has_country_flag = ar_an_planet has_country_flag = ar_an_fleet } } text = ar.an.task.idle }
+
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.an.begin_planet
+        trigger = { ar_an_planet_start_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.111 } }
+    }
+    option = { name = ar.an.begin_fleet
+        trigger = { ar_an_fleet_start_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.111 } }
+    }
+    option = { name = ar.an.apply
+        trigger = { ar_an_apply_available = yes }
+        hidden_effect = { ar_an_apply_record = yes country_event = { id = artifact_restoration.110 } }
+    }
+    option = { name = ar.an.escape
+        trigger = { ar_an_escape_available = yes }
+        hidden_effect = { ar_an_escape = yes country_event = { id = artifact_restoration.110 } }
+    }
+    option = { name = ar.withdraw
+        trigger = { OR = { has_country_flag = ar_an_active has_country_flag = ar_an_ready has_country_flag = ar_an_working has_country_flag = ar_an_record_ready } }
+        hidden_effect = { ar_an_withdraw = yes country_event = { id = artifact_restoration.110 } }
+    }
+    option = { name = ar.cooldown
+        trigger = { has_country_flag = ar_an_cooldown }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.100 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.111
+    title = ar.an.register.title
+    desc = ar.an.register.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.an.confirm_planet
+        trigger = { ar_an_planet_start_available = yes }
+        hidden_effect = { ar_an_start_planet = yes country_event = { id = artifact_restoration.110 } }
+    }
+    option = { name = ar.an.confirm_fleet
+        trigger = { ar_an_fleet_start_available = yes }
+        hidden_effect = { ar_an_start_fleet = yes country_event = { id = artifact_restoration.110 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.110 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.201
+    title = ar.greysa.recruit.title
+    desc = ar.greysa.recruit.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.recruit_confirm
+        trigger = { ar_greysa_recruit_available = yes has_resource = { type = unity amount >= 500 } }
+        hidden_effect = { ar_greysa_recruit = yes country_event = { id = artifact_restoration.200 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.200
+    title = ar.greysa.contact.title
+    desc = ar.greysa.contact.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.greysa.task
+        trigger = { ar_greysa_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.210 } }
+    }
+    option = { name = ar.become_scientist
+        trigger = { ar_greysa_available = yes NOT = { ar_greysa_scientist = yes } }
+        hidden_effect = { ar_greysa_become_scientist = yes country_event = { id = artifact_restoration.200 } }
+    }
+
+    option = { name = ar.become_commander
+        trigger = { ar_greysa_available = yes NOT = { ar_greysa_commander = yes } }
+        hidden_effect = { ar_greysa_become_commander = yes country_event = { id = artifact_restoration.200 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.210
+    title = ar.greysa.task.title
+    desc = { trigger = { has_country_flag = ar_greysa_planet has_country_flag = ar_greysa_active } text = ar.greysa.task.planet.active }
+    desc = { trigger = { has_country_flag = ar_greysa_planet has_country_flag = ar_greysa_ready } text = ar.greysa.task.planet.ready }
+    desc = { trigger = { has_country_flag = ar_greysa_fleet has_country_flag = ar_greysa_active } text = ar.greysa.task.fleet.active }
+    desc = { trigger = { has_country_flag = ar_greysa_fleet has_country_flag = ar_greysa_ready } text = ar.greysa.task.fleet.ready }
+    desc = { trigger = { NOR = { has_country_flag = ar_greysa_planet has_country_flag = ar_greysa_fleet } } text = ar.greysa.task.idle }
+
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.greysa.begin_planet
+        trigger = { ar_greysa_planet_start_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.211 } }
+    }
+    option = { name = ar.greysa.begin_fleet
+        trigger = { ar_greysa_fleet_start_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.211 } }
+    }
+    option = { name = ar.greysa.care
+        trigger = { ar_greysa_care_available = yes }
+        hidden_effect = { ar_greysa_finish_care = yes country_event = { id = artifact_restoration.210 } }
+    }
+    option = { name = ar.greysa.emergency
+        trigger = { ar_greysa_emergency_available = yes }
+        hidden_effect = { ar_greysa_emergency = yes country_event = { id = artifact_restoration.210 } }
+    }
+    option = { name = ar.greysa.archive
+        trigger = { has_country_flag = ar_greysa_completed }
+        hidden_effect = { country_event = { id = artifact_restoration.220 } }
+    }
+    option = { name = ar.withdraw
+        trigger = { OR = { has_country_flag = ar_greysa_active has_country_flag = ar_greysa_ready has_country_flag = ar_greysa_working has_country_flag = ar_greysa_record_ready } }
+        hidden_effect = { ar_greysa_withdraw = yes country_event = { id = artifact_restoration.210 } }
+    }
+    option = { name = ar.cooldown
+        trigger = { has_country_flag = ar_greysa_cooldown }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.200 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.211
+    title = ar.greysa.register.title
+    desc = ar.greysa.register.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.greysa.confirm_planet
+        trigger = { ar_greysa_planet_start_available = yes }
+        hidden_effect = { ar_greysa_start_planet = yes country_event = { id = artifact_restoration.210 } }
+    }
+    option = { name = ar.greysa.confirm_fleet
+        trigger = { ar_greysa_fleet_start_available = yes }
+        hidden_effect = { ar_greysa_start_fleet = yes country_event = { id = artifact_restoration.210 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.210 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.301
+    title = ar.wenzi.recruit.title
+    desc = ar.wenzi.recruit.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.recruit_confirm
+        trigger = { ar_wenzi_recruit_available = yes has_resource = { type = unity amount >= 500 } }
+        hidden_effect = { ar_wenzi_recruit = yes country_event = { id = artifact_restoration.300 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.300
+    title = ar.wenzi.contact.title
+    desc = ar.wenzi.contact.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.wenzi.task
+        trigger = { ar_wenzi_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.310 } }
+    }
+    option = { name = ar.become_official
+        trigger = { ar_wenzi_available = yes NOT = { ar_wenzi_official = yes } }
+        hidden_effect = { ar_wenzi_become_official = yes country_event = { id = artifact_restoration.300 } }
+    }
+
+    option = { name = ar.become_commander
+        trigger = { ar_wenzi_available = yes NOT = { ar_wenzi_commander = yes } }
+        hidden_effect = { ar_wenzi_become_commander = yes country_event = { id = artifact_restoration.300 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.310
+    title = ar.wenzi.task.title
+    desc = { trigger = { has_country_flag = ar_wenzi_planet has_country_flag = ar_wenzi_active } text = ar.wenzi.task.planet.active }
+    desc = { trigger = { has_country_flag = ar_wenzi_fleet has_country_flag = ar_wenzi_active } text = ar.wenzi.task.fleet.active }
+    desc = { trigger = { NOR = { has_country_flag = ar_wenzi_planet has_country_flag = ar_wenzi_fleet } } text = ar.wenzi.task.idle }
+
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.wenzi.begin_planet
+        trigger = { ar_wenzi_planet_start_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.311 } }
+    }
+    option = { name = ar.wenzi.begin_fleet
+        trigger = { ar_wenzi_fleet_start_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.311 } }
+    }
+    option = { name = ar.wenzi.black
+        trigger = { ar_wenzi_black_available = yes }
+        hidden_effect = { ar_wenzi_play_black = yes country_event = { id = artifact_restoration.310 } }
+    }
+    option = { name = ar.wenzi.white
+        trigger = { ar_wenzi_white_available = yes }
+        hidden_effect = { ar_wenzi_play_white = yes country_event = { id = artifact_restoration.310 } }
+    }
+    option = { name = ar.wenzi.finish
+        trigger = { ar_wenzi_finish_available = yes }
+        hidden_effect = { ar_wenzi_finish = yes country_event = { id = artifact_restoration.310 } }
+    }
+    option = { name = ar.withdraw
+        trigger = { OR = { has_country_flag = ar_wenzi_active has_country_flag = ar_wenzi_ready has_country_flag = ar_wenzi_working has_country_flag = ar_wenzi_record_ready } }
+        hidden_effect = { ar_wenzi_withdraw = yes country_event = { id = artifact_restoration.310 } }
+    }
+    option = { name = ar.cooldown
+        trigger = { has_country_flag = ar_wenzi_cooldown }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.300 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.311
+    title = ar.wenzi.register.title
+    desc = ar.wenzi.register.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.wenzi.confirm_planet
+        trigger = { ar_wenzi_planet_start_available = yes }
+        hidden_effect = { ar_wenzi_start_planet = yes country_event = { id = artifact_restoration.310 } }
+    }
+    option = { name = ar.wenzi.confirm_fleet
+        trigger = { ar_wenzi_fleet_start_available = yes }
+        hidden_effect = { ar_wenzi_start_fleet = yes country_event = { id = artifact_restoration.310 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.310 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.401
+    title = ar.li.recruit.title
+    desc = ar.li.recruit.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.recruit_confirm
+        trigger = { ar_li_recruit_available = yes has_resource = { type = unity amount >= 500 } }
+        hidden_effect = { ar_li_recruit = yes country_event = { id = artifact_restoration.400 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.400
+    title = ar.li.contact.title
+    desc = ar.li.contact.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.li.task
+        trigger = { ar_li_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.410 } }
+    }
+    option = { name = ar.become_official
+        trigger = { ar_li_available = yes NOT = { ar_li_official = yes } }
+        hidden_effect = { ar_li_become_official = yes country_event = { id = artifact_restoration.400 } }
+    }
+
+    option = { name = ar.become_scientist
+        trigger = { ar_li_available = yes NOT = { ar_li_scientist = yes } }
+        hidden_effect = { ar_li_become_scientist = yes country_event = { id = artifact_restoration.400 } }
+    }
+
+    option = { name = ar.become_commander
+        trigger = { ar_li_available = yes NOT = { ar_li_commander = yes } }
+        hidden_effect = { ar_li_become_commander = yes country_event = { id = artifact_restoration.400 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.20 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.410
+    title = ar.li.task.title
+    desc = { trigger = { has_country_flag = ar_li_planet has_country_flag = ar_li_active } text = ar.li.task.planet.active }
+    desc = { trigger = { has_country_flag = ar_li_planet has_country_flag = ar_li_ready } text = ar.li.task.planet.ready }
+    desc = { trigger = { has_country_flag = ar_li_planet has_country_flag = ar_li_working NOT = { has_country_flag = ar_li_risk } } text = ar.li.task.planet.working }
+    desc = { trigger = { has_country_flag = ar_li_planet has_country_flag = ar_li_working has_country_flag = ar_li_risk } text = ar.li.task.planet.risk }
+    desc = { trigger = { has_country_flag = ar_li_fleet has_country_flag = ar_li_active } text = ar.li.task.fleet.active }
+    desc = { trigger = { has_country_flag = ar_li_fleet has_country_flag = ar_li_ready } text = ar.li.task.fleet.ready }
+    desc = { trigger = { has_country_flag = ar_li_fleet has_country_flag = ar_li_working NOT = { has_country_flag = ar_li_risk } } text = ar.li.task.fleet.working }
+    desc = { trigger = { has_country_flag = ar_li_fleet has_country_flag = ar_li_working has_country_flag = ar_li_risk } text = ar.li.task.fleet.risk }
+    desc = { trigger = { NOR = { has_country_flag = ar_li_planet has_country_flag = ar_li_fleet } } text = ar.li.task.idle }
+
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.li.begin_planet
+        trigger = { ar_li_planet_start_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.411 } }
+    }
+    option = { name = ar.li.begin_fleet
+        trigger = { ar_li_fleet_start_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.411 } }
+    }
+    option = { name = ar.li.fund_full
+        trigger = { ar_li_full_available = yes }
+        hidden_effect = { ar_li_fund_full = yes country_event = { id = artifact_restoration.410 } }
+    }
+    option = { name = ar.li.fund_scaled
+        trigger = { ar_li_scaled_available = yes }
+        hidden_effect = { ar_li_fund_scaled = yes country_event = { id = artifact_restoration.410 } }
+    }
+    option = { name = ar.li.resolve_risk
+        trigger = { ar_li_resolve_risk_available = yes }
+        hidden_effect = { ar_li_resolve_risk = yes country_event = { id = artifact_restoration.410 } }
+    }
+    option = { name = ar.withdraw
+        trigger = { OR = { has_country_flag = ar_li_active has_country_flag = ar_li_ready has_country_flag = ar_li_working has_country_flag = ar_li_record_ready } }
+        hidden_effect = { ar_li_withdraw = yes country_event = { id = artifact_restoration.410 } }
+    }
+    option = { name = ar.cooldown
+        trigger = { has_country_flag = ar_li_cooldown }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.400 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.411
+    title = ar.li.register.title
+    desc = ar.li.register.desc
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.li.confirm_planet
+        trigger = { ar_li_planet_start_available = yes }
+        hidden_effect = { ar_li_start_planet = yes country_event = { id = artifact_restoration.410 } }
+    }
+    option = { name = ar.li.confirm_fleet
+        trigger = { ar_li_fleet_start_available = yes }
+        hidden_effect = { ar_li_start_fleet = yes country_event = { id = artifact_restoration.410 } }
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.410 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_restoration.220
+    title = ar.greysa.archive.title
+
+    desc = { trigger = { exists = event_target:ar_greysa_archive@root } text = ar.greysa.archive.current }
+    desc = { trigger = { NOT = { exists = event_target:ar_greysa_archive@root } } text = ar.greysa.archive.unavailable }
+
+    is_triggered_only = yes
+    trigger = { ar_player = yes }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    immediate = {
+        ar_rebind = yes
+        ar_refresh = yes
+    }
+    option = { name = ar.back
+        hidden_effect = { country_event = { id = artifact_restoration.210 } }
+    }
+    option = { name = ar.close
+        default_hide_option = yes
+    }
+}

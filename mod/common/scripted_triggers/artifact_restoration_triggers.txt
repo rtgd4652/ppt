@@ -1,0 +1,461 @@
+# 本批只读取本国唯一人物、一个真实目标和已登记成本。
+ar_player = {
+    is_ai = no
+    has_origin = origin_artifact_resonance
+}
+
+ar_an_available = {
+    any_owned_leader = { has_leader_flag = ar_an_unique }
+}
+
+ar_an_recruit_available = {
+    ar_player = yes
+    NOR = { ar_an_available = yes has_country_flag = ar_an_recruited }
+}
+
+ar_an_official = {
+    any_owned_leader = { has_leader_flag = ar_an_unique leader_class = official }
+}
+
+ar_an_commander = {
+    any_owned_leader = { has_leader_flag = ar_an_unique leader_class = commander }
+}
+
+ar_an_commanded_force = {
+    is_ship_class = shipclass_military
+    is_mobile = yes
+    is_owned_by = root
+    is_controlled_by = root
+    exists = solar_system
+    exists = leader
+    leader = { has_leader_flag = ar_an_unique }
+    NOT = { any_owned_ship = { is_ship_size = aemusa_reality_flagship } }
+}
+
+ar_an_target_valid = {
+    exists = event_target:ar_an_target@root
+    OR = {
+        AND = {
+            has_country_flag = ar_an_planet
+            event_target:ar_an_target@root = { is_owned_by = root is_colony = yes has_planet_flag = ar_an_target@root }
+        }
+        AND = {
+            has_country_flag = ar_an_fleet
+            event_target:ar_an_target@root = { is_owned_by = root is_mobile = yes has_fleet_flag = ar_an_target@root }
+        }
+    }
+}
+
+ar_an_work_ready = {
+    ar_an_available = yes
+    ar_an_target_valid = yes
+    OR = {
+        AND = {
+            has_country_flag = ar_an_planet
+            ar_an_official = yes
+            event_target:ar_an_target@root = { is_controlled_by = root NOT = { has_orbital_bombardment = yes } }
+        }
+        AND = {
+            has_country_flag = ar_an_fleet
+            event_target:ar_an_target@root = { ar_an_commanded_force = yes is_in_combat = no }
+        }
+    }
+}
+
+ar_an_idle = {
+    ar_player = yes
+    ar_an_available = yes
+    NOR = { has_country_flag = ar_an_active has_country_flag = ar_an_ready has_country_flag = ar_an_working has_country_flag = ar_an_record_ready has_country_flag = ar_an_cooldown }
+}
+
+ar_greysa_available = {
+    any_owned_leader = { has_leader_flag = ar_greysa_unique }
+}
+
+ar_greysa_recruit_available = {
+    ar_player = yes
+    NOR = { ar_greysa_available = yes has_country_flag = ar_greysa_recruited }
+}
+
+ar_greysa_scientist = {
+    any_owned_leader = { has_leader_flag = ar_greysa_unique leader_class = scientist }
+}
+
+ar_greysa_commander = {
+    any_owned_leader = { has_leader_flag = ar_greysa_unique leader_class = commander }
+}
+
+ar_greysa_commanded_force = {
+    is_ship_class = shipclass_military
+    is_mobile = yes
+    is_owned_by = root
+    is_controlled_by = root
+    exists = solar_system
+    exists = leader
+    leader = { has_leader_flag = ar_greysa_unique }
+    NOT = { any_owned_ship = { is_ship_size = aemusa_reality_flagship } }
+}
+
+ar_greysa_target_valid = {
+    exists = event_target:ar_greysa_target@root
+    OR = {
+        AND = {
+            has_country_flag = ar_greysa_planet
+            event_target:ar_greysa_target@root = { is_owned_by = root is_colony = yes has_planet_flag = ar_greysa_target@root }
+        }
+        AND = {
+            has_country_flag = ar_greysa_fleet
+            event_target:ar_greysa_target@root = { is_owned_by = root is_mobile = yes has_fleet_flag = ar_greysa_target@root }
+        }
+    }
+}
+
+ar_greysa_work_ready = {
+    ar_greysa_available = yes
+    ar_greysa_target_valid = yes
+    OR = {
+        AND = {
+            has_country_flag = ar_greysa_planet
+            ar_greysa_scientist = yes
+            event_target:ar_greysa_target@root = { is_controlled_by = root NOT = { has_orbital_bombardment = yes } }
+        }
+        AND = {
+            has_country_flag = ar_greysa_fleet
+            event_target:ar_greysa_target@root = { ar_greysa_commanded_force = yes is_in_combat = no }
+        }
+    }
+}
+
+ar_greysa_idle = {
+    ar_player = yes
+    ar_greysa_available = yes
+    NOR = { has_country_flag = ar_greysa_active has_country_flag = ar_greysa_ready has_country_flag = ar_greysa_working has_country_flag = ar_greysa_record_ready has_country_flag = ar_greysa_cooldown }
+}
+
+ar_wenzi_available = {
+    any_owned_leader = { has_leader_flag = ar_wenzi_unique }
+}
+
+ar_wenzi_recruit_available = {
+    ar_player = yes
+    NOR = { ar_wenzi_available = yes has_country_flag = ar_wenzi_recruited }
+}
+
+ar_wenzi_official = {
+    any_owned_leader = { has_leader_flag = ar_wenzi_unique leader_class = official }
+}
+
+ar_wenzi_commander = {
+    any_owned_leader = { has_leader_flag = ar_wenzi_unique leader_class = commander }
+}
+
+ar_wenzi_commanded_force = {
+    is_ship_class = shipclass_military
+    is_mobile = yes
+    is_owned_by = root
+    is_controlled_by = root
+    exists = solar_system
+    exists = leader
+    leader = { has_leader_flag = ar_wenzi_unique }
+    NOT = { any_owned_ship = { is_ship_size = aemusa_reality_flagship } }
+}
+
+ar_wenzi_target_valid = {
+    exists = event_target:ar_wenzi_target@root
+    OR = {
+        AND = {
+            has_country_flag = ar_wenzi_planet
+            event_target:ar_wenzi_target@root = { is_owned_by = root is_colony = yes has_planet_flag = ar_wenzi_target@root }
+        }
+        AND = {
+            has_country_flag = ar_wenzi_fleet
+            event_target:ar_wenzi_target@root = { is_owned_by = root is_mobile = yes has_fleet_flag = ar_wenzi_target@root }
+        }
+    }
+}
+
+ar_wenzi_work_ready = {
+    ar_wenzi_available = yes
+    ar_wenzi_target_valid = yes
+    OR = {
+        AND = {
+            has_country_flag = ar_wenzi_planet
+            ar_wenzi_official = yes
+            event_target:ar_wenzi_target@root = { is_controlled_by = root NOT = { has_orbital_bombardment = yes } }
+        }
+        AND = {
+            has_country_flag = ar_wenzi_fleet
+            event_target:ar_wenzi_target@root = { ar_wenzi_commanded_force = yes is_in_combat = no }
+        }
+    }
+}
+
+ar_wenzi_idle = {
+    ar_player = yes
+    ar_wenzi_available = yes
+    NOR = { has_country_flag = ar_wenzi_active has_country_flag = ar_wenzi_ready has_country_flag = ar_wenzi_working has_country_flag = ar_wenzi_record_ready has_country_flag = ar_wenzi_cooldown }
+}
+
+ar_li_available = {
+    any_owned_leader = { has_leader_flag = ar_li_unique }
+}
+
+ar_li_recruit_available = {
+    ar_player = yes
+    NOR = { ar_li_available = yes has_country_flag = ar_li_recruited }
+}
+
+ar_li_official = {
+    any_owned_leader = { has_leader_flag = ar_li_unique leader_class = official }
+}
+
+ar_li_scientist = {
+    any_owned_leader = { has_leader_flag = ar_li_unique leader_class = scientist }
+}
+
+ar_li_commander = {
+    any_owned_leader = { has_leader_flag = ar_li_unique leader_class = commander }
+}
+
+ar_li_commanded_force = {
+    is_ship_class = shipclass_military
+    is_mobile = yes
+    is_owned_by = root
+    is_controlled_by = root
+    exists = solar_system
+    exists = leader
+    leader = { has_leader_flag = ar_li_unique }
+    NOT = { any_owned_ship = { is_ship_size = aemusa_reality_flagship } }
+}
+
+ar_li_target_valid = {
+    exists = event_target:ar_li_target@root
+    OR = {
+        AND = {
+            has_country_flag = ar_li_planet
+            event_target:ar_li_target@root = { is_owned_by = root is_colony = yes has_planet_flag = ar_li_target@root }
+        }
+        AND = {
+            has_country_flag = ar_li_fleet
+            event_target:ar_li_target@root = { is_owned_by = root is_mobile = yes has_fleet_flag = ar_li_target@root }
+        }
+    }
+}
+
+ar_li_work_ready = {
+    ar_li_available = yes
+    ar_li_target_valid = yes
+    OR = {
+        AND = {
+            has_country_flag = ar_li_planet
+            OR = {
+                ar_li_official = yes
+                ar_li_scientist = yes
+                any_owned_fleet = {
+                    ar_li_commanded_force = yes
+                    solar_system = { any_system_planet = { is_same_value = event_target:ar_li_target@root } }
+                }
+            }
+            event_target:ar_li_target@root = { is_controlled_by = root NOT = { has_orbital_bombardment = yes } }
+        }
+        AND = {
+            has_country_flag = ar_li_fleet
+            event_target:ar_li_target@root = { ar_li_commanded_force = yes is_in_combat = no }
+        }
+    }
+}
+
+ar_li_idle = {
+    ar_player = yes
+    ar_li_available = yes
+    NOR = { has_country_flag = ar_li_active has_country_flag = ar_li_ready has_country_flag = ar_li_working has_country_flag = ar_li_record_ready has_country_flag = ar_li_cooldown }
+}
+
+ar_an_planet_start_available = {
+    ar_an_idle = yes
+    ar_an_official = yes
+    any_owned_planet = { is_colony = yes is_controlled_by = root }
+    has_resource = { type = energy amount >= 100 }
+    has_resource = { type = unity amount >= 50 }
+}
+
+ar_an_fleet_start_available = {
+    ar_an_idle = yes
+    ar_an_commander = yes
+    any_owned_fleet = { ar_an_commanded_force = yes is_in_combat = no }
+    has_resource = { type = energy amount >= 100 }
+    has_resource = { type = unity amount >= 50 }
+}
+
+ar_greysa_planet_start_available = {
+    ar_greysa_idle = yes
+    ar_greysa_scientist = yes
+    any_owned_planet = { is_colony = yes is_controlled_by = root planet_devastation > 10 }
+    has_resource = { type = energy amount >= 100 }
+    has_resource = { type = consumer_goods amount >= 50 }
+}
+
+ar_greysa_fleet_start_available = {
+    ar_greysa_idle = yes
+    ar_greysa_commander = yes
+    any_owned_fleet = { ar_greysa_commanded_force = yes any_owned_ship = { is_damaged = yes } }
+    has_resource = { type = energy amount >= 100 }
+    has_resource = { type = consumer_goods amount >= 50 }
+}
+
+ar_wenzi_planet_start_available = {
+    ar_wenzi_idle = yes
+    ar_wenzi_official = yes
+    any_owned_planet = { is_colony = yes is_controlled_by = root }
+    has_resource = { type = energy amount >= 200 }
+    has_resource = { type = unity amount >= 50 }
+}
+
+ar_wenzi_fleet_start_available = {
+    ar_wenzi_idle = yes
+    ar_wenzi_commander = yes
+    any_owned_fleet = { ar_wenzi_commanded_force = yes is_in_combat = no }
+    has_resource = { type = energy amount >= 200 }
+    has_resource = { type = unity amount >= 50 }
+}
+
+ar_li_planet_start_available = {
+    ar_li_idle = yes
+    OR = { ar_li_official = yes ar_li_scientist = yes }
+    any_owned_planet = { is_colony = yes is_controlled_by = root }
+    has_resource = { type = energy amount >= 100 }
+    has_resource = { type = unity amount >= 50 }
+}
+
+ar_li_fleet_start_available = {
+    ar_li_idle = yes
+    ar_li_commander = yes
+    any_owned_fleet = { ar_li_commanded_force = yes is_in_combat = no }
+    has_resource = { type = energy amount >= 100 }
+    has_resource = { type = unity amount >= 50 }
+}
+
+ar_an_apply_available = {
+    has_country_flag = ar_an_record_ready
+    has_country_flag = ar_an_planet
+    ar_an_work_ready = yes
+}
+
+ar_an_escape_available = {
+    ar_an_available = yes
+    has_country_flag = ar_an_record_ready
+    has_country_flag = ar_an_fleet
+    ar_an_target_valid = yes
+    NOT = { has_country_flag = ar_an_escape_recovery }
+    event_target:ar_an_target@root = {
+        ar_an_commanded_force = yes
+        is_in_combat = yes
+        can_go_mia = yes
+        any_owned_ship = { is_damaged = yes }
+    }
+}
+
+ar_greysa_care_available = {
+    has_country_flag = ar_greysa_ready
+    ar_greysa_work_ready = yes
+    has_resource = { type = energy amount >= 200 }
+    has_resource = { type = consumer_goods amount >= 50 }
+}
+
+ar_greysa_emergency_available = {
+    ar_greysa_available = yes
+    ar_greysa_target_valid = yes
+    OR = { has_country_flag = ar_greysa_active has_country_flag = ar_greysa_ready }
+    NOT = { has_country_flag = ar_greysa_emergency_recent }
+    has_resource = { type = energy amount >= 100 }
+    has_resource = { type = consumer_goods amount >= 50 }
+    OR = {
+        AND = {
+            has_country_flag = ar_greysa_planet
+            ar_greysa_scientist = yes
+            event_target:ar_greysa_target@root = { is_controlled_by = root has_orbital_bombardment = yes }
+        }
+        AND = {
+            has_country_flag = ar_greysa_fleet
+            event_target:ar_greysa_target@root = { ar_greysa_commanded_force = yes is_in_combat = yes any_owned_ship = { is_damaged = yes } }
+        }
+    }
+}
+
+ar_wenzi_black_available = {
+    has_country_flag = ar_wenzi_active
+    has_country_flag = ar_wenzi_objective_agreed
+    has_country_flag = ar_wenzi_boundary_agreed
+    ar_wenzi_work_ready = yes
+    NOT = { has_country_flag = ar_wenzi_turn_recent }
+    OR = { NOT = { check_variable = { which = ar_wenzi_imbalance value >= 2 } } has_country_flag = ar_wenzi_last_white }
+    has_resource = { type = energy amount >= 100 }
+    OR = {
+        AND = { has_country_flag = ar_wenzi_planet has_resource = { type = minerals amount >= 50 } }
+        AND = { has_country_flag = ar_wenzi_fleet has_resource = { type = alloys amount >= 25 } }
+    }
+}
+
+ar_wenzi_white_available = {
+    has_country_flag = ar_wenzi_active
+    has_country_flag = ar_wenzi_objective_agreed
+    has_country_flag = ar_wenzi_boundary_agreed
+    ar_wenzi_work_ready = yes
+    NOT = { has_country_flag = ar_wenzi_turn_recent }
+    OR = { NOT = { check_variable = { which = ar_wenzi_imbalance value >= 2 } } has_country_flag = ar_wenzi_last_black }
+    has_resource = { type = energy amount >= 100 }
+    OR = {
+        AND = { has_country_flag = ar_wenzi_planet has_resource = { type = consumer_goods amount >= 50 } }
+        AND = { has_country_flag = ar_wenzi_fleet has_resource = { type = alloys amount >= 25 } }
+    }
+}
+
+ar_wenzi_finish_available = {
+    has_country_flag = ar_wenzi_active
+    ar_wenzi_work_ready = yes
+    has_country_flag = ar_wenzi_objective_agreed
+    has_country_flag = ar_wenzi_boundary_agreed
+    has_country_flag = ar_wenzi_black_seen
+    has_country_flag = ar_wenzi_white_seen
+    check_variable = { which = ar_wenzi_progress value >= 4 }
+    NOT = { check_variable = { which = ar_wenzi_imbalance value >= 2 } }
+}
+
+ar_li_hazard = {
+    ar_li_target_valid = yes
+    OR = {
+        AND = {
+            has_country_flag = ar_li_planet
+            event_target:ar_li_target@root = { OR = { NOT = { is_controlled_by = root } has_orbital_bombardment = yes } }
+        }
+        AND = {
+            has_country_flag = ar_li_fleet
+            event_target:ar_li_target@root = { is_in_combat = yes any_owned_ship = { is_damaged = yes } }
+        }
+    }
+}
+
+ar_li_full_available = {
+    has_country_flag = ar_li_ready
+    ar_li_work_ready = yes
+    has_resource = { type = energy amount >= 500 }
+    has_resource = { type = minerals amount >= 250 }
+    has_resource = { type = alloys amount >= 100 }
+}
+
+ar_li_scaled_available = {
+    has_country_flag = ar_li_ready
+    ar_li_work_ready = yes
+    has_resource = { type = energy amount >= 300 }
+    has_resource = { type = minerals amount >= 150 }
+    has_resource = { type = alloys amount >= 50 }
+}
+
+ar_li_resolve_risk_available = {
+    has_country_flag = ar_li_working
+    has_country_flag = ar_li_risk
+    ar_li_work_ready = yes
+    ar_li_hazard = no
+    has_resource = { type = energy amount >= 150 }
+    has_resource = { type = alloys amount >= 50 }
+}

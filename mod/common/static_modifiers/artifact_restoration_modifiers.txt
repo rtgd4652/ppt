@@ -1,0 +1,52 @@
+# 有限目标修正；舰体恢复以原版比例单位表示，不创建替代舰。
+ar_an_learned_service = {
+    planet_building_build_speed_mult = 0.10
+    planet_amenities_add = 3
+}
+
+ar_greysa_stable_care = {
+    planet_amenities_add = 5
+    planet_stability_add = 3
+}
+
+ar_greysa_fleet_care = {
+    ship_hull_regen_add_perc = 0.0025
+}
+
+ar_greysa_emergency_shelter = {
+    planet_orbital_bombardment_damage = -0.15
+    planet_amenities_add = 3
+}
+
+ar_greysa_emergency_cover = {
+    ship_disengage_chance_mult = 0.15
+}
+
+ar_wenzi_balanced_service = {
+    planet_jobs_produces_mult = 0.05
+    planet_amenities_add = 5
+}
+
+ar_wenzi_balanced_cover = {
+    ship_shield_mult = 0.05
+    ship_disengage_chance_mult = 0.10
+}
+
+ar_li_public_engineering = {
+    planet_building_build_speed_mult = 0.10
+    planet_jobs_engineering_research_produces_mult = 0.10
+}
+
+ar_li_scaled_engineering = {
+    planet_building_build_speed_mult = 0.05
+    planet_jobs_engineering_research_produces_mult = 0.05
+}
+
+ar_li_responsible_logistics = {
+    ship_shield_mult = 0.10
+}
+
+ar_li_scaled_logistics = {
+    ship_shield_mult = 0.05
+}
+
