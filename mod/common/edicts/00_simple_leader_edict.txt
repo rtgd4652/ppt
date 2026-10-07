@@ -84,6 +84,24 @@ edict_contact_aemusa = {
     }
 }
 
+# 仓储测试法令：按需开关，仅扩大容量，方便隔离档长期测试。
+edict_aemusa_debug_storage = {
+	length = -1 # 持续至玩家关闭；停用后由法令系统自动撤销容量加成。
+	icon = "GFX_edict_type_policy"
+
+	potential = {
+		is_ai = no # 仅供玩家选择，默认关闭。
+	}
+
+	modifier = {
+		country_resource_max_add = 100000 # 原版国家修正：适用资源的储存容量增加10万。
+	}
+
+	ai_weight = {
+		weight = 0 # 禁止AI启用测试仓储。
+	}
+}
+
 # 临时测试法令：给玩家快速灌入测试资源、永久超频修正，并把神器使领袖补到 30 级。
 edict_aemusa_debug_overdrive = {
 	length = 1 # 立即触发，一天后法令到期；永久效果通过国家修正保存，避免零时长崩溃。

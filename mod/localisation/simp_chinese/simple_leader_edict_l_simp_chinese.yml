@@ -59,6 +59,8 @@
  edict_edict_contact_aemusa_desc:0 "与爱缪莎建立通讯，并为她重新选择职责。"
  edict_edict_artifact_research_archive:0 "调阅中央庭科技档案"
  edict_edict_artifact_research_archive_desc:0 "旧版科技档案入口已停用；爱缪莎个人科技线现在由§Y爱缪莎：命运主宰§!飞升解锁。"
+ edict_edict_aemusa_debug_storage:0 "【测试】扩展资源仓储"
+ edict_edict_aemusa_debug_storage_desc:0 "隔离测试用仓储扩展：启用期间，适用资源的储存容量§G+100000§!。可随时关闭；只扩大容量，不自动补给或提高产出。"
  edict_edict_aemusa_debug_overdrive:0 "【测试】中央庭全域超频"
  edict_edict_aemusa_debug_overdrive_desc:0 "临时测试法令：获得永久测试修正、巨量资源与三系科研点数，并将已接入的神器使领袖补到 30 级。该按钮仅供本地测试使用。"
  aemusa_debug_overdrive:0 "测试协议：中央庭全域超频"
