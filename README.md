@@ -14,6 +14,7 @@
 4. [里程碑2实施说明](docs/design/aemusa_main_story_milestone_2_implementation.md)：终章、独立决定、三结局、等级补足与尾声；[本轮续接](reports/aemusa_main_story_milestone_2_2026-10-07.md)区分工具检查和游戏内验收。
 5. [AWP-05 运行记录](reports/aemusa_main_story_awp_05_flow_2026-09-29.md)：第八至第十章正常流程及关键存读档证据。
 6. [十名神器使首版玩法](docs/mechanics/artifact_users_play_guide_v1.0.md)：接入、职业、各自核心机制和白夜馆操作；[成长与职责](docs/mechanics/leader_growth_and_duty_v1.0.md)解释任职经验、职业切换与30级补足；[十人收口记录](reports/milestone3_ten_character_closeout_2026-10-07.md)记录里程碑3首版完成及未测范围。
+7. [里程碑4首批外观方案](docs/art/MILESTONE4_VISUAL_PROPOSAL.md)：新旗舰、两阶段枢纽概念草案与角色肖像制作顺序；[本轮记录](reports/milestone4_asset_preparation_2026-10-07.md)保存盘点结果和续接入口。
 
 需要理解整体设计时再阅读 [架构](docs/ARCHITECTURE.md)、[路线图](docs/ROADMAP.md)、[执行清单](docs/TODO.md) 和 [文档索引](docs/README.md)。共享规范见 [AGENTS.md](AGENTS.md)。
 

@@ -1,0 +1,1697 @@
+{
+  "generated_at_beijing": "2026-10-07T22:42:23.089176+08:00",
+  "scope": "local_asset_inventory_only_no_runtime_or_rights_approval",
+  "characters": [
+    {
+      "key": "aemusa",
+      "name": "爱缪莎",
+      "runtime_portrait_status": "character_texture_referenced",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/aemusa_artifact_review/爱缪莎 决策之卡 Icon.png",
+          "exists": true,
+          "bytes": 4823,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/aemusa_artifact_review/爱缪莎 切牌圣手 Icon.png",
+          "exists": true,
+          "bytes": 4376,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/aemusa_artifact_review/爱缪莎 塔罗牌 Artifact Icon.png",
+          "exists": true,
+          "bytes": 28030,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        }
+      ],
+      "manifest_references": [
+        {
+          "reference_id": "REF-OG-AEMUSA-001",
+          "review_status": "source_uncertain",
+          "allowed_usage": "local_reference_analysis_only",
+          "local_file": {
+            "path": "art/reference_library/original_game/aemusa/0E98F1698988D4D9F50F538510F78BE7.jpg",
+            "exists": false
+          }
+        },
+        {
+          "reference_id": "REF-OG-AEMUSA-002",
+          "review_status": "source_uncertain",
+          "allowed_usage": "local_reference_analysis_only",
+          "local_file": {
+            "path": "art/reference_library/original_game/aemusa/721512BDB3BBA02A0396ACEAA6252895.jpg",
+            "exists": false
+          }
+        },
+        {
+          "reference_id": "REF-OG-AEMUSA-003",
+          "review_status": "source_uncertain",
+          "allowed_usage": "local_reference_analysis_only",
+          "local_file": {
+            "path": "art/reference_library/original_game/aemusa/7B05F4A725CC460B5EA0F9A0230F97C0.jpg",
+            "exists": false
+          }
+        },
+        {
+          "reference_id": "REF-OG-AEMUSA-004",
+          "review_status": "source_uncertain",
+          "allowed_usage": "local_reference_analysis_only",
+          "local_file": {
+            "path": "art/reference_library/original_game/aemusa/C37365DF90F1C51CCFFC112C7146E882.jpg",
+            "exists": false
+          }
+        },
+        {
+          "reference_id": "REF-OG-AEMUSA-005",
+          "review_status": "source_uncertain",
+          "allowed_usage": "local_reference_analysis_only",
+          "local_file": {
+            "path": "art/reference_library/original_game/aemusa/D94A3E2E48E3D627FA803F7D2ECEA95B.jpg",
+            "exists": false
+          }
+        }
+      ]
+    },
+    {
+      "key": "antoniva",
+      "name": "安托涅瓦",
+      "runtime_portrait_status": "no_character_texture_reference_found",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/antoniva/antoniva_ark_icon.png",
+          "exists": true,
+          "bytes": 19476,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/antoniva/antoniva_awakened.jpg",
+          "exists": true,
+          "bytes": 975397,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/antoniva/antoniva_base.png",
+          "exists": true,
+          "bytes": 1388464,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            255,
+            255
+          ]
+        },
+        {
+          "path": "art/reference_library/original_game/antoniva/antoniva_design.jpg",
+          "exists": true,
+          "bytes": 61734,
+          "width": 850,
+          "height": 500,
+          "mode": "RGB"
+        }
+      ],
+      "manifest_references": [
+        {
+          "reference_id": "REF-OG-ANTONIVA-001",
+          "review_status": "approved_anchor",
+          "allowed_usage": "reference_analysis_only_no_redistribution_claim",
+          "local_file": {
+            "path": "art/reference_library/original_game/antoniva/antoniva_base.png",
+            "exists": true,
+            "bytes": 1388464,
+            "width": 1500,
+            "height": 2000,
+            "mode": "RGBA",
+            "alpha_extrema": [
+              255,
+              255
+            ]
+          }
+        },
+        {
+          "reference_id": "REF-OG-ANTONIVA-002",
+          "review_status": "supporting",
+          "allowed_usage": "reference_analysis_only_no_redistribution_claim",
+          "local_file": {
+            "path": "art/reference_library/original_game/antoniva/antoniva_awakened.jpg",
+            "exists": true,
+            "bytes": 975397,
+            "width": 1500,
+            "height": 2000,
+            "mode": "RGB"
+          }
+        },
+        {
+          "reference_id": "REF-OG-ANTONIVA-003",
+          "review_status": "approved_anchor",
+          "allowed_usage": "reference_analysis_only_no_redistribution_claim",
+          "local_file": {
+            "path": "art/reference_library/original_game/antoniva/antoniva_ark_icon.png",
+            "exists": true,
+            "bytes": 19476,
+            "width": 348,
+            "height": 314,
+            "mode": "P"
+          }
+        },
+        {
+          "reference_id": "REF-OG-ANTONIVA-004",
+          "review_status": "supporting",
+          "allowed_usage": "reference_analysis_only_no_redistribution_claim",
+          "local_file": {
+            "path": "art/reference_library/original_game/antoniva/antoniva_design.jpg",
+            "exists": true,
+            "bytes": 61734,
+            "width": 850,
+            "height": 500,
+            "mode": "RGB"
+          }
+        }
+      ]
+    },
+    {
+      "key": "yanhua",
+      "name": "晏华",
+      "runtime_portrait_status": "no_character_texture_reference_found",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/yanhua_artifact_review/晏华 幻识 Icon.png",
+          "exists": true,
+          "bytes": 4819,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_artifact_review/晏华 广域狙击 Icon.png",
+          "exists": true,
+          "bytes": 4944,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_artifact_review/晏华 独行之人 Icon.png",
+          "exists": true,
+          "bytes": 4125,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_artifact_review/晏华 精确瞄准 Icon.png",
+          "exists": true,
+          "bytes": 4896,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_artifact_review/晏华 荷鲁斯之眼 Artifact Icon.png",
+          "exists": true,
+          "bytes": 22182,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_artifact_review/晏华 贯通射击 Icon.png",
+          "exists": true,
+          "bytes": 4959,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_character_color_review/「神之头脑」晏华 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 34382,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_character_color_review/「神之头脑」晏华 Char Portrait.png",
+          "exists": true,
+          "bytes": 35466,
+          "width": 367,
+          "height": 416,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_character_color_review/「觉醒・神之头脑」晏华 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 34053,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_character_color_review/晏华-神之头脑.png",
+          "exists": true,
+          "bytes": 1563023,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            255,
+            255
+          ]
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_character_color_review/晏华-觉醒.jpg",
+          "exists": true,
+          "bytes": 855226,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_character_color_review/晏华人物设计.jpg",
+          "exists": true,
+          "bytes": 132647,
+          "width": 1920,
+          "height": 1092,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/yanhua_character_color_review/晏华觉醒设计1.jpg",
+          "exists": true,
+          "bytes": 230888,
+          "width": 2175,
+          "height": 1080,
+          "mode": "RGB"
+        }
+      ],
+      "manifest_references": []
+    },
+    {
+      "key": "an",
+      "name": "安",
+      "runtime_portrait_status": "no_character_texture_reference_found",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/an_artifact_review/安 回环时刻 Icon.png",
+          "exists": true,
+          "bytes": 5341,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/an_artifact_review/安 时光之刃 Artifact Icon.png",
+          "exists": true,
+          "bytes": 17238,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/an_artifact_review/安 时空之刃 Icon.png",
+          "exists": true,
+          "bytes": 4844,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/an_artifact_review/安 时针・流逝缓慢 Icon.png",
+          "exists": true,
+          "bytes": 4548,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/an_artifact_review/安 时间回溯 Icon.png",
+          "exists": true,
+          "bytes": 5095,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/an_artifact_review/安 秒针・瞬间加速 Icon.png",
+          "exists": true,
+          "bytes": 4280,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/an_character_color_review/「光荣女仆」安 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 38126,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/an_character_color_review/「光荣女仆」安 Char Portrait.png",
+          "exists": true,
+          "bytes": 38169,
+          "width": 367,
+          "height": 416,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/an_character_color_review/「觉醒・光荣女仆」安 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 44359,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/an_character_color_review/安-光荣女仆.jpg",
+          "exists": true,
+          "bytes": 1071899,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/an_character_color_review/安-觉醒.jpg",
+          "exists": true,
+          "bytes": 1172773,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/an_character_color_review/安人物设计.jpg",
+          "exists": true,
+          "bytes": 189381,
+          "width": 750,
+          "height": 457,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/an_character_color_review/安觉醒设计.png",
+          "exists": true,
+          "bytes": 1776751,
+          "width": 2175,
+          "height": 1080,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            255,
+            255
+          ]
+        }
+      ],
+      "manifest_references": []
+    },
+    {
+      "key": "seth",
+      "name": "赛斯",
+      "runtime_portrait_status": "no_character_texture_reference_found",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/seth_artifact_review/赛斯 丰收之雨 Icon.png",
+          "exists": true,
+          "bytes": 4820,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_artifact_review/赛斯 光之护盾 Icon.png",
+          "exists": true,
+          "bytes": 4792,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_artifact_review/赛斯 圣光再临 Icon.png",
+          "exists": true,
+          "bytes": 5058,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_artifact_review/赛斯 神之救赎 Icon.png",
+          "exists": true,
+          "bytes": 4730,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_artifact_review/赛斯 神之暴风 Icon.png",
+          "exists": true,
+          "bytes": 4844,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_artifact_review/赛斯 羽蛇神杖 Artifact Icon.png",
+          "exists": true,
+          "bytes": 20222,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_character_color_review/「神官」赛斯 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 37274,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_character_color_review/「神官」赛斯 Char Portrait.png",
+          "exists": true,
+          "bytes": 44281,
+          "width": 367,
+          "height": 416,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_character_color_review/「觉醒・神官」赛斯 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 38115,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_character_color_review/赛斯-神官.png",
+          "exists": true,
+          "bytes": 1657430,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            255,
+            255
+          ]
+        },
+        {
+          "path": "art/reference_library/original_game/seth_character_color_review/赛斯-觉醒.jpg",
+          "exists": true,
+          "bytes": 911902,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/seth_character_color_review/赛斯觉醒设计1.jpg",
+          "exists": true,
+          "bytes": 69287,
+          "width": 1659,
+          "height": 1080,
+          "mode": "RGB"
+        }
+      ],
+      "manifest_references": []
+    },
+    {
+      "key": "yutong",
+      "name": "幽桐",
+      "runtime_portrait_status": "no_character_texture_reference_found",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/yutong_artifact_review/幽桐 射手天赋 Icon.png",
+          "exists": true,
+          "bytes": 4084,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_artifact_review/幽桐 斜叶入林 Icon.png",
+          "exists": true,
+          "bytes": 4825,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_artifact_review/幽桐 无尽的箭矢 Icon.png",
+          "exists": true,
+          "bytes": 4651,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_artifact_review/幽桐 极光箭雨 Icon.png",
+          "exists": true,
+          "bytes": 5359,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_artifact_review/幽桐 片叶沾身 Icon.png",
+          "exists": true,
+          "bytes": 4792,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_artifact_review/幽桐 甘狄拔 Artifact Icon.png",
+          "exists": true,
+          "bytes": 12978,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_character_color_review/「觉醒・诛心」幽桐 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 35882,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_character_color_review/「诛心」幽桐 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 37551,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_character_color_review/「诛心」幽桐 Char Portrait.png",
+          "exists": true,
+          "bytes": 39798,
+          "width": 367,
+          "height": 416,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_character_color_review/幽桐-觉醒.jpg",
+          "exists": true,
+          "bytes": 1004666,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/yutong_character_color_review/幽桐-诛心.png",
+          "exists": true,
+          "bytes": 1417984,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            255,
+            255
+          ]
+        }
+      ],
+      "manifest_references": []
+    },
+    {
+      "key": "rabi",
+      "name": "拉比",
+      "runtime_portrait_status": "no_character_texture_reference_found",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/rabi_artifact_review/拉比 冥界同行 Icon.png",
+          "exists": true,
+          "bytes": 4564,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_artifact_review/拉比 巨兽震击 Icon.png",
+          "exists": true,
+          "bytes": 4981,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_artifact_review/拉比 憾地 Icon.png",
+          "exists": true,
+          "bytes": 5244,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_artifact_review/拉比 深渊扫荡 Icon.png",
+          "exists": true,
+          "bytes": 4818,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_artifact_review/拉比 生之伴侣 Icon.png",
+          "exists": true,
+          "bytes": 4613,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_artifact_review/拉比 破茧重生 Icon.png",
+          "exists": true,
+          "bytes": 5126,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_artifact_review/拉比 罪孽吞噬 Icon.png",
+          "exists": true,
+          "bytes": 5050,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_artifact_review/拉比 阿米特 Artifact Icon.png",
+          "exists": true,
+          "bytes": 31573,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_character_color_review/「地精」拉比 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 42278,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_character_color_review/「地精」拉比 Char Portrait.png",
+          "exists": true,
+          "bytes": 47228,
+          "width": 367,
+          "height": 416,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_character_color_review/「觉醒・地精」拉比 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 44531,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_character_color_review/拉比-地精.png",
+          "exists": true,
+          "bytes": 2322003,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            255,
+            255
+          ]
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_character_color_review/拉比-觉醒.jpg",
+          "exists": true,
+          "bytes": 1329993,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_character_color_review/拉比人物设计.jpg",
+          "exists": true,
+          "bytes": 114099,
+          "width": 800,
+          "height": 965,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/rabi_character_color_review/拉比觉醒设计.jpg",
+          "exists": true,
+          "bytes": 1207504,
+          "width": 3500,
+          "height": 1738,
+          "mode": "RGB"
+        }
+      ],
+      "manifest_references": []
+    },
+    {
+      "key": "greysa",
+      "name": "格蕾莎",
+      "runtime_portrait_status": "no_character_texture_reference_found",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/greysa_artifact_review/格蕾莎 安卡 Artifact Icon.png",
+          "exists": true,
+          "bytes": 21129,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_artifact_review/格蕾莎 强化改造 Icon.png",
+          "exists": true,
+          "bytes": 4936,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_artifact_review/格蕾莎 治愈之枪 Icon.png",
+          "exists": true,
+          "bytes": 5170,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_artifact_review/格蕾莎 生命守护者 Icon.png",
+          "exists": true,
+          "bytes": 4649,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_artifact_review/格蕾莎 致命毒药 Icon.png",
+          "exists": true,
+          "bytes": 4561,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_artifact_review/格蕾莎 鼓舞药剂 Icon.png",
+          "exists": true,
+          "bytes": 4846,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_character_color_review/「白医」格蕾莎 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 37390,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_character_color_review/「白医」格蕾莎 Char Portrait.png",
+          "exists": true,
+          "bytes": 57177,
+          "width": 367,
+          "height": 416,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_character_color_review/「觉醒・白医」格蕾莎 Char Illustration Cut.png",
+          "exists": true,
+          "bytes": 38034,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_character_color_review/格蕾莎-白医.jpg",
+          "exists": true,
+          "bytes": 758038,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_character_color_review/格蕾莎-觉醒.jpg",
+          "exists": true,
+          "bytes": 972883,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_character_color_review/格蕾莎觉醒设计1.jpg",
+          "exists": true,
+          "bytes": 95590,
+          "width": 1698,
+          "height": 811,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/greysa_character_color_review/格蕾莎觉醒设计2.jpg",
+          "exists": true,
+          "bytes": 116617,
+          "width": 1153,
+          "height": 1020,
+          "mode": "RGB"
+        }
+      ],
+      "manifest_references": []
+    },
+    {
+      "key": "wenzi",
+      "name": "雯梓",
+      "runtime_portrait_status": "no_character_texture_reference_found",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/wenzi_artifact_review/雯梓 双魂 Icon.png",
+          "exists": true,
+          "bytes": 4445,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_artifact_review/雯梓 恋子棋 Icon.png",
+          "exists": true,
+          "bytes": 4946,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_artifact_review/雯梓 执先・黑之攻势 Icon.png",
+          "exists": true,
+          "bytes": 4818,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_artifact_review/雯梓 王者之弈 Artifact Icon.png",
+          "exists": true,
+          "bytes": 15292,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_artifact_review/雯梓 让先・白之守御 Icon.png",
+          "exists": true,
+          "bytes": 4616,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_artifact_review/雯梓 镇子・白子领域 Icon.png",
+          "exists": true,
+          "bytes": 4520,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_artifact_review/雯梓 镇子・黑子领域 Icon.png",
+          "exists": true,
+          "bytes": 4791,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_character_color_review/wenzi_awaken.jpg",
+          "exists": true,
+          "bytes": 1355719,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_character_color_review/wenzi_awaken_design.jpg",
+          "exists": true,
+          "bytes": 1872571,
+          "width": 4000,
+          "height": 1984,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_character_color_review/wenzi_base_cut.png",
+          "exists": true,
+          "bytes": 28863,
+          "width": 236,
+          "height": 344,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/wenzi_character_color_review/wenzi_base_full.png",
+          "exists": true,
+          "bytes": 1345108,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            255,
+            255
+          ]
+        }
+      ],
+      "manifest_references": []
+    },
+    {
+      "key": "li",
+      "name": "丽",
+      "runtime_portrait_status": "no_character_texture_reference_found",
+      "local_reference_images": [
+        {
+          "path": "art/reference_library/original_game/li_artifact_review/丽 众生护持 Icon.png",
+          "exists": true,
+          "bytes": 5361,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/li_artifact_review/丽 毗沙门天慧伞 Artifact Icon.png",
+          "exists": true,
+          "bytes": 27920,
+          "width": 348,
+          "height": 314,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/li_artifact_review/丽 贵族血统 Icon.png",
+          "exists": true,
+          "bytes": 5034,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/li_artifact_review/丽 金翼俯冲 Icon.png",
+          "exists": true,
+          "bytes": 4575,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/li_artifact_review/丽 黄金伞 Icon.png",
+          "exists": true,
+          "bytes": 5197,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/li_artifact_review/丽 黄金眷族 Icon.png",
+          "exists": true,
+          "bytes": 4856,
+          "width": 80,
+          "height": 80,
+          "mode": "P"
+        },
+        {
+          "path": "art/reference_library/original_game/li_character_color_review/li_awaken.jpg",
+          "exists": true,
+          "bytes": 1035479,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/li_character_color_review/li_awaken_design1.jpg",
+          "exists": true,
+          "bytes": 168381,
+          "width": 1296,
+          "height": 729,
+          "mode": "RGB"
+        },
+        {
+          "path": "art/reference_library/original_game/li_character_color_review/li_base_full.png",
+          "exists": true,
+          "bytes": 1399549,
+          "width": 1500,
+          "height": 2000,
+          "mode": "RGBA",
+          "alpha_extrema": [
+            255,
+            255
+          ]
+        },
+        {
+          "path": "art/reference_library/original_game/li_character_color_review/li_character_design.jpg",
+          "exists": true,
+          "bytes": 71768,
+          "width": 850,
+          "height": 478,
+          "mode": "RGB"
+        }
+      ],
+      "manifest_references": []
+    }
+  ],
+  "portrait_definitions": [
+    {
+      "definition_file": "mod/gfx/portraits/portraits/aemusa_portraits.txt",
+      "textures": [
+        "gfx/models/portraits/aemusa_portrait_ui.dds",
+        "gfx/models/portraits/aemusa_portrait_ui.dds",
+        "gfx/models/portraits/aemusa_portrait_ui.dds",
+        "gfx/models/portraits/aemusa_portrait_level_30_ui.dds"
+      ]
+    }
+  ],
+  "runtime_portrait_textures": [
+    {
+      "path": "mod/gfx/models/portraits/aemusa_portrait_level_30_ui.dds",
+      "exists": true,
+      "bytes": 219008,
+      "width": 575,
+      "height": 380,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "path": "mod/gfx/models/portraits/aemusa_portrait_ui.dds",
+      "exists": true,
+      "bytes": 219008,
+      "width": 575,
+      "height": 380,
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    }
+  ],
+  "icon_dds_total": 93,
+  "icon_dds_by_directory": {
+    "armies": 3,
+    "ascension_perks": 3,
+    "authorities": 2,
+    "buildings": 15,
+    "decisions": 1,
+    "districts": 6,
+    "edicts": 3,
+    "origins": 1,
+    "ship_parts": 30,
+    "technologies": 21,
+    "traditions": 8
+  },
+  "interface_texture_references": [
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_physicist_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_foundry_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_enforcer_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_physicist_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_foundry_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_artisan_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_technician_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_merchant_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_miner_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_gas_refiner_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_culture_worker_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_priest_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_bureaucrat_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_healthcare_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/modifiers/mod_job_soldier_add.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/megastructures/think_tank.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/megastructures/think_tank.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/megastructures/think_tank.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_compatibility_icons.gfx",
+      "texture": "gfx/interface/icons/megastructures/think_tank.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/armies/army_type_artifact_user_apotheosis.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/armies/army_type_artifact_user_guardian.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/armies/army_type_artifact_user_resonance.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_black_gate_observatory.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_civic_goods_manufactory.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_covenant_chamber.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_crossing_trade_tower.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_destiny_research_spire.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_fate_calculus_institute.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_memory_palace.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_phase_mine.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_phase_reactor.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_rare_resonance_refinery.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_relic_archive.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_relic_workshop.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_resonance_alloy_forge.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_sanctum.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/buildings/building_artifact_seven_day_command.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/decisions/decision_artifact_destiny_city_project.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/districts/district_artifact_destiny_commons.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/districts/district_artifact_destiny_fleet.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/districts/district_artifact_destiny_foundation.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/districts/district_artifact_destiny_industry.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/districts/district_artifact_destiny_research.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/districts/district_artifact_nexus.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/edicts/edict_contact_aemusa.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/edicts/edict_summon_aemusa.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/origins/origin_artifact_resonance.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_aura_black_gate_suppression.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_aura_guardian_matrix.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_black_gate_shield_1.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_black_gate_shield_2.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_black_gate_shield_3.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_combat_computer_1.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_combat_computer_2.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_combat_computer_3.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_destiny_armor_1.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_destiny_armor_2.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_destiny_armor_3.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_destiny_lord_computer.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_destiny_lord_drive.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_destiny_lord_reactor.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_destiny_lord_sensor.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_destiny_lord_thruster.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_fate_armor.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_fate_dominion.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_fate_ray_1.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_fate_ray_2.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_fate_ray_3.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_sensor_1.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_sensor_2.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_sensor_3.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_seven_day_core.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_tactical_core_1.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_tactical_core_2.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_tactical_core_3.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_tarot_judgement.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/ship_parts/ship_part_artifact_tarot_ray.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_black_gate_observation.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_central_court_protocols.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_civic_industry.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_covenant_administration.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_crossing_trade.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_destiny_city_project.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_destiny_economy.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_destiny_lord.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_fate_observatory.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_phase_energy.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_phase_extraction.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_rare_resonance.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_relic_archive_restoration.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_relic_fabrication.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_resonance_manufacturing.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_seven_day_logistics.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_tarot_calculation.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_tarot_economy.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_user_apotheosis_warfare.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_user_combat_doctrine.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_generated_icons.gfx",
+      "texture": "gfx/interface/icons/technologies/tech_artifact_user_resonance_armaments.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_progression_icons.gfx",
+      "texture": "gfx/interface/icons/ascension_perks/ap_artifact_user_resonance_path.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_progression_icons.gfx",
+      "texture": "gfx/interface/icons/ascension_perks/ap_artifact_user_apotheosis_path.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_progression_icons.gfx",
+      "texture": "gfx/interface/icons/ascension_perks/ap_artifact_court_destiny.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_reality_baseline_icons.gfx",
+      "texture": "gfx/interface/icons/megastructures/strategic_coordination_center.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_reality_baseline_icons.gfx",
+      "texture": "gfx/interface/icons/megastructures/strategic_coordination_center.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_reality_baseline_icons.gfx",
+      "texture": "gfx/interface/icons/megastructures/strategic_coordination_center.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_reality_baseline_icons.gfx",
+      "texture": "gfx/interface/icons/megastructures/strategic_coordination_center.dds",
+      "provided_by_mod": false
+    },
+    {
+      "definition": "mod/interface/aemusa_white_night_pavilion.gfx",
+      "texture": "gfx/event_pictures/aemusa_white_night_pavilion_event.dds",
+      "provided_by_mod": true
+    },
+    {
+      "definition": "mod/interface/aemusa_white_night_pavilion.gfx",
+      "texture": "gfx/interface/icons/edicts/edict_white_night_pavilion.dds",
+      "provided_by_mod": true
+    }
+  ],
+  "model_interfaces": {
+    "mod/common/ship_sizes/aemusa_reality_flagship.txt": [
+      [
+        "entity",
+        "battleship_entity"
+      ]
+    ],
+    "mod/common/section_templates/aemusa_reality_flagship_sections.txt": [
+      [
+        "entity",
+        "battleship_bow_L2_entity"
+      ],
+      [
+        "entity",
+        "battleship_mid_L3_entity"
+      ],
+      [
+        "entity",
+        "battleship_stern_L1_entity"
+      ]
+    ],
+    "mod/common/megastructures/aemusa_reality_baseline.txt": [
+      [
+        "entity",
+        "construction_platform_entity"
+      ],
+      [
+        "construction_entity",
+        "construction_platform_entity"
+      ],
+      [
+        "portrait",
+        "GFX_megastructure_construction_background"
+      ],
+      [
+        "entity",
+        "strategic_coordination_center_stage_1_entity"
+      ],
+      [
+        "construction_entity",
+        "strategic_coordination_center_stage_1_entity"
+      ],
+      [
+        "portrait",
+        "GFX_megastructure_construction_background"
+      ]
+    ]
+  }
+}

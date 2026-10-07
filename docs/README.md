@@ -26,6 +26,7 @@
 
 - [Art Bible](art/ART_BIBLE.md)
 - [资产生产需求](art/ASSET_PRODUCTION_PLAN.md)
+- [里程碑4首批外观方案](art/MILESTONE4_VISUAL_PROPOSAL.md)：新旗舰、两阶段枢纽与代表肖像的制作接口及概念草案。
 - [既有资产登记](art/ASSET_REGISTRY.csv)
 - [参考图库](art/reference_library/README.md)
 - [AWP-02 运行验收报告](../reports/aemusa_main_story_awp_02_validation_report.md)
