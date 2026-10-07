@@ -214,9 +214,6 @@ country_event = {
 				}
 				add_resource = {
 					energy = -150
-				}
-				# 按原版单资源效果分别扣费，避免同块后续资源未执行。
-				add_resource = {
 					minerals = -50
 				}
 				set_country_flag = aemusa_ms_country_exclusive_laboratory_pending
@@ -277,9 +274,6 @@ country_event = {
 				}
 				add_resource = {
 					energy = -200
-				}
-				# 公共响应的两种费用分别执行，与门禁及提示一致。
-				add_resource = {
 					minerals = -150
 				}
 				set_country_flag = aemusa_ms_country_exclusive_public_response_pending

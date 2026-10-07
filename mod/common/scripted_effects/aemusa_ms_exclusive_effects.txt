@@ -436,9 +436,6 @@ aemusa_ms_anchor_stabilize = {
 		}
 		add_resource = {
 			energy = -200
-		}
-		# 现场恒定按单资源效果分别扣费。
-		add_resource = {
 			minerals = -100
 		}
 		# 重新设定至180日，不无限叠加；旗舰离场时窗口立即不再满足条件。
