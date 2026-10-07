@@ -152,15 +152,6 @@ country_event = {
         }
     }
 
-    # 正式核心机制入口，旧档复用原人物。
-    option = {
-        name = artifact_companions.entry
-        trigger = { ac_seth_available = yes }
-        hidden_effect = {
-            country_event = { id = artifact_companions.100 }
-        }
-    }
-
     option = {
         name = aemusa_dialogue.3.yutong # 与已入驻的幽桐通讯。
         trigger = {
@@ -173,15 +164,6 @@ country_event = {
         }
     }
 
-    # 正式核心机制入口，旧档复用原人物。
-    option = {
-        name = artifact_companions.entry
-        trigger = { ac_yutong_available = yes }
-        hidden_effect = {
-            country_event = { id = artifact_companions.200 }
-        }
-    }
-
     option = {
         name = aemusa_dialogue.3.rabi # 与已入驻的拉比通讯。
         trigger = {
@@ -191,15 +173,6 @@ country_event = {
             country_event = {
                 id = aemusa_dialogue.45 # 打开拉比通讯事件。
             }
-        }
-    }
-
-    # 正式核心机制入口，旧档复用原人物。
-    option = {
-        name = artifact_companions.entry
-        trigger = { ac_rabi_available = yes }
-        hidden_effect = {
-            country_event = { id = artifact_companions.300 }
         }
     }
 
@@ -525,6 +498,13 @@ country_event = {
     is_triggered_only = yes # 仅由白夜馆名册调用。
     picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
 
+    # 正式核心机制入口，旧档复用原人物。
+    option = {
+        name = artifact_companions.entry
+        trigger = { ac_seth_available = yes }
+        hidden_effect = { country_event = { id = artifact_companions.100 } }
+    }
+
     option = {
         name = aemusa_dialogue.31.profile # 查看赛斯的白夜馆档案。
         hidden_effect = {
@@ -661,6 +641,13 @@ country_event = {
     is_triggered_only = yes # 仅由白夜馆名册和通讯台调用。
     picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
 
+    # 正式核心机制入口，旧档复用原人物。
+    option = {
+        name = artifact_companions.entry
+        trigger = { ac_yutong_available = yes }
+        hidden_effect = { country_event = { id = artifact_companions.200 } }
+    }
+
     option = {
         name = aemusa_dialogue.35.profile # 查看幽桐的白夜馆档案。
         hidden_effect = {
@@ -796,6 +783,13 @@ country_event = {
     desc = aemusa_dialogue.45.desc # 正文本地化键。
     is_triggered_only = yes # 仅由白夜馆名册和通讯台调用。
     picture = GFX_evt_aemusa_white_night_pavilion # 使用白夜馆背景。
+
+    # 正式核心机制入口，旧档复用原人物。
+    option = {
+        name = artifact_companions.entry
+        trigger = { ac_rabi_available = yes }
+        hidden_effect = { country_event = { id = artifact_companions.300 } }
+    }
 
     option = {
         name = aemusa_dialogue.45.profile # 查看拉比的白夜馆档案。

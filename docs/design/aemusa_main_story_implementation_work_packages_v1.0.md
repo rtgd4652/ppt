@@ -26,7 +26,7 @@ awp_09_implementation_authorized: true
 awp_09_status: "playable_main_flow_and_key_save_load_pass"
 current_milestone: "ten_characters_and_civilization"
 current_milestone_scope: "seth_yutong_rabi_second_batch"
-current_milestone_status: "second_batch_implemented_runtime_pending"
+current_milestone_status: "second_batch_normal_flow_pass_combat_pending"
 last_updated: "2026-10-07"
 ---
 
@@ -584,4 +584,4 @@ AWP-06/07首版代码、静态及60项工具检查已有通过记录。4.5.1正�
 
 ## 50. 2026-10-07 里程碑3第二批实现
 
-首批完成后用户要求继续，按既定顺序接入赛斯、幽桐、拉比。已实现每人单任务核心、旧身份兼容、费用与月度工作、当次确认／拒绝、同实体转职及独立恢复期，中文文本随功能交付。原三名纯等级乘数调整为实际任务收益；首版数值可调，正式资产后置。静态与69项工具检查通过，新进程运行尚待本轮继续，不提前标可玩通过。见[范围](artifact_companions_milestone_3_second_batch.md)和[本批记录](../../reports/artifact_companions_milestone_3_2026-10-07.md)。
+首批完成后用户要求继续，按既定顺序接入赛斯、幽桐、拉比。已实现每人单任务核心、旧身份兼容、费用与月度工作、当次确认／拒绝、同实体转职及独立恢复期，中文文本随功能交付。原三名纯等级乘数调整为实际任务收益；首版数值可调，正式资产后置。静态与69项工具检查通过。4.5.2／`0c0b`正常招募、赛斯职业往返与公共履责完成、幽桐3/3校准、拉比本人确认已有证据；合并档 `2242.01.04` 已保存并载回。一次受控实战仍待核对，不提前标整体可玩通过。见[范围](artifact_companions_milestone_3_second_batch.md)和[本批记录](../../reports/artifact_companions_milestone_3_2026-10-07.md)。

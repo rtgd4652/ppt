@@ -41,7 +41,8 @@ ac_seth_switch_class = {
             }
         }
         # 保留同一领袖ID、等级、愿望、已付资源和冷却。
-        ac_refresh = yes
+        # 此处只重建人物引用；不嵌套整套三人清理链，避免引擎初始化深度超限。
+        ac_rebind = yes
         log = "COMPANIONS|seth_class_changed"
     }
 }
@@ -309,7 +310,13 @@ ac_yutong_reset_calibration = {
     }
 }
 ac_yutong_close = {
-    ac_yutong_reset_calibration = yes
+    # 收口直接处理校准状态，减少生命周期入口的脚本展开层数。
+    ac_yutong_remove_support = yes
+    remove_country_flag = ac_yutong_stable
+    set_variable = {
+        which = ac_yutong_progress
+        value = 0
+    }
     if = {
         limit = { exists = event_target:ac_yutong_force@root }
         event_target:ac_yutong_force@root = { remove_fleet_flag = ac_yutong_force@root }
