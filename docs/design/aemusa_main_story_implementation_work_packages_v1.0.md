@@ -21,12 +21,12 @@ awp_06_implementation_authorized: true
 awp_07_status: "playable_main_flow_and_key_risks_pass"
 awp_07_implementation_authorized: true
 awp_08_implementation_authorized: true
-awp_08_status: "implemented_static_pass_runtime_pending"
+awp_08_status: "playable_main_flow_and_key_save_load_pass"
 awp_09_implementation_authorized: true
-awp_09_status: "implemented_static_pass_runtime_pending"
+awp_09_status: "playable_main_flow_and_key_save_load_pass"
 current_milestone: "aemusa_story_complete"
 current_milestone_scope: "chapters_14_16_three_endings_level_catch_up_epilogue"
-current_milestone_status: "implemented_static_pass_runtime_pending"
+current_milestone_status: "playable_main_flow_and_key_save_load_pass"
 last_updated: "2026-10-07"
 ---
 
@@ -34,7 +34,7 @@ last_updated: "2026-10-07"
 
 ## 0. 目的
 
-本文把已批准设计拆成可实现、测试和回退的内部工作包。用户后续继续指令按已确认的可玩里程碑执行，同一范围不重复确认。当前授权见第 41 节：合并实施 AWP-06／07 的新专属舰、新巨构与专属危机；第 40 节的代理提案已被替代。验收采用第 35 节及第 41 节轻量口径，历史完整测试门槛不再阻塞内容续作。
+本文把已批准设计拆成可实现、测试和回退的内部工作包。用户后续继续指令按已确认的可玩里程碑执行，同一范围不重复确认。里程碑1授权见第41节，第40节的代理提案已被替代；里程碑2实施与运行结果见第46、47节。AWP-06至09现已达到轻量可玩标准，后续为十人与文明整合。验收采用第35节及第41节轻量口径，历史完整测试门槛不再阻塞内容续作。
 
 ## 1. 通用交付门禁
 
@@ -561,3 +561,11 @@ AWP-06/07首版代码、静态及60项工具检查已有通过记录。4.5.1正�
 ## 46. 2026-10-07 里程碑2开始与首版实现
 
 用户在里程碑1收尾和下一步范围公布后回复“继续”，据此接续AWP-08/09。已写第十四至十六章、两种永久拒绝结局、成功身份、历史尾声、分期研修与白夜馆最近入口。玩家授权、角色回应、双重确认和身份成立独立结算；首版自主回应规则暂按明示谈话立场与既有责任共同判断，未把尚无回复的文本偏好问题记作专项剧情批准。静态及65项工具检查通过，实际运行尚待验收。详见[实施说明](aemusa_main_story_milestone_2_implementation.md)和[当日记录](../../reports/aemusa_main_story_milestone_2_2026-10-07.md)。
+
+## 47. 2026-10-07 里程碑2轻量可玩检查完成
+
+4.5.2（`be2a`）仅启用本Mod，从正常危机完成档进入第十四章。原生测试命令建立29级后，经正常研修入口实际支付资源并等待180游戏日，2239.01.10基础等级达到30；不冒称自然经验成长。随后从共同谈话起点正常完成成功转变与尾声、玩家拒绝和爱缪莎拒绝三种结果。授权、独立回应、身份及结果互斥记录已从实际新档核对，三档均保留原唯一领袖、职业、原特质及危机历史。
+
+共同起点 `2239.05.05.sav` 两次实际载回用于分支；成功档 `2239.06.20.sav` 已实际载回，白夜馆仅显示保存结果，没有重新授权或重复授身份入口。玩家拒绝档为 `2239.05.22.sav`，爱缪莎拒绝档为 `2239.06.05.sav`；四档备份、只读JSON和日志已保存至工作区。AWP-08/09状态为 `playable_main_flow_and_key_save_load_pass`，未测试部分按实际反馈处理，不扩大为穷举或全1.0验收。当前游戏停在成功结果的2239.06.20暂停态。
+
+下一轮按既定里程碑3顺序先处理安托涅瓦、晏华与中央庭制度，随后整合其余角色。回应细则仍为可替换首版，正式外观与发布回归留在里程碑4；不重复前十三章已通过的检查。完整证据与边界见[当日记录](../../reports/aemusa_main_story_milestone_2_2026-10-07.md)。
