@@ -7,9 +7,18 @@ ac_rebind = {
             value = 0
         }
     }
-    clear_global_event_target = ac_seth@root
-    clear_global_event_target = ac_yutong@root
-    clear_global_event_target = ac_rabi@root
+    if = {
+        limit = { exists = event_target:ac_seth@root }
+        clear_global_event_target = ac_seth@root
+    }
+    if = {
+        limit = { exists = event_target:ac_yutong@root }
+        clear_global_event_target = ac_yutong@root
+    }
+    if = {
+        limit = { exists = event_target:ac_rabi@root }
+        clear_global_event_target = ac_rabi@root
+    }
     every_owned_leader = {
         limit = { has_leader_flag = seth_unique_leader }
         save_global_event_target_as = ac_seth@root
@@ -53,8 +62,8 @@ ac_seth_clear_request = {
             remove_planet_flag = ac_seth_request@root
             remove_modifier = ac_seth_emergency_aid
         }
+        clear_global_event_target = ac_seth_target@root
     }
-    clear_global_event_target = ac_seth_target@root
     remove_country_flag = ac_seth_investigating
     remove_country_flag = ac_seth_ready
     remove_country_flag = ac_seth_working
@@ -320,13 +329,13 @@ ac_yutong_close = {
     if = {
         limit = { exists = event_target:ac_yutong_force@root }
         event_target:ac_yutong_force@root = { remove_fleet_flag = ac_yutong_force@root }
+        clear_global_event_target = ac_yutong_force@root
     }
     if = {
         limit = { exists = event_target:ac_yutong_anchor@root }
         event_target:ac_yutong_anchor@root = { remove_star_flag = ac_yutong_anchor@root }
+        clear_global_event_target = ac_yutong_anchor@root
     }
-    clear_global_event_target = ac_yutong_force@root
-    clear_global_event_target = ac_yutong_anchor@root
     remove_country_flag = ac_yutong_active
     remove_country_flag = ac_yutong_precision_order
     remove_country_flag = ac_yutong_contact
@@ -431,8 +440,8 @@ ac_rabi_clear_threat = {
     if = {
         limit = { exists = event_target:ac_rabi_threat@root }
         event_target:ac_rabi_threat@root = { remove_fleet_flag = ac_rabi_threat@root }
+        clear_global_event_target = ac_rabi_threat@root
     }
-    clear_global_event_target = ac_rabi_threat@root
     remove_country_flag = ac_rabi_threat_registered
 }
 ac_rabi_remove_support = {
@@ -450,8 +459,8 @@ ac_rabi_close = {
     if = {
         limit = { exists = event_target:ac_rabi_force@root }
         event_target:ac_rabi_force@root = { remove_fleet_flag = ac_rabi_force@root }
+        clear_global_event_target = ac_rabi_force@root
     }
-    clear_global_event_target = ac_rabi_force@root
     remove_country_flag = ac_rabi_requested
     remove_country_flag = ac_rabi_active
     remove_country_flag = ac_rabi_confirmed
