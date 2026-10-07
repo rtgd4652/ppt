@@ -28,7 +28,7 @@ ar_an_become_official = {
     if = {
         limit = { ar_player = yes ar_an_available = yes NOT = { ar_an_official = yes } }
         event_target:ar_an@root = {
-            unassign_leader = yes
+            unassign_leader = this # 原生接口要求领袖目标；解除本人的当前任职。
             remove_trait = leader_trait_ar_an_identity
             change_leader_class = official
             add_trait = { trait = leader_trait_ar_an_identity show_message = no }
@@ -42,7 +42,7 @@ ar_an_become_commander = {
     if = {
         limit = { ar_player = yes ar_an_available = yes NOT = { ar_an_commander = yes } }
         event_target:ar_an@root = {
-            unassign_leader = yes
+            unassign_leader = this
             remove_trait = leader_trait_ar_an_identity
             change_leader_class = commander
             add_trait = { trait = leader_trait_ar_an_identity show_message = no }
@@ -106,7 +106,7 @@ ar_greysa_become_scientist = {
     if = {
         limit = { ar_player = yes ar_greysa_available = yes NOT = { ar_greysa_scientist = yes } }
         event_target:ar_greysa@root = {
-            unassign_leader = yes
+            unassign_leader = this
             remove_trait = leader_trait_ar_greysa_identity
             change_leader_class = scientist
             add_trait = { trait = leader_trait_ar_greysa_identity show_message = no }
@@ -120,7 +120,7 @@ ar_greysa_become_commander = {
     if = {
         limit = { ar_player = yes ar_greysa_available = yes NOT = { ar_greysa_commander = yes } }
         event_target:ar_greysa@root = {
-            unassign_leader = yes
+            unassign_leader = this
             remove_trait = leader_trait_ar_greysa_identity
             change_leader_class = commander
             add_trait = { trait = leader_trait_ar_greysa_identity show_message = no }
@@ -184,7 +184,7 @@ ar_wenzi_become_official = {
     if = {
         limit = { ar_player = yes ar_wenzi_available = yes NOT = { ar_wenzi_official = yes } }
         event_target:ar_wenzi@root = {
-            unassign_leader = yes
+            unassign_leader = this
             remove_trait = leader_trait_ar_wenzi_identity
             change_leader_class = official
             add_trait = { trait = leader_trait_ar_wenzi_identity show_message = no }
@@ -198,7 +198,7 @@ ar_wenzi_become_commander = {
     if = {
         limit = { ar_player = yes ar_wenzi_available = yes NOT = { ar_wenzi_commander = yes } }
         event_target:ar_wenzi@root = {
-            unassign_leader = yes
+            unassign_leader = this
             remove_trait = leader_trait_ar_wenzi_identity
             change_leader_class = commander
             add_trait = { trait = leader_trait_ar_wenzi_identity show_message = no }
@@ -262,7 +262,7 @@ ar_li_become_official = {
     if = {
         limit = { ar_player = yes ar_li_available = yes NOT = { ar_li_official = yes } }
         event_target:ar_li@root = {
-            unassign_leader = yes
+            unassign_leader = this
             remove_trait = leader_trait_ar_li_identity
             change_leader_class = official
             add_trait = { trait = leader_trait_ar_li_identity show_message = no }
@@ -276,7 +276,7 @@ ar_li_become_scientist = {
     if = {
         limit = { ar_player = yes ar_li_available = yes NOT = { ar_li_scientist = yes } }
         event_target:ar_li@root = {
-            unassign_leader = yes
+            unassign_leader = this
             remove_trait = leader_trait_ar_li_identity
             change_leader_class = scientist
             add_trait = { trait = leader_trait_ar_li_identity show_message = no }
@@ -290,7 +290,7 @@ ar_li_become_commander = {
     if = {
         limit = { ar_player = yes ar_li_available = yes NOT = { ar_li_commander = yes } }
         event_target:ar_li@root = {
-            unassign_leader = yes
+            unassign_leader = this
             remove_trait = leader_trait_ar_li_identity
             change_leader_class = commander
             add_trait = { trait = leader_trait_ar_li_identity show_message = no }

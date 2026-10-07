@@ -55,6 +55,11 @@ country_event = {
     }
 
     option = {
+        name = aemusa_dialogue.guide
+        hidden_effect = { country_event = { id = aemusa_dialogue.5 } }
+    }
+
+    option = {
         name = aemusa_dialogue.1.goodbye # 关闭白夜馆通讯。
         default_hide_option = yes # 按 Esc 关闭窗口时默认选择本项。
     }
@@ -428,7 +433,7 @@ country_event = {
     }
 }
 
-# 白夜馆与记忆隙间分类页：先放格蕾莎的可见占位，后续接入领袖效果。
+# 白夜馆与记忆隙间分类页：接到格蕾莎的现有唯一人物与职责入口。
 country_event = {
     id = aemusa_dialogue.42 # 白夜馆与记忆隙间分类事件 ID。
     title = aemusa_dialogue.42.title # 标题本地化键。
@@ -437,8 +442,15 @@ country_event = {
     picture = GFX_evt_aemusa_white_night_pavilion # 势力页统一沿用白夜馆前台背景，避免自绘面板与事件正文叠层。
 
     option = {
-        name = aemusa_dialogue.42.gresha_pending # 格蕾莎暂未接入。
-        # 占位按钮不再回调当前事件，避免同一事件窗口自我重开导致 UI 栈崩溃。
+        name = ar.greysa.contact
+        trigger = { ar_greysa_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.200 } }
+    }
+
+    option = {
+        name = ar.greysa.recruit
+        trigger = { ar_greysa_recruit_available = yes }
+        hidden_effect = { country_event = { id = artifact_restoration.201 } }
     }
 
     option = {
@@ -911,6 +923,52 @@ country_event = {
             }
         }
     }
+}
+
+# 三页说明仅跳转窗口，不写入人物、任务、资源或主线状态。
+country_event = {
+    id = aemusa_dialogue.5
+    title = aemusa_dialogue.5.title
+    desc = aemusa_dialogue.5.desc
+    is_triggered_only = yes
+    picture = GFX_evt_aemusa_white_night_pavilion
+    option = {
+        name = aemusa_dialogue.guide_people
+        hidden_effect = { country_event = { id = aemusa_dialogue.6 } }
+    }
+    option = {
+        name = aemusa_dialogue.guide_training
+        hidden_effect = { country_event = { id = aemusa_dialogue.7 } }
+    }
+    option = {
+        name = aemusa_dialogue.2.back
+        hidden_effect = { country_event = { id = aemusa_dialogue.1 } }
+    }
+    option = { name = aemusa_dialogue.1.goodbye default_hide_option = yes }
+}
+country_event = {
+    id = aemusa_dialogue.6
+    title = aemusa_dialogue.6.title
+    desc = aemusa_dialogue.6.desc
+    is_triggered_only = yes
+    picture = GFX_evt_aemusa_white_night_pavilion
+    option = {
+        name = aemusa_dialogue.guide_back
+        hidden_effect = { country_event = { id = aemusa_dialogue.5 } }
+    }
+    option = { name = aemusa_dialogue.1.goodbye default_hide_option = yes }
+}
+country_event = {
+    id = aemusa_dialogue.7
+    title = aemusa_dialogue.7.title
+    desc = aemusa_dialogue.7.desc
+    is_triggered_only = yes
+    picture = GFX_evt_aemusa_white_night_pavilion
+    option = {
+        name = aemusa_dialogue.guide_back
+        hidden_effect = { country_event = { id = aemusa_dialogue.5 } }
+    }
+    option = { name = aemusa_dialogue.1.goodbye default_hide_option = yes }
 }
 
 # 通讯对话：由“联络爱缪莎”法令主动触发。

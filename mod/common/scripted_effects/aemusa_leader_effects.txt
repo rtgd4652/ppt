@@ -22,60 +22,53 @@ aemusa_summon_leader = {
     }
 }
 
-# 将已保存的爱缪莎切换为指挥官，并替换为指挥官专属技能。
+# 三种职责共用同一人物。重复选择当前职业不解除任命，不重建领袖或写入成长与主线。
+aemusa_change_duty = {
+    if = {
+        limit = {
+            exists = event_target:aemusa_leader
+            event_target:aemusa_leader = {
+                has_leader_flag = aemusa_unique_leader
+                NOT = { leader_class = $CLASS$ }
+            }
+        }
+        event_target:aemusa_leader = {
+            unassign_leader = this # 先结束原岗位，转职后由玩家重新任命。
+            remove_trait = leader_trait_aemusa_commander
+            remove_trait = leader_trait_aemusa_official
+            remove_trait = leader_trait_aemusa_scientist
+            change_leader_class = $CLASS$
+            add_trait = {
+                trait = $TRAIT$
+                show_message = no
+                consume_selection = yes
+            }
+            aemusa_refresh_portrait = yes
+        }
+    }
+}
+
+# 保留既有调用名称，职业专属技能随同一人物切换。
 aemusa_become_commander = {
-    event_target:aemusa_leader = {
-        remove_trait = leader_trait_aemusa_commander # 先清除旧的指挥官技能（重复选择时安全）。
-        remove_trait = leader_trait_aemusa_official # 清除行政官专属技能。
-        remove_trait = leader_trait_aemusa_scientist # 清除科学家专属技能。
-        change_leader_class = commander # 正式变更职业为指挥官。
-        add_trait = {
-            trait = leader_trait_aemusa_commander # 添加“逆命之牌”。
-            show_message = no # 不显示原版特质获得弹窗。
-            consume_selection = yes # 计入本次特质选择，避免额外可选槽。
-        }
-        aemusa_refresh_portrait = yes # 职业变化后按当前等级恢复正确肖像。
-    }
+    aemusa_change_duty = { CLASS = commander TRAIT = leader_trait_aemusa_commander }
 }
-
-# 将已保存的爱缪莎切换为行政官，并替换为行政官专属技能。
 aemusa_become_official = {
-    event_target:aemusa_leader = {
-        remove_trait = leader_trait_aemusa_commander # 清除指挥官专属技能。
-        remove_trait = leader_trait_aemusa_official # 清除旧的行政官技能（重复选择时安全）。
-        remove_trait = leader_trait_aemusa_scientist # 清除科学家专属技能。
-        change_leader_class = official # 正式变更职业为行政官。
-        add_trait = {
-            trait = leader_trait_aemusa_official # 添加“命运织网”。
-            show_message = no # 不显示原版特质获得弹窗。
-            consume_selection = yes # 计入本次特质选择。
-        }
-        aemusa_refresh_portrait = yes # 职业变化后按当前等级恢复正确肖像。
-    }
+    aemusa_change_duty = { CLASS = official TRAIT = leader_trait_aemusa_official }
 }
-
-# 将已保存的爱缪莎切换为科学家，并替换为科学家专属技能。
 aemusa_become_scientist = {
-    event_target:aemusa_leader = {
-        remove_trait = leader_trait_aemusa_commander # 清除指挥官专属技能。
-        remove_trait = leader_trait_aemusa_official # 清除行政官专属技能。
-        remove_trait = leader_trait_aemusa_scientist # 清除旧的科学家技能（重复选择时安全）。
-        change_leader_class = scientist # 正式变更职业为科学家。
-        add_trait = {
-            trait = leader_trait_aemusa_scientist # 添加“星图演算”。
-            show_message = no # 不显示原版特质获得弹窗。
-            consume_selection = yes # 计入本次特质选择。
-        }
-        aemusa_refresh_portrait = yes # 职业变化后按当前等级恢复正确肖像。
-    }
+    aemusa_change_duty = { CLASS = scientist TRAIT = leader_trait_aemusa_scientist }
 }
 
 # 按爱缪莎当前等级刷新肖像：30 级使用成长后的专属立绘，其余等级使用城市通讯立绘。
 aemusa_refresh_portrait = {
     if = {
         limit = {
-            has_leader_flag = aemusa_level_30_portrait # 达到 30 级后由升级事件设置。
+            OR = {
+                has_leader_flag = aemusa_level_30_portrait
+                has_base_skill >= 30 # 旧档或其他正常成长来源也可恢复已达到的外观。
+            }
         }
+        set_leader_flag = aemusa_level_30_portrait
         change_leader_portrait = aemusa_portrait_level_30 # 30 级专属肖像。
     }
     else = {
