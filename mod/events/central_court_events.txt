@@ -1,0 +1,442 @@
+namespace = central_court
+# 独立人员与机制入口；每次写入在效果内重新核对资格。
+
+country_event = {
+    id = central_court.1
+    title = cc.1.title
+    desc = cc.1.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.install
+        trigger = { cc_install_available = yes }
+        hidden_effect = { country_event = { id = central_court.2 } }
+    }
+    option = {
+        name = cc.antoniva
+        trigger = { cc_antoniva_available = yes }
+        hidden_effect = { country_event = { id = central_court.10 } }
+    }
+    option = {
+        name = cc.recruit_yanhua
+        trigger = { NOT = { has_country_flag = cc_yanhua_recruited } has_country_flag = cc_court_installed }
+        hidden_effect = { country_event = { id = central_court.20 } }
+    }
+    option = {
+        name = cc.yanhua
+        trigger = { cc_yanhua_available = yes }
+        hidden_effect = { country_event = { id = central_court.21 } }
+    }
+    option = {
+        name = cc.ark
+        trigger = { cc_antoniva_available = yes }
+        hidden_effect = { country_event = { id = central_court.30 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.2
+    title = cc.2.title
+    desc = cc.2.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.install_confirm
+        trigger = { cc_install_available = yes }
+        hidden_effect = { cc_install_court = yes country_event = { id = central_court.1 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.1 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.3
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes has_authority = auth_artifact_central_court }
+    immediate = { cc_install_court = yes }
+}
+country_event = {
+    id = central_court.4
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes has_country_flag = cc_court_installed }
+    immediate = { cc_refresh_records = yes cc_analysis_monthly = yes cc_ark_monthly = yes }
+}
+
+country_event = {
+    id = central_court.10
+    title = cc.10.title
+    desc = cc.10.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.ark
+        trigger = { cc_antoniva_available = yes }
+        hidden_effect = { country_event = { id = central_court.30 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.1 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.20
+    title = cc.20.title
+    desc = cc.20.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.recruit_confirm
+        trigger = { cc_yanhua_recruit_available = yes }
+        hidden_effect = { cc_recruit_yanhua = yes country_event = { id = central_court.21 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.1 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.21
+    title = cc.21.title
+    desc = cc.21.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.to_commander
+        trigger = { any_owned_leader = { has_leader_flag = cc_yanhua_unique leader_class = official } }
+        hidden_effect = { cc_yanhua_switch_class = { CLASS = commander } country_event = { id = central_court.21 } }
+    }
+    option = {
+        name = cc.to_official
+        trigger = { any_owned_leader = { has_leader_flag = cc_yanhua_unique leader_class = commander } }
+        hidden_effect = { cc_yanhua_switch_class = { CLASS = official } country_event = { id = central_court.21 } }
+    }
+    option = {
+        name = cc.assessment
+        trigger = { cc_yanhua_available = yes }
+        hidden_effect = { country_event = { id = central_court.50 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.1 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.30
+    title = cc.30.title
+    desc = cc.30.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.warp
+        trigger = { cc_antoniva_available = yes }
+        hidden_effect = { country_event = { id = central_court.40 } }
+    }
+    option = {
+        name = cc.exile
+        trigger = { cc_ark_available = yes }
+        hidden_effect = { cc_pick_exile_target = yes country_event = { id = central_court.43 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.1 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.40
+    title = cc.40.title
+    desc = cc.40.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.pick_force
+        trigger = { cc_ark_available = yes }
+        hidden_effect = { cc_pick_ark_force = yes country_event = { id = central_court.41 } }
+    }
+    option = {
+        name = cc.warp_start
+        trigger = { cc_ark_warp_start_available = yes }
+        hidden_effect = { cc_start_ark_warp = yes country_event = { id = central_court.42 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.30 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.41
+    title = cc.41.title
+    desc = { text = cc.41.desc trigger = { exists = event_target:cc_ark_force } }
+    desc = { text = cc.41.none trigger = { NOT = { exists = event_target:cc_ark_force } } }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.pick_force_again
+        trigger = { cc_ark_available = yes }
+        hidden_effect = { cc_pick_ark_force = yes country_event = { id = central_court.40 } }
+    }
+    option = {
+        name = cc.warp_start
+        trigger = { cc_ark_warp_start_available = yes }
+        hidden_effect = { cc_start_ark_warp = yes country_event = { id = central_court.42 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.30 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.42
+    title = cc.42.title
+    desc = cc.42.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.30 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.43
+    title = cc.43.title
+    desc = { text = cc.43.desc trigger = { exists = event_target:cc_ark_exile_target } }
+    desc = { text = cc.43.none trigger = { NOT = { exists = event_target:cc_ark_exile_target } } }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.exile_confirm
+        trigger = { cc_ark_exile_available = yes }
+        hidden_effect = { cc_exile_force = yes country_event = { id = central_court.45 } }
+    }
+    option = {
+        name = cc.exile_again
+        trigger = { cc_ark_available = yes }
+        hidden_effect = { cc_pick_exile_target = yes country_event = { id = central_court.30 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.30 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.44
+    title = cc.44.title
+    desc = cc.44.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.30 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.45
+    title = cc.45.title
+    desc = cc.45.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.30 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.50
+    title = cc.50.title
+    desc = { text = cc.50.collecting trigger = { has_country_flag = cc_analysis_collecting } }
+    desc = { text = cc.50.ready trigger = { has_country_flag = cc_analysis_conclusion } }
+    desc = { text = cc.50.desc trigger = { NOR = { has_country_flag = cc_analysis_collecting has_country_flag = cc_analysis_conclusion } } }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.pick_assessment
+        trigger = { cc_analysis_idle = yes }
+        hidden_effect = { cc_pick_analysis_candidate = yes country_event = { id = central_court.52 } }
+    }
+    option = {
+        name = cc.show_conclusion
+        trigger = { cc_analysis_can_claim = yes }
+        hidden_effect = { country_event = { id = central_court.51 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.21 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.52
+    title = cc.52.title
+    desc = { text = cc.52.desc trigger = { exists = event_target:cc_analysis_candidate } }
+    desc = { text = cc.52.none trigger = { NOT = { exists = event_target:cc_analysis_candidate } } }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.analysis_start
+        trigger = { cc_analysis_start_available = yes }
+        hidden_effect = { cc_start_analysis = yes country_event = { id = central_court.50 } }
+    }
+    option = {
+        name = cc.pick_assessment_again
+        trigger = { cc_analysis_idle = yes }
+        hidden_effect = { cc_pick_analysis_candidate = yes country_event = { id = central_court.50 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.21 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.51
+    title = cc.51.title
+    desc = cc.51.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.prepare_capital
+        trigger = { cc_analysis_can_claim = yes exists = capital_scope }
+        hidden_effect = { if = {
+            limit = { cc_analysis_can_claim = yes exists = capital_scope }
+            capital_scope = { add_modifier = { modifier = cc_yanhua_internal_preparation days = 180 } }
+            cc_finish_analysis = yes
+        }country_event = { id = central_court.53 } }
+    }
+    option = {
+        name = cc.military_counter
+        trigger = { cc_analysis_military_claim = yes }
+        hidden_effect = { if = {
+            limit = { cc_analysis_military_claim = yes }
+            random_owned_fleet = {
+                limit = { is_ship_class = shipclass_military exists = leader leader = { has_leader_flag = cc_yanhua_unique } }
+                add_modifier = { modifier = cc_yanhua_fleet_counter days = 180 }
+            }
+            cc_finish_analysis = yes
+        }country_event = { id = central_court.53 } }
+    }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.21 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = central_court.53
+    title = cc.53.title
+    desc = cc.53.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { cc_player_country = yes }
+    immediate = { cc_refresh_records = yes }
+    option = {
+        name = cc.back
+        hidden_effect = { country_event = { id = central_court.21 } }
+    }
+    option = {
+        name = cc.close
+        default_hide_option = yes
+    }
+}

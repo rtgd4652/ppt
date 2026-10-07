@@ -1,0 +1,10 @@
+# 中央庭的公共责任身份，不将元首称作君主或军事执政官。
+gov_artifact_central_court = {
+    ruler_title = RT_ARTIFACT_COURT_HEAD
+    ruler_title_female = RT_ARTIFACT_COURT_HEAD
+    possible = {
+        has_authority = auth_artifact_central_court
+        has_origin = origin_artifact_resonance
+    }
+    weight = { base = 10000 }
+}

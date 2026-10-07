@@ -1,0 +1,137 @@
+# 所有人物账本属于当前玩家国家；不使用爱缪莎主线状态作为本模块进度。
+cc_player_country = {
+    is_ai = no
+    has_origin = origin_artifact_resonance
+}
+cc_antoniva_available = {
+    any_owned_leader = {
+        has_leader_flag = cc_antoniva_unique
+        is_ruler = yes
+    }
+}
+cc_yanhua_available = {
+    any_owned_leader = { has_leader_flag = cc_yanhua_unique }
+}
+cc_install_available = {
+    cc_player_country = yes
+    NOT = { has_country_flag = cc_court_installed }
+}
+cc_yanhua_recruit_available = {
+    cc_player_country = yes
+    has_country_flag = cc_court_installed
+    NOT = { has_country_flag = cc_yanhua_recruited }
+    NOT = { cc_yanhua_available = yes }
+    has_resource = { type = energy amount >= 200 }
+    has_resource = { type = unity amount >= 500 }
+}
+# 根作用域是发起国家；在目标国家中检查已接触、普通外部国家身份。
+cc_analysis_candidate = {
+    is_country_type = default
+    NOT = { is_same_value = root }
+    has_communications = root
+}
+cc_analysis_target_valid = {
+    exists = event_target:cc_analysis_target
+    event_target:cc_analysis_target = {
+        cc_analysis_candidate = yes
+        has_country_flag = cc_analysis_target@root
+    }
+}
+cc_analysis_idle = {
+    cc_yanhua_available = yes
+    NOR = {
+        has_country_flag = cc_analysis_collecting
+        has_country_flag = cc_analysis_conclusion
+        has_country_flag = cc_analysis_cooldown
+    }
+}
+cc_analysis_start_available = {
+    cc_analysis_idle = yes
+    exists = event_target:cc_analysis_candidate
+    event_target:cc_analysis_candidate = { cc_analysis_candidate = yes }
+    has_resource = { type = energy amount >= 250 }
+    has_resource = { type = unity amount >= 250 }
+}
+cc_analysis_can_progress = {
+    cc_yanhua_available = yes
+    cc_analysis_target_valid = yes
+    any_owned_leader = {
+        has_leader_flag = cc_yanhua_unique
+        leader_class = official
+    }
+    has_intel_level = { who = event_target:cc_analysis_target category = military level >= 2 }
+}
+cc_analysis_can_claim = {
+    cc_yanhua_available = yes
+    cc_analysis_target_valid = yes
+    has_country_flag = cc_analysis_conclusion
+    has_country_flag = cc_analysis_fresh
+    NOT = { has_country_flag = cc_analysis_cooldown }
+}
+cc_analysis_military_claim = {
+    cc_analysis_can_claim = yes
+    any_owned_fleet = {
+        is_ship_class = shipclass_military
+        exists = leader
+        leader = { has_leader_flag = cc_yanhua_unique }
+    }
+}
+# 方舟以实际人物、目标控制权和共同冷却为资格，不能用职业切换复制使用次数。
+cc_ark_available = {
+    cc_antoniva_available = yes
+    NOR = {
+        has_country_flag = cc_ark_cooldown
+        has_country_flag = cc_ark_calibrating
+    }
+}
+cc_ark_friendly_force = {
+    is_ship_class = shipclass_military
+    NOT = { any_owned_ship = { is_ship_size = aemusa_reality_flagship } }
+    is_mobile = yes
+    is_in_combat = no
+    is_owned_by = root
+    is_controlled_by = root
+}
+cc_ark_destination_valid = {
+    exists = event_target:cc_ark_destination
+    event_target:cc_ark_destination = {
+        is_owned_by = root
+        is_controlled_by = root
+        has_planet_flag = cc_ark_destination
+    }
+}
+cc_ark_warp_start_available = {
+    cc_ark_available = yes
+    cc_ark_destination_valid = yes
+    exists = event_target:cc_ark_force
+    event_target:cc_ark_force = {
+        cc_ark_friendly_force = yes
+        has_fleet_flag = cc_ark_force
+    }
+    has_resource = { type = energy amount >= 500 }
+    has_resource = { type = alloys amount >= 100 }
+}
+# 临时放逐只针对本国疆域内可观测的普通敌方小型军用舰队。
+cc_ark_exile_candidate = {
+    is_ship_class = shipclass_military
+    is_mobile = yes
+    fleet_power <= 5000
+    is_in_sensor_range_of_country = root
+    exists = owner
+    owner = {
+        is_country_type = default
+        is_at_war_with = root
+        has_communications = root
+    }
+    solar_system = { is_owned_by = root }
+}
+cc_ark_exile_available = {
+    cc_ark_available = yes
+    exists = event_target:cc_ark_exile_target
+    event_target:cc_ark_exile_target = {
+        cc_ark_exile_candidate = yes
+        has_fleet_flag = cc_ark_exile_target@root
+    }
+    has_resource = { type = energy amount >= 750 }
+    has_resource = { type = alloys amount >= 150 }
+}

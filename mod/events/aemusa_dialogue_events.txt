@@ -10,6 +10,12 @@ country_event = {
     picture = GFX_evt_aemusa_white_night_pavilion # 使用自定义白夜馆事件图作为主菜单背景。
 
     option = {
+        name = cc.open_court
+        trigger = { cc_player_country = yes }
+        hidden_effect = { country_event = { id = central_court.1 } }
+    }
+
+    option = {
         name = aemusa_dialogue.1.communication # 右上第一枚菱形框：通讯入口。
         hidden_effect = {
             country_event = {

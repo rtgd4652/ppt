@@ -1,0 +1,16 @@
+# 公共协调政体：固定元首席位服务角色定位，不采用世袭或原版周期选举。
+# 首版治理仍由原版内阁、岗位、国民理念和玩家决策承担。
+auth_artifact_central_court = {
+    has_heir = no
+    election_type = none
+    can_have_emergency_elections = no
+    can_reform = no
+    has_agendas = yes
+    ruler_council_position = councilor_ruler_oligarchic
+    color = { 70 130 185 255 }
+    possible = {
+        origin = { value = origin_artifact_resonance }
+        ethics = { NOT = { value = ethic_gestalt_consciousness } }
+    }
+    random_weight = { base = 0 }
+}

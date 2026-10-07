@@ -20,15 +20,16 @@ artifact_user_central_court = {
 		trait = "trait_artifact_resonance"
 	}
 
-	# 中央庭以危机处置与城市防卫为首要职责。
+	# 中央庭通过公共协调、行政执行与建设承担危机责任，元首不替代玩家的行动权。
 	room = "personality_honorbound_warriors_room"
-	authority = "auth_oligarchic"
-	civics = { "civic_police_state" "civic_distinguished_admiralty" }
-	government = "gov_military_junta"
+	authority = "auth_artifact_central_court"
+	civics = { "civic_efficient_bureaucracy" "civic_functional_architecture" }
+	government = "gov_artifact_central_court"
 	origin = "origin_artifact_resonance"
 
-	ethic = "ethic_authoritarian"
-	ethic = "ethic_fanatic_militarist"
+	ethic = "ethic_egalitarian"
+	ethic = "ethic_materialist"
+	ethic = "ethic_militarist"
 
 	# 创建器会拒绝专属自定义母星偏好，预设帝国先使用原版陆地星球保证可见。
 	planet_name = "PRESCRIPTED_planet_name_artifact_user_central_court"
@@ -56,12 +57,12 @@ artifact_user_central_court = {
 		}
 	}
 
-	# 预设统治者不使用爱缪莎之名，避免与法令召唤的独特领袖重复。
+	# 安托涅瓦为正式元首；身份特质让开局登记复用此实体，不另生成第二人。
 	ruler = {
-		name = "PRESCRIPTED_ruler_name_artifact_user_central_court"
+		name = "cc_antoniva_name"
 		gender = female
-		portrait = "aemusa_species_portrait_city"
-		trait = "trait_ruler_eye_for_talent"
-		leader_class = official
+		portrait = "human_female_01"
+		trait = "leader_trait_cc_antoniva_identity"
+		leader_class = commander
 	}
 }

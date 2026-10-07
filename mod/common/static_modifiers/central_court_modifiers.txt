@@ -1,0 +1,11 @@
+# 有期限的指定目标效果；职业切换不刷新原生期限。
+cc_ark_shelter = {
+    planet_orbital_bombardment_damage = -0.35
+}
+cc_yanhua_internal_preparation = {
+    planet_stability_add = 5
+}
+cc_yanhua_fleet_counter = {
+    ship_tracking_add = 10
+    ship_weapon_range_mult = 0.10
+}

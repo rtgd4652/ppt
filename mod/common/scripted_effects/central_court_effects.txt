@@ -1,0 +1,294 @@
+# 每次入口从本国唯一身份和关系标记恢复局部引用，不把全局事件目标当作权威账本。
+cc_rebind = {
+    every_owned_leader = {
+        limit = { has_leader_flag = cc_antoniva_unique }
+        save_event_target_as = cc_antoniva
+    }
+    every_owned_leader = {
+        limit = { has_leader_flag = cc_yanhua_unique }
+        save_event_target_as = cc_yanhua
+    }
+    every_country = {
+        limit = { has_country_flag = cc_analysis_target@root }
+        save_event_target_as = cc_analysis_target
+    }
+    every_owned_planet = {
+        limit = { has_planet_flag = cc_ark_destination }
+        save_event_target_as = cc_ark_destination
+    }
+    every_owned_fleet = {
+        limit = { has_fleet_flag = cc_ark_force }
+        save_event_target_as = cc_ark_force
+    }
+    every_country = {
+        limit = { has_country_flag = cc_ark_exile_owner@root }
+        every_owned_fleet = {
+            limit = { has_fleet_flag = cc_ark_exile_target@root }
+            save_event_target_as = cc_ark_exile_target
+        }
+    }
+}
+cc_install_court = {
+    if = {
+        limit = { cc_install_available = yes }
+        change_government = {
+            authority = auth_artifact_central_court
+            civics = { civic = civic_efficient_bureaucracy civic = civic_functional_architecture }
+            cooldown = no
+            remove_invalid_civics = yes
+        }
+        # 只复用本预设明确带身份特质的人物；不改名任一已存在的其他神器使。
+        every_owned_leader = {
+            limit = { has_trait = leader_trait_cc_antoniva_identity }
+            set_leader_flag = cc_antoniva_unique
+            change_leader_portrait = human_female_01
+            save_event_target_as = cc_antoniva
+        }
+        if = {
+            limit = { NOT = { any_owned_leader = { has_leader_flag = cc_antoniva_unique } } }
+            create_leader = {
+                class = commander
+                name = "cc_antoniva_name"
+                gender = female
+                species = owner_main_species
+                custom_description = cc_antoniva_background
+                event_leader = yes
+                skill = 10
+                randomize_traits = no
+                skip_background_generation = yes
+                traits = { trait = leader_trait_cc_antoniva_identity }
+                effect = {
+                    set_leader_flag = cc_antoniva_unique
+                    change_leader_portrait = human_female_01
+                    save_event_target_as = cc_antoniva
+                }
+            }
+        }
+        assign_leader = event_target:cc_antoniva
+        set_ruler_title_male = RT_ARTIFACT_COURT_HEAD
+        set_ruler_title_female = RT_ARTIFACT_COURT_HEAD
+        set_country_flag = cc_court_installed
+        log = "CENTRAL-COURT|installed"
+    }
+}
+cc_recruit_yanhua = {
+    if = {
+        limit = { cc_yanhua_recruit_available = yes }
+        add_resource = { energy = -200 }
+        add_resource = { unity = -500 }
+        set_country_flag = cc_yanhua_recruited
+        create_leader = {
+            class = official
+            name = "cc_yanhua_name"
+            gender = male
+            species = owner_main_species
+            custom_description = cc_yanhua_background
+            event_leader = yes
+            skill = 7
+            randomize_traits = no
+            skip_background_generation = yes
+            traits = { trait = leader_trait_cc_yanhua_identity }
+            effect = {
+                set_leader_flag = cc_yanhua_unique
+                change_leader_portrait = human_male_01
+                save_event_target_as = cc_yanhua
+            }
+        }
+        log = "CENTRAL-COURT|yanhua_recruited"
+    }
+}
+cc_yanhua_switch_class = {
+    if = {
+        limit = { cc_yanhua_available = yes }
+        every_owned_leader = {
+            limit = { has_leader_flag = cc_yanhua_unique }
+            unassign_leader = this
+            change_leader_class = $CLASS$
+            change_leader_portrait = human_male_01
+        }
+        # 不清理进度、目标或已有舰队训练，不授予新结论。
+        log = "CENTRAL-COURT|yanhua_class_changed"
+    }
+}
+cc_clear_analysis_target = {
+    every_country = {
+        limit = { has_country_flag = cc_analysis_target@root }
+        remove_country_flag = cc_analysis_target@root
+    }
+}
+cc_abort_analysis = {
+    remove_country_flag = cc_analysis_collecting
+    remove_country_flag = cc_analysis_conclusion
+    remove_country_flag = cc_analysis_fresh
+    cc_clear_analysis_target = yes
+    set_country_flag = cc_analysis_interrupted
+    log = "CENTRAL-COURT|analysis_interrupted"
+}
+cc_refresh_records = {
+    cc_rebind = yes
+    if = {
+        limit = {
+            OR = { has_country_flag = cc_analysis_collecting has_country_flag = cc_analysis_conclusion }
+            OR = { cc_yanhua_available = no cc_analysis_target_valid = no }
+        }
+        cc_abort_analysis = yes
+    }
+    if = {
+        limit = { has_country_flag = cc_analysis_conclusion NOT = { has_country_flag = cc_analysis_fresh } }
+        cc_abort_analysis = yes
+    }
+}
+cc_pick_analysis_candidate = {
+    if = {
+        limit = { cc_analysis_idle = yes }
+        random_country = {
+            limit = {
+                cc_analysis_candidate = yes
+            }
+            save_event_target_as = cc_analysis_candidate
+        }
+    }
+}
+cc_start_analysis = {
+    if = {
+        limit = { cc_analysis_start_available = yes }
+        cc_clear_analysis_target = yes
+        event_target:cc_analysis_candidate = {
+            set_country_flag = cc_analysis_target@root
+            save_event_target_as = cc_analysis_target
+        }
+        add_resource = { energy = -250 }
+        add_resource = { unity = -250 }
+        set_country_flag = cc_analysis_collecting
+        remove_country_flag = cc_analysis_interrupted
+        set_variable = { which = cc_analysis_progress value = 0 }
+        log = "CENTRAL-COURT|analysis_started"
+    }
+}
+cc_analysis_monthly = {
+    if = {
+        limit = {
+            has_country_flag = cc_analysis_collecting
+            cc_analysis_can_progress = yes
+            NOT = { has_country_flag = cc_analysis_month_counted }
+        }
+        # 同一月重复回调不会重复核验；三次代表工作时间而非虚构三种新情报。
+        set_timed_country_flag = { flag = cc_analysis_month_counted days = 28 }
+        change_variable = { which = cc_analysis_progress value = 1 }
+        if = {
+            limit = { check_variable = { which = cc_analysis_progress value >= 3 } }
+            remove_country_flag = cc_analysis_collecting
+            set_country_flag = cc_analysis_conclusion
+            set_timed_country_flag = { flag = cc_analysis_fresh days = 180 }
+            country_event = { id = central_court.51 }
+            log = "CENTRAL-COURT|analysis_conclusion_ready"
+        }
+    }
+}
+cc_finish_analysis = {
+    remove_country_flag = cc_analysis_collecting
+    remove_country_flag = cc_analysis_conclusion
+    remove_country_flag = cc_analysis_fresh
+    set_country_flag = cc_analysis_finished
+    set_timed_country_flag = { flag = cc_analysis_cooldown days = 180 }
+    cc_clear_analysis_target = yes
+    log = "CENTRAL-COURT|analysis_applied"
+}
+cc_pick_ark_force = {
+    if = {
+        limit = { cc_ark_available = yes }
+        # 换候选不影响既有主线舰船；只标记当前行动力量。
+        random_owned_fleet = {
+            limit = { cc_ark_friendly_force = yes NOT = { has_fleet_flag = cc_ark_force } }
+            save_event_target_as = cc_ark_next_force
+        }
+        if = {
+            limit = { exists = event_target:cc_ark_next_force }
+            every_owned_fleet = { remove_fleet_flag = cc_ark_force }
+            event_target:cc_ark_next_force = {
+                set_fleet_flag = cc_ark_force
+                save_event_target_as = cc_ark_force
+            }
+        }
+    }
+}
+cc_start_ark_warp = {
+    if = {
+        limit = { cc_ark_warp_start_available = yes }
+        add_resource = { energy = -500 }
+        add_resource = { alloys = -100 }
+        set_country_flag = cc_ark_calibrating
+        set_timed_country_flag = { flag = cc_ark_calibration_time days = 60 }
+        set_timed_country_flag = { flag = cc_ark_cooldown days = 360 }
+        log = "CENTRAL-COURT|ark_calibration_started"
+    }
+}
+cc_ark_monthly = {
+    if = {
+        limit = { has_country_flag = cc_ark_calibrating }
+        if = {
+            limit = {
+                OR = {
+                    cc_antoniva_available = no
+                    cc_ark_destination_valid = no
+                    NOT = { exists = event_target:cc_ark_force }
+                    event_target:cc_ark_force = { NOT = { is_owned_by = root } }
+                    event_target:cc_ark_force = { NOT = { is_controlled_by = root } }
+                }
+            }
+            remove_country_flag = cc_ark_calibrating
+            remove_country_flag = cc_ark_calibration_time
+            set_country_flag = cc_ark_interrupted
+            log = "CENTRAL-COURT|ark_calibration_interrupted"
+        }
+        else_if = {
+            limit = {
+                NOT = { has_country_flag = cc_ark_calibration_time }
+                event_target:cc_ark_force = { cc_ark_friendly_force = yes }
+            }
+            event_target:cc_ark_force = {
+                set_location = event_target:cc_ark_destination
+                remove_fleet_flag = cc_ark_force
+            }
+            remove_country_flag = cc_ark_calibrating
+            set_country_flag = cc_ark_warp_completed
+            country_event = { id = central_court.44 }
+            log = "CENTRAL-COURT|ark_warp_completed"
+        }
+    }
+}
+cc_pick_exile_target = {
+    if = {
+        limit = { cc_ark_available = yes }
+        every_country = {
+            limit = { has_country_flag = cc_ark_exile_owner@root }
+            every_owned_fleet = { remove_fleet_flag = cc_ark_exile_target@root }
+            remove_country_flag = cc_ark_exile_owner@root
+        }
+        random_country = {
+            limit = { any_owned_fleet = { cc_ark_exile_candidate = yes } }
+            set_country_flag = cc_ark_exile_owner@root
+            random_owned_fleet = {
+                limit = { cc_ark_exile_candidate = yes }
+                set_fleet_flag = cc_ark_exile_target@root
+                save_event_target_as = cc_ark_exile_target
+            }
+        }
+    }
+}
+cc_exile_force = {
+    if = {
+        limit = { cc_ark_exile_available = yes }
+        add_resource = { energy = -750 }
+        add_resource = { alloys = -150 }
+        set_timed_country_flag = { flag = cc_ark_cooldown days = 360 }
+        event_target:cc_ark_exile_target = {
+            remove_fleet_flag = cc_ark_exile_target@root
+            owner = { remove_country_flag = cc_ark_exile_owner@root }
+            set_mia = mia_return_home
+            set_mia_return_delay = 90
+        }
+        set_country_flag = cc_ark_exile_completed
+        log = "CENTRAL-COURT|ark_exile_applied"
+    }
+}

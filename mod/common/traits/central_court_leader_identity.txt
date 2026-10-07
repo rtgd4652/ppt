@@ -1,0 +1,15 @@
+# 人物身份不直接提供常驻数值加成，真实玩法由共享记录和指定目标承载。
+leader_trait_cc_antoniva_identity = {
+    icon = { layer = { icon = "GFX_leader_trait_intellectual" } }
+    cost = 0
+    initial = no
+    randomized = no
+    leader_class = { official commander scientist }
+}
+leader_trait_cc_yanhua_identity = {
+    icon = { layer = { icon = "GFX_leader_trait_unyielding" } }
+    cost = 0
+    initial = no
+    randomized = no
+    leader_class = { official commander }
+}

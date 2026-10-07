@@ -24,9 +24,9 @@ awp_08_implementation_authorized: true
 awp_08_status: "playable_main_flow_and_key_save_load_pass"
 awp_09_implementation_authorized: true
 awp_09_status: "playable_main_flow_and_key_save_load_pass"
-current_milestone: "aemusa_story_complete"
-current_milestone_scope: "chapters_14_16_three_endings_level_catch_up_epilogue"
-current_milestone_status: "playable_main_flow_and_key_save_load_pass"
+current_milestone: "ten_characters_and_civilization"
+current_milestone_scope: "central_court_antoniva_yanhua_first_batch"
+current_milestone_status: "implementation_in_progress_runtime_pending"
 last_updated: "2026-10-07"
 ---
 
@@ -569,3 +569,9 @@ AWP-06/07首版代码、静态及60项工具检查已有通过记录。4.5.1正�
 共同起点 `2239.05.05.sav` 两次实际载回用于分支；成功档 `2239.06.20.sav` 已实际载回，白夜馆仅显示保存结果，没有重新授权或重复授身份入口。玩家拒绝档为 `2239.05.22.sav`，爱缪莎拒绝档为 `2239.06.05.sav`；四档备份、只读JSON和日志已保存至工作区。AWP-08/09状态为 `playable_main_flow_and_key_save_load_pass`，未测试部分按实际反馈处理，不扩大为穷举或全1.0验收。当前游戏停在成功结果的2239.06.20暂停态。
 
 下一轮按既定里程碑3顺序先处理安托涅瓦、晏华与中央庭制度，随后整合其余角色。回应细则仍为可替换首版，正式外观与发布回归留在里程碑4；不重复前十三章已通过的检查。完整证据与边界见[当日记录](../../reports/aemusa_main_story_milestone_2_2026-10-07.md)。
+
+## 48. 2026-10-07 里程碑3首批接续
+
+用户在中央庭、安托涅瓦、晏华首批范围说明后回复“好的”，授权连续实现。公共协调政体与新开局、旧档主动接入、安托涅瓦唯一元首及共用冷却的方舟、晏华单目标研判和同实体职业切换已写首版，本地化随功能交付。底层职业、肖像和数值为可调原型，不改变已批准角色背景，不重写爱缪莎主线。范围见[首批方案](central_court_milestone_3_first_batch.md)。
+
+静态检查及既有65项工具检查通过，新角色原生语义和实际玩法仍待冷启动验证。先保存代码检查点，再检查新预设、唯一身份、元首任命、职业共享记录及一次正常机制与必要读档。沿用轻量验收，不每窗保存、不例行计算哈希。完整里程碑3及1.0发布未完成。见[当日记录](../../reports/central_court_milestone_3_2026-10-07.md)。

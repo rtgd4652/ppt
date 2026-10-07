@@ -1,0 +1,53 @@
+# 从真实行星界面指定目的地；一国只保留一颗受控殖民地。
+decision_cc_ark_calibrate = {
+    owned_planets_only = yes
+    sound = event_administrative_work
+    icon = decision_artifact_destiny_city_project
+    potential = {
+        exists = owner
+        owner = { cc_player_country = yes has_country_flag = cc_court_installed }
+    }
+    allow = {
+        is_controlled_by = owner
+        owner = { cc_ark_available = yes }
+    }
+    effect = {
+        if = {
+            limit = { is_controlled_by = owner owner = { cc_ark_available = yes } }
+            owner = { every_owned_planet = { remove_planet_flag = cc_ark_destination } }
+            set_planet_flag = cc_ark_destination
+            owner = {
+                log = "CENTRAL-COURT|ark_destination_selected"
+                country_event = { id = central_court.40 }
+            }
+        }
+    }
+    ai_weight = { weight = 0 }
+}
+# 有限轰炸减伤，仍可能失守；与穿界和放逐共享国家冷却。
+decision_cc_ark_shelter = {
+    owned_planets_only = yes
+    sound = event_administrative_work
+    icon = decision_artifact_destiny_city_project
+    resources = { category = decisions cost = { energy = 500 alloys = 100 } }
+    potential = {
+        exists = owner
+        owner = { cc_player_country = yes has_country_flag = cc_court_installed }
+    }
+    allow = {
+        is_controlled_by = owner
+        owner = { cc_ark_available = yes }
+    }
+    effect = {
+        if = {
+            limit = { is_controlled_by = owner owner = { cc_ark_available = yes } }
+            add_modifier = { modifier = cc_ark_shelter days = 360 }
+            owner = {
+                set_timed_country_flag = { flag = cc_ark_cooldown days = 360 }
+                set_country_flag = cc_ark_shelter_completed
+                log = "CENTRAL-COURT|ark_shelter_applied"
+            }
+        }
+    }
+    ai_weight = { weight = 0 }
+}
