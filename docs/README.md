@@ -1,6 +1,6 @@
 # 项目文档索引
 
-更新：2026-09-29。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)。
+更新：2026-10-07。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)。
 
 ## 进入项目
 
@@ -18,6 +18,8 @@
 - [主线接口契约](design/aemusa_main_story_implementation_interface_v1.0.md)
 - [机器可读状态登记](design/aemusa_main_story_state_registry_expanded_v1.0.csv)
 - [十名角色完成矩阵](../knowledge/characters/v1.0_character_completion_matrix.md)
+- [十名神器使首版玩法](mechanics/artifact_users_play_guide_v1.0.md)
+- [领袖成长与职责说明](mechanics/leader_growth_and_duty_v1.0.md)
 - [知识库与正史入口](../knowledge/README.md)
 
 ## 美术与验收
@@ -27,6 +29,7 @@
 - [既有资产登记](art/ASSET_REGISTRY.csv)
 - [参考图库](art/reference_library/README.md)
 - [AWP-02 运行验收报告](../reports/aemusa_main_story_awp_02_validation_report.md)
+- [十人首版统一收口](../reports/milestone3_ten_character_closeout_2026-10-07.md)
 - [全线测试模板](../reports/aemusa_main_story_test_report_template_v1.0.md)
 - [战争与天灾适配专项测试计划](../reports/aemusa_main_story_adapter_test_plan_v1.0.md)
 - [本次整理与验证记录](../reports/project_architecture_review_2026-09-26.md)

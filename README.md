@@ -1,8 +1,8 @@
 # SevenDays_Mod · 神器使
 
-《永远的七日之都》主题 Stellaris Mod，当前开发与运行验证目标为 Stellaris 4.5.1，对外目标为完整 1.0。描述文件仍保留原型的 `4.4.*` 声明，尚未完成全 Mod 的 4.5.1 兼容验收。
+《永远的七日之都》主题 Stellaris Mod，开发目标为 Stellaris 4.5.1，近期运行检查使用本机 4.5.2，对外目标为完整 1.0。描述文件仍保留原型的 `4.4.*` 声明，完整兼容与发布回归尚未完成。
 
-仓库保留文明系统与四名领袖的可玩原型。1.0 背景准备、角色基础设计和主线设计已进入批准后的分包实现阶段；当前完成层级、运行证据与下一工作包统一见 [项目进度](docs/PROJECT_STATUS.md)。
+仓库已有爱缪莎完整首版主线、专属危机，以及十名神器使和中央庭的接入与核心机制。角色正常任务、成长和职业切换已有运行证据；当前完成层级、运行证据与下一工作包统一见 [项目进度](docs/PROJECT_STATUS.md)。正式舰船、巨构及角色表现和整体平衡仍在后续计划中。
 
 `mod/descriptor.mod` 中的 `0.1.0` 是现有原型标识，不表示当前工作区已经冻结或发布。内部里程碑和正式发布按下列当前文档管理，不自动沿用历史标签发布流程。
 
@@ -13,6 +13,7 @@
 3. [里程碑1实施方案](docs/design/aemusa_main_story_awp_06_mechanism_proposal.md)：新旗舰、新巨构与专属危机范围；首版可玩内容已完成，[最新验收与续接](reports/aemusa_main_story_milestone_1_2026-10-07.md)记录运行结果及受控边界。
 4. [里程碑2实施说明](docs/design/aemusa_main_story_milestone_2_implementation.md)：终章、独立决定、三结局、等级补足与尾声；[本轮续接](reports/aemusa_main_story_milestone_2_2026-10-07.md)区分工具检查和游戏内验收。
 5. [AWP-05 运行记录](reports/aemusa_main_story_awp_05_flow_2026-09-29.md)：第八至第十章正常流程及关键存读档证据。
+6. [十名神器使首版玩法](docs/mechanics/artifact_users_play_guide_v1.0.md)：接入、职业、各自核心机制和白夜馆操作；[成长与职责](docs/mechanics/leader_growth_and_duty_v1.0.md)解释任职经验、职业切换与30级补足；[十人收口记录](reports/milestone3_ten_character_closeout_2026-10-07.md)记录里程碑3首版完成及未测范围。
 
 需要理解整体设计时再阅读 [架构](docs/ARCHITECTURE.md)、[路线图](docs/ROADMAP.md)、[执行清单](docs/TODO.md) 和 [文档索引](docs/README.md)。共享规范见 [AGENTS.md](AGENTS.md)。
 
