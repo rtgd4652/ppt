@@ -1,0 +1,68 @@
+# 带材质草案的PDX注册；安装时复制同目录DDS及网格。
+objectTypes = {
+    pdxmesh = {
+        name = "reality_flagship_bow_mesh"
+        file = "gfx/models/milestone4_surface_v02/reality_flagship_bow.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "reality_flagship_bow"
+            index = 0
+            texture_diffuse = "reality_surface_diffuse.dds"
+            texture_normal = "reality_surface_normal.dds"
+            texture_specular = "reality_surface_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "reality_flagship_mid_mesh"
+        file = "gfx/models/milestone4_surface_v02/reality_flagship_mid.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "reality_flagship_mid"
+            index = 0
+            texture_diffuse = "reality_surface_diffuse.dds"
+            texture_normal = "reality_surface_normal.dds"
+            texture_specular = "reality_surface_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "reality_flagship_stern_mesh"
+        file = "gfx/models/milestone4_surface_v02/reality_flagship_stern.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "reality_flagship_stern"
+            index = 0
+            texture_diffuse = "reality_surface_diffuse.dds"
+            texture_normal = "reality_surface_normal.dds"
+            texture_specular = "reality_surface_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "reality_baseline_base_mesh"
+        file = "gfx/models/milestone4_surface_v02/reality_baseline_base.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "reality_baseline_base"
+            index = 0
+            texture_diffuse = "reality_surface_diffuse.dds"
+            texture_normal = "reality_surface_normal.dds"
+            texture_specular = "reality_surface_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "reality_baseline_active_mesh"
+        file = "gfx/models/milestone4_surface_v02/reality_baseline_active.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "reality_baseline_active"
+            index = 0
+            texture_diffuse = "reality_surface_diffuse.dds"
+            texture_normal = "reality_surface_normal.dds"
+            texture_specular = "reality_surface_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+}

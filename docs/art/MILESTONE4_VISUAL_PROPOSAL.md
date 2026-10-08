@@ -6,6 +6,8 @@
 
 2026-10-08制作进度：前三套代表肖像及剩余六人透明肖像均已接入，正常核心通讯与关键新档读回通过，爱缪莎沿用既有资源；详见[六人补齐记录](../../reports/milestone4_remaining_portraits_2026-10-08.md)。旗舰三段与枢纽两阶段的新[Blender灰模及PDX样品](../../art/models/milestone4_graybox/README.md)已保存、导出回读通过，见[首批制作记录](../../reports/milestone4_portraits_and_graybox_2026-10-08.md)。灰模未接入游戏，外观草案状态保持；正式材质、目标挂点和entity仍待制作。
 
+当晚续作：[带材质样品v0.2](../../art/models/milestone4_surface_v02/README.md)已增加装甲／维护结构、有限状态灯、共用图集与GFX／独立实体样品，五个网格回读及三张离线预览通过；尚未安装到游戏或定稿。远景贴图、推进／死亡效果、尺寸与实际显示为下一批，见[续接记录](../../reports/milestone4_surface_assets_2026-10-08.md)。
+
 ![旗舰与基线枢纽概念v0.1](../../art/concepts/milestone4_20261007/flagship_baseline_concept_v01.png)
 
 [原尺寸概念板](../../art/concepts/milestone4_20261007/flagship_baseline_concept_v01.png) · [完整提示词与生成检查](../../art/concepts/milestone4_20261007/README.md) · [生产清单](ASSET_PRODUCTION_PLAN.md) · [本地盘点](../../reports/milestone4_asset_inventory_2026-10-07.json)

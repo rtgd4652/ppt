@@ -1,0 +1,50 @@
+{
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "origin": "project_generated_procedural_surface_no_legacy_textures",
+  "palette": [
+    "armor",
+    "plate",
+    "silver",
+    "warm",
+    "glass",
+    "vent",
+    "cyan",
+    "amber"
+  ],
+  "textures": [
+    {
+      "name": "reality_surface_diffuse",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5",
+      "dds": "art/models/milestone4_surface_v02/export/reality_surface_diffuse.dds",
+      "dds_readback": "pass"
+    },
+    {
+      "name": "reality_surface_properties",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5",
+      "dds": "art/models/milestone4_surface_v02/export/reality_surface_properties.dds",
+      "dds_readback": "pass"
+    },
+    {
+      "name": "reality_surface_normal",
+      "size": [
+        1024,
+        512
+      ],
+      "format": "DXT5",
+      "dds": "art/models/milestone4_surface_v02/export/reality_surface_normal.dds",
+      "dds_readback": "pass"
+    }
+  ],
+  "normal_channels": "R=G; G=normal X; A=-normal Y; B=low emission",
+  "properties_channels": "R=empire recolor mask zero; G=specular; B=metalness; A=glossiness",
+  "reference": "local Stellaris 4.5.2 gfx/FX/standardfuncsgfx.fxh and pdxmesh_ship.fxh"
+}

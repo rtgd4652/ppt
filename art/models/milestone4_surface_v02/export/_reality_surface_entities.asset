@@ -1,0 +1,55 @@
+# 本文件是待安装样品；不引用旧舰旧塔。
+entity = {
+    name = "aemusa_reality_flagship_entity"
+    locator = { name = part1 position = { 0 0 0 } }
+    locator = { name = part2 position = { 0 0 0 } }
+    locator = { name = part3 position = { 0 0 0 } }
+    locator = { name = target_locator_1 position = { 0 0 11 } }
+    locator = { name = target_locator_2 position = { -3 0 0 } }
+    locator = { name = target_locator_3 position = { 3 0 0 } }
+    locator = { name = target_locator_4 position = { 0 0 -13 } }
+    default_state = "idle"
+    state = { name = "idle" state_time = 5 }
+    state = { name = "moving" state_time = 5 }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "reality_flagship_bow_entity"
+    pdxmesh = "reality_flagship_bow_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5 }
+    state = { name = "moving" state_time = 5 }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "reality_flagship_mid_entity"
+    pdxmesh = "reality_flagship_mid_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5 }
+    state = { name = "moving" state_time = 5 }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "reality_flagship_stern_entity"
+    pdxmesh = "reality_flagship_stern_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5 }
+    state = { name = "moving" state_time = 5 }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "reality_baseline_base_entity"
+    pdxmesh = "reality_baseline_base_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5 }
+    state = { name = "moving" state_time = 5 }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "reality_baseline_active_entity"
+    pdxmesh = "reality_baseline_active_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5 }
+    state = { name = "moving" state_time = 5 }
+    state = { name = "death" state_time = 5 looping = no }
+}

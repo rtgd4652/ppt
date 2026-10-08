@@ -29,6 +29,7 @@
 - [里程碑4首批外观方案](art/MILESTONE4_VISUAL_PROPOSAL.md)：新旗舰、两阶段枢纽与代表肖像的制作接口及概念草案。
 - [里程碑4首批制作与运行记录](../reports/milestone4_portraits_and_graybox_2026-10-08.md)：三套透明肖像、新档读回、独立Blender灰模与PDX导出；正式模型未接入游戏。
 - [里程碑4六人肖像补齐](../reports/milestone4_remaining_portraits_2026-10-08.md)：安、赛斯、幽桐、格蕾莎、雯梓、丽正常通讯与统一新档读回；十人透明肖像现已接通，下一批进入正式模型。
+- [新舰与枢纽材质样品续接](../reports/milestone4_surface_assets_2026-10-08.md)：五网格／三张DDS与独立实体样品，Blender离线预览；运行接入和游戏显示待做。
 - [既有资产登记](art/ASSET_REGISTRY.csv)
 - [参考图库](art/reference_library/README.md)
 - [AWP-02 运行验收报告](../reports/aemusa_main_story_awp_02_validation_report.md)

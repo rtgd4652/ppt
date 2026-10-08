@@ -16,7 +16,7 @@
 - 文明、白夜馆与十名角色的首版接入和核心整合已完成；成长／职业、三批正常任务、关键读档和幽桐／拉比实际支援已验，见[十人收口](../reports/milestone3_ten_character_closeout_2026-10-07.md)。
 - 序章至第十三章已实现，主流程与关键读档有证据；部分战争／天灾及测试条件来自受控来源，不能称为完全自然游玩。
 - 专属危机、新旗舰与两阶段巨构的首版可玩内容已完成。里程碑1正常闭环、恢复、占领暂停／恢复及真实资源损失通过轻量验收，见[运行记录](../reports/aemusa_main_story_milestone_1_2026-10-07.md)。第十四至十六章、三结局、29→30研修、尾声及关键存读档通过轻量检查，受控等级条件与未测范围见[里程碑2记录](../reports/aemusa_main_story_milestone_2_2026-10-07.md)。
-- 十人背景和核心设计已有批准基线；里程碑4已完成[资产清单](art/ASSET_PRODUCTION_PLAN.md)、[概念方案](art/MILESTONE4_VISUAL_PROPOSAL.md)及九人新透明肖像接入，爱缪莎沿用既有资源。首批三人证据复用，剩余六人正常核心通讯和统一新档读回通过，十人肖像与必要通讯现已接通。新旗舰三段、枢纽两阶段灰模与PDX导出回读通过，仍是未接入游戏的外观草案。下一批收敛正式模型、材质和entity；终局表现与完整交付待做。外观定稿和发布范围按既有计划确认，详见[六人补齐记录](../reports/milestone4_remaining_portraits_2026-10-08.md)及[首批制作记录](../reports/milestone4_portraits_and_graybox_2026-10-08.md)。
+- 十人背景和核心设计已有批准基线；里程碑4已完成[资产清单](art/ASSET_PRODUCTION_PLAN.md)、[概念方案](art/MILESTONE4_VISUAL_PROPOSAL.md)及十人透明肖像与核心通讯显示。首批三人、爱缪莎既有证据复用，六人正常通讯和统一新档读回通过。新旗舰三段、枢纽两阶段的[带材质样品v0.2](../art/models/milestone4_surface_v02/README.md)完成PDX回读、DDS和独立实体样品，仍未安装到游戏。下一批完善贴图远景、尺度与推进效果并接入游戏；终局表现与完整交付待做。外观定稿和发布范围按既有计划确认，详见[材质样品续接](../reports/milestone4_surface_assets_2026-10-08.md)及[六人补齐](../reports/milestone4_remaining_portraits_2026-10-08.md)。
 
 ## 里程碑一取舍
 

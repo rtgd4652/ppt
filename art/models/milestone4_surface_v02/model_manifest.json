@@ -1,0 +1,94 @@
+{
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "blender": "5.1.2",
+  "legacy_geometry_used": false,
+  "derived_from": "art/models/milestone4_graybox/reality_assets_graybox_v01.blend",
+  "meshes": [
+    {
+      "part": "reality_flagship_bow",
+      "triangles": 368,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/milestone4_surface_v02/export/reality_flagship_bow.mesh",
+      "shape_names": [
+        "reality_flagship_bow"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "reality_flagship_mid",
+      "triangles": 496,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/milestone4_surface_v02/export/reality_flagship_mid.mesh",
+      "shape_names": [
+        "reality_flagship_mid"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "reality_flagship_stern",
+      "triangles": 504,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/milestone4_surface_v02/export/reality_flagship_stern.mesh",
+      "shape_names": [
+        "reality_flagship_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "reality_baseline_base",
+      "triangles": 364,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/milestone4_surface_v02/export/reality_baseline_base.mesh",
+      "shape_names": [
+        "reality_baseline_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "reality_baseline_active",
+      "triangles": 528,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/milestone4_surface_v02/export/reality_baseline_active.mesh",
+      "shape_names": [
+        "reality_baseline_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    }
+  ],
+  "previews": [
+    "art/models/milestone4_surface_v02/previews/flagship_surface.png",
+    "art/models/milestone4_surface_v02/previews/hub_base_surface.png",
+    "art/models/milestone4_surface_v02/previews/hub_active_surface.png"
+  ],
+  "definitions": [
+    "export/_reality_surface_meshes.gfx",
+    "export/_reality_surface_entities.asset"
+  ],
+  "limits": [
+    "文件导出回读与离线材质预览，不代表游戏显示或最终外观批准",
+    "根目标定位器、武器朝向与推进效果待游戏核对；未改运行引用"
+  ]
+}

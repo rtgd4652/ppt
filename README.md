@@ -15,6 +15,7 @@
 5. [AWP-05 运行记录](reports/aemusa_main_story_awp_05_flow_2026-09-29.md)：第八至第十章正常流程及关键存读档证据。
 6. [十名神器使首版玩法](docs/mechanics/artifact_users_play_guide_v1.0.md)：接入、职业、各自核心机制和白夜馆操作；[成长与职责](docs/mechanics/leader_growth_and_duty_v1.0.md)解释任职经验、职业切换与30级补足；[十人收口记录](reports/milestone3_ten_character_closeout_2026-10-07.md)记录里程碑3首版完成及未测范围。
 7. [里程碑4首批外观方案](docs/art/MILESTONE4_VISUAL_PROPOSAL.md)：新旗舰、两阶段枢纽概念及制作接口；[六人补齐记录](reports/milestone4_remaining_portraits_2026-10-08.md)保存十人透明肖像接入的最新进度、新档读回和下一批入口，[首批记录](reports/milestone4_portraits_and_graybox_2026-10-08.md)保留前三人的游戏检查及新灰模导出。
+8. [新舰与枢纽材质样品续接](reports/milestone4_surface_assets_2026-10-08.md)：五个带材质网格、独立实体样品、离线预览及下一次接入接口；[模型源文件](art/models/milestone4_surface_v02/README.md)可重建，尚未安装到游戏。
 
 需要理解整体设计时再阅读 [架构](docs/ARCHITECTURE.md)、[路线图](docs/ROADMAP.md)、[执行清单](docs/TODO.md) 和 [文档索引](docs/README.md)。共享规范见 [AGENTS.md](AGENTS.md)。
 
