@@ -1,0 +1,12 @@
+# 里程碑4首批：透明静态肖像沿用既有575×380画布，不调整物种全局UI比例。
+portraits = {
+    cc_antoniva_portrait = {
+        texturefile = "gfx/models/portraits/antoniva_portrait_ui.dds"
+    }
+    cc_yanhua_portrait = {
+        texturefile = "gfx/models/portraits/yanhua_portrait_ui.dds"
+    }
+    ac_rabi_portrait = {
+        texturefile = "gfx/models/portraits/rabi_amit_portrait_ui.dds"
+    }
+}

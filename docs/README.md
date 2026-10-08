@@ -27,6 +27,7 @@
 - [Art Bible](art/ART_BIBLE.md)
 - [资产生产需求](art/ASSET_PRODUCTION_PLAN.md)
 - [里程碑4首批外观方案](art/MILESTONE4_VISUAL_PROPOSAL.md)：新旗舰、两阶段枢纽与代表肖像的制作接口及概念草案。
+- [里程碑4首批制作与运行记录](../reports/milestone4_portraits_and_graybox_2026-10-08.md)：三套透明肖像、新档读回、独立Blender灰模与PDX导出；正式模型未接入游戏。
 - [既有资产登记](art/ASSET_REGISTRY.csv)
 - [参考图库](art/reference_library/README.md)
 - [AWP-02 运行验收报告](../reports/aemusa_main_story_awp_02_validation_report.md)

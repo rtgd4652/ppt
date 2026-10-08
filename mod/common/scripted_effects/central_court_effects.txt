@@ -2,10 +2,12 @@
 cc_rebind = {
     every_owned_leader = {
         limit = { has_leader_flag = cc_antoniva_unique }
+        artifact_user_refresh_portrait = yes
         save_event_target_as = cc_antoniva
     }
     every_owned_leader = {
         limit = { has_leader_flag = cc_yanhua_unique }
+        artifact_user_refresh_portrait = yes
         save_event_target_as = cc_yanhua
     }
     every_country = {
@@ -41,7 +43,7 @@ cc_install_court = {
         every_owned_leader = {
             limit = { has_trait = leader_trait_cc_antoniva_identity }
             set_leader_flag = cc_antoniva_unique
-            change_leader_portrait = human_female_01
+            artifact_user_refresh_portrait = yes
             save_event_target_as = cc_antoniva
         }
         if = {
@@ -59,7 +61,7 @@ cc_install_court = {
                 traits = { trait = leader_trait_cc_antoniva_identity }
                 effect = {
                     set_leader_flag = cc_antoniva_unique
-                    change_leader_portrait = human_female_01
+                    artifact_user_refresh_portrait = yes
                     save_event_target_as = cc_antoniva
                 }
             }
@@ -90,7 +92,7 @@ cc_recruit_yanhua = {
             traits = { trait = leader_trait_cc_yanhua_identity }
             effect = {
                 set_leader_flag = cc_yanhua_unique
-                change_leader_portrait = human_male_01
+                artifact_user_refresh_portrait = yes
                 save_event_target_as = cc_yanhua
             }
         }
@@ -104,7 +106,7 @@ cc_yanhua_switch_class = {
             limit = { has_leader_flag = cc_yanhua_unique }
             unassign_leader = this
             change_leader_class = $CLASS$
-            change_leader_portrait = human_male_01
+            artifact_user_refresh_portrait = yes
         }
         # 不清理进度、目标或已有舰队训练，不授予新结论。
         log = "CENTRAL-COURT|yanhua_class_changed"

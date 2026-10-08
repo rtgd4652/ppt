@@ -1,0 +1,113 @@
+[
+  {
+    "role": "antoniva",
+    "source": "art/portraits/milestone4/antoniva_base_cutout_v01.png",
+    "source_size": [
+      1086,
+      1448
+    ],
+    "source_alpha_range": [
+      0,
+      255
+    ],
+    "crop_box": [
+      475,
+      240,
+      940,
+      960
+    ],
+    "subject_limit": [
+      210,
+      350
+    ],
+    "subject_bounds": [
+      182,
+      58,
+      392,
+      380
+    ],
+    "output": "mod/gfx/models/portraits/antoniva_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "format": "DXT5",
+    "alpha_roundtrip_verified": true,
+    "runtime_status": "not_claimed_by_build",
+    "redistribution": "pending"
+  },
+  {
+    "role": "yanhua",
+    "source": "art/portraits/milestone4/yanhua_base_cutout.png",
+    "source_size": [
+      236,
+      344
+    ],
+    "source_alpha_range": [
+      0,
+      255
+    ],
+    "crop_box": [
+      0,
+      0,
+      236,
+      344
+    ],
+    "subject_limit": [
+      210,
+      350
+    ],
+    "subject_bounds": [
+      182,
+      74,
+      392,
+      380
+    ],
+    "output": "mod/gfx/models/portraits/yanhua_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "format": "DXT5",
+    "alpha_roundtrip_verified": true,
+    "runtime_status": "not_claimed_by_build",
+    "redistribution": "pending"
+  },
+  {
+    "role": "rabi_amit",
+    "source": "art/portraits/milestone4/rabi_amit_joint_portrait_v03.png",
+    "source_size": [
+      1024,
+      1536
+    ],
+    "source_alpha_range": [
+      0,
+      254
+    ],
+    "crop_box": [
+      0,
+      0,
+      1024,
+      1536
+    ],
+    "subject_limit": [
+      210,
+      350
+    ],
+    "subject_bounds": [
+      182,
+      65,
+      392,
+      380
+    ],
+    "output": "mod/gfx/models/portraits/rabi_amit_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "format": "DXT5",
+    "alpha_roundtrip_verified": true,
+    "runtime_status": "not_claimed_by_build",
+    "redistribution": "pending"
+  }
+]

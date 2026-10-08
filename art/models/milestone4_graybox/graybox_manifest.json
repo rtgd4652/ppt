@@ -1,0 +1,122 @@
+{
+  "status": "draft_pending_human_review",
+  "blender": "5.1.2",
+  "runtime_installed": false,
+  "legacy_geometry_used": false,
+  "axis": "Blender +Y前/+Z上，经现有PDX插件转换",
+  "ship_length": 39.3,
+  "root_part_locators": {
+    "part1": [
+      0,
+      0,
+      0
+    ],
+    "part2": [
+      0,
+      0,
+      0
+    ],
+    "part3": [
+      0,
+      0,
+      0
+    ]
+  },
+  "hub_shared_layout": {
+    "center": [
+      0,
+      0,
+      0
+    ],
+    "arm_module_centers": [
+      [
+        -10,
+        0
+      ],
+      [
+        10,
+        0
+      ],
+      [
+        0,
+        -10
+      ],
+      [
+        0,
+        10
+      ]
+    ]
+  },
+  "meshes": [
+    {
+      "part": "reality_flagship_bow_gray",
+      "triangles": 56,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "materials": 3,
+      "mesh": "art/models/milestone4_graybox/export/reality_flagship_bow_gray.mesh",
+      "pdx_readback": "passed"
+    },
+    {
+      "part": "reality_flagship_mid_gray",
+      "triangles": 60,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "materials": 3,
+      "mesh": "art/models/milestone4_graybox/export/reality_flagship_mid_gray.mesh",
+      "pdx_readback": "passed"
+    },
+    {
+      "part": "reality_flagship_stern_gray",
+      "triangles": 60,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "materials": 3,
+      "mesh": "art/models/milestone4_graybox/export/reality_flagship_stern_gray.mesh",
+      "pdx_readback": "passed"
+    },
+    {
+      "part": "reality_baseline_base_gray",
+      "triangles": 124,
+      "locators": [
+        "hub_center"
+      ],
+      "materials": 3,
+      "mesh": "art/models/milestone4_graybox/export/reality_baseline_base_gray.mesh",
+      "pdx_readback": "passed"
+    },
+    {
+      "part": "reality_baseline_active_gray",
+      "triangles": 184,
+      "locators": [
+        "hub_center"
+      ],
+      "materials": 3,
+      "mesh": "art/models/milestone4_graybox/export/reality_baseline_active_gray.mesh",
+      "pdx_readback": "passed"
+    }
+  ],
+  "previews": [
+    "art/models/milestone4_graybox/previews/flagship_top.png",
+    "art/models/milestone4_graybox/previews/flagship_side.png",
+    "art/models/milestone4_graybox/previews/flagship_oblique.png",
+    "art/models/milestone4_graybox/previews/hub_base_top.png",
+    "art/models/milestone4_graybox/previews/hub_base_side.png",
+    "art/models/milestone4_graybox/previews/hub_base_oblique.png",
+    "art/models/milestone4_graybox/previews/hub_active_top.png",
+    "art/models/milestone4_graybox/previews/hub_active_side.png",
+    "art/models/milestone4_graybox/previews/hub_active_oblique.png"
+  ],
+  "limits": [
+    "仅灰模、定位器及文件导出往返，不代表正式材质或游戏显示",
+    "武器朝向、整舰比例和根实体挂接需正式接入时检查"
+  ]
+}

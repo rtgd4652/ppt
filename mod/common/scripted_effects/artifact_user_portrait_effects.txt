@@ -1,0 +1,15 @@
+# 领袖作用域：只按已登记的唯一身份刷新肖像，不创建人物或改写等级、任务与结局。
+artifact_user_refresh_portrait = {
+    if = {
+        limit = { has_leader_flag = cc_antoniva_unique }
+        change_leader_portrait = cc_antoniva_portrait
+    }
+    else_if = {
+        limit = { has_leader_flag = cc_yanhua_unique }
+        change_leader_portrait = cc_yanhua_portrait
+    }
+    else_if = {
+        limit = { has_leader_flag = rabi_unique_leader }
+        change_leader_portrait = ac_rabi_portrait
+    }
+}

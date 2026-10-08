@@ -61,7 +61,7 @@ artifact_user_central_court = {
 	ruler = {
 		name = "cc_antoniva_name"
 		gender = female
-		portrait = "human_female_01"
+		portrait = "cc_antoniva_portrait"
 		trait = "leader_trait_cc_antoniva_identity"
 		leader_class = commander
 	}

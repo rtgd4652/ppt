@@ -4,6 +4,8 @@
 
 本方案把已可玩的现实恒定旗舰、两阶段基线枢纽与十人肖像整理为可制作的正式外观任务。公共风格、角色识别和机制复用已批准基线；新舰／新枢纽的最终外观仍待确认。本次产物是概念草案与制作接口，不表示完成模型、导出或游戏显示。
 
+2026-10-08制作进度：三套代表透明肖像已接入并完成轻量游戏检查；旗舰三段与枢纽两阶段的新[Blender灰模及PDX样品](../../art/models/milestone4_graybox/README.md)已保存、导出回读通过。灰模未接入游戏，外观草案状态保持。正式材质、目标挂点和entity仍待制作；详见[本轮记录](../../reports/milestone4_portraits_and_graybox_2026-10-08.md)。
+
 ![旗舰与基线枢纽概念v0.1](../../art/concepts/milestone4_20261007/flagship_baseline_concept_v01.png)
 
 [原尺寸概念板](../../art/concepts/milestone4_20261007/flagship_baseline_concept_v01.png) · [完整提示词与生成检查](../../art/concepts/milestone4_20261007/README.md) · [生产清单](ASSET_PRODUCTION_PLAN.md) · [本地盘点](../../reports/milestone4_asset_inventory_2026-10-07.json)

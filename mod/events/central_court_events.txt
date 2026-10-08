@@ -83,9 +83,15 @@ country_event = {
     title = cc.10.title
     desc = cc.10.desc
     picture = GFX_evt_aemusa_white_night_pavilion
+    # 元首通讯复用既有实体的透明肖像，其他窗口保留现有布局。
+    event_window_type = leader_story
     is_triggered_only = yes
     trigger = { cc_player_country = yes }
     immediate = { cc_refresh_records = yes }
+    picture_event_data = {
+        portrait = event_target:cc_antoniva
+        room = ethic_spaceship_room
+    }
     option = {
         name = cc.ark
         trigger = { cc_antoniva_available = yes }
@@ -129,9 +135,14 @@ country_event = {
     title = cc.21.title
     desc = cc.21.desc
     picture = GFX_evt_aemusa_white_night_pavilion
+    event_window_type = leader_story
     is_triggered_only = yes
     trigger = { cc_player_country = yes }
     immediate = { cc_refresh_records = yes }
+    picture_event_data = {
+        portrait = event_target:cc_yanhua
+        room = ethic_spaceship_room
+    }
     option = {
         name = cc.to_commander
         trigger = { any_owned_leader = { has_leader_flag = cc_yanhua_unique leader_class = official } }

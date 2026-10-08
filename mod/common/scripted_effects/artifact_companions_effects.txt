@@ -31,6 +31,7 @@ ac_rebind = {
     }
     every_owned_leader = {
         limit = { has_leader_flag = rabi_unique_leader }
+        artifact_user_refresh_portrait = yes
         save_global_event_target_as = ac_rabi@root
         owner = { set_country_flag = ac_rabi_recruited }
     }

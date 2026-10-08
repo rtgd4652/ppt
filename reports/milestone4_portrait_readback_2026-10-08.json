@@ -1,0 +1,97 @@
+{
+  "date": "2026-10-08",
+  "status": "representative_portraits_pass",
+  "runtime_version": "4.5.2",
+  "observed_checksum": "1b14",
+  "test_mods": "only_this_mod_during_cold_start",
+  "original_playset_restored": true,
+  "restored_enabled_mods": 23,
+  "save_comparison": {
+    "2245.03.02.sav": {
+      "date": "2245.03.02",
+      "leaders": {
+        "cc_antoniva_unique": [
+          {
+            "id": "50331919",
+            "portrait": "human_female_01",
+            "class": "commander",
+            "level": "10",
+            "experience": "1089.90774",
+            "job": "principal_pilot"
+          }
+        ],
+        "cc_yanhua_unique": [
+          {
+            "id": "33554503",
+            "portrait": "human_male_01",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "rabi_unique_leader": [
+          {
+            "id": "50331736",
+            "portrait": "aemusa_species_portrait_city",
+            "class": "commander",
+            "level": "7",
+            "experience": "182.75215",
+            "job": "special_operations_commander"
+          }
+        ]
+      }
+    },
+    "M4-three-portraits-2245.sav": {
+      "date": "2245.04.18",
+      "leaders": {
+        "cc_antoniva_unique": [
+          {
+            "id": "50331919",
+            "portrait": "cc_antoniva_portrait",
+            "class": "commander",
+            "level": "10",
+            "experience": "1105.20792",
+            "job": "principal_pilot"
+          }
+        ],
+        "cc_yanhua_unique": [
+          {
+            "id": "33554503",
+            "portrait": "cc_yanhua_portrait",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "rabi_unique_leader": [
+          {
+            "id": "50331736",
+            "portrait": "ac_rabi_portrait",
+            "class": "commander",
+            "level": "7",
+            "experience": "187.0022",
+            "job": "special_operations_commander"
+          }
+        ]
+      }
+    }
+  },
+  "ui_observations": [
+    "normal_antoniva_communications_and_ruler_cabinet_pass",
+    "normal_yanhua_communications_official_commander_official_roundtrip_pass",
+    "normal_rabi_and_amit_core_communications_pass",
+    "one_reload_three_portraits_leader_list_and_details_pass",
+    "paused_at_2245.04.18_after_reload"
+  ],
+  "unique_ids_classes_levels_preserved": true,
+  "filtered_new_portrait_error_matches": [],
+  "evidence_directory": "temp/milestone4-20261008",
+  "limits": [
+    "Native UI screenshots were observed through computer-use; this JSON is a summary, not screenshot pixels.",
+    "Not a full 1.0 regression or a 4.5.1 compatibility result.",
+    "Gray model PDX readback only; no new ship or hub runtime model installation.",
+    "Rabi joint v03 includes reframing and remains pending human art review; source redistribution remains pending."
+  ]
+}

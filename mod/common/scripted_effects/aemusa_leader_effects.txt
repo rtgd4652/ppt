@@ -154,6 +154,7 @@ rabi_summon_leader = {
             }
             effect = {
                 set_leader_flag = rabi_unique_leader # 供后续逻辑识别此独特领袖。
+                artifact_user_refresh_portrait = yes # 保留拉比与阿米特共同取景，不使用物种默认肖像。
                 save_global_event_target_as = rabi_leader # 供白夜馆名册和后续互动持续定位拉比。
             }
         }

@@ -460,9 +460,15 @@ country_event = {
     title = artifact_companions.300.title
     desc = artifact_companions.300.desc
     picture = GFX_evt_aemusa_white_night_pavilion
+    # 拉比与阿米特共同取景；每次入口先按本国身份恢复人物引用。
+    event_window_type = leader_story
     is_triggered_only = yes
     trigger = { ac_player = yes }
     immediate = { ac_refresh = yes }
+    picture_event_data = {
+        portrait = event_target:ac_rabi@root
+        room = ethic_spaceship_room
+    }
     option = {
         name = artifact_companions.rabi_request
         trigger = { ac_rabi_start_available = yes }
