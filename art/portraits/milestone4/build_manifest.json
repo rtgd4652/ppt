@@ -109,5 +109,227 @@
     "alpha_roundtrip_verified": true,
     "runtime_status": "not_claimed_by_build",
     "redistribution": "pending"
+  },
+  {
+    "role": "an",
+    "source": "art/portraits/milestone4/an_base_cutout.png",
+    "source_size": [
+      236,
+      344
+    ],
+    "source_alpha_range": [
+      0,
+      255
+    ],
+    "crop_box": [
+      0,
+      0,
+      236,
+      344
+    ],
+    "subject_limit": [
+      210,
+      350
+    ],
+    "subject_bounds": [
+      182,
+      80,
+      392,
+      380
+    ],
+    "output": "mod/gfx/models/portraits/an_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "format": "DXT5",
+    "alpha_roundtrip_verified": true,
+    "runtime_status": "not_claimed_by_build",
+    "redistribution": "pending"
+  },
+  {
+    "role": "seth",
+    "source": "art/portraits/milestone4/seth_base_cutout.png",
+    "source_size": [
+      236,
+      344
+    ],
+    "source_alpha_range": [
+      0,
+      255
+    ],
+    "crop_box": [
+      0,
+      0,
+      236,
+      344
+    ],
+    "subject_limit": [
+      210,
+      350
+    ],
+    "subject_bounds": [
+      182,
+      74,
+      392,
+      380
+    ],
+    "output": "mod/gfx/models/portraits/seth_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "format": "DXT5",
+    "alpha_roundtrip_verified": true,
+    "runtime_status": "not_claimed_by_build",
+    "redistribution": "pending"
+  },
+  {
+    "role": "yutong",
+    "source": "art/portraits/milestone4/yutong_base_cutout.png",
+    "source_size": [
+      236,
+      344
+    ],
+    "source_alpha_range": [
+      0,
+      255
+    ],
+    "crop_box": [
+      0,
+      0,
+      236,
+      344
+    ],
+    "subject_limit": [
+      210,
+      350
+    ],
+    "subject_bounds": [
+      182,
+      74,
+      392,
+      380
+    ],
+    "output": "mod/gfx/models/portraits/yutong_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "format": "DXT5",
+    "alpha_roundtrip_verified": true,
+    "runtime_status": "not_claimed_by_build",
+    "redistribution": "pending"
+  },
+  {
+    "role": "greysa",
+    "source": "art/portraits/milestone4/greysa_base_cutout.png",
+    "source_size": [
+      236,
+      344
+    ],
+    "source_alpha_range": [
+      0,
+      255
+    ],
+    "crop_box": [
+      0,
+      0,
+      236,
+      344
+    ],
+    "subject_limit": [
+      210,
+      350
+    ],
+    "subject_bounds": [
+      182,
+      74,
+      392,
+      380
+    ],
+    "output": "mod/gfx/models/portraits/greysa_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "format": "DXT5",
+    "alpha_roundtrip_verified": true,
+    "runtime_status": "not_claimed_by_build",
+    "redistribution": "pending"
+  },
+  {
+    "role": "wenzi",
+    "source": "art/portraits/milestone4/wenzi_base_cutout.png",
+    "source_size": [
+      236,
+      344
+    ],
+    "source_alpha_range": [
+      0,
+      255
+    ],
+    "crop_box": [
+      0,
+      0,
+      236,
+      344
+    ],
+    "subject_limit": [
+      210,
+      350
+    ],
+    "subject_bounds": [
+      182,
+      82,
+      392,
+      380
+    ],
+    "output": "mod/gfx/models/portraits/wenzi_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "format": "DXT5",
+    "alpha_roundtrip_verified": true,
+    "runtime_status": "not_claimed_by_build",
+    "redistribution": "pending"
+  },
+  {
+    "role": "li",
+    "source": "art/portraits/milestone4/li_base_cutout_v01.png",
+    "source_size": [
+      1086,
+      1448
+    ],
+    "source_alpha_range": [
+      0,
+      255
+    ],
+    "crop_box": [
+      435,
+      525,
+      855,
+      1120
+    ],
+    "subject_limit": [
+      210,
+      350
+    ],
+    "subject_bounds": [
+      182,
+      82,
+      392,
+      380
+    ],
+    "output": "mod/gfx/models/portraits/li_portrait_ui.dds",
+    "size": [
+      575,
+      380
+    ],
+    "format": "DXT5",
+    "alpha_roundtrip_verified": true,
+    "runtime_status": "not_claimed_by_build",
+    "redistribution": "pending"
   }
 ]

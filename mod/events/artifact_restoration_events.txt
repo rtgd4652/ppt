@@ -144,6 +144,8 @@ country_event = {
     is_triggered_only = yes
     trigger = { ar_player = yes }
     picture = GFX_evt_aemusa_white_night_pavilion
+    event_window_type = leader_story
+    picture_event_data = { portrait = event_target:ar_an@root room = ethic_spaceship_room }
     immediate = {
         ar_rebind = yes
         ar_refresh = yes
@@ -274,6 +276,8 @@ country_event = {
     is_triggered_only = yes
     trigger = { ar_player = yes }
     picture = GFX_evt_aemusa_white_night_pavilion
+    event_window_type = leader_story
+    picture_event_data = { portrait = event_target:ar_greysa@root room = ethic_spaceship_room }
     immediate = {
         ar_rebind = yes
         ar_refresh = yes
@@ -407,6 +411,8 @@ country_event = {
     is_triggered_only = yes
     trigger = { ar_player = yes }
     picture = GFX_evt_aemusa_white_night_pavilion
+    event_window_type = leader_story
+    picture_event_data = { portrait = event_target:ar_wenzi@root room = ethic_spaceship_room }
     immediate = {
         ar_rebind = yes
         ar_refresh = yes
@@ -538,6 +544,8 @@ country_event = {
     is_triggered_only = yes
     trigger = { ar_player = yes }
     picture = GFX_evt_aemusa_white_night_pavilion
+    event_window_type = leader_story
+    picture_event_data = { portrait = event_target:ar_li@root room = ethic_spaceship_room }
     immediate = {
         ar_rebind = yes
         ar_refresh = yes

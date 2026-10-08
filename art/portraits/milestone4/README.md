@@ -1,4 +1,4 @@
-# 里程碑4首批透明肖像
+# 里程碑4神器使透明肖像
 
 日期：2026-10-08。首批为安托涅瓦、晏华、拉比／阿米特。生成方式：内置 `image_gen`，`transparent_background=true`；后处理使用用户已选择的 Python 等比裁切、缩放、DXT5 导出。没有使用 CLI/API fallback。
 
@@ -12,7 +12,30 @@
 
 来源缓存不直接进入发布包；本批衍生纹理的来源与再分发状态仍为 `source_review_required` / `pending`。现有批准角色锚点不等于本批画面或发布权限已经批准。运行显示结论另见本日报告，构建脚本只确认文件规格。
 
-## 完整提示词
+## 其余六人（2026-10-08）
+
+安、赛斯、幽桐、格蕾莎、雯梓使用素材本身的透明调色板通道，转换为 RGBA 后导出；没有再次生成或重画。丽使用内置 `image_gen` 去背景，再按人物上部取景；生成式提取可能改变细小边缘，画面审阅与发布权限仍待确认。
+
+| 人物 | 原图（均在 `art/reference_library/original_game/`） | 本目录透明源 |
+|---|---|---|
+| 安 | `an_character_color_review/「光荣女仆」安 Char Illustration Cut.png` | `an_base_cutout.png` |
+| 赛斯 | `seth_character_color_review/「神官」赛斯 Char Illustration Cut.png` | `seth_base_cutout.png` |
+| 幽桐 | `yutong_character_color_review/「诛心」幽桐 Char Illustration Cut.png` | `yutong_base_cutout.png` |
+| 格蕾莎 | `greysa_character_color_review/「白医」格蕾莎 Char Illustration Cut.png` | `greysa_base_cutout.png` |
+| 雯梓 | `wenzi_character_color_review/wenzi_base_cut.png` | `wenzi_base_cutout.png` |
+| 丽 | `li_character_color_review/li_base_full.png` | `li_base_cutout_v01.png` |
+
+六人分批构建命令：`python -X utf8 -B tools/build/prepare_companion_portraits.py --pillow-dir temp/ui_build_deps --roles an seth yutong greysa wenzi li`。该参数保留首批三人的纹理与记录；不带 `--roles` 可重建九人，爱缪莎沿用既有肖像。六人预览见 [深浅底对照](previews/6_portraits_contact_sheet.png)，规格和裁切见构建清单。仅刷新已存在的唯一人物，不创建替代领袖。
+
+六人正常核心通讯和统一新档读回已通过；当前九张新增肖像连同爱缪莎既有资源均已接通。实际运行范围见[六人补齐记录](../../../reports/milestone4_remaining_portraits_2026-10-08.md)，构建清单不代替游戏证据或外观批准。
+
+### 丽去背景完整提示词
+
+```text
+Edit this provided official character illustration only by separating the illustrated character Li and her physical closed golden-and-black spiral umbrella weapon from the plain pale gray background. Produce a clean transparent-background cutout of the same character and weapon, preserving the exact pose, face, eyes, blonde high side ponytail, black hair bow, yellow and dark brown-black segmented outfit, rounded puff sleeves, skirt and gray-purple leg layers, drawn linework and original colors. Preserve every visible physical part and the complete visible silhouette. Keep the original appearance and proportions; do not restyle, redesign, add parts or redraw the character. Remove the pale gray background and detached atmospheric background glows, specks and arcs. The empty footer and game logo are outside the character silhouette and should not be included in the cutout. Retain physical hair strands, umbrella structure and costume edges with clean soft antialiasing and transparent holes between them. This is the base-form portrait, no awakening changes, no gold-only recoloring, no new sci-fi costume. Return transparent RGBA PNG with adequate transparent margins.
+```
+
+## 首批完整提示词
 
 ### 安托涅瓦去背景
 

@@ -15,7 +15,7 @@ ar_an_recruit = {
             randomize_traits = no
             skip_background_generation = yes
             traits = { trait = leader_trait_ar_an_identity }
-            effect = { set_leader_flag = ar_an_unique save_global_event_target_as = ar_an@root }
+            effect = { set_leader_flag = ar_an_unique artifact_user_refresh_portrait = yes save_global_event_target_as = ar_an@root }
         }
         set_country_flag = ar_an_recruited
         log = "RESTORATION|an_recruited"
@@ -31,6 +31,7 @@ ar_an_become_official = {
             unassign_leader = this # 原生接口要求领袖目标；解除本人的当前任职。
             remove_trait = leader_trait_ar_an_identity
             change_leader_class = official
+            artifact_user_refresh_portrait = yes
             add_trait = { trait = leader_trait_ar_an_identity show_message = no }
         }
     }
@@ -45,6 +46,7 @@ ar_an_become_commander = {
             unassign_leader = this
             remove_trait = leader_trait_ar_an_identity
             change_leader_class = commander
+            artifact_user_refresh_portrait = yes
             add_trait = { trait = leader_trait_ar_an_identity show_message = no }
         }
     }
@@ -93,7 +95,7 @@ ar_greysa_recruit = {
             randomize_traits = no
             skip_background_generation = yes
             traits = { trait = leader_trait_ar_greysa_identity }
-            effect = { set_leader_flag = ar_greysa_unique save_global_event_target_as = ar_greysa@root }
+            effect = { set_leader_flag = ar_greysa_unique artifact_user_refresh_portrait = yes save_global_event_target_as = ar_greysa@root }
         }
         set_country_flag = ar_greysa_recruited
         log = "RESTORATION|greysa_recruited"
@@ -109,6 +111,7 @@ ar_greysa_become_scientist = {
             unassign_leader = this
             remove_trait = leader_trait_ar_greysa_identity
             change_leader_class = scientist
+            artifact_user_refresh_portrait = yes
             add_trait = { trait = leader_trait_ar_greysa_identity show_message = no }
         }
     }
@@ -123,6 +126,7 @@ ar_greysa_become_commander = {
             unassign_leader = this
             remove_trait = leader_trait_ar_greysa_identity
             change_leader_class = commander
+            artifact_user_refresh_portrait = yes
             add_trait = { trait = leader_trait_ar_greysa_identity show_message = no }
         }
     }
@@ -171,7 +175,7 @@ ar_wenzi_recruit = {
             randomize_traits = no
             skip_background_generation = yes
             traits = { trait = leader_trait_ar_wenzi_identity }
-            effect = { set_leader_flag = ar_wenzi_unique save_global_event_target_as = ar_wenzi@root }
+            effect = { set_leader_flag = ar_wenzi_unique artifact_user_refresh_portrait = yes save_global_event_target_as = ar_wenzi@root }
         }
         set_country_flag = ar_wenzi_recruited
         log = "RESTORATION|wenzi_recruited"
@@ -187,6 +191,7 @@ ar_wenzi_become_official = {
             unassign_leader = this
             remove_trait = leader_trait_ar_wenzi_identity
             change_leader_class = official
+            artifact_user_refresh_portrait = yes
             add_trait = { trait = leader_trait_ar_wenzi_identity show_message = no }
         }
     }
@@ -201,6 +206,7 @@ ar_wenzi_become_commander = {
             unassign_leader = this
             remove_trait = leader_trait_ar_wenzi_identity
             change_leader_class = commander
+            artifact_user_refresh_portrait = yes
             add_trait = { trait = leader_trait_ar_wenzi_identity show_message = no }
         }
     }
@@ -249,7 +255,7 @@ ar_li_recruit = {
             randomize_traits = no
             skip_background_generation = yes
             traits = { trait = leader_trait_ar_li_identity }
-            effect = { set_leader_flag = ar_li_unique save_global_event_target_as = ar_li@root }
+            effect = { set_leader_flag = ar_li_unique artifact_user_refresh_portrait = yes save_global_event_target_as = ar_li@root }
         }
         set_country_flag = ar_li_recruited
         log = "RESTORATION|li_recruited"
@@ -265,6 +271,7 @@ ar_li_become_official = {
             unassign_leader = this
             remove_trait = leader_trait_ar_li_identity
             change_leader_class = official
+            artifact_user_refresh_portrait = yes
             add_trait = { trait = leader_trait_ar_li_identity show_message = no }
         }
     }
@@ -279,6 +286,7 @@ ar_li_become_scientist = {
             unassign_leader = this
             remove_trait = leader_trait_ar_li_identity
             change_leader_class = scientist
+            artifact_user_refresh_portrait = yes
             add_trait = { trait = leader_trait_ar_li_identity show_message = no }
         }
     }
@@ -293,6 +301,7 @@ ar_li_become_commander = {
             unassign_leader = this
             remove_trait = leader_trait_ar_li_identity
             change_leader_class = commander
+            artifact_user_refresh_portrait = yes
             add_trait = { trait = leader_trait_ar_li_identity show_message = no }
         }
     }
@@ -327,7 +336,7 @@ ar_li_withdraw = {
 
 ar_rebind = {
     if = { limit = { exists = event_target:ar_an@root } clear_global_event_target = ar_an@root }
-    every_owned_leader = { limit = { has_leader_flag = ar_an_unique } save_global_event_target_as = ar_an@root save_event_target_as = ar_an }
+    every_owned_leader = { limit = { has_leader_flag = ar_an_unique } artifact_user_refresh_portrait = yes save_global_event_target_as = ar_an@root save_event_target_as = ar_an }
     if = { limit = { exists = event_target:ar_an_target@root } event_target:ar_an_target@root = { save_event_target_as = ar_an_target } }
 
     if = { limit = { NOT = { is_variable_set = ar_an_progress } } set_variable = { which = ar_an_progress value = 0 } }
@@ -339,7 +348,7 @@ ar_rebind = {
     if = { limit = { NOT = { is_variable_set = ar_an_cost_alloys } } set_variable = { which = ar_an_cost_alloys value = 0 } }
 
     if = { limit = { exists = event_target:ar_greysa@root } clear_global_event_target = ar_greysa@root }
-    every_owned_leader = { limit = { has_leader_flag = ar_greysa_unique } save_global_event_target_as = ar_greysa@root save_event_target_as = ar_greysa }
+    every_owned_leader = { limit = { has_leader_flag = ar_greysa_unique } artifact_user_refresh_portrait = yes save_global_event_target_as = ar_greysa@root save_event_target_as = ar_greysa }
     if = { limit = { exists = event_target:ar_greysa_target@root } event_target:ar_greysa_target@root = { save_event_target_as = ar_greysa_target } }
 
     if = { limit = { NOT = { is_variable_set = ar_greysa_progress } } set_variable = { which = ar_greysa_progress value = 0 } }
@@ -351,7 +360,7 @@ ar_rebind = {
     if = { limit = { NOT = { is_variable_set = ar_greysa_cost_alloys } } set_variable = { which = ar_greysa_cost_alloys value = 0 } }
 
     if = { limit = { exists = event_target:ar_wenzi@root } clear_global_event_target = ar_wenzi@root }
-    every_owned_leader = { limit = { has_leader_flag = ar_wenzi_unique } save_global_event_target_as = ar_wenzi@root save_event_target_as = ar_wenzi }
+    every_owned_leader = { limit = { has_leader_flag = ar_wenzi_unique } artifact_user_refresh_portrait = yes save_global_event_target_as = ar_wenzi@root save_event_target_as = ar_wenzi }
     if = { limit = { exists = event_target:ar_wenzi_target@root } event_target:ar_wenzi_target@root = { save_event_target_as = ar_wenzi_target } }
 
     if = { limit = { NOT = { is_variable_set = ar_wenzi_progress } } set_variable = { which = ar_wenzi_progress value = 0 } }
@@ -363,7 +372,7 @@ ar_rebind = {
     if = { limit = { NOT = { is_variable_set = ar_wenzi_cost_alloys } } set_variable = { which = ar_wenzi_cost_alloys value = 0 } }
 
     if = { limit = { exists = event_target:ar_li@root } clear_global_event_target = ar_li@root }
-    every_owned_leader = { limit = { has_leader_flag = ar_li_unique } save_global_event_target_as = ar_li@root save_event_target_as = ar_li }
+    every_owned_leader = { limit = { has_leader_flag = ar_li_unique } artifact_user_refresh_portrait = yes save_global_event_target_as = ar_li@root save_event_target_as = ar_li }
     if = { limit = { exists = event_target:ar_li_target@root } event_target:ar_li_target@root = { save_event_target_as = ar_li_target } }
 
     if = { limit = { NOT = { is_variable_set = ar_li_progress } } set_variable = { which = ar_li_progress value = 0 } }

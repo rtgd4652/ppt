@@ -180,6 +180,8 @@ country_event = {
     title = artifact_companions.100.title
     desc = artifact_companions.100.desc
     picture = GFX_evt_aemusa_white_night_pavilion
+    event_window_type = leader_story
+    picture_event_data = { portrait = event_target:ac_seth@root room = ethic_spaceship_room }
     is_triggered_only = yes
     trigger = { ac_player = yes }
     immediate = { ac_refresh = yes }
@@ -329,6 +331,8 @@ country_event = {
     title = artifact_companions.200.title
     desc = artifact_companions.200.desc
     picture = GFX_evt_aemusa_white_night_pavilion
+    event_window_type = leader_story
+    picture_event_data = { portrait = event_target:ac_yutong@root room = ethic_spaceship_room }
     is_triggered_only = yes
     trigger = { ac_player = yes }
     immediate = { ac_refresh = yes }

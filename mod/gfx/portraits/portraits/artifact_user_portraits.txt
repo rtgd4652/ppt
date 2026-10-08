@@ -9,4 +9,12 @@ portraits = {
     ac_rabi_portrait = {
         texturefile = "gfx/models/portraits/rabi_amit_portrait_ui.dds"
     }
+
+    # 其余六名神器使：基础形态透明肖像，沿用原有唯一身份。
+    ar_an_portrait = { texturefile = "gfx/models/portraits/an_portrait_ui.dds" }
+    ac_seth_portrait = { texturefile = "gfx/models/portraits/seth_portrait_ui.dds" }
+    ac_yutong_portrait = { texturefile = "gfx/models/portraits/yutong_portrait_ui.dds" }
+    ar_greysa_portrait = { texturefile = "gfx/models/portraits/greysa_portrait_ui.dds" }
+    ar_wenzi_portrait = { texturefile = "gfx/models/portraits/wenzi_portrait_ui.dds" }
+    ar_li_portrait = { texturefile = "gfx/models/portraits/li_portrait_ui.dds" }
 }

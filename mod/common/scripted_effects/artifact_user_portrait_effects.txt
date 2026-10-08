@@ -12,4 +12,28 @@ artifact_user_refresh_portrait = {
         limit = { has_leader_flag = rabi_unique_leader }
         change_leader_portrait = ac_rabi_portrait
     }
+    else_if = {
+        limit = { has_leader_flag = ar_an_unique }
+        change_leader_portrait = ar_an_portrait
+    }
+    else_if = {
+        limit = { has_leader_flag = seth_unique_leader }
+        change_leader_portrait = ac_seth_portrait
+    }
+    else_if = {
+        limit = { has_leader_flag = yutong_unique_leader }
+        change_leader_portrait = ac_yutong_portrait
+    }
+    else_if = {
+        limit = { has_leader_flag = ar_greysa_unique }
+        change_leader_portrait = ar_greysa_portrait
+    }
+    else_if = {
+        limit = { has_leader_flag = ar_wenzi_unique }
+        change_leader_portrait = ar_wenzi_portrait
+    }
+    else_if = {
+        limit = { has_leader_flag = ar_li_unique }
+        change_leader_portrait = ar_li_portrait
+    }
 }

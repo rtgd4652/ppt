@@ -21,11 +21,13 @@ ac_rebind = {
     }
     every_owned_leader = {
         limit = { has_leader_flag = seth_unique_leader }
+        artifact_user_refresh_portrait = yes
         save_global_event_target_as = ac_seth@root
         owner = { set_country_flag = ac_seth_recruited }
     }
     every_owned_leader = {
         limit = { has_leader_flag = yutong_unique_leader }
+        artifact_user_refresh_portrait = yes
         save_global_event_target_as = ac_yutong@root
         owner = { set_country_flag = ac_yutong_recruited }
     }
@@ -45,6 +47,7 @@ ac_seth_switch_class = {
             remove_trait = leader_trait_seth_official
             remove_trait = leader_trait_seth_commander
             change_leader_class = $CLASS$
+            artifact_user_refresh_portrait = yes
             add_trait = {
                 trait = $TRAIT$
                 consume_selection = yes

@@ -1,0 +1,246 @@
+{
+  "date": "2026-10-08",
+  "status": "six_core_ui_and_unified_reload_pass",
+  "runtime_version": "4.5.2",
+  "observed_checksum": "8df2",
+  "test_mods": "only_this_mod_during_cold_start",
+  "original_playset_restored": true,
+  "save_comparison": {
+    "M4-three-portraits-2245.sav": {
+      "date": "2245.04.18",
+      "leaders": {
+        "an": [
+          {
+            "id": "16777290",
+            "portrait": "aemusa_species_portrait_city",
+            "class": "official",
+            "level": "7",
+            "experience": "114.8532",
+            "job": null
+          }
+        ],
+        "seth": [
+          {
+            "id": "16777293",
+            "portrait": "aemusa_species_portrait_city",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "yutong": [
+          {
+            "id": "33554511",
+            "portrait": "aemusa_species_portrait_city",
+            "class": "commander",
+            "level": "7",
+            "experience": "187.0022",
+            "job": "captain"
+          }
+        ],
+        "greysa": [
+          {
+            "id": "50331772",
+            "portrait": "aemusa_species_portrait_city",
+            "class": "scientist",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "wenzi": [
+          {
+            "id": "50331782",
+            "portrait": "aemusa_species_portrait_city",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "li": [
+          {
+            "id": "33554578",
+            "portrait": "aemusa_species_portrait_city",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "antoniva": [
+          {
+            "id": "50331919",
+            "portrait": "cc_antoniva_portrait",
+            "class": "commander",
+            "level": "10",
+            "experience": "1105.20792",
+            "job": "principal_pilot"
+          }
+        ],
+        "yanhua": [
+          {
+            "id": "33554503",
+            "portrait": "cc_yanhua_portrait",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "rabi": [
+          {
+            "id": "50331736",
+            "portrait": "ac_rabi_portrait",
+            "class": "commander",
+            "level": "7",
+            "experience": "187.0022",
+            "job": "special_operations_commander"
+          }
+        ]
+      }
+    },
+    "M4-ten-portraits-2245.sav": {
+      "date": "2245.08.29",
+      "leaders": {
+        "an": [
+          {
+            "id": "16777290",
+            "portrait": "ar_an_portrait",
+            "class": "official",
+            "level": "7",
+            "experience": "114.8532",
+            "job": null
+          }
+        ],
+        "seth": [
+          {
+            "id": "16777293",
+            "portrait": "ac_seth_portrait",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "yutong": [
+          {
+            "id": "33554511",
+            "portrait": "ac_yutong_portrait",
+            "class": "commander",
+            "level": "7",
+            "experience": "204.0024",
+            "job": "captain"
+          }
+        ],
+        "greysa": [
+          {
+            "id": "50331772",
+            "portrait": "ar_greysa_portrait",
+            "class": "scientist",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "wenzi": [
+          {
+            "id": "50331782",
+            "portrait": "ar_wenzi_portrait",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "li": [
+          {
+            "id": "33554578",
+            "portrait": "ar_li_portrait",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "antoniva": [
+          {
+            "id": "50331919",
+            "portrait": "cc_antoniva_portrait",
+            "class": "commander",
+            "level": "10",
+            "experience": "1166.40864",
+            "job": "principal_pilot"
+          }
+        ],
+        "yanhua": [
+          {
+            "id": "33554503",
+            "portrait": "cc_yanhua_portrait",
+            "class": "official",
+            "level": "7",
+            "experience": null,
+            "job": null
+          }
+        ],
+        "rabi": [
+          {
+            "id": "50331736",
+            "portrait": "ac_rabi_portrait",
+            "class": "commander",
+            "level": "7",
+            "experience": "204.0024",
+            "job": "special_operations_commander"
+          }
+        ]
+      }
+    }
+  },
+  "unique_ids_classes_levels_preserved": true,
+  "six_expected_portraits_serialized": true,
+  "ui_observations": [
+    "normal_an_core_communications_pass",
+    "normal_greysa_core_communications_pass",
+    "normal_wenzi_core_communications_pass",
+    "normal_li_core_communications_pass",
+    "normal_seth_core_communications_pass",
+    "normal_yutong_core_communications_pass",
+    "unified_save_reload_yutong_window_pass",
+    "reloaded_official_commander_scientist_lists_pass"
+  ],
+  "filtered_new_portrait_error_matches": [],
+  "evidence_directory": "temp/milestone4-six-20261008",
+  "limits": [
+    "UI screenshots observed through computer-use; this is a summary, not screenshot pixels.",
+    "Existing first three portrait checks reused; no old mechanism retest.",
+    "Not a full 1.0 regression or a 4.5.1 compatibility result.",
+    "No new ship/hub runtime model installation.",
+    "Li background cutout v01 remains pending art review; source redistribution remains pending.",
+    "Four stale production notices removed in source after initial UI checks; text cleanup not yet observed in this process."
+  ],
+  "restored_enabled_mod_count": 23,
+  "reload_check": {
+    "save": "M4-ten-portraits-2245.sav",
+    "date": "2245.08.29",
+    "paused": true,
+    "restored_core_window": "artifact_companions.200",
+    "restored_portrait": "ac_yutong_portrait",
+    "leader_list_roles_observed": [
+      "an",
+      "seth",
+      "wenzi",
+      "yutong",
+      "greysa"
+    ],
+    "li_portrait_reference": "verified_in_saved_structure",
+    "result": "pass"
+  },
+  "final_game_state": {
+    "date": "2245.08.29",
+    "paused": true,
+    "character_windows_closed": true,
+    "pending_console_command": false
+  },
+  "report": "reports/milestone4_remaining_portraits_2026-10-08.md"
+}
