@@ -1,7 +1,7 @@
 # PROJECT_STATUS
 
 > 当前进度唯一入口；更新于 2026-10-09。
-> 当前工作：已形成[十人成长、自由组合与文明路线提案](design/artifact_civilization_growth_and_combinations_v0.1.md)。用户确认自由组合为主、少量固定搭档，并说明科学家大额产出／仓储为临时测试；这两项已移到独立默认关闭的测试法令，静态检查通过。提案建议拆开普通科技与爱缪莎30级个人飞升门槛，先交付一个成长协作项目；具体档位、能力、搭档与乘算仍待定稿，尚未实现。完整1.0与最终Boss后奖励／结尾范围沿用[已确认边界](design/artifact_civilization_1_0_scope_confirmation_2026-10-08.md)。本轮没有安装构建或操作游戏，记录见[10月9日保存点](../reports/artifact_civilization_growth_review_2026-10-09.md)。
+> 当前工作：成长提案A批已完成首版：16项共有研究拆开爱缪莎个人飞升门槛，塔罗经济演算接入[首都工坊](mechanics/artifact_engineering_play_guide_v0.1.md)，丽／安可单人或自由组合。12项定向检查与静态通过，4.5.2正常双人启动、六次月度工作、进行态读档、一次性成果与常驻科技候选已有日志／新档证据。前置科技来自受控注入，不记作自然研究验收；单人和暂停／失效场景目前为夹具覆盖。见[A批记录](../reports/artifact_engineering_batch_a_2026-10-09.md)。下一批为十人分级贡献与少量固定搭档，正式全系统数值、完整文明工程、最终Boss扩展及终局奖励仍待实现。科学家测试产出／仓储保持独立默认关闭；完整1.0范围沿用[已确认边界](design/artifact_civilization_1_0_scope_confirmation_2026-10-08.md)。
 > 已保存资产检查点：里程碑4新旗舰三段、枢纽两阶段的带材质样品v0.2已保存。Blender 5.1.2源文件、五网格PDX回读、三张1024×512 DDS、GFX／独立实体样品及离线预览完成；仍未安装到游戏，外观保持`draft_pending_human_review`。样品保留为制作／显示验证基础；远景贴图、尺度、推进效果与独立运行接入任务保留，正式外观按新共同视觉规范深化。十人透明肖像与核心通讯已有证据；`M4-ten-portraits-2245.sav`（2245.08.29）保留，原身份／职业／等级保持。终局表现、文本／平衡、整体回归和发布包仍待完成。详见[材质样品续接](../reports/milestone4_surface_assets_2026-10-08.md)、[六人补齐](../reports/milestone4_remaining_portraits_2026-10-08.md)及[首批灰模](../reports/milestone4_portraits_and_graybox_2026-10-08.md)。
 > 里程碑3十人与中央庭已完成首版轻量收口：三批正常任务、成长／职业、通讯、关键读档和幽桐／拉比真实交战支援有证据，目标清理提示已修复，静态与73项工具检查通过。最后确认原2245.03.02合并档已载回并暂停，实战结果另存；完整1.0未交付。见[十人收口记录](../reports/milestone3_ten_character_closeout_2026-10-07.md)与[统一玩法](mechanics/artifact_users_play_guide_v1.0.md)。
 > 批次证据复用：[首批中央庭与方舟](../reports/central_court_milestone_3_2026-10-07.md)、[第二批三人](../reports/artifact_companions_milestone_3_2026-10-07.md)、[第三批四人](../reports/artifact_restoration_milestone_3_2026-10-07.md)、[成长与职责整合](../reports/milestone3_growth_and_duty_integration_2026-10-07.md)。未测应急／风险等路径按反馈定向补测，不追加逐窗存档或穷举；受控前置与正常机制验证分别记录。
@@ -26,7 +26,7 @@
 | 里程碑1：AWP-06/07 专属危机与第十一至十三章 | 新舰＋新巨构范围已明确批准并授权 | 首版可玩内容完成；正式新模型后置 | 静态及60项工具检查通过 | 轻量验收通过：4.5.1入口及枢纽建设；4.5.2正常危机与完成档读回、90日重建、枢纽暂停／恢复、真实资源损失及失败归档后结算；受控来源已注明 | [实现记录](../reports/aemusa_main_story_milestone_1_2026-10-06.md)、[验收记录](../reports/aemusa_main_story_milestone_1_2026-10-07.md) |
 | 里程碑2：AWP-08/09终章与三结局 | 本轮继续范围下实施；回应细则首版可调整 | 首版可玩内容完成 | 静态及65项工具检查通过 | 正常终章、三种结局、原生180日29→30研修、共同起点与成功结果读回、白夜馆结果入口通过；等级条件为受控来源 | [本轮记录](../reports/aemusa_main_story_milestone_2_2026-10-07.md) |
 | 里程碑3：十人与文明整合 | 十人核心与统一收口范围已确认 | 首版可玩内容完成，状态为`playable_ten_character_integration_pass` | 静态与73项工具检查通过 | 三批正常任务、成长／职业、合并档读回及幽桐／拉比真实交战支援通过；未测替代路径按反馈处理 | [统一收口记录](../reports/milestone3_ten_character_closeout_2026-10-07.md) |
-| 里程碑4：完整1.0（范围已扩充） | 范围与自由组合方向已确认；成长／文明路线提案已写，具体能力与正式外观待定稿 | 科学家临时加成已分离；现有十人、主线及样品保留，新增成长／组合、危机扩展与终局奖励尚未实现 | 本轮脚本静态通过；既有肖像／网格／DDS证据保留 | 原轻量证据属于可玩基础；本轮未运行游戏，新增体系与完整1.0尚未验收 | [成长提案](design/artifact_civilization_growth_and_combinations_v0.1.md)、[本轮记录](../reports/artifact_civilization_growth_review_2026-10-09.md)、[生产清单](art/ASSET_PRODUCTION_PLAN.md) |
+| 里程碑4：完整1.0（范围已扩充） | 范围与自由组合方向已确认；A批首版落实，全系统数值、具体搭档与正式外观待定稿 | 测试加成已分离；共有研究入口及丽／安首都工坊实现；十人成长扩展、完整文明工程、最终Boss与终局奖励待做 | A批12项定向检查与静态通过；既有肖像／网格／DDS证据保留 | A批双人正常流程与进行态读档通过，前置研究为受控来源；完整1.0未验收 | [成长提案](design/artifact_civilization_growth_and_combinations_v0.1.md)、[A批记录](../reports/artifact_engineering_batch_a_2026-10-09.md)、[生产清单](art/ASSET_PRODUCTION_PLAN.md) |
 | 本轮架构、进度与检查工具整理 | 本轮用户授权 | 已完成 | 工具测试与项目静态检查见报告 | 未执行游戏测试 | [整理报告](../reports/project_architecture_review_2026-09-26.md) |
 
 `设计批准`、`代码完成`、`静态通过`、`运行通过`互不替代。只在对应证据成立时更新该列。

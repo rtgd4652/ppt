@@ -20,7 +20,7 @@ decision_artifact_destiny_city_project = {
 				is_species_class = "ARTIFACT_USER"
 			}
 			has_technology = tech_artifact_destiny_city_project
-			has_ascension_perk = ap_artifact_court_destiny
+			has_ascension_perk = ap_artifact_user_apotheosis_path # 共有城市工程由文明飞升支持，不再要求爱缪莎个人30级。
 		}
 		uses_district_set = standard
 		NOT = { is_planet_class = pc_artifact_destiny_city }

@@ -1,0 +1,141 @@
+namespace = artifact_engineering
+
+# 只有活动项目接受原生月度脉冲；状态页不会增加工程进度。
+country_event = {
+    id = artifact_engineering.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { is_ai = no has_country_flag = ae_eng_active }
+    immediate = { artifact_engineering_monthly = yes }
+}
+
+country_event = {
+    id = artifact_engineering.10
+    title = artifact_engineering.title
+    desc = {
+        trigger = { NOT = { has_technology = "tech_artifact_tarot_economy" } }
+        text = artifact_engineering.locked
+    }
+    desc = {
+        trigger = { has_country_flag = ae_eng_active artifact_engineering_work_ready = yes }
+        text = artifact_engineering.working
+    }
+    desc = {
+        trigger = { has_country_flag = ae_eng_active artifact_engineering_work_ready = no }
+        text = artifact_engineering.paused
+    }
+    desc = {
+        trigger = { has_country_flag = ae_eng_ready }
+        text = artifact_engineering.ready
+    }
+    desc = {
+        trigger = { has_country_flag = ae_eng_completed NOT = { has_country_flag = ae_eng_ready } }
+        text = artifact_engineering.finished
+    }
+    desc = {
+        trigger = {
+            has_technology = "tech_artifact_tarot_economy"
+            NOR = { has_country_flag = ae_eng_active has_country_flag = ae_eng_ready has_country_flag = ae_eng_completed }
+        }
+        text = artifact_engineering.prepare
+    }
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { artifact_engineering_player = yes }
+    immediate = { artifact_engineering_refresh = yes }
+
+    option = {
+        name = artifact_engineering.start_li
+        trigger = { artifact_engineering_idle = yes }
+        allow = {
+            custom_tooltip = { fail_text = artifact_engineering.require_project artifact_engineering_start_available = yes }
+            custom_tooltip = { fail_text = artifact_engineering.require_li artifact_engineering_li_qualified = yes }
+        }
+        hidden_effect = { artifact_engineering_start_li = yes country_event = { id = artifact_engineering.10 } }
+    }
+    option = {
+        name = artifact_engineering.start_an
+        trigger = { artifact_engineering_idle = yes }
+        allow = {
+            custom_tooltip = { fail_text = artifact_engineering.require_project artifact_engineering_start_available = yes }
+            custom_tooltip = { fail_text = artifact_engineering.require_an artifact_engineering_an_qualified = yes }
+        }
+        hidden_effect = { artifact_engineering_start_an = yes country_event = { id = artifact_engineering.10 } }
+    }
+    option = {
+        name = artifact_engineering.start_li_an
+        trigger = { artifact_engineering_idle = yes }
+        allow = {
+            custom_tooltip = { fail_text = artifact_engineering.require_project artifact_engineering_start_available = yes }
+            custom_tooltip = { fail_text = artifact_engineering.require_li artifact_engineering_li_qualified = yes }
+            custom_tooltip = { fail_text = artifact_engineering.require_an artifact_engineering_an_qualified = yes }
+        }
+        hidden_effect = { artifact_engineering_start_li_an = yes country_event = { id = artifact_engineering.10 } }
+    }
+    option = {
+        name = artifact_engineering.start_an_li
+        trigger = { artifact_engineering_idle = yes }
+        allow = {
+            custom_tooltip = { fail_text = artifact_engineering.require_project artifact_engineering_start_available = yes }
+            custom_tooltip = { fail_text = artifact_engineering.require_an artifact_engineering_an_qualified = yes }
+            custom_tooltip = { fail_text = artifact_engineering.require_li artifact_engineering_li_qualified = yes }
+        }
+        hidden_effect = { artifact_engineering_start_an_li = yes country_event = { id = artifact_engineering.10 } }
+    }
+    option = {
+        name = artifact_engineering.choose_research
+        trigger = { has_country_flag = ae_eng_ready }
+        hidden_effect = { country_event = { id = artifact_engineering.20 } }
+    }
+    option = {
+        name = artifact_engineering.stop
+        trigger = { has_country_flag = ae_eng_active }
+        hidden_effect = { artifact_engineering_abort = yes country_event = { id = artifact_engineering.10 } }
+    }
+    option = { name = artifact_engineering.cooldown trigger = { has_country_flag = ae_eng_cooldown } }
+    option = {
+        name = artifact_engineering.back
+        hidden_effect = { country_event = { id = aemusa_dialogue.1 } }
+    }
+    option = { name = artifact_engineering.close default_hide_option = yes }
+}
+
+country_event = {
+    id = artifact_engineering.20
+    title = artifact_engineering.result.title
+    desc = artifact_engineering.result.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = { is_ai = no has_country_flag = ae_eng_ready has_country_flag = ae_eng_completed }
+    immediate = { artifact_engineering_rebind = yes }
+    option = {
+        name = artifact_engineering.research_manufacturing
+        trigger = { has_country_flag = ae_eng_ready artifact_engineering_manufacturing_available = yes }
+        hidden_effect = { artifact_engineering_claim_manufacturing = yes country_event = { id = artifact_engineering.10 } }
+    }
+    option = {
+        name = artifact_engineering.research_energy
+        trigger = { has_country_flag = ae_eng_ready artifact_engineering_energy_available = yes }
+        hidden_effect = { artifact_engineering_claim_energy = yes country_event = { id = artifact_engineering.10 } }
+    }
+    option = {
+        name = artifact_engineering.research_trade
+        trigger = { has_country_flag = ae_eng_ready artifact_engineering_trade_available = yes }
+        hidden_effect = { artifact_engineering_claim_trade = yes country_event = { id = artifact_engineering.10 } }
+    }
+    option = {
+        name = artifact_engineering.archive
+        trigger = { has_country_flag = ae_eng_ready }
+        hidden_effect = { artifact_engineering_archive = yes country_event = { id = artifact_engineering.10 } }
+    }
+    option = { name = artifact_engineering.keep_results default_hide_option = yes }
+}
+
+country_event = {
+    id = artifact_engineering.30
+    title = artifact_engineering.loss.title
+    desc = artifact_engineering.loss.desc
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    option = { name = artifact_engineering.close default_hide_option = yes }
+}

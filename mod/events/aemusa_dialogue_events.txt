@@ -55,6 +55,12 @@ country_event = {
     }
 
     option = {
+        name = artifact_engineering.open
+        trigger = { artifact_engineering_player = yes }
+        hidden_effect = { country_event = { id = artifact_engineering.10 } }
+    }
+
+    option = {
         name = aemusa_dialogue.guide
         hidden_effect = { country_event = { id = aemusa_dialogue.5 } }
     }

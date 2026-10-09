@@ -1,4 +1,4 @@
-# 塔罗演算：专属研究链的入口，取消稀有与高阶前置，确保神器使可稳定抽到。
+# 塔罗演算：神器文明共有研究入口，保留文明身份和科技层级，不依赖个人30级飞升。
 tech_artifact_tarot_calculation = {
 	area = physics
 	icon = tech_artifact_tarot_calculation
@@ -8,7 +8,6 @@ tech_artifact_tarot_calculation = {
 	weight = 200
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -27,7 +26,6 @@ tech_artifact_black_gate_observation = {
 	weight = 150
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -46,7 +44,6 @@ tech_artifact_relic_fabrication = {
 	weight = 120
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 }
 
@@ -61,7 +58,6 @@ tech_artifact_central_court_protocols = {
 	weight = 120
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -80,12 +76,9 @@ tech_artifact_tarot_economy = {
 	weight = 90
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
-	modifier = {
-		# 当前版本会把分学科科研速度修正判为无效，先移除该科技的科研速度加成以保证稳定加载。
-	}
+	# 通过白夜馆开放首都工坊试验，实际资格由工程模块读取此科技。
 }
 
 # 共鸣制造体系：将神器碎片、相位合金与中央庭工坊规范合并为后期舰队工业线。
@@ -99,7 +92,6 @@ tech_artifact_resonance_manufacturing = {
 	weight = 85
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -118,7 +110,6 @@ tech_artifact_seven_day_logistics = {
 	weight = 70
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 		has_tradition = tr_artifact_court_finish
 	}
 
@@ -139,7 +130,6 @@ tech_artifact_destiny_economy = {
 	weight = 45
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -160,7 +150,6 @@ tech_artifact_phase_energy = {
 	weight = 70
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -179,7 +168,6 @@ tech_artifact_phase_extraction = {
 	weight = 70
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -198,7 +186,6 @@ tech_artifact_crossing_trade = {
 	weight = 70
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -217,7 +204,6 @@ tech_artifact_civic_industry = {
 	weight = 65
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -237,7 +223,6 @@ tech_artifact_rare_resonance = {
 	weight = 50
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 }
 
@@ -253,7 +238,6 @@ tech_artifact_covenant_administration = {
 	weight = 45
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 
 	modifier = {
@@ -273,7 +257,6 @@ tech_artifact_relic_archive_restoration = {
 	weight = 35
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 }
 
@@ -289,7 +272,6 @@ tech_artifact_destiny_city_project = {
 	weight = 30
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 }
 

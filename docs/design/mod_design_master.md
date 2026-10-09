@@ -4,6 +4,8 @@
 
 2026-10-09用户确认自由组合为主、少量固定搭档；[成长与文明路线提案](artifact_civilization_growth_and_combinations_v0.1.md)整理十人的扩展分工及科技／传统／飞升接口，具体档位、能力和搭档实例尚待定稿。科学家未分级的大额产出与仓储属于临时测试，已移到独立默认关闭法令，不纳入正式成长数值。
 
+随后A批已实现共有研究入口和丽／安首都工坊，正常双人月度流程及关键读档通过，研究前置为受控试玩条件。见[首版玩法](../mechanics/artifact_engineering_play_guide_v0.1.md)与[A批记录](../../reports/artifact_engineering_batch_a_2026-10-09.md)；十人正式成长和固定搭档接续B批。
+
 ## 1. 项目定位
 
 《神器使》Stellaris Mod 的长期方向是：让《永远的七日之都》进入 Stellaris 银河时代。

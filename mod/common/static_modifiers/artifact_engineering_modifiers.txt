@@ -1,0 +1,4 @@
+# 实验完成后的原殖民地工坊成果；研究方向通过独立选择发放。
+artifact_engineering_calibrated_workshop = {
+    planet_building_build_speed_mult = 0.10
+}

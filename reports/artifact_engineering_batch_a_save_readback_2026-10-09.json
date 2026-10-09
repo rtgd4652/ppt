@@ -1,0 +1,444 @@
+{
+  "recorded_at_beijing": "2026-10-09T21:47:51+08:00",
+  "controlled_setup": "five prerequisite technologies only; progress and results from normal UI and native monthly pulse",
+  "snapshots": {
+    "original": {
+      "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\M4-ten-portraits-2245.sav",
+      "date": "2245.08.29",
+      "country_id": 0,
+      "capital": "0",
+      "flags": {},
+      "variables": {
+        "ar_an_completed_count": "1",
+        "ar_li_completed_count": "1"
+      },
+      "artifact_technology_status": [],
+      "participants": [
+        {
+          "id": "16777290",
+          "roles": [
+            "ar_an_unique"
+          ],
+          "fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "ar.an.name"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "experience",
+              "value": "114.8532"
+            }
+          ]
+        },
+        {
+          "id": "33554578",
+          "roles": [
+            "ar_li_unique"
+          ],
+          "fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "ar.li.name"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "class",
+              "value": "official"
+            }
+          ]
+        }
+      ],
+      "workshop_modifier_context": [],
+      "remaining_target_mentions": []
+    },
+    "in_progress": {
+      "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\ A-capital-workshop-2245.sav",
+      "date": "2245.10.08",
+      "country_id": 0,
+      "capital": "0",
+      "flags": {
+        "ae_eng_paid": "63202584",
+        "ae_eng_active": "63202584",
+        "ae_eng_lead_li": "63202584",
+        "ae_eng_an_committed": "63202584",
+        "ae_eng_li_committed": "63202584",
+        "ae_eng_month_checked": [
+          {
+            "key": "flag_date",
+            "value": "63203280"
+          },
+          {
+            "key": "flag_days",
+            "value": "21"
+          }
+        ]
+      },
+      "variables": {
+        "ae_eng_civilization_factor": "1",
+        "ae_eng_cost_alloys": "300",
+        "ae_eng_cost_energy": "500",
+        "ae_eng_cost_minerals": "1000",
+        "ae_eng_cost_unity": "200",
+        "ae_eng_factor": "1",
+        "ae_eng_failed_count": "0",
+        "ae_eng_last_progress": "0",
+        "ae_eng_monthly_work": "22",
+        "ae_eng_primary_factor": "1",
+        "ae_eng_progress": "22",
+        "ae_eng_required_work": "120",
+        "ae_eng_support_factor": "1.1",
+        "ar_an_completed_count": "1",
+        "ar_li_completed_count": "1"
+      },
+      "artifact_technology_status": [
+        {
+          "key": "technology",
+          "value": "tech_artifact_tarot_calculation"
+        },
+        {
+          "key": "technology",
+          "value": "tech_artifact_black_gate_observation"
+        },
+        {
+          "key": "technology",
+          "value": "tech_artifact_central_court_protocols"
+        },
+        {
+          "key": "technology",
+          "value": "tech_artifact_relic_fabrication"
+        },
+        {
+          "key": "technology",
+          "value": "tech_artifact_tarot_economy"
+        },
+        {
+          "key": "last_increased_tech",
+          "value": "tech_artifact_tarot_economy"
+        }
+      ],
+      "participants": [
+        {
+          "id": "16777290",
+          "roles": [
+            "ar_an_unique"
+          ],
+          "fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "ar.an.name"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "experience",
+              "value": "114.8532"
+            }
+          ]
+        },
+        {
+          "id": "33554578",
+          "roles": [
+            "ar_li_unique"
+          ],
+          "fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "ar.li.name"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "class",
+              "value": "official"
+            }
+          ]
+        }
+      ],
+      "workshop_modifier_context": [],
+      "remaining_target_mentions": [
+        "\t\t\t\tae_eng_target0=63202584",
+        "\t\t\t\t\tname=\"ae_eng_target\"",
+        "\tname=\"ae_eng_target0\""
+      ]
+    },
+    "completed": {
+      "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\A-capital-workshop-done-2246.sav",
+      "date": "2246.03.01",
+      "country_id": 0,
+      "capital": "0",
+      "flags": {
+        "ae_eng_selected_manufacturing": "63206880",
+        "ae_eng_month_checked": [
+          {
+            "key": "flag_date",
+            "value": "63206880"
+          },
+          {
+            "key": "flag_days",
+            "value": "28"
+          }
+        ],
+        "ae_eng_completed": "63206880"
+      },
+      "variables": {
+        "ae_eng_civilization_factor": "1",
+        "ae_eng_cost_alloys": "300",
+        "ae_eng_cost_energy": "500",
+        "ae_eng_cost_minerals": "1000",
+        "ae_eng_cost_unity": "200",
+        "ae_eng_factor": "1",
+        "ae_eng_failed_count": "0",
+        "ae_eng_last_progress": "0",
+        "ae_eng_monthly_work": "0",
+        "ae_eng_primary_factor": "1",
+        "ae_eng_progress": "120",
+        "ae_eng_required_work": "120",
+        "ae_eng_support_factor": "1.1",
+        "ar_an_completed_count": "1",
+        "ar_li_completed_count": "1"
+      },
+      "artifact_technology_status": [
+        {
+          "key": "technology",
+          "value": "tech_artifact_tarot_calculation"
+        },
+        {
+          "key": "technology",
+          "value": "tech_artifact_black_gate_observation"
+        },
+        {
+          "key": "technology",
+          "value": "tech_artifact_central_court_protocols"
+        },
+        {
+          "key": "technology",
+          "value": "tech_artifact_relic_fabrication"
+        },
+        {
+          "key": "technology",
+          "value": "tech_artifact_tarot_economy"
+        },
+        {
+          "key": "alternatives",
+          "value": [
+            {
+              "key": "physics",
+              "value": [
+                {
+                  "key": "",
+                  "value": "tech_lasers_2"
+                },
+                {
+                  "key": "",
+                  "value": "tech_physics_1"
+                },
+                {
+                  "key": "",
+                  "value": "tech_power_plant_2"
+                }
+              ]
+            },
+            {
+              "key": "society",
+              "value": [
+                {
+                  "key": "",
+                  "value": "tech_doctrine_fleet_size_1"
+                },
+                {
+                  "key": "",
+                  "value": "tech_society_1"
+                },
+                {
+                  "key": "",
+                  "value": "tech_planetary_unification"
+                }
+              ]
+            },
+            {
+              "key": "engineering",
+              "value": [
+                {
+                  "key": "",
+                  "value": "tech_engineering_1"
+                },
+                {
+                  "key": "",
+                  "value": "tech_powered_exoskeletons"
+                },
+                {
+                  "key": "",
+                  "value": "tech_space_mining_1"
+                },
+                {
+                  "key": "",
+                  "value": "tech_artifact_resonance_manufacturing"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "key": "always_available_tech",
+          "value": "tech_artifact_resonance_manufacturing"
+        },
+        {
+          "key": "last_increased_tech",
+          "value": "tech_artifact_tarot_economy"
+        }
+      ],
+      "participants": [
+        {
+          "id": "16777290",
+          "roles": [
+            "ar_an_unique"
+          ],
+          "fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "ar.an.name"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "experience",
+              "value": "219.2652"
+            }
+          ]
+        },
+        {
+          "id": "33554578",
+          "roles": [
+            "ar_li_unique"
+          ],
+          "fields": [
+            {
+              "key": "name",
+              "value": [
+                {
+                  "key": "full_names",
+                  "value": [
+                    {
+                      "key": "key",
+                      "value": "ar.li.name"
+                    }
+                  ]
+                },
+                {
+                  "key": "use_full_regnal_name",
+                  "value": "yes"
+                }
+              ]
+            },
+            {
+              "key": "class",
+              "value": "official"
+            },
+            {
+              "key": "experience",
+              "value": "104.412"
+            }
+          ]
+        }
+      ],
+      "workshop_modifier_context": [
+        "e=0.29952\n\t\t\ttimed_modifier=\n\t\t\t{\n\t\t\t\titems=\n\t\t\t\t{\n\t\t\t\t\t\n\t\t\t\t\t{\n\t\t\t\t\t\tmodifier=\"artifact_engineering_calibrated_workshop\"\n\t\t\t\t\t\tdays=1800\n\t\t\t\t\t}\n \n\t\t\t\t}\n\t\t\t}\n\t\t\tentity=3\n\t\t\tdeposits=\n\t\t\t{\n\t\t\t\t291 292 293 294 295 296 297 298 299 300 301 302 303 \n\t\t\t}\n\t\t}\n\t\t4=\n\t\t{\n\t\t\tplanet_class=\"pc_toxic\"\n\t\t\tplanet_size=25\n\t\t\tcarrier_binary_flags=3\n\t\t\tbuild_queue=119\n\t\t\tname=\n\t\t\t{\n\t\t\t"
+      ],
+      "remaining_target_mentions": [
+        "\t\t\t\t\tname=\"ae_eng_target\""
+      ]
+    }
+  },
+  "runtime_log_lines": [
+    "[21:32:25][game_application.cpp:250]: Game Version: Cygnus v4.5.2",
+    "[21:38:23][effect_impl.cpp:22217]: [2245.8.29] Log effect, file:  line: 1. ENGINEERING_TEST_RESEARCH_READY",
+    "[21:39:57][effect_impl.cpp:22217]: [2245.9.2] Log effect, common/scripted_effects/artifact_engineering_effects.txt:153 @ scripted effect artifact_engineering_start_common at common/scripted_effects/artifact_engineering_effects.txt:191 @ scripted effect artifact_engineering_start_li_an at file: events/artifact_engineering_events.txt line: 73. ENGINEERING|capital_workshop_started",
+    "[21:41:15][effect_impl.cpp:22217]: [2245.10.1] Log effect, common/scripted_effects/artifact_engineering_effects.txt:233 @ scripted effect artifact_engineering_monthly at file: events/artifact_engineering_events.txt line: 9. ENGINEERING|work_advanced",
+    "[21:44:00][effect_impl.cpp:22217]: [2245.11.1] Log effect, common/scripted_effects/artifact_engineering_effects.txt:233 @ scripted effect artifact_engineering_monthly at file: events/artifact_engineering_events.txt line: 9. ENGINEERING|work_advanced",
+    "[21:44:06][effect_impl.cpp:22217]: [2245.12.1] Log effect, common/scripted_effects/artifact_engineering_effects.txt:233 @ scripted effect artifact_engineering_monthly at file: events/artifact_engineering_events.txt line: 9. ENGINEERING|work_advanced",
+    "[21:44:12][effect_impl.cpp:22217]: [2246.1.1] Log effect, common/scripted_effects/artifact_engineering_effects.txt:233 @ scripted effect artifact_engineering_monthly at file: events/artifact_engineering_events.txt line: 9. ENGINEERING|work_advanced",
+    "[21:44:18][effect_impl.cpp:22217]: [2246.2.1] Log effect, common/scripted_effects/artifact_engineering_effects.txt:233 @ scripted effect artifact_engineering_monthly at file: events/artifact_engineering_events.txt line: 9. ENGINEERING|work_advanced",
+    "[21:44:24][effect_impl.cpp:22217]: [2246.3.1] Log effect, common/scripted_effects/artifact_engineering_effects.txt:233 @ scripted effect artifact_engineering_monthly at file: events/artifact_engineering_events.txt line: 9. ENGINEERING|work_advanced",
+    "[21:44:24][effect_impl.cpp:22217]: [2246.3.1] Log effect, common/scripted_effects/artifact_engineering_effects.txt:220 @ scripted effect artifact_engineering_complete at common/scripted_effects/artifact_engineering_effects.txt:234 @ scripted effect artifact_engineering_monthly at file: events/artifact_engineering_events.txt line: 9. ENGINEERING|capital_workshop_completed",
+    "[21:45:31][effect_impl.cpp:22217]: [2246.3.1] Log effect, common/scripted_effects/artifact_engineering_effects.txt:246 @ scripted effect artifact_engineering_claim_manufacturing at file: events/artifact_engineering_events.txt line: 114. ENGINEERING|research_option_manufacturing"
+  ],
+  "related_error_lines": [],
+  "enabled_mods": [
+    "mod/aemusa_artifact_user.mod"
+  ]
+}

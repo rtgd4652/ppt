@@ -1,0 +1,126 @@
+# 首批只管理一项首都工程和两名实际参与者；不读取个人转变资格。
+artifact_engineering_player = {
+    ar_player = yes
+    owner_main_species = { is_species_class = "ARTIFACT_USER" }
+}
+
+artifact_engineering_an_qualified = {
+    ar_an_official = yes
+    check_variable = { which = ar_an_completed_count value >= 1 }
+    NOR = {
+        has_country_flag = ar_an_active
+        has_country_flag = ar_an_ready
+        has_country_flag = ar_an_working
+        has_country_flag = ar_an_record_ready
+        has_country_flag = ar_an_cooldown
+    }
+}
+
+artifact_engineering_li_qualified = {
+    OR = { ar_li_official = yes ar_li_scientist = yes }
+    check_variable = { which = ar_li_completed_count value >= 1 }
+    NOR = {
+        has_country_flag = ar_li_active
+        has_country_flag = ar_li_ready
+        has_country_flag = ar_li_working
+        has_country_flag = ar_li_record_ready
+        has_country_flag = ar_li_risk
+        has_country_flag = ar_li_cooldown
+    }
+}
+
+artifact_engineering_capital_ready = {
+    exists = capital_scope
+    capital_scope = {
+        is_colony = yes
+        is_owned_by = root
+        is_controlled_by = root
+        NOT = { has_orbital_bombardment = yes }
+    }
+}
+
+artifact_engineering_target_valid = {
+    exists = event_target:ae_eng_target@root
+    event_target:ae_eng_target@root = {
+        is_colony = yes
+        is_owned_by = root
+        has_planet_flag = ae_eng_target@root
+    }
+}
+
+# 有效实验可以将下一步研究变成常驻选项，但不免费授予科技或跳过前置。
+artifact_engineering_manufacturing_available = {
+    has_technology = "tech_artifact_relic_fabrication"
+    NOR = {
+        has_technology = "tech_artifact_resonance_manufacturing"
+        has_tech_option = "tech_artifact_resonance_manufacturing"
+    }
+}
+
+artifact_engineering_energy_available = {
+    has_technology = "tech_artifact_tarot_economy"
+    NOR = {
+        has_technology = "tech_artifact_phase_energy"
+        has_tech_option = "tech_artifact_phase_energy"
+    }
+}
+
+artifact_engineering_trade_available = {
+    has_technology = "tech_artifact_central_court_protocols"
+    NOR = {
+        has_technology = "tech_artifact_crossing_trade"
+        has_tech_option = "tech_artifact_crossing_trade"
+    }
+}
+
+artifact_engineering_research_needed = {
+    OR = {
+        artifact_engineering_manufacturing_available = yes
+        artifact_engineering_energy_available = yes
+        artifact_engineering_trade_available = yes
+    }
+}
+
+artifact_engineering_cost_available = {
+    has_resource = { type = energy amount >= 500 }
+    has_resource = { type = minerals amount >= 1000 }
+    has_resource = { type = alloys amount >= 300 }
+    has_resource = { type = unity amount >= 200 }
+}
+
+artifact_engineering_idle = {
+    artifact_engineering_player = yes
+    has_technology = "tech_artifact_tarot_economy"
+    NOR = {
+        has_country_flag = ae_eng_active
+        has_country_flag = ae_eng_ready
+        has_country_flag = ae_eng_completed
+        has_country_flag = ae_eng_cooldown
+    }
+}
+
+artifact_engineering_start_available = {
+    artifact_engineering_idle = yes
+    artifact_engineering_capital_ready = yes
+    artifact_engineering_cost_available = yes
+    artifact_engineering_research_needed = yes
+}
+
+artifact_engineering_work_ready = {
+    has_country_flag = ae_eng_active
+    has_country_flag = ae_eng_paid
+    artifact_engineering_target_valid = yes
+    event_target:ae_eng_target@root = {
+        is_controlled_by = root
+        NOT = { has_orbital_bombardment = yes }
+    }
+    OR = { has_country_flag = ae_eng_an_committed has_country_flag = ae_eng_li_committed }
+    OR = {
+        NOT = { has_country_flag = ae_eng_an_committed }
+        artifact_engineering_an_qualified = yes
+    }
+    OR = {
+        NOT = { has_country_flag = ae_eng_li_committed }
+        artifact_engineering_li_qualified = yes
+    }
+}

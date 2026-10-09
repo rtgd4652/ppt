@@ -65,7 +65,7 @@ ar_an_work_ready = {
 ar_an_idle = {
     ar_player = yes
     ar_an_available = yes
-    NOR = { has_country_flag = ar_an_active has_country_flag = ar_an_ready has_country_flag = ar_an_working has_country_flag = ar_an_record_ready has_country_flag = ar_an_cooldown }
+    NOR = { has_country_flag = ar_an_active has_country_flag = ar_an_ready has_country_flag = ar_an_working has_country_flag = ar_an_record_ready has_country_flag = ar_an_cooldown has_country_flag = ae_eng_an_committed }
 }
 
 ar_greysa_available = {
@@ -268,7 +268,7 @@ ar_li_work_ready = {
 ar_li_idle = {
     ar_player = yes
     ar_li_available = yes
-    NOR = { has_country_flag = ar_li_active has_country_flag = ar_li_ready has_country_flag = ar_li_working has_country_flag = ar_li_record_ready has_country_flag = ar_li_cooldown }
+    NOR = { has_country_flag = ar_li_active has_country_flag = ar_li_ready has_country_flag = ar_li_working has_country_flag = ar_li_record_ready has_country_flag = ar_li_cooldown has_country_flag = ae_eng_li_committed }
 }
 
 ar_an_planet_start_available = {

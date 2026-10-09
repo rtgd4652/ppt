@@ -1,6 +1,6 @@
 # 项目文档索引
 
-更新：2026-10-08。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)。
+更新：2026-10-09。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)。
 
 ## 进入项目
 
@@ -20,6 +20,8 @@
 - [十名角色完成矩阵](../knowledge/characters/v1.0_character_completion_matrix.md)
 - [十名神器使首版玩法](mechanics/artifact_users_play_guide_v1.0.md)
 - [领袖成长与职责说明](mechanics/leader_growth_and_duty_v1.0.md)
+- [成长与自由组合提案](design/artifact_civilization_growth_and_combinations_v0.1.md)
+- [首都工坊试验玩法](mechanics/artifact_engineering_play_guide_v0.1.md)：A批丽／安单人或自由协作；[运行记录](../reports/artifact_engineering_batch_a_2026-10-09.md)区分受控研究前置与正常月度工作。
 - [知识库与正史入口](../knowledge/README.md)
 
 ## 美术与验收

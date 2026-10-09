@@ -1,0 +1,276 @@
+# 首都工坊独立账本；不重置个人核心、不写主线章节或转变事实。
+artifact_engineering_rebind = {
+    if = {
+        limit = { exists = event_target:ae_eng_target@root }
+        event_target:ae_eng_target@root = { save_event_target_as = ae_eng_target }
+    }
+    if = { limit = { NOT = { is_variable_set = ae_eng_progress } } set_variable = { which = ae_eng_progress value = 0 } }
+    if = { limit = { NOT = { is_variable_set = ae_eng_required_work } } set_variable = { which = ae_eng_required_work value = 120 } }
+    if = { limit = { NOT = { is_variable_set = ae_eng_monthly_work } } set_variable = { which = ae_eng_monthly_work value = 0 } }
+    if = { limit = { NOT = { is_variable_set = ae_eng_failed_count } } set_variable = { which = ae_eng_failed_count value = 0 } }
+    if = { limit = { NOT = { is_variable_set = ae_eng_last_progress } } set_variable = { which = ae_eng_last_progress value = 0 } }
+}
+
+artifact_engineering_clear_task = {
+    if = {
+        limit = { exists = event_target:ae_eng_target@root }
+        event_target:ae_eng_target@root = { remove_planet_flag = ae_eng_target@root }
+        clear_global_event_target = ae_eng_target@root
+    }
+    remove_country_flag = ae_eng_active
+    remove_country_flag = ae_eng_paid
+    remove_country_flag = ae_eng_ready
+    remove_country_flag = ae_eng_lead_an
+    remove_country_flag = ae_eng_lead_li
+    remove_country_flag = ae_eng_an_committed
+    remove_country_flag = ae_eng_li_committed
+    set_variable = { which = ae_eng_monthly_work value = 0 }
+}
+
+artifact_engineering_abort = {
+    if = {
+        limit = { has_country_flag = ae_eng_active }
+        set_variable = { which = ae_eng_last_progress value = ae_eng_progress }
+        change_variable = { which = ae_eng_failed_count value = 1 }
+        artifact_engineering_clear_task = yes
+        set_timed_country_flag = { flag = ae_eng_cooldown days = 90 }
+        log = "ENGINEERING|project_stopped_costs_retained"
+    }
+}
+
+artifact_engineering_refresh = {
+    artifact_engineering_rebind = yes
+    if = {
+        limit = { has_country_flag = ae_eng_active artifact_engineering_target_valid = no }
+        artifact_engineering_abort = yes
+        country_event = { id = artifact_engineering.30 }
+    }
+    if = {
+        limit = { artifact_engineering_work_ready = yes }
+        artifact_engineering_compute_work = yes
+    }
+    else = { set_variable = { which = ae_eng_monthly_work value = 0 } }
+}
+
+# 分别读取实际等级；这些档位只用于本项目的首版效率，不替代十人正式成长。
+artifact_engineering_an_factor = {
+    set_variable = { which = ae_eng_factor value = 1 }
+    if = {
+        limit = { any_owned_leader = { has_leader_flag = ar_an_unique has_base_skill >= 21 } }
+        set_variable = { which = ae_eng_factor value = 1.50 }
+    }
+    else_if = {
+        limit = { any_owned_leader = { has_leader_flag = ar_an_unique has_base_skill >= 11 } }
+        set_variable = { which = ae_eng_factor value = 1.25 }
+    }
+}
+
+artifact_engineering_li_factor = {
+    set_variable = { which = ae_eng_factor value = 1 }
+    if = {
+        limit = { any_owned_leader = { has_leader_flag = ar_li_unique has_base_skill >= 21 } }
+        set_variable = { which = ae_eng_factor value = 1.50 }
+    }
+    else_if = {
+        limit = { any_owned_leader = { has_leader_flag = ar_li_unique has_base_skill >= 11 } }
+        set_variable = { which = ae_eng_factor value = 1.25 }
+    }
+}
+
+artifact_engineering_compute_work = {
+    set_variable = { which = ae_eng_monthly_work value = 20 }
+    set_variable = { which = ae_eng_primary_factor value = 1 }
+    set_variable = { which = ae_eng_support_factor value = 1 }
+    set_variable = { which = ae_eng_civilization_factor value = 1 }
+    if = {
+        limit = { has_country_flag = ae_eng_lead_an }
+        artifact_engineering_an_factor = yes
+        set_variable = { which = ae_eng_primary_factor value = ae_eng_factor }
+        if = {
+            limit = { has_country_flag = ae_eng_li_committed }
+            set_variable = { which = ae_eng_support_factor value = 1.10 }
+            if = {
+                limit = { any_owned_leader = { has_leader_flag = ar_li_unique has_base_skill >= 21 } }
+                set_variable = { which = ae_eng_support_factor value = 1.30 }
+            }
+            else_if = {
+                limit = { any_owned_leader = { has_leader_flag = ar_li_unique has_base_skill >= 11 } }
+                set_variable = { which = ae_eng_support_factor value = 1.20 }
+            }
+        }
+    }
+    else_if = {
+        limit = { has_country_flag = ae_eng_lead_li }
+        artifact_engineering_li_factor = yes
+        set_variable = { which = ae_eng_primary_factor value = ae_eng_factor }
+        if = {
+            limit = { has_country_flag = ae_eng_an_committed }
+            set_variable = { which = ae_eng_support_factor value = 1.10 }
+            if = {
+                limit = { any_owned_leader = { has_leader_flag = ar_an_unique has_base_skill >= 21 } }
+                set_variable = { which = ae_eng_support_factor value = 1.30 }
+            }
+            else_if = {
+                limit = { any_owned_leader = { has_leader_flag = ar_an_unique has_base_skill >= 11 } }
+                set_variable = { which = ae_eng_support_factor value = 1.20 }
+            }
+        }
+    }
+    if = {
+        limit = { has_technology = "tech_artifact_resonance_manufacturing" }
+        set_variable = { which = ae_eng_civilization_factor value = 1.25 }
+    }
+    multiply_variable = { which = ae_eng_monthly_work value = ae_eng_primary_factor }
+    multiply_variable = { which = ae_eng_monthly_work value = ae_eng_support_factor }
+    multiply_variable = { which = ae_eng_monthly_work value = ae_eng_civilization_factor }
+}
+
+artifact_engineering_start_common = {
+    if = {
+        limit = {
+            artifact_engineering_start_available = yes
+            OR = { has_country_flag = ae_eng_lead_an has_country_flag = ae_eng_lead_li }
+        }
+        capital_scope = {
+            save_global_event_target_as = ae_eng_target@root
+            save_event_target_as = ae_eng_target
+            set_planet_flag = ae_eng_target@root
+        }
+        # 每块仅一种资源，沿用本机已经验证的实际扣费形式。
+        add_resource = { energy = -500 }
+        add_resource = { minerals = -1000 }
+        add_resource = { alloys = -300 }
+        add_resource = { unity = -200 }
+        set_variable = { which = ae_eng_cost_energy value = 500 }
+        set_variable = { which = ae_eng_cost_minerals value = 1000 }
+        set_variable = { which = ae_eng_cost_alloys value = 300 }
+        set_variable = { which = ae_eng_cost_unity value = 200 }
+        set_variable = { which = ae_eng_progress value = 0 }
+        set_variable = { which = ae_eng_required_work value = 120 }
+        set_country_flag = ae_eng_paid
+        set_country_flag = ae_eng_active
+        artifact_engineering_compute_work = yes
+        log = "ENGINEERING|capital_workshop_started"
+    }
+}
+
+artifact_engineering_start_an = {
+    if = {
+        limit = { artifact_engineering_start_available = yes artifact_engineering_an_qualified = yes }
+        set_country_flag = ae_eng_lead_an
+        set_country_flag = ae_eng_an_committed
+        artifact_engineering_start_common = yes
+    }
+}
+
+artifact_engineering_start_li = {
+    if = {
+        limit = { artifact_engineering_start_available = yes artifact_engineering_li_qualified = yes }
+        set_country_flag = ae_eng_lead_li
+        set_country_flag = ae_eng_li_committed
+        artifact_engineering_start_common = yes
+    }
+}
+
+artifact_engineering_start_an_li = {
+    if = {
+        limit = { artifact_engineering_start_available = yes artifact_engineering_an_qualified = yes artifact_engineering_li_qualified = yes }
+        set_country_flag = ae_eng_lead_an
+        set_country_flag = ae_eng_an_committed
+        set_country_flag = ae_eng_li_committed
+        artifact_engineering_start_common = yes
+    }
+}
+
+artifact_engineering_start_li_an = {
+    if = {
+        limit = { artifact_engineering_start_available = yes artifact_engineering_an_qualified = yes artifact_engineering_li_qualified = yes }
+        set_country_flag = ae_eng_lead_li
+        set_country_flag = ae_eng_an_committed
+        set_country_flag = ae_eng_li_committed
+        artifact_engineering_start_common = yes
+    }
+}
+
+artifact_engineering_complete = {
+    if = {
+        limit = {
+            artifact_engineering_work_ready = yes
+            check_variable = { which = ae_eng_progress value >= ae_eng_required_work }
+            NOT = { has_country_flag = ae_eng_completed }
+        }
+        # 先结束活动队列，避免后续窗口或经验回调重复结算。
+        remove_country_flag = ae_eng_active
+        set_country_flag = ae_eng_completed
+        set_country_flag = ae_eng_ready
+        set_variable = { which = ae_eng_progress value = ae_eng_required_work }
+        event_target:ae_eng_target@root = {
+            add_modifier = { modifier = artifact_engineering_calibrated_workshop days = 1800 }
+        }
+        if = {
+            limit = { has_country_flag = ae_eng_an_committed }
+            every_owned_leader = { limit = { has_leader_flag = ar_an_unique } add_experience = 200 }
+        }
+        if = {
+            limit = { has_country_flag = ae_eng_li_committed }
+            every_owned_leader = { limit = { has_leader_flag = ar_li_unique } add_experience = 200 }
+        }
+        remove_country_flag = ae_eng_an_committed
+        remove_country_flag = ae_eng_li_committed
+        log = "ENGINEERING|capital_workshop_completed"
+        country_event = { id = artifact_engineering.20 }
+    }
+}
+
+artifact_engineering_monthly = {
+    artifact_engineering_refresh = yes
+    if = {
+        limit = { has_country_flag = ae_eng_active NOT = { has_country_flag = ae_eng_month_checked } }
+        set_timed_country_flag = { flag = ae_eng_month_checked days = 28 }
+        if = {
+            limit = { artifact_engineering_work_ready = yes }
+            change_variable = { which = ae_eng_progress value = ae_eng_monthly_work }
+            log = "ENGINEERING|work_advanced"
+            artifact_engineering_complete = yes
+        }
+    }
+}
+
+# 领取前再次核对常驻候选与前置；旧窗口不能重复增加研究选项。
+artifact_engineering_claim_manufacturing = {
+    if = {
+        limit = { has_country_flag = ae_eng_ready has_country_flag = ae_eng_completed artifact_engineering_manufacturing_available = yes }
+        add_research_option = "tech_artifact_resonance_manufacturing"
+        set_country_flag = ae_eng_selected_manufacturing
+        artifact_engineering_clear_task = yes
+        log = "ENGINEERING|research_option_manufacturing"
+    }
+}
+
+artifact_engineering_claim_energy = {
+    if = {
+        limit = { has_country_flag = ae_eng_ready has_country_flag = ae_eng_completed artifact_engineering_energy_available = yes }
+        add_research_option = "tech_artifact_phase_energy"
+        set_country_flag = ae_eng_selected_energy
+        artifact_engineering_clear_task = yes
+        log = "ENGINEERING|research_option_energy"
+    }
+}
+
+artifact_engineering_claim_trade = {
+    if = {
+        limit = { has_country_flag = ae_eng_ready has_country_flag = ae_eng_completed artifact_engineering_trade_available = yes }
+        add_research_option = "tech_artifact_crossing_trade"
+        set_country_flag = ae_eng_selected_trade
+        artifact_engineering_clear_task = yes
+        log = "ENGINEERING|research_option_trade"
+    }
+}
+
+artifact_engineering_archive = {
+    if = {
+        limit = { has_country_flag = ae_eng_ready has_country_flag = ae_eng_completed }
+        artifact_engineering_clear_task = yes
+        log = "ENGINEERING|research_records_archived"
+    }
+}
