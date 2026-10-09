@@ -102,6 +102,25 @@ edict_aemusa_debug_storage = {
 	}
 }
 
+# 旧原型测试加成：与普通测试仓储分开，避免旧档已有仓储法令时自动得到大额产出。
+edict_aemusa_debug_prototype_boost = {
+	length = -1 # 默认未启用；由玩家开启，关闭后自动撤销两项加成。
+	icon = "GFX_edict_type_policy"
+
+	potential = {
+		is_ai = no # 仅供玩家隔离测试。
+	}
+
+	modifier = {
+		country_resource_max_add = 800000000 # 沿用早期原型的测试容量，不作为正式成长数值。
+		country_produces_mult = 50 # 原测试值为全国产出 +5000%，不是旧注释中的 +20%。
+	}
+
+	ai_weight = {
+		weight = 0 # 禁止 AI 启用。
+	}
+}
+
 # 临时测试法令：给玩家快速灌入测试资源、永久超频修正，并把神器使领袖补到 30 级。
 edict_aemusa_debug_overdrive = {
 	length = 1 # 立即触发，一天后法令到期；永久效果通过国家修正保存，避免零时长崩溃。
