@@ -23,6 +23,7 @@
 - [成长与自由组合提案](design/artifact_civilization_growth_and_combinations_v0.1.md)
 - [十人成长基准B1记录](../reports/artifact_growth_batch_b1_2026-10-09.md)：名册和公共计算已接入；各人的分级核心效果从B2继续，正式固定搭档按原著决定。
 - [成长核心B2首批记录](../reports/artifact_growth_batch_b2a_2026-10-09.md)：安的时序记录按取得时档位提供有限用途，丽按实际成长推进付费施工；加载和页面检查与完整运行边界见报告。
+- [10月9日收工与续接](../reports/development_closeout_2026-10-09.md)：保存A批、B1、B2首批检查点、保留档案和用户决定，下次先补B2轻量游戏检查。
 - [首都工坊试验玩法](mechanics/artifact_engineering_play_guide_v0.1.md)：A批丽／安单人或自由协作；[运行记录](../reports/artifact_engineering_batch_a_2026-10-09.md)区分受控研究前置与正常月度工作。
 - [知识库与正史入口](../knowledge/README.md)
 
