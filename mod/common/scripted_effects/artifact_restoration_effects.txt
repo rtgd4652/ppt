@@ -341,6 +341,17 @@ ar_rebind = {
 
     if = { limit = { NOT = { is_variable_set = ar_an_progress } } set_variable = { which = ar_an_progress value = 0 } }
     if = { limit = { NOT = { is_variable_set = ar_an_completed_count } } set_variable = { which = ar_an_completed_count value = 0 } }
+    # 旧档已经取得的记录沿用基础档，不按读档后的等级追溯放大。
+    if = {
+        limit = {
+            has_country_flag = ar_an_record_ready
+            NOT = { is_variable_set = ar_an_record_stage }
+        }
+        set_variable = {
+            which = ar_an_record_stage
+            value = 1
+        }
+    }
     if = { limit = { NOT = { is_variable_set = ar_an_cost_energy } } set_variable = { which = ar_an_cost_energy value = 0 } }
     if = { limit = { NOT = { is_variable_set = ar_an_cost_unity } } set_variable = { which = ar_an_cost_unity value = 0 } }
     if = { limit = { NOT = { is_variable_set = ar_an_cost_consumer_goods } } set_variable = { which = ar_an_cost_consumer_goods value = 0 } }
@@ -673,9 +684,15 @@ ar_an_monthly = {
             ar_an_work_ready = yes
             OR = { has_country_flag = ar_an_planet has_country_flag = ar_an_combat_observed }
         }
+        artifact_growth_read_an = yes
         change_variable = { which = ar_an_progress value = 1 }
         if = {
             limit = { check_variable = { which = ar_an_progress value >= 2 } }
+            # 只在真实记录形成时固定成长档，后来的升级不能改变旧记录。
+            set_variable = {
+                which = ar_an_record_stage
+                value = ag_an_stage
+            }
             remove_country_flag = ar_an_active
             set_country_flag = ar_an_record_ready
             set_country_flag = ar_an_completed
@@ -690,7 +707,16 @@ ar_an_monthly = {
 ar_an_apply_record = {
     if = {
         limit = { ar_an_apply_available = yes }
-        event_target:ar_an_target@root = { add_modifier = { modifier = ar_an_learned_service days = 90 } }
+        # 同一有限改进按记录档延长持续时间，仍只能消耗一次。
+        if = {
+            limit = { check_variable = { which = ar_an_record_stage value >= 3 } }
+            event_target:ar_an_target@root = { add_modifier = { modifier = ar_an_learned_service days = 150 } }
+        }
+        else_if = {
+            limit = { check_variable = { which = ar_an_record_stage value >= 2 } }
+            event_target:ar_an_target@root = { add_modifier = { modifier = ar_an_learned_service days = 120 } }
+        }
+        else = { event_target:ar_an_target@root = { add_modifier = { modifier = ar_an_learned_service days = 90 } } }
         ar_an_clear_task = yes
         log = "RESTORATION|an_record_applied_once"
     }
@@ -700,7 +726,27 @@ ar_an_escape = {
     if = {
         limit = { ar_an_escape_available = yes }
         set_timed_country_flag = { flag = ar_an_escape_recovery days = 180 }
-        event_target:ar_an_target@root = { set_mia = mia_return_home set_mia_return_delay = 60 }
+        # 成长改善准备后的返回速度，不复活舰船，也不跳过实际交战条件。
+        if = {
+            limit = { check_variable = { which = ar_an_record_stage value >= 3 } }
+            event_target:ar_an_target@root = {
+                set_mia = mia_return_home
+                set_mia_return_delay = 30
+            }
+        }
+        else_if = {
+            limit = { check_variable = { which = ar_an_record_stage value >= 2 } }
+            event_target:ar_an_target@root = {
+                set_mia = mia_return_home
+                set_mia_return_delay = 45
+            }
+        }
+        else = {
+            event_target:ar_an_target@root = {
+                set_mia = mia_return_home
+                set_mia_return_delay = 60
+            }
+        }
         ar_an_clear_task = yes
         log = "RESTORATION|an_local_escape_record_consumed"
     }
@@ -915,7 +961,9 @@ ar_li_monthly = {
         }
         else_if = {
             limit = { NOT = { has_country_flag = ar_li_risk } ar_li_work_ready = yes }
-            change_variable = { which = ar_li_progress value = 1 }
+            # 付费施工按丽的实际成长推进；核账、风险和责任补款不因升级跳过。
+            artifact_growth_read_li = yes
+            change_variable = { which = ar_li_progress value = ag_li_primary }
             ar_li_finish = yes
         }
     }

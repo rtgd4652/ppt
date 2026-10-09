@@ -187,6 +187,8 @@ country_event = {
     immediate = {
         ar_rebind = yes
         ar_refresh = yes
+        artifact_growth_read_an = yes
+        log = "RESTORATION-GROWTH|an_task_opened"
     }
     option = { name = ar.an.begin_planet
         trigger = { ar_an_planet_start_available = yes }
@@ -595,6 +597,8 @@ country_event = {
     immediate = {
         ar_rebind = yes
         ar_refresh = yes
+        artifact_growth_read_li = yes
+        log = "RESTORATION-GROWTH|li_task_opened"
     }
     option = { name = ar.li.begin_planet
         trigger = { ar_li_planet_start_available = yes }

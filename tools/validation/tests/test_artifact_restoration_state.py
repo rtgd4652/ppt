@@ -18,12 +18,13 @@ ROOT = Path(__file__).resolve().parents[3]
 def load(relative):
     text = (ROOT / relative).read_text(encoding='utf-8')
     # 静态解析器不保存比较运算符；仅在测试输入中显式保留运算类型。
-    text = re.sub(r'\b(value|amount)\s*>=\s*([\w.]+)', r'\1_ge = \2', text)
+    text = re.sub(r'\b(value|amount|has_base_skill)\s*>=\s*([\w.]+)', r'\1_ge = \2', text)
     text = re.sub(r'\bplanet_devastation\s*>\s*(\d+)', r'planet_devastation_gt = \1', text)
     return {e.key: e.value for e in parse(text)}
 
 
 EFFECTS = load('mod/common/scripted_effects/artifact_restoration_effects.txt')
+EFFECTS.update(load('mod/common/scripted_effects/artifact_growth_effects.txt'))
 TRIGGERS = load('mod/common/scripted_triggers/artifact_restoration_triggers.txt')
 
 
@@ -41,7 +42,7 @@ class Ledger:
             for cls in ('official', 'scientist', 'commander'):
                 self.external[f'ar_{p}_{cls}'] = True
             self.objects[f'ar_{p}_target'] = {'flags': {f'ar_{p}_target@root'}, 'modifiers': [], 'combat': False, 'bombarded': False, 'controlled': True, 'damaged': True, 'mia': False, 'devastation': 20}
-            self.objects[f'ar_{p}'] = {'xp': 0}
+            self.objects[f'ar_{p}'] = {'xp': 0, 'level': 7, 'flags': {f'ar_{p}_unique'}}
 
     def number(self, value):
         try:
@@ -66,6 +67,15 @@ class Ledger:
             return not any(self.term(e, obj) for e in v)
         if k == 'has_country_flag':
             return v in self.flags
+        if k == 'any_owned_leader':
+            return any(self.condition(v, actor) for key, actor in self.objects.items()
+                       if key in ('ar_an', 'ar_greysa', 'ar_wenzi', 'ar_li'))
+        if k == 'has_leader_flag':
+            return v in obj['flags']
+        if k == 'has_base_skill_ge':
+            return obj['level'] >= self.number(v)
+        if k == 'is_variable_set':
+            return v in self.variables
         if k == 'has_resource':
             return self.resources[scalar(v, 'type')] >= self.number(scalar(v, 'amount_ge'))
         if k == 'check_variable':
@@ -126,6 +136,7 @@ class Ledger:
                 obj['flags'].add(v)
             elif k == 'add_modifier':
                 obj['modifiers'].append(scalar(v, 'modifier'))
+                obj.setdefault('modifier_days', []).append(int(scalar(v, 'days')))
             elif k == 'add_experience':
                 obj['xp'] += float(v)
             elif k == 'set_mia':
@@ -145,6 +156,90 @@ class Ledger:
 
 
 class RestorationStateTests(unittest.TestCase):
+    def test_an_archive_growth_is_fixed_and_local_improvement_is_consumed_once(self):
+        for level, stage, days in ((7, 1, 90), (11, 2, 120), (21, 3, 150)):
+            with self.subTest(level=level):
+                x = Ledger()
+                x.objects['ar_an']['level'] = level
+                x.flags.update(('ar_an_active', 'ar_an_planet'))
+                x.effect('ar_an_monthly')
+                self.assertNotIn('ar_an_record_ready', x.flags)
+                x.effect('ar_an_monthly')
+                self.assertEqual(stage, x.variables['ar_an_record_stage'])
+                self.assertEqual(200, x.objects['ar_an']['xp'])
+                # 取得后升降级、重复月度核验及复制账本均不能改写记录或再授经验。
+                x.objects['ar_an']['level'] = 30 if level == 7 else 7
+                x = deepcopy(x)
+                x.effect('ar_an_monthly')
+                target = x.objects['ar_an_target']
+                x.effect('ar_an_apply_record')
+                x.effect('ar_an_apply_record')
+                self.assertEqual([days], target['modifier_days'])
+                self.assertEqual(1, x.variables['ar_an_completed_count'])
+                self.assertEqual(200, x.objects['ar_an']['xp'])
+                self.assertNotIn('ar_an_record_ready', x.flags)
+
+    def test_an_growth_escape_keeps_real_combat_and_legacy_return_boundary(self):
+        for level, days in ((7, 60), (11, 45), (21, 30)):
+            with self.subTest(level=level):
+                x = Ledger()
+                x.objects['ar_an']['level'] = level
+                x.flags.update(('ar_an_active', 'ar_an_fleet', 'ar_an_combat_observed'))
+                x.effect('ar_an_monthly')
+                x.effect('ar_an_monthly')
+                target = x.objects['ar_an_target']
+                x.effect('ar_an_escape')
+                self.assertFalse(target['mia'])
+                target['combat'] = True
+                x.effect('ar_an_escape')
+                self.assertTrue(target['mia'])
+                self.assertEqual(days, target['return_days'])
+                self.assertIn('ar_an_escape_recovery', x.flags)
+                x.effect('ar_an_escape')
+                self.assertEqual(days, target['return_days'])
+        # 旧记录没有成长字段时，仍按原60日返回，不追溯成当前高等级。
+        old = Ledger()
+        old.objects['ar_an']['level'] = 30
+        old.flags.update(('ar_an_record_ready', 'ar_an_fleet'))
+        target = old.objects['ar_an_target']
+        target['combat'] = True
+        old.effect('ar_an_escape')
+        self.assertEqual(60, target['return_days'])
+
+    def test_li_growth_only_advances_valid_paid_work_and_risk_needs_payment(self):
+        for level, work in ((7, 1), (11, 1.25), (21, 1.5)):
+            with self.subTest(level=level):
+                x = Ledger()
+                x.objects['ar_li']['level'] = level
+                x.effect('ar_li_start_planet')
+                x.effect('ar_li_monthly')
+                self.assertIn('ar_li_ready', x.flags)
+                x.effect('ar_li_fund_full')
+                funded = deepcopy(x.resources)
+                x.effect('ar_li_fund_full')
+                self.assertEqual(funded, x.resources)
+                x.effect('ar_li_monthly')
+                self.assertEqual(work, x.variables['ar_li_progress'])
+                x.external['ar_li_work_ready'] = False
+                x.effect('ar_li_monthly')
+                self.assertEqual(work, x.variables['ar_li_progress'])
+                x.external['ar_li_work_ready'] = True
+                target = x.objects['ar_li_target']
+                target['bombarded'] = True
+                x.effect('ar_li_monthly')
+                self.assertIn('ar_li_risk', x.flags)
+                target['bombarded'] = False
+                x.effect('ar_li_monthly')
+                self.assertEqual(work, x.variables['ar_li_progress'])
+                x.effect('ar_li_resolve_risk')
+                self.assertEqual(funded['energy'] - 150, x.resources['energy'])
+                self.assertEqual(funded['alloys'] - 50, x.resources['alloys'])
+                for _ in range(4):
+                    x.effect('ar_li_monthly')
+                x.effect('ar_li_finish')
+                self.assertEqual(1, x.variables['ar_li_completed_count'])
+                self.assertEqual(['ar_li_public_engineering'], target['modifiers'])
+
     def test_an_requires_real_combat_and_consumes_only_one_record(self):
         x = Ledger()
         x.flags.update(('ar_an_active', 'ar_an_fleet'))
