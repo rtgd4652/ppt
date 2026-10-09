@@ -24,6 +24,7 @@ tools 检查与构建 ───────────────────�
 | 文明底座 | `mod/common/` 的物种、起源、科技、传统、建筑、岗位等 | 开局与文明成长 | 不写主线终局事实 |
 | 白夜馆 | `aemusa_dialogue_events.txt`、法令与界面声明 | 招募、通讯、档案、主线入口 | 读取主线合法入口，不持有唯一进度 |
 | 角色 | 领袖 effects、traits、portraits 与角色事件 | 唯一人物、职业、成长、个人机制 | 不共用他人的机制阶段或冷却 |
+| 成长基准 | `artifact_growth_effects.txt`与名册事件／本地化 | 从实际所有人物与基础等级派生成长阶段及项目基准 | 只重算派生值，不写经验／核心记录；各项目持有参与资格与实际贡献 |
 | 协作工程 | `artifact_engineering_events.txt`及同名前缀effects／triggers／修正 | 实际目标、投入、参与者、月度工作及一次性研究成果 | 只读取角色资格并持有参与占用，不重置个人核心，不写主线转变事实；乘算限定本项目 |
 | 主线编排 | `aemusa_main_story_events.txt`、分包事件文件 | 章节顺序、暂停、恢复、选择 | 不代替外部战争／天灾制造胜利 |
 | 状态接口 | `aemusa_ms_story_entry_triggers.txt`、`aemusa_ms_story_lifecycle_effects.txt` | 只读前置、受控写入、一次性结算 | 历史事实持久化；不依据窗口是否打开推断完成 |

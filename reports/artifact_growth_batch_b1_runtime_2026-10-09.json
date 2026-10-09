@@ -1,0 +1,26 @@
+{
+  "user_feedback": "爱缪莎3，其余为一",
+  "initial_startup": {
+    "game_log": [
+      "[22:13:01][game_application.cpp:250]: Game Version: Cygnus v4.5.2",
+      "[22:13:42][effect_impl.cpp:22217]: [2246.3.1] Log effect, file: events/artifact_growth_events.txt line: 15. ARTIFACT-GROWTH|roster_page_1_opened",
+      "[22:14:01][effect_impl.cpp:22217]: [2246.3.1] Log effect, file: events/artifact_growth_events.txt line: 58. ARTIFACT-GROWTH|roster_page_2_opened"
+    ],
+    "growth_related_errors": [
+      "[22:13:25][effect.cpp:73]: CRITICAL: Max effects post init recursive depth of 5 reached and there are at least 190 effects left! (total instances that has been uninitialized: 449602). Effects in question may be at  common/scripted_effects/artifact_engineering_effects.txt:57 @ scripted effect artifact_engineering_an_factor at common/scripted_effects/artifact_engineering_effects.txt:73 @ scripted effect artifact_engineering_compute_work at common/scripted_effects/artifact_engineering_effects.txt:50 @ scripted effect artifact_engineering_refresh at common/scripted_effects/artifact_engineering_effects.txt:198 @ scripted effect artifact_engineering_monthly at file: events/artifact_engineering_events.txt line: 9"
+    ]
+  },
+  "fix": "Remove factor bridge and flatten growth-level branches before final cold startup.",
+  "fixed_startup": {
+    "game_log": [
+      "[22:18:15][game_application.cpp:250]: Game Version: Cygnus v4.5.2",
+      "[22:19:01][effect_impl.cpp:22217]: [2246.3.1] Log effect, file: events/artifact_growth_events.txt line: 15. ARTIFACT-GROWTH|roster_page_1_opened",
+      "[22:19:03][effect_impl.cpp:22217]: [2246.3.1] Log effect, file: events/artifact_growth_events.txt line: 58. ARTIFACT-GROWTH|roster_page_2_opened"
+    ],
+    "growth_related_errors": [],
+    "user_confirmed_stages_unchanged": true,
+    "enabled_mods": [
+      "mod/aemusa_artifact_user.mod"
+    ]
+  }
+}

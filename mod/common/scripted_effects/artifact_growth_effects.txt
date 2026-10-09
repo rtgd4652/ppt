@@ -1,0 +1,766 @@
+# 成长接口只读取当前国家的唯一角色标记与原生基础等级；不写个人记录、经验或主线资格。
+# 阶段0为未入驻，1/2/3分别对应1～10/11～20/21～30级；系数是项目基准，不是全国修正。
+
+# 爱缪莎：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_aemusa = {
+    set_variable = {
+        which = ag_aemusa_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_aemusa_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_aemusa_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = aemusa_unique_leader
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_aemusa_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_aemusa_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_aemusa_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = aemusa_unique_leader
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_aemusa_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_aemusa_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_aemusa_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = aemusa_unique_leader
+            }
+        }
+        set_variable = {
+            which = ag_aemusa_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_aemusa_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_aemusa_support
+            value = 1.1
+        }
+    }
+}
+
+# 安托涅瓦：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_antoniva = {
+    set_variable = {
+        which = ag_antoniva_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_antoniva_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_antoniva_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = cc_antoniva_unique
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_antoniva_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_antoniva_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_antoniva_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = cc_antoniva_unique
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_antoniva_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_antoniva_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_antoniva_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = cc_antoniva_unique
+            }
+        }
+        set_variable = {
+            which = ag_antoniva_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_antoniva_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_antoniva_support
+            value = 1.1
+        }
+    }
+}
+
+# 晏华：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_yanhua = {
+    set_variable = {
+        which = ag_yanhua_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_yanhua_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_yanhua_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = cc_yanhua_unique
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_yanhua_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_yanhua_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_yanhua_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = cc_yanhua_unique
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_yanhua_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_yanhua_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_yanhua_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = cc_yanhua_unique
+            }
+        }
+        set_variable = {
+            which = ag_yanhua_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_yanhua_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_yanhua_support
+            value = 1.1
+        }
+    }
+}
+
+# 赛斯：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_seth = {
+    set_variable = {
+        which = ag_seth_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_seth_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_seth_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = seth_unique_leader
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_seth_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_seth_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_seth_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = seth_unique_leader
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_seth_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_seth_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_seth_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = seth_unique_leader
+            }
+        }
+        set_variable = {
+            which = ag_seth_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_seth_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_seth_support
+            value = 1.1
+        }
+    }
+}
+
+# 幽桐：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_yutong = {
+    set_variable = {
+        which = ag_yutong_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_yutong_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_yutong_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = yutong_unique_leader
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_yutong_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_yutong_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_yutong_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = yutong_unique_leader
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_yutong_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_yutong_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_yutong_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = yutong_unique_leader
+            }
+        }
+        set_variable = {
+            which = ag_yutong_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_yutong_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_yutong_support
+            value = 1.1
+        }
+    }
+}
+
+# 拉比：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_rabi = {
+    set_variable = {
+        which = ag_rabi_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_rabi_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_rabi_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = rabi_unique_leader
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_rabi_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_rabi_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_rabi_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = rabi_unique_leader
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_rabi_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_rabi_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_rabi_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = rabi_unique_leader
+            }
+        }
+        set_variable = {
+            which = ag_rabi_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_rabi_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_rabi_support
+            value = 1.1
+        }
+    }
+}
+
+# 安：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_an = {
+    set_variable = {
+        which = ag_an_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_an_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_an_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_an_unique
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_an_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_an_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_an_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_an_unique
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_an_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_an_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_an_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_an_unique
+            }
+        }
+        set_variable = {
+            which = ag_an_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_an_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_an_support
+            value = 1.1
+        }
+    }
+}
+
+# 格蕾莎：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_greysa = {
+    set_variable = {
+        which = ag_greysa_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_greysa_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_greysa_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_greysa_unique
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_greysa_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_greysa_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_greysa_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_greysa_unique
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_greysa_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_greysa_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_greysa_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_greysa_unique
+            }
+        }
+        set_variable = {
+            which = ag_greysa_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_greysa_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_greysa_support
+            value = 1.1
+        }
+    }
+}
+
+# 雯梓：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_wenzi = {
+    set_variable = {
+        which = ag_wenzi_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_wenzi_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_wenzi_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_wenzi_unique
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_wenzi_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_wenzi_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_wenzi_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_wenzi_unique
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_wenzi_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_wenzi_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_wenzi_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_wenzi_unique
+            }
+        }
+        set_variable = {
+            which = ag_wenzi_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_wenzi_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_wenzi_support
+            value = 1.1
+        }
+    }
+}
+
+# 丽：派生缓存每次重算；平铺等级分支避免增加脚本展开层次。
+artifact_growth_read_li = {
+    set_variable = {
+        which = ag_li_stage
+        value = 0
+    }
+    set_variable = {
+        which = ag_li_primary
+        value = 0
+    }
+    set_variable = {
+        which = ag_li_support
+        value = 0
+    }
+    if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_li_unique
+                has_base_skill >= 21
+            }
+        }
+        set_variable = {
+            which = ag_li_stage
+            value = 3
+        }
+        set_variable = {
+            which = ag_li_primary
+            value = 1.5
+        }
+        set_variable = {
+            which = ag_li_support
+            value = 1.3
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_li_unique
+                has_base_skill >= 11
+            }
+        }
+        set_variable = {
+            which = ag_li_stage
+            value = 2
+        }
+        set_variable = {
+            which = ag_li_primary
+            value = 1.25
+        }
+        set_variable = {
+            which = ag_li_support
+            value = 1.2
+        }
+    }
+    else_if = {
+        limit = {
+            any_owned_leader = {
+                has_leader_flag = ar_li_unique
+            }
+        }
+        set_variable = {
+            which = ag_li_stage
+            value = 1
+        }
+        set_variable = {
+            which = ag_li_primary
+            value = 1
+        }
+        set_variable = {
+            which = ag_li_support
+            value = 1.1
+        }
+    }
+}
+
+# 只在查看名册时汇总十人；实际项目按参与者调用，不增加全银河月度扫描。
+artifact_growth_refresh = {
+    artifact_growth_read_aemusa = yes
+    artifact_growth_read_antoniva = yes
+    artifact_growth_read_yanhua = yes
+    artifact_growth_read_seth = yes
+    artifact_growth_read_yutong = yes
+    artifact_growth_read_rabi = yes
+    artifact_growth_read_an = yes
+    artifact_growth_read_greysa = yes
+    artifact_growth_read_wenzi = yes
+    artifact_growth_read_li = yes
+}

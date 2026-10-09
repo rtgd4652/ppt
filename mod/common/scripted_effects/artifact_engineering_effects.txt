@@ -52,31 +52,7 @@ artifact_engineering_refresh = {
     else = { set_variable = { which = ae_eng_monthly_work value = 0 } }
 }
 
-# 分别读取实际等级；这些档位只用于本项目的首版效率，不替代十人正式成长。
-artifact_engineering_an_factor = {
-    set_variable = { which = ae_eng_factor value = 1 }
-    if = {
-        limit = { any_owned_leader = { has_leader_flag = ar_an_unique has_base_skill >= 21 } }
-        set_variable = { which = ae_eng_factor value = 1.50 }
-    }
-    else_if = {
-        limit = { any_owned_leader = { has_leader_flag = ar_an_unique has_base_skill >= 11 } }
-        set_variable = { which = ae_eng_factor value = 1.25 }
-    }
-}
-
-artifact_engineering_li_factor = {
-    set_variable = { which = ae_eng_factor value = 1 }
-    if = {
-        limit = { any_owned_leader = { has_leader_flag = ar_li_unique has_base_skill >= 21 } }
-        set_variable = { which = ae_eng_factor value = 1.50 }
-    }
-    else_if = {
-        limit = { any_owned_leader = { has_leader_flag = ar_li_unique has_base_skill >= 11 } }
-        set_variable = { which = ae_eng_factor value = 1.25 }
-    }
-}
-
+# 直接读取公共成长，避免额外桥接触及引擎脚本展开深度；工程账本保持独立。
 artifact_engineering_compute_work = {
     set_variable = { which = ae_eng_monthly_work value = 20 }
     set_variable = { which = ae_eng_primary_factor value = 1 }
@@ -84,36 +60,24 @@ artifact_engineering_compute_work = {
     set_variable = { which = ae_eng_civilization_factor value = 1 }
     if = {
         limit = { has_country_flag = ae_eng_lead_an }
-        artifact_engineering_an_factor = yes
-        set_variable = { which = ae_eng_primary_factor value = ae_eng_factor }
+        artifact_growth_read_an = yes
+        set_variable = { which = ae_eng_factor value = ag_an_primary }
+        set_variable = { which = ae_eng_primary_factor value = ag_an_primary }
         if = {
             limit = { has_country_flag = ae_eng_li_committed }
-            set_variable = { which = ae_eng_support_factor value = 1.10 }
-            if = {
-                limit = { any_owned_leader = { has_leader_flag = ar_li_unique has_base_skill >= 21 } }
-                set_variable = { which = ae_eng_support_factor value = 1.30 }
-            }
-            else_if = {
-                limit = { any_owned_leader = { has_leader_flag = ar_li_unique has_base_skill >= 11 } }
-                set_variable = { which = ae_eng_support_factor value = 1.20 }
-            }
+            artifact_growth_read_li = yes
+            set_variable = { which = ae_eng_support_factor value = ag_li_support }
         }
     }
     else_if = {
         limit = { has_country_flag = ae_eng_lead_li }
-        artifact_engineering_li_factor = yes
-        set_variable = { which = ae_eng_primary_factor value = ae_eng_factor }
+        artifact_growth_read_li = yes
+        set_variable = { which = ae_eng_factor value = ag_li_primary }
+        set_variable = { which = ae_eng_primary_factor value = ag_li_primary }
         if = {
             limit = { has_country_flag = ae_eng_an_committed }
-            set_variable = { which = ae_eng_support_factor value = 1.10 }
-            if = {
-                limit = { any_owned_leader = { has_leader_flag = ar_an_unique has_base_skill >= 21 } }
-                set_variable = { which = ae_eng_support_factor value = 1.30 }
-            }
-            else_if = {
-                limit = { any_owned_leader = { has_leader_flag = ar_an_unique has_base_skill >= 11 } }
-                set_variable = { which = ae_eng_support_factor value = 1.20 }
-            }
+            artifact_growth_read_an = yes
+            set_variable = { which = ae_eng_support_factor value = ag_an_support }
         }
     }
     if = {

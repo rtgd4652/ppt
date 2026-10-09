@@ -21,6 +21,7 @@
 - [十名神器使首版玩法](mechanics/artifact_users_play_guide_v1.0.md)
 - [领袖成长与职责说明](mechanics/leader_growth_and_duty_v1.0.md)
 - [成长与自由组合提案](design/artifact_civilization_growth_and_combinations_v0.1.md)
+- [十人成长基准B1记录](../reports/artifact_growth_batch_b1_2026-10-09.md)：名册和公共计算已接入；各人的分级核心效果从B2继续，正式固定搭档按原著决定。
 - [首都工坊试验玩法](mechanics/artifact_engineering_play_guide_v0.1.md)：A批丽／安单人或自由协作；[运行记录](../reports/artifact_engineering_batch_a_2026-10-09.md)区分受控研究前置与正常月度工作。
 - [知识库与正史入口](../knowledge/README.md)
 

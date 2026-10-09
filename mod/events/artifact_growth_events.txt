@@ -1,0 +1,88 @@
+namespace = artifact_growth
+
+# 名册只重算派生信息，不支付、升级、安排搭档或推进个人任务。
+country_event = {
+    id = artifact_growth.1
+    title = artifact_growth.title
+    desc = artifact_growth.page_1
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = {
+        artifact_engineering_player = yes
+    }
+    immediate = {
+        artifact_growth_refresh = yes
+        log = "ARTIFACT-GROWTH|roster_page_1_opened"
+    }
+    option = {
+        name = artifact_growth.page_next
+        hidden_effect = {
+            country_event = {
+                id = artifact_growth.2
+            }
+        }
+    }
+    option = {
+        name = artifact_growth.workshop
+        hidden_effect = {
+            country_event = {
+                id = artifact_engineering.10
+            }
+        }
+    }
+    option = {
+        name = artifact_growth.back
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.1
+            }
+        }
+    }
+    option = {
+        name = artifact_growth.close
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = artifact_growth.2
+    title = artifact_growth.title
+    desc = artifact_growth.page_2
+    picture = GFX_evt_aemusa_white_night_pavilion
+    is_triggered_only = yes
+    trigger = {
+        artifact_engineering_player = yes
+    }
+    immediate = {
+        artifact_growth_refresh = yes
+        log = "ARTIFACT-GROWTH|roster_page_2_opened"
+    }
+    option = {
+        name = artifact_growth.page_previous
+        hidden_effect = {
+            country_event = {
+                id = artifact_growth.1
+            }
+        }
+    }
+    option = {
+        name = artifact_growth.workshop
+        hidden_effect = {
+            country_event = {
+                id = artifact_engineering.10
+            }
+        }
+    }
+    option = {
+        name = artifact_growth.back
+        hidden_effect = {
+            country_event = {
+                id = aemusa_dialogue.1
+            }
+        }
+    }
+    option = {
+        name = artifact_growth.close
+        default_hide_option = yes
+    }
+}

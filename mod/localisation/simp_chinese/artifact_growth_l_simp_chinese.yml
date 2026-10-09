@@ -1,0 +1,10 @@
+﻿l_simp_chinese:
+ artifact_growth.open:0 "神器使成长名册"
+ artifact_growth.title:0 "当前成长与工程贡献"
+ artifact_growth.page_1:0 "基础（1～10级）、熟练（11～20级）、高阶（21～30级）对应档位1／2／3；0表示当前未入驻。\n\n§Y爱缪莎§!：档位[Root.ag_aemusa_stage]；主导×[Root.ag_aemusa_primary]，协作×[Root.ag_aemusa_support]。\n§Y安托涅瓦§!：档位[Root.ag_antoniva_stage]；主导×[Root.ag_antoniva_primary]，协作×[Root.ag_antoniva_support]。\n§Y晏华§!：档位[Root.ag_yanhua_stage]；主导×[Root.ag_yanhua_primary]，协作×[Root.ag_yanhua_support]。\n§Y赛斯§!：档位[Root.ag_seth_stage]；主导×[Root.ag_seth_primary]，协作×[Root.ag_seth_support]。\n§Y幽桐§!：档位[Root.ag_yutong_stage]；主导×[Root.ag_yutong_primary]，协作×[Root.ag_yutong_support]。\n\n工程系数在符合资格的项目中使用。首都工坊需要丽／安自己的核心记录与合适职责，成长档位不会替代这些条件。各人的核心行动仍从人物通讯进入。"
+ artifact_growth.page_2:0 "基础（1～10级）、熟练（11～20级）、高阶（21～30级）对应档位1／2／3；0表示当前未入驻。\n\n§Y拉比§!：档位[Root.ag_rabi_stage]；主导×[Root.ag_rabi_primary]，协作×[Root.ag_rabi_support]。\n§Y安§!：档位[Root.ag_an_stage]；主导×[Root.ag_an_primary]，协作×[Root.ag_an_support]。\n§Y格蕾莎§!：档位[Root.ag_greysa_stage]；主导×[Root.ag_greysa_primary]，协作×[Root.ag_greysa_support]。\n§Y雯梓§!：档位[Root.ag_wenzi_stage]；主导×[Root.ag_wenzi_primary]，协作×[Root.ag_wenzi_support]。\n§Y丽§!：档位[Root.ag_li_stage]；主导×[Root.ag_li_primary]，协作×[Root.ag_li_support]。\n\n工程系数在符合资格的项目中使用。首都工坊需要丽／安自己的核心记录与合适职责，成长档位不会替代这些条件。各人的核心行动仍从人物通讯进入。"
+ artifact_growth.page_next:0 "查看其余五人"
+ artifact_growth.page_previous:0 "返回前五人"
+ artifact_growth.workshop:0 "查看首都工坊"
+ artifact_growth.back:0 "返回白夜馆"
+ artifact_growth.close:0 "暂时结束通讯"

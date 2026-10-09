@@ -22,6 +22,7 @@ def load(path):
 
 
 EFFECTS = load('mod/common/scripted_effects/artifact_engineering_effects.txt')
+EFFECTS.update(load('mod/common/scripted_effects/artifact_growth_effects.txt'))
 TRIGGERS = load('mod/common/scripted_triggers/artifact_engineering_triggers.txt')
 PERSONAL = load('mod/common/scripted_triggers/artifact_restoration_triggers.txt')
 for key in ('ar_an_idle', 'ar_li_idle', 'ar_an_available', 'ar_li_available',
