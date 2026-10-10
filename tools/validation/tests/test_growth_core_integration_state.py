@@ -7,7 +7,8 @@ from copy import deepcopy
 import unittest
 
 from test_artifact_companions_state import Ledger as CompanionLedger, read_script
-from check_mod import scalar
+from test_artifact_companions_state import ROOT
+from check_mod import parse, scalar
 
 
 def load(relative):
@@ -92,6 +93,24 @@ class CoreLedger(CompanionLedger):
 
 
 class GrowthCoreIntegrationTests(unittest.TestCase):
+    def test_crisis_pipeline_stays_below_native_five_level_init_boundary(self):
+        # 4.5.2冷启动实测：第五层仍有未展开效果时报告CRITICAL；延迟事件不算同步调用。
+        effects = {e.key: e.value for path in (ROOT / 'mod/common/scripted_effects').glob('*.txt')
+                   for e in parse(path.read_text(encoding='utf-8'))}
+
+        def calls(entries):
+            for e in entries:
+                if e.key in effects:
+                    yield e.key
+                if isinstance(e.value, list):
+                    yield from calls(e.value)
+
+        def depth(key, visited=()):
+            self.assertNotIn(key, visited, '同步脚本调用不得成环')
+            return 1 + max((depth(c, visited + (key,)) for c in calls(effects[key])), default=0)
+
+        self.assertLessEqual(depth('aemusa_ms_exclusive_monthly_update'), 4)
+
     def test_ark_growth_preserves_paid_shared_cooldown_and_running_timer(self):
         for level, days in ((10, 60), (11, 45), (21, 30)):
             with self.subTest(level=level):

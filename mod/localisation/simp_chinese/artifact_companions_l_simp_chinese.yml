@@ -16,7 +16,7 @@
  artifact_companions.110.title:0 "赛斯：责任记录"
  artifact_companions.110.investigating:0 "目标：§Y[ac_seth_target.GetName]§!\n调查工作：§Y[Root.ac_seth_progress]/2§!\n\n当地的希望并不等于已经查清的需求。赛斯会核对公共服务与可用条件；目标被占领时暂停，人不在时也不会凭空完成工作。保持通讯关闭并推进游戏时间即可，完成调查后从白夜馆回来选择履责方式。\n\n当前月度有效工作量：[Root.ag_seth_primary]。"
  artifact_companions.110.ready:0 "目标：§Y[ac_seth_target.GetName]§!\n调查已完成，尚未投入执行物资。\n\n行政官可组织公共支援；指挥官须实际带领军用舰队抵达该殖民地所在星系。返回任务安排后选择方式。"
- artifact_companions.110.working:0 "目标：§Y[ac_seth_target.GetName]§!\n本阶段工作次数：§Y[Root.ac_seth_progress]§!\n\n公共支援需行政官、玩家控制目标且没有正在发生的轰炸；现场救援需指挥官带领舰队留在目标星系。轰炸时有限应急防护接管公共支援，保留原进度。\n\n正常完成后，该殖民地获得一年稳定度§G+5§!、舒适度§G+5§!。它不能复活已经失去的人口，也不会抵消战争损失。\n\n符合原职责与现场条件时，月度工作按成长系数推进；完成支援按档位持续360／450／540日。"
+ artifact_companions.110.working:0 "目标：§Y[ac_seth_target.GetName]§!\n本阶段工作量：§Y[Root.ac_seth_progress]§!\n\n公共支援需行政官、玩家控制目标且没有正在发生的轰炸；现场救援需指挥官带领舰队留在目标星系。轰炸时有限应急防护接管公共支援，保留原进度。\n\n正常完成后，该殖民地获得稳定度§G+5§!、舒适度§G+5§!，按履责完成时档位持续360／450／540日。它不能复活已经失去的人口，也不会抵消战争损失。\n\n符合原职责与现场条件时，月度工作按成长系数推进。"
  artifact_companions.110.secondary:0 "目标：§Y[ac_seth_target.GetName]§!\n\n临时补给已经发出，但仓促理解诉求造成了调配失误。舒适度短暂§G+10§!，当地稳定度在后续半年§R-3§!。\n\n这项请求仍占用任务名额。可以投入200能源补核需求并纠正失误，也可撤回，等待影响自然结束；已经发出的物资不会退回。"
  artifact_companions.110.idle:0 "当前没有在办的殖民地请求。已正常履责次数：§Y[Root.ac_seth_completed_count]§!。\n\n若刚完成或撤回，请休整90日；已有殖民地恢复效果按原期限保留。接新请求还需要赛斯在本国、一处由玩家控制的殖民地、100能源与50凝聚力。赛斯离世或离开后不会自动重新招募。"
  artifact_companions.200.title:0 "幽桐：自定射界"

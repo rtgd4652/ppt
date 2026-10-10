@@ -1,0 +1,67 @@
+{
+  "source_note": "正常通讯登记、调查与公共支援；用户在隔离档用控制台补充能源。未用命令写人物进度或成长档位。",
+  "game_version": "4.5.2 (4690)",
+  "baseline": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\A-capital-workshop-done-2246.sav",
+    "date": "2246.03.01",
+    "seth_leaders": [
+      {
+        "id": "16777293",
+        "class": "\"official\"",
+        "level": "7",
+        "country": "0"
+      }
+    ],
+    "seth_variables": {
+      "ac_seth_completed_count": "1",
+      "ac_seth_progress": "0"
+    },
+    "active_request": false,
+    "fulfilled_planets": []
+  },
+  "result": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2250.09.06.sav",
+    "date": "2250.09.06",
+    "seth_leaders": [
+      {
+        "id": "16777293",
+        "class": "\"official\"",
+        "level": "7",
+        "country": "0"
+      }
+    ],
+    "seth_variables": {
+      "ac_seth_completed_count": "2",
+      "ac_seth_progress": "0",
+      "ag_seth_primary": "1",
+      "ag_seth_stage": "1",
+      "ag_seth_support": "1.1"
+    },
+    "active_request": false,
+    "fulfilled_planets": [
+      {
+        "planet_id": "227",
+        "name": "{\n\t\t\t\tkey=\"NAME_The_Core\"\n\t\t\t}",
+        "remaining_days": 235,
+        "reward_native": "modifier=\"ac_seth_fulfilled\"\n\t\t\t\t\t\tdays=235",
+        "owner": "0",
+        "controller": "0"
+      }
+    ]
+  },
+  "runtime_log_evidence": [
+    "[21:31:41][effect_impl.cpp:22217]: [2246.3.1] Log effect, file: events/artifact_growth_events.txt line: 15. ARTIFACT-GROWTH|roster_page_1_opened",
+    "[21:31:50][effect_impl.cpp:22217]: [2246.3.1] Log effect, file: events/artifact_growth_events.txt line: 58. ARTIFACT-GROWTH|roster_page_2_opened",
+    "[21:32:45][effect_impl.cpp:22217]: [2246.3.1] Log effect, common/scripted_effects/artifact_companions_effects.txt:136 @ scripted effect ac_seth_start_request at file: events/artifact_companions_events.txt line: 192. COMPANIONS|seth_request_started",
+    "[21:33:30][effect_impl.cpp:22217]: [2246.5.1] Log effect, common/scripted_effects/artifact_companions_effects.txt:217 @ scripted effect ac_seth_monthly at file: events/artifact_companions_events.txt line: 27. COMPANIONS|seth_investigation_ready",
+    "[21:41:12][effect_impl.cpp:22217]: [2250.2.1] Log effect, common/scripted_effects/artifact_companions_effects.txt:151 @ scripted effect ac_seth_start_public at file: events/artifact_companions_events.txt line: 200. COMPANIONS|seth_public_started",
+    "[21:42:14][effect_impl.cpp:22217]: [2250.5.1] Log effect, common/scripted_effects/artifact_companions_effects.txt:91 @ scripted effect ac_seth_close_request at common/scripted_effects/artifact_companions_effects.txt:296 @ scripted effect ac_seth_monthly at file: events/artifact_companions_events.txt line: 27. COMPANIONS|seth_request_closed",
+    "[21:42:14][effect_impl.cpp:22217]: [2250.5.1] Log effect, common/scripted_effects/artifact_companions_effects.txt:302 @ scripted effect ac_seth_monthly at file: events/artifact_companions_events.txt line: 27. COMPANIONS|seth_fulfilled"
+  ],
+  "reload_observation": {
+    "source": "Computer Use游戏窗口实视，正常菜单载回后打开核心殖民地",
+    "date": "2250.09.06",
+    "paused": true,
+    "scope_limit": "奖励字段来自本结果档读回；未另存第二个载回档。"
+  }
+}
