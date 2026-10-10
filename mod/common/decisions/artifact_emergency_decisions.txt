@@ -1,0 +1,84 @@
+# 文明主动工程：预案与期限归属于当地殖民地，不读取人物、组合或个人转变。
+decision_artifact_emergency_prepare = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = {
+		category = decisions
+		cost = { energy = 1000 consumer_goods = 500 }
+	}
+	potential = {
+		is_colony = yes
+		exists = owner
+		owner = {
+			is_ai = no
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			has_technology = "tech_artifact_seven_day_logistics"
+		}
+		NOR = {
+			has_modifier = artifact_emergency_prepared
+			has_modifier = artifact_emergency_protection
+			has_modifier = artifact_emergency_rearming
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_emergency_requires_control
+			is_controlled_by = owner
+		}
+		custom_tooltip = {
+			fail_text = artifact_emergency_requires_command
+			has_building = building_artifact_seven_day_command
+		}
+		custom_tooltip = {
+			fail_text = artifact_emergency_requires_peace
+			has_orbital_bombardment = no
+		}
+	}
+	effect = {
+		# 原生决议扣费；永久准备修正保存现场设施与账本，激活时消耗。
+		add_modifier = { modifier = artifact_emergency_prepared days = -1 }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_emergency_activate = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		is_colony = yes
+		exists = owner
+		owner = {
+			is_ai = no
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			has_technology = "tech_artifact_seven_day_logistics"
+		}
+		has_modifier = artifact_emergency_prepared
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_emergency_requires_control
+			is_controlled_by = owner
+		}
+		custom_tooltip = {
+			fail_text = artifact_emergency_requires_command
+			has_building = building_artifact_seven_day_command
+		}
+		custom_tooltip = {
+			fail_text = artifact_emergency_requires_bombardment
+			has_orbital_bombardment = yes
+		}
+		NOR = {
+			has_modifier = artifact_emergency_protection
+			has_modifier = artifact_emergency_rearming
+		}
+	}
+	effect = {
+		remove_modifier = artifact_emergency_prepared
+		add_modifier = { modifier = artifact_emergency_protection days = 180 }
+		# 540日从激活起算：180日保护结束后，仍需360日重新整备。
+		add_modifier = { modifier = artifact_emergency_rearming days = 540 }
+	}
+	ai_weight = { weight = 0 }
+}

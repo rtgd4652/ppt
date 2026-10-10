@@ -23,6 +23,7 @@
 - [领袖成长与职责说明](mechanics/leader_growth_and_duty_v1.0.md)
 - [成长与自由组合提案](design/artifact_civilization_growth_and_combinations_v0.1.md)
 - [文明研究、传统与飞升实际路线](mechanics/artifact_civilization_route_v0.1.md)：19项文明科技、公共飞升、个人转变专属研究及2项遗留科技的边界；[C1记录](../reports/artifact_civilization_route_c1_2026-10-10.md)保存说明修正，[科技分离记录](../reports/artifact_technology_separation_2026-10-10.md)保存本次用户决定与文件拆分。
+- [C2殖民地应急预案](../reports/artifact_civilization_emergency_c2_2026-10-10.md)：当地中枢的付费准备、限时保护与重新整备；源码及定向检查已通过，游戏流程和真实读档待验。
 - [十人成长基准B1记录](../reports/artifact_growth_batch_b1_2026-10-09.md)：名册和公共计算已接入；各人的分级核心效果从B2继续，正式固定搭档按原著决定。
 - [成长核心B2首批记录](../reports/artifact_growth_batch_b2a_2026-10-09.md)：安的时序记录按取得时档位提供有限用途，丽按实际成长推进付费施工；加载和页面检查与完整运行边界见报告。
 - [B2首批10月10日运行与续接](../reports/artifact_growth_batch_b2a_runtime_2026-10-10.md)：安／丽档1正常流程、一次进行态读档和有限效果已通过，后续第二批复用；Computer Use与键盘限制已同步。

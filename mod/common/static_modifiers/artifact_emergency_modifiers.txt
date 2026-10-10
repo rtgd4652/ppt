@@ -1,0 +1,19 @@
+# 准备阶段提供当地避护设施；原生行星修正保存状态与剩余期限。
+artifact_emergency_prepared = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+	planet_amenities_add = 2
+}
+
+# 仅保护选定殖民地；与已有赛斯／格蕾莎／方舟的同类修正按原生规则叠加。
+artifact_emergency_protection = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+	planet_orbital_bombardment_damage = -0.25
+}
+
+# 原生定时账本，不附加新的经济惩罚；禁止重复准备和刷新保护期。
+artifact_emergency_rearming = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 2
+}

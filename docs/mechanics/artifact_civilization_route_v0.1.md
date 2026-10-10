@@ -106,16 +106,16 @@
 
 当前研究已提供设施与组件，传统和飞升主要提供编制／数值以及少量资格；新危机巨构目前服务主线解析。尚未形成完整的主动文明工程与最终Boss奖励路线，不能据此称1.0体系已经完成。
 
-下一包建议优先给**七日后勤网络接入殖民地应急预案**，让已建成的调度中枢具备一项主动用途。这是未实施的能力建议，具体投入、持续时间与冷却在实施批次确定。
+**C2殖民地应急预案首版源码已接入**：研究七日后勤网络后，在已建成调度中枢、实际控制且未遭轰炸的殖民地，通过行星决议支付1000能源、500消费品整备；准备期间舒适度+2。遭到轨道轰炸时主动消耗预案，保护180日、降低25%轰炸伤害；自启动起540日内不可重新准备，之后须再次付费。四项定向检查与静态通过，正常游戏流程与真实读档待验，见[C2记录](../../reports/artifact_civilization_emergency_c2_2026-10-10.md)。
 
-| 设计项 | 首版建议 |
+| 设计项 | 首版实现与边界 |
 | --- | --- |
 | Lore Design | 将公共疏散、民用补给与黑门避护编成可提前准备的制度，体现文明韧性 |
 | Player Experience | 对明确殖民地提前投入物资，遭遇轨道轰炸时主动启动有限保护；保护之后需要重新整备 |
-| Stellaris Implementation | 复用行星决议、付费投入、局部旗标／限时修正及所有权检查；原版已有`planet_orbital_bombardment_damage`，目前赛斯应急也使用该字段 |
-| Technical Difficulty | 中：核对预案准备、一次启动、有效期与重新整备；现有角色与主线任务不写完成事实 |
-| Compatibility / Performance Risk | 只管理选定殖民地，不覆盖原版决议、不遍历全银河；与已有赛斯援助的叠加边界须在实现时确定 |
+| Stellaris Implementation | 原生行星决议扣费，准备／保护／整备由行星修正保存；读取文明研究、中枢与实际控制，保护使用`planet_orbital_bombardment_damage` |
+| Technical Difficulty | 中：准备与保护分别执行，激活消耗一次，180日保护＋360日整备；已有角色与主线任务不写完成事实 |
+| Compatibility / Performance Risk | 只管理选定殖民地，不覆盖原版决议、不遍历全银河；与已有援助使用原生同类修正叠加，不移除或刷新其期限；引擎结算待验 |
 
-该建议不涉及人物组合，也不绑定新剧情、正式外观或终局奖励。开发期沿用一条新增正常流程、一处关键读档和本次严重失败点检查；不重新穷举十人。
+本包不涉及人物组合，也不绑定新剧情、正式外观或终局奖励。下一步沿用一条新增正常流程、一处关键读档和本次严重失败点检查；不重新穷举十人。
 
 依据：[文明科技](../../mod/common/technology/aemusa_technology.txt)、[遗留科技](../../mod/common/technology/aemusa_legacy_technology.txt)、[传统](../../mod/common/traditions/aemusa_traditions.txt)、[公共飞升](../../mod/common/ascension_perks/aemusa_ascension_perks.txt)、[既有个人飞升](../../mod/common/ascension_perks/aemusa_personal_ascension_perks.txt)、[建筑](../../mod/common/buildings/aemusa_buildings.txt)、[城市决议](../../mod/common/decisions/aemusa_destiny_city_decisions.txt)、[首都工坊](artifact_engineering_play_guide_v0.1.md)、[C1记录](../../reports/artifact_civilization_route_c1_2026-10-10.md)、[科技分离记录](../../reports/artifact_technology_separation_2026-10-10.md)。本机接口对照4.5.2原版科技、传统README及静态修正；支持版本的总体结论仍以项目进度为准。
