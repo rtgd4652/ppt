@@ -10,18 +10,32 @@ aemusa_ms_flagship_begin_recovery = {
 		set_country_flag = aemusa_ms_country_flagship_ever_created
 		set_country_flag = aemusa_ms_country_flagship_recovering
 		remove_country_flag = aemusa_ms_country_flagship_recovery_ready
-		set_timed_country_flag = {
-			flag = aemusa_ms_country_flagship_recovery_time_remaining
-			days = 90
+		artifact_growth_read_aemusa = yes
+		# 只调整本次恢复期；人物缺席沿用90日，舰船、身份和剧情账本互不替代。
+		if = {
+			limit = { check_variable = { which = ag_aemusa_stage value >= 3 } }
+			set_timed_country_flag = { flag = aemusa_ms_country_flagship_recovery_time_remaining days = 60 }
+			country_event = { id = aemusa_flagship.2 days = 60 }
 		}
-		country_event = { id = aemusa_flagship.2 days = 90 }
+		else_if = {
+			limit = { check_variable = { which = ag_aemusa_stage value >= 2 } }
+			set_timed_country_flag = { flag = aemusa_ms_country_flagship_recovery_time_remaining days = 75 }
+			country_event = { id = aemusa_flagship.2 days = 75 }
+		}
+		else = {
+			set_timed_country_flag = { flag = aemusa_ms_country_flagship_recovery_time_remaining days = 90 }
+			country_event = { id = aemusa_flagship.2 days = 90 }
+		}
 		log = "AEMUSA-MS|AWP-06|flagship_recovery_started"
 	}
 }
 
 aemusa_ms_flagship_finish_recovery = {
 	if = {
-		limit = { has_country_flag = aemusa_ms_country_flagship_recovering }
+		limit = {
+			has_country_flag = aemusa_ms_country_flagship_recovering
+			NOT = { has_country_flag = aemusa_ms_country_flagship_recovery_time_remaining }
+		}
 		remove_country_flag = aemusa_ms_country_flagship_recovering
 		remove_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
 		set_country_flag = aemusa_ms_country_flagship_recovery_ready

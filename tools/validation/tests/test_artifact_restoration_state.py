@@ -156,6 +156,55 @@ class Ledger:
 
 
 class RestorationStateTests(unittest.TestCase):
+    def test_greysa_growth_record_is_fixed_and_old_ready_record_stays_basic(self):
+        for level, stage, months, days in ((7, 1, 3, 180), (11, 2, 3, 240), (21, 3, 2, 300)):
+            with self.subTest(level=level):
+                x = Ledger()
+                x.objects['ar_greysa']['level'] = level
+                x.flags.update(('ar_greysa_active', 'ar_greysa_planet'))
+                x.external['ar_greysa_work_ready'] = False
+                x.effect('ar_greysa_monthly')
+                self.assertNotIn('ar_greysa_progress', x.variables)
+                x.external['ar_greysa_work_ready'] = True
+                for _ in range(months):
+                    x.effect('ar_greysa_monthly')
+                self.assertEqual(stage, x.variables['ar_greysa_record_stage'])
+                x.objects['ar_greysa']['level'] = 30 if level == 7 else 7
+                target = x.objects['ar_greysa_target']
+                x.effect('ar_greysa_finish_care')
+                paid = deepcopy(x.resources)
+                x.effect('ar_greysa_finish_care')
+                self.assertEqual([days], target['modifier_days'])
+                self.assertEqual(1, x.variables['ar_greysa_completed_count'])
+                self.assertEqual(paid, x.resources)
+        old = Ledger()
+        old.objects['ar_greysa']['level'] = 30
+        old.flags.update(('ar_greysa_ready', 'ar_greysa_planet'))
+        target = old.objects['ar_greysa_target']
+        old.effect('ar_greysa_finish_care')
+        self.assertEqual([180], target['modifier_days'])
+
+    def test_wenzi_growth_never_replaces_paid_turns_or_boundary(self):
+        for level, days in ((7, 180), (11, 240), (21, 300)):
+            with self.subTest(level=level):
+                x = Ledger()
+                x.objects['ar_wenzi']['level'] = level
+                x.flags.update(('ar_wenzi_active', 'ar_wenzi_planet',
+                                'ar_wenzi_objective_agreed', 'ar_wenzi_boundary_agreed'))
+                target = x.objects['ar_wenzi_target']
+                for action in ('black', 'white', 'black', 'white'):
+                    x.flags.discard('ar_wenzi_turn_recent')
+                    x.effect('ar_wenzi_finish')
+                    self.assertNotIn('ar_wenzi_completed', x.flags)
+                    x.effect(f'ar_wenzi_play_{action}')
+                paid = deepcopy(x.resources)
+                x.effect('ar_wenzi_finish')
+                x.effect('ar_wenzi_finish')
+                self.assertEqual([days], target['modifier_days'])
+                self.assertEqual(1, x.variables['ar_wenzi_completed_count'])
+                self.assertEqual(paid, x.resources)
+                self.assertEqual(9600, x.resources['energy'])
+
     def test_an_archive_growth_is_fixed_and_local_improvement_is_consumed_once(self):
         for level, stage, days in ((7, 1, 90), (11, 2, 120), (21, 3, 150)):
             with self.subTest(level=level):

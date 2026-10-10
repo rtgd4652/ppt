@@ -360,7 +360,8 @@ country_event = {
     picture = GFX_evt_aemusa_white_night_pavilion
     is_triggered_only = yes
     trigger = { cc_player_country = yes }
-    immediate = { cc_refresh_records = yes }
+    immediate = { cc_refresh_records = yes
+        artifact_growth_read_yanhua = yes }
     option = {
         name = cc.pick_assessment
         trigger = { cc_analysis_idle = yes }
@@ -435,7 +436,17 @@ country_event = {
         trigger = { cc_analysis_can_claim = yes exists = capital_scope }
         hidden_effect = { if = {
             limit = { cc_analysis_can_claim = yes exists = capital_scope }
-            capital_scope = { add_modifier = { modifier = cc_yanhua_internal_preparation days = 180 } }
+            if = {
+                limit = { check_variable = { which = cc_analysis_record_stage value >= 3 } }
+                capital_scope = { add_modifier = { modifier = cc_yanhua_internal_preparation days = 300 } }
+            }
+            else_if = {
+                limit = { check_variable = { which = cc_analysis_record_stage value >= 2 } }
+                capital_scope = { add_modifier = { modifier = cc_yanhua_internal_preparation days = 240 } }
+            }
+            else = {
+                capital_scope = { add_modifier = { modifier = cc_yanhua_internal_preparation days = 180 } }
+            }
             cc_finish_analysis = yes
         }country_event = { id = central_court.53 } }
     }
@@ -446,7 +457,17 @@ country_event = {
             limit = { cc_analysis_military_claim = yes }
             random_owned_fleet = {
                 limit = { is_ship_class = shipclass_military exists = leader leader = { has_leader_flag = cc_yanhua_unique } }
-                add_modifier = { modifier = cc_yanhua_fleet_counter days = 180 }
+                if = {
+                    limit = { root = { check_variable = { which = cc_analysis_record_stage value >= 3 } } }
+                    add_modifier = { modifier = cc_yanhua_fleet_counter days = 300 }
+                }
+                else_if = {
+                    limit = { root = { check_variable = { which = cc_analysis_record_stage value >= 2 } } }
+                    add_modifier = { modifier = cc_yanhua_fleet_counter days = 240 }
+                }
+                else = {
+                    add_modifier = { modifier = cc_yanhua_fleet_counter days = 180 }
+                }
             }
             cc_finish_analysis = yes
         }country_event = { id = central_court.53 } }

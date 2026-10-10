@@ -311,6 +311,7 @@ country_event = {
     trigger = { ac_player = yes }
     immediate = {
         ac_refresh = yes
+        artifact_growth_read_seth = yes
         if = {
             limit = { exists = event_target:ac_seth_target@root }
             event_target:ac_seth_target@root = { save_event_target_as = ac_seth_target }
@@ -412,6 +413,7 @@ country_event = {
     trigger = { ac_player = yes }
     immediate = {
         ac_refresh = yes
+        artifact_growth_read_yutong = yes
         if = {
             limit = { exists = event_target:ac_yutong_force@root }
             event_target:ac_yutong_force@root = { save_event_target_as = ac_yutong_force }
@@ -572,6 +574,7 @@ country_event = {
     trigger = { ac_player = yes }
     immediate = {
         ac_refresh = yes
+        artifact_growth_read_rabi = yes
         if = {
             limit = { exists = event_target:ac_rabi_force@root }
             event_target:ac_rabi_force@root = { save_event_target_as = ac_rabi_force }

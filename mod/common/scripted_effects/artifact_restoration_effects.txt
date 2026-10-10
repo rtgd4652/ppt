@@ -362,6 +362,11 @@ ar_rebind = {
     every_owned_leader = { limit = { has_leader_flag = ar_greysa_unique } artifact_user_refresh_portrait = yes save_global_event_target_as = ar_greysa@root save_event_target_as = ar_greysa }
     if = { limit = { exists = event_target:ar_greysa_target@root } event_target:ar_greysa_target@root = { save_event_target_as = ar_greysa_target } }
 
+    # 旧诊断已成案但没有成长字段时沿用基础档，不追溯升级。
+    if = {
+        limit = { has_country_flag = ar_greysa_ready NOT = { is_variable_set = ar_greysa_record_stage } }
+        set_variable = { which = ar_greysa_record_stage value = 1 }
+    }
     if = { limit = { NOT = { is_variable_set = ar_greysa_progress } } set_variable = { which = ar_greysa_progress value = 0 } }
     if = { limit = { NOT = { is_variable_set = ar_greysa_completed_count } } set_variable = { which = ar_greysa_completed_count value = 0 } }
     if = { limit = { NOT = { is_variable_set = ar_greysa_cost_energy } } set_variable = { which = ar_greysa_cost_energy value = 0 } }
@@ -755,10 +760,13 @@ ar_an_escape = {
 ar_greysa_monthly = {
     if = {
         limit = { has_country_flag = ar_greysa_active ar_greysa_work_ready = yes }
-        change_variable = { which = ar_greysa_progress value = 1 }
+        artifact_growth_read_greysa = yes
+        change_variable = { which = ar_greysa_progress value = ag_greysa_primary }
         if = {
             limit = { check_variable = { which = ar_greysa_progress value >= 3 } }
             remove_country_flag = ar_greysa_active
+            # 诊断成案时固定档位，领取前升级或切职不会重写记录。
+            set_variable = { which = ar_greysa_record_stage value = ag_greysa_stage }
             set_country_flag = ar_greysa_ready
             log = "RESTORATION|greysa_analysis_ready"
         }
@@ -774,9 +782,31 @@ ar_greysa_finish_care = {
         change_variable = { which = ar_greysa_cost_consumer_goods value = 50 }
         if = {
             limit = { has_country_flag = ar_greysa_planet }
-            event_target:ar_greysa_target@root = { add_modifier = { modifier = ar_greysa_stable_care days = 180 } }
+            if = {
+                limit = { check_variable = { which = ar_greysa_record_stage value >= 3 } }
+                event_target:ar_greysa_target@root = { add_modifier = { modifier = ar_greysa_stable_care days = 300 } }
+            }
+            else_if = {
+                limit = { check_variable = { which = ar_greysa_record_stage value >= 2 } }
+                event_target:ar_greysa_target@root = { add_modifier = { modifier = ar_greysa_stable_care days = 240 } }
+            }
+            else = {
+                event_target:ar_greysa_target@root = { add_modifier = { modifier = ar_greysa_stable_care days = 180 } }
+            }
         }
-        else = { event_target:ar_greysa_target@root = { add_modifier = { modifier = ar_greysa_fleet_care days = 180 } } }
+        else = {
+            if = {
+                limit = { check_variable = { which = ar_greysa_record_stage value >= 3 } }
+                event_target:ar_greysa_target@root = { add_modifier = { modifier = ar_greysa_fleet_care days = 300 } }
+            }
+            else_if = {
+                limit = { check_variable = { which = ar_greysa_record_stage value >= 2 } }
+                event_target:ar_greysa_target@root = { add_modifier = { modifier = ar_greysa_fleet_care days = 240 } }
+            }
+            else = {
+                event_target:ar_greysa_target@root = { add_modifier = { modifier = ar_greysa_fleet_care days = 180 } }
+            }
+        }
         event_target:ar_greysa_target@root = { save_global_event_target_as = ar_greysa_archive@root }
         set_variable = { which = ar_greysa_archive_cost_energy value = ar_greysa_cost_energy }
         set_variable = { which = ar_greysa_archive_cost_consumer_goods value = ar_greysa_cost_consumer_goods }
@@ -852,11 +882,35 @@ ar_wenzi_play_white = {
 ar_wenzi_finish = {
     if = {
         limit = { ar_wenzi_finish_available = yes }
+        # 成长延长完成后的秩序效果，不减少四手、黑白或平衡要求。
+        artifact_growth_read_wenzi = yes
         if = {
             limit = { has_country_flag = ar_wenzi_planet }
-            event_target:ar_wenzi_target@root = { add_modifier = { modifier = ar_wenzi_balanced_service days = 180 } }
+            if = {
+                limit = { check_variable = { which = ag_wenzi_stage value >= 3 } }
+                event_target:ar_wenzi_target@root = { add_modifier = { modifier = ar_wenzi_balanced_service days = 300 } }
+            }
+            else_if = {
+                limit = { check_variable = { which = ag_wenzi_stage value >= 2 } }
+                event_target:ar_wenzi_target@root = { add_modifier = { modifier = ar_wenzi_balanced_service days = 240 } }
+            }
+            else = {
+                event_target:ar_wenzi_target@root = { add_modifier = { modifier = ar_wenzi_balanced_service days = 180 } }
+            }
         }
-        else = { event_target:ar_wenzi_target@root = { add_modifier = { modifier = ar_wenzi_balanced_cover days = 180 } } }
+        else = {
+            if = {
+                limit = { check_variable = { which = ag_wenzi_stage value >= 3 } }
+                event_target:ar_wenzi_target@root = { add_modifier = { modifier = ar_wenzi_balanced_cover days = 300 } }
+            }
+            else_if = {
+                limit = { check_variable = { which = ag_wenzi_stage value >= 2 } }
+                event_target:ar_wenzi_target@root = { add_modifier = { modifier = ar_wenzi_balanced_cover days = 240 } }
+            }
+            else = {
+                event_target:ar_wenzi_target@root = { add_modifier = { modifier = ar_wenzi_balanced_cover days = 180 } }
+            }
+        }
         change_variable = { which = ar_wenzi_completed_count value = 1 }
         set_country_flag = ar_wenzi_completed
         set_timed_country_flag = { flag = ar_wenzi_cooldown days = 180 }

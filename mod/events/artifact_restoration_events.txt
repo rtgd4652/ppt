@@ -320,6 +320,7 @@ country_event = {
     immediate = {
         ar_rebind = yes
         ar_refresh = yes
+        artifact_growth_read_greysa = yes
     }
     option = { name = ar.greysa.begin_planet
         trigger = { ar_greysa_planet_start_available = yes }
@@ -453,6 +454,7 @@ country_event = {
     immediate = {
         ar_rebind = yes
         ar_refresh = yes
+        artifact_growth_read_wenzi = yes
     }
     option = { name = ar.wenzi.begin_planet
         trigger = { ar_wenzi_planet_start_available = yes }

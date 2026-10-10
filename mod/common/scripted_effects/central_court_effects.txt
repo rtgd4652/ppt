@@ -128,6 +128,11 @@ cc_abort_analysis = {
 }
 cc_refresh_records = {
     cc_rebind = yes
+    # 旧档已形成的结论沿用基础效期。
+    if = {
+        limit = { has_country_flag = cc_analysis_conclusion NOT = { is_variable_set = cc_analysis_record_stage } }
+        set_variable = { which = cc_analysis_record_stage value = 1 }
+    }
     if = {
         limit = {
             OR = { has_country_flag = cc_analysis_collecting has_country_flag = cc_analysis_conclusion }
@@ -174,12 +179,14 @@ cc_analysis_monthly = {
             cc_analysis_can_progress = yes
             NOT = { has_country_flag = cc_analysis_month_counted }
         }
-        # 同一月重复回调不会重复核验；三次代表工作时间而非虚构三种新情报。
+        # 同月防重入仍生效；成长提高有效工作，不生成额外情报。
         set_timed_country_flag = { flag = cc_analysis_month_counted days = 28 }
-        change_variable = { which = cc_analysis_progress value = 1 }
+        artifact_growth_read_yanhua = yes
+        change_variable = { which = cc_analysis_progress value = ag_yanhua_primary }
         if = {
             limit = { check_variable = { which = cc_analysis_progress value >= 3 } }
             remove_country_flag = cc_analysis_collecting
+            set_variable = { which = cc_analysis_record_stage value = ag_yanhua_stage }
             set_country_flag = cc_analysis_conclusion
             set_timed_country_flag = { flag = cc_analysis_fresh days = 180 }
             country_event = { id = central_court.51 }
@@ -220,7 +227,17 @@ cc_start_ark_warp = {
         add_resource = { energy = -500 }
         add_resource = { alloys = -100 }
         set_country_flag = cc_ark_calibrating
-        set_timed_country_flag = { flag = cc_ark_calibration_time days = 60 }
+        artifact_growth_read_antoniva = yes
+        # 启动时确定校准期，读档或再次打开页面不能重定时；共用冷却仍为360日。
+        if = {
+            limit = { check_variable = { which = ag_antoniva_stage value >= 3 } }
+            set_timed_country_flag = { flag = cc_ark_calibration_time days = 30 }
+        }
+        else_if = {
+            limit = { check_variable = { which = ag_antoniva_stage value >= 2 } }
+            set_timed_country_flag = { flag = cc_ark_calibration_time days = 45 }
+        }
+        else = { set_timed_country_flag = { flag = cc_ark_calibration_time days = 60 } }
         set_timed_country_flag = { flag = cc_ark_cooldown days = 360 }
         log = "CENTRAL-COURT|ark_calibration_started"
     }

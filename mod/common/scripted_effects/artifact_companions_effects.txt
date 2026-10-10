@@ -208,10 +208,8 @@ ac_seth_monthly = {
             ac_seth_target_accessible = yes
             has_country_flag = ac_seth_investigating
         }
-        change_variable = {
-            which = ac_seth_progress
-            value = 1
-        }
+        artifact_growth_read_seth = yes
+        change_variable = { which = ac_seth_progress value = ag_seth_primary }
         if = {
             limit = { check_variable = { which = ac_seth_progress value >= 2 } }
             remove_country_flag = ac_seth_investigating
@@ -254,10 +252,8 @@ ac_seth_monthly = {
                     }
                 }
             }
-            change_variable = {
-                which = ac_seth_progress
-                value = 1
-            }
+            artifact_growth_read_seth = yes
+            change_variable = { which = ac_seth_progress value = ag_seth_primary }
             if = {
                 limit = { has_country_flag = ac_seth_hasty }
                 event_target:ac_seth_target@root = {
@@ -286,11 +282,16 @@ ac_seth_monthly = {
                         }
                     }
                 }
-                event_target:ac_seth_target@root = {
-                    add_modifier = {
-                        modifier = ac_seth_fulfilled
-                        days = 360
-                    }
+                if = {
+                    limit = { check_variable = { which = ag_seth_stage value >= 3 } }
+                    event_target:ac_seth_target@root = { add_modifier = { modifier = ac_seth_fulfilled days = 540 } }
+                }
+                else_if = {
+                    limit = { check_variable = { which = ag_seth_stage value >= 2 } }
+                    event_target:ac_seth_target@root = { add_modifier = { modifier = ac_seth_fulfilled days = 450 } }
+                }
+                else = {
+                    event_target:ac_seth_target@root = { add_modifier = { modifier = ac_seth_fulfilled days = 360 } }
                 }
                 ac_seth_close_request = yes
                 set_country_flag = ac_seth_last_completed
@@ -410,10 +411,8 @@ ac_yutong_monthly = {
             NOT = { has_country_flag = ac_yutong_stable }
             event_target:ac_yutong_force@root = { is_in_combat = no }
         }
-        change_variable = {
-            which = ac_yutong_progress
-            value = 1
-        }
+        artifact_growth_read_yutong = yes
+        change_variable = { which = ac_yutong_progress value = ag_yutong_primary }
         if = {
             limit = { check_variable = { which = ac_yutong_progress value >= 3 } }
             set_country_flag = ac_yutong_stable
@@ -425,12 +424,18 @@ ac_yutong_monthly = {
 ac_yutong_burst = {
     if = {
         limit = { ac_yutong_burst_available = yes }
+        artifact_growth_read_yutong = yes
         ac_yutong_reset_calibration = yes
-        event_target:ac_yutong_force@root = {
-            add_modifier = {
-                modifier = ac_yutong_burst
-                days = 30
-            }
+        if = {
+            limit = { check_variable = { which = ag_yutong_stage value >= 3 } }
+            event_target:ac_yutong_force@root = { add_modifier = { modifier = ac_yutong_burst days = 50 } }
+        }
+        else_if = {
+            limit = { check_variable = { which = ag_yutong_stage value >= 2 } }
+            event_target:ac_yutong_force@root = { add_modifier = { modifier = ac_yutong_burst days = 40 } }
+        }
+        else = {
+            event_target:ac_yutong_force@root = { add_modifier = { modifier = ac_yutong_burst days = 30 } }
         }
         set_timed_country_flag = {
             flag = ac_yutong_recovery
@@ -520,11 +525,17 @@ ac_rabi_apply_protection = {
 ac_rabi_counter = {
     if = {
         limit = { ac_rabi_counter_available = yes }
-        event_target:ac_rabi_force@root = {
-            add_modifier = {
-                modifier = ac_rabi_counter
-                days = 30
-            }
+        artifact_growth_read_rabi = yes
+        if = {
+            limit = { check_variable = { which = ag_rabi_stage value >= 3 } }
+            event_target:ac_rabi_force@root = { add_modifier = { modifier = ac_rabi_counter days = 50 } }
+        }
+        else_if = {
+            limit = { check_variable = { which = ag_rabi_stage value >= 2 } }
+            event_target:ac_rabi_force@root = { add_modifier = { modifier = ac_rabi_counter days = 40 } }
+        }
+        else = {
+            event_target:ac_rabi_force@root = { add_modifier = { modifier = ac_rabi_counter days = 30 } }
         }
         set_timed_country_flag = {
             flag = ac_rabi_recovery
