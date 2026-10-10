@@ -22,10 +22,11 @@
 - [十名神器使首版玩法](mechanics/artifact_users_play_guide_v1.0.md)
 - [领袖成长与职责说明](mechanics/leader_growth_and_duty_v1.0.md)
 - [成长与自由组合提案](design/artifact_civilization_growth_and_combinations_v0.1.md)
+- [文明研究、传统与飞升实际路线](mechanics/artifact_civilization_route_v0.1.md)：21项科技的前置／用途、制度与城市工程、遗留边界；[C1记录](../reports/artifact_civilization_route_c1_2026-10-10.md)保存说明修正及未实施的应急预案建议。
 - [十人成长基准B1记录](../reports/artifact_growth_batch_b1_2026-10-09.md)：名册和公共计算已接入；各人的分级核心效果从B2继续，正式固定搭档按原著决定。
 - [成长核心B2首批记录](../reports/artifact_growth_batch_b2a_2026-10-09.md)：安的时序记录按取得时档位提供有限用途，丽按实际成长推进付费施工；加载和页面检查与完整运行边界见报告。
 - [B2首批10月10日运行与续接](../reports/artifact_growth_batch_b2a_runtime_2026-10-10.md)：安／丽档1正常流程、一次进行态读档和有限效果已通过，后续第二批复用；Computer Use与键盘限制已同步。
-- [B2第二批实现与续接](../reports/artifact_growth_batch_b2b_2026-10-10.md)：其余八人的分级核心、启动深度修复、名册及赛斯代表流程／完成档载回通过；下一步更多自由协作。
+- [B2第二批实现与续接](../reports/artifact_growth_batch_b2b_2026-10-10.md)：其余八人的分级核心、启动深度修复、名册及赛斯代表流程／完成档载回通过；人物组合按用户要求暂缓。
 - [10月9日收工与续接](../reports/development_closeout_2026-10-09.md)：A批、B1、B2源码检查点与当晚用户决定的历史记录；其中待补游戏检查已由10月10日记录接续。
 - [首都工坊试验玩法](mechanics/artifact_engineering_play_guide_v0.1.md)：A批丽／安单人或自由协作；[运行记录](../reports/artifact_engineering_batch_a_2026-10-09.md)区分受控研究前置与正常月度工作。
 - [知识库与正史入口](../knowledge/README.md)

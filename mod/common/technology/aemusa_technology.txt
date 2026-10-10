@@ -15,7 +15,7 @@ tech_artifact_tarot_calculation = {
 	}
 }
 
-# 黑门观测：建筑与命运塔罗射线的直接前置科技。
+# 黑门观测：解锁观测站，并作为后续共有研究的前置；现有武器由军备科技解锁。
 tech_artifact_black_gate_observation = {
 	area = physics
 	icon = tech_artifact_black_gate_observation
@@ -33,7 +33,7 @@ tech_artifact_black_gate_observation = {
 	}
 }
 
-# 神器锻造：命运织装甲与七日演算核心的直接前置科技。
+# 神器锻造：解锁神器工坊，并作为共鸣制造的前置；现有舰船组件由军备科技解锁。
 tech_artifact_relic_fabrication = {
 	area = engineering
 	icon = tech_artifact_relic_fabrication
