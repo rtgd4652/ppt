@@ -1,0 +1,42 @@
+# 既有爱缪莎个人飞升：保留原条件和存档身份，与两项公共飞升分开管理。
+# 此旧入口不等于主线正式转变；未来专属科技读取合法转变结算，不读取此飞升或仅30级。
+ap_artifact_court_destiny = {
+	possible = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+		has_tradition = tr_artifact_court_finish
+		custom_tooltip = {
+			fail_text = "requires_ascension_perks_3"
+			num_ascension_perks > 2
+		}
+		custom_tooltip = {
+			fail_text = "requires_aemusa_level_30"
+			exists = event_target:aemusa_leader
+			event_target:aemusa_leader = {
+				has_leader_flag = aemusa_unique_leader
+				has_base_skill >= 30
+			}
+		}
+	}
+
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+		NOT = { has_ascension_perk = ap_artifact_court_destiny }
+	}
+
+	modifier = {
+		country_edict_fund_add = 250
+		# 保留既有行政与舰队效果；这些加成不授予主线终局身份。
+		country_naval_cap_mult = 0.20
+		ship_home_territory_fire_rate_mult = 0.25
+		ship_armor_hardening_add = 0.25
+		country_leader_pool_size = 3
+	}
+
+	ai_weight = {
+		factor = 20
+	}
+}

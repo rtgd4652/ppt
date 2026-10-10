@@ -1,3 +1,5 @@
+# 文明公共飞升：两项文明跨越独立于爱缪莎个人正式转变。
+# 既有个人飞升定义见 aemusa_personal_ascension_perks.txt。
 # 神器共鸣之路：神器使物种线的一段飞升，负责解锁中期独立军备与经济扩展。
 ap_artifact_user_resonance_path = {
 	possible = {
@@ -61,47 +63,5 @@ ap_artifact_user_apotheosis_path = {
 
 	ai_weight = {
 		factor = 10
-	}
-}
-
-# 爱缪莎命运主宰：爱缪莎个人科技线的入口，由爱缪莎达到 30 级后解锁。
-ap_artifact_court_destiny = {
-	possible = {
-		owner_main_species = {
-			is_species_class = "ARTIFACT_USER"
-		}
-		has_tradition = tr_artifact_court_finish
-		custom_tooltip = {
-			fail_text = "requires_ascension_perks_3"
-			num_ascension_perks > 2
-		}
-		custom_tooltip = {
-			fail_text = "requires_aemusa_level_30"
-			exists = event_target:aemusa_leader
-			event_target:aemusa_leader = {
-				has_leader_flag = aemusa_unique_leader
-				has_base_skill >= 30
-			}
-		}
-	}
-
-	potential = {
-		owner_main_species = {
-			is_species_class = "ARTIFACT_USER"
-		}
-		NOT = { has_ascension_perk = ap_artifact_court_destiny }
-	}
-
-	modifier = {
-		country_edict_fund_add = 250
-		# 当前版本不接受分学科科研速度修正，命运主宰飞升保留行政与舰队效果。
-		country_naval_cap_mult = 0.20
-		ship_home_territory_fire_rate_mult = 0.25
-		ship_armor_hardening_add = 0.25
-		country_leader_pool_size = 3
-	}
-
-	ai_weight = {
-		factor = 20
 	}
 }

@@ -390,7 +390,7 @@
  ap_artifact_user_apotheosis_path:0 "神器终解之路"
  ap_artifact_user_apotheosis_path_desc:0 "整个文明开始将神器工程写入生产、部署与作战制度。选择后满足§Y神器终解战争学§!的文明条件，并允许在完成§Y命运都市工程§!研究及行星准备后改造一座命运都市。\n\n§Y合金产出§!：§G+10%§!\n§Y消费品产出§!：§G+10%§!\n§Y凝聚力产出§!：§G+10%§!\n§Y海军容量§!：§G+20%§!\n§Y舰船射速§!：§G+15%§!"
  ap_artifact_court_destiny:0 "爱缪莎：命运主宰"
- ap_artifact_court_destiny_desc:0 "爱缪莎的高阶公共职责与舰队组织能力。共有神器科技沿文明研究路线开放；此飞升不替代主线中的正式转变与独立决定。\n\n§Y法令经费§!：§G+250§!\n§Y海军容量§!：§G+20%§!\n§Y境内舰船射速§!：§G+25%§!\n§Y装甲硬化§!：§G+25%§!\n§Y领袖池容量§!：§G+3§!"
+ ap_artifact_court_destiny_desc:0 "爱缪莎个人能力的既有飞升入口，提供行政与舰队加成。文明科技与两项文明飞升独立发展；此入口不授予主线正式转变身份，也不解锁新个人专属科技。\n\n§Y法令经费§!：§G+250§!\n§Y海军容量§!：§G+20%§!\n§Y境内舰船射速§!：§G+25%§!\n§Y装甲硬化§!：§G+25%§!\n§Y领袖池容量§!：§G+3§!"
  requires_ascension_perks_2:0 "$TRIGGER_FAIL$需要先选择至少 2 个飞升。"
  requires_ascension_perks_4:0 "$TRIGGER_FAIL$需要先选择至少 4 个飞升。"
  requires_aemusa_level_30:0 "$TRIGGER_FAIL$需要爱缪莎达到 30 级。"

@@ -181,7 +181,7 @@ edict_aemusa_debug_overdrive = {
 	}
 }
 
-# 科技档案法令：旧版兼容入口已停用，避免绕过爱缪莎飞升解锁科技线的规则。
+# 科技档案法令：旧版兼容入口已停用；共有文明科技正常研究，个人专属科技独立设计。
 edict_artifact_research_archive = {
 	length = 1 # 停用入口也保留安全时长，防止未来重新启用时触发零时长崩溃。
 	icon = "GFX_edict_type_policy"

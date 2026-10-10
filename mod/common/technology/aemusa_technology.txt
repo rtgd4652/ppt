@@ -1,3 +1,5 @@
+# 文明科技树：16项共有研究与3项军备研究，只读取文明研究／传统／公共飞升条件。
+# 爱缪莎正式转变的专属科技独立制作；旧舰／旧塔研究见 aemusa_legacy_technology.txt。
 # 塔罗演算：神器文明共有研究入口，保留文明身份和科技层级，不依赖个人30级飞升。
 tech_artifact_tarot_calculation = {
 	area = physics
@@ -118,7 +120,7 @@ tech_artifact_seven_day_logistics = {
 	}
 }
 
-# 命运经济矩阵：命运观测塔之前的最终行星经济科技，解锁命运经济演算院。
+# 命运经济矩阵：文明共有的后期经济研究，解锁命运经济演算院与研究尖塔。
 tech_artifact_destiny_economy = {
 	area = physics
 	icon = tech_artifact_destiny_economy
@@ -272,47 +274,6 @@ tech_artifact_destiny_city_project = {
 	weight = 30
 	potential = {
 		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-	}
-}
-
-# 命运观测塔：在中央庭守望传统完成后，建造星系尺度的命运演算巨构。
-tech_artifact_fate_observatory = {
-	area = physics
-	icon = tech_artifact_fate_observatory
-	cost = 24000
-	tier = 5
-	category = { computing }
-	is_rare = yes
-	prerequisites = { "tech_artifact_destiny_economy" "tech_mega_engineering" }
-	weight = 15
-	potential = {
-		NOT = { has_country_flag = aemusa_ms_country_route_initialized }
-		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
-	}
-}
-
-# 命运之主：将观测塔演算核心嵌入超旗舰舰体的终极工程。
-tech_artifact_destiny_lord = {
-	area = engineering
-	icon = tech_artifact_destiny_lord
-	cost = 30000
-	tier = 5
-	category = { voidcraft }
-	is_rare = yes
-	prerequisites = { "tech_artifact_fate_observatory" "tech_titans" }
-	# 在科技卡上明确提示该科技会解锁命运之主舰船类型。
-	prereqfor_desc = {
-		ship = {
-			title = "TECH_UNLOCK_DESTINY_LORD_CONSTRUCTION_TITLE"
-			desc = "TECH_UNLOCK_DESTINY_LORD_CONSTRUCTION_DESC"
-		}
-	}
-	weight = 10
-	potential = {
-		NOT = { has_country_flag = aemusa_ms_country_route_initialized }
-		owner_main_species = { is_species_class = "ARTIFACT_USER" }
-		has_ascension_perk = ap_artifact_court_destiny
 	}
 }
 

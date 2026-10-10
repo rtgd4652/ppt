@@ -1,0 +1,44 @@
+# 遗留存档科技：保留旧键、原前置和新主线初始化后的排除条件。
+# 本文件的两项研究不属于当前文明树，也不是新爱缪莎飞升专属科技的实现。
+# 旧前置中的文明经济科技仅为兼容保留；不得据此给新个人路线或文明树增加互锁。
+
+# 旧命运观测塔：仅保留原版型旧巨构的研究入口。
+tech_artifact_fate_observatory = {
+	area = physics
+	icon = tech_artifact_fate_observatory
+	cost = 24000
+	tier = 5
+	category = { computing }
+	is_rare = yes
+	prerequisites = { "tech_artifact_destiny_economy" "tech_mega_engineering" }
+	weight = 15
+	potential = {
+		NOT = { has_country_flag = aemusa_ms_country_route_initialized }
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
+}
+
+# 旧命运之主：保留旧舰研究身份，不充当新旗舰获取入口。
+tech_artifact_destiny_lord = {
+	area = engineering
+	icon = tech_artifact_destiny_lord
+	cost = 30000
+	tier = 5
+	category = { voidcraft }
+	is_rare = yes
+	prerequisites = { "tech_artifact_fate_observatory" "tech_titans" }
+	# 保留已有科技卡的旧舰解锁说明。
+	prereqfor_desc = {
+		ship = {
+			title = "TECH_UNLOCK_DESTINY_LORD_CONSTRUCTION_TITLE"
+			desc = "TECH_UNLOCK_DESTINY_LORD_CONSTRUCTION_DESC"
+		}
+	}
+	weight = 10
+	potential = {
+		NOT = { has_country_flag = aemusa_ms_country_route_initialized }
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		has_ascension_perk = ap_artifact_court_destiny
+	}
+}
