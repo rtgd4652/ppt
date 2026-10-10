@@ -1,0 +1,208 @@
+{
+  "recorded_on": "2026-10-10",
+  "method": "read_only_structured_blocks",
+  "runtime_version": "4.5.2",
+  "runtime_checksum": "aecd",
+  "saves": [
+    {
+      "save_name": "A-capital-workshop-done-2246.sav",
+      "date": "2246.03.01",
+      "player_id": 0,
+      "capital_colony_id": 0,
+      "capital_planet_id": 3,
+      "variables": {
+        "ar_an_completed_count": 1.0,
+        "ar_an_cost_alloys": 0.0,
+        "ar_an_cost_consumer_goods": 0.0,
+        "ar_an_cost_energy": 100.0,
+        "ar_an_cost_minerals": 0.0,
+        "ar_an_cost_unity": 50.0,
+        "ar_an_progress": 2.0,
+        "ar_li_completed_count": 1.0,
+        "ar_li_cost_alloys": 100.0,
+        "ar_li_cost_consumer_goods": 0.0,
+        "ar_li_cost_energy": 600.0,
+        "ar_li_cost_minerals": 250.0,
+        "ar_li_cost_unity": 50.0,
+        "ar_li_progress": 3.0,
+        "ar_li_work_required": 3.0
+      },
+      "flags": {
+        "ar_an_active": false,
+        "ar_an_planet": false,
+        "ar_an_record_ready": false,
+        "ar_an_completed": true,
+        "ar_li_active": false,
+        "ar_li_planet": false,
+        "ar_li_ready": false,
+        "ar_li_working": false,
+        "ar_li_completed": true,
+        "ar_li_cooldown": false
+      },
+      "task_targets": {},
+      "capital_restoration_modifiers": [],
+      "identities": {
+        "ar_an_unique": [
+          {
+            "id": 16777290,
+            "class": "official",
+            "level": 7,
+            "owner": 0
+          }
+        ],
+        "ar_li_unique": [
+          {
+            "id": 33554578,
+            "class": "official",
+            "level": 7,
+            "owner": 0
+          }
+        ]
+      }
+    },
+    {
+      "save_name": "2246.07.26.sav",
+      "date": "2246.07.26",
+      "player_id": 0,
+      "capital_colony_id": 0,
+      "capital_planet_id": 3,
+      "variables": {
+        "ag_an_primary": 1.0,
+        "ag_an_stage": 1.0,
+        "ag_an_support": 1.1,
+        "ag_li_primary": 1.0,
+        "ag_li_stage": 1.0,
+        "ag_li_support": 1.1,
+        "ar_an_completed_count": 2.0,
+        "ar_an_cost_alloys": 0.0,
+        "ar_an_cost_consumer_goods": 0.0,
+        "ar_an_cost_energy": 100.0,
+        "ar_an_cost_minerals": 0.0,
+        "ar_an_cost_unity": 50.0,
+        "ar_an_progress": 2.0,
+        "ar_an_record_stage": 1.0,
+        "ar_li_completed_count": 1.0,
+        "ar_li_cost_alloys": 100.0,
+        "ar_li_cost_consumer_goods": 0.0,
+        "ar_li_cost_energy": 600.0,
+        "ar_li_cost_minerals": 250.0,
+        "ar_li_cost_unity": 50.0,
+        "ar_li_progress": 0.0,
+        "ar_li_work_required": 3.0
+      },
+      "flags": {
+        "ar_an_active": false,
+        "ar_an_planet": true,
+        "ar_an_record_ready": true,
+        "ar_an_completed": true,
+        "ar_li_active": false,
+        "ar_li_planet": true,
+        "ar_li_ready": false,
+        "ar_li_working": true,
+        "ar_li_completed": false,
+        "ar_li_cooldown": false
+      },
+      "task_targets": {
+        "ar_an_target0": {
+          "type": "colony",
+          "id": 0
+        },
+        "ar_li_target0": {
+          "type": "colony",
+          "id": 0
+        }
+      },
+      "capital_restoration_modifiers": [],
+      "identities": {
+        "ar_an_unique": [
+          {
+            "id": 16777290,
+            "class": "official",
+            "level": 7,
+            "owner": 0
+          }
+        ],
+        "ar_li_unique": [
+          {
+            "id": 33554578,
+            "class": "official",
+            "level": 7,
+            "owner": 0
+          }
+        ]
+      }
+    },
+    {
+      "save_name": "2247.01.25.sav",
+      "date": "2247.01.25",
+      "player_id": 0,
+      "capital_colony_id": 0,
+      "capital_planet_id": 3,
+      "variables": {
+        "ag_an_primary": 1.0,
+        "ag_an_stage": 1.0,
+        "ag_an_support": 1.1,
+        "ag_li_primary": 1.0,
+        "ag_li_stage": 1.0,
+        "ag_li_support": 1.1,
+        "ar_an_completed_count": 2.0,
+        "ar_an_cost_alloys": 0.0,
+        "ar_an_cost_consumer_goods": 0.0,
+        "ar_an_cost_energy": 100.0,
+        "ar_an_cost_minerals": 0.0,
+        "ar_an_cost_unity": 50.0,
+        "ar_an_progress": 2.0,
+        "ar_an_record_stage": 1.0,
+        "ar_li_completed_count": 2.0,
+        "ar_li_cost_alloys": 100.0,
+        "ar_li_cost_consumer_goods": 0.0,
+        "ar_li_cost_energy": 600.0,
+        "ar_li_cost_minerals": 250.0,
+        "ar_li_cost_unity": 50.0,
+        "ar_li_progress": 3.0,
+        "ar_li_work_required": 3.0
+      },
+      "flags": {
+        "ar_an_active": false,
+        "ar_an_planet": false,
+        "ar_an_record_ready": false,
+        "ar_an_completed": true,
+        "ar_li_active": false,
+        "ar_li_planet": false,
+        "ar_li_ready": false,
+        "ar_li_working": false,
+        "ar_li_completed": true,
+        "ar_li_cooldown": true
+      },
+      "task_targets": {},
+      "capital_restoration_modifiers": [
+        {
+          "key": "ar_li_public_engineering",
+          "remaining_days": 66
+        },
+        {
+          "key": "ar_an_learned_service",
+          "remaining_days": 90
+        }
+      ],
+      "identities": {
+        "ar_an_unique": [
+          {
+            "id": 16777290,
+            "class": "official",
+            "level": 7,
+            "owner": 0
+          }
+        ],
+        "ar_li_unique": [
+          {
+            "id": 33554578,
+            "class": "official",
+            "level": 7,
+            "owner": 0
+          }
+        ]
+      }
+    }
+  ]
+}

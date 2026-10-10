@@ -9,6 +9,7 @@
 ## 新会话入口
 
 1. [当前进度](docs/PROJECT_STATUS.md)：当前工作包、完成层级、阻塞和下一步。
+   接手操作见 [可用操作与执行条件](docs/AGENT_OPERATIONS.md)：游戏启动、截图、英文扫描码输入、窗口点击、Blender、存档及Git能力记录；先确认本会话入口，不重放旧测试命令。
 2. [主线工作包](docs/design/aemusa_main_story_implementation_work_packages_v1.0.md)：范围、依赖与逐包授权记录。
 3. [里程碑1实施方案](docs/design/aemusa_main_story_awp_06_mechanism_proposal.md)：新旗舰、新巨构与专属危机范围；首版可玩内容已完成，[最新验收与续接](reports/aemusa_main_story_milestone_1_2026-10-07.md)记录运行结果及受控边界。
 4. [里程碑2实施说明](docs/design/aemusa_main_story_milestone_2_implementation.md)：终章、独立决定、三结局、等级补足与尾声；[本轮续接](reports/aemusa_main_story_milestone_2_2026-10-07.md)区分工具检查和游戏内验收。

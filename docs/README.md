@@ -1,11 +1,12 @@
 # 项目文档索引
 
-更新：2026-10-09。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)。
+更新：2026-10-10。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)。
 
 ## 进入项目
 
 - [架构与模块边界](ARCHITECTURE.md)
 - [当前进度](PROJECT_STATUS.md)
+- [智能体可用操作与接手说明](AGENT_OPERATIONS.md)：已验证能力、脚本入口、当前会话差异及失败处理；历史操作不自动重放。
 - [内部里程碑与发布计划](ROADMAP.md)
 - [当前执行清单](TODO.md)
 - [只读检查与本地快照](../tools/validation/README.md)
@@ -23,7 +24,8 @@
 - [成长与自由组合提案](design/artifact_civilization_growth_and_combinations_v0.1.md)
 - [十人成长基准B1记录](../reports/artifact_growth_batch_b1_2026-10-09.md)：名册和公共计算已接入；各人的分级核心效果从B2继续，正式固定搭档按原著决定。
 - [成长核心B2首批记录](../reports/artifact_growth_batch_b2a_2026-10-09.md)：安的时序记录按取得时档位提供有限用途，丽按实际成长推进付费施工；加载和页面检查与完整运行边界见报告。
-- [10月9日收工与续接](../reports/development_closeout_2026-10-09.md)：保存A批、B1、B2首批检查点、保留档案和用户决定，下次先补B2轻量游戏检查。
+- [B2首批10月10日运行与续接](../reports/artifact_growth_batch_b2a_runtime_2026-10-10.md)：安／丽档1正常流程、一次进行态读档和有限效果已通过，下一批接其余八人的分级核心；Computer Use与键盘限制已同步。
+- [10月9日收工与续接](../reports/development_closeout_2026-10-09.md)：A批、B1、B2源码检查点与当晚用户决定的历史记录；其中待补游戏检查已由10月10日记录接续。
 - [首都工坊试验玩法](mechanics/artifact_engineering_play_guide_v0.1.md)：A批丽／安单人或自由协作；[运行记录](../reports/artifact_engineering_batch_a_2026-10-09.md)区分受控研究前置与正常月度工作。
 - [知识库与正史入口](../knowledge/README.md)
 
