@@ -23,6 +23,10 @@ public static class StellarisTextInput {
     [DllImport("user32.dll")] public static extern IntPtr GetForegroundWindow();
     [DllImport("user32.dll")] public static extern uint GetWindowThreadProcessId(IntPtr h,out uint pid);
     [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
+    [DllImport("kernel32.dll")] public static extern uint GetCurrentThreadId();
+    [DllImport("user32.dll")] public static extern bool AttachThreadInput(uint a,uint b,bool attach);
+    [DllImport("user32.dll")] public static extern bool BringWindowToTop(IntPtr h);
+    [DllImport("user32.dll")] public static extern bool ShowWindowAsync(IntPtr h,int n);
     [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h,out RECT r);
     [DllImport("user32.dll")] public static extern bool IsIconic(IntPtr h);
     [DllImport("user32.dll")] public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr c);
@@ -146,7 +150,27 @@ if ($Action -eq 'Inspect') {
     exit
 }
 if ($Action -eq 'Activate') {
-    if ([StellarisTextInput]::GetForegroundWindow() -ne $gameWindow -and -not [StellarisTextInput]::SetForegroundWindow($gameWindow)) { throw 'Activation rejected; no input sent.' }
+    if ([StellarisTextInput]::IsIconic($gameWindow)) { [void][StellarisTextInput]::ShowWindowAsync($gameWindow,9) }
+    if ([StellarisTextInput]::GetForegroundWindow() -ne $gameWindow) {
+        [void][StellarisTextInput]::SetForegroundWindow($gameWindow)
+        if ([StellarisTextInput]::GetForegroundWindow() -ne $gameWindow) {
+            # 只在显式Activate动作中临时连接前台线程以恢复游戏焦点；不发送模拟按键。
+            # 无论成功或失败都解除连接，之后仍由截图守卫核实真实前台。
+            $activationThread = [StellarisTextInput]::GetCurrentThreadId()
+            [uint32]$foregroundOwner = 0
+            $foregroundThread = [StellarisTextInput]::GetWindowThreadProcessId([StellarisTextInput]::GetForegroundWindow(),[ref]$foregroundOwner)
+            $inputAttached = $false
+            try {
+                if ($foregroundThread -ne 0 -and $foregroundThread -ne $activationThread) {
+                    $inputAttached = [StellarisTextInput]::AttachThreadInput($activationThread,$foregroundThread,$true)
+                }
+                [void][StellarisTextInput]::BringWindowToTop($gameWindow)
+                [void][StellarisTextInput]::SetForegroundWindow($gameWindow)
+            } finally {
+                if ($inputAttached) { [void][StellarisTextInput]::AttachThreadInput($activationThread,$foregroundThread,$false) }
+            }
+        }
+    }
     Start-Sleep -Milliseconds 300
     Save-GameCapture
     exit
@@ -160,6 +184,13 @@ if ($Action -eq 'Capture') { Save-GameCapture; exit }
 Assert-NoPhysicalModifiers
 if ($Action -eq 'Text') {
     if (([StellarisTextInput]::GetKeyState(0x14) -band 1) -ne 0) { throw 'Caps Lock is on; no text sent.' }
+    # 失焦后的旧文字仍可能留在游戏输入行；不得覆盖账本并叠加新命令。
+    if (Test-Path -LiteralPath $pendingRecord) {
+        $previousInput = Get-Content -LiteralPath $pendingRecord -Raw | ConvertFrom-Json
+        if (-not $previousInput.Submitted -and $previousInput.Attempted -gt 0) {
+            throw 'Unsubmitted text remains; inspect and submit or clear it before typing.'
+        }
+    }
     [pscustomobject]@{Pid=$game.Id;Window=$gameWindow.ToInt64();Text=$inputText;Attempted=0;Complete=$false;Submitted=$false} | ConvertTo-Json | Set-Content -LiteralPath $pendingRecord -Encoding utf8
     $attempted = 0
     try {
@@ -183,8 +214,10 @@ if ($Action -eq 'Text') {
     if (-not (Test-Path -LiteralPath $pendingRecord)) { throw 'No pending text to clear.' }
     $pending = Get-Content -LiteralPath $pendingRecord -Raw | ConvertFrom-Json
     if ($pending.Pid -ne $game.Id -or $pending.Window -ne $gameWindow.ToInt64() -or -not $pending.Complete -or $pending.Submitted) { throw 'Pending text not valid for clearing.' }
+    # 先依据画面确认光标在自有文字末尾；游戏没有可靠接收 End 键。
     for ($index=0; $index -lt $pending.Text.Length; $index++) { Send-OneKey 0x08 }
     $pending.Complete = $false
+    $pending.Attempted = 0
     $pending | ConvertTo-Json | Set-Content -LiteralPath $pendingRecord -Encoding utf8
 } elseif ($Action -eq 'ShiftMode') {
     # 仅在已确认输入行空白时切换一次，随后用help实测当前英文模式。

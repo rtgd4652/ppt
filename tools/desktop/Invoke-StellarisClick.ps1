@@ -4,7 +4,10 @@ param(
     [Parameter(Mandatory)][ValidateRange(0.0,1.0)][double]$X,
     [Parameter(Mandatory)][ValidateRange(0.0,1.0)][double]$Y,
     [Parameter(Mandatory)][string]$ReferenceImage,
-    [Parameter(Mandatory)][ValidateRange(1,2147483647)][int]$ExpectedGameProcessId
+    [Parameter(Mandatory)][ValidateRange(1,2147483647)][int]$ExpectedGameProcessId,
+    # 非零时只发送滚轮，沿用同一窗口、前台和新截图守卫；负值向下。
+    [ValidateRange(-1200,1200)][int]$Scroll = 0,
+    [ValidateRange(1,100)][int]$ScrollSteps = 1
 )
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
@@ -27,6 +30,12 @@ public static class StellarisWindowClick {
     [DllImport("user32.dll",SetLastError=true)] private static extern uint SendInput(uint count,INPUT[] inputs,int size);
     public static void LeftButton(bool up) {
         INPUT input=new INPUT(); input.type=0; input.data.dwFlags=up?4u:2u;
+        if(SendInput(1,new INPUT[]{input},Marshal.SizeOf(typeof(INPUT)))!=1)
+            throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
+    }
+    public static void Wheel(int delta) {
+        INPUT input=new INPUT(); input.type=0; input.data.dwFlags=0x0800u;
+        input.data.mouseData=unchecked((uint)delta);
         if(SendInput(1,new INPUT[]{input},Marshal.SizeOf(typeof(INPUT)))!=1)
             throw new System.ComponentModel.Win32Exception(Marshal.GetLastWin32Error());
     }
@@ -91,17 +100,26 @@ try {
     Assert-CurrentGame
     $buttonDown = $false
     try {
-        [StellarisWindowClick]::LeftButton($false)
-        $buttonDown = $true
-        Start-Sleep -Milliseconds 100
+        if ($Scroll -ne 0) {
+            # 游戏按滚轮事件逐格移动，分步发送并逐次核实前台。
+            for ($scrollIndex = 0; $scrollIndex -lt $ScrollSteps; $scrollIndex++) {
+                Assert-CurrentGame
+                [StellarisWindowClick]::Wheel($Scroll)
+                Start-Sleep -Milliseconds 50
+            }
+        } else {
+            [StellarisWindowClick]::LeftButton($false)
+            $buttonDown = $true
+            Start-Sleep -Milliseconds 100
+        }
     } finally {
         # 只释放本脚本按下的按钮，失焦时不再发送新的按下操作。
         if ($buttonDown) { [StellarisWindowClick]::LeftButton($true) }
     }
     Start-Sleep -Milliseconds 250
     Assert-CurrentGame
-    [pscustomobject]@{Pid=$targetGame.Id;Window=$targetWindow.ToInt64();X=$clickX;Y=$clickY;Attempted=$true} | ConvertTo-Json -Compress
-    Write-Output 'Click attempted; capture the game and verify the actual result.'
+    [pscustomobject]@{Pid=$targetGame.Id;Window=$targetWindow.ToInt64();X=$clickX;Y=$clickY;Scroll=$Scroll;Attempted=$true} | ConvertTo-Json -Compress
+    Write-Output 'Pointer input attempted; capture the game and verify the actual result.'
 } finally {
     [void][StellarisWindowClick]::SetThreadDpiAwarenessContext($oldDpiContext)
 }

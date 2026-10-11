@@ -1,6 +1,8 @@
 # 当前执行清单
 
-更新：2026-10-10。详细状态与证据统一见 [PROJECT_STATUS](PROJECT_STATUS.md)；本页只维护当前可执行事项。
+更新：2026-10-11。详细状态与证据统一见 [PROJECT_STATUS](PROJECT_STATUS.md)；本页只维护当前可执行事项。
+
+C2最新约束：正常准备已保存于 `2252.06.04.sav`，剩实际轰炸时正常启动与保护期读档一次；用户要求简化，不扩测到期、再次整备或历史场景。轰炸前置失败和停点见[本次续接](../reports/artifact_civilization_emergency_c2_runtime_2026-10-11.md)，不能记为完整通过。
 
 ## 1.0范围更新后的下一步
 
