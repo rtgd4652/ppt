@@ -1,0 +1,83 @@
+{
+  "method": "Read-only ZIP gamestate; existing check_mod structural parser; player -> country -> capital colony -> unique owned planet. No save edits.",
+  "snapshots": {
+    "prepared_checkpoint": {
+      "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2252.06.04.sav",
+      "bytes": 1877942,
+      "sha256": "af70e8cd41603ce7ae775c24d3594a827d47a7acfd83563aa833535c8e20e526",
+      "date": "2252.06.04",
+      "player_country": "0",
+      "capital_colony": "0",
+      "capital_planet": "3",
+      "owner": "0",
+      "controller": "0",
+      "main_species_class": "ARTIFACT_USER",
+      "seven_day_logistics": true,
+      "emergency_modifiers": {
+        "artifact_emergency_prepared": -1
+      },
+      "last_bombardment": "0.01.01",
+      "bombardment_damage": "0"
+    },
+    "before_activation": {
+      "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2253.09.14.sav",
+      "bytes": 1934460,
+      "sha256": "7aa7ad265481296d8ef5da0a7f0256bf8167e0832eadff100fff6dc362b1fbf7",
+      "date": "2253.09.14",
+      "player_country": "0",
+      "capital_colony": "0",
+      "capital_planet": "3",
+      "owner": "0",
+      "controller": "0",
+      "main_species_class": "ARTIFACT_USER",
+      "seven_day_logistics": true,
+      "emergency_modifiers": {
+        "artifact_emergency_prepared": -1
+      },
+      "last_bombardment": "0.01.01",
+      "bombardment_damage": "0"
+    },
+    "protected_save": {
+      "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2253.09.15.sav",
+      "bytes": 1934056,
+      "sha256": "5eba97a38359ad851235eb6cb5678e6371ea78c05367b43e293f831bf5672b20",
+      "date": "2253.09.15",
+      "player_country": "0",
+      "capital_colony": "0",
+      "capital_planet": "3",
+      "owner": "0",
+      "controller": "0",
+      "main_species_class": "ARTIFACT_USER",
+      "seven_day_logistics": true,
+      "emergency_modifiers": {
+        "artifact_emergency_protection": 179,
+        "artifact_emergency_rearming": 539
+      },
+      "last_bombardment": "2253.09.15",
+      "bombardment_damage": "0.01488"
+    }
+  },
+  "runtime_observation": {
+    "activation_date": "2253.09.14",
+    "activation": "normal decision_artifact_emergency_activate UI click",
+    "initial_protection_days": 180,
+    "initial_rearming_display": "1.5 years",
+    "critical_load_count": 1,
+    "loaded_date": "2253.09.15",
+    "loaded_paused": true,
+    "loaded_protection_days": 179,
+    "loaded_bombardment_damage_modifier": "-25%",
+    "loaded_rearming_display": "1.5 years",
+    "loaded_prepared_icon": false,
+    "rearming_exact_days_after_load": "not separately measured; saved 539 days; UI rounds to years",
+    "screenshots": [
+      "c2_12_activate_clicked.png",
+      "c2_12_protection_before.png",
+      "c2_12_rearming_before.png",
+      "c2_12_critical_load_receipt.png",
+      "c2_12_loaded_final.png",
+      "c2_12_protection_after.png",
+      "c2_12_rearming_after.png"
+    ]
+  }
+}

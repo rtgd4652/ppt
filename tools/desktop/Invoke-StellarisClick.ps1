@@ -7,7 +7,11 @@ param(
     [Parameter(Mandatory)][ValidateRange(1,2147483647)][int]$ExpectedGameProcessId,
     # 非零时只发送滚轮，沿用同一窗口、前台和新截图守卫；负值向下。
     [ValidateRange(-1200,1200)][int]$Scroll = 0,
-    [ValidateRange(1,100)][int]$ScrollSteps = 1
+    [ValidateRange(1,100)][int]$ScrollSteps = 1,
+    # 仅用于已观察的暂停按钮：先读实际图标，已暂停时不点击，避免原版事件插入自动暂停后反而恢复运行。
+    [switch]$EnsurePaused,
+    # 图像回合可能超过两分钟；显式放宽时仅允许暂停的游戏，暂停按钮另按实时图标判断。
+    [ValidateRange(30,600)][int]$MaxReferenceAgeSeconds = 120
 )
 $ErrorActionPreference = 'Stop'
 Add-Type -AssemblyName System.Drawing
@@ -68,8 +72,8 @@ if (([int][StellarisWindowClick]::GetAsyncKeyState(0x01) -band 0x8000) -ne 0) {
     throw 'Left mouse button already held; no pointer input sent.'
 }
 $referenceFile = Get-Item -LiteralPath $ReferenceImage -ErrorAction Stop
-if (([DateTime]::UtcNow - $referenceFile.LastWriteTimeUtc).TotalSeconds -gt 120) {
-    throw 'Reference capture is older than 120 seconds; capture and inspect the current game first.'
+if (([DateTime]::UtcNow - $referenceFile.LastWriteTimeUtc).TotalSeconds -gt $MaxReferenceAgeSeconds) {
+    throw 'Reference capture is too old; capture and inspect the current game first.'
 }
 $oldDpiContext = [StellarisWindowClick]::SetThreadDpiAwarenessContext([IntPtr](-4))
 try {
@@ -88,6 +92,37 @@ try {
             throw 'Window dimensions differ from reference capture; no pointer input sent.'
         }
     } finally { $referenceBitmap.Dispose() }
+    function Get-GamePauseState {
+        Assert-CurrentGame
+        $pauseWidth = [int][Math]::Round(($windowBounds.Right-$windowBounds.Left)*0.010)
+        $pauseHeight = [int][Math]::Round(($windowBounds.Bottom-$windowBounds.Top)*0.023)
+        $pauseBitmap = New-Object Drawing.Bitmap($pauseWidth,$pauseHeight)
+        $pauseGraphics = [Drawing.Graphics]::FromImage($pauseBitmap)
+        try {
+            $pauseGraphics.CopyFromScreen($windowBounds.Left+[int][Math]::Round(($windowBounds.Right-$windowBounds.Left)*0.895),$windowBounds.Top+[int][Math]::Round(($windowBounds.Bottom-$windowBounds.Top)*0.032),0,0,$pauseBitmap.Size)
+            $orangePixels = 0; $tealPixels = 0
+            for ($pauseRow=0; $pauseRow -lt $pauseHeight; $pauseRow++) {
+                for ($pauseColumn=0; $pauseColumn -lt $pauseWidth; $pauseColumn++) {
+                    $pausePixel = $pauseBitmap.GetPixel($pauseColumn,$pauseRow)
+                    if ($pausePixel.R -gt 170 -and $pausePixel.R -gt ($pausePixel.G+35) -and $pausePixel.G -gt 70 -and $pausePixel.B -lt 160) { $orangePixels++ }
+                    if ($pausePixel.R -lt 150 -and $pausePixel.G -gt 150 -and $pausePixel.B -gt 120 -and $pausePixel.G -gt ($pausePixel.R+35)) { $tealPixels++ }
+                }
+            }
+        } finally { $pauseGraphics.Dispose(); $pauseBitmap.Dispose() }
+        Assert-CurrentGame
+        if ($orangePixels -ge 100 -and $tealPixels -lt 20) { return 'paused' }
+        if ($tealPixels -ge 100 -and $orangePixels -lt 20) { return 'running' }
+        throw 'Pause icon is not recognizable; no new mouse-down sent.'
+    }
+    if ($EnsurePaused) {
+        if ($Scroll -ne 0 -or [Math]::Abs($X-0.900) -gt 0.0001 -or [Math]::Abs($Y-0.043) -gt 0.0001) {
+            throw 'EnsurePaused only supports the observed pause button at X=0.900 Y=0.043.'
+        }
+        if ((Get-GamePauseState) -eq 'paused') { Write-Output 'PAUSE_CONFIRMED already paused; no click sent.'; exit }
+    }
+    if ($MaxReferenceAgeSeconds -gt 120 -and -not $EnsurePaused -and (Get-GamePauseState) -ne 'paused') {
+        throw 'Extended reference age requires the game to be paused; no new mouse-down sent.'
+    }
     $clickX = $windowBounds.Left + [int][Math]::Round($X * ($windowBounds.Right-$windowBounds.Left-1))
     $clickY = $windowBounds.Top + [int][Math]::Round($Y * ($windowBounds.Bottom-$windowBounds.Top-1))
     if ($clickX -lt $clientOrigin.X -or $clickX -ge ($clientOrigin.X+$clientBounds.Right) -or
@@ -98,6 +133,9 @@ try {
     if (-not [StellarisWindowClick]::SetCursorPos($clickX,$clickY)) { throw 'Cannot place pointer inside game.' }
     Start-Sleep -Milliseconds 80
     Assert-CurrentGame
+    if ($MaxReferenceAgeSeconds -gt 120 -and -not $EnsurePaused -and (Get-GamePauseState) -ne 'paused') {
+        throw 'Game resumed before pointer input; no new mouse-down sent.'
+    }
     $buttonDown = $false
     try {
         if ($Scroll -ne 0) {
@@ -108,6 +146,7 @@ try {
                 Start-Sleep -Milliseconds 50
             }
         } else {
+            if ($EnsurePaused -and (Get-GamePauseState) -eq 'paused') { Write-Output 'PAUSE_CONFIRMED event paused before click; no click sent.'; exit }
             [StellarisWindowClick]::LeftButton($false)
             $buttonDown = $true
             Start-Sleep -Milliseconds 100
@@ -118,6 +157,7 @@ try {
     }
     Start-Sleep -Milliseconds 250
     Assert-CurrentGame
+    if ($EnsurePaused -and (Get-GamePauseState) -ne 'paused') { throw 'Pause click was not confirmed; inspect the current game before continuing.' }
     [pscustomobject]@{Pid=$targetGame.Id;Window=$targetWindow.ToInt64();X=$clickX;Y=$clickY;Scroll=$Scroll;Attempted=$true} | ConvertTo-Json -Compress
     Write-Output 'Pointer input attempted; capture the game and verify the actual result.'
 } finally {
