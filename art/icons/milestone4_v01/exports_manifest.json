@@ -1,0 +1,74 @@
+[
+  {
+    "source": "sources/building_seven_day_command_v01.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_sha256": "2848e940b84318936e42ca3e972ba8fb31e252df4657f1f062c2a775f4a5d141",
+    "target_gfx": "GFX_building_artifact_seven_day_command",
+    "png": "exports\\building_seven_day_command_v01_128.png",
+    "dds": "exports\\building_seven_day_command_v01_128.dds",
+    "target_size": [
+      128,
+      128
+    ],
+    "source_alpha_extrema": [
+      0,
+      255
+    ],
+    "format": "DDS uncompressed RGBA8",
+    "dds_roundtrip_equal": true,
+    "dds_sha256": "6c44641df61d3505364768719b1fa9a70e17c3adc85073c0d1b8f7a51386d9e8",
+    "runtime_installed": false,
+    "review_status": "draft_pending_human_review"
+  },
+  {
+    "source": "sources/tech_seven_day_logistics_v01.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_sha256": "8ee7e794f1ad3702d4fafa5f017a8fe4c1dfe3913ab633ad37c637c41985dafe",
+    "target_gfx": "GFX_tech_artifact_seven_day_logistics",
+    "png": "exports\\tech_seven_day_logistics_v01_128.png",
+    "dds": "exports\\tech_seven_day_logistics_v01_128.dds",
+    "target_size": [
+      128,
+      128
+    ],
+    "source_alpha_extrema": [
+      0,
+      255
+    ],
+    "format": "DDS uncompressed RGBA8",
+    "dds_roundtrip_equal": true,
+    "dds_sha256": "c9c6ad98076aeb4ca1eb4c93ba9b3811a125da46da37d6855751424c43a9a7c1",
+    "runtime_installed": false,
+    "review_status": "draft_pending_human_review"
+  },
+  {
+    "source": "sources/ap_resonance_path_v01.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_sha256": "04c11c7b1f0d311ad15395f51dd8346a9f1cc31d6dc5df175096d0febe7594e0",
+    "target_gfx": "GFX_ap_artifact_user_resonance_path",
+    "png": "exports\\ap_resonance_path_v01_64.png",
+    "dds": "exports\\ap_resonance_path_v01_64.dds",
+    "target_size": [
+      64,
+      64
+    ],
+    "source_alpha_extrema": [
+      0,
+      255
+    ],
+    "format": "DDS uncompressed RGBA8",
+    "dds_roundtrip_equal": true,
+    "dds_sha256": "1570deac089b350d5980c3ae0f413aef43f68c4a9d89616ef0778ca6eb24ce6b",
+    "runtime_installed": false,
+    "review_status": "draft_pending_human_review"
+  }
+]

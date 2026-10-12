@@ -1,0 +1,55 @@
+{
+  "date": "2026-10-12",
+  "scope": "Three representative public civilization icons; no personal research imagery; existing runtime textures preserved.",
+  "style_sources": [
+    "docs/art/reference_library/moodboards/CENTRAL_COURT.md",
+    "docs/art/reference_library/stellaris/UI_AND_ICONS.md"
+  ],
+  "assets": [
+    {
+      "category": "building",
+      "source": "sources/building_seven_day_command_v01.png",
+      "target_gfx": "GFX_building_artifact_seven_day_command",
+      "target_size": [
+        128,
+        128
+      ],
+      "tool": "image_gen.imagegen",
+      "prompt": "Create ONE original finished raster game UI icon for a Stellaris mod, square 1024x1024 canvas, isolated subject with genuine transparent background. Asset: Seven-Day Coordination Hub, a PUBLIC CIVILIZATION BUILDING for civil evacuation, emergency shelter and planetary logistics. Subject: a squat, sturdy central command building, broad stepped rectangular roof, four short bridge-like wings, visible protected amber entrance at front, two clearly readable cyan guide routes leading toward sheltered side gates. Three-quarter isometric view, entire building fits centrally with generous 12% transparent margin; strong compact silhouette, no landscape or extra objects. Painterly polished strategy-game inventory icon: crisp large facets, three or four readable value groups, physical engineered structure first, subtle brushed silver edges and repaired concrete. Shared civilization palette: graphite navy #182630 and #304651 structure, fog silver #D6D9D5, restrained muted cyan #69C1CC navigation and tiny warm amber #D39A55 doorway. Soft directional upper-left light. Readable when reduced to 128px and 64px. No lettering, no numbers, no watermark, no enclosing frame, no badge, no card symbols, no moons, no character portraits, no gold temple, no tall spire, no gratuitous circular rings, no crystal centerpiece, no tiny surface noise, no bloom haze. This is a functional civic disaster-coordination facility rather than a religious monument. Return only this single icon, not a contact sheet.",
+      "transparent_background": true,
+      "output_hint": "Generated images are saved to C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a as C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a\\exec-66716de7-ca9d-4663-a357-dbbadbc14154.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "review_status": "draft_pending_human_review",
+      "runtime_installed": false
+    },
+    {
+      "category": "technology",
+      "source": "sources/tech_seven_day_logistics_v01.png",
+      "target_gfx": "GFX_tech_artifact_seven_day_logistics",
+      "target_size": [
+        128,
+        128
+      ],
+      "tool": "image_gen.imagegen",
+      "prompt": "Create ONE original finished raster game UI icon for a Stellaris mod. Square canvas, one isolated subject, genuine transparent background. Asset: Seven-Day Logistics Network, PUBLIC CIVILIZATION TECHNOLOGY: organizing evacuation, supply and operations records as a reliable planetary network. Subject is a tangible raised routing schematic: ONE bold central rectangular junction connected by THREE wide branching angular cyan-inlaid transport tracks to THREE compact silver-gray depot blocks; each depot has one clearly readable small amber loading slit. Think a Y-shaped engineered transport-network model rather than a real building or a screen interface. Three-quarter isometric view, complete icon centered with 12% clear margin. Strong broad silhouette, three or four distinct value groups, few large clean faces. Painterly polished strategy-game icon, believable coated metal and brushed-silver joints, gentle upper-left light. Shared Central Court palette: graphite navy #182630/#304651 support structure, fog silver #D6D9D5 for node caps, restrained muted cyan #69C1CC for continuous routing paths, small warm amber #D39A55 loading slits. Keep the logistics network recognizable at 128px and 64px; negative space clearly separates each branch. No text, no numbers, no letters, no watermark, no border, no enclosing medallion, no globe, no halo or circular ring, no crystals, no religious spires, no character or personal tarot/moon symbolism. Avoid tiny cables, busy circuit boards and bloom. Produce only this one icon, not a sheet or comparison.",
+      "transparent_background": true,
+      "output_hint": "Generated images are saved to C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a as C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a\\exec-174ea559-e016-48ab-ae10-5274f29e90a2.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "review_status": "draft_pending_human_review",
+      "runtime_installed": false
+    },
+    {
+      "category": "ascension_perk",
+      "source": "sources/ap_resonance_path_v01.png",
+      "target_gfx": "GFX_ap_artifact_user_resonance_path",
+      "target_size": [
+        64,
+        64
+      ],
+      "tool": "image_gen.imagegen",
+      "prompt": "Create ONE original finished raster game UI icon for a Stellaris mod, square canvas, one isolated subject, genuine transparent background. Asset: Artifact Resonance Path, a PUBLIC CIVILIZATION ASCENSION PERK about bringing shared contracts, production and military deployment into one stable engineered system. A compact VERTICAL symbolic engineering emblem: three broad brushed-silver stepped prongs rise from one sturdy graphite-navy foundation, lock into an angular open crown-like fork, and support a single short rectangular muted-cyan resonance core horizontally across the upper middle. The center prong is taller, the two outer prongs lean inward; clearly visible DARK NEGATIVE SPACE between prongs; one small warm amber seam in the shared base evokes a protected civic institution. The object should read as a shared civilization integrating multiple systems and reaching the next level, NOT a character ascension or religious crown. More iconic and simplified than a building: four or five big surfaces only, strong upward silhouette with rectangular and chamfered forms. Polished painterly strategy-game item icon, physical silver and coated navy materials, subtle upper-left lighting. Shared Central Court colors #182630/#304651, #D6D9D5 fog silver, restrained #69C1CC cyan core, tiny #D39A55 amber accent. Centered complete subject with 12% clear margin, highly readable at 64x64 and 48x48. No text, letters, numbers, watermark, enclosing frame, medallion, halo, circular ring, gemstone, gold, church spire, wings, weapon, face, personal tarot symbol, moons or star ornaments. Avoid miniature scene, small circuitry, excessive bloom, rays and particles. Return a single icon only.",
+      "transparent_background": true,
+      "output_hint": "Generated images are saved to C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a as C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a\\exec-f54b42e3-3b7d-44d0-ae86-c7a1e313cc66.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "review_status": "draft_pending_human_review",
+      "runtime_installed": false
+    }
+  ]
+}
