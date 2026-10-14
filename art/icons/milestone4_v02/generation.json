@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-14",
+  "scope": "Public building/technology/ascension v0.2 calibration candidates. Official media observed locally; only project-generated assets passed as edit/style inputs. No original image copying.",
+  "assets": [
+    {
+      "category": "building",
+      "source": "sources/building_seven_day_command_v02.png",
+      "target_gfx": "GFX_building_artifact_seven_day_command",
+      "target_size": [
+        128,
+        128
+      ],
+      "tool": "image_gen.imagegen",
+      "intent": "edit",
+      "prompt": "编辑这张本项目自制的“七日调度中枢”v0.1图标，制作v0.2。输入图是编辑目标，保留它的公共调度用途、紧凑中央建筑与四向连接的总体构成，但重新设计建筑外表和绘画表现。输出一张独立正方形透明背景PNG，四周至少12%真正透明留白，完整主体不贴边，不要对照拼图。\n项目公共风格：《神器使》Stellaris Mod 的统一公共风格：灾后现代幻想星海文明。画面属于一个经历黑门危机与七日轮回、在中央庭治理下完成重建，并把神器超常规则纳入科学研究、刚刚进入银河的人类文明。以现代城市工程、清楚的结构与接口、可维护的机械逻辑为实体基础；以受控悬浮、规则接口、空间错位和高维信息作为神器科技层；保留日系幻想设计的清晰辨识与人性。整体表达理性、秩序、精密、重建和克制的希望。光效服务状态、能量流向和叙事层级，实体结构、负形和功能分区始终清楚。\n资产：L1公共专业设施“七日调度中枢”，用于市民避难、物资调度和疏散记录，非角色专属。重点校准为日系都市幻想游戏的2.5D手绘图标：用清晰轮廓和少数成块明暗塑形，不用写实PBR、拉丝或高光金属渲染。白天建筑感中融入暖色门厅，冷灰蓝阴影；温和的暖浅灰／象牙白建筑外墙，深石板蓝屋顶和基层，局部低饱和蓝紫阴影。只以极少冷青灯标表示安全与调度，琥珀色窗光表现人的使用。\n具体修改：把原来厚重的包覆装甲和银色框条改成薄而明快的公共建筑墙面、檐口和宽玻璃门厅。将四个封闭金属长通道改成短而清楚的开放公共步道与侧门廊；可有一个很小的抽象绿化色块提示公共空间，但不能变成风景插画。中央体块像可进入的城市应急行政馆，低而开敞，正面门厅清楚。四向疏散关系仍易读，屋顶用二至三块干净的大形状。保留少量可维护接口，减少板缝、格栅、天线和表面划痕。等距三分之四视角，高对比而不耀眼，适配128×128与64×64图标；主体占画面约75%，不能依赖微细节。\n来源边界：风格依据对公开原作官网城市画面所做的抽象观察，不要复制任何原作具体建筑、徽记、角色、宣传构图或界面框；不要把这个新建筑表现为原作已有建筑。\n公共禁止：禁止纯魔法世界、纯西幻神殿风、全文明纯金白神圣化、默认紫水晶神器、共享个人星月卡牌方舟眼睛符号、普通资产终局化、照搬群星阵营或外部独特设计、只换色不改结构、满屏魔法阵和无功能粒子、无限碎片与套环、微细节代替剪影、文字Logo水印、不可验证的原作补设。本图还禁止武装堡垒感、金属玩具质感、金属铸件和冷青霓虹泛滥。",
+      "output_hint": "Generated images are saved to C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a as C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a\\exec-6a93c7c9-86f8-473f-9a62-812dee835387.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "transparent_background": true,
+      "external_images_uploaded": false,
+      "edit_target": "../milestone4_v01/sources/building_seven_day_command_v01.png",
+      "project_style_reference": null,
+      "review_status": "draft_pending_human_review",
+      "runtime_installed": false
+    },
+    {
+      "category": "technology",
+      "source": "sources/tech_seven_day_logistics_v02.png",
+      "target_gfx": "GFX_tech_artifact_seven_day_logistics",
+      "target_size": [
+        128,
+        128
+      ],
+      "tool": "image_gen.imagegen",
+      "intent": "edit",
+      "prompt": "编辑图片1：本项目自制“七日后勤网络”v0.1。图片2为本项目新生成的中枢v0.2，仅作简洁手绘表现与暖浅灰、冷蓝阴影的风格参照，不要复制成又一个建筑图标。输出独立正方形透明背景图标，四边至少12%透明留白，只有一个图标，无对照板。\n项目公共风格：《神器使》Stellaris Mod 的统一公共风格：灾后现代幻想星海文明。画面属于一个经历黑门危机与七日轮回、在中央庭治理下完成重建，并把神器超常规则纳入科学研究、刚刚进入银河的人类文明。以现代城市工程、清楚的结构与接口、可维护的机械逻辑为实体基础；以受控悬浮、规则接口、空间错位和高维信息作为神器科技层；保留日系幻想设计的清晰辨识与人性。整体表达理性、秩序、精密、重建和克制的希望。光效服务状态、能量流向和叙事层级，实体结构、负形和功能分区始终清楚。\n\n资产：L1公共文明科技，表示疏散、补给与行动记录组织成后勤网络。保留图片1中央节点、三条分支和三个端点的Y形信息关系。把原来四个厚重金属小堡垒和机械桥拆掉，重新画成一个清楚的立体投影式路线示意：中央一块暖浅灰方形“调度记录板”，三个端点为轻薄的浅色矩形信息片，板面各有一个很简单的无字色块标记，三条宽而清楚的浅青／蓝白路径连接它们。只在端点保留很小的暖琥珀确认点。信息片有一点等距透视、非常薄的边缘和成块冷蓝阴影，不能像建筑、仓库、CPU或卡牌。\n表现：2.5D日系都市幻想游戏的手绘科技图标，轮廓清楚，明暗分成少数平涂块面，无写实拉丝、粗装甲、复杂电路和耀眼金属。主体是“关系与调度”，三条分支之间透明负形清楚；保留一枚轻量的中心导航标记来形成重心。正常公共系统，无个人神器符号。128和64像素都能读出一个中心通往三个端点的网络。背景真正透明，不要城市全景或地图UI。\n公共禁止：禁止纯魔法世界、纯西幻神殿风、全文明纯金白神圣化、默认紫水晶神器、共享个人星月卡牌方舟眼睛符号、普通资产终局化、照搬群星阵营或外部独特设计、只换色不改结构、满屏魔法阵和无功能粒子、无限碎片与套环、微细节代替剪影、文字Logo水印、不可验证的原作补设。\n本图另禁止建筑群模型、机械底座、发光圆环、文字数字、仪表盘边框、用大光球填中心。形态与绘画须明显区别于v0.1，同时与图片2属于同一套公共文明图标。",
+      "output_hint": "Generated images are saved to C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a as C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a\\exec-d19db57f-b074-4fad-befb-4cc17c3743d8.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "transparent_background": true,
+      "external_images_uploaded": false,
+      "edit_target": "../milestone4_v01/sources/tech_seven_day_logistics_v01.png",
+      "project_style_reference": "sources/building_seven_day_command_v02.png",
+      "review_status": "draft_pending_human_review",
+      "runtime_installed": false
+    },
+    {
+      "category": "ascension_perk",
+      "source": "sources/ap_resonance_path_v02.png",
+      "target_gfx": "GFX_ap_artifact_user_resonance_path",
+      "target_size": [
+        64,
+        64
+      ],
+      "tool": "image_gen.imagegen",
+      "intent": "edit",
+      "prompt": "重绘图片1（本项目自制的公共飞升“神器共鸣之路”v0.1），制作v0.2。图片2（本项目中枢v0.2）仅作为配色、简洁手绘块面与温暖公共气质的参照，不复制其建筑。单张正方形图标，真正透明背景，四边至少12%留白，完整主体。\n项目公共风格：《神器使》Stellaris Mod 的统一公共风格：灾后现代幻想星海文明。画面属于一个经历黑门危机与七日轮回、在中央庭治理下完成重建，并把神器超常规则纳入科学研究、刚刚进入银河的人类文明。以现代城市工程、清楚的结构与接口、可维护的机械逻辑为实体基础；以受控悬浮、规则接口、空间错位和高维信息作为神器科技层；保留日系幻想设计的清晰辨识与人性。整体表达理性、秩序、精密、重建和克制的希望。光效服务状态、能量流向和叙事层级，实体结构、负形和功能分区始终清楚。\n\n资产：L2公共文明飞升，“神器共鸣之路”，表达契约、生产与部署三个公共系统协调为一个文明的共同进步，非个人转变。保留“三方汇合并向上跨越”的语义，不必保留图片1的棱柱轮廓。去除三根厚重金属柱、刀刃尖端、铸件底座和写实拉丝表面。重新画成三条宽而轻薄的阶梯状折面带，从同一个浅色公共基点向上展开并靠拢，中央一条稍高，两侧阶梯略低。顶端为宽短平口或柔和倒角，无尖刃。三片之间留两道宽阔透明负形，由一条非常简洁的浅青横向光路串接，底部一个极小暖琥珀连接点表示共同承诺。整体如一个上升、汇合的公共制度符号，有2.5D空间层次；不要再像竖立武器、王冠、神像、珠宝或工业设备。\n绘画：日系都市幻想游戏的图标插画，清楚深蓝灰轮廓、温暖米白主面、冷灰蓝／少量淡蓝紫阴影；每片只有二到三块平涂明暗，无金属质感噪点、镜面高光、纹理、格栅和螺丝。小面积蓝青光路，不要巨大霓虹光条。柔和但明快，上方视觉重心简洁。图案保持紧凑，64×64及48×48能看清三方共同向上的形态。中央不要悬浮水晶、魔法阵或太阳。\n公共禁止：禁止纯魔法世界、纯西幻神殿风、全文明纯金白神圣化、默认紫水晶神器、共享个人星月卡牌方舟眼睛符号、普通资产终局化、照搬群星阵营或外部独特设计、只换色不改结构、满屏魔法阵和无功能粒子、无限碎片与套环、微细节代替剪影、文字Logo水印、不可验证的原作补设。\n本图特别禁止教堂与神圣白金光、剑刃和三叉戟、个人神器纹章、城市微缩模型、发光圆环、文字、外框或徽章底牌。只交付一个图标。",
+      "output_hint": "Generated images are saved to C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a as C:\\Users\\Admin\\.codex\\generated_images\\01a12843-ddd3-7202-99e2-2b06c87daa4a\\exec-699c938c-81d1-48a7-9b87-bb5538a381ad.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link.",
+      "transparent_background": true,
+      "external_images_uploaded": false,
+      "edit_target": "../milestone4_v01/sources/ap_resonance_path_v01.png",
+      "project_style_reference": "sources/building_seven_day_command_v02.png",
+      "review_status": "draft_pending_human_review",
+      "runtime_installed": false
+    }
+  ]
+}

@@ -1,0 +1,80 @@
+[
+  {
+    "source": "sources/building_seven_day_command_v02.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_sha256": "371c45c32677106fb303aac931d8ee7eb55d00b546c3ecc124f0b698472b9d0b",
+    "edit_target": "../milestone4_v01/sources/building_seven_day_command_v01.png",
+    "edit_target_sha256": "2848e940b84318936e42ca3e972ba8fb31e252df4657f1f062c2a775f4a5d141",
+    "target_gfx": "GFX_building_artifact_seven_day_command",
+    "png": "exports\\building_seven_day_command_v02_128.png",
+    "dds": "exports\\building_seven_day_command_v02_128.dds",
+    "target_size": [
+      128,
+      128
+    ],
+    "format": "DDS uncompressed RGBA8",
+    "source_alpha_extrema": [
+      0,
+      255
+    ],
+    "dds_roundtrip_equal": true,
+    "dds_sha256": "9433b02a25b63d5cf1202f2c29d6776c18e8ce8a0dc7dc183809d2b5383b5396",
+    "runtime_installed": false,
+    "review_status": "draft_pending_human_review"
+  },
+  {
+    "source": "sources/tech_seven_day_logistics_v02.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_sha256": "dafe22ea11bdea8789cd79a48e1bbf0cb21a0d3efd64ea513161866057c78d54",
+    "edit_target": "../milestone4_v01/sources/tech_seven_day_logistics_v01.png",
+    "edit_target_sha256": "8ee7e794f1ad3702d4fafa5f017a8fe4c1dfe3913ab633ad37c637c41985dafe",
+    "target_gfx": "GFX_tech_artifact_seven_day_logistics",
+    "png": "exports\\tech_seven_day_logistics_v02_128.png",
+    "dds": "exports\\tech_seven_day_logistics_v02_128.dds",
+    "target_size": [
+      128,
+      128
+    ],
+    "format": "DDS uncompressed RGBA8",
+    "source_alpha_extrema": [
+      0,
+      255
+    ],
+    "dds_roundtrip_equal": true,
+    "dds_sha256": "9f6820cf8fecc45d1193a2946c9d26237933bfe7ef8d3859ef35dbb6833e480b",
+    "runtime_installed": false,
+    "review_status": "draft_pending_human_review"
+  },
+  {
+    "source": "sources/ap_resonance_path_v02.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_sha256": "247bba903bc4a597c307badb05b84e3cd885b5aa56a288d4a0aae56574ea7998",
+    "edit_target": "../milestone4_v01/sources/ap_resonance_path_v01.png",
+    "edit_target_sha256": "04c11c7b1f0d311ad15395f51dd8346a9f1cc31d6dc5df175096d0febe7594e0",
+    "target_gfx": "GFX_ap_artifact_user_resonance_path",
+    "png": "exports\\ap_resonance_path_v02_64.png",
+    "dds": "exports\\ap_resonance_path_v02_64.dds",
+    "target_size": [
+      64,
+      64
+    ],
+    "format": "DDS uncompressed RGBA8",
+    "source_alpha_extrema": [
+      0,
+      255
+    ],
+    "dds_roundtrip_equal": true,
+    "dds_sha256": "8c5e29679f978bf434a9c5a90383de963fef84310fba7e27beff7f9560cf63d3",
+    "runtime_installed": false,
+    "review_status": "draft_pending_human_review"
+  }
+]

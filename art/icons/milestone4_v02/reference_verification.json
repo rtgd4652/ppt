@@ -1,0 +1,53 @@
+{
+  "verified_at_beijing": "2026-10-14",
+  "official_page": "https://f7.163.com/",
+  "official_html_direct_image_links": true,
+  "developer_store_page": "https://apps.apple.com/cn/app/id1141273107",
+  "official_general_style": "App Store developer description identifies modern urban fantasy and 2.5D Anime presentation.",
+  "original_contact_sheet_exact_source": "not resolved; REF-PROJECT-CENTRAL-001 remains source_uncertain and was not uploaded",
+  "project_generated_region_sheet": "REF-PROJECT-CENTRAL-002 corrected to project_output; never treated as original art",
+  "external_images_uploaded_to_generation": false,
+  "reference_images_committed": false,
+  "observations_vs_inference": "Official images verify rendering and urban space observations. New icon forms are original project interpretations, not original-game buildings or symbols.",
+  "downloads": [
+    {
+      "url": "https://fc.res.netease.com/pc/fab/20191219174338/img/tese1_9d1af62.jpg",
+      "path": "art\\reference_library\\original_game\\official_features_20261014\\tese1_9d1af62.jpg",
+      "bytes": 207136,
+      "sha256": "ff99a0f49115a9b0b5b578c89b7e358b4c0370c4feaa12d67f11baa244b795d8"
+    },
+    {
+      "url": "https://fc.res.netease.com/pc/fab/20191219174338/img/tese2_4200bed.jpg",
+      "path": "art\\reference_library\\original_game\\official_features_20261014\\tese2_4200bed.jpg",
+      "bytes": 120680,
+      "sha256": "01e116b463f1249afeb7e5770ed88ddd16a926e1563bffde4bebc693989eff8f"
+    },
+    {
+      "url": "https://fc.res.netease.com/pc/fab/20191219174338/img/tese3_2ac69f4.jpg",
+      "path": "art\\reference_library\\original_game\\official_features_20261014\\tese3_2ac69f4.jpg",
+      "bytes": 119988,
+      "sha256": "c223197db91f52155217a7522ca7b6f13a41246c4d32898da327136816e349c1"
+    },
+    {
+      "url": "https://fc.res.netease.com/pc/fab/20191219174338/img/tese4_661d81d.jpg",
+      "path": "art\\reference_library\\original_game\\official_features_20261014\\tese4_661d81d.jpg",
+      "bytes": 162714,
+      "sha256": "85722fc991535d424d78548fcf8b5dfade85f5e7619bbf1788778897d67f5628"
+    },
+    {
+      "url": "https://fc.res.netease.com/pc/fab/20191219174338/img/tese5_f09347f.jpg",
+      "path": "art\\reference_library\\original_game\\official_features_20261014\\tese5_f09347f.jpg",
+      "bytes": 148907,
+      "sha256": "e0c66c6c5ab90fdd7c74662fd634a3b55368075305c7e49d75d001e829d88fb1"
+    }
+  ],
+  "official_html_bytes": 11251,
+  "official_html_sha256": "4214a8ed16c789d8b2bf4e12ed78aa805003067ab6c245d6a7a9e26a39c96a8a",
+  "reference_ids": [
+    "REF-OG-OFFICIAL-FEATURE-001",
+    "REF-OG-OFFICIAL-FEATURE-002",
+    "REF-OG-OFFICIAL-FEATURE-003",
+    "REF-OG-OFFICIAL-FEATURE-004",
+    "REF-OG-OFFICIAL-FEATURE-005"
+  ]
+}

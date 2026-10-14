@@ -9,31 +9,35 @@
 
 | 指标 | 数量 |
 | --- | ---: |
-| 参考记录 | 47 |
+| 参考记录 | 52 |
 | 分类 | 3 |
-| 填写了 local_path | 26 |
+| 填写了 local_path | 31 |
 | 本地文件存在 | 26 |
-| 本地文件缺失 | 0 |
+| 本地文件缺失 | 5 |
 | 缺少来源 | 0 |
 | 授权状态需关注 | 7 |
-| 审核状态需关注 | 12 |
+| 审核状态需关注 | 11 |
 | 校验错误 | 0 |
-| 校验警告 | 19 |
+| 校验警告 | 23 |
 
 ## 质量提示
 
 - **警告** · 第 2 行 / REF-OG-AEMUSA-001 · `rights_unknown`：版权或许可状态仍为 unknown
 - **警告** · 第 2 行 / REF-OG-AEMUSA-001 · `source_uncertain`：条目来源仍待确认
+- **警告** · 第 2 行 / REF-OG-AEMUSA-001 · `local_path_missing`：local_path 不存在或不是文件：art/reference_library/original_game/aemusa/0E98F1698988D4D9F50F538510F78BE7.jpg
 - **警告** · 第 3 行 / REF-OG-AEMUSA-002 · `rights_unknown`：版权或许可状态仍为 unknown
 - **警告** · 第 3 行 / REF-OG-AEMUSA-002 · `source_uncertain`：条目来源仍待确认
+- **警告** · 第 3 行 / REF-OG-AEMUSA-002 · `local_path_missing`：local_path 不存在或不是文件：art/reference_library/original_game/aemusa/721512BDB3BBA02A0396ACEAA6252895.jpg
 - **警告** · 第 4 行 / REF-OG-AEMUSA-003 · `rights_unknown`：版权或许可状态仍为 unknown
 - **警告** · 第 4 行 / REF-OG-AEMUSA-003 · `source_uncertain`：条目来源仍待确认
+- **警告** · 第 4 行 / REF-OG-AEMUSA-003 · `local_path_missing`：local_path 不存在或不是文件：art/reference_library/original_game/aemusa/7B05F4A725CC460B5EA0F9A0230F97C0.jpg
 - **警告** · 第 5 行 / REF-OG-AEMUSA-004 · `rights_unknown`：版权或许可状态仍为 unknown
 - **警告** · 第 5 行 / REF-OG-AEMUSA-004 · `source_uncertain`：条目来源仍待确认
+- **警告** · 第 5 行 / REF-OG-AEMUSA-004 · `local_path_missing`：local_path 不存在或不是文件：art/reference_library/original_game/aemusa/C37365DF90F1C51CCFFC112C7146E882.jpg
 - **警告** · 第 6 行 / REF-OG-AEMUSA-005 · `rights_unknown`：版权或许可状态仍为 unknown
 - **警告** · 第 6 行 / REF-OG-AEMUSA-005 · `source_uncertain`：条目来源仍待确认
+- **警告** · 第 6 行 / REF-OG-AEMUSA-005 · `local_path_missing`：local_path 不存在或不是文件：art/reference_library/original_game/aemusa/D94A3E2E48E3D627FA803F7D2ECEA95B.jpg
 - **警告** · 第 7 行 / REF-PROJECT-CENTRAL-001 · `source_uncertain`：条目来源仍待确认
-- **警告** · 第 8 行 / REF-PROJECT-CENTRAL-002 · `source_uncertain`：条目来源仍待确认
 - **警告** · 第 31 行 / REF-PROJECT-OLDWORLD-001 · `rights_unknown`：版权或许可状态仍为 unknown
 - **警告** · 第 31 行 / REF-PROJECT-OLDWORLD-001 · `unreviewed`：条目尚未审核
 - **警告** · 第 32 行 / REF-PROJECT-OLDWORLD-002 · `source_uncertain`：条目来源仍待确认
@@ -111,8 +115,6 @@
 
 ##### <code>REF-OG-AEMUSA-001</code> · 爱缪莎基础形态候选全身图
 
-![爱缪莎基础形态候选全身图](<../../../art/reference_library/original_game/aemusa/0E98F1698988D4D9F50F538510F78BE7.jpg>)
-
 | 字段 | 内容 |
 | --- | --- |
 | 对象 | 角色基础立绘与卡牌术式 |
@@ -125,9 +127,9 @@
 | 可学习 | 学习不可替代的人物识别、配色节奏与卡牌和手势的关系 |
 | 禁止照搬 | 不得直接复制图片、服装细节或把卡牌扩展成文明公共纹样 |
 | 关联 Moodboard | AEMUSA;DESTINY_SOVEREIGN |
-| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/aemusa/0E98F1698988D4D9F50F538510F78BE7.jpg>)<br><code>art/reference_library/original_game/aemusa/0E98F1698988D4D9F50F538510F78BE7.jpg</code> |
+| 本地文件 | ⚠ 不存在：<code>art/reference_library/original_game/aemusa/0E98F1698988D4D9F50F538510F78BE7.jpg</code> |
 | 备注 | 候选原作图；具体出处、形态名称与再分发权限尚未确认，因此本地副本被 Git 忽略。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`) |
+| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`)<br>⚠ local_path 不存在或不是文件：art/reference_library/original_game/aemusa/0E98F1698988D4D9F50F538510F78BE7.jpg (`local_path_missing`) |
 
 ##### <code>REF-OG-ANTONIVA-001</code> · 安托涅瓦基础「神使」全身立绘
 
@@ -152,8 +154,6 @@
 
 ##### <code>REF-OG-AEMUSA-002</code> · 爱缪莎卡牌战斗姿态候选图
 
-![爱缪莎卡牌战斗姿态候选图](<../../../art/reference_library/original_game/aemusa/721512BDB3BBA02A0396ACEAA6252895.jpg>)
-
 | 字段 | 内容 |
 | --- | --- |
 | 对象 | 动态姿态与卡牌轨迹 |
@@ -166,15 +166,13 @@
 | 可学习 | 学习卡牌翻转方向、速度层级与身体动作的因果关系 |
 | 禁止照搬 | 不得把高饱和玫红铺满所有命运资产，也不得确认未知形态名称 |
 | 关联 Moodboard | AEMUSA |
-| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/aemusa/721512BDB3BBA02A0396ACEAA6252895.jpg>)<br><code>art/reference_library/original_game/aemusa/721512BDB3BBA02A0396ACEAA6252895.jpg</code> |
+| 本地文件 | ⚠ 不存在：<code>art/reference_library/original_game/aemusa/721512BDB3BBA02A0396ACEAA6252895.jpg</code> |
 | 备注 | 仅作为动态与效果候选参考。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`) |
+| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`)<br>⚠ local_path 不存在或不是文件：art/reference_library/original_game/aemusa/721512BDB3BBA02A0396ACEAA6252895.jpg (`local_path_missing`) |
 
 #### character_skin
 
 ##### <code>REF-OG-AEMUSA-003</code> · 爱缪莎红黑室内服装候选图
-
-![爱缪莎红黑室内服装候选图](<../../../art/reference_library/original_game/aemusa/7B05F4A725CC460B5EA0F9A0230F97C0.jpg>)
 
 | 字段 | 内容 |
 | --- | --- |
@@ -188,13 +186,11 @@
 | 可学习 | 学习换装状态下由发型、姿态和色彩维持识别的方法 |
 | 禁止照搬 | 不得把该服装和室内道具视为爱缪莎全部形态的固定元素 |
 | 关联 Moodboard | AEMUSA |
-| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/aemusa/7B05F4A725CC460B5EA0F9A0230F97C0.jpg>)<br><code>art/reference_library/original_game/aemusa/7B05F4A725CC460B5EA0F9A0230F97C0.jpg</code> |
+| 本地文件 | ⚠ 不存在：<code>art/reference_library/original_game/aemusa/7B05F4A725CC460B5EA0F9A0230F97C0.jpg</code> |
 | 备注 | 可能属于皮肤或剧情图，具体名称待核验。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`) |
+| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`)<br>⚠ local_path 不存在或不是文件：art/reference_library/original_game/aemusa/7B05F4A725CC460B5EA0F9A0230F97C0.jpg (`local_path_missing`) |
 
 ##### <code>REF-OG-AEMUSA-004</code> · 爱缪莎蓝黑竖琴服装候选图
-
-![爱缪莎蓝黑竖琴服装候选图](<../../../art/reference_library/original_game/aemusa/C37365DF90F1C51CCFFC112C7146E882.jpg>)
 
 | 字段 | 内容 |
 | --- | --- |
@@ -208,13 +204,11 @@
 | 可学习 | 学习冷色换装与金发红瞳之间的识别平衡，以及大型道具的构图尺度 |
 | 禁止照搬 | 不得把竖琴、蓝花或该套服装强制设为基础形态和文明通用符号 |
 | 关联 Moodboard | AEMUSA |
-| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/aemusa/C37365DF90F1C51CCFFC112C7146E882.jpg>)<br><code>art/reference_library/original_game/aemusa/C37365DF90F1C51CCFFC112C7146E882.jpg</code> |
+| 本地文件 | ⚠ 不存在：<code>art/reference_library/original_game/aemusa/C37365DF90F1C51CCFFC112C7146E882.jpg</code> |
 | 备注 | 用户曾指定其作为高等级服装参考；仍需核验出处与使用权。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`) |
+| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`)<br>⚠ local_path 不存在或不是文件：art/reference_library/original_game/aemusa/C37365DF90F1C51CCFFC112C7146E882.jpg (`local_path_missing`) |
 
 ##### <code>REF-OG-AEMUSA-005</code> · 爱缪莎现代牌局服装候选图
-
-![爱缪莎现代牌局服装候选图](<../../../art/reference_library/original_game/aemusa/D94A3E2E48E3D627FA803F7D2ECEA95B.jpg>)
 
 | 字段 | 内容 |
 | --- | --- |
@@ -228,9 +222,9 @@
 | 可学习 | 学习游戏感、概率主题和现代换装下的角色连续性 |
 | 禁止照搬 | 不得把骰子、帽子或现代服装混入所有形态，也不得直接复制 |
 | 关联 Moodboard | AEMUSA |
-| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/aemusa/D94A3E2E48E3D627FA803F7D2ECEA95B.jpg>)<br><code>art/reference_library/original_game/aemusa/D94A3E2E48E3D627FA803F7D2ECEA95B.jpg</code> |
+| 本地文件 | ⚠ 不存在：<code>art/reference_library/original_game/aemusa/D94A3E2E48E3D627FA803F7D2ECEA95B.jpg</code> |
 | 备注 | 候选皮肤参考，形态名称待核验。 |
-| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`) |
+| 质量标记 | ⚠ 版权或许可状态仍为 unknown (`rights_unknown`)<br>⚠ 条目来源仍待确认 (`source_uncertain`)<br>⚠ local_path 不存在或不是文件：art/reference_library/original_game/aemusa/D94A3E2E48E3D627FA803F7D2ECEA95B.jpg (`local_path_missing`) |
 
 #### character_source
 
@@ -369,6 +363,103 @@
 | 备注 | 与 REF-PROJECT-CENTRAL-001 共用本地文件但承担不同分析主题。 |
 | 质量标记 | ⚠ 条目来源仍待确认 (`source_uncertain`) |
 
+#### official_promotion
+
+##### <code>REF-OG-OFFICIAL-FEATURE-001</code> · 官网特色图1：都市轮回宣传
+
+![官网特色图1：都市轮回宣传](<../../../art/reference_library/original_game/official_features_20261014/tese1_9d1af62.jpg>)
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 官网公开宣传图；风格与来源对照 |
+| 角色／阵营 | 七都公开宣传／都市与界面 |
+| 来源 | official_website_media · [打开来源](<https://f7.163.com/%20;%20https://fc.res.netease.com/pc/fab/20191219174338/img/tese1_9d1af62.jpg>) |
+| 权利与用途 | official_game_reference · local_visual_analysis_only_no_upload_no_redistribution |
+| 视觉角色 | <code>secondary_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：2.5D;都市幻想;宣传图;画面层级<br>配色：按场景区分；不将角色配色推广到公共资产<br>形状：清楚轮廓;成块明暗<br>材质：绘画表现;界面图形<br>构图：官方宣传合成图；部分为嵌入游戏截图 |
+| 可学习 | 核对日系都市幻想的明暗与简化轮廓；第4及5图支持城市生活空间观察 |
+| 禁止照搬 | 不复制角色、具体建筑、字体、徽记、截图或宣传构图；不视为原地区联系表逐格来源已追溯 |
+| 关联 Moodboard | CENTRAL_COURT |
+| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/official_features_20261014/tese1_9d1af62.jpg>)<br><code>art/reference_library/original_game/official_features_20261014/tese1_9d1af62.jpg</code> |
+| 备注 | 2026-10-14官网HTML直接引用且CDN下载成功；SHA256=ff99a0f49115a9b0b5b578c89b7e358b4c0370c4feaa12d67f11baa244b795d8；图片仅留忽略缓存，未上传image_gen。非人工批准主锚点。 |
+
+##### <code>REF-OG-OFFICIAL-FEATURE-002</code> · 官网特色图2：多结局宣传
+
+![官网特色图2：多结局宣传](<../../../art/reference_library/original_game/official_features_20261014/tese2_4200bed.jpg>)
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 官网公开宣传图；风格与来源对照 |
+| 角色／阵营 | 七都公开宣传／都市与界面 |
+| 来源 | official_website_media · [打开来源](<https://f7.163.com/%20;%20https://fc.res.netease.com/pc/fab/20191219174338/img/tese2_4200bed.jpg>) |
+| 权利与用途 | official_game_reference · local_visual_analysis_only_no_upload_no_redistribution |
+| 视觉角色 | <code>secondary_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：2.5D;都市幻想;宣传图;画面层级<br>配色：按场景区分；不将角色配色推广到公共资产<br>形状：清楚轮廓;成块明暗<br>材质：绘画表现;界面图形<br>构图：官方宣传合成图；部分为嵌入游戏截图 |
+| 可学习 | 核对日系都市幻想的明暗与简化轮廓；第4及5图支持城市生活空间观察 |
+| 禁止照搬 | 不复制角色、具体建筑、字体、徽记、截图或宣传构图；不视为原地区联系表逐格来源已追溯 |
+| 关联 Moodboard | CENTRAL_COURT |
+| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/official_features_20261014/tese2_4200bed.jpg>)<br><code>art/reference_library/original_game/official_features_20261014/tese2_4200bed.jpg</code> |
+| 备注 | 2026-10-14官网HTML直接引用且CDN下载成功；SHA256=01e116b463f1249afeb7e5770ed88ddd16a926e1563bffde4bebc693989eff8f；图片仅留忽略缓存，未上传image_gen。非人工批准主锚点。 |
+
+##### <code>REF-OG-OFFICIAL-FEATURE-003</code> · 官网特色图3：角色界面宣传
+
+![官网特色图3：角色界面宣传](<../../../art/reference_library/original_game/official_features_20261014/tese3_2ac69f4.jpg>)
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 官网公开宣传图；风格与来源对照 |
+| 角色／阵营 | 七都公开宣传／都市与界面 |
+| 来源 | official_website_media · [打开来源](<https://f7.163.com/%20;%20https://fc.res.netease.com/pc/fab/20191219174338/img/tese3_2ac69f4.jpg>) |
+| 权利与用途 | official_game_reference · local_visual_analysis_only_no_upload_no_redistribution |
+| 视觉角色 | <code>secondary_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：2.5D;都市幻想;宣传图;画面层级<br>配色：按场景区分；不将角色配色推广到公共资产<br>形状：清楚轮廓;成块明暗<br>材质：绘画表现;界面图形<br>构图：官方宣传合成图；部分为嵌入游戏截图 |
+| 可学习 | 核对日系都市幻想的明暗与简化轮廓；第4及5图支持城市生活空间观察 |
+| 禁止照搬 | 不复制角色、具体建筑、字体、徽记、截图或宣传构图；不视为原地区联系表逐格来源已追溯 |
+| 关联 Moodboard | CENTRAL_COURT |
+| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/official_features_20261014/tese3_2ac69f4.jpg>)<br><code>art/reference_library/original_game/official_features_20261014/tese3_2ac69f4.jpg</code> |
+| 备注 | 2026-10-14官网HTML直接引用且CDN下载成功；SHA256=c223197db91f52155217a7522ca7b6f13a41246c4d32898da327136816e349c1；图片仅留忽略缓存，未上传image_gen。非人工批准主锚点。 |
+
+##### <code>REF-OG-OFFICIAL-FEATURE-004</code> · 官网特色图4：城市战斗画面
+
+![官网特色图4：城市战斗画面](<../../../art/reference_library/original_game/official_features_20261014/tese4_661d81d.jpg>)
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 官网公开宣传图；风格与来源对照 |
+| 角色／阵营 | 七都公开宣传／都市与界面 |
+| 来源 | official_website_media · [打开来源](<https://f7.163.com/%20;%20https://fc.res.netease.com/pc/fab/20191219174338/img/tese4_661d81d.jpg>) |
+| 权利与用途 | official_game_reference · local_visual_analysis_only_no_upload_no_redistribution |
+| 视觉角色 | <code>secondary_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：2.5D;都市幻想;宣传图;画面层级<br>配色：按场景区分；不将角色配色推广到公共资产<br>形状：清楚轮廓;成块明暗<br>材质：绘画表现;界面图形<br>构图：官方宣传合成图；部分为嵌入游戏截图 |
+| 可学习 | 核对日系都市幻想的明暗与简化轮廓；第4及5图支持城市生活空间观察 |
+| 禁止照搬 | 不复制角色、具体建筑、字体、徽记、截图或宣传构图；不视为原地区联系表逐格来源已追溯 |
+| 关联 Moodboard | CENTRAL_COURT |
+| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/official_features_20261014/tese4_661d81d.jpg>)<br><code>art/reference_library/original_game/official_features_20261014/tese4_661d81d.jpg</code> |
+| 备注 | 2026-10-14官网HTML直接引用且CDN下载成功；SHA256=85722fc991535d424d78548fcf8b5dfade85f5e7619bbf1788778897d67f5628；图片仅留忽略缓存，未上传image_gen。非人工批准主锚点。 |
+
+##### <code>REF-OG-OFFICIAL-FEATURE-005</code> · 官网特色图5：都市对话画面
+
+![官网特色图5：都市对话画面](<../../../art/reference_library/original_game/official_features_20261014/tese5_f09347f.jpg>)
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 官网公开宣传图；风格与来源对照 |
+| 角色／阵营 | 七都公开宣传／都市与界面 |
+| 来源 | official_website_media · [打开来源](<https://f7.163.com/%20;%20https://fc.res.netease.com/pc/fab/20191219174338/img/tese5_f09347f.jpg>) |
+| 权利与用途 | official_game_reference · local_visual_analysis_only_no_upload_no_redistribution |
+| 视觉角色 | <code>secondary_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：2.5D;都市幻想;宣传图;画面层级<br>配色：按场景区分；不将角色配色推广到公共资产<br>形状：清楚轮廓;成块明暗<br>材质：绘画表现;界面图形<br>构图：官方宣传合成图；部分为嵌入游戏截图 |
+| 可学习 | 核对日系都市幻想的明暗与简化轮廓；第4及5图支持城市生活空间观察 |
+| 禁止照搬 | 不复制角色、具体建筑、字体、徽记、截图或宣传构图；不视为原地区联系表逐格来源已追溯 |
+| 关联 Moodboard | CENTRAL_COURT |
+| 本地文件 | [打开本地文件](<../../../art/reference_library/original_game/official_features_20261014/tese5_f09347f.jpg>)<br><code>art/reference_library/original_game/official_features_20261014/tese5_f09347f.jpg</code> |
+| 备注 | 2026-10-14官网HTML直接引用且CDN下载成功；SHA256=e0c66c6c5ab90fdd7c74662fd634a3b55368075305c7e49d75d001e829d88fb1；图片仅留忽略缓存，未上传image_gen。非人工批准主锚点。 |
+
 #### story_cg
 
 ##### <code>REF-OG-ESOLIN-002</code> · 《导师与学生》埃索林剧情与画面入口
@@ -475,28 +566,6 @@
 | 关联 Moodboard | OTHERWORLD_AND_ASTRAL_RIFTS |
 | 本地文件 | 仅登记来源（无本地副本） |
 | 备注 | 仅代表大型灾变状态，不定义黑门唯一形状。 |
-
-#### ui_and_icons
-
-##### <code>REF-PROJECT-CENTRAL-002</code> · 现有地区图标与界面源图
-
-![现有地区图标与界面源图](<../../../assets/ui/white_night_pavilion/faction_icons/region_icon_sheet_source.png>)
-
-| 字段 | 内容 |
-| --- | --- |
-| 对象 | 地区入口、信息层级与标识 |
-| 角色／阵营 | 中央庭与交界都市 |
-| 来源 | existing_local_reference · <code>项目既有地区界面源图；底层原作来源待细分</code> |
-| 权利与用途 | official_game_reference · reference_analysis_only_no_redistribution_claim |
-| 视觉角色 | <code>composition_reference</code> |
-| 审核状态 | <code>source_uncertain</code> |
-| 标签 | 视觉：地区图标;界面层级;功能按钮<br>配色：深紫;冷青;暖橙<br>形状：大图标;模块化面板;方形槽位<br>材质：半透明界面;金属边框<br>构图：地区总览与操作面板并列 |
-| 可学习 | 学习小尺寸地区识别和功能信息层级 |
-| 禁止照搬 | 不得直接复制原作界面、字体或图标到新资产，也不得把 UI 视觉扩展为文明实体结构 |
-| 关联 Moodboard | CENTRAL_COURT |
-| 本地文件 | [打开本地文件](<../../../assets/ui/white_night_pavilion/faction_icons/region_icon_sheet_source.png>)<br><code>assets/ui/white_night_pavilion/faction_icons/region_icon_sheet_source.png</code> |
-| 备注 | 现有本地文件，需补精确来源与权利审核。 |
-| 质量标记 | ⚠ 条目来源仍待确认 (`source_uncertain`) |
 
 #### world_reference
 
@@ -712,6 +781,25 @@
 | 关联 Moodboard | ARTIFACT_TECHNOLOGY |
 | 本地文件 | [打开本地文件](<../../../mod/gfx/interface/icons/ship_parts/ship_part_artifact_seven_day_core.png>)<br><code>mod/gfx/interface/icons/ship_parts/ship_part_artifact_seven_day_core.png</code> |
 | 备注 | 正式资产与视觉参考用途分别登记。 |
+
+##### <code>REF-PROJECT-CENTRAL-002</code> · 现有地区图标与界面源图
+
+![现有地区图标与界面源图](<../../../assets/ui/white_night_pavilion/faction_icons/region_icon_sheet_source.png>)
+
+| 字段 | 内容 |
+| --- | --- |
+| 对象 | 地区入口、信息层级与标识 |
+| 角色／阵营 | 中央庭与交界都市 |
+| 来源 | existing_project_generated_image · <code>项目既有生成地区图标；原始生成日志未追溯；2026-10-14校准时与original_game/UI_AND_ICONS.md及实际画面交叉核对</code> |
+| 权利与用途 | project_created · project_review_and_style_audit |
+| 视觉角色 | <code>secondary_reference</code> |
+| 审核状态 | <code>supporting</code> |
+| 标签 | 视觉：地区图标;界面层级;功能按钮<br>配色：深紫;冷青;暖橙<br>形状：大图标;模块化面板;方形槽位<br>材质：半透明界面;金属边框<br>构图：地区总览与操作面板并列 |
+| 可学习 | 复盘项目地区图标的绘画与语义，并识别生成图被误当原作来源的问题 |
+| 禁止照搬 | 不得作为七都原作UI或配色锚点，不把紫色徽章框和星纹推广到公共科技 |
+| 关联 Moodboard | CENTRAL_COURT |
+| 本地文件 | [打开本地文件](<../../../assets/ui/white_night_pavilion/faction_icons/region_icon_sheet_source.png>)<br><code>assets/ui/white_night_pavilion/faction_icons/region_icon_sheet_source.png</code> |
+| 备注 | 2026-10-14纠正来源分类：本图是项目生成产物，非原作截图；不再用于原作风格核验。 |
 
 ##### <code>REF-PROJECT-CENTRAL-003</code> · 神器使枢纽区划图标
 
