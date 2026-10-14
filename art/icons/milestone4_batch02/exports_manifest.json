@@ -1,0 +1,80 @@
+[
+  {
+    "source": "sources/building_black_gate_observatory_v01.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_sha256": "890af62c75ad1c6ec59e0aadd253efb4bf18bd7ab1ef007a8c6befe6db132dba",
+    "source_alpha_extrema": [
+      0,
+      255
+    ],
+    "target_gfx": "GFX_building_artifact_black_gate_observatory",
+    "target_size": [
+      128,
+      128
+    ],
+    "png": "exports\\building_black_gate_observatory_v01_128.png",
+    "dds": "exports\\building_black_gate_observatory_v01_128.dds",
+    "dds_sha256": "bda6154d1c8d3d697af8ccedfeb63486d70e2177dfed672eaad92cf83e8f4024",
+    "format": "DDS uncompressed RGBA8",
+    "dds_roundtrip_equal": true,
+    "runtime_texture": "mod/gfx/interface/icons/buildings/building_artifact_black_gate_observatory.dds",
+    "runtime_sha256_unchanged_during_export": "be4865dca8e120c1c36833d253570e47c9141ac73818c8cb1a1f5065dbc16fc6",
+    "runtime_installed": false,
+    "review_status": "draft_pending_human_review"
+  },
+  {
+    "source": "sources/tech_black_gate_observation_v01.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_sha256": "ec8b595f038f7a0372b526181284d895288e7ab26300457f2f273fe7909cd814",
+    "source_alpha_extrema": [
+      0,
+      255
+    ],
+    "target_gfx": "GFX_tech_artifact_black_gate_observation",
+    "target_size": [
+      128,
+      128
+    ],
+    "png": "exports\\tech_black_gate_observation_v01_128.png",
+    "dds": "exports\\tech_black_gate_observation_v01_128.dds",
+    "dds_sha256": "2d82037464bb4d8b384b70e4c1b48a71044f5379d0f3a65df27121742b1a7427",
+    "format": "DDS uncompressed RGBA8",
+    "dds_roundtrip_equal": true,
+    "runtime_texture": "mod/gfx/interface/icons/technologies/tech_artifact_black_gate_observation.dds",
+    "runtime_sha256_unchanged_during_export": "d81a2a3f0510f593f571d86da771e2db7ec31adb1e0b0a3a4c4166abbdbba58b",
+    "runtime_installed": false,
+    "review_status": "draft_pending_human_review"
+  },
+  {
+    "source": "sources/ap_apotheosis_path_v01.png",
+    "source_size": [
+      1254,
+      1254
+    ],
+    "source_sha256": "8765c8e1905d0e9e79ebd8f1bee65112b7353b6061a72cb95512249db7196e6f",
+    "source_alpha_extrema": [
+      0,
+      255
+    ],
+    "target_gfx": "GFX_ap_artifact_user_apotheosis_path",
+    "target_size": [
+      64,
+      64
+    ],
+    "png": "exports\\ap_apotheosis_path_v01_64.png",
+    "dds": "exports\\ap_apotheosis_path_v01_64.dds",
+    "dds_sha256": "433e039937943b8f31e1029819fcb0dc5405039e0e6cff88828654b2e34f0165",
+    "format": "DDS uncompressed RGBA8",
+    "dds_roundtrip_equal": true,
+    "runtime_texture": "mod/gfx/interface/icons/ascension_perks/ap_artifact_user_apotheosis_path.dds",
+    "runtime_sha256_unchanged_during_export": "d783b75f7bb1d1e922e634fb8f67fe3b151786269a7a224d496bf3011d8df5f9",
+    "runtime_installed": false,
+    "review_status": "draft_pending_human_review"
+  }
+]
