@@ -4,7 +4,7 @@
   "status": "route_draft_not_implemented",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
-    "counts": "72项公共科技、30类50阶段建筑为本轮路线草案规模，不是用户逐项定稿或已交付数量。",
+    "counts": "公共72项研究保留；收敛后为27类46阶段建筑（包含现有15键），另列4项个人候选。均为设计，不是用户逐项定稿或已交付数量。",
     "art": "批量图标暂停；既有六个目标候选及生成记录保留。"
   },
   "baseline": {
@@ -17,9 +17,9 @@
   "targets": {
     "public_technologies": 72,
     "new_public_technologies": 53,
-    "building_families": 30,
-    "building_stage_definitions": 50,
-    "new_building_stage_definitions": 35
+    "building_families": 27,
+    "building_stage_definitions": 46,
+    "new_building_stage_definitions": 31
   },
   "gates": {
     "central_court_tradition_finished": "既有中央庭守望传统完成条件；保留原接口。",
@@ -127,7 +127,7 @@
       "gate": null,
       "existing_key": null,
       "status": "proposed_not_implemented",
-      "capability": "建设仪器标定所；对选定殖民地仪器支付校准成本后开展定向观测。"
+      "capability": "建设基准观测站，承担仪器标定与初级研究；后续升级到原黑门观测站，不另建标定所。"
     },
     {
       "id": "A04",
@@ -154,7 +154,7 @@
       "gate": null,
       "existing_key": null,
       "status": "proposed_not_implemented",
-      "capability": "观测站升级；把一次观测转为需要交叉比对的公共研究记录。"
+      "capability": "为观测设施开放多源比对能力，不新增同层实体建筑；保持观测站后续复核升级。"
     },
     {
       "id": "A06",
@@ -343,7 +343,7 @@
       "gate": null,
       "existing_key": null,
       "status": "proposed_not_implemented",
-      "capability": "建设材料试验场，通过有限试制选择材料用途，支撑武器与防护分化。"
+      "capability": "在标准件工坊或原神器工坊中开放材料试制，不另建材料试验场；与营建共用有限本地项目入口。"
     },
     {
       "id": "B08",
@@ -563,7 +563,7 @@
       "gate": null,
       "existing_key": null,
       "status": "proposed_not_implemented",
-      "capability": "建设避难组织中心，提供疏散与恢复准备；不修改已验收C2保护参数。"
+      "capability": "为社区公共服务中心增加避难组织用途，不另建避难中心，不修改C2保护参数或前置。"
     },
     {
       "id": "C10",
@@ -839,7 +839,7 @@
       "gate": null,
       "existing_key": null,
       "status": "proposed_not_implemented",
-      "capability": "建设模块化营建站；在选定殖民地开展付费施工，不免费增加全帝国建筑。"
+      "capability": "在当地标准件工坊或原神器工坊中组织付费模块化营建，不另建低级营建站或免费生成建筑。"
     },
     {
       "id": "E04",
@@ -1129,7 +1129,7 @@
       }
     ],
     "difficulty": "高；方案切换的守恒、权限检查与舰体／工程能力均待可行性核实。",
-    "asset_boundary": "不计入72项公共研究或30类公共建筑；人物组合不恢复。"
+    "asset_boundary": "不计入72项公共研究或27类公共建筑；人物组合不恢复。"
   },
   "buildings": [
     {
@@ -1162,17 +1162,17 @@
       "stages": [
         {
           "stage": 1,
+          "name": "基准观测站",
+          "technology": "A03",
+          "existing_key": null,
+          "status": "proposed_not_implemented"
+        },
+        {
+          "stage": 2,
           "name": "黑门观测站",
           "technology": "A02",
           "existing_key": "building_artifact_black_gate_observatory",
           "status": "existing_definition"
-        },
-        {
-          "stage": 2,
-          "name": "黑门联合观测站",
-          "technology": "A05",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
         },
         {
           "stage": 3,
@@ -1187,7 +1187,7 @@
       "id": "BL03",
       "name": "神器工坊",
       "role": "制造",
-      "distinct_function": "标准件与神器试制；与合金量产区分。",
+      "distinct_function": "标准件生产、材料试制与营建组织共用工坊，量产仍由合金炉承担。",
       "stages": [
         {
           "stage": 1,
@@ -1470,21 +1470,6 @@
       ]
     },
     {
-      "id": "BL16",
-      "name": "仪器标定",
-      "role": "观测研究",
-      "distinct_function": "有限仪器校准；不是另一座科研尖塔。",
-      "stages": [
-        {
-          "stage": 1,
-          "name": "仪器标定所",
-          "technology": "A03",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
-        }
-      ]
-    },
-    {
       "id": "BL17",
       "name": "异常样本保管",
       "role": "观测研究",
@@ -1529,21 +1514,6 @@
       ]
     },
     {
-      "id": "BL19",
-      "name": "材料试验",
-      "role": "制造",
-      "distinct_function": "小批材料验证，与工坊试制和合金量产分别承担环节。",
-      "stages": [
-        {
-          "stage": 1,
-          "name": "共鸣材料试验场",
-          "technology": "B07",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
-        }
-      ]
-    },
-    {
       "id": "BL20",
       "name": "物资配给",
       "role": "后勤",
@@ -1577,27 +1547,12 @@
       "id": "BL22",
       "name": "社区公共服务",
       "role": "民生",
-      "distinct_function": "舒适与公共服务；不能替代消费品产线。",
+      "distinct_function": "社区公共服务；C09在同一设施中组织避难，不另建避难中心。",
       "stages": [
         {
           "stage": 1,
           "name": "社区公共服务中心",
           "technology": "C07",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
-        }
-      ]
-    },
-    {
-      "id": "BL23",
-      "name": "避难组织",
-      "role": "公共后勤",
-      "distinct_function": "提供本地避难与恢复准备，和调度中枢区分。",
-      "stages": [
-        {
-          "stage": 1,
-          "name": "避难组织中心",
-          "technology": "C09",
           "existing_key": null,
           "status": "proposed_not_implemented"
         }
@@ -1704,17 +1659,10 @@
       "id": "BL30",
       "name": "模块化营建",
       "role": "工程",
-      "distinct_function": "从殖民地施工到分段工程，不免费批量建设。",
+      "distinct_function": "仅在E09后承担大型分段工程；E03低级营建由工坊组织。",
       "stages": [
         {
           "stage": 1,
-          "name": "模块化营建站",
-          "technology": "E03",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
-        },
-        {
-          "stage": 2,
           "name": "大型工程营建场",
           "technology": "E09",
           "existing_key": null,
@@ -1722,5 +1670,21 @@
         }
       ]
     }
-  ]
+  ],
+  "refinement": {
+    "date": "2026-10-14",
+    "reason": "减少每项研究一座专用建筑造成的槽位负担，保留功能，合并设施。",
+    "decisions": [
+      "BL16仪器标定所合入BL02，新增基准观测站作为低级，A05改为同楼能力，不单独升级建筑。",
+      "BL19材料试验场合入BL03工坊，以材料试制项目体现B07。",
+      "BL23避难组织中心合入BL22社区公共服务中心，以C09功能体现。",
+      "BL30不再包含E03低级营建站；E03由工坊组织，E09后才建设大型工程营建场。"
+    ],
+    "retired_design_ids": [
+      "BL16",
+      "BL19",
+      "BL23"
+    ],
+    "id_policy": "保留原审阅编号，不因合并重编号；这些从未是运行建筑键。"
+  }
 }

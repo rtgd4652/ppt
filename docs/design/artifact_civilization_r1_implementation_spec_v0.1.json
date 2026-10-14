@@ -1,0 +1,412 @@
+{
+  "date": "2026-10-14",
+  "status": "implementation_spec_draft_not_implemented",
+  "scope": "7项公共研究、6座低级建筑、5类低级岗位；两类项目入口（样本分析、工坊工程），工坊三种方案。",
+  "research": [
+    {
+      "id": "A03",
+      "name": "基准观测与仪器标定",
+      "area": "physics",
+      "tier": 1,
+      "prerequisites": [
+        "A01"
+      ],
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented",
+      "capability": "建设基准观测站，承担仪器标定与初级研究；后续升级到原黑门观测站，不另建标定所。",
+      "research_cost": 300,
+      "draw_weight": 150,
+      "category": "field_manipulation",
+      "rare": false
+    },
+    {
+      "id": "A04",
+      "name": "异常样本封存",
+      "area": "physics",
+      "tier": 1,
+      "prerequisites": [
+        "A03"
+      ],
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented",
+      "capability": "开放样本保管库与有限批次封存项目；样本记录不新增全局资源。",
+      "research_cost": 400,
+      "draw_weight": 130,
+      "category": "field_manipulation",
+      "rare": false
+    },
+    {
+      "id": "B06",
+      "name": "前线维修与标准件",
+      "area": "engineering",
+      "tier": 1,
+      "prerequisites": [
+        "A03"
+      ],
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented",
+      "capability": "建设标准件工坊，为营建、舰载接口和后续神器锻造准备普通工程基础。",
+      "research_cost": 300,
+      "draw_weight": 150,
+      "category": "industry",
+      "rare": false
+    },
+    {
+      "id": "B07",
+      "name": "共鸣材料筛选",
+      "area": "engineering",
+      "tier": 2,
+      "prerequisites": [
+        "B06",
+        "A04"
+      ],
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented",
+      "capability": "在标准件工坊或原神器工坊中开放材料试制，不另建材料试验场；与营建共用有限本地项目入口。",
+      "research_cost": 1000,
+      "draw_weight": 110,
+      "category": "materials",
+      "rare": false
+    },
+    {
+      "id": "C07",
+      "name": "殖民地公共服务",
+      "area": "society",
+      "tier": 1,
+      "prerequisites": [
+        "A01"
+      ],
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented",
+      "capability": "建设社区服务中心与基础民生工场，支持早期殖民地日常供给。",
+      "research_cost": 300,
+      "draw_weight": 150,
+      "category": "statecraft",
+      "rare": false
+    },
+    {
+      "id": "C08",
+      "name": "记忆档案编目",
+      "area": "society",
+      "tier": 2,
+      "prerequisites": [
+        "C01",
+        "A04"
+      ],
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented",
+      "capability": "建设记忆档案室；管理公共记录，与危险样本和旧日神器档案分别存放。",
+      "research_cost": 800,
+      "draw_weight": 110,
+      "category": "statecraft",
+      "rare": false
+    },
+    {
+      "id": "E03",
+      "name": "殖民地模块化营建",
+      "area": "engineering",
+      "tier": 2,
+      "prerequisites": [
+        "B06",
+        "C07"
+      ],
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented",
+      "capability": "在当地标准件工坊或原神器工坊中组织付费模块化营建，不另建低级营建站或免费生成建筑。",
+      "research_cost": 1000,
+      "draw_weight": 110,
+      "category": "industry",
+      "rare": false
+    }
+  ],
+  "buildings": [
+    {
+      "family": "BL02",
+      "name": "基准观测站",
+      "key": "building_artifact_baseline_observation_station",
+      "technology": "A03",
+      "cost": {
+        "minerals": 300
+      },
+      "days": 180,
+      "upkeep": {
+        "energy": 2
+      },
+      "jobs": {
+        "artifact_junior_observer": 2
+      },
+      "upgrade_to": "building_artifact_black_gate_observatory"
+    },
+    {
+      "family": "BL17",
+      "name": "异常样本保管库",
+      "key": "building_artifact_sample_repository",
+      "technology": "A04",
+      "cost": {
+        "minerals": 300,
+        "consumer_goods": 100
+      },
+      "days": 240,
+      "upkeep": {
+        "energy": 3,
+        "consumer_goods": 1
+      },
+      "jobs": {
+        "artifact_junior_observer": 1
+      },
+      "upgrade_to": null
+    },
+    {
+      "family": "BL03",
+      "name": "标准件工坊",
+      "key": "building_artifact_standard_parts_workshop",
+      "technology": "B06",
+      "cost": {
+        "minerals": 350
+      },
+      "days": 180,
+      "upkeep": {
+        "energy": 2
+      },
+      "jobs": {
+        "artifact_standard_parts_worker": 2
+      },
+      "upgrade_to": "building_artifact_relic_workshop"
+    },
+    {
+      "family": "BL22",
+      "name": "社区公共服务中心",
+      "key": "building_artifact_community_service_center",
+      "technology": "C07",
+      "cost": {
+        "minerals": 250
+      },
+      "days": 180,
+      "upkeep": {
+        "energy": 2
+      },
+      "jobs": {
+        "artifact_community_coordinator": 1
+      },
+      "upgrade_to": null
+    },
+    {
+      "family": "BL08",
+      "name": "基础民生工场",
+      "key": "building_artifact_basic_civic_factory",
+      "technology": "C07",
+      "cost": {
+        "minerals": 350
+      },
+      "days": 240,
+      "upkeep": {
+        "energy": 3
+      },
+      "jobs": {
+        "artifact_basic_civic_artisan": 2
+      },
+      "upgrade_to": "building_artifact_civic_goods_manufactory"
+    },
+    {
+      "family": "BL13",
+      "name": "记忆档案室",
+      "key": "building_artifact_memory_archive_room",
+      "technology": "C08",
+      "cost": {
+        "minerals": 350,
+        "unity": 100
+      },
+      "days": 240,
+      "upkeep": {
+        "energy": 2,
+        "consumer_goods": 1
+      },
+      "jobs": {
+        "artifact_junior_archivist": 1
+      },
+      "upgrade_to": "building_artifact_memory_palace"
+    }
+  ],
+  "jobs": [
+    {
+      "key": "artifact_junior_observer",
+      "name": "初级观测员",
+      "produces": {
+        "physics_research": 4,
+        "society_research": 2,
+        "engineering_research": 2
+      },
+      "upkeep": {
+        "consumer_goods": 2,
+        "energy": 1
+      }
+    },
+    {
+      "key": "artifact_standard_parts_worker",
+      "name": "标准件技工",
+      "produces": {
+        "alloys": 3,
+        "engineering_research": 1
+      },
+      "upkeep": {
+        "minerals": 6,
+        "energy": 1
+      }
+    },
+    {
+      "key": "artifact_community_coordinator",
+      "name": "社区协调员",
+      "produces": {
+        "unity": 2
+      },
+      "planet_modifier": {
+        "planet_amenities_add": 6
+      },
+      "upkeep": {
+        "consumer_goods": 1,
+        "energy": 1
+      }
+    },
+    {
+      "key": "artifact_basic_civic_artisan",
+      "name": "民生技工",
+      "produces": {
+        "consumer_goods": 4
+      },
+      "upkeep": {
+        "minerals": 6,
+        "energy": 1
+      }
+    },
+    {
+      "key": "artifact_junior_archivist",
+      "name": "初级档案员",
+      "produces": {
+        "unity": 6
+      },
+      "upkeep": {
+        "consumer_goods": 1,
+        "energy": 1
+      }
+    }
+  ],
+  "project_modes": [
+    {
+      "id": "sample_analysis",
+      "name": "封存样本分析",
+      "technology": [
+        "A04"
+      ],
+      "site": [
+        "building_artifact_sample_repository"
+      ],
+      "cost": {
+        "energy": 200,
+        "consumer_goods": 100
+      },
+      "monthly_steps": 3,
+      "result": {
+        "planet_jobs_physics_research_produces_mult": 0.1
+      },
+      "benefit_days": 720,
+      "role": "科研殖民地选择；物理研究结果，无新样本货币。"
+    },
+    {
+      "id": "basic_construction",
+      "name": "模块化营建",
+      "technology": [
+        "E03"
+      ],
+      "site": [
+        "building_artifact_standard_parts_workshop",
+        "building_artifact_relic_workshop"
+      ],
+      "cost": {
+        "minerals": 300,
+        "energy": 150
+      },
+      "monthly_steps": 4,
+      "result": {
+        "planet_building_build_speed_mult": 0.1
+      },
+      "benefit_days": 720,
+      "role": "新殖民地或集中建设时使用；不自动建造或返还建筑费。"
+    },
+    {
+      "id": "precision_construction",
+      "name": "精密构件营建",
+      "technology": [
+        "E03",
+        "B07"
+      ],
+      "site": [
+        "building_artifact_standard_parts_workshop",
+        "building_artifact_relic_workshop"
+      ],
+      "cost": {
+        "minerals": 450,
+        "energy": 200,
+        "alloys": 50
+      },
+      "monthly_steps": 4,
+      "result": {
+        "planet_building_build_speed_mult": 0.15
+      },
+      "benefit_days": 720,
+      "role": "材料筛选带来的付费强化选项；与普通营建互斥。"
+    },
+    {
+      "id": "materials_study",
+      "name": "构件材料试制",
+      "technology": [
+        "B07"
+      ],
+      "site": [
+        "building_artifact_standard_parts_workshop",
+        "building_artifact_relic_workshop"
+      ],
+      "cost": {
+        "minerals": 100,
+        "energy": 200,
+        "consumer_goods": 50
+      },
+      "monthly_steps": 3,
+      "result": {
+        "planet_jobs_engineering_research_produces_mult": 0.1
+      },
+      "benefit_days": 720,
+      "role": "研发殖民地选择；与施工收益在同一项目槽中取舍。"
+    }
+  ],
+  "project_contract": {
+    "slot": "每颗殖民地一个R1公共项目槽，进行态及收益期内均不能开启另一模式；不占用C2或既有角色工坊槽。",
+    "entry": "玩家文明、拥有并实际控制的殖民地、无轰炸、相应科技与至少一座列明现场设施。",
+    "cost": "开始时一次扣费，无逐月追加收费；完成或中止不返还，不发放免费建筑、科技或角色经验。",
+    "progress": "每次有效原生月度脉冲推进1步；通常约3或4个月，不宣称固定90或120日。仅处理进行态地点。",
+    "pause": "同一所有者的现场遭占领、轰炸或失去本模式的全部合格设施时暂停，已付费及工作量保留；同类低级楼升级成合格高级楼不暂停。",
+    "abort": "所有权变化、殖民地消失、文明身份不再符合或玩家主动中止时失败归档，已付费不返还；不得转移给新所有者或首都。",
+    "completion": "最后一步同时复核所有者、控制权、轰炸与设施；先清进行态再添加一项收益，重复进入界面不推进或再结算。",
+    "benefit": "收益绑定启动时原殖民地；占领不刷新收益期限，失去所有权时移除本包收益；完工后拆楼不重新结算或退款。",
+    "save": "现场、启动所有者、模式、已付费事实、有效工作步及结算状态随档；载档后等待下一次自然月度脉冲，不补跑历史月份。",
+    "limits": "不增加角色等级、人物组合、个人授权或全局样本资源；不改变C2、旧首都工坊和主线回调。"
+  },
+  "balance_status": "起始设计数值；尚未做运行或平衡验收。岗位数字按脚本岗位资源基准，不冒称4.5界面实际人口数。",
+  "delivery_order": [
+    {
+      "id": "R1a",
+      "scope": "A03、B06、C07及四座直接关联低级建筑、低级岗位；保留原高级建筑直建。"
+    },
+    {
+      "id": "R1b",
+      "scope": "A04、B07、C08、E03及样本库／档案室；接入两类本地项目入口和工坊三方案。"
+    }
+  ],
+  "art_status": "使用已有占位引用；本轮不生成或替换图标。"
+}
