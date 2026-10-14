@@ -1,0 +1,130 @@
+{
+  "date": "2026-10-14",
+  "runtime_status": "partial_research_and_construction_pending",
+  "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2255.06.09.sav",
+  "save_bytes": 1981115,
+  "saved_date": "2255.06.09",
+  "game_version_observed": "4.5.2 (e91a)",
+  "player_country": "0",
+  "a03_researched": true,
+  "a04_researched": false,
+  "physics_queue": [
+    {
+      "": [
+        {
+          "progress": "80.92465"
+        },
+        {
+          "technology": "tech_artifact_sample_containment"
+        },
+        {
+          "date": "2255.03.02"
+        }
+      ]
+    }
+  ],
+  "site": {
+    "colony_id": "9",
+    "planet_id": "290",
+    "name": [
+      {
+        "key": "PLANET_NAME_FORMAT"
+      },
+      {
+        "variables": [
+          {
+            "": [
+              {
+                "key": "PARENT"
+              },
+              {
+                "value": [
+                  {
+                    "key": "Zeldrah"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "": [
+              {
+                "key": "NUMERAL"
+              },
+              {
+                "value": [
+                  {
+                    "key": "I"
+                  },
+                  {
+                    "literal": "yes"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "owner": "0",
+    "controller": "0",
+    "carrier": [
+      {
+        "type": "planet"
+      },
+      {
+        "reference": "290"
+      }
+    ]
+  },
+  "construction": [
+    {
+      "item_id": "1677721611",
+      "record": [
+        {
+          "queue": "42"
+        },
+        {
+          "paying_country": "0"
+        },
+        {
+          "progress": "111.55"
+        },
+        {
+          "progress_needed": "180"
+        },
+        {
+          "resources": [
+            {
+              "minerals": "330"
+            }
+          ]
+        },
+        {
+          "buildable_planet_building": [
+            {
+              "building": "building_artifact_baseline_observation_station"
+            },
+            {
+              "planet": "9"
+            },
+            {
+              "zone": "33"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "ui_observation": {
+    "save_paused": true,
+    "construction_remaining_days": 60,
+    "construction_cost_minerals": 330,
+    "construction_initial_days": 157,
+    "junior_observer_jobs_displayed": 2,
+    "family_limit_displayed": "1/1"
+  },
+  "critical_game_load_count": 0,
+  "project_started": false,
+  "evidence_boundary": "只读ZIP与结构解析，不是游戏读档；研究候选来自两条受控控制台命令，科研和建造正常推进。"
+}

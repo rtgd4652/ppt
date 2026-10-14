@@ -2,7 +2,7 @@
 
 更新：2026-10-14。第一包补齐前期公共科研、标准件、民生和本地工程，沿用公共与个人研究分离。范围为7项科技、6座低级建筑、5类低级岗位；主动玩法集中为样本分析与工坊工程两类入口，工坊内有三种方案。数值仍是起始基准；R1a与R1b已全部接入源码，整包7项研究、6座低级建筑、5类岗位通过静态核账，四种本地方案通过12项定向检查；运行与平衡尚待验收。
 
-完整路线中的三类专用设施已合并，低级营建也改用工坊；公共科技仍72项，公共建筑收敛为27类46阶段。R1源码已接齐，游戏验收尚未开始；图标批量制作继续暂停。
+完整路线中的三类专用设施已合并，低级营建也改用工坊；公共科技仍72项，公共建筑收敛为27类46阶段。R1源码已接齐，游戏验收已开始，项目与关键读档尚未完成；图标批量制作继续暂停。
 
 ## 玩家如何发展
 
@@ -111,3 +111,5 @@ R1a源码交付包括三项研究、四座建筑、四类岗位、30个中文键
 完整节点与暂名键见[结构化规格](artifact_civilization_r1_implementation_spec_v0.1.json)，总体依赖见[完整路线](artifact_civilization_research_building_route_v0.2.md)。现有数值依据为`mod/common/technology/aemusa_technology.txt`、`mod/common/buildings/aemusa_buildings.txt`、`mod/common/pop_jobs/aemusa_artifact_jobs.txt`及既有应急／工程记录。
 
 源码文件、定向核账和待验范围见[R1a实现记录](../../reports/artifact_civilization_r1a_implementation_2026-10-14.md)及[R1b整包续接](../../reports/artifact_civilization_r1b_implementation_2026-10-14.md)。
+
+10月14日运行已完成A03正常研究，A04与观测站在建，另存2255.06.09暂停；项目与关键读档未验。首次冷启动发现的13处直接纹理引用已修复并重启，见[运行续接](../../reports/artifact_civilization_r1_runtime_2026-10-14.md)。

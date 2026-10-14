@@ -2,7 +2,7 @@
 # 基准观测与仪器标定：只开放本包设施，主动项目后续接入。
 tech_artifact_baseline_observation_calibration = {
 	area = physics
-	icon = "tech_artifact_baseline_observation_calibration"
+	icon = "tech_artifact_black_gate_observation"
 	cost = 300
 	tier = 1
 	category = {
@@ -22,7 +22,7 @@ tech_artifact_baseline_observation_calibration = {
 # 前线维修与标准件：只开放本包设施，主动项目后续接入。
 tech_artifact_standard_parts = {
 	area = engineering
-	icon = "tech_artifact_standard_parts"
+	icon = "tech_artifact_relic_fabrication"
 	cost = 300
 	tier = 1
 	category = {
@@ -42,7 +42,7 @@ tech_artifact_standard_parts = {
 # 殖民地公共服务：只开放本包设施，主动项目后续接入。
 tech_artifact_colony_public_services = {
 	area = society
-	icon = "tech_artifact_colony_public_services"
+	icon = "tech_artifact_central_court_protocols"
 	cost = 300
 	tier = 1
 	category = {
@@ -62,7 +62,7 @@ tech_artifact_colony_public_services = {
 # 异常样本封存：公共路线不读取人物与个人授权。
 tech_artifact_sample_containment = {
 	area = physics
-	icon = "tech_artifact_sample_containment"
+	icon = "tech_artifact_black_gate_observation"
 	cost = 400
 	tier = 1
 	category = {
@@ -82,7 +82,7 @@ tech_artifact_sample_containment = {
 # 共鸣材料筛选：公共路线不读取人物与个人授权。
 tech_artifact_resonance_material_screening = {
 	area = engineering
-	icon = "tech_artifact_resonance_material_screening"
+	icon = "tech_artifact_relic_fabrication"
 	cost = 1000
 	tier = 2
 	category = {
@@ -103,7 +103,7 @@ tech_artifact_resonance_material_screening = {
 # 记忆档案编目：公共路线不读取人物与个人授权。
 tech_artifact_memory_cataloguing = {
 	area = society
-	icon = "tech_artifact_memory_cataloguing"
+	icon = "tech_artifact_seven_day_logistics"
 	cost = 800
 	tier = 2
 	category = {
@@ -124,7 +124,7 @@ tech_artifact_memory_cataloguing = {
 # 殖民地模块化营建：公共路线不读取人物与个人授权。
 tech_artifact_modular_colony_construction = {
 	area = engineering
-	icon = "tech_artifact_modular_colony_construction"
+	icon = "tech_artifact_central_court_protocols"
 	cost = 1000
 	tier = 2
 	category = {

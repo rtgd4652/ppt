@@ -3,7 +3,7 @@
 building_artifact_baseline_observation_station = {
 	can_build = yes
 	base_buildtime = 180
-	icon = "building_artifact_baseline_observation_station"
+	icon = "building_artifact_black_gate_observatory"
 	category = research
 	building_sets = {
 		research
@@ -45,7 +45,7 @@ building_artifact_baseline_observation_station = {
 building_artifact_standard_parts_workshop = {
 	can_build = yes
 	base_buildtime = 180
-	icon = "building_artifact_standard_parts_workshop"
+	icon = "building_artifact_relic_workshop"
 	category = manufacturing
 	building_sets = {
 		manufacturing
@@ -87,7 +87,7 @@ building_artifact_standard_parts_workshop = {
 building_artifact_community_service_center = {
 	can_build = yes
 	base_buildtime = 180
-	icon = "building_artifact_community_service_center"
+	icon = "building_artifact_sanctum"
 	category = government
 	building_sets = {
 		government
@@ -122,7 +122,7 @@ building_artifact_community_service_center = {
 building_artifact_basic_civic_factory = {
 	can_build = yes
 	base_buildtime = 240
-	icon = "building_artifact_basic_civic_factory"
+	icon = "building_artifact_civic_goods_manufactory"
 	category = manufacturing
 	building_sets = {
 		manufacturing
@@ -164,7 +164,7 @@ building_artifact_basic_civic_factory = {
 building_artifact_sample_repository = {
 	can_build = yes
 	base_buildtime = 240
-	icon = "building_artifact_sample_repository"
+	icon = "building_artifact_black_gate_observatory"
 	category = research
 	building_sets = {
 		research
@@ -201,7 +201,7 @@ building_artifact_sample_repository = {
 building_artifact_memory_archive_room = {
 	can_build = yes
 	base_buildtime = 240
-	icon = "building_artifact_memory_archive_room"
+	icon = "building_artifact_memory_palace"
 	category = unity
 	building_sets = {
 		unity

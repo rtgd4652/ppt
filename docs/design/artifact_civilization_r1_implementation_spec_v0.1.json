@@ -469,6 +469,17 @@
       "project_entry_groups": 2,
       "project_modes": 4,
       "report": "reports/artifact_civilization_r1b_implementation_2026-10-14.md"
+    },
+    "R1_runtime": {
+      "date": "2026-10-14",
+      "status": "partial",
+      "overall_runtime_status": "pending",
+      "a03_researched": true,
+      "a04_research_progress": 80.92465,
+      "project_started": false,
+      "critical_game_load_count": 0,
+      "checkpoint": "2255.06.09.sav",
+      "report": "reports/artifact_civilization_r1_runtime_2026-10-14.md"
     }
   }
 }
