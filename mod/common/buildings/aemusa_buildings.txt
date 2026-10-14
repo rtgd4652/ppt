@@ -435,6 +435,8 @@ building_artifact_rare_resonance_refinery = {
 
 # 中央庭记忆宫：神器使后期凝聚力建筑。
 building_artifact_memory_palace = {
+	# 加入档案室升级路径后，仍保留原科技下的直接建造资格。
+	can_build = yes
 	base_buildtime = 600
 	icon = building_artifact_memory_palace
 	category = unity

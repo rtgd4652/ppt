@@ -1,0 +1,58 @@
+spriteTypes = {
+	# 只复用已存在纹理，正式图标仍暂停批量生产。
+	spriteType = {
+		name = "GFX_tech_artifact_sample_containment"
+		texturefile = "gfx/interface/icons/technologies/tech_artifact_black_gate_observation.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_tech_artifact_resonance_material_screening"
+		texturefile = "gfx/interface/icons/technologies/tech_artifact_relic_fabrication.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_tech_artifact_memory_cataloguing"
+		texturefile = "gfx/interface/icons/technologies/tech_artifact_seven_day_logistics.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_tech_artifact_modular_colony_construction"
+		texturefile = "gfx/interface/icons/technologies/tech_artifact_central_court_protocols.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_building_artifact_sample_repository"
+		texturefile = "gfx/interface/icons/buildings/building_artifact_black_gate_observatory.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_building_artifact_memory_archive_room"
+		texturefile = "gfx/interface/icons/buildings/building_artifact_memory_palace.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_junior_archivist_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_culture_worker_add.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_mod_artifact_foundation_sample_analysis"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_physicist_add.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_mod_artifact_foundation_basic_construction"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_foundry_add.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_mod_artifact_foundation_precision_construction"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_foundry_add.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_mod_artifact_foundation_materials_study"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_foundry_add.dds"
+		alwaystransparent = yes
+	}
+}

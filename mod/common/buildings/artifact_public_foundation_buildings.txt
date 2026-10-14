@@ -1,20 +1,26 @@
 # R1a低级设施；原高级建筑保持原键、原科技、原费用和直建资格。
-
 # 基准观测站：每星球限一，按原生父子升级关系替换岗位。
 building_artifact_baseline_observation_station = {
 	can_build = yes
 	base_buildtime = 180
 	icon = "building_artifact_baseline_observation_station"
 	category = research
-	building_sets = { research }
+	building_sets = {
+		research
+	}
 	planet_limit = 1
-	prerequisites = { "tech_artifact_baseline_observation_calibration" }
-
-	upgrades = { "building_artifact_black_gate_observatory" }
+	prerequisites = {
+		"tech_artifact_baseline_observation_calibration"
+	}
+	upgrades = {
+		"building_artifact_black_gate_observatory"
+	}
 	potential = {
 		exists = owner
 		owner = {
-			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
 		}
 		NOR = {
 			has_building = "building_artifact_black_gate_observatory"
@@ -41,15 +47,22 @@ building_artifact_standard_parts_workshop = {
 	base_buildtime = 180
 	icon = "building_artifact_standard_parts_workshop"
 	category = manufacturing
-	building_sets = { manufacturing }
+	building_sets = {
+		manufacturing
+	}
 	planet_limit = 1
-	prerequisites = { "tech_artifact_standard_parts" }
-
-	upgrades = { "building_artifact_relic_workshop" }
+	prerequisites = {
+		"tech_artifact_standard_parts"
+	}
+	upgrades = {
+		"building_artifact_relic_workshop"
+	}
 	potential = {
 		exists = owner
 		owner = {
-			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
 		}
 		NOR = {
 			has_building = "building_artifact_relic_workshop"
@@ -76,13 +89,19 @@ building_artifact_community_service_center = {
 	base_buildtime = 180
 	icon = "building_artifact_community_service_center"
 	category = government
-	building_sets = { government }
+	building_sets = {
+		government
+	}
 	planet_limit = 1
-	prerequisites = { "tech_artifact_colony_public_services" }
+	prerequisites = {
+		"tech_artifact_colony_public_services"
+	}
 	potential = {
 		exists = owner
 		owner = {
-			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
 		}
 	}
 	resources = {
@@ -105,15 +124,22 @@ building_artifact_basic_civic_factory = {
 	base_buildtime = 240
 	icon = "building_artifact_basic_civic_factory"
 	category = manufacturing
-	building_sets = { manufacturing }
+	building_sets = {
+		manufacturing
+	}
 	planet_limit = 1
-	prerequisites = { "tech_artifact_colony_public_services" }
-
-	upgrades = { "building_artifact_civic_goods_manufactory" }
+	prerequisites = {
+		"tech_artifact_colony_public_services"
+	}
+	upgrades = {
+		"building_artifact_civic_goods_manufactory"
+	}
 	potential = {
 		exists = owner
 		owner = {
-			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
 		}
 		NOR = {
 			has_building = "building_artifact_civic_goods_manufactory"
@@ -131,5 +157,86 @@ building_artifact_basic_civic_factory = {
 	}
 	planet_modifier = {
 		job_artifact_basic_civic_artisan_add = 2
+	}
+}
+
+# 异常样本保管库：本包只引用已存在的升级目标。
+building_artifact_sample_repository = {
+	can_build = yes
+	base_buildtime = 240
+	icon = "building_artifact_sample_repository"
+	category = research
+	building_sets = {
+		research
+	}
+	planet_limit = 1
+	prerequisites = {
+		"tech_artifact_sample_containment"
+	}
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 300
+			consumer_goods = 100
+		}
+		upkeep = {
+			energy = 3
+			consumer_goods = 1
+		}
+	}
+	planet_modifier = {
+		job_artifact_junior_observer_add = 1
+	}
+}
+
+# 记忆档案室：本包只引用已存在的升级目标。
+building_artifact_memory_archive_room = {
+	can_build = yes
+	base_buildtime = 240
+	icon = "building_artifact_memory_archive_room"
+	category = unity
+	building_sets = {
+		unity
+	}
+	planet_limit = 1
+	prerequisites = {
+		"tech_artifact_memory_cataloguing"
+	}
+	upgrades = {
+		"building_artifact_memory_palace"
+	}
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+		NOR = {
+			has_building = "building_artifact_memory_palace"
+			has_building_construction = "building_artifact_memory_palace"
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 350
+			unity = 100
+		}
+		upkeep = {
+			energy = 2
+			consumer_goods = 1
+		}
+	}
+	planet_modifier = {
+		job_artifact_junior_archivist_add = 1
 	}
 }

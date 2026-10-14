@@ -1,0 +1,250 @@
+# 清理只涉及本包现场，不退款、不操作角色工程或C2修正。
+artifact_foundation_clear = {
+	remove_carrier_flag = arf_r1_active
+	remove_carrier_flag = arf_r1_paid
+	remove_carrier_flag = arf_r1_managed
+	remove_carrier_flag = arf_r1_completed
+	remove_carrier_flag = arf_r1_mode_sample_analysis
+	remove_carrier_flag = arf_r1_mode_basic_construction
+	remove_carrier_flag = arf_r1_mode_precision_construction
+	remove_carrier_flag = arf_r1_mode_materials_study
+	remove_modifier = artifact_foundation_sample_analysis
+	remove_modifier = artifact_foundation_basic_construction
+	remove_modifier = artifact_foundation_precision_construction
+	remove_modifier = artifact_foundation_materials_study
+	clear_variable = arf_r1_progress
+	clear_variable = arf_r1_required_work
+	clear_global_event_target = arf_r1_owner@this
+}
+
+artifact_foundation_begin = {
+	artifact_foundation_clear = yes
+	remove_carrier_flag = arf_r1_failed
+	set_carrier_flag = arf_r1_managed
+	set_carrier_flag = arf_r1_active
+	set_carrier_flag = arf_r1_paid
+	set_variable = {
+		which = arf_r1_progress
+		value = 0
+	}
+	owner = {
+		save_global_event_target_as = arf_r1_owner@prev
+	}
+}
+
+# 重复校验窗口、资源和槽位；真正扣费与建账在同一分支。
+artifact_foundation_start_sample_analysis = {
+	if = {
+		limit = {
+			artifact_foundation_can_start_sample_analysis = yes
+		}
+		owner = {
+			add_resource = {
+				energy = -200
+			}
+			add_resource = {
+				consumer_goods = -100
+			}
+		}
+		artifact_foundation_begin = yes
+		set_carrier_flag = arf_r1_mode_sample_analysis
+		set_variable = {
+			which = arf_r1_required_work
+			value = 3
+		}
+	}
+}
+
+# 重复校验窗口、资源和槽位；真正扣费与建账在同一分支。
+artifact_foundation_start_basic_construction = {
+	if = {
+		limit = {
+			artifact_foundation_can_start_basic_construction = yes
+		}
+		owner = {
+			add_resource = {
+				minerals = -300
+			}
+			add_resource = {
+				energy = -150
+			}
+		}
+		artifact_foundation_begin = yes
+		set_carrier_flag = arf_r1_mode_basic_construction
+		set_variable = {
+			which = arf_r1_required_work
+			value = 4
+		}
+	}
+}
+
+# 重复校验窗口、资源和槽位；真正扣费与建账在同一分支。
+artifact_foundation_start_precision_construction = {
+	if = {
+		limit = {
+			artifact_foundation_can_start_precision_construction = yes
+		}
+		owner = {
+			add_resource = {
+				minerals = -450
+			}
+			add_resource = {
+				energy = -200
+			}
+			add_resource = {
+				alloys = -50
+			}
+		}
+		artifact_foundation_begin = yes
+		set_carrier_flag = arf_r1_mode_precision_construction
+		set_variable = {
+			which = arf_r1_required_work
+			value = 4
+		}
+	}
+}
+
+# 重复校验窗口、资源和槽位；真正扣费与建账在同一分支。
+artifact_foundation_start_materials_study = {
+	if = {
+		limit = {
+			artifact_foundation_can_start_materials_study = yes
+		}
+		owner = {
+			add_resource = {
+				minerals = -100
+			}
+			add_resource = {
+				energy = -200
+			}
+			add_resource = {
+				consumer_goods = -50
+			}
+		}
+		artifact_foundation_begin = yes
+		set_carrier_flag = arf_r1_mode_materials_study
+		set_variable = {
+			which = arf_r1_required_work
+			value = 3
+		}
+	}
+}
+
+artifact_foundation_abort = {
+	if = {
+		limit = {
+			has_carrier_flag = arf_r1_active
+		}
+		set_variable = {
+			which = arf_r1_last_progress
+			value = arf_r1_progress
+		}
+		set_carrier_flag = arf_r1_failed
+	}
+	artifact_foundation_clear = yes
+}
+
+# 必须仍在进行且已付费，先清进行态，再只结算一个方案。
+artifact_foundation_complete = {
+	if = {
+		limit = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_paid
+			artifact_foundation_work_ready = yes
+			check_variable = {
+				which = arf_r1_progress
+				value >= arf_r1_required_work
+			}
+		}
+		remove_carrier_flag = arf_r1_active
+		remove_carrier_flag = arf_r1_paid
+		set_carrier_flag = arf_r1_completed
+		if = {
+			limit = {
+				has_carrier_flag = arf_r1_mode_sample_analysis
+			}
+			add_modifier = {
+				modifier = artifact_foundation_sample_analysis
+				days = 720
+			}
+		}
+		else_if = {
+			limit = {
+				has_carrier_flag = arf_r1_mode_basic_construction
+			}
+			add_modifier = {
+				modifier = artifact_foundation_basic_construction
+				days = 720
+			}
+		}
+		else_if = {
+			limit = {
+				has_carrier_flag = arf_r1_mode_precision_construction
+			}
+			add_modifier = {
+				modifier = artifact_foundation_precision_construction
+				days = 720
+			}
+		}
+		else_if = {
+			limit = {
+				has_carrier_flag = arf_r1_mode_materials_study
+			}
+			add_modifier = {
+				modifier = artifact_foundation_materials_study
+				days = 720
+			}
+		}
+		remove_carrier_flag = arf_r1_mode_sample_analysis
+		remove_carrier_flag = arf_r1_mode_basic_construction
+		remove_carrier_flag = arf_r1_mode_precision_construction
+		remove_carrier_flag = arf_r1_mode_materials_study
+	}
+}
+
+# 只有原生月度入口调用此效果，打开界面不调用它。
+artifact_foundation_monthly_planet = {
+	if = {
+		limit = {
+			OR = {
+				artifact_foundation_actor = no
+				artifact_foundation_original_owner = no
+			}
+		}
+		artifact_foundation_abort = yes
+	}
+	else_if = {
+		limit = {
+			has_carrier_flag = arf_r1_active
+		}
+		if = {
+			limit = {
+				NOT = {
+					has_carrier_flag = arf_r1_paid
+				}
+			}
+			artifact_foundation_abort = yes
+		}
+		else_if = {
+			limit = {
+				artifact_foundation_work_ready = yes
+			}
+			change_variable = {
+				which = arf_r1_progress
+				value = 1
+			}
+			artifact_foundation_complete = yes
+		}
+	}
+	else_if = {
+		limit = {
+			NOR = {
+				has_modifier = artifact_foundation_sample_analysis
+				has_modifier = artifact_foundation_basic_construction
+				has_modifier = artifact_foundation_precision_construction
+				has_modifier = artifact_foundation_materials_study
+			}
+		}
+		artifact_foundation_clear = yes
+	}
+}

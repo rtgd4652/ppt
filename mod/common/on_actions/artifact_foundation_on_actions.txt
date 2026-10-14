@@ -1,0 +1,24 @@
+# 本包独立订阅，不改已有角色、C2或主线回调列表。
+on_monthly_pulse_country = {
+	events = {
+		artifact_foundation.1
+	}
+}
+
+on_colony_transfer = {
+	events = {
+		artifact_foundation.2
+	}
+}
+
+on_colony_ownerless = {
+	events = {
+		artifact_foundation.2
+	}
+}
+
+on_colony_destroyed = {
+	events = {
+		artifact_foundation.3
+	}
+}

@@ -1,0 +1,172 @@
+# 4.5.2殖民地载体作用域；不读取个人或旧首都工坊账本。
+artifact_foundation_actor = {
+	carrier_is_type = planet
+	is_colony = yes
+	exists = owner
+	owner = {
+		is_ai = no
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# 窗口保留打开时的国家；转让后旧窗口不能从新国家扣费。
+artifact_foundation_ui_actor = {
+	artifact_foundation_actor = yes
+	exists = event_target:arf_r1_ui_owner
+	is_owned_by = event_target:arf_r1_ui_owner
+}
+
+artifact_foundation_safe_control = {
+	is_controlled_by = owner
+	has_orbital_bombardment = no
+}
+
+# 启动国家按当前殖民地载体索引保存，不占用其他星球的目标。
+artifact_foundation_original_owner = {
+	exists = owner
+	exists = event_target:arf_r1_owner@this
+	is_owned_by = event_target:arf_r1_owner@this
+}
+
+artifact_foundation_idle = {
+	NOR = {
+		has_carrier_flag = arf_r1_active
+		has_modifier = artifact_foundation_sample_analysis
+		has_modifier = artifact_foundation_basic_construction
+		has_modifier = artifact_foundation_precision_construction
+		has_modifier = artifact_foundation_materials_study
+	}
+}
+
+artifact_foundation_mode_site = {
+	OR = {
+		AND = {
+			has_carrier_flag = arf_r1_mode_sample_analysis
+			OR = {
+				has_building = "building_artifact_sample_repository"
+			}
+		}
+		AND = {
+			has_carrier_flag = arf_r1_mode_basic_construction
+			OR = {
+				has_building = "building_artifact_standard_parts_workshop"
+				has_building = "building_artifact_relic_workshop"
+			}
+		}
+		AND = {
+			has_carrier_flag = arf_r1_mode_precision_construction
+			OR = {
+				has_building = "building_artifact_standard_parts_workshop"
+				has_building = "building_artifact_relic_workshop"
+			}
+		}
+		AND = {
+			has_carrier_flag = arf_r1_mode_materials_study
+			OR = {
+				has_building = "building_artifact_standard_parts_workshop"
+				has_building = "building_artifact_relic_workshop"
+			}
+		}
+	}
+}
+
+artifact_foundation_work_ready = {
+	artifact_foundation_actor = yes
+	artifact_foundation_original_owner = yes
+	artifact_foundation_safe_control = yes
+	artifact_foundation_mode_site = yes
+}
+
+artifact_foundation_can_start_sample_analysis = {
+	artifact_foundation_ui_actor = yes
+	artifact_foundation_safe_control = yes
+	artifact_foundation_idle = yes
+	owner = {
+		has_technology = "tech_artifact_sample_containment"
+		has_resource = {
+			type = energy
+			amount >= 200
+		}
+		has_resource = {
+			type = consumer_goods
+			amount >= 100
+		}
+	}
+	OR = {
+		has_building = "building_artifact_sample_repository"
+	}
+}
+
+artifact_foundation_can_start_basic_construction = {
+	artifact_foundation_ui_actor = yes
+	artifact_foundation_safe_control = yes
+	artifact_foundation_idle = yes
+	owner = {
+		has_technology = "tech_artifact_modular_colony_construction"
+		has_resource = {
+			type = minerals
+			amount >= 300
+		}
+		has_resource = {
+			type = energy
+			amount >= 150
+		}
+	}
+	OR = {
+		has_building = "building_artifact_standard_parts_workshop"
+		has_building = "building_artifact_relic_workshop"
+	}
+}
+
+artifact_foundation_can_start_precision_construction = {
+	artifact_foundation_ui_actor = yes
+	artifact_foundation_safe_control = yes
+	artifact_foundation_idle = yes
+	owner = {
+		has_technology = "tech_artifact_modular_colony_construction"
+		has_technology = "tech_artifact_resonance_material_screening"
+		has_resource = {
+			type = minerals
+			amount >= 450
+		}
+		has_resource = {
+			type = energy
+			amount >= 200
+		}
+		has_resource = {
+			type = alloys
+			amount >= 50
+		}
+	}
+	OR = {
+		has_building = "building_artifact_standard_parts_workshop"
+		has_building = "building_artifact_relic_workshop"
+	}
+}
+
+artifact_foundation_can_start_materials_study = {
+	artifact_foundation_ui_actor = yes
+	artifact_foundation_safe_control = yes
+	artifact_foundation_idle = yes
+	owner = {
+		has_technology = "tech_artifact_resonance_material_screening"
+		has_resource = {
+			type = minerals
+			amount >= 100
+		}
+		has_resource = {
+			type = energy
+			amount >= 200
+		}
+		has_resource = {
+			type = consumer_goods
+			amount >= 50
+		}
+	}
+	OR = {
+		has_building = "building_artifact_standard_parts_workshop"
+		has_building = "building_artifact_relic_workshop"
+	}
+}

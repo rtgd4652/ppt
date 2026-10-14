@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-10-14",
-  "status": "route_draft_with_r1a_source_implemented",
+  "status": "route_draft_with_r1_source_implemented",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "公共72项研究保留；收敛后为27类46阶段建筑（包含现有15键），另列4项个人候选。均为设计，不是用户逐项定稿或已交付数量。",
@@ -140,8 +140,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "开放样本保管库与有限批次封存项目；样本记录不新增全局资源。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "开放样本保管库与有限批次封存项目；样本记录不新增全局资源。",
+      "implementation_key": "tech_artifact_sample_containment"
     },
     {
       "id": "A05",
@@ -344,8 +345,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "在标准件工坊或原神器工坊中开放材料试制，不另建材料试验场；与营建共用有限本地项目入口。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "在标准件工坊或原神器工坊中开放材料试制，不另建材料试验场；与营建共用有限本地项目入口。",
+      "implementation_key": "tech_artifact_resonance_material_screening"
     },
     {
       "id": "B08",
@@ -551,8 +553,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设记忆档案室；管理公共记录，与危险样本和旧日神器档案分别存放。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "建设记忆档案室；管理公共记录，与危险样本和旧日神器档案分别存放。",
+      "implementation_key": "tech_artifact_memory_cataloguing"
     },
     {
       "id": "C09",
@@ -841,8 +844,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "在当地标准件工坊或原神器工坊中组织付费模块化营建，不另建低级营建站或免费生成建筑。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "在当地标准件工坊或原神器工坊中组织付费模块化营建，不另建低级营建站或免费生成建筑。",
+      "implementation_key": "tech_artifact_modular_colony_construction"
     },
     {
       "id": "E04",
@@ -1420,7 +1424,8 @@
           "name": "记忆档案室",
           "technology": "C08",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_memory_archive_room"
         },
         {
           "stage": 2,
@@ -1486,7 +1491,8 @@
           "name": "异常样本保管库",
           "technology": "A04",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_sample_repository"
         },
         {
           "stage": 2,
@@ -1718,7 +1724,21 @@
       "report": "reports/artifact_civilization_r1a_implementation_2026-10-14.md"
     },
     "R1b": {
-      "status": "not_implemented"
+      "date": "2026-10-14",
+      "status": "source_implemented_static_checked_runtime_pending",
+      "runtime_status": "pending",
+      "balance_status": "pending",
+      "technology_keys": {
+        "A04": "tech_artifact_sample_containment",
+        "B07": "tech_artifact_resonance_material_screening",
+        "C08": "tech_artifact_memory_cataloguing",
+        "E03": "tech_artifact_modular_colony_construction"
+      },
+      "new_buildings": 2,
+      "new_jobs": 1,
+      "project_entry_groups": 2,
+      "project_modes": 4,
+      "report": "reports/artifact_civilization_r1b_implementation_2026-10-14.md"
     }
   }
 }

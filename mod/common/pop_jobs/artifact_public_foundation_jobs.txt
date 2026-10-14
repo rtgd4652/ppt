@@ -1,12 +1,15 @@
 # R1a低级岗位；沿用已有专家就业条件，不更改旧高阶岗位。
-
 # 初级观测员：资源数字是脚本岗位基准，实际产出由就业和原生修正结算。
 artifact_junior_observer = {
 	swappable_data = {
-		default = { icon = "physicist" }
+		default = {
+			icon = "physicist"
+		}
 	}
 	category = specialist
-	tags = { research }
+	tags = {
+		research
+	}
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
@@ -17,7 +20,9 @@ artifact_junior_observer = {
 	possible = {
 		complex_specialist_job_check_trigger = yes
 		owner = {
-			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
 		}
 	}
 	resources = {
@@ -32,16 +37,23 @@ artifact_junior_observer = {
 			energy = 1
 		}
 	}
-	weight = { weight = 5 }
+	weight = {
+		weight = 5
+	}
 }
 
 # 标准件技工：资源数字是脚本岗位基准，实际产出由就业和原生修正结算。
 artifact_standard_parts_worker = {
 	swappable_data = {
-		default = { icon = "foundry" }
+		default = {
+			icon = "foundry"
+		}
 	}
 	category = specialist
-	tags = { alloys research }
+	tags = {
+		alloys
+		research
+	}
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
@@ -52,7 +64,9 @@ artifact_standard_parts_worker = {
 	possible = {
 		complex_specialist_job_check_trigger = yes
 		owner = {
-			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
 		}
 	}
 	resources = {
@@ -66,16 +80,23 @@ artifact_standard_parts_worker = {
 			energy = 1
 		}
 	}
-	weight = { weight = 5 }
+	weight = {
+		weight = 5
+	}
 }
 
 # 社区协调员：资源数字是脚本岗位基准，实际产出由就业和原生修正结算。
 artifact_community_coordinator = {
 	swappable_data = {
-		default = { icon = "entertainer" }
+		default = {
+			icon = "entertainer"
+		}
 	}
 	category = specialist
-	tags = { unity amenities }
+	tags = {
+		unity
+		amenities
+	}
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
@@ -86,7 +107,9 @@ artifact_community_coordinator = {
 	possible = {
 		complex_specialist_job_check_trigger = yes
 		owner = {
-			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
 		}
 	}
 	resources = {
@@ -99,21 +122,28 @@ artifact_community_coordinator = {
 			energy = 1
 		}
 	}
-
 	triggered_planet_modifier = {
-		potential = { always = yes }
+		potential = {
+			always = yes
+		}
 		planet_amenities_add = 6
 	}
-	weight = { weight = 5 }
+	weight = {
+		weight = 5
+	}
 }
 
 # 民生技工：资源数字是脚本岗位基准，实际产出由就业和原生修正结算。
 artifact_basic_civic_artisan = {
 	swappable_data = {
-		default = { icon = "artisan" }
+		default = {
+			icon = "artisan"
+		}
 	}
 	category = specialist
-	tags = { consumer_goods }
+	tags = {
+		consumer_goods
+	}
 	possible_pre_triggers = {
 		has_owner = yes
 		is_being_purged = no
@@ -124,7 +154,9 @@ artifact_basic_civic_artisan = {
 	possible = {
 		complex_specialist_job_check_trigger = yes
 		owner = {
-			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
 		}
 	}
 	resources = {
@@ -137,5 +169,48 @@ artifact_basic_civic_artisan = {
 			energy = 1
 		}
 	}
-	weight = { weight = 5 }
+	weight = {
+		weight = 5
+	}
+}
+
+# 初级档案员：公共记录岗位，不读取个人记忆或命运权限。
+artifact_junior_archivist = {
+	swappable_data = {
+		default = {
+			icon = "culture_worker"
+		}
+	}
+	category = specialist
+	tags = {
+		unity
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 6
+		}
+		upkeep = {
+			consumer_goods = 1
+			energy = 1
+		}
+	}
+	weight = {
+		weight = 5
+	}
 }

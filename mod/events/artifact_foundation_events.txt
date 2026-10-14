@@ -1,0 +1,273 @@
+namespace = artifact_foundation
+# 月度仅扫描带本包管理标记的自有殖民地，不排队补跑旧月份。
+country_event = {
+	id = artifact_foundation.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		any_owned_colony = {
+			has_carrier_flag = arf_r1_managed
+		}
+	}
+	immediate = {
+		every_owned_colony = {
+			limit = {
+				has_carrier_flag = arf_r1_managed
+			}
+			artifact_foundation_monthly_planet = yes
+		}
+	}
+}
+
+# 4.5.2回调为殖民地载体；控制权变化不等于拥有者改变。
+carrier_event = {
+	id = artifact_foundation.2
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_carrier_flag = arf_r1_managed
+	}
+	immediate = {
+		if = {
+			limit = {
+				artifact_foundation_original_owner = no
+			}
+			artifact_foundation_abort = yes
+		}
+	}
+}
+
+# 殖民地毁灭回调发生在清除拥有者之前，必须无条件清理本包状态。
+carrier_event = {
+	id = artifact_foundation.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_carrier_flag = arf_r1_managed
+	}
+	immediate = {
+		artifact_foundation_abort = yes
+	}
+}
+
+carrier_event = {
+	id = artifact_foundation.10
+	title = artifact_foundation.sample_title
+	desc = artifact_foundation.sample_intro
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = {
+		artifact_foundation_ui_actor = yes
+	}
+	option = {
+		name = artifact_foundation.start_sample_analysis
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_foundation.require_sample_analysis
+				artifact_foundation_can_start_sample_analysis = yes
+			}
+		}
+		custom_tooltip = artifact_foundation.offer_sample_analysis
+		hidden_effect = {
+			artifact_foundation_start_sample_analysis = yes
+			carrier_event = {
+				id = artifact_foundation.30
+			}
+		}
+	}
+	option = {
+		name = artifact_foundation.close
+	}
+}
+
+carrier_event = {
+	id = artifact_foundation.20
+	title = artifact_foundation.workshop_title
+	desc = artifact_foundation.workshop_intro
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = {
+		artifact_foundation_ui_actor = yes
+	}
+	option = {
+		name = artifact_foundation.start_materials_study
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_foundation.require_materials_study
+				artifact_foundation_can_start_materials_study = yes
+			}
+		}
+		custom_tooltip = artifact_foundation.offer_materials_study
+		hidden_effect = {
+			artifact_foundation_start_materials_study = yes
+			carrier_event = {
+				id = artifact_foundation.30
+			}
+		}
+	}
+	option = {
+		name = artifact_foundation.start_basic_construction
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_foundation.require_basic_construction
+				artifact_foundation_can_start_basic_construction = yes
+			}
+		}
+		custom_tooltip = artifact_foundation.offer_basic_construction
+		hidden_effect = {
+			artifact_foundation_start_basic_construction = yes
+			carrier_event = {
+				id = artifact_foundation.30
+			}
+		}
+	}
+	option = {
+		name = artifact_foundation.start_precision_construction
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_foundation.require_precision_construction
+				artifact_foundation_can_start_precision_construction = yes
+			}
+		}
+		custom_tooltip = artifact_foundation.offer_precision_construction
+		hidden_effect = {
+			artifact_foundation_start_precision_construction = yes
+			carrier_event = {
+				id = artifact_foundation.30
+			}
+		}
+	}
+	option = {
+		name = artifact_foundation.close
+	}
+}
+
+carrier_event = {
+	id = artifact_foundation.30
+	title = artifact_foundation.status_title
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_sample_analysis
+			artifact_foundation_work_ready = yes
+		}
+		text = artifact_foundation.working_sample_analysis
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_sample_analysis
+			artifact_foundation_work_ready = no
+		}
+		text = artifact_foundation.paused_sample_analysis
+	}
+	desc = {
+		trigger = {
+			has_modifier = artifact_foundation_sample_analysis
+		}
+		text = artifact_foundation.benefit_sample_analysis
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_basic_construction
+			artifact_foundation_work_ready = yes
+		}
+		text = artifact_foundation.working_basic_construction
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_basic_construction
+			artifact_foundation_work_ready = no
+		}
+		text = artifact_foundation.paused_basic_construction
+	}
+	desc = {
+		trigger = {
+			has_modifier = artifact_foundation_basic_construction
+		}
+		text = artifact_foundation.benefit_basic_construction
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_precision_construction
+			artifact_foundation_work_ready = yes
+		}
+		text = artifact_foundation.working_precision_construction
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_precision_construction
+			artifact_foundation_work_ready = no
+		}
+		text = artifact_foundation.paused_precision_construction
+	}
+	desc = {
+		trigger = {
+			has_modifier = artifact_foundation_precision_construction
+		}
+		text = artifact_foundation.benefit_precision_construction
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_materials_study
+			artifact_foundation_work_ready = yes
+		}
+		text = artifact_foundation.working_materials_study
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_materials_study
+			artifact_foundation_work_ready = no
+		}
+		text = artifact_foundation.paused_materials_study
+	}
+	desc = {
+		trigger = {
+			has_modifier = artifact_foundation_materials_study
+		}
+		text = artifact_foundation.benefit_materials_study
+	}
+	desc = {
+		trigger = {
+			artifact_foundation_idle = yes
+		}
+		text = artifact_foundation.idle
+	}
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = {
+		artifact_foundation_ui_actor = yes
+	}
+	option = {
+		name = artifact_foundation.abort
+		trigger = {
+			has_carrier_flag = arf_r1_active
+		}
+		allow = {
+			artifact_foundation_ui_actor = yes
+			artifact_foundation_original_owner = yes
+		}
+		hidden_effect = {
+			if = {
+				limit = {
+					artifact_foundation_ui_actor = yes
+					artifact_foundation_original_owner = yes
+					has_carrier_flag = arf_r1_active
+				}
+				artifact_foundation_abort = yes
+			}
+			carrier_event = {
+				id = artifact_foundation.30
+			}
+		}
+	}
+	option = {
+		name = artifact_foundation.close
+	}
+}

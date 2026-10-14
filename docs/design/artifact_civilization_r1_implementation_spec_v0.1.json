@@ -1,6 +1,6 @@
 {
   "date": "2026-10-14",
-  "status": "r1a_source_implemented_runtime_pending_r1b_draft",
+  "status": "r1_source_implemented_static_checked_runtime_pending",
   "scope": "7项公共研究、6座低级建筑、5类低级岗位；两类项目入口（样本分析、工坊工程），工坊三种方案。",
   "research": [
     {
@@ -31,12 +31,13 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
+      "status": "source_implemented_static_checked_runtime_pending",
       "capability": "开放样本保管库与有限批次封存项目；样本记录不新增全局资源。",
       "research_cost": 400,
       "draw_weight": 130,
       "category": "field_manipulation",
-      "rare": false
+      "rare": false,
+      "implementation_key": "tech_artifact_sample_containment"
     },
     {
       "id": "B06",
@@ -67,12 +68,13 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
+      "status": "source_implemented_static_checked_runtime_pending",
       "capability": "在标准件工坊或原神器工坊中开放材料试制，不另建材料试验场；与营建共用有限本地项目入口。",
       "research_cost": 1000,
       "draw_weight": 110,
       "category": "materials",
-      "rare": false
+      "rare": false,
+      "implementation_key": "tech_artifact_resonance_material_screening"
     },
     {
       "id": "C07",
@@ -103,12 +105,13 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
+      "status": "source_implemented_static_checked_runtime_pending",
       "capability": "建设记忆档案室；管理公共记录，与危险样本和旧日神器档案分别存放。",
       "research_cost": 800,
       "draw_weight": 110,
       "category": "statecraft",
-      "rare": false
+      "rare": false,
+      "implementation_key": "tech_artifact_memory_cataloguing"
     },
     {
       "id": "E03",
@@ -121,12 +124,13 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
+      "status": "source_implemented_static_checked_runtime_pending",
       "capability": "在当地标准件工坊或原神器工坊中组织付费模块化营建，不另建低级营建站或免费生成建筑。",
       "research_cost": 1000,
       "draw_weight": 110,
       "category": "industry",
-      "rare": false
+      "rare": false,
+      "implementation_key": "tech_artifact_modular_colony_construction"
     }
   ],
   "buildings": [
@@ -166,7 +170,7 @@
         "artifact_junior_observer": 1
       },
       "upgrade_to": null,
-      "status": "proposed_not_implemented"
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "family": "BL03",
@@ -240,7 +244,7 @@
         "artifact_junior_archivist": 1
       },
       "upgrade_to": "building_artifact_memory_palace",
-      "status": "proposed_not_implemented"
+      "status": "source_implemented_static_checked_runtime_pending"
     }
   ],
   "jobs": [
@@ -308,7 +312,7 @@
         "consumer_goods": 1,
         "energy": 1
       },
-      "status": "proposed_not_implemented"
+      "status": "source_implemented_static_checked_runtime_pending"
     }
   ],
   "project_modes": [
@@ -330,7 +334,8 @@
         "planet_jobs_physics_research_produces_mult": 0.1
       },
       "benefit_days": 720,
-      "role": "科研殖民地选择；物理研究结果，无新样本货币。"
+      "role": "科研殖民地选择；物理研究结果，无新样本货币。",
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "id": "basic_construction",
@@ -351,7 +356,8 @@
         "planet_building_build_speed_mult": 0.1
       },
       "benefit_days": 720,
-      "role": "新殖民地或集中建设时使用；不自动建造或返还建筑费。"
+      "role": "新殖民地或集中建设时使用；不自动建造或返还建筑费。",
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "id": "precision_construction",
@@ -374,7 +380,8 @@
         "planet_building_build_speed_mult": 0.15
       },
       "benefit_days": 720,
-      "role": "材料筛选带来的付费强化选项；与普通营建互斥。"
+      "role": "材料筛选带来的付费强化选项；与普通营建互斥。",
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "id": "materials_study",
@@ -396,7 +403,8 @@
         "planet_jobs_engineering_research_produces_mult": 0.1
       },
       "benefit_days": 720,
-      "role": "研发殖民地选择；与施工收益在同一项目槽中取舍。"
+      "role": "研发殖民地选择；与施工收益在同一项目槽中取舍。",
+      "status": "source_implemented_static_checked_runtime_pending"
     }
   ],
   "project_contract": {
@@ -446,7 +454,21 @@
       "report": "reports/artifact_civilization_r1a_implementation_2026-10-14.md"
     },
     "R1b": {
-      "status": "not_implemented"
+      "date": "2026-10-14",
+      "status": "source_implemented_static_checked_runtime_pending",
+      "runtime_status": "pending",
+      "balance_status": "pending",
+      "technology_keys": {
+        "A04": "tech_artifact_sample_containment",
+        "B07": "tech_artifact_resonance_material_screening",
+        "C08": "tech_artifact_memory_cataloguing",
+        "E03": "tech_artifact_modular_colony_construction"
+      },
+      "new_buildings": 2,
+      "new_jobs": 1,
+      "project_entry_groups": 2,
+      "project_modes": 4,
+      "report": "reports/artifact_civilization_r1b_implementation_2026-10-14.md"
     }
   }
 }

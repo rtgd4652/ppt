@@ -1,16 +1,21 @@
 # R1a公共基础研究；不读取个人等级、人物组合或命运授权。
-
 # 基准观测与仪器标定：只开放本包设施，主动项目后续接入。
 tech_artifact_baseline_observation_calibration = {
 	area = physics
 	icon = "tech_artifact_baseline_observation_calibration"
 	cost = 300
 	tier = 1
-	category = { field_manipulation }
-	prerequisites = { "tech_artifact_tarot_calculation" }
+	category = {
+		field_manipulation
+	}
+	prerequisites = {
+		"tech_artifact_tarot_calculation"
+	}
 	weight = 150
 	potential = {
-		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
 	}
 }
 
@@ -20,11 +25,17 @@ tech_artifact_standard_parts = {
 	icon = "tech_artifact_standard_parts"
 	cost = 300
 	tier = 1
-	category = { industry }
-	prerequisites = { "tech_artifact_baseline_observation_calibration" }
+	category = {
+		industry
+	}
+	prerequisites = {
+		"tech_artifact_baseline_observation_calibration"
+	}
 	weight = 150
 	potential = {
-		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
 	}
 }
 
@@ -34,10 +45,99 @@ tech_artifact_colony_public_services = {
 	icon = "tech_artifact_colony_public_services"
 	cost = 300
 	tier = 1
-	category = { statecraft }
-	prerequisites = { "tech_artifact_tarot_calculation" }
+	category = {
+		statecraft
+	}
+	prerequisites = {
+		"tech_artifact_tarot_calculation"
+	}
 	weight = 150
 	potential = {
-		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# 异常样本封存：公共路线不读取人物与个人授权。
+tech_artifact_sample_containment = {
+	area = physics
+	icon = "tech_artifact_sample_containment"
+	cost = 400
+	tier = 1
+	category = {
+		field_manipulation
+	}
+	prerequisites = {
+		"tech_artifact_baseline_observation_calibration"
+	}
+	weight = 130
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# 共鸣材料筛选：公共路线不读取人物与个人授权。
+tech_artifact_resonance_material_screening = {
+	area = engineering
+	icon = "tech_artifact_resonance_material_screening"
+	cost = 1000
+	tier = 2
+	category = {
+		materials
+	}
+	prerequisites = {
+		"tech_artifact_standard_parts"
+		"tech_artifact_sample_containment"
+	}
+	weight = 110
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# 记忆档案编目：公共路线不读取人物与个人授权。
+tech_artifact_memory_cataloguing = {
+	area = society
+	icon = "tech_artifact_memory_cataloguing"
+	cost = 800
+	tier = 2
+	category = {
+		statecraft
+	}
+	prerequisites = {
+		"tech_artifact_central_court_protocols"
+		"tech_artifact_sample_containment"
+	}
+	weight = 110
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# 殖民地模块化营建：公共路线不读取人物与个人授权。
+tech_artifact_modular_colony_construction = {
+	area = engineering
+	icon = "tech_artifact_modular_colony_construction"
+	cost = 1000
+	tier = 2
+	category = {
+		industry
+	}
+	prerequisites = {
+		"tech_artifact_standard_parts"
+		"tech_artifact_colony_public_services"
+	}
+	weight = 110
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
 	}
 }

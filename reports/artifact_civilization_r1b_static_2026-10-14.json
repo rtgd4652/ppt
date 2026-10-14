@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-14",
+  "package": "R1b",
+  "baseline_commit": "de92497",
+  "full_r1_baseline_commit": "056801e",
+  "source_status": "implemented_static_checked",
+  "runtime_status": "pending",
+  "balance_status": "pending",
+  "counts": {
+    "r1b_new_public_technologies": 4,
+    "r1b_new_buildings": 2,
+    "r1b_new_jobs": 1,
+    "r1b_localisation_keys": 60,
+    "r1b_gfx_aliases": 11,
+    "r1_new_public_technologies": 7,
+    "r1_new_buildings": 6,
+    "r1_new_jobs": 5,
+    "r1_localisation_keys": 90,
+    "r1_gfx_aliases": 22,
+    "total_public_technologies": 26,
+    "legacy_technologies_excluded": 2,
+    "total_building_definitions": 21,
+    "project_entry_groups": 2,
+    "project_modes": 4
+  },
+  "checks": {
+    "full_r1_specification_values_match": true,
+    "four_old_upgrade_targets_only_add_explicit_can_build": true,
+    "old_technology_and_job_definitions_unchanged": true,
+    "targeted_new_project_tests_passed": 12,
+    "static_validation": {
+      "status": "pass",
+      "script_files": 128,
+      "events": 249,
+      "localization_keys": 1528,
+      "registered_states": 791,
+      "referenced_states": 734
+    }
+  },
+  "test_boundary": "定向测试解析并执行正式脚本，原生回调、月份与对象由夹具提供；不是引擎运行或存档验证。",
+  "runtime_pending": [
+    "原生研究抽取与显示、岗位就业及实际产出",
+    "建筑同族上限、高级直建及代表升级交互",
+    "新增正常研究—建设—项目流程与一处进行态关键读档",
+    "原生月度及所有权回调、界面和存档目标保持"
+  ],
+  "not_in_scope": [
+    "新图标绘制或候选安装",
+    "C2或历史流程复测",
+    "人物组合",
+    "个人研究实现",
+    "连续巨构验证"
+  ]
+}

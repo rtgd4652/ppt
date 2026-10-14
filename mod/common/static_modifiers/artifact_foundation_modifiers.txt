@@ -1,0 +1,16 @@
+# 本包完成收益均为当地原生修正，互斥且不与C2共用键。
+artifact_foundation_sample_analysis = {
+	planet_jobs_physics_research_produces_mult = 0.1
+}
+
+artifact_foundation_basic_construction = {
+	planet_building_build_speed_mult = 0.1
+}
+
+artifact_foundation_precision_construction = {
+	planet_building_build_speed_mult = 0.15
+}
+
+artifact_foundation_materials_study = {
+	planet_jobs_engineering_research_produces_mult = 0.1
+}

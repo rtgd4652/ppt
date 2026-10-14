@@ -41,6 +41,12 @@ python -B -m unittest discover -s tools/validation/tests -v
 
 `test_awp03_adapter_state.py` 读取正式战争适配事件和开战条件，回放重复开战、三种结果的重复／冲突通知、无标记战争结果、第二场战争及同战其他人类盟友。国家、战争和参与者由测试提供；未知语法立即失败。它不模拟引擎如何生成回调，也不能代替游戏内重复通知与存读档验证。
 
+`test_artifact_foundation_projects.py` 读取R1正式脚本和规格，覆盖四种本地方案的扣费、暂停恢复、过户清理、独立殖民地目标与一次结算。原生对象、月份和回调由夹具提供，未知条件／效果立即失败；不验证真实就业、升级、回调或存读档。只改R1时可定向运行，既有报告不要求重复全套历史场景：
+
+```powershell
+python -B -m unittest discover -s tools/validation/tests -p test_artifact_foundation_projects.py -v
+```
+
 ## 保存工作区快照
 
 ```powershell
