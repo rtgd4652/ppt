@@ -1,0 +1,141 @@
+# R1a低级岗位；沿用已有专家就业条件，不更改旧高阶岗位。
+
+# 初级观测员：资源数字是脚本岗位基准，实际产出由就业和原生修正结算。
+artifact_junior_observer = {
+	swappable_data = {
+		default = { icon = "physicist" }
+	}
+	category = specialist
+	tags = { research }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		}
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			physics_research = 4
+			society_research = 2
+			engineering_research = 2
+		}
+		upkeep = {
+			consumer_goods = 2
+			energy = 1
+		}
+	}
+	weight = { weight = 5 }
+}
+
+# 标准件技工：资源数字是脚本岗位基准，实际产出由就业和原生修正结算。
+artifact_standard_parts_worker = {
+	swappable_data = {
+		default = { icon = "foundry" }
+	}
+	category = specialist
+	tags = { alloys research }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		}
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			alloys = 3
+			engineering_research = 1
+		}
+		upkeep = {
+			minerals = 6
+			energy = 1
+		}
+	}
+	weight = { weight = 5 }
+}
+
+# 社区协调员：资源数字是脚本岗位基准，实际产出由就业和原生修正结算。
+artifact_community_coordinator = {
+	swappable_data = {
+		default = { icon = "entertainer" }
+	}
+	category = specialist
+	tags = { unity amenities }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		}
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			unity = 2
+		}
+		upkeep = {
+			consumer_goods = 1
+			energy = 1
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = { always = yes }
+		planet_amenities_add = 6
+	}
+	weight = { weight = 5 }
+}
+
+# 民生技工：资源数字是脚本岗位基准，实际产出由就业和原生修正结算。
+artifact_basic_civic_artisan = {
+	swappable_data = {
+		default = { icon = "artisan" }
+	}
+	category = specialist
+	tags = { consumer_goods }
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		}
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			consumer_goods = 4
+		}
+		upkeep = {
+			minerals = 6
+			energy = 1
+		}
+	}
+	weight = { weight = 5 }
+}

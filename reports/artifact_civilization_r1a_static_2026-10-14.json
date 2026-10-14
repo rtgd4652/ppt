@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-14",
+  "package": "R1a",
+  "source_status": "implemented_static_checked",
+  "runtime_status": "pending",
+  "balance_status": "pending",
+  "counts": {
+    "new_public_technologies": 3,
+    "new_buildings": 4,
+    "new_jobs": 4,
+    "localisation_keys": 30,
+    "gfx_aliases": 11,
+    "total_public_technologies": 22,
+    "total_building_definitions": 19
+  },
+  "checks": {
+    "technology_cost_tier_prerequisites_match_spec": true,
+    "building_cost_upkeep_jobs_match_spec": true,
+    "job_resources_match_spec": true,
+    "low_tier_checks_higher_and_construction": true,
+    "three_native_upgrade_targets_present": true,
+    "advanced_can_build_explicit_yes": true,
+    "other_old_building_fields_unchanged": true,
+    "old_technology_and_job_definitions_unchanged": true
+  },
+  "runtime_pending": [
+    "原生研究与建筑展示",
+    "岗位就业及实际产出",
+    "同族数量上限、高级直建和原生升级交互",
+    "一次正常新流程和必要关键读档"
+  ],
+  "not_in_scope": [
+    "R1b主动项目",
+    "新图标制作",
+    "C2复测",
+    "人物组合",
+    "个人研究实现",
+    "连续巨构验证"
+  ]
+}

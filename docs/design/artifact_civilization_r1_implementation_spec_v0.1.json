@@ -1,6 +1,6 @@
 {
   "date": "2026-10-14",
-  "status": "implementation_spec_draft_not_implemented",
+  "status": "r1a_source_implemented_runtime_pending_r1b_draft",
   "scope": "7项公共研究、6座低级建筑、5类低级岗位；两类项目入口（样本分析、工坊工程），工坊三种方案。",
   "research": [
     {
@@ -13,12 +13,13 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
+      "status": "source_implemented_static_checked_runtime_pending",
       "capability": "建设基准观测站，承担仪器标定与初级研究；后续升级到原黑门观测站，不另建标定所。",
       "research_cost": 300,
       "draw_weight": 150,
       "category": "field_manipulation",
-      "rare": false
+      "rare": false,
+      "implementation_key": "tech_artifact_baseline_observation_calibration"
     },
     {
       "id": "A04",
@@ -47,12 +48,13 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
+      "status": "source_implemented_static_checked_runtime_pending",
       "capability": "建设标准件工坊，为营建、舰载接口和后续神器锻造准备普通工程基础。",
       "research_cost": 300,
       "draw_weight": 150,
       "category": "industry",
-      "rare": false
+      "rare": false,
+      "implementation_key": "tech_artifact_standard_parts"
     },
     {
       "id": "B07",
@@ -82,12 +84,13 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
+      "status": "source_implemented_static_checked_runtime_pending",
       "capability": "建设社区服务中心与基础民生工场，支持早期殖民地日常供给。",
       "research_cost": 300,
       "draw_weight": 150,
       "category": "statecraft",
-      "rare": false
+      "rare": false,
+      "implementation_key": "tech_artifact_colony_public_services"
     },
     {
       "id": "C08",
@@ -142,7 +145,8 @@
       "jobs": {
         "artifact_junior_observer": 2
       },
-      "upgrade_to": "building_artifact_black_gate_observatory"
+      "upgrade_to": "building_artifact_black_gate_observatory",
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "family": "BL17",
@@ -161,7 +165,8 @@
       "jobs": {
         "artifact_junior_observer": 1
       },
-      "upgrade_to": null
+      "upgrade_to": null,
+      "status": "proposed_not_implemented"
     },
     {
       "family": "BL03",
@@ -178,7 +183,8 @@
       "jobs": {
         "artifact_standard_parts_worker": 2
       },
-      "upgrade_to": "building_artifact_relic_workshop"
+      "upgrade_to": "building_artifact_relic_workshop",
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "family": "BL22",
@@ -195,7 +201,8 @@
       "jobs": {
         "artifact_community_coordinator": 1
       },
-      "upgrade_to": null
+      "upgrade_to": null,
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "family": "BL08",
@@ -212,7 +219,8 @@
       "jobs": {
         "artifact_basic_civic_artisan": 2
       },
-      "upgrade_to": "building_artifact_civic_goods_manufactory"
+      "upgrade_to": "building_artifact_civic_goods_manufactory",
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "family": "BL13",
@@ -231,7 +239,8 @@
       "jobs": {
         "artifact_junior_archivist": 1
       },
-      "upgrade_to": "building_artifact_memory_palace"
+      "upgrade_to": "building_artifact_memory_palace",
+      "status": "proposed_not_implemented"
     }
   ],
   "jobs": [
@@ -246,7 +255,8 @@
       "upkeep": {
         "consumer_goods": 2,
         "energy": 1
-      }
+      },
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "key": "artifact_standard_parts_worker",
@@ -258,7 +268,8 @@
       "upkeep": {
         "minerals": 6,
         "energy": 1
-      }
+      },
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "key": "artifact_community_coordinator",
@@ -272,7 +283,8 @@
       "upkeep": {
         "consumer_goods": 1,
         "energy": 1
-      }
+      },
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "key": "artifact_basic_civic_artisan",
@@ -283,7 +295,8 @@
       "upkeep": {
         "minerals": 6,
         "energy": 1
-      }
+      },
+      "status": "source_implemented_static_checked_runtime_pending"
     },
     {
       "key": "artifact_junior_archivist",
@@ -294,7 +307,8 @@
       "upkeep": {
         "consumer_goods": 1,
         "energy": 1
-      }
+      },
+      "status": "proposed_not_implemented"
     }
   ],
   "project_modes": [
@@ -408,5 +422,31 @@
       "scope": "A04、B07、C08、E03及样本库／档案室；接入两类本地项目入口和工坊三方案。"
     }
   ],
-  "art_status": "使用已有占位引用；本轮不生成或替换图标。"
+  "art_status": "使用已有占位引用；本轮不生成或替换图标。",
+  "implementation": {
+    "R1a": {
+      "date": "2026-10-14",
+      "status": "source_implemented_static_checked_runtime_pending",
+      "runtime_status": "pending",
+      "balance_status": "pending",
+      "technology_keys": {
+        "A03": "tech_artifact_baseline_observation_calibration",
+        "B06": "tech_artifact_standard_parts",
+        "C07": "tech_artifact_colony_public_services"
+      },
+      "new_buildings": 4,
+      "new_jobs": 4,
+      "files": [
+        "mod/common/technology/artifact_public_foundation_technology.txt",
+        "mod/common/buildings/artifact_public_foundation_buildings.txt",
+        "mod/common/pop_jobs/artifact_public_foundation_jobs.txt",
+        "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+        "mod/interface/artifact_public_foundation_icons.gfx"
+      ],
+      "report": "reports/artifact_civilization_r1a_implementation_2026-10-14.md"
+    },
+    "R1b": {
+      "status": "not_implemented"
+    }
+  }
 }

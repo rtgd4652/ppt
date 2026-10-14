@@ -36,6 +36,8 @@ building_artifact_sanctum = {
 
 # 黑门观测站：以塔罗演算预测灾厄，并为研究者提供交界都市的数据。
 building_artifact_black_gate_observatory = {
+	# 作为R1a升级目标后仍允许按原科技直接建造，不要求补建低级站。
+	can_build = yes
 	base_buildtime = 360
 	icon = building_artifact_black_gate_observatory
 	category = research
@@ -86,6 +88,8 @@ building_artifact_black_gate_observatory = {
 
 # 中央庭神器工坊：将神器共鸣转化为舰船组件所需的精密材料。
 building_artifact_relic_workshop = {
+	# 保留旧档和新档取得原科技后的直接建造资格。
+	can_build = yes
 	base_buildtime = 360
 	icon = building_artifact_relic_workshop
 	category = manufacturing
@@ -278,6 +282,8 @@ building_artifact_resonance_alloy_forge = {
 
 # 神器民生工坊：把神器纹样复现为高价值民用消费品。
 building_artifact_civic_goods_manufactory = {
+	# 低级民生工场提供升级路径，但不成为原建筑的强制前置。
+	can_build = yes
 	base_buildtime = 600
 	icon = building_artifact_civic_goods_manufactory
 	category = manufacturing

@@ -1,0 +1,135 @@
+# R1a低级设施；原高级建筑保持原键、原科技、原费用和直建资格。
+
+# 基准观测站：每星球限一，按原生父子升级关系替换岗位。
+building_artifact_baseline_observation_station = {
+	can_build = yes
+	base_buildtime = 180
+	icon = "building_artifact_baseline_observation_station"
+	category = research
+	building_sets = { research }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_baseline_observation_calibration" }
+
+	upgrades = { "building_artifact_black_gate_observatory" }
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		}
+		NOR = {
+			has_building = "building_artifact_black_gate_observatory"
+			has_building_construction = "building_artifact_black_gate_observatory"
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 300
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		job_artifact_junior_observer_add = 2
+	}
+}
+
+# 标准件工坊：每星球限一，按原生父子升级关系替换岗位。
+building_artifact_standard_parts_workshop = {
+	can_build = yes
+	base_buildtime = 180
+	icon = "building_artifact_standard_parts_workshop"
+	category = manufacturing
+	building_sets = { manufacturing }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_standard_parts" }
+
+	upgrades = { "building_artifact_relic_workshop" }
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		}
+		NOR = {
+			has_building = "building_artifact_relic_workshop"
+			has_building_construction = "building_artifact_relic_workshop"
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 350
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		job_artifact_standard_parts_worker_add = 2
+	}
+}
+
+# 社区公共服务中心：每星球限一，按原生父子升级关系替换岗位。
+building_artifact_community_service_center = {
+	can_build = yes
+	base_buildtime = 180
+	icon = "building_artifact_community_service_center"
+	category = government
+	building_sets = { government }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_colony_public_services" }
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 250
+		}
+		upkeep = {
+			energy = 2
+		}
+	}
+	planet_modifier = {
+		job_artifact_community_coordinator_add = 1
+	}
+}
+
+# 基础民生工场：每星球限一，按原生父子升级关系替换岗位。
+building_artifact_basic_civic_factory = {
+	can_build = yes
+	base_buildtime = 240
+	icon = "building_artifact_basic_civic_factory"
+	category = manufacturing
+	building_sets = { manufacturing }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_colony_public_services" }
+
+	upgrades = { "building_artifact_civic_goods_manufactory" }
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		}
+		NOR = {
+			has_building = "building_artifact_civic_goods_manufactory"
+			has_building_construction = "building_artifact_civic_goods_manufactory"
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 350
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+	planet_modifier = {
+		job_artifact_basic_civic_artisan_add = 2
+	}
+}

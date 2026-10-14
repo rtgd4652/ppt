@@ -1,0 +1,58 @@
+spriteTypes = {
+	# R1a独立引用键暂用已有资源；后续可按批次替换，当前不生成图像。
+	spriteType = {
+		name = "GFX_tech_artifact_baseline_observation_calibration"
+		texturefile = "gfx/interface/icons/technologies/tech_artifact_black_gate_observation.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_tech_artifact_standard_parts"
+		texturefile = "gfx/interface/icons/technologies/tech_artifact_relic_fabrication.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_tech_artifact_colony_public_services"
+		texturefile = "gfx/interface/icons/technologies/tech_artifact_central_court_protocols.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_building_artifact_baseline_observation_station"
+		texturefile = "gfx/interface/icons/buildings/building_artifact_black_gate_observatory.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_building_artifact_standard_parts_workshop"
+		texturefile = "gfx/interface/icons/buildings/building_artifact_relic_workshop.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_building_artifact_community_service_center"
+		texturefile = "gfx/interface/icons/buildings/building_artifact_sanctum.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_building_artifact_basic_civic_factory"
+		texturefile = "gfx/interface/icons/buildings/building_artifact_civic_goods_manufactory.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_junior_observer_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_physicist_add.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_standard_parts_worker_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_foundry_add.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_community_coordinator_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_entertainer_add.dds"
+		alwaystransparent = yes
+	}
+	spriteType = {
+		name = "GFX_mod_job_artifact_basic_civic_artisan_add"
+		texturefile = "gfx/interface/icons/modifiers/mod_job_artisan_add.dds"
+		alwaystransparent = yes
+	}
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "date": "2026-10-14",
-  "status": "route_draft_not_implemented",
+  "status": "route_draft_with_r1a_source_implemented",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "公共72项研究保留；收敛后为27类46阶段建筑（包含现有15键），另列4项个人候选。均为设计，不是用户逐项定稿或已交付数量。",
@@ -126,8 +126,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设基准观测站，承担仪器标定与初级研究；后续升级到原黑门观测站，不另建标定所。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "建设基准观测站，承担仪器标定与初级研究；后续升级到原黑门观测站，不另建标定所。",
+      "implementation_key": "tech_artifact_baseline_observation_calibration"
     },
     {
       "id": "A04",
@@ -328,8 +329,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设标准件工坊，为营建、舰载接口和后续神器锻造准备普通工程基础。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "建设标准件工坊，为营建、舰载接口和后续神器锻造准备普通工程基础。",
+      "implementation_key": "tech_artifact_standard_parts"
     },
     {
       "id": "B07",
@@ -534,8 +536,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设社区服务中心与基础民生工场，支持早期殖民地日常供给。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "建设社区服务中心与基础民生工场，支持早期殖民地日常供给。",
+      "implementation_key": "tech_artifact_colony_public_services"
     },
     {
       "id": "C08",
@@ -1165,7 +1168,8 @@
           "name": "基准观测站",
           "technology": "A03",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_baseline_observation_station"
         },
         {
           "stage": 2,
@@ -1194,7 +1198,8 @@
           "name": "标准件工坊",
           "technology": "B06",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_standard_parts_workshop"
         },
         {
           "stage": 2,
@@ -1304,7 +1309,8 @@
           "name": "基础民生工场",
           "technology": "C07",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_basic_civic_factory"
         },
         {
           "stage": 2,
@@ -1554,7 +1560,8 @@
           "name": "社区公共服务中心",
           "technology": "C07",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_community_service_center"
         }
       ]
     },
@@ -1686,5 +1693,32 @@
       "BL23"
     ],
     "id_policy": "保留原审阅编号，不因合并重编号；这些从未是运行建筑键。"
+  },
+  "baseline_scope": "baseline记录R1a接入前的19科技／15建筑框架，不是当前总数。",
+  "implementation": {
+    "R1a": {
+      "date": "2026-10-14",
+      "status": "source_implemented_static_checked_runtime_pending",
+      "runtime_status": "pending",
+      "balance_status": "pending",
+      "technology_keys": {
+        "A03": "tech_artifact_baseline_observation_calibration",
+        "B06": "tech_artifact_standard_parts",
+        "C07": "tech_artifact_colony_public_services"
+      },
+      "new_buildings": 4,
+      "new_jobs": 4,
+      "files": [
+        "mod/common/technology/artifact_public_foundation_technology.txt",
+        "mod/common/buildings/artifact_public_foundation_buildings.txt",
+        "mod/common/pop_jobs/artifact_public_foundation_jobs.txt",
+        "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+        "mod/interface/artifact_public_foundation_icons.gfx"
+      ],
+      "report": "reports/artifact_civilization_r1a_implementation_2026-10-14.md"
+    },
+    "R1b": {
+      "status": "not_implemented"
+    }
   }
 }
