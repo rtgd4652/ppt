@@ -1,0 +1,106 @@
+# R2a设施沿用原矿站的resource集合，在普通城市槽建设；采矿区是所在地资格。
+# 4.5中200劳动力单位对应2份每100单位岗位产出，不能复制旧制2单位。
+building_artifact_vein_mapping_station = {
+	can_build = yes
+	base_buildtime = 300
+	icon = "building_artifact_phase_mine"
+	category = resource
+	building_sets = {
+		resource
+	}
+	planet_limit = 1
+	prerequisites = {
+		"tech_artifact_precision_vein_mapping"
+	}
+	upgrades = {
+		"building_artifact_phase_mine"
+	}
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	# 排他与现场只限制新建；不能在升级排队时撤销旧设施的存在资格。
+	allow = {
+		has_district = district_mining
+		NOR = {
+			has_building = "building_artifact_phase_mine"
+			has_building_construction = "building_artifact_phase_mine"
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 600
+			energy = 100
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+	planet_modifier = {
+		job_artifact_vein_surveyor_add = 200
+	}
+}
+
+# 每殖民地一座；没有原料来源时保留设施与建筑维护，但不提供回收岗位。
+building_artifact_byproduct_recycling_plant = {
+	can_build = yes
+	base_buildtime = 360
+	icon = "building_artifact_relic_workshop"
+	category = resource
+	building_sets = {
+		resource
+	}
+	planet_limit = 1
+	prerequisites = {
+		"tech_artifact_byproduct_recycling"
+	}
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	allow = {
+		OR = {
+			has_district = district_mining
+			has_active_building = "building_artifact_vein_mapping_station"
+			has_active_building = "building_artifact_phase_mine"
+			has_active_building = "building_artifact_standard_parts_workshop"
+			has_active_building = "building_artifact_relic_workshop"
+			has_active_building = "building_artifact_basic_civic_factory"
+			has_active_building = "building_artifact_civic_goods_manufactory"
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			alloys = 100
+		}
+		upkeep = {
+			energy = 4
+		}
+	}
+	# 失去全部合格生产现场时停岗，不靠月度事件发放固定资源或复制工程结算。
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				has_district = district_mining
+				has_active_building = "building_artifact_vein_mapping_station"
+				has_active_building = "building_artifact_phase_mine"
+				has_active_building = "building_artifact_standard_parts_workshop"
+				has_active_building = "building_artifact_relic_workshop"
+				has_active_building = "building_artifact_basic_civic_factory"
+				has_active_building = "building_artifact_civic_goods_manufactory"
+			}
+		}
+		job_artifact_recycling_technician_add = 200
+	}
+}

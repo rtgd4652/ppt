@@ -1,0 +1,40 @@
+# R2a矿脉开发与循环回收；只接公共文明前置，不读取个人转变或人物组合。
+tech_artifact_precision_vein_mapping = {
+	area = engineering
+	icon = "tech_artifact_phase_extraction"
+	cost = 1200
+	tier = 2
+	category = {
+		industry
+	}
+	prerequisites = {
+		"tech_artifact_resonance_material_screening"
+	}
+	weight = 110
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# 通过持续岗位和真实维护回收生产副产物，不增加可刷取的垃圾货币。
+tech_artifact_byproduct_recycling = {
+	area = engineering
+	icon = "tech_artifact_resonance_manufacturing"
+	cost = 3000
+	tier = 3
+	category = {
+		industry
+	}
+	prerequisites = {
+		"tech_artifact_precision_vein_mapping"
+		"tech_artifact_colony_public_services"
+	}
+	weight = 95
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}

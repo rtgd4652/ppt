@@ -1,0 +1,204 @@
+{
+  "date": "2026-10-17",
+  "status": "source_implemented_static_checked_runtime_pending",
+  "package": "R2a",
+  "name": "矿脉开发与循环回收",
+  "scope": "2项公共科技、2座新设施、2类岗位；原矿站一项容量迁移与显式直建字段。",
+  "research": [
+    {
+      "id": "B10",
+      "name": "精准矿脉测绘",
+      "key": "tech_artifact_precision_vein_mapping",
+      "area": "engineering",
+      "tier": 2,
+      "category": "industry",
+      "cost": 1200,
+      "weight": 110,
+      "prerequisites": [
+        "B07"
+      ],
+      "unlock": "BL11低级测绘站；正常升级仍读取原B04科技"
+    },
+    {
+      "id": "B12",
+      "name": "副产物闭环利用",
+      "key": "tech_artifact_byproduct_recycling",
+      "area": "engineering",
+      "tier": 3,
+      "category": "industry",
+      "cost": 3000,
+      "weight": 95,
+      "prerequisites": [
+        "B10",
+        "C07"
+      ],
+      "unlock": "BL21循环回收处理厂"
+    }
+  ],
+  "buildings": [
+    {
+      "family": "BL11",
+      "key": "building_artifact_vein_mapping_station",
+      "name": "矿脉测绘站",
+      "technology": "B10",
+      "cost": {
+        "minerals": 600,
+        "energy": 100
+      },
+      "days": 300,
+      "upkeep": {
+        "energy": 3
+      },
+      "workforce": {
+        "artifact_vein_surveyor": 200
+      },
+      "site": "当地已建district_mining；以allow限制新建，不进入potential。",
+      "building_set": "resource",
+      "upgrade_to": "building_artifact_phase_mine",
+      "family_limit": 1
+    },
+    {
+      "family": "BL21",
+      "key": "building_artifact_byproduct_recycling_plant",
+      "name": "循环回收处理厂",
+      "technology": "B12",
+      "cost": {
+        "minerals": 800,
+        "alloys": 100
+      },
+      "days": 360,
+      "upkeep": {
+        "energy": 4
+      },
+      "conditional_workforce": {
+        "artifact_recycling_technician": 200
+      },
+      "building_set": "resource",
+      "source": "普通采矿区，或一座有效矿脉设施／标准件工坊／神器工坊／基础民生工场／民生工坊。",
+      "source_trigger": "has_district / has_active_building",
+      "no_source": "不提供回收岗位，建筑保留并继续支付4能源维护；恢复合格来源后恢复岗位。",
+      "family_limit": 1
+    }
+  ],
+  "jobs": [
+    {
+      "key": "artifact_vein_surveyor",
+      "name": "矿脉测绘员",
+      "category": "specialist",
+      "per_100_workforce": {
+        "produces": {
+          "minerals": 6,
+          "engineering_research": 1
+        },
+        "upkeep": {
+          "energy": 1,
+          "consumer_goods": 0.5
+        }
+      }
+    },
+    {
+      "key": "artifact_recycling_technician",
+      "name": "回收技师",
+      "category": "specialist",
+      "per_100_workforce": {
+        "produces": {
+          "minerals": 4,
+          "alloys": 0.5
+        },
+        "upkeep": {
+          "energy": 2,
+          "consumer_goods": 1
+        }
+      }
+    }
+  ],
+  "workforce_migration": {
+    "native_reference": "4.5.2 scripted_variables: b1_jobs=200，基础建筑与岗位按劳动力单位计量。",
+    "target": "building_artifact_phase_mine",
+    "field": "job_artifact_phase_miner_add",
+    "before": 8,
+    "after": 800,
+    "material_effect": "现4.5容量扩大100倍，允许更多人口就业并增加总产出及岗位维护；不是只改显示，需运行与平衡验收。",
+    "preserved": [
+      "旧建筑键",
+      "原B04科技及科技数值",
+      "原建筑600日与2400矿物／500合金费用",
+      "原20能源建筑维护",
+      "原每100单位矿工产出36矿物／3工程与3能源岗位维护",
+      "旧高级直接建造资格与resource建筑集合"
+    ],
+    "save_policy": "不强制补造低级站，不补科技，不发资源，不写存档；原生就业重新分配。仅这一条升级链迁移，其他族的旧制容量单列后续核对。"
+  },
+  "mechanic_contract": {
+    "slots": "两设施各占普通城市建筑槽，复用resource集合；普通城市带未排除此集合。不是新增采矿区或区划带。",
+    "upgrade": "低级allow排他避免已建／在建高级重复；potential只含文明主体，升级期间不撤销旧楼资格。高级保留原科技直接建造，不强制研究B10。",
+    "recycling": "不新增垃圾或样本货币；没有一次性add_resource、退款或工程结算回调，只由实际就业按月消耗维护并生产资源。回收厂不能以自身充当来源。",
+    "limits": "新建低级站首版只接受普通district_mining；特殊矿区／居住站不自动纳入。保持现有高级直建，不为本包扩测特殊世界。",
+    "permissions": "神器使公共文明身份；无人物、等级、个人飞升或主线转变门槛。不读写R1、C2或旧首都工坊账本。"
+  },
+  "r2_delivery_order": [
+    {
+      "id": "R2a",
+      "nodes": [
+        "B10",
+        "B12"
+      ],
+      "scope": "矿脉与循环回收",
+      "status": "source_implemented_static_checked_runtime_pending"
+    },
+    {
+      "id": "R2b",
+      "nodes": [
+        "A05",
+        "B09"
+      ],
+      "scope": "多源观测与相位供能；先细化有限能力和旧反应堆衔接",
+      "status": "not_implemented"
+    },
+    {
+      "id": "R2c",
+      "nodes": [
+        "A06",
+        "A07",
+        "E06"
+      ],
+      "scope": "长基线、预警与轨道接口；风险窗口只能引用实际已定义风险",
+      "status": "not_implemented"
+    },
+    {
+      "id": "R2d",
+      "nodes": [
+        "B11",
+        "C09",
+        "C10",
+        "E04",
+        "E05",
+        "E07"
+      ],
+      "scope": "配给、避难、复现及城市／园区／环境；实施前继续按依赖拆小",
+      "status": "not_implemented"
+    }
+  ],
+  "validation": {
+    "source_contract_tests": 3,
+    "static": "passed",
+    "runtime": "pending",
+    "balance": "pending",
+    "next_runtime": "一条正常研究—建造路径、一次矿站正常升级；唯一关键读档选在该升级队列已有进度时。核对新设施就业、回收来源与升级容量替换，其他历史不重测。缺资源直接rr并记录来源。"
+  },
+  "art": "直接引用已有DDS名称和原版岗位图标，无新绘图、GFX别名或候选安装。",
+  "current_counts": {
+    "public_technologies": 28,
+    "planet_building_definitions": 23,
+    "target_public_technologies": 72,
+    "target_building_families": 27,
+    "target_building_stages": 46
+  },
+  "files": [
+    "mod/common/technology/artifact_midgame_resource_technology.txt",
+    "mod/common/buildings/artifact_midgame_resource_buildings.txt",
+    "mod/common/pop_jobs/artifact_midgame_resource_jobs.txt",
+    "mod/localisation/simp_chinese/artifact_midgame_resource_l_simp_chinese.yml",
+    "mod/common/buildings/aemusa_buildings.txt"
+  ]
+}

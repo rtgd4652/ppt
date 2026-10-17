@@ -387,8 +387,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设矿脉测绘站，开发目标矿区后才能升级为既有稳定站。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "建设矿脉测绘站，开发目标矿区后才能升级为既有稳定站。",
+      "implementation_key": "tech_artifact_precision_vein_mapping"
     },
     {
       "id": "B11",
@@ -415,8 +416,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "开放回收处理厂；以岗位、能源和维护换取副产物再利用。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "开放回收处理厂；以岗位、能源和维护换取副产物再利用。",
+      "implementation_key": "tech_artifact_byproduct_recycling"
     },
     {
       "id": "B13",
@@ -1380,7 +1382,8 @@
           "name": "矿脉测绘站",
           "technology": "B10",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_vein_mapping_station"
         },
         {
           "stage": 2,
@@ -1551,7 +1554,8 @@
           "name": "循环回收处理厂",
           "technology": "B12",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_byproduct_recycling_plant"
         }
       ]
     },
@@ -1746,6 +1750,20 @@
       "balance_status": "pending",
       "other_modes": "unverified",
       "report": "reports/artifact_civilization_r1_runtime_2026-10-17.md"
+    },
+    "R2a": {
+      "date": "2026-10-17",
+      "status": "source_implemented_static_checked_runtime_pending",
+      "technologies": [
+        "B10",
+        "B12"
+      ],
+      "new_buildings": 2,
+      "new_jobs": 2,
+      "runtime_status": "pending",
+      "balance_status": "pending",
+      "spec": "docs/design/artifact_civilization_r2a_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r2a_implementation_2026-10-17.md"
     }
   }
 }

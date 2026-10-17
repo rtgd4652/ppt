@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-17",
+  "status": "pass",
+  "runtime_status": "pending",
+  "balance_status": "pending",
+  "counts": {
+    "new_technologies": 2,
+    "new_buildings": 2,
+    "new_jobs": 2,
+    "new_localization_keys": 16,
+    "public_technologies": 28,
+    "planet_building_definitions": 23
+  },
+  "old_buildings_untouched": 14,
+  "old_phase_mine_allowed_changes": {
+    "can_build": "yes",
+    "job_artifact_phase_miner_add": {
+      "before": 8,
+      "after": 800
+    }
+  },
+  "old_phase_mine_other_fields_unchanged": true,
+  "old_technology_file_unchanged": true,
+  "old_job_file_unchanged": true,
+  "r1_building_file_unchanged": true,
+  "spec_matches_source": true,
+  "r2_nodes_ordered_without_duplicates": [
+    "B10",
+    "B12",
+    "A05",
+    "B09",
+    "A06",
+    "A07",
+    "E06",
+    "B11",
+    "C09",
+    "C10",
+    "E04",
+    "E05",
+    "E07"
+  ],
+  "direct_texture_files_exist": true,
+  "condition_tests": 3,
+  "game_operations_this_batch": 0,
+  "limitation": "只读字段与条件夹具核账，不证明就业、动态岗位停启、升级、读档或平衡。"
+}

@@ -1,0 +1,83 @@
+# 矿脉测绘员：数值按原生每100劳动力单位的岗位基准，建筑提供的容量另行计量。
+artifact_vein_surveyor = {
+	swappable_data = {
+		default = {
+			icon = "miner"
+		}
+	}
+	category = specialist
+	tags = {
+		minerals research
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			minerals = 6
+			engineering_research = 1
+		}
+		upkeep = {
+			energy = 1
+			consumer_goods = 0.5
+		}
+	}
+	weight = {
+		weight = 5
+	}
+}
+
+# 回收技师：数值按原生每100劳动力单位的岗位基准，建筑提供的容量另行计量。
+artifact_recycling_technician = {
+	swappable_data = {
+		default = {
+			icon = "artisan"
+		}
+	}
+	category = specialist
+	tags = {
+		minerals alloys
+	}
+	possible_pre_triggers = {
+		has_owner = yes
+		is_being_purged = no
+		is_being_assimilated = no
+		is_sapient = yes
+	}
+	possible_precalc = can_fill_specialist_job
+	possible = {
+		complex_specialist_job_check_trigger = yes
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	resources = {
+		category = planet_jobs
+		produces = {
+			minerals = 4
+			alloys = 0.5
+		}
+		upkeep = {
+			energy = 2
+			consumer_goods = 1
+		}
+	}
+	weight = {
+		weight = 5
+	}
+}

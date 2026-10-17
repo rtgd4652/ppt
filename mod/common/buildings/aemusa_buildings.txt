@@ -377,6 +377,8 @@ building_artifact_crossing_trade_tower = {
 
 # 相位矿脉稳定站：神器使后期矿石建筑。
 building_artifact_phase_mine = {
+	# R2a成为升级目标后仍允许按原科技直接建造，无需补研低级测绘。
+	can_build = yes
 	base_buildtime = 600
 	icon = building_artifact_phase_mine
 	category = resource
@@ -400,7 +402,9 @@ building_artifact_phase_mine = {
 	}
 
 	planet_modifier = {
-		job_artifact_phase_miner_add = 8
+		# 4.5实际容量从8校准为800单位；会扩大现有旧矿站容量，非仅显示调整。
+		# 原每100单位产出、维护、旧科技和建筑造价保持；其他族另行迁移。
+		job_artifact_phase_miner_add = 800
 	}
 }
 

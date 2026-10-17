@@ -66,3 +66,9 @@ python -B tools/validation/snapshot_workspace.py --output temp/checkpoints/本�
 ## 当前项目入口
 
 [项目状态](../../docs/PROJECT_STATUS.md)、[架构](../../docs/ARCHITECTURE.md)、[本轮验证报告](../../reports/project_architecture_review_2026-09-26.md)。
+
+## R2a定向条件检查
+
+`python -B -m unittest discover -s tools/validation/tests -p test_artifact_midgame_resources.py -v`
+
+读取实际R2a建筑，检查升级队列保留低级存在资格与旧科技直建、回收来源失去／停用／恢复及文明资格。3项夹具不模拟原生就业、动态岗位更新或存读档；不代替游戏验收。旧矿站容量8→800属于实质调整，迁移边界和数值核账见2026-10-17 R2a报告。
