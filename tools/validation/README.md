@@ -72,3 +72,9 @@ python -B tools/validation/snapshot_workspace.py --output temp/checkpoints/本�
 `python -B -m unittest discover -s tools/validation/tests -p test_artifact_midgame_resources.py -v`
 
 读取实际R2a建筑，检查升级队列保留低级存在资格与旧科技直建、回收来源失去／停用／恢复及文明资格。3项夹具不模拟原生就业、动态岗位更新或存读档；不代替游戏验收。旧矿站容量8→800属于实质调整，迁移边界和数值核账见2026-10-17 R2a报告。
+
+## R2b定向条件检查
+
+`python -B -m unittest discover -s tools/validation/tests -p test_artifact_midgame_observation_energy.py -v`
+
+3项读取真实观测站与供能站脚本的检查，显式区分国家拥有者与殖民地现场，覆盖同星双源、来源停用／移除及恢复、旧经济加成独立、升级队列保留低级资格与原B03直建。它们不模拟引擎动态更新、就业或读档，不替代R2b运行；无需因此重跑R1／R2a历史。反应堆容量8→800是本包实质迁移，其他旧楼容量不联动。

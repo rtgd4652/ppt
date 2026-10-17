@@ -84,6 +84,23 @@ building_artifact_black_gate_observatory = {
 		}
 		job_artifact_tarot_analyst_add = 2
 	}
+
+	# A05：由运行中的观测站与样本库联合比对；无新项目账本、定时收益或额外建筑。
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = "tech_artifact_multi_source_comparison"
+				owner_main_species = {
+					is_species_class = "ARTIFACT_USER"
+				}
+			}
+			has_active_building = "building_artifact_black_gate_observatory"
+			has_active_building = "building_artifact_sample_repository"
+		}
+		planet_jobs_physics_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.05
+	}
 }
 
 # 中央庭神器工坊：将神器共鸣转化为舰船组件所需的精密材料。
@@ -313,6 +330,8 @@ building_artifact_civic_goods_manufactory = {
 
 # 黑门相位反应堆：神器使后期能量建筑。
 building_artifact_phase_reactor = {
+	# 继续允许原B03科技直建；不要求旧档补研或补建本包低级站。
+	can_build = yes
 	base_buildtime = 600
 	icon = building_artifact_phase_reactor
 	category = resource
@@ -336,7 +355,8 @@ building_artifact_phase_reactor = {
 	}
 
 	planet_modifier = {
-		job_artifact_phase_technician_add = 8
+		# 4.5劳动力容量实际从8扩至800；不是显示修正，其他旧岗位不联动迁移。
+		job_artifact_phase_technician_add = 800
 	}
 }
 

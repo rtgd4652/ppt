@@ -1,0 +1,41 @@
+# R2b公共研究：复用现有观测设施；不读取人物组合、个人飞升或主线转变。
+tech_artifact_multi_source_comparison = {
+	area = physics
+	icon = "tech_artifact_black_gate_observation"
+	cost = 1200
+	tier = 2
+	category = {
+		field_manipulation
+	}
+	prerequisites = {
+		"tech_artifact_black_gate_observation"
+		"tech_artifact_sample_containment"
+	}
+	weight = 110
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# 为试验供能站提供独立中期入口；原高级反应堆继续使用旧B03科技。
+tech_artifact_low_loss_phase_transmission = {
+	area = physics
+	icon = "tech_artifact_phase_energy"
+	cost = 3000
+	tier = 3
+	category = {
+		field_manipulation
+	}
+	prerequisites = {
+		"tech_artifact_resonance_material_screening"
+		"tech_artifact_multi_source_comparison"
+	}
+	weight = 95
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}

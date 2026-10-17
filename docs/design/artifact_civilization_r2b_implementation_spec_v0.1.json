@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-17",
+  "package": "R2b",
+  "name": "多源观测与相位供能",
+  "status": "source_implemented_static_checked_runtime_pending",
+  "scope": {
+    "new_public_technologies": 2,
+    "new_buildings": 1,
+    "new_job_types": 0,
+    "new_localisation_keys": 6,
+    "changed_old_buildings": [
+      "building_artifact_black_gate_observatory",
+      "building_artifact_phase_reactor"
+    ]
+  },
+  "research": [
+    {
+      "id": "A05",
+      "name": "多源异常比对",
+      "key": "tech_artifact_multi_source_comparison",
+      "area": "physics",
+      "tier": 2,
+      "category": "field_manipulation",
+      "cost": 1200,
+      "weight": 110,
+      "prerequisites": [
+        "A02",
+        "A04"
+      ],
+      "unlock": "同星有效黑门观测站＋异常样本保管库的自动比对；不新增同层建筑或项目。"
+    },
+    {
+      "id": "B09",
+      "name": "低损耗相位传输",
+      "key": "tech_artifact_low_loss_phase_transmission",
+      "area": "physics",
+      "tier": 3,
+      "category": "field_manipulation",
+      "cost": 3000,
+      "weight": 95,
+      "prerequisites": [
+        "B07",
+        "A05"
+      ],
+      "unlock": "BL09低级相位供能试验站；高级仍读原B03。"
+    }
+  ],
+  "comparison": {
+    "host": "building_artifact_black_gate_observatory",
+    "required_active_buildings": [
+      "building_artifact_black_gate_observatory",
+      "building_artifact_sample_repository"
+    ],
+    "owner_tech": "tech_artifact_multi_source_comparison",
+    "owner_species_class": "ARTIFACT_USER",
+    "scope": "同一殖民地，不能由另一殖民地的样本库满足；两处均不得停用或损坏。",
+    "modifiers": {
+      "planet_jobs_physics_research_produces_mult": 0.1,
+      "planet_jobs_engineering_research_produces_mult": 0.05
+    },
+    "cost": "沿用两座原设施的建筑与岗位持续维护；本科技不新增费用或岗位。",
+    "disabled_or_lost_source": "加成撤销，恢复来源后重新生效；原生条件更新，运行尚未验证。",
+    "project_relationship": "不占R1项目槽，不读写其进度／paid／成果／期限；与既有研究修正按原生规则叠加，不复制成果。",
+    "future_upgrade": "A11后续实现时须继承或重接此条件，本包不引用尚不存在的高级复核站。"
+  },
+  "building": {
+    "family": "BL09",
+    "stage": 1,
+    "key": "building_artifact_phase_power_test_station",
+    "name": "相位供能试验站",
+    "technology": "B09",
+    "cost": {
+      "minerals": 900,
+      "alloys": 100
+    },
+    "days": 360,
+    "upkeep": {
+      "alloys": 1
+    },
+    "workforce": {
+      "artifact_phase_technician": 200
+    },
+    "building_set": "resource",
+    "category": "resource",
+    "placement": "普通城市建筑槽，不新增区划或发电区资格。",
+    "planet_limit": 1,
+    "upgrade_to": "building_artifact_phase_reactor",
+    "new_build_gate": "已建或在建高级反应堆时，低级allow拒绝新建；potential只读公共文明拥有者，原生升级替换待验。"
+  },
+  "existing_job": {
+    "key": "artifact_phase_technician",
+    "source": "mod/common/pop_jobs/aemusa_artifact_jobs.txt",
+    "category": "specialist",
+    "per_100_workforce": {
+      "produces": {
+        "energy": 32,
+        "physics_research": 3
+      },
+      "upkeep": {
+        "consumer_goods": 2
+      }
+    },
+    "changes": "无；文件逐字节保持。"
+  },
+  "reactor_migration": {
+    "key": "building_artifact_phase_reactor",
+    "field": "job_artifact_phase_technician_add",
+    "before": 8,
+    "after": 800,
+    "can_build": "yes",
+    "material_effect": "4.5实际容量扩大100倍；更多就业会提高产出和岗位维护，绝非显示修正。",
+    "unchanged": {
+      "technology": "tech_artifact_phase_energy",
+      "days": 600,
+      "cost": {
+        "minerals": 2400,
+        "alloys": 600
+      },
+      "building_upkeep": {
+        "alloys": 5
+      },
+      "job_resources": "每100劳动力产出与消费品维护保持",
+      "building_set": "resource"
+    },
+    "old_direct_build": "仍只要求旧B03，不追加A05／B09、低级楼或发电区；旧科技资源容量+10000不变。",
+    "save_policy": "不写存档、不授予科技或资源、不强制补建；原生重新分配就业仍待真实游戏核对。",
+    "other_migrations": "R2a矿站800保留；观测站及其余旧楼容量不在本包迁移。"
+  },
+  "full_workforce_base_estimates": {
+    "low_station": {
+      "energy": 64,
+      "physics_research": 6,
+      "consumer_goods_job_upkeep": 4,
+      "alloys_building_upkeep": 1
+    },
+    "high_reactor": {
+      "energy": 256,
+      "physics_research": 24,
+      "consumer_goods_job_upkeep": 16,
+      "alloys_building_upkeep": 5
+    },
+    "boundary": "仅满额劳动力基础算术，非实际就业／人口生活维护／数值平衡证据。"
+  },
+  "validation": {
+    "static": "passed",
+    "source_contract_tests": 3,
+    "runtime": "pending",
+    "balance": "pending",
+    "next_runtime": "冷启动后受控补齐旧前置与新研究用于测试，不再为抽取／研究等待多年；只验一次当地双设施加成及一次来源停用／恢复，供能站正常建造和一次升级，唯一关键读档选在有进度的升级队列。缺资源直接rr，明确注明受控研究，不重测R1／R2a／C2或人物历史。"
+  },
+  "art": "两科技与供能站直接读取既有DDS；无新图、GFX别名或候选安装。",
+  "current_counts": {
+    "public_technologies": 30,
+    "planet_building_definitions": 24,
+    "target_public_technologies": 72,
+    "target_building_families": 27,
+    "target_building_stages": 46
+  },
+  "files": [
+    "mod/common/technology/artifact_midgame_observation_energy_technology.txt",
+    "mod/common/buildings/artifact_midgame_observation_energy_buildings.txt",
+    "mod/localisation/simp_chinese/artifact_midgame_observation_energy_l_simp_chinese.yml",
+    "mod/common/buildings/aemusa_buildings.txt"
+  ]
+}

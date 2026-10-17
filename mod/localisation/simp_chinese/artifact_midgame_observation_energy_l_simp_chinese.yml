@@ -1,0 +1,7 @@
+﻿l_simp_chinese:
+ tech_artifact_multi_source_comparison:0 "多源异常比对"
+ tech_artifact_multi_source_comparison_desc:0 "把黑门观测记录与封存样本交叉比对。同一殖民地的黑门观测站和异常样本保管库均正常运行时，当地岗位物理研究产出提高10%，工程研究产出提高5%；任一设施停用或损坏后加成暂停，恢复运行后重新生效。复用现有设施，不额外占用本地项目槽。"
+ tech_artifact_low_loss_phase_transmission:0 "低损耗相位传输"
+ tech_artifact_low_loss_phase_transmission_desc:0 "以共鸣材料约束相位涨落，开放相位供能试验站。供能师在持续消耗消费品、设施持续消耗合金的条件下产出能源与物理研究；取得原相位能源网科技后可正常升级为黑门相位反应堆。"
+ building_artifact_phase_power_test_station:0 "相位供能试验站"
+ building_artifact_phase_power_test_station_desc:0 "在普通城市建筑槽提供200劳动力单位的相位供能师岗位，以消费品投入换取能源和物理研究，建筑每月维护1合金。取得相位能源网科技后可升级为黑门相位反应堆；已有高级反应堆不要求补研或重建本试验站。"

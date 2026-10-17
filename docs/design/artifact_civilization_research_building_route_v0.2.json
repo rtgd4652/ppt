@@ -155,8 +155,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "为观测设施开放多源比对能力，不新增同层实体建筑；保持观测站后续复核升级。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "有效黑门观测站与样本库同星运行时物理研究+10%、工程+5%；不新增同层实体或项目槽，A11后续须接续。",
+      "implementation_key": "tech_artifact_multi_source_comparison"
     },
     {
       "id": "A06",
@@ -374,8 +375,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设相位供能试验站，为后续能源网和规则接口提供供能基础。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "建设相位供能试验站，提供200既有供能师容量，可按原B03升级800容量反应堆；运行和平衡待验。",
+      "implementation_key": "tech_artifact_low_loss_phase_transmission"
     },
     {
       "id": "B10",
@@ -1338,14 +1340,16 @@
           "name": "相位供能试验站",
           "technology": "B09",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_phase_power_test_station"
         },
         {
           "stage": 2,
           "name": "黑门相位反应堆",
           "technology": "B03",
           "existing_key": "building_artifact_phase_reactor",
-          "status": "existing_definition"
+          "status": "existing_definition",
+          "implementation_note": "R2b仅增加can_build=yes及劳动力容量8→800；旧科技／费用／岗位资源保持，运行与平衡待验。"
         }
       ]
     },
@@ -1753,17 +1757,39 @@
     },
     "R2a": {
       "date": "2026-10-17",
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "representative_path_upgrade_and_one_critical_reload_passed",
       "technologies": [
         "B10",
         "B12"
       ],
       "new_buildings": 2,
       "new_jobs": 2,
-      "runtime_status": "pending",
+      "runtime_status": "representative_path_upgrade_and_one_critical_reload_passed",
       "balance_status": "pending",
       "spec": "docs/design/artifact_civilization_r2a_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r2a_implementation_2026-10-17.md"
+      "report": "reports/artifact_civilization_r2a_implementation_2026-10-17.md",
+      "runtime_report": "reports/artifact_civilization_r2a_runtime_2026-10-17.md",
+      "runtime_limits": "B12受控解锁；其正常研究及来源全失动态停岗未验，不重测。"
+    },
+    "R2b": {
+      "date": "2026-10-17",
+      "status": "source_implemented_static_checked_runtime_pending",
+      "runtime_status": "pending",
+      "balance_status": "pending",
+      "technology_keys": {
+        "A05": "tech_artifact_multi_source_comparison",
+        "B09": "tech_artifact_low_loss_phase_transmission"
+      },
+      "new_buildings": 1,
+      "new_jobs": 0,
+      "spec": "docs/design/artifact_civilization_r2b_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r2b_implementation_2026-10-17.md"
     }
+  },
+  "current_counts": {
+    "date": "2026-10-17",
+    "public_technologies": 30,
+    "building_definitions": 24,
+    "note": "原框架19／15作为历史baseline保留，目标72／27类46阶段不变。"
   }
 }

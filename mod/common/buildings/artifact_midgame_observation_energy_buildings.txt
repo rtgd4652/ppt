@@ -1,0 +1,45 @@
+# R2b相位供能试验站：复用旧相位供能师，不新增岗位类型或区划。
+building_artifact_phase_power_test_station = {
+	can_build = yes
+	base_buildtime = 360
+	icon = "building_artifact_phase_reactor"
+	category = resource
+	building_sets = {
+		resource
+	}
+	planet_limit = 1
+	prerequisites = {
+		"tech_artifact_low_loss_phase_transmission"
+	}
+	upgrades = {
+		"building_artifact_phase_reactor"
+	}
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	# 只限制低级站新建；不能因高级站进入升级队列而撤销原设施存在资格。
+	allow = {
+		NOR = {
+			has_building = "building_artifact_phase_reactor"
+			has_building_construction = "building_artifact_phase_reactor"
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 900
+			alloys = 100
+		}
+		upkeep = {
+			alloys = 1
+		}
+	}
+	planet_modifier = {
+		job_artifact_phase_technician_add = 200
+	}
+}
