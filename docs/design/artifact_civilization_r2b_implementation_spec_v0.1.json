@@ -2,7 +2,7 @@
   "date": "2026-10-17",
   "package": "R2b",
   "name": "多源观测与相位供能",
-  "status": "source_implemented_static_checked_runtime_pending",
+  "status": "representative_effect_cycle_build_upgrade_and_one_critical_reload_passed",
   "scope": {
     "new_public_technologies": 2,
     "new_buildings": 1,
@@ -59,7 +59,7 @@
       "planet_jobs_engineering_research_produces_mult": 0.05
     },
     "cost": "沿用两座原设施的建筑与岗位持续维护；本科技不新增费用或岗位。",
-    "disabled_or_lost_source": "加成撤销，恢复来源后重新生效；原生条件更新，运行尚未验证。",
+    "disabled_or_lost_source": "加成撤销，恢复来源后重新生效；样本库一次停用／恢复已在游戏验证，损坏、移除与其他来源场景仍仅为源码／夹具证据。",
     "project_relationship": "不占R1项目槽，不读写其进度／paid／成果／期限；与既有研究修正按原生规则叠加，不复制成果。",
     "future_upgrade": "A11后续实现时须继承或重接此条件，本包不引用尚不存在的高级复核站。"
   },
@@ -85,7 +85,7 @@
     "placement": "普通城市建筑槽，不新增区划或发电区资格。",
     "planet_limit": 1,
     "upgrade_to": "building_artifact_phase_reactor",
-    "new_build_gate": "已建或在建高级反应堆时，低级allow拒绝新建；potential只读公共文明拥有者，原生升级替换待验。"
+    "new_build_gate": "已建或在建高级反应堆时，低级allow拒绝新建；potential只读公共文明拥有者。正常升级、一次进行态读档后完工替换已通过，未穷举人工绕建。"
   },
   "existing_job": {
     "key": "artifact_phase_technician",
@@ -123,7 +123,7 @@
       "building_set": "resource"
     },
     "old_direct_build": "仍只要求旧B03，不追加A05／B09、低级楼或发电区；旧科技资源容量+10000不变。",
-    "save_policy": "不写存档、不授予科技或资源、不强制补建；原生重新分配就业仍待真实游戏核对。",
+    "save_policy": "机制不写存档、不主动授予科技或资源、不强制补建。受控研究测试后正常建造升级，最终实际就业399／800；未验原有高级站旧档的独立迁移场景。",
     "other_migrations": "R2a矿站800保留；观测站及其余旧楼容量不在本包迁移。"
   },
   "full_workforce_base_estimates": {
@@ -144,9 +144,14 @@
   "validation": {
     "static": "passed",
     "source_contract_tests": 3,
-    "runtime": "pending",
+    "runtime": "representative_effect_cycle_build_upgrade_and_one_critical_reload_passed",
     "balance": "pending",
-    "next_runtime": "冷启动后受控补齐旧前置与新研究用于测试，不再为抽取／研究等待多年；只验一次当地双设施加成及一次来源停用／恢复，供能站正常建造和一次升级，唯一关键读档选在有进度的升级队列。缺资源直接rr，明确注明受控研究，不重测R1／R2a／C2或人物历史。"
+    "runtime_report": "reports/artifact_civilization_r2b_runtime_2026-10-17.md",
+    "runtime_checkpoint": "reports/artifact_civilization_r2b_checkpoint_2026-10-17.json",
+    "critical_game_load_count": 1,
+    "final_save": "2275.09.20.sav",
+    "runtime_limits": "A05／B09／原B03受控提供，未验自然研究；一次样本库停用／恢复、正常建造升级及111.55／600进行态读档通过，读回仍剩425日。最终399／800、低级站不残留、队列为空，本轮新增rr为0。其他来源场景、旧B03单独直建、自然经济与满就业平衡未验，不追加历史测试。",
+    "next_step": "先细化R2c A06／A07／E06的感知、风险判读与轨道观测用途、入口、费用及保存状态，再接小包。"
   },
   "art": "两科技与供能站直接读取既有DDS；无新图、GFX别名或候选安装。",
   "current_counts": {

@@ -1,0 +1,20 @@
+{
+  "purpose": "腾出R2b唯一关键档和最终结果档位置，原手动基线及C2／R1／R2a关键与最终档保留",
+  "date": "2026-10-17",
+  "items": [
+    {
+      "archive": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2b_archive_2026-10-17\\2250.09.25.sav",
+      "bytes": 1894580,
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2250.09.25.sav",
+      "deleted": false,
+      "reason": "C2开始时自行另存的中间检查点，原基线2250.09.06保留"
+    },
+    {
+      "archive": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2b_archive_2026-10-17\\2255.08.30.sav",
+      "bytes": 2018455,
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2255.08.30.sav",
+      "deleted": false,
+      "reason": "R1观测站完工中间检查点，R1关键及最终档保留"
+    }
+  ]
+}

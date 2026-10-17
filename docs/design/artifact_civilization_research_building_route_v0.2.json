@@ -1,7 +1,8 @@
 {
   "schema_version": 1,
   "date": "2026-10-14",
-  "status": "route_draft_with_r1_source_implemented",
+  "updated": "2026-10-17",
+  "status": "route_draft_with_r1_r2a_r2b_representative_runtime",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "公共72项研究保留；收敛后为27类46阶段建筑（包含现有15键），另列4项个人候选。均为设计，不是用户逐项定稿或已交付数量。",
@@ -155,9 +156,10 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "source_implemented_representative_effect_passed_research_unverified",
       "capability": "有效黑门观测站与样本库同星运行时物理研究+10%、工程+5%；不新增同层实体或项目槽，A11后续须接续。",
-      "implementation_key": "tech_artifact_multi_source_comparison"
+      "implementation_key": "tech_artifact_multi_source_comparison",
+      "runtime_status": "one_sample_repository_disable_restore_cycle_passed_with_controlled_technology"
     },
     {
       "id": "A06",
@@ -375,9 +377,10 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
-      "capability": "建设相位供能试验站，提供200既有供能师容量，可按原B03升级800容量反应堆；运行和平衡待验。",
-      "implementation_key": "tech_artifact_low_loss_phase_transmission"
+      "status": "source_implemented_representative_build_upgrade_passed_research_unverified",
+      "capability": "建设相位供能试验站，提供200既有供能师容量，可按原B03升级800容量反应堆；代表建造升级和一次进行态读档通过，研究受控提供，平衡未验。",
+      "implementation_key": "tech_artifact_low_loss_phase_transmission",
+      "runtime_status": "normal_build_upgrade_and_one_critical_reload_passed_with_controlled_technology"
     },
     {
       "id": "B10",
@@ -1340,8 +1343,9 @@
           "name": "相位供能试验站",
           "technology": "B09",
           "existing_key": null,
-          "status": "source_implemented_static_checked_runtime_pending",
-          "implementation_key": "building_artifact_phase_power_test_station"
+          "status": "source_implemented_representative_runtime_passed",
+          "implementation_key": "building_artifact_phase_power_test_station",
+          "runtime_status": "normal_build_upgrade_and_one_critical_reload_passed"
         },
         {
           "stage": 2,
@@ -1349,7 +1353,7 @@
           "technology": "B03",
           "existing_key": "building_artifact_phase_reactor",
           "status": "existing_definition",
-          "implementation_note": "R2b仅增加can_build=yes及劳动力容量8→800；旧科技／费用／岗位资源保持，运行与平衡待验。"
+          "implementation_note": "R2b仅增加can_build=yes及劳动力容量8→800；旧科技／费用／岗位资源保持。正常升级及一次进行态读档通过，最终399／800；旧B03单独直建及平衡未验。"
         }
       ]
     },
@@ -1773,8 +1777,8 @@
     },
     "R2b": {
       "date": "2026-10-17",
-      "status": "source_implemented_static_checked_runtime_pending",
-      "runtime_status": "pending",
+      "status": "representative_effect_cycle_build_upgrade_and_one_critical_reload_passed",
+      "runtime_status": "representative_effect_cycle_build_upgrade_and_one_critical_reload_passed",
       "balance_status": "pending",
       "technology_keys": {
         "A05": "tech_artifact_multi_source_comparison",
@@ -1783,7 +1787,12 @@
       "new_buildings": 1,
       "new_jobs": 0,
       "spec": "docs/design/artifact_civilization_r2b_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r2b_implementation_2026-10-17.md"
+      "report": "reports/artifact_civilization_r2b_implementation_2026-10-17.md",
+      "runtime_report": "reports/artifact_civilization_r2b_runtime_2026-10-17.md",
+      "runtime_checkpoint": "reports/artifact_civilization_r2b_checkpoint_2026-10-17.json",
+      "runtime_limits": "A05／B09／原B03受控提供；样本库来源停用／恢复一次和正常建造升级、进行态读档一次通过。自然研究、其他来源场景及扩容平衡未验，不扩测。",
+      "final_save": "2275.09.20.sav",
+      "next_step": "先细化R2c A06／A07／E06的感知、风险判读与轨道观测用途、入口、费用、保存状态，再接小包。"
     }
   },
   "current_counts": {

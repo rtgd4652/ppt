@@ -1,0 +1,276 @@
+{
+  "date": "2026-10-17",
+  "package": "R2b",
+  "source_commit": "3afffe5",
+  "runtime_status": "representative_effect_cycle_build_upgrade_and_one_critical_reload_passed",
+  "balance_status": "pending",
+  "game_version": "4.5.2",
+  "checksum": "e006",
+  "enabled_mods": [
+    "mod/aemusa_artifact_user.mod"
+  ],
+  "cold_start_count": 1,
+  "resume_load_count": 1,
+  "critical_game_load_count": 1,
+  "source_changes_this_runtime": false,
+  "controlled_setup": {
+    "start": "2271.09.09.sav",
+    "granted_technologies": [
+      {
+        "key": "tech_artifact_multi_source_comparison",
+        "date": "2271.09.09"
+      },
+      {
+        "key": "tech_artifact_low_loss_phase_transmission",
+        "date": "2271.12.17"
+      },
+      {
+        "key": "tech_artifact_phase_energy",
+        "date": "2271.12.17"
+      }
+    ],
+    "scope": "所选泽德拉I显式owner，游戏回显交界都市中央庭；原有A02／A04／B07等沿用起点。",
+    "research_completion_tested": false,
+    "rr_count_this_runtime": 0,
+    "resources": "沿用R2a受控补给储备，本轮未补给或操作市场，不代表自然经济平衡。",
+    "save_edit": false
+  },
+  "comparison_cycle": {
+    "date": "2271.12.17",
+    "source_toggle_cycles": 1,
+    "source": "building_artifact_sample_repository",
+    "normal_ui_disable_then_restore": true,
+    "modifiers_enabled": {
+      "physics_research": 0.1,
+      "engineering_research": 0.05
+    },
+    "disabled_observatory_tooltip_modifiers": "both absent",
+    "restored_observatory_tooltip_modifiers": "both present",
+    "disabled_observatory_estimated_jobs_output": {
+      "physics_research": 0.35,
+      "society_research": 0.35,
+      "engineering_research": 0.35
+    },
+    "restored_observatory_estimated_jobs_output": {
+      "physics_research": 0.4,
+      "society_research": 0.35,
+      "engineering_research": 0.38
+    },
+    "post_reload_bonus_visible": true,
+    "boundary": "原生建筑提示和岗位产出提示的实际观察；暂停刚授科技时有缓存，先少量推进月度，再于同日完成停用／恢复。"
+  },
+  "normal_construction": {
+    "site": "泽德拉I／殖民地9",
+    "native_space_preparation": "普通城市槽已满，正常付费增加一次原版城市扩张专精，未拆除旧设施。",
+    "native_zone_cost_minerals": 850,
+    "native_zone_days": 314,
+    "low_station_cost": {
+      "minerals": 765,
+      "alloys": 85
+    },
+    "low_station_days": 314,
+    "low_job_observation": {
+      "date": "2274.02.04",
+      "workforce": 200,
+      "energy": 46.24,
+      "physics_research": 4.91,
+      "trade": 0.66
+    },
+    "upgrade_started": "2274.02.04",
+    "no_force_build_or_completion": true
+  },
+  "critical": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2274.05.11.sav",
+    "bytes": 2044846,
+    "date": "2274.05.11",
+    "target": {
+      "colony": 9,
+      "carrier_planet": 290,
+      "owner": "0",
+      "controller": "0"
+    },
+    "known_relevant_tech": [
+      "tech_artifact_multi_source_comparison",
+      "tech_artifact_low_loss_phase_transmission",
+      "tech_artifact_phase_energy"
+    ],
+    "buildings": [
+      {
+        "id": "33554529",
+        "type": "building_artifact_black_gate_observatory",
+        "position": "2"
+      },
+      {
+        "id": "16777369",
+        "type": "building_artifact_sample_repository",
+        "position": "3"
+      },
+      {
+        "id": "16777518",
+        "type": "building_artifact_phase_power_test_station",
+        "position": "0"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "67109252",
+        "type": "artifact_junior_observer",
+        "workforce": "1",
+        "max_workforce": "1",
+        "bonus_workforce": "0",
+        "workforce_limit": "1",
+        "planet": "9"
+      },
+      {
+        "id": "50333051",
+        "type": "artifact_phase_technician",
+        "workforce": "200",
+        "max_workforce": "200",
+        "bonus_workforce": "-5.625",
+        "workforce_limit": "200",
+        "planet": "9"
+      },
+      {
+        "id": "33556193",
+        "type": "artifact_tarot_analyst",
+        "workforce": "6",
+        "max_workforce": "6",
+        "bonus_workforce": "0",
+        "workforce_limit": "6",
+        "planet": "9"
+      }
+    ],
+    "construction": [
+      {
+        "item_id": "1962934281",
+        "queue": "42",
+        "paying_country": "0",
+        "progress": "111.55",
+        "progress_needed": "600",
+        "resources": {
+          "minerals": "2040",
+          "alloys": "510"
+        },
+        "buildable_planet_upgrade_building": {
+          "building": "building_artifact_phase_reactor",
+          "planet": "9",
+          "zone": "259",
+          "upgrade_building": "16777518"
+        }
+      }
+    ]
+  },
+  "reload_observation": {
+    "date": "2274.05.11",
+    "remaining_days_before": 425,
+    "remaining_days_after": 425,
+    "same_site_and_queue_visible": true,
+    "second_upgrade_start": false
+  },
+  "final": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2275.09.20.sav",
+    "bytes": 2074169,
+    "date": "2275.09.20",
+    "target": {
+      "colony": 9,
+      "carrier_planet": 290,
+      "owner": "0",
+      "controller": "0"
+    },
+    "known_relevant_tech": [
+      "tech_artifact_multi_source_comparison",
+      "tech_artifact_low_loss_phase_transmission",
+      "tech_artifact_phase_energy"
+    ],
+    "buildings": [
+      {
+        "id": "33554529",
+        "type": "building_artifact_black_gate_observatory",
+        "position": "2"
+      },
+      {
+        "id": "33554581",
+        "type": "building_artifact_phase_reactor",
+        "position": "0"
+      },
+      {
+        "id": "16777369",
+        "type": "building_artifact_sample_repository",
+        "position": "3"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "67109252",
+        "type": "artifact_junior_observer",
+        "workforce": "1",
+        "max_workforce": "1",
+        "bonus_workforce": "0",
+        "workforce_limit": "1",
+        "planet": "9"
+      },
+      {
+        "id": "50333051",
+        "type": "artifact_phase_technician",
+        "workforce": "399",
+        "max_workforce": "800",
+        "bonus_workforce": "-6.825",
+        "workforce_limit": "800",
+        "planet": "9"
+      },
+      {
+        "id": "33556193",
+        "type": "artifact_tarot_analyst",
+        "workforce": "6",
+        "max_workforce": "6",
+        "bonus_workforce": "0",
+        "workforce_limit": "6",
+        "planet": "9"
+      }
+    ],
+    "construction": []
+  },
+  "final_ui": {
+    "date": "2275.09.20",
+    "workforce": 399,
+    "capacity": 800,
+    "energy": 93.25,
+    "physics_research": 9.91,
+    "trade": 1.31,
+    "paused": true,
+    "console": "closed",
+    "screen": "保存后菜单"
+  },
+  "unverified": [
+    "新科技自然抽取及正常研究完成",
+    "来源损坏、观测站停用及跨殖民地等其他引擎场景",
+    "旧B03另行直接新建高级站（资格为源码及夹具证据）",
+    "自然经济、800容量满就业与原8→800扩容后的平衡",
+    "其他旧楼容量迁移"
+  ],
+  "historical_tests_repeated": false,
+  "save_archive_manifest": "artifact_civilization_r2b_save_archive_2026-10-17.json",
+  "screenshots_local_ignored": [
+    "r2b_05_main",
+    "r2b_07_loaded",
+    "r2b_10_a05_receipt",
+    "r2b_14_observatory",
+    "r2b_17_bonus_off",
+    "r2b_18_bonus_restored",
+    "r2b_20_b09_receipt",
+    "r2b_22_b03_receipt",
+    "r2b_25_zone_options",
+    "r2b_26_zone_started",
+    "r2b_31_power_queued",
+    "r2b_34_low_yield",
+    "r2b_36_upgrade_progress",
+    "r2b_39_load_dialog",
+    "r2b_40_critical_receipt",
+    "r2b_40_loaded",
+    "r2b_41_loaded_queue",
+    "r2b_43_final_jobs",
+    "r2b_44_high_yield",
+    "r2b_45_bonus_after_reload",
+    "r2b_46_final_saved"
+  ]
+}
