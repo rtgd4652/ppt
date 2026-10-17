@@ -1,0 +1,291 @@
+{
+  "date": "2026-10-17",
+  "package": "R2c",
+  "source_base": "f44f15b",
+  "status": "representative_effect_cycle_build_upgrade_and_one_critical_reload_passed",
+  "runtime_status": "passed_representative_scope",
+  "balance_status": "pending",
+  "report": "reports/artifact_civilization_r2c_runtime_2026-10-17.md",
+  "game": {
+    "version": "4.5.2",
+    "initial_checksum": "4de8",
+    "allow_only_checksum": "99cd",
+    "final_checksum": "3a2a",
+    "enabled_mods": [
+      "mod/aemusa_artifact_user.mod"
+    ],
+    "cold_starts": 3,
+    "origin_save_loads": 1,
+    "repair_save_loads": 2,
+    "critical_reload_count": 1,
+    "repair_save_load_note": "两次恢复相同2278.04.28准备档供源码修复；不能把总载入次数写成1"
+  },
+  "research": {
+    "method": "selected_colony_owner_give_technology",
+    "country": 0,
+    "controlled_keys": [
+      "tech_artifact_long_baseline_measurement",
+      "tech_artifact_orbital_coordination",
+      "tech_artifact_phase_disturbance_warning"
+    ],
+    "natural_research": "unverified",
+    "malformed_unknown_command_count": 1
+  },
+  "resources": {
+    "rr_count": 1,
+    "date": "2278.03.30",
+    "receipt_verified": true,
+    "market_used": false,
+    "instant_completion_used": false
+  },
+  "source_cycle": {
+    "cycles": 1,
+    "disable_date": "2278.03.07",
+    "off_observation_date": "2278.03.30",
+    "enable_date": "2278.03.30",
+    "restored_observation_date": "2278.04.28",
+    "before_interface": {
+      "sensor": 5,
+      "hyperlane": 2
+    },
+    "with_low_source": {
+      "sensor": 6,
+      "hyperlane": 4
+    },
+    "source_off": {
+      "sensor": 4,
+      "hyperlane": 2
+    },
+    "restored": {
+      "sensor": 6,
+      "hyperlane": 4
+    },
+    "note": "停用时暂停读数未立即刷新；只记录实际推进后的更新，不声称固定延迟或接口单独提供2传感"
+  },
+  "normal_costs": {
+    "low": {
+      "minerals": 850,
+      "alloys": 128,
+      "days": 314
+    },
+    "native_starport": {
+      "alloys": 225,
+      "days": 360
+    },
+    "orbital_link": {
+      "alloys": 180,
+      "days": 360
+    },
+    "high_upgrade": {
+      "minerals": 1530,
+      "alloys": 255,
+      "days": 418
+    }
+  },
+  "upgrade_repair": {
+    "file": "mod/common/buildings/artifact_midgame_sensing_buildings.txt",
+    "allow_only_restored_entry": false,
+    "removed_high_empire_limit_restored_entry": true,
+    "retained": [
+      "low empire_limit 1",
+      "low allow rejects owned built or queued high",
+      "high can_build no",
+      "planet_limit 1 both stages"
+    ],
+    "low_path_not_repeated": true,
+    "other_legacy_mod_scripts_changed": false
+  },
+  "preparation": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2c_archive_2026-10-17\\2278.04.28.sav",
+    "bytes": 2116046,
+    "date": "2278.04.28",
+    "target": {
+      "colony": 9,
+      "carrier_planet": 290,
+      "system": "440",
+      "owner": "0",
+      "controller": "0"
+    },
+    "known_relevant_tech": [
+      "tech_artifact_long_baseline_measurement",
+      "tech_artifact_orbital_coordination",
+      "tech_artifact_phase_disturbance_warning"
+    ],
+    "buildings": [
+      {
+        "id": "16777691",
+        "type": "building_artifact_long_baseline_array",
+        "position": "1"
+      }
+    ],
+    "construction": [],
+    "starbase": {
+      "id": "33554709",
+      "station_id": "16780504",
+      "level": "starbase_level_starport",
+      "buildings": {
+        "0": "artifact_orbital_observation_link"
+      }
+    },
+    "sha256": "b370150754a4caf84984ddbfafb88962aaac52abd27f36b91a0c9c41d9892bdf"
+  },
+  "critical": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2c_archive_2026-10-17\\2278.05.05.sav",
+    "bytes": 2137479,
+    "date": "2278.05.05",
+    "target": {
+      "colony": 9,
+      "carrier_planet": 290,
+      "system": "440",
+      "owner": "0",
+      "controller": "0"
+    },
+    "known_relevant_tech": [
+      "tech_artifact_long_baseline_measurement",
+      "tech_artifact_orbital_coordination",
+      "tech_artifact_phase_disturbance_warning"
+    ],
+    "buildings": [
+      {
+        "id": "16777691",
+        "type": "building_artifact_long_baseline_array",
+        "position": "1"
+      }
+    ],
+    "construction": [
+      {
+        "item_id": "2483027969",
+        "queue": "42",
+        "paying_country": "0",
+        "progress": "8.05",
+        "progress_needed": "480",
+        "resources": {
+          "minerals": "1530",
+          "alloys": "255"
+        },
+        "buildable_planet_upgrade_building": {
+          "building": "building_artifact_phase_warning_array",
+          "planet": "9",
+          "zone": "259",
+          "upgrade_building": "16777691"
+        }
+      }
+    ],
+    "starbase": {
+      "id": "33554709",
+      "station_id": "16780504",
+      "level": "starbase_level_starport",
+      "buildings": {
+        "0": "artifact_orbital_observation_link"
+      }
+    },
+    "sha256": "effbaa0680effad11fd2f909ff93b22ba9f5c34255296794a3df1173532d012d"
+  },
+  "actual_reload": {
+    "count": 1,
+    "date_before": "2278.05.05",
+    "date_after": "2278.05.05",
+    "remaining_days_before": 411,
+    "remaining_days_after": 411,
+    "new_upgrade_clicked_after_reload": false
+  },
+  "final": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2280.01.01.sav",
+    "bytes": 2240613,
+    "date": "2280.01.01",
+    "target": {
+      "colony": 9,
+      "carrier_planet": 290,
+      "system": "440",
+      "owner": "0",
+      "controller": "0"
+    },
+    "known_relevant_tech": [
+      "tech_artifact_long_baseline_measurement",
+      "tech_artifact_orbital_coordination",
+      "tech_artifact_phase_disturbance_warning"
+    ],
+    "buildings": [
+      {
+        "id": "16777457",
+        "type": "building_artifact_phase_warning_array",
+        "position": "1"
+      }
+    ],
+    "construction": [],
+    "starbase": {
+      "id": "33554709",
+      "station_id": "16780504",
+      "level": "starbase_level_starport",
+      "buildings": {
+        "0": "artifact_orbital_observation_link"
+      }
+    },
+    "sha256": "a1683b32919dcbe50caeab434dfe84b7cfe819a741eb7b5c1fc43efbd6f166af"
+  },
+  "final_ui": {
+    "sensor": 6,
+    "hyperlane": 6,
+    "cloaking_detection_bonus": 1,
+    "cloaking_detection_source": "轨道协调",
+    "country_tooltip_sensor": 1,
+    "country_tooltip_hyperlane": 2,
+    "paused": true,
+    "console_open": false,
+    "menu_open": true,
+    "date": "2280.01.01"
+  },
+  "validation": {
+    "static_status": "pass",
+    "errors": 0,
+    "warnings": 0,
+    "source_contract_tests": 4,
+    "counts": {
+      "script_files": 136,
+      "events": 249,
+      "localization_keys": 1562,
+      "registered_states": 791,
+      "referenced_states": 734
+    },
+    "targeted_error_log_hits": 0,
+    "entire_log_claimed_clean": false,
+    "save_read_only": true,
+    "reconciliation": {
+      "status": "passed",
+      "json_documents": 4,
+      "local_link_occurrences": 19,
+      "protected_historical_saves": 9,
+      "archive_items": 3,
+      "capture_files": 16,
+      "key_and_final_hashes_rechecked": true,
+      "source_spec_counts_match": true
+    }
+  },
+  "archive_manifest": "reports/artifact_civilization_r2c_save_archive_2026-10-17.json",
+  "captures": {
+    "low_and_orbital_built": "tools/desktop/r2c_49_orbital_finished.png",
+    "low_country_tooltip": "tools/desktop/r2c_51_array_details.png",
+    "source_disabled": "tools/desktop/r2c_52_array_disabled.png",
+    "source_off_after_update": "tools/desktop/r2c_60_disabled_tick.png",
+    "source_enabled": "tools/desktop/r2c_65_array_restored.png",
+    "rr_receipt": "tools/desktop/r2c_68_rr_receipt.png",
+    "source_restored_after_update": "tools/desktop/r2c_72_link_restored.png",
+    "allow_only_not_fixed": "tools/desktop/r2c_93_repaired_details.png",
+    "normal_upgrade_queued": "tools/desktop/r2c_108_upgrade_queue.png",
+    "key_before_save": "tools/desktop/r2c_109_upgrade_progress.png",
+    "key_actual_loading": "tools/desktop/r2c_115_key_loading.png",
+    "key_loaded_same_queue": "tools/desktop/r2c_117_loaded_queue.png",
+    "high_country_tooltip": "tools/desktop/r2c_125_high_array.png",
+    "high_station": "tools/desktop/r2c_127_high_station.png",
+    "detection_tooltip": "tools/desktop/r2c_129_detection_tooltip.png",
+    "final_saved_paused_menu": "tools/desktop/r2c_132_final_saved.png"
+  },
+  "unverified": [
+    "真实舰队视野变化",
+    "真实隐形舰发现",
+    "跨殖民地并行唯一限额",
+    "损坏、占领等其他来源场景的引擎表现",
+    "自然研究与数值平衡"
+  ],
+  "next_step": "先细化R2d治理与城市的范围、用途、费用、保存状态和最小验收；本轮不启动R2d或其他路线"
+}

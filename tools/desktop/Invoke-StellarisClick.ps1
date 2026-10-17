@@ -29,6 +29,7 @@ public static class StellarisWindowClick {
     [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr window,out RECT bounds);
     [DllImport("user32.dll")] public static extern bool GetClientRect(IntPtr window,out RECT bounds);
     [DllImport("user32.dll")] public static extern bool ClientToScreen(IntPtr window,ref POINT point);
+    [DllImport("user32.dll")] public static extern bool GetCursorPos(out POINT point);
     [DllImport("user32.dll")] public static extern bool IsIconic(IntPtr window);
     [DllImport("user32.dll")] public static extern short GetAsyncKeyState(int key);
     [DllImport("user32.dll")] public static extern IntPtr SetThreadDpiAwarenessContext(IntPtr context);
@@ -135,6 +136,12 @@ try {
     if (-not [StellarisWindowClick]::SetCursorPos($clickX,$clickY)) { throw 'Cannot place pointer inside game.' }
     Start-Sleep -Milliseconds 80
     Assert-CurrentGame
+    # 窗口仍在前台时指针也可能被移动；拒绝在未观察的位置按下按钮。
+    $currentPointer = New-Object StellarisWindowClick+POINT
+    if (-not [StellarisWindowClick]::GetCursorPos([ref]$currentPointer) -or
+        [Math]::Abs($currentPointer.X-$clickX) -gt 3 -or [Math]::Abs($currentPointer.Y-$clickY) -gt 3) {
+        throw 'Pointer moved away from observed target; no new mouse-down sent.'
+    }
     if ($MaxReferenceAgeSeconds -gt 120 -and -not $EnsurePaused -and (Get-GamePauseState) -ne 'paused') {
         throw 'Game resumed before pointer input; no new mouse-down sent.'
     }

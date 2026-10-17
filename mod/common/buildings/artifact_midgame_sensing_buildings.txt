@@ -76,9 +76,7 @@ building_artifact_phase_warning_array = {
 		research
 	}
 	planet_limit = 1
-	empire_limit = {
-		base = 1
-	}
+	# 帝国唯一由低阶入口及其高级已建／在建排他守住；高级不重复设置已满的升级链限额。
 	prerequisites = {
 		"tech_artifact_phase_disturbance_warning"
 	}
@@ -89,6 +87,9 @@ building_artifact_phase_warning_array = {
 				is_species_class = "ARTIFACT_USER"
 			}
 		}
+	}
+	# 与原版升级建筑一致，显式允许升级目标；can_build=no继续禁止独立新建。
+	allow = {
 	}
 	resources = {
 		category = planet_buildings

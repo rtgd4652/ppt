@@ -2,7 +2,7 @@
   "date": "2026-10-17",
   "package": "R2c",
   "name": "长基线感知、相位预警与轨道协同",
-  "status": "source_implemented_static_checked_runtime_pending",
+  "status": "representative_effect_cycle_build_upgrade_and_one_critical_reload_passed",
   "scope": {
     "new_public_technologies": 3,
     "new_planet_buildings": 2,
@@ -11,7 +11,11 @@
     "new_events": 0,
     "new_states": 0,
     "new_localisation_keys": 12,
-    "existing_mod_files_changed": 0
+    "existing_mod_files_changed": 0,
+    "runtime_repair_changed_package_files": [
+      "mod/common/buildings/artifact_midgame_sensing_buildings.txt"
+    ],
+    "existing_mod_files_changed_basis": "原R2c接入前的旧玩法脚本仍为0；本次只修复R2c新增建筑文件"
   },
   "research": [
     {
@@ -105,12 +109,14 @@
     "family": "BL18",
     "building_set": "research",
     "planet_limit": 1,
-    "empire_limit_per_stage": 1,
     "high_upgrade_only": true,
     "upgrade_to": "building_artifact_phase_warning_array",
     "low_allow": "本国任意殖民地已建／在建高级时拒绝低级新建；不放进potential。",
     "source": "本国控制且活跃，科技与公共种族符合；不新增岗位／项目。",
-    "future": "首版一处公共基准，A09联校另定网络与限额。"
+    "future": "首版一处公共基准，A09联校另定网络与限额。",
+    "low_entry_empire_limit": 1,
+    "high_repeats_empire_limit": false,
+    "upgrade_limit_repair": "高级重复帝国限额使正常升级入口消失；移除高级重复上限后正常升级。唯一由低级入口及高级已建／在建排他维持，高级仍can_build=no。"
   },
   "orbital": {
     "key": "artifact_orbital_observation_link",
@@ -149,17 +155,25 @@
   "validation": {
     "static": "passed",
     "source_contract_tests": 4,
-    "runtime": "pending",
+    "runtime": "passed_representative_scope",
     "balance": "pending",
-    "game_operations_this_package": 0,
-    "next_runtime": "一次正常冷启动及恢复2275.09.20；研究受控提供，正常建阵列和同星接口，一次来源停用恢复，正常升级且只在进行态载回关键档一次。缺资源rr，不制造战争或隐形舰，不重跑历史。",
     "unverified": [
-      "实际传感视野",
+      "真实舰队视野变化",
       "真实隐形舰发现",
-      "原生唯一限额与升级替换",
-      "实际读档恢复",
-      "自然研究与平衡"
-    ]
+      "跨殖民地并行唯一限额",
+      "损坏、占领等其他来源场景的引擎表现",
+      "自然研究与数值平衡"
+    ],
+    "game_operated_this_runtime": true,
+    "cold_starts": 3,
+    "repair_recovery_loads": 2,
+    "critical_reload_count": 1,
+    "source_disable_restore_cycles": 1,
+    "rr_count": 1,
+    "checkpoint": "reports/artifact_civilization_r2c_checkpoint_2026-10-17.json",
+    "report": "reports/artifact_civilization_r2c_runtime_2026-10-17.md",
+    "final_save": "2280.01.01.sav",
+    "next_step": "先细化R2d治理与城市的范围、用途、费用、保存状态和最小验收；本轮不启动R2d或其他路线"
   },
   "art": "复用两个既有科技DDS、既有观测站DDS及原版星港sprite／DDS，不生成或安装图标候选。",
   "current_counts": {

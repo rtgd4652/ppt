@@ -1,0 +1,31 @@
+{
+  "items": [
+    {
+      "overwritten": false,
+      "archive": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2c_archive_2026-10-17\\2253.09.14.sav",
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2253.09.14.sav",
+      "bytes": 1934460,
+      "provenance": "reports/artifact_civilization_emergency_c2_runtime_2026-10-12.md",
+      "reason": "C2自行创建的启动前中间档；2252.06.04准备档与2253.09.15保护期关键档保留",
+      "deleted": false
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2278.04.28.sav",
+      "archive": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2c_archive_2026-10-17\\2278.04.28.sav",
+      "bytes": 2116046,
+      "reason": "本轮升级入口修复前正常保存档；已核对且修复恢复完成，移入并列归档供关键档正常另存",
+      "deleted": false,
+      "overwritten": false
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2278.05.05.sav",
+      "archive": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2c_archive_2026-10-17\\2278.05.05.sav",
+      "bytes": 2137479,
+      "reason": "本轮升级进行态关键档已实际载回一次并确认411日；无损移入并列归档，保留原8.05/480进度供复核，为最终正常另存腾位",
+      "deleted": false,
+      "overwritten": false
+    }
+  ],
+  "date": "2026-10-17",
+  "purpose": "存档上限下无损保留R2c修复前／关键档及历史C2中间档，供正常关键／最终另存"
+}

@@ -171,9 +171,10 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_representative_runtime_passed_controlled_research",
       "capability": "建立一处公共长基线阵列，本国有效控制时传感+1；为轨道协同提供来源。",
-      "implementation_key": "tech_artifact_long_baseline_measurement"
+      "implementation_key": "tech_artifact_long_baseline_measurement",
+      "runtime_report": "reports/artifact_civilization_r2c_runtime_2026-10-17.md"
     },
     {
       "id": "A07",
@@ -185,9 +186,10 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_representative_runtime_passed_controlled_research",
       "capability": "由A06接续并升级阵列，保留传感+1、增加航道探知+2，同星接口可获隐形探测+1；专门危机预警仍待后续包。",
-      "implementation_key": "tech_artifact_phase_disturbance_warning"
+      "implementation_key": "tech_artifact_phase_disturbance_warning",
+      "runtime_report": "reports/artifact_civilization_r2c_runtime_2026-10-17.md"
     },
     {
       "id": "A08",
@@ -896,9 +898,10 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_representative_runtime_passed_controlled_research",
       "capability": "解锁正常星港建筑槽内轨道观测接口，只读同星本国活跃阵列，不计入行星46阶段。",
-      "implementation_key": "tech_artifact_orbital_coordination"
+      "implementation_key": "tech_artifact_orbital_coordination",
+      "runtime_report": "reports/artifact_civilization_r2c_runtime_2026-10-17.md"
     },
     {
       "id": "E07",
@@ -1528,7 +1531,7 @@
           "name": "长基线传感阵列",
           "technology": "A06",
           "existing_key": null,
-          "status": "source_implemented_static_checked_runtime_pending",
+          "status": "implemented_representative_build_upgrade_runtime_passed",
           "implementation_key": "building_artifact_long_baseline_array"
         },
         {
@@ -1536,7 +1539,7 @@
           "name": "相位预警阵列",
           "technology": "A07",
           "existing_key": null,
-          "status": "source_implemented_static_checked_runtime_pending",
+          "status": "implemented_representative_build_upgrade_runtime_passed",
           "implementation_key": "building_artifact_phase_warning_array"
         }
       ]
@@ -1801,8 +1804,8 @@
     },
     "R2c": {
       "date": "2026-10-17",
-      "status": "source_implemented_static_checked_runtime_pending",
-      "runtime_status": "pending",
+      "status": "representative_effect_cycle_build_upgrade_and_one_critical_reload_passed",
+      "runtime_status": "passed_representative_scope",
       "balance_status": "pending",
       "technology_keys": {
         "A06": "tech_artifact_long_baseline_measurement",
@@ -1814,7 +1817,13 @@
       "new_jobs": 0,
       "spec": "docs/design/artifact_civilization_r2c_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r2c_implementation_2026-10-17.md",
-      "risk_limits": "原生可见舰队、航道与隐形目标；专门的危机风险／准备窗口仍未实现，留给后续对应包。"
+      "risk_limits": "原生可见舰队、航道与隐形目标；专门的危机风险／准备窗口仍未实现，留给后续对应包。",
+      "runtime_report": "reports/artifact_civilization_r2c_runtime_2026-10-17.md",
+      "checkpoint": "reports/artifact_civilization_r2c_checkpoint_2026-10-17.json",
+      "critical_reload_count": 1,
+      "final_save": "2280.01.01.sav",
+      "rr_count": 1,
+      "next_step": "先细化R2d治理与城市的范围、用途、费用、保存状态和最小验收；本轮不启动R2d或其他路线"
     }
   },
   "current_counts": {
@@ -1829,7 +1838,7 @@
       "key": "artifact_orbital_observation_link",
       "name": "轨道观测接口",
       "technology": "E06",
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_representative_build_support_runtime_passed",
       "count_scope": "starbase_building_not_planet_stage"
     }
   ]
