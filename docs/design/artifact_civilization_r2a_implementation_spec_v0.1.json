@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "source_implemented_static_checked_runtime_pending",
+  "status": "source_implemented_representative_runtime_and_one_upgrade_reload_passed",
   "package": "R2a",
   "name": "矿脉开发与循环回收",
   "scope": "2项公共科技、2座新设施、2类岗位；原矿站一项容量迁移与显式直建字段。",
@@ -118,7 +118,7 @@
     "field": "job_artifact_phase_miner_add",
     "before": 8,
     "after": 800,
-    "material_effect": "现4.5容量扩大100倍，允许更多人口就业并增加总产出及岗位维护；不是只改显示，需运行与平衡验收。",
+    "material_effect": "现4.5容量扩大100倍；运行已确认800容量、652实际就业，允许更多人口就业并增加总产出及岗位维护。不是显示修正，平衡仍待验。",
     "preserved": [
       "旧建筑键",
       "原B04科技及科技数值",
@@ -144,7 +144,7 @@
         "B12"
       ],
       "scope": "矿脉与循环回收",
-      "status": "source_implemented_static_checked_runtime_pending"
+      "status": "source_implemented_representative_runtime_and_one_upgrade_reload_passed"
     },
     {
       "id": "R2b",
@@ -182,9 +182,17 @@
   "validation": {
     "source_contract_tests": 3,
     "static": "passed",
-    "runtime": "pending",
+    "runtime": "representative_path_upgrade_and_one_critical_reload_passed",
     "balance": "pending",
-    "next_runtime": "一条正常研究—建造路径、一次矿站正常升级；唯一关键读档选在该升级队列已有进度时。核对新设施就业、回收来源与升级容量替换，其他历史不重测。缺资源直接rr并记录来源。"
+    "critical_game_load_count": 1,
+    "final_save": "2271.09.09.sav",
+    "runtime_report": "../../reports/artifact_civilization_r2a_runtime_2026-10-17.md",
+    "runtime_limits": [
+      "B10候选注入后正常研究；旧前置及B12受控解锁，B12正常研究未验",
+      "有普通采矿区时岗位成立；失去全部来源动态停岗及恢复未验",
+      "本轮rr一次；自然经济和8→800容量扩大后的平衡未验"
+    ],
+    "next_step": "细化R2b A05／B09及旧反应堆衔接，不重测R2a／R1／C2历史。"
   },
   "art": "直接引用已有DDS名称和原版岗位图标，无新绘图、GFX别名或候选安装。",
   "current_counts": {

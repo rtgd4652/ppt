@@ -1,0 +1,299 @@
+{
+  "date": "2026-10-17",
+  "package": "R2a",
+  "source_commit": "a6e937d",
+  "runtime_status": "representative_path_upgrade_and_one_critical_reload_passed",
+  "balance_status": "pending",
+  "game_version": "4.5.2",
+  "checksum": "a4d5",
+  "critical_game_load_count": 1,
+  "resume_load_count": 1,
+  "target": {
+    "colony": 9,
+    "carrier_planet": 290,
+    "owner": 0,
+    "name": "泽德拉I"
+  },
+  "controlled_setup": {
+    "granted_existing_tech": [
+      "tech_artifact_resonance_material_screening",
+      "tech_artifact_colony_public_services",
+      "tech_artifact_phase_extraction"
+    ],
+    "added_candidate": "tech_artifact_precision_vein_mapping",
+    "normal_research": "B10；2259.07.28由研究界面选择，2268.04.03已完成并可正常建造；不是自然抽取证据。",
+    "granted_new_tech": "B12仅受控解锁验建筑，正常研究完成未验。",
+    "resources": "2259.07.28起点沿用旧测试补给与科研储备；2268.04.03本轮执行rr一次并观察资源补满回显。",
+    "save_edit": false
+  },
+  "ui_before_upgrade": {
+    "date": "2270.03.04",
+    "survey_workforce": 200,
+    "recycling_workforce": 200,
+    "survey_tooltip_production": {
+      "minerals": 8.92,
+      "engineering_research": 1.48,
+      "trade": 0.66
+    },
+    "recycling_tooltip_production": {
+      "minerals": 5.94,
+      "alloys": 0.99,
+      "trade": 0.66
+    },
+    "note": "实际提示含当前世界、物种、岗位及生活维护修正，不作为每100基准或平衡结果。"
+  },
+  "critical": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2270.07.01.sav",
+    "bytes": 2065958,
+    "date": "2270.07.01",
+    "known_relevant_tech": [
+      "tech_artifact_tarot_calculation",
+      "tech_artifact_black_gate_observation",
+      "tech_artifact_central_court_protocols",
+      "tech_artifact_relic_fabrication",
+      "tech_artifact_tarot_economy",
+      "tech_artifact_seven_day_logistics",
+      "tech_artifact_baseline_observation_calibration",
+      "tech_artifact_sample_containment",
+      "tech_artifact_resonance_material_screening",
+      "tech_artifact_colony_public_services",
+      "tech_artifact_phase_extraction",
+      "tech_artifact_precision_vein_mapping",
+      "tech_artifact_byproduct_recycling"
+    ],
+    "target_construction": [
+      {
+        "item": "2868903942",
+        "queue": "42",
+        "paying_country": "0",
+        "progress": "134.55",
+        "progress_needed": "600",
+        "resources": [
+          {
+            "minerals": "2040"
+          },
+          {
+            "alloys": "425"
+          }
+        ],
+        "buildable_planet_upgrade_building": [
+          {
+            "building": "building_artifact_phase_mine"
+          },
+          {
+            "planet": "9"
+          },
+          {
+            "zone": "33"
+          },
+          {
+            "upgrade_building": "33554872"
+          }
+        ]
+      }
+    ],
+    "buildings": [
+      {
+        "id": "33554872",
+        "type": "building_artifact_vein_mapping_station",
+        "position": "4"
+      },
+      {
+        "id": "466",
+        "type": "building_artifact_byproduct_recycling_plant",
+        "position": "5"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "16778650",
+        "type": "artifact_recycling_technician",
+        "automated_workforce": "0",
+        "workforce": "200",
+        "max_workforce": "200",
+        "bonus_workforce": "0",
+        "workforce_limit": "200",
+        "automated_workforce_limit": "199",
+        "pop_groups": [
+          {
+            "": [
+              {
+                "pop_group": "34"
+              },
+              {
+                "amount": "200"
+              }
+            ]
+          }
+        ],
+        "planet": "9",
+        "pop_group": "4294967295"
+      },
+      {
+        "id": "16779140",
+        "type": "artifact_vein_surveyor",
+        "automated_workforce": "0",
+        "workforce": "200",
+        "max_workforce": "200",
+        "bonus_workforce": "0",
+        "workforce_limit": "200",
+        "automated_workforce_limit": "199",
+        "pop_groups": [
+          {
+            "": [
+              {
+                "pop_group": "34"
+              },
+              {
+                "amount": "200"
+              }
+            ]
+          }
+        ],
+        "planet": "9",
+        "pop_group": "4294967295"
+      }
+    ]
+  },
+  "reload_observation": {
+    "date": "2270.07.01",
+    "remaining_days_before": 405,
+    "remaining_days_after": 405,
+    "same_site_and_queue_visible": true,
+    "second_upgrade_start": false
+  },
+  "final": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2271.09.09.sav",
+    "bytes": 2039738,
+    "date": "2271.09.09",
+    "known_relevant_tech": [
+      "tech_artifact_tarot_calculation",
+      "tech_artifact_black_gate_observation",
+      "tech_artifact_central_court_protocols",
+      "tech_artifact_relic_fabrication",
+      "tech_artifact_tarot_economy",
+      "tech_artifact_seven_day_logistics",
+      "tech_artifact_baseline_observation_calibration",
+      "tech_artifact_sample_containment",
+      "tech_artifact_resonance_material_screening",
+      "tech_artifact_colony_public_services",
+      "tech_artifact_phase_extraction",
+      "tech_artifact_precision_vein_mapping",
+      "tech_artifact_byproduct_recycling"
+    ],
+    "target_construction": [],
+    "buildings": [
+      {
+        "id": "16777512",
+        "type": "building_artifact_phase_mine",
+        "position": "4"
+      },
+      {
+        "id": "466",
+        "type": "building_artifact_byproduct_recycling_plant",
+        "position": "5"
+      }
+    ],
+    "jobs": [
+      {
+        "id": "33555563",
+        "type": "artifact_phase_miner",
+        "automated_workforce": "0",
+        "workforce": "652",
+        "max_workforce": "800",
+        "bonus_workforce": "-5.175",
+        "workforce_limit": "800",
+        "automated_workforce_limit": "799",
+        "pop_groups": [
+          {
+            "": [
+              {
+                "pop_group": "34"
+              },
+              {
+                "amount": "583"
+              }
+            ]
+          },
+          {
+            "": [
+              {
+                "pop_group": "285212752"
+              },
+              {
+                "amount": "69"
+              }
+            ]
+          }
+        ],
+        "planet": "9",
+        "pop_group": "4294967295"
+      },
+      {
+        "id": "16778650",
+        "type": "artifact_recycling_technician",
+        "automated_workforce": "0",
+        "workforce": "200",
+        "max_workforce": "200",
+        "bonus_workforce": "0",
+        "workforce_limit": "200",
+        "automated_workforce_limit": "199",
+        "pop_groups": [
+          {
+            "": [
+              {
+                "pop_group": "34"
+              },
+              {
+                "amount": "200"
+              }
+            ]
+          }
+        ],
+        "planet": "9",
+        "pop_group": "4294967295"
+      }
+    ]
+  },
+  "final_ui": {
+    "date": "2271.09.09",
+    "phase_miner_tooltip_production": {
+      "minerals": 173.53,
+      "engineering_research": 14.46,
+      "trade": 2.15
+    },
+    "paused": true,
+    "console": "closed",
+    "screen": "保存后菜单"
+  },
+  "unverified": [
+    "B12正常研究完成／自然抽取",
+    "失去全部合格来源后的引擎动态停岗及来源恢复",
+    "其他工业来源／特殊世界逐项覆盖",
+    "自然经济平衡及高级站8→800容量扩大后的数值平衡",
+    "其余旧楼容量迁移"
+  ],
+  "historical_tests_repeated": false,
+  "source_changes_this_runtime": false,
+  "save_archive_manifest": "artifact_civilization_r2a_save_archive_2026-10-17.json",
+  "screenshots_local_ignored": [
+    "r2a_24_prereq_receipt",
+    "r2a_29_progress",
+    "r2a_34_progress",
+    "r2a_35_progress",
+    "r2a_38_progress",
+    "r2a_40_rr_receipt",
+    "r2a_42_unlock_receipt",
+    "r2a_48_station_queue",
+    "r2a_50_two_queue",
+    "r2a_54_survey_yield",
+    "r2a_55_recycling_yield",
+    "r2a_57_upgrade_progress",
+    "r2a_62_critical_receipt",
+    "r2a_63_loaded",
+    "r2a_64_loaded_queue",
+    "r2a_66_final_jobs",
+    "r2a_67_miner_yield",
+    "r2a_69_final_saved"
+  ]
+}
