@@ -8,6 +8,8 @@ param(
     # 非零时只发送滚轮，沿用同一窗口、前台和新截图守卫；负值向下。
     [ValidateRange(-1200,1200)][int]$Scroll = 0,
     [ValidateRange(1,100)][int]$ScrollSteps = 1,
+    # 只在既有守卫通过后移动指针以观察提示，不点击或改变岗位偏好。
+    [switch]$HoverOnly,
     # 仅用于已观察的暂停按钮：先读实际图标，已暂停时不点击，避免原版事件插入自动暂停后反而恢复运行。
     [switch]$EnsurePaused,
     # 图像回合可能超过两分钟；显式放宽时仅允许暂停的游戏，暂停按钮另按实时图标判断。
@@ -135,6 +137,12 @@ try {
     Assert-CurrentGame
     if ($MaxReferenceAgeSeconds -gt 120 -and -not $EnsurePaused -and (Get-GamePauseState) -ne 'paused') {
         throw 'Game resumed before pointer input; no new mouse-down sent.'
+    }
+    if ($HoverOnly) {
+        Start-Sleep -Milliseconds 800
+        Assert-CurrentGame
+        [pscustomobject]@{Pid=$targetGame.Id;Window=$targetWindow.ToInt64();X=$clickX;Y=$clickY;HoverOnly=$true;Clicked=$false} | ConvertTo-Json -Compress
+        exit
     }
     $buttonDown = $false
     try {

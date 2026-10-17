@@ -1,0 +1,445 @@
+{
+  "date": "2026-10-17",
+  "runtime_status": "representative_path_and_one_critical_reload_passed",
+  "game_version": "4.5.2",
+  "final_checksum": "a3b6",
+  "critical_game_load_count": 1,
+  "resume_load_count": 1,
+  "repair_cold_restart_load_count": 2,
+  "critical": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2258.10.10.sav",
+    "bytes": 2000982,
+    "date": "2258.10.10",
+    "a04_researched": true,
+    "planet": [
+      {
+        "owner": "0"
+      },
+      {
+        "controller": "0"
+      },
+      {
+        "timed_modifier": [
+          {
+            "items": [
+              {
+                "": [
+                  {
+                    "modifier": "criminal_underworld"
+                  },
+                  {
+                    "days": "-1"
+                  }
+                ]
+              },
+              {
+                "": [
+                  {
+                    "modifier": "crime_boss_arrested"
+                  },
+                  {
+                    "days": "1275"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flags": [
+          {
+            "fallen_empire_world": "62808000"
+          },
+          {
+            "planet_crime_flag": [
+              {
+                "flag_date": "63260016"
+              },
+              {
+                "flag_days": "1275"
+              }
+            ]
+          },
+          {
+            "arf_r1_managed": "63315336"
+          },
+          {
+            "arf_r1_active": "63315336"
+          },
+          {
+            "arf_r1_paid": "63315336"
+          },
+          {
+            "arf_r1_mode_sample_analysis": "63315336"
+          }
+        ]
+      },
+      {
+        "variables": [
+          {
+            "arf_r1_last_progress": "0"
+          },
+          {
+            "arf_r1_progress": "1"
+          },
+          {
+            "arf_r1_required_work": "3"
+          }
+        ]
+      }
+    ],
+    "colony": [],
+    "global_targets": [
+      {
+        "saved_event_target": [
+          {
+            "type": "country"
+          },
+          {
+            "id": "0"
+          },
+          {
+            "opener_id": "4294967295"
+          },
+          {
+            "name": "arf_r1_owner290"
+          }
+        ]
+      }
+    ],
+    "buildings": [
+      [
+        "50331941",
+        [
+          {
+            "type": "building_artifact_baseline_observation_station"
+          },
+          {
+            "position": "2"
+          }
+        ]
+      ],
+      [
+        "16777369",
+        [
+          {
+            "type": "building_artifact_sample_repository"
+          },
+          {
+            "position": "3"
+          }
+        ]
+      ]
+    ],
+    "jobs": [
+      [
+        "16778533",
+        [
+          {
+            "type": "artifact_junior_observer"
+          },
+          {
+            "automated_workforce": "0"
+          },
+          {
+            "workforce": "3"
+          },
+          {
+            "max_workforce": "3"
+          },
+          {
+            "bonus_workforce": "0"
+          },
+          {
+            "workforce_limit": "3"
+          },
+          {
+            "automated_workforce_limit": "2"
+          },
+          {
+            "pop_groups": [
+              {
+                "": [
+                  {
+                    "pop_group": "34"
+                  },
+                  {
+                    "amount": "3"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "planet": "9"
+          },
+          {
+            "pop_group": "4294967295"
+          }
+        ]
+      ]
+    ]
+  },
+  "final": {
+    "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2259.07.28.sav",
+    "bytes": 1974641,
+    "date": "2259.07.28",
+    "a04_researched": true,
+    "planet": [
+      {
+        "owner": "0"
+      },
+      {
+        "controller": "0"
+      },
+      {
+        "timed_modifier": [
+          {
+            "items": [
+              {
+                "": [
+                  {
+                    "modifier": "criminal_underworld"
+                  },
+                  {
+                    "days": "-1"
+                  }
+                ]
+              },
+              {
+                "": [
+                  {
+                    "modifier": "crime_boss_arrested"
+                  },
+                  {
+                    "days": "987"
+                  }
+                ]
+              },
+              {
+                "": [
+                  {
+                    "modifier": "artifact_foundation_sample_analysis"
+                  },
+                  {
+                    "days": "483"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "flags": [
+          {
+            "fallen_empire_world": "62808000"
+          },
+          {
+            "planet_crime_flag": [
+              {
+                "flag_date": "63260016"
+              },
+              {
+                "flag_days": "987"
+              }
+            ]
+          },
+          {
+            "arf_r1_managed": "63315336"
+          },
+          {
+            "arf_r1_completed": "63317040"
+          }
+        ]
+      },
+      {
+        "variables": [
+          {
+            "arf_r1_last_progress": "0"
+          },
+          {
+            "arf_r1_progress": "3"
+          },
+          {
+            "arf_r1_required_work": "3"
+          }
+        ]
+      }
+    ],
+    "colony": [],
+    "global_targets": [
+      {
+        "saved_event_target": [
+          {
+            "type": "country"
+          },
+          {
+            "id": "0"
+          },
+          {
+            "opener_id": "4294967295"
+          },
+          {
+            "name": "arf_r1_owner290"
+          }
+        ]
+      }
+    ],
+    "buildings": [
+      [
+        "33554529",
+        [
+          {
+            "type": "building_artifact_black_gate_observatory"
+          },
+          {
+            "position": "2"
+          }
+        ]
+      ],
+      [
+        "16777369",
+        [
+          {
+            "type": "building_artifact_sample_repository"
+          },
+          {
+            "position": "3"
+          }
+        ]
+      ]
+    ],
+    "jobs": [
+      [
+        "16778533",
+        [
+          {
+            "type": "artifact_junior_observer"
+          },
+          {
+            "automated_workforce": "0"
+          },
+          {
+            "workforce": "1"
+          },
+          {
+            "max_workforce": "1"
+          },
+          {
+            "bonus_workforce": "0"
+          },
+          {
+            "workforce_limit": "1"
+          },
+          {
+            "automated_workforce_limit": "1"
+          },
+          {
+            "pop_groups": [
+              {
+                "": [
+                  {
+                    "pop_group": "34"
+                  },
+                  {
+                    "amount": "1"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "planet": "9"
+          },
+          {
+            "pop_group": "4294967295"
+          }
+        ]
+      ],
+      [
+        "33556193",
+        [
+          {
+            "type": "artifact_tarot_analyst"
+          },
+          {
+            "automated_workforce": "0"
+          },
+          {
+            "workforce": "6"
+          },
+          {
+            "max_workforce": "6"
+          },
+          {
+            "bonus_workforce": "0"
+          },
+          {
+            "workforce_limit": "6"
+          },
+          {
+            "automated_workforce_limit": "5"
+          },
+          {
+            "pop_groups": [
+              {
+                "": [
+                  {
+                    "pop_group": "34"
+                  },
+                  {
+                    "amount": "6"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "planet": "9"
+          },
+          {
+            "pop_group": "4294967295"
+          }
+        ]
+      ]
+    ]
+  },
+  "checks": {
+    "a03_normal_research_reused": true,
+    "a04_normal_research": true,
+    "normal_building_upgrade_after_fix": true,
+    "junior_observer_employment_and_output": true,
+    "sample_paid_normal_entry": true,
+    "first_effective_month_before_reload": 1,
+    "progress_after_actual_reload": 1,
+    "completed_progress": 3,
+    "required_work": 3,
+    "sample_benefit_entries": 1,
+    "sample_benefit_days_remaining": 483,
+    "completed_flag": true,
+    "active_flag": false,
+    "paid_flag_after_completion": false,
+    "original_owner_target": "arf_r1_owner290",
+    "target_country": "0",
+    "tarot_analyst_workforce": 6,
+    "junior_observer_workforce_after_upgrade": 1
+  },
+  "resource_provenance": {
+    "market_alloys_sold": 12500,
+    "market_exotic_gases_sold": 20000,
+    "market_energy_bought": 35000,
+    "rr_observed_after_completion": true,
+    "rr_execution_attribution": "资源已补满的回显先于本轮待提交rr；因此清除多余输入，未重复Submit。",
+    "future_resource_shortage_policy": "2026-10-17用户授权测试缺资源直接rr"
+  },
+  "balance_status": "pending",
+  "unverified": [
+    "其他三种项目模式的引擎流程",
+    "其他新建筑族的引擎升级",
+    "过户、轰炸等异常场景的实际回调",
+    "科技自然抽取概率与全局平衡"
+  ],
+  "evidence_boundary": "原始ZIP片段为只读核对；实际项目读档由r1_17_criticalloaded及r1_17_loadedprogress画面证明。当前为受控测试分支，不替代十人合并基线。"
+}

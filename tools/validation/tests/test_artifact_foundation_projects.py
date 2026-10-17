@@ -38,8 +38,12 @@ class World:
         self.add_planet('P')
 
     def add_planet(self,key,owner='A'):
-        self.planets[key]={'kind':'colony','id':key,'owner':owner,'controller':owner,'colony':True,'flags':set(),'vars':{},'modifiers':{},'bombarded':False,'buildings':{'building_artifact_sample_repository','building_artifact_standard_parts_workshop'}}
+        self.planets[key]={'kind':'planet','id':key,'owner':owner,'controller':owner,'colony':True,'flags':set(),'vars':{},'modifiers':{},'bombarded':False,'buildings':{'building_artifact_sample_repository','building_artifact_standard_parts_workshop'}}
         return self.planets[key]
+
+    def colony_scope(self,planet):
+        # 原生枚举的殖民地与行星载体具有不同索引，状态集合由载体共享。
+        return {**planet,'kind':'colony','id':'colony:'+planet['id'],'carrier_id':planet['id']}
 
     def ref(self,obj):
         return (obj['kind'],obj['id'])
@@ -82,9 +86,9 @@ class World:
         if k=='owner':
             owner=self.resolve('owner',obj,ctx,prev)
             return owner is not None and self.condition(v,owner,ctx,obj)
-        if k=='any_owned_colony':return any(self.condition(v,p,ctx,obj) for p in self.planets.values() if p['owner']==obj['id'])
+        if k=='any_owned_colony':return any(self.condition(v,self.colony_scope(p),ctx,obj) for p in self.planets.values() if p['owner']==obj['id'])
         if k=='exists':return self.resolve(v,obj,ctx,prev) is not None
-        if k=='carrier_is_type':return v=='planet' and obj['kind']=='colony'
+        if k=='carrier_is_type':return v=='planet' and obj['kind'] in ('planet','colony')
         if k=='is_colony':return obj.get('colony',False)==(v=='yes')
         if k=='is_ai':return obj['ai']==(v=='yes')
         if k=='is_species_class':return obj['species']==v
@@ -117,8 +121,10 @@ class World:
             elif k=='owner':self.execute(v,self.resolve('owner',obj,ctx,prev),ctx,obj)
             elif k=='every_owned_colony':
                 for p in list(self.planets.values()):
-                    if p['owner']==obj['id'] and self.condition(child(v,'limit'),p,ctx,obj):
-                        self.execute([x for x in v if x.key!='limit'],p,ctx,obj)
+                    colony=self.colony_scope(p)
+                    if p['owner']==obj['id'] and self.condition(child(v,'limit'),colony,ctx,obj):
+                        self.execute([x for x in v if x.key!='limit'],colony,ctx,obj)
+            elif k=='carrier':self.execute(v,self.planets[obj['carrier_id']],ctx,obj)
             elif k=='save_event_target_as':ctx[v]=self.ref(obj)
             elif k=='save_global_event_target_as':self.targets[self.target_key(v,obj,prev)]=self.ref(obj)
             elif k=='clear_global_event_target':self.targets.pop(self.target_key(v,obj,prev),None)
@@ -167,6 +173,15 @@ class World:
             p['modifiers']={key:left-days for key,left in p['modifiers'].items() if left>days}
 
 class FoundationProjectTests(unittest.TestCase):
+    def test_monthly_colony_wrapper_uses_planet_target_index(self):
+        w=World();self.assertTrue(w.choose('sample_analysis'))
+        self.assertNotEqual(w.colony_scope(w.planets['P'])['id'],w.planets['P']['id'])
+        self.assertIn('arf_r1_owner@P',w.targets)
+        w.monthly()
+        self.assertEqual(w.planets['P']['vars']['arf_r1_progress'],1)
+        self.assertIn('arf_r1_active',w.planets['P']['flags'])
+        self.assertNotIn('arf_r1_failed',w.planets['P']['flags'])
+
     def test_four_paid_modes_complete_once_and_block_refresh(self):
         for mode,spec in MODE_SPECS.items():
             with self.subTest(mode=mode):

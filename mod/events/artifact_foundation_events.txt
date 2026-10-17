@@ -14,7 +14,10 @@ country_event = {
 			limit = {
 				has_carrier_flag = arf_r1_managed
 			}
-			artifact_foundation_monthly_planet = yes
+			# 月度枚举返回殖民地，界面事件使用行星载体；统一载体以保持动态目标与变量索引。
+			carrier = {
+				artifact_foundation_monthly_planet = yes
+			}
 		}
 	}
 }

@@ -22,6 +22,9 @@ building_artifact_baseline_observation_station = {
 				is_species_class = "ARTIFACT_USER"
 			}
 		}
+	}
+	# 只限制新建资格；升级队列不能使正在升级的旧设施失去存在资格。
+	allow = {
 		NOR = {
 			has_building = "building_artifact_black_gate_observatory"
 			has_building_construction = "building_artifact_black_gate_observatory"
@@ -64,6 +67,9 @@ building_artifact_standard_parts_workshop = {
 				is_species_class = "ARTIFACT_USER"
 			}
 		}
+	}
+	# 只限制新建资格；升级队列不能使正在升级的旧设施失去存在资格。
+	allow = {
 		NOR = {
 			has_building = "building_artifact_relic_workshop"
 			has_building_construction = "building_artifact_relic_workshop"
@@ -141,6 +147,9 @@ building_artifact_basic_civic_factory = {
 				is_species_class = "ARTIFACT_USER"
 			}
 		}
+	}
+	# 只限制新建资格；升级队列不能使正在升级的旧设施失去存在资格。
+	allow = {
 		NOR = {
 			has_building = "building_artifact_civic_goods_manufactory"
 			has_building_construction = "building_artifact_civic_goods_manufactory"
@@ -220,6 +229,9 @@ building_artifact_memory_archive_room = {
 				is_species_class = "ARTIFACT_USER"
 			}
 		}
+	}
+	# 只限制新建资格；升级队列不能使正在升级的旧设施失去存在资格。
+	allow = {
 		NOR = {
 			has_building = "building_artifact_memory_palace"
 			has_building_construction = "building_artifact_memory_palace"

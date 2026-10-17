@@ -1,6 +1,6 @@
 {
-  "date": "2026-10-14",
-  "status": "r1_source_implemented_static_checked_runtime_pending",
+  "date": "2026-10-17",
+  "status": "r1_source_implemented_representative_runtime_passed_balance_pending",
   "scope": "7项公共研究、6座低级建筑、5类低级岗位；两类项目入口（样本分析、工坊工程），工坊三种方案。",
   "research": [
     {
@@ -13,7 +13,7 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "source_implemented_normal_research_runtime_passed",
       "capability": "建设基准观测站，承担仪器标定与初级研究；后续升级到原黑门观测站，不另建标定所。",
       "research_cost": 300,
       "draw_weight": 150,
@@ -31,7 +31,7 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "source_implemented_normal_research_runtime_passed",
       "capability": "开放样本保管库与有限批次封存项目；样本记录不新增全局资源。",
       "research_cost": 400,
       "draw_weight": 130,
@@ -150,7 +150,7 @@
         "artifact_junior_observer": 2
       },
       "upgrade_to": "building_artifact_black_gate_observatory",
-      "status": "source_implemented_static_checked_runtime_pending"
+      "status": "source_implemented_representative_runtime_passed"
     },
     {
       "family": "BL17",
@@ -170,7 +170,7 @@
         "artifact_junior_observer": 1
       },
       "upgrade_to": null,
-      "status": "source_implemented_static_checked_runtime_pending"
+      "status": "source_implemented_representative_runtime_passed"
     },
     {
       "family": "BL03",
@@ -260,7 +260,7 @@
         "consumer_goods": 2,
         "energy": 1
       },
-      "status": "source_implemented_static_checked_runtime_pending"
+      "status": "employment_and_output_runtime_passed_balance_pending"
     },
     {
       "key": "artifact_standard_parts_worker",
@@ -335,7 +335,7 @@
       },
       "benefit_days": 720,
       "role": "科研殖民地选择；物理研究结果，无新样本货币。",
-      "status": "source_implemented_static_checked_runtime_pending"
+      "status": "normal_entry_monthly_completion_and_one_reload_passed"
     },
     {
       "id": "basic_construction",
@@ -434,8 +434,8 @@
   "implementation": {
     "R1a": {
       "date": "2026-10-14",
-      "status": "source_implemented_static_checked_runtime_pending",
-      "runtime_status": "pending",
+      "status": "source_implemented_static_checked_representative_runtime_passed",
+      "runtime_status": "representative_observation_upgrade_passed_other_facilities_unverified",
       "balance_status": "pending",
       "technology_keys": {
         "A03": "tech_artifact_baseline_observation_calibration",
@@ -455,8 +455,8 @@
     },
     "R1b": {
       "date": "2026-10-14",
-      "status": "source_implemented_static_checked_runtime_pending",
-      "runtime_status": "pending",
+      "status": "source_implemented_static_checked_representative_runtime_passed",
+      "runtime_status": "representative_sample_project_and_reload_passed_other_modes_unverified",
       "balance_status": "pending",
       "technology_keys": {
         "A04": "tech_artifact_sample_containment",
@@ -471,15 +471,19 @@
       "report": "reports/artifact_civilization_r1b_implementation_2026-10-14.md"
     },
     "R1_runtime": {
-      "date": "2026-10-14",
-      "status": "partial",
-      "overall_runtime_status": "pending",
+      "date": "2026-10-17",
+      "status": "representative_path_passed",
+      "overall_runtime_status": "representative_path_and_one_critical_reload_passed",
       "a03_researched": true,
-      "a04_research_progress": 80.92465,
-      "project_started": false,
-      "critical_game_load_count": 0,
-      "checkpoint": "2255.06.09.sav",
-      "report": "reports/artifact_civilization_r1_runtime_2026-10-14.md"
+      "a04_researched": true,
+      "project_started": true,
+      "project_completed": true,
+      "critical_game_load_count": 1,
+      "critical_checkpoint": "2258.10.10.sav",
+      "checkpoint": "2259.07.28.sav",
+      "balance_status": "pending",
+      "other_modes": "unverified",
+      "report": "reports/artifact_civilization_r1_runtime_2026-10-17.md"
     }
   }
 }
