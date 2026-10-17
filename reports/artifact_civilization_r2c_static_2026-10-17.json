@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-17",
+  "package": "R2c",
+  "source_base": "948a7bd",
+  "static": {
+    "status": "pass",
+    "errors": [],
+    "warnings": [],
+    "counts": {
+      "script_files": 136,
+      "events": 249,
+      "localization_keys": 1562,
+      "registered_states": 791,
+      "referenced_states": 734
+    },
+    "limitations": [
+      "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+      "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+      "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+    ]
+  },
+  "game_dir": "F:/steam/steamapps/common/Stellaris",
+  "source_contract_tests": 4,
+  "spec_reconciliation": {
+    "status": "passed",
+    "public_technologies": 33,
+    "planet_buildings": 26,
+    "route_technologies": 72,
+    "route_building_families": 27,
+    "route_building_stages": 46,
+    "new_and_changed_local_links": 15,
+    "existing_mod_files_changed": 0
+  },
+  "runtime_status": "pending",
+  "balance_status": "pending",
+  "source_files": [
+    "mod/common/technology/artifact_midgame_sensing_technology.txt",
+    "mod/common/buildings/artifact_midgame_sensing_buildings.txt",
+    "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
+    "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml"
+  ],
+  "verified_engine_references": [
+    "logs/script_documentation/modifiers.log:74,92,117",
+    "logs/script_documentation/triggers.log:776,1204,1293,1297,4383,4416",
+    "common/buildings/05_research_buildings.txt:94",
+    "common/starbase_modules/00_example.txt:269",
+    "common/starbase_buildings/00_starbase_buildings.txt:239"
+  ]
+}

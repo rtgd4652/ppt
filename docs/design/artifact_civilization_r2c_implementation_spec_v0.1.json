@@ -1,0 +1,179 @@
+{
+  "date": "2026-10-17",
+  "package": "R2c",
+  "name": "长基线感知、相位预警与轨道协同",
+  "status": "source_implemented_static_checked_runtime_pending",
+  "scope": {
+    "new_public_technologies": 3,
+    "new_planet_buildings": 2,
+    "new_starbase_buildings": 1,
+    "new_jobs": 0,
+    "new_events": 0,
+    "new_states": 0,
+    "new_localisation_keys": 12,
+    "existing_mod_files_changed": 0
+  },
+  "research": [
+    {
+      "id": "A06",
+      "name": "长基线高维测量",
+      "key": "tech_artifact_long_baseline_measurement",
+      "area": "physics",
+      "tier": 3,
+      "category": "field_manipulation",
+      "cost": 3000,
+      "weight": 95,
+      "prerequisites": [
+        "A05"
+      ]
+    },
+    {
+      "id": "A07",
+      "name": "相位扰动预警",
+      "key": "tech_artifact_phase_disturbance_warning",
+      "area": "physics",
+      "tier": 3,
+      "category": "field_manipulation",
+      "cost": 3600,
+      "weight": 85,
+      "prerequisites": [
+        "A06"
+      ]
+    },
+    {
+      "id": "E06",
+      "name": "轨道协同工程",
+      "key": "tech_artifact_orbital_coordination",
+      "area": "engineering",
+      "tier": 3,
+      "category": "voidcraft",
+      "cost": 3000,
+      "weight": 95,
+      "prerequisites": [
+        "E03",
+        "A06"
+      ]
+    }
+  ],
+  "design_refinement": {
+    "A07": "由草案A05后继改为A06后继，使预警升级依赖实有测量基础。",
+    "risk": "原生可见舰队、航道与隐形目标；专门的危机风险／准备窗口仍未实现，留给后续对应包。",
+    "limits": "航道探知不等于舰队视野；不承诺固定提前天数、全图或未来危机。"
+  },
+  "buildings": [
+    {
+      "stage": 1,
+      "name": "长基线传感阵列",
+      "key": "building_artifact_long_baseline_array",
+      "technology": "A06",
+      "can_build": true,
+      "cost": {
+        "minerals": 1000,
+        "alloys": 150
+      },
+      "days": 360,
+      "upkeep": {
+        "energy": 8,
+        "alloys": 1
+      },
+      "country_modifiers": {
+        "ship_sensor_range_add": 1
+      }
+    },
+    {
+      "stage": 2,
+      "name": "相位预警阵列",
+      "key": "building_artifact_phase_warning_array",
+      "technology": "A07",
+      "can_build": false,
+      "cost": {
+        "minerals": 1800,
+        "alloys": 300
+      },
+      "days": 480,
+      "upkeep": {
+        "energy": 12,
+        "alloys": 2
+      },
+      "country_modifiers": {
+        "ship_sensor_range_add": 1,
+        "ship_hyperlane_range_add": 2
+      }
+    }
+  ],
+  "baseline_family": {
+    "family": "BL18",
+    "building_set": "research",
+    "planet_limit": 1,
+    "empire_limit_per_stage": 1,
+    "high_upgrade_only": true,
+    "upgrade_to": "building_artifact_phase_warning_array",
+    "low_allow": "本国任意殖民地已建／在建高级时拒绝低级新建；不放进potential。",
+    "source": "本国控制且活跃，科技与公共种族符合；不新增岗位／项目。",
+    "future": "首版一处公共基准，A09联校另定网络与限额。"
+  },
+  "orbital": {
+    "key": "artifact_orbital_observation_link",
+    "technology": "E06",
+    "slot": "starbase_building",
+    "cost": {
+      "alloys": 180
+    },
+    "days": 360,
+    "upkeep": {
+      "energy": 4,
+      "alloys": 1
+    },
+    "starbase_limit": 1,
+    "qualification": "至少星港级正常恒星基地，拥有与控制一致；不接轨道环、驿站或舰船殖民地。",
+    "source": "同星系同拥有国，未占领的活跃地表低级或高级阵列；两来源只取一次。",
+    "scope_path": [
+      "starbase",
+      "owner",
+      "prev (starbase)",
+      "solar_system",
+      "any_system_planet_colony"
+    ],
+    "source_owner_comparison": "is_owned_by = prevprevprev（指向原星港拥有国，不使用root或只比较种族）",
+    "station_modifiers": {
+      "ship_sensor_range_add": 1,
+      "ship_hyperlane_range_add": 2
+    },
+    "high_only_station_modifier": {
+      "ship_cloaking_detection_add": 1
+    },
+    "dormant": "没有有效来源时不加成，仍付维护。"
+  },
+  "save_state": "只保存原生科技、建筑、升级队列和控制／停用状态；条件修正重算，无新增标记、变量、事件或日扫。",
+  "legacy": "旧舰载传感器、总包、建筑容量、个人入口、主线预警、C2与R1账本均未改动。",
+  "validation": {
+    "static": "passed",
+    "source_contract_tests": 4,
+    "runtime": "pending",
+    "balance": "pending",
+    "game_operations_this_package": 0,
+    "next_runtime": "一次正常冷启动及恢复2275.09.20；研究受控提供，正常建阵列和同星接口，一次来源停用恢复，正常升级且只在进行态载回关键档一次。缺资源rr，不制造战争或隐形舰，不重跑历史。",
+    "unverified": [
+      "实际传感视野",
+      "真实隐形舰发现",
+      "原生唯一限额与升级替换",
+      "实际读档恢复",
+      "自然研究与平衡"
+    ]
+  },
+  "art": "复用两个既有科技DDS、既有观测站DDS及原版星港sprite／DDS，不生成或安装图标候选。",
+  "current_counts": {
+    "public_technologies": 33,
+    "planet_building_definitions": 26,
+    "starbase_building_definitions": 1,
+    "target_public_technologies": 72,
+    "target_planet_families": 27,
+    "target_planet_stages": 46
+  },
+  "files": [
+    "mod/common/technology/artifact_midgame_sensing_technology.txt",
+    "mod/common/buildings/artifact_midgame_sensing_buildings.txt",
+    "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
+    "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml"
+  ]
+}

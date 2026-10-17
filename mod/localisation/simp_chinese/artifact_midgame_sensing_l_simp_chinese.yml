@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ tech_artifact_long_baseline_measurement:0 "长基线高维测量"
+ tech_artifact_long_baseline_measurement_desc:0 "把不同位置的测量统一到公开基准，使有限观测可以互相复核。解锁全帝国一处长基线传感阵列，为传感网络和后续轨道协同提供基础。"
+ tech_artifact_phase_disturbance_warning:0 "相位扰动预警"
+ tech_artifact_phase_disturbance_warning_desc:0 "在实有测量基线上分辨航道回响与隐形扰动。允许把基准阵列升级为相位预警阵列，扩展航道探知；同星轨道观测接口可进一步提高隐形探测强度。预警依据真实可探测目标。"
+ tech_artifact_orbital_coordination:0 "轨道协同工程"
+ tech_artifact_orbital_coordination_desc:0 "把地表观测基线接入星港，建立可持续维护的轨道观测接口。支援只在同星本国有效阵列与星港均受本国控制时生效；接口使用星港建筑槽。"
+ building_artifact_long_baseline_array:0 "长基线传感阵列"
+ building_artifact_long_baseline_array_desc:0 "维持一处公共测量基准，使本国传感范围增加1，并为同星轨道观测接口提供资料。全帝国限一处基准阵列；停用、损坏或被占领时中断支援。后续可在原槽位升级。"
+ building_artifact_phase_warning_array:0 "相位预警阵列"
+ building_artifact_phase_warning_array_desc:0 "由长基线阵列升级而来，保留本国传感范围增加1，并使航道探知范围增加2。同星轨道观测接口额外获得1点隐形探测强度；实际发现目标仍依原生探测规则。停用、损坏或被占领时中断支援。"
+ sm_artifact_orbital_observation_link:0 "轨道观测接口"
+ sm_artifact_orbital_observation_link_desc:0 "占用一处正常星港建筑槽。同星本国有效长基线或预警阵列提供本星港传感范围增加1、航道探知范围增加2；预警阵列再提供1点隐形探测强度。没有有效来源时接口待机，仍支付维护费。外星系、外国或被占领的阵列不能提供支援。"

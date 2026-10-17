@@ -1,0 +1,119 @@
+# R2c首版只组织一处公共基准站；A09联校另行扩展，不让多殖民地堆叠全境传感。
+building_artifact_long_baseline_array = {
+	can_build = yes
+	base_buildtime = 360
+	icon = "building_artifact_black_gate_observatory"
+	category = research
+	building_sets = {
+		research
+	}
+	planet_limit = 1
+	empire_limit = {
+		base = 1
+	}
+	prerequisites = {
+		"tech_artifact_long_baseline_measurement"
+	}
+	upgrades = {
+		"building_artifact_phase_warning_array"
+	}
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	# 高级站已建或排队时只禁止低级新建，不能撤销升级中原设施的存在资格。
+	allow = {
+		owner = {
+			NOT = {
+				any_owned_colony = {
+					OR = {
+						has_building = "building_artifact_phase_warning_array"
+						has_building_construction = "building_artifact_phase_warning_array"
+					}
+				}
+			}
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+			alloys = 150
+		}
+		upkeep = {
+			energy = 8
+			alloys = 1
+		}
+	}
+	# 国家修正只来自本国可控的有效设施；不会永久写入国家标记。
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_long_baseline_array"
+			owner = {
+				has_technology = "tech_artifact_long_baseline_measurement"
+				owner_main_species = {
+					is_species_class = "ARTIFACT_USER"
+				}
+			}
+		}
+		ship_sensor_range_add = 1
+	}
+}
+
+# 新高级站仅由原生升级获得；复用一处基准站，不另占第二个建筑槽。
+building_artifact_phase_warning_array = {
+	can_build = no
+	base_buildtime = 480
+	icon = "building_artifact_black_gate_observatory"
+	category = research
+	building_sets = {
+		research
+	}
+	planet_limit = 1
+	empire_limit = {
+		base = 1
+	}
+	prerequisites = {
+		"tech_artifact_phase_disturbance_warning"
+	}
+	potential = {
+		exists = owner
+		owner = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1800
+			alloys = 300
+		}
+		upkeep = {
+			energy = 12
+			alloys = 2
+		}
+	}
+	triggered_country_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_phase_warning_array"
+			owner = {
+				has_technology = "tech_artifact_phase_disturbance_warning"
+				owner_main_species = {
+					is_species_class = "ARTIFACT_USER"
+				}
+			}
+		}
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 2
+	}
+}

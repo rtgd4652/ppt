@@ -1,0 +1,60 @@
+# R2c公共观测研究：测量、预警、轨道支援分别解锁，不读取个人权限或剧情阶段。
+tech_artifact_long_baseline_measurement = {
+	area = physics
+	icon = "tech_artifact_black_gate_observation"
+	cost = 3000
+	tier = 3
+	category = {
+		field_manipulation
+	}
+	prerequisites = {
+		"tech_artifact_multi_source_comparison"
+	}
+	weight = 95
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# 预警建立在实有测量基础上；只提高原生可探测目标的判读，不生成未来事件。
+tech_artifact_phase_disturbance_warning = {
+	area = physics
+	icon = "tech_artifact_black_gate_observation"
+	cost = 3600
+	tier = 3
+	category = {
+		field_manipulation
+	}
+	prerequisites = {
+		"tech_artifact_long_baseline_measurement"
+	}
+	weight = 85
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# 轨道接口是星港建筑，不额外创建行星设施、舰载组件或巨构。
+tech_artifact_orbital_coordination = {
+	area = engineering
+	icon = "tech_artifact_central_court_protocols"
+	cost = 3000
+	tier = 3
+	category = {
+		voidcraft
+	}
+	prerequisites = {
+		"tech_artifact_modular_colony_construction"
+		"tech_artifact_long_baseline_measurement"
+	}
+	weight = 95
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}

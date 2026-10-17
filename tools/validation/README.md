@@ -78,3 +78,9 @@ python -B tools/validation/snapshot_workspace.py --output temp/checkpoints/本�
 `python -B -m unittest discover -s tools/validation/tests -p test_artifact_midgame_observation_energy.py -v`
 
 3项读取真实观测站与供能站脚本的检查，显式区分国家拥有者与殖民地现场，覆盖同星双源、来源停用／移除及恢复、旧经济加成独立、升级队列保留低级资格与原B03直建。它们不模拟引擎动态更新、就业或读档，不替代R2b运行；无需因此重跑R1／R2a历史。反应堆容量8→800是本包实质迁移，其他旧楼容量不联动。
+
+## R2c定向条件检查
+
+`python -B -m unittest discover -s tools/validation/tests -p test_artifact_midgame_sensing.py -v`
+
+4项读取真实阵列与星港接口脚本，显式区分种族、国家、星港、星系与殖民地；检查受控有效来源、同星同国（包括同种族另一国）、停用／占领及恢复、升级前后只计一次和高级跨殖民地排他。未支持的语法立即失败。它们不模拟原生传感视野、隐形发现、唯一限额、升级引擎或读档，不替代R2c代表运行；无需重跑历史包。

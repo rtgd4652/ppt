@@ -1,0 +1,110 @@
+# R2c轨道观测接口：只作用于本座正常星港，不替换舰载传感器或创建轨道巨构。
+artifact_orbital_observation_link = {
+	icon = "GFX_spaceport_module_navigators_guild"
+	construction_days = 360
+	category = sm_utility_cat
+	starbase_type = starbase
+	starbase_limit = {
+		base = 1
+	}
+	show_in_tech = "tech_artifact_orbital_coordination"
+	potential = {
+		is_normal_starbase = yes
+		exists = owner
+		owner = {
+			has_technology = "tech_artifact_orbital_coordination"
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+	}
+	possible = {
+		has_starbase_size >= starbase_starport
+		is_controlled_by = owner
+	}
+	resources = {
+		category = starbase_buildings
+		cost = {
+			alloys = 180
+		}
+		upkeep = {
+			energy = 4
+			alloys = 1
+		}
+	}
+	# 星港→拥有国→回到星港→星系→殖民地；最后prevprevprev明确指向拥有国。
+	# 只取同星、本国、未被占领的有效阵列，不能借另一帝国或别的星系满足。
+	triggered_station_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			owner = {
+				has_technology = "tech_artifact_orbital_coordination"
+				has_technology = "tech_artifact_long_baseline_measurement"
+				owner_main_species = {
+					is_species_class = "ARTIFACT_USER"
+				}
+				prev = {
+					solar_system = {
+						any_system_planet_colony = {
+							is_owned_by = prevprevprev
+							is_occupied_flag = no
+							OR = {
+								has_active_building = "building_artifact_long_baseline_array"
+								has_active_building = "building_artifact_phase_warning_array"
+							}
+						}
+					}
+				}
+			}
+		}
+		ship_sensor_range_add = 1
+		ship_hyperlane_range_add = 2
+	}
+	# 高级阵列只额外提高本星港的原生隐形探测强度；不揭示未来危机或绕过星云。
+	triggered_station_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			owner = {
+				has_technology = "tech_artifact_orbital_coordination"
+				has_technology = "tech_artifact_phase_disturbance_warning"
+				owner_main_species = {
+					is_species_class = "ARTIFACT_USER"
+				}
+				prev = {
+					solar_system = {
+						any_system_planet_colony = {
+							is_owned_by = prevprevprev
+							is_occupied_flag = no
+							has_active_building = "building_artifact_phase_warning_array"
+						}
+					}
+				}
+			}
+		}
+		ship_cloaking_detection_add = 1
+	}
+	ai_weight = {
+		weight = 10
+		modifier = {
+			factor = 0
+			NOT = {
+				owner = {
+					prev = {
+						solar_system = {
+							any_system_planet_colony = {
+								is_owned_by = prevprevprev
+								is_occupied_flag = no
+								OR = {
+									has_active_building = "building_artifact_long_baseline_array"
+									has_active_building = "building_artifact_phase_warning_array"
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-10-14",
   "updated": "2026-10-17",
-  "status": "route_draft_with_r1_r2a_r2b_representative_runtime",
+  "status": "route_draft_with_r2c_source_implemented_runtime_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "公共72项研究保留；收敛后为27类46阶段建筑（包含现有15键），另列4项个人候选。均为设计，不是用户逐项定稿或已交付数量。",
@@ -171,8 +171,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "开放长基线阵列，支撑舰载测距和轨道观测工程。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "建立一处公共长基线阵列，本国有效控制时传感+1；为轨道协同提供来源。",
+      "implementation_key": "tech_artifact_long_baseline_measurement"
     },
     {
       "id": "A07",
@@ -180,12 +181,13 @@
       "area": "physics",
       "tier": 3,
       "prerequisites": [
-        "A05"
+        "A06"
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "升级传感阵列，提前显示已定义的异常风险与准备窗口。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "由A06接续并升级阵列，保留传感+1、增加航道探知+2，同星接口可获隐形探测+1；专门危机预警仍待后续包。",
+      "implementation_key": "tech_artifact_phase_disturbance_warning"
     },
     {
       "id": "A08",
@@ -894,8 +896,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "开放轨道接口及星港配套模块，连接地表观测和后续工程；不计入行星建筑数。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "解锁正常星港建筑槽内轨道观测接口，只读同星本国活跃阵列，不计入行星46阶段。",
+      "implementation_key": "tech_artifact_orbital_coordination"
     },
     {
       "id": "E07",
@@ -1518,21 +1521,23 @@
       "id": "BL18",
       "name": "长基线传感",
       "role": "观测研究",
-      "distinct_function": "探测与风险窗口；不直接等于战斗射控。",
+      "distinct_function": "原生感知、航道判读与轨道支援；不新增通用科研产出或战斗射控。",
       "stages": [
         {
           "stage": 1,
           "name": "长基线传感阵列",
           "technology": "A06",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_long_baseline_array"
         },
         {
           "stage": 2,
           "name": "相位预警阵列",
           "technology": "A07",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_phase_warning_array"
         }
       ]
     },
@@ -1793,12 +1798,39 @@
       "runtime_limits": "A05／B09／原B03受控提供；样本库来源停用／恢复一次和正常建造升级、进行态读档一次通过。自然研究、其他来源场景及扩容平衡未验，不扩测。",
       "final_save": "2275.09.20.sav",
       "next_step": "先细化R2c A06／A07／E06的感知、风险判读与轨道观测用途、入口、费用、保存状态，再接小包。"
+    },
+    "R2c": {
+      "date": "2026-10-17",
+      "status": "source_implemented_static_checked_runtime_pending",
+      "runtime_status": "pending",
+      "balance_status": "pending",
+      "technology_keys": {
+        "A06": "tech_artifact_long_baseline_measurement",
+        "A07": "tech_artifact_phase_disturbance_warning",
+        "E06": "tech_artifact_orbital_coordination"
+      },
+      "new_planet_buildings": 2,
+      "new_starbase_buildings": 1,
+      "new_jobs": 0,
+      "spec": "docs/design/artifact_civilization_r2c_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r2c_implementation_2026-10-17.md",
+      "risk_limits": "原生可见舰队、航道与隐形目标；专门的危机风险／准备窗口仍未实现，留给后续对应包。"
     }
   },
   "current_counts": {
     "date": "2026-10-17",
-    "public_technologies": 30,
-    "building_definitions": 24,
-    "note": "原框架19／15作为历史baseline保留，目标72／27类46阶段不变。"
-  }
+    "public_technologies": 33,
+    "building_definitions": 26,
+    "note": "原框架19／15作为历史baseline保留，目标72／27类46阶段不变。",
+    "starbase_building_definitions": 1
+  },
+  "orbital_buildings": [
+    {
+      "key": "artifact_orbital_observation_link",
+      "name": "轨道观测接口",
+      "technology": "E06",
+      "status": "source_implemented_static_checked_runtime_pending",
+      "count_scope": "starbase_building_not_planet_stage"
+    }
+  ]
 }
