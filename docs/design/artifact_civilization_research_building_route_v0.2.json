@@ -1841,5 +1841,6 @@
       "status": "implemented_representative_build_support_runtime_passed",
       "count_scope": "starbase_building_not_planet_stage"
     }
-  ]
+  ],
+  "superseded_by": "docs/design/artifact_civilization_research_building_route_v0.3.json"
 }

@@ -1,0 +1,78 @@
+{
+  "date": "2026-10-17",
+  "status": "passed",
+  "scope": "design_only",
+  "source_base": "d5b04f0",
+  "route": {
+    "public_target": 80,
+    "new_vs_19_baseline": 61,
+    "branches": {
+      "A": 12,
+      "B": 14,
+      "C": 12,
+      "D": 22,
+      "E": 12,
+      "F": 8
+    },
+    "tier_counts": {
+      "1": 5,
+      "2": 11,
+      "3": 19,
+      "4": 23,
+      "5": 22
+    },
+    "building_families": 27,
+    "building_stages": 46,
+    "added_military_nodes": 8,
+    "graph": "acyclic",
+    "tier_inversions": 0,
+    "old_ids_keys_gates_and_prerequisites_unchanged": true,
+    "old_building_plan_unchanged": true,
+    "personal_plan_unchanged": true,
+    "public_depends_on_personal": false
+  },
+  "current_source": {
+    "public_technologies": 33,
+    "planet_buildings": 26,
+    "starbase_buildings": 1,
+    "armies": 3,
+    "components": 54,
+    "public_legacy_component_definitions": 43,
+    "hull_locked_components": 7,
+    "aura_prototypes": 4,
+    "csv_weapon_rows_not_counted_again": 5,
+    "mod_diff_empty": true
+  },
+  "r2d": {
+    "nodes": [
+      "C09",
+      "E04"
+    ],
+    "new_buildings": 1,
+    "new_jobs": 0,
+    "exclusive_choices": 3,
+    "native_modifier_names_checked": [
+      "planet_jobs_alloys_produces_mult",
+      "planet_jobs_consumer_goods_produces_mult",
+      "planet_jobs_engineering_research_produces_mult",
+      "planet_jobs_minerals_upkeep_mult",
+      "planet_jobs_physics_research_produces_mult",
+      "planet_jobs_society_research_produces_mult",
+      "planet_stability_add",
+      "pop_amenities_usage_mult"
+    ],
+    "on_colony_transfer_and_carrier_event_reference_checked": true,
+    "source_status": "pending",
+    "runtime_status": "not_run",
+    "balance_status": "pending"
+  },
+  "military_batch_dependencies": "passed_design_audit",
+  "local_link_occurrences": 37,
+  "historical_runtime_tests_rerun": 0,
+  "game_operations": 0,
+  "limitations": [
+    "设计依赖与字段检查不证明代码已经实现或引擎行为。",
+    "陆军招募、组件装配与战斗性能仍待各军备包。",
+    "4个旧光环原型没有在本轮验证实际可装舰型。"
+  ]
+}

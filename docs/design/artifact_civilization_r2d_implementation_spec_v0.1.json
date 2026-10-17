@@ -1,0 +1,211 @@
+{
+  "date": "2026-10-17",
+  "package": "R2d",
+  "name": "避难组织与城市分区",
+  "status": "spec_refined_source_pending",
+  "source_base": "d5b04f0",
+  "scope": {
+    "new_public_technologies": 2,
+    "new_planet_buildings": 1,
+    "new_jobs": 0,
+    "new_military_objects": 0,
+    "source_implemented": false,
+    "game_operated": false
+  },
+  "research": [
+    {
+      "id": "C09",
+      "key": "tech_artifact_refuge_organization",
+      "area": "society",
+      "category": "statecraft",
+      "tier": 3,
+      "cost": 2400,
+      "weight": 100,
+      "prerequisites": [
+        "C02",
+        "C07"
+      ],
+      "unlock": "社区公共服务中心的轰炸期避难组织"
+    },
+    {
+      "id": "E04",
+      "key": "tech_artifact_city_functional_zoning",
+      "area": "society",
+      "category": "statecraft",
+      "tier": 3,
+      "cost": 3000,
+      "weight": 95,
+      "prerequisites": [
+        "E03",
+        "C02"
+      ],
+      "unlock": "城市经济演算室与三种当地规划方向"
+    }
+  ],
+  "refuge": {
+    "building": "building_artifact_community_service_center",
+    "activation": "已有C09、当地建筑活跃、本国拥有控制、公共文明身份、当前确有轨道轰炸时自动提供当地保障；无需新增准备按钮。",
+    "modifiers": {
+      "planet_stability_add": 5,
+      "pop_amenities_usage_mult": -0.1
+    },
+    "upkeep": "沿用社区服务中心及原岗位维护，不再发免费资源或生成驻军。",
+    "no_new_state": true,
+    "c2": "C2的科技、费用、决议、180日保护、25%减伤和整备期限保持；本用途维持公共服务，不替换其保护。"
+  },
+  "building": {
+    "key": "building_artifact_city_calculation_room",
+    "family": "BL05",
+    "base_buildtime": 360,
+    "cost": {
+      "minerals": 650,
+      "consumer_goods": 100
+    },
+    "upkeep": {
+      "energy": 4,
+      "consumer_goods": 2
+    },
+    "jobs": 0,
+    "planet_limit": 1,
+    "empire_limit": null,
+    "building_set": "research",
+    "prerequisite": "E04",
+    "upgrade_to": "building_artifact_fate_calculus_institute",
+    "new_build_allow": "当地未建／未排队高级；只放allow，potential保留公共身份，升级时不撤销低阶设施。",
+    "upper": "原高级仍可按E01独立直建，原费用、岗位、产出和旧科技条件保留；规划功能读取E04，不追补低级楼，不全面迁移旧岗位容量。"
+  },
+  "planning": {
+    "cost": {
+      "energy": 300,
+      "unity": 100
+    },
+    "duration_days": -1,
+    "choices": [
+      {
+        "id": "research",
+        "name": "科研分区",
+        "marker": "artifact_city_plan_research",
+        "modifiers": {
+          "planet_jobs_physics_research_produces_mult": 0.05,
+          "planet_jobs_society_research_produces_mult": 0.05,
+          "planet_jobs_engineering_research_produces_mult": 0.05
+        }
+      },
+      {
+        "id": "production",
+        "name": "生产分区",
+        "marker": "artifact_city_plan_production",
+        "modifiers": {
+          "planet_jobs_alloys_produces_mult": 0.05,
+          "planet_jobs_consumer_goods_produces_mult": 0.05,
+          "planet_jobs_minerals_upkeep_mult": 0.05
+        }
+      },
+      {
+        "id": "services",
+        "name": "民生分区",
+        "marker": "artifact_city_plan_services",
+        "modifiers": {
+          "planet_stability_add": 3,
+          "pop_amenities_usage_mult": -0.1
+        }
+      }
+    ],
+    "mutual_exclusion": "每颗殖民地仅一个方向。当前选择通过无数值的原生修正保存，收益由活跃演算室或原高级的条件修正提供。",
+    "eligibility": "本国控制、公共种族、已知E04、低级演算室或原高级实际活跃，且无当前方向；选择时正常扣费。",
+    "cancel": "单独取消决议无费用、无返还、无结算奖励；清除三种方向，再次选择重新付费。",
+    "source_off": "停用、损坏、被占领或资格不符时暂停收益，选择保留；同国恢复且设施活跃时恢复，不再次扣费。",
+    "upgrade": "低级与高级共用选择；升级过程低阶继续供源，替换后高级接续；遗留上下级并存时仅高级提供同一份规划收益。",
+    "owner_change": "原生on_colony_transfer清除三种规划标记，无退款或移交收益；不清理R1、C2、人物或主线状态。",
+    "performance": "三个当地标记、建筑条件修正和一次转让清理回调；无月度项目进度、全银河扫描或新资源。"
+  },
+  "native_checks": [
+    {
+      "path": "script_documentation/triggers.log",
+      "keys": [
+        "has_active_building",
+        "is_controlled_by",
+        "has_orbital_bombardment"
+      ],
+      "status": "present_in_local_4_5_2_docs"
+    },
+    {
+      "path": "script_documentation/modifiers.log",
+      "keys": [
+        "planet_stability_add",
+        "pop_amenities_usage_mult",
+        "planet_jobs_physics_research_produces_mult",
+        "planet_jobs_society_research_produces_mult",
+        "planet_jobs_engineering_research_produces_mult",
+        "planet_jobs_alloys_produces_mult",
+        "planet_jobs_consumer_goods_produces_mult",
+        "planet_jobs_minerals_upkeep_mult"
+      ],
+      "status": "present_in_local_4_5_2_docs"
+    },
+    {
+      "path": "common/static_modifiers/00_static_modifiers.txt",
+      "object": "shooting_stars",
+      "use": "当地原生修正使用pop_amenities_usage_mult，不能写不存在的planet_pop_amenities_usage_mult。"
+    },
+    {
+      "path": "common/on_actions/00_on_actions.txt",
+      "object": "on_colony_transfer",
+      "line": 3369,
+      "use": "This=colony，From=新拥有国，FromFrom=旧拥有国；不按同号查找planet。"
+    },
+    {
+      "path": "events/on_action_events_1.txt",
+      "object": "action.89",
+      "line": 7567,
+      "use": "4.5.2以carrier_event清理转让修正；实施跟随本机入口，不照搬4.4模板。"
+    }
+  ],
+  "implementation_files": {
+    "new": [
+      "mod/common/technology/artifact_city_governance_technology.txt",
+      "mod/common/buildings/artifact_city_planning_buildings.txt",
+      "mod/common/decisions/artifact_city_planning_decisions.txt",
+      "mod/common/static_modifiers/artifact_city_planning_modifiers.txt",
+      "mod/common/on_actions/artifact_city_planning_on_actions.txt",
+      "mod/events/artifact_city_planning_events.txt",
+      "mod/localisation/simp_chinese/artifact_city_planning_l_simp_chinese.yml"
+    ],
+    "targeted_changes": [
+      "mod/common/buildings/artifact_public_foundation_buildings.txt",
+      "mod/common/buildings/aemusa_buildings.txt"
+    ],
+    "note": "这是后续完整文件清单，当前均未创建或修改；源码按科技／建筑、规划状态、转让清理小步接入。"
+  },
+  "verification": {
+    "static": "pending_implementation",
+    "runtime": "not_run",
+    "balance": "pending",
+    "source_contracts": [
+      "科技与活跃设施资格、三选一及取消不返还",
+      "无效来源暂停、恢复不再次支付、旧高级可直接使用",
+      "升级保留选择且上下级只计一份",
+      "转让回调只清除三种本包标记，不碰C2／R1状态"
+    ],
+    "minimal_runtime": "一颗殖民地正常建演算室，付费选择科研分区，正常升级；在已有升级进度且选择仍有效时正常另存并实际载回一次，完工核对方向保留、只计一份。缺资源rr，不重跑全部方向。",
+    "c09_runtime": "不为C09额外制造战争或轰炸；未自然观察到相应状态时明确保留未验，不能用城市规划读档宣称轰炸效果通过。"
+  },
+  "next_packages": [
+    {
+      "id": "R2e",
+      "nodes": [
+        "C10",
+        "E05"
+      ],
+      "role": "成果复现与研究园区，单独明确成果来源和归档语义后实施。"
+    },
+    {
+      "id": "R2f",
+      "nodes": [
+        "E07"
+      ],
+      "role": "环境缓冲，明确有限风险来源与维护后实施。"
+    }
+  ],
+  "assets": "复用既有城市演算／公共服务科技与建筑图标，不新增批量资产；最终身份收敛后再排正式图标。"
+}

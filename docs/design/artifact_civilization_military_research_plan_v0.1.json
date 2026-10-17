@@ -1,0 +1,1747 @@
+{
+  "date": "2026-10-17",
+  "status": "route_refined_not_implemented",
+  "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
+  "previous_target": 72,
+  "new_target": 80,
+  "new_node_ids": [
+    "D15",
+    "D16",
+    "D17",
+    "D18",
+    "D19",
+    "D20",
+    "D21",
+    "D22"
+  ],
+  "new_nodes": [
+    {
+      "id": "D15",
+      "name": "符文舰体装甲",
+      "area": "engineering",
+      "tier": 3,
+      "category": "materials",
+      "cost": 3600,
+      "weight": 90,
+      "prerequisites": [
+        "D04",
+        "B07"
+      ],
+      "proposed_key": "tech_artifact_runic_hull_armor",
+      "capability": "解锁独立的公共符文装甲变体，以合金成本、维护和抗穿透取舍区别护盾；D09后可研究复合强化，不改旧装甲键。",
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "D16",
+      "name": "舰载相位供能",
+      "area": "physics",
+      "tier": 3,
+      "category": "particles",
+      "cost": 3600,
+      "weight": 90,
+      "prerequisites": [
+        "D04",
+        "B09"
+      ],
+      "proposed_key": "tech_artifact_ship_phase_power",
+      "capability": "解锁适配正常公共舰体的反应堆族，以功率、造价和维护支持高耗能配置；不用命运之主专属核心填充公共路线。",
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "D17",
+      "name": "相位机动推进",
+      "area": "engineering",
+      "tier": 3,
+      "category": "propulsion",
+      "cost": 3600,
+      "weight": 90,
+      "prerequisites": [
+        "D04",
+        "B07"
+      ],
+      "proposed_key": "tech_artifact_phase_maneuvering",
+      "capability": "解锁常规亚光速推进器变体，在速度、闪避、能耗间取舍；与超空间航行分开。",
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "D18",
+      "name": "超空间航行协调",
+      "area": "physics",
+      "tier": 4,
+      "category": "particles",
+      "cost": 8000,
+      "weight": 65,
+      "prerequisites": [
+        "D02",
+        "D17",
+        "A07"
+      ],
+      "proposed_key": "tech_artifact_hyperspace_coordination",
+      "capability": "解锁公共FTL组件变体，以航道航行和充能性能分工；不自动提供战略跳跃或使用旧专属跃迁核心。",
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "D19",
+      "name": "定向登陆学",
+      "area": "society",
+      "tier": 2,
+      "category": "military_theory",
+      "cost": 1600,
+      "weight": 110,
+      "prerequisites": [
+        "D01",
+        "C07"
+      ],
+      "proposed_key": "tech_artifact_precision_landings",
+      "capability": "解锁低附带伤害的定向登陆队，以较低正面攻坚效率或更高训练成本换取占领目标的保存；不覆盖原守备队。",
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "D20",
+      "name": "行星驻防统筹",
+      "area": "society",
+      "tier": 3,
+      "category": "military_theory",
+      "cost": 3600,
+      "weight": 90,
+      "prerequisites": [
+        "D19",
+        "C09"
+      ],
+      "proposed_key": "tech_artifact_planetary_garrison",
+      "capability": "在已有社区服务设施中开放付费驻防方案，提供有维护和当地上限的原生守备军；部队绑定与撤销须在陆军实施包验证。",
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "D21",
+      "name": "共鸣攻坚工程",
+      "area": "engineering",
+      "tier": 4,
+      "category": "materials",
+      "cost": 8000,
+      "weight": 65,
+      "prerequisites": [
+        "D02",
+        "D19",
+        "B09"
+      ],
+      "proposed_key": "tech_artifact_resonance_siege_engineering",
+      "capability": "解锁高耐久的共鸣攻坚军，承担高强度地面突破，以训练、合金维护和更高附带伤害区别定向登陆队。",
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented"
+    },
+    {
+      "id": "D22",
+      "name": "远征轮换与整补",
+      "area": "society",
+      "tier": 4,
+      "category": "military_theory",
+      "cost": 7200,
+      "weight": 70,
+      "prerequisites": [
+        "D21",
+        "C11",
+        "B12"
+      ],
+      "proposed_key": "tech_artifact_expedition_reconstitution",
+      "capability": "开放当地有成本的陆军整补方案，以训练／补充效率表达持续作战能力；不承诺战场治疗、传送补员或免费复活。",
+      "gate": null,
+      "existing_key": null,
+      "status": "proposed_not_implemented"
+    }
+  ],
+  "inventory": {
+    "army_definitions": 3,
+    "component_definitions": 54,
+    "public_legacy_component_definitions": 43,
+    "hull_locked_legacy_components": 7,
+    "ungated_aura_prototypes": 4,
+    "csv_weapon_data_rows": 5,
+    "csv_rows_not_extra_components_or_technologies": true,
+    "armies": [
+      {
+        "key": "artifact_user_guardian_army",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "base_fields": {
+          "damage": "1.05",
+          "health": "1.10",
+          "morale": "1.25",
+          "collateral_damage": "0.65",
+          "time": "90"
+        },
+        "existing_army_modifier": [],
+        "source": "mod/common/armies/aemusa_artifact_armies.txt",
+        "line": 2,
+        "defensive": false,
+        "is_pop_spawned": false
+      },
+      {
+        "key": "artifact_user_resonance_army",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "base_fields": {
+          "damage": "2.60",
+          "health": "2.70",
+          "morale": "3.00",
+          "collateral_damage": "0.80",
+          "time": "130"
+        },
+        "existing_army_modifier": [
+          {
+            "army_damage_mult": "0.20"
+          }
+        ],
+        "source": "mod/common/armies/aemusa_artifact_armies.txt",
+        "line": 28,
+        "defensive": false,
+        "is_pop_spawned": false
+      },
+      {
+        "key": "artifact_user_apotheosis_army",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "base_fields": {
+          "damage": "6.50",
+          "health": "7.50",
+          "morale": "8.00",
+          "collateral_damage": "0.45",
+          "time": "220"
+        },
+        "existing_army_modifier": [
+          {
+            "army_damage_mult": "0.75"
+          },
+          {
+            "army_collateral_damage_mult": "-0.25"
+          }
+        ],
+        "source": "mod/common/armies/aemusa_artifact_armies.txt",
+        "line": 66,
+        "defensive": false,
+        "is_pop_spawned": false
+      }
+    ],
+    "components": [
+      {
+        "key": "SMALL_ARTIFACT_TAROT_RAY",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_TAROT_RAY",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 2
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_TAROT_RAY",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_TAROT_RAY",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 43
+      },
+      {
+        "key": "LARGE_ARTIFACT_TAROT_RAY",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_TAROT_RAY",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 84
+      },
+      {
+        "key": "SMALL_ARTIFACT_FATE_ARMOR",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_FATE_ARMOR",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 125
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_FATE_ARMOR",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_FATE_ARMOR",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 152
+      },
+      {
+        "key": "LARGE_ARTIFACT_FATE_ARMOR",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_FATE_ARMOR",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 179
+      },
+      {
+        "key": "ARTIFACT_SEVEN_DAY_CORE",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_SEVEN_DAY_CORE",
+        "size": "aux",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "is_ship_class": "shipclass_military"
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 206
+      },
+      {
+        "key": "ARTIFACT_DESTINY_LORD_REACTOR",
+        "kind": "utility_component_template",
+        "component_set": "power_core",
+        "size": "small",
+        "prerequisites": [],
+        "scope": "legacy_destiny_lord_hull_locked",
+        "potential": [
+          {
+            "is_ship_size": "destiny_lord"
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 236
+      },
+      {
+        "key": "ARTIFACT_DESTINY_LORD_SENSOR",
+        "kind": "utility_component_template",
+        "component_set": "sensor_components",
+        "size": "medium",
+        "prerequisites": [],
+        "scope": "legacy_destiny_lord_hull_locked",
+        "potential": [
+          {
+            "is_ship_size": "destiny_lord"
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 261
+      },
+      {
+        "key": "ARTIFACT_DESTINY_LORD_DRIVE",
+        "kind": "utility_component_template",
+        "component_set": "ftl_components",
+        "size": "small",
+        "prerequisites": [],
+        "scope": "legacy_destiny_lord_hull_locked",
+        "potential": [
+          {
+            "is_ship_size": "destiny_lord"
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 282
+      },
+      {
+        "key": "ARTIFACT_DESTINY_LORD_THRUSTER",
+        "kind": "utility_component_template",
+        "component_set": "thruster_components",
+        "size": "small",
+        "prerequisites": [],
+        "scope": "legacy_destiny_lord_hull_locked",
+        "potential": [
+          {
+            "is_ship_size": "destiny_lord"
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 307
+      },
+      {
+        "key": "ARTIFACT_DESTINY_LORD_COMPUTER",
+        "kind": "utility_component_template",
+        "component_set": "combat_computers",
+        "size": "medium",
+        "prerequisites": [],
+        "scope": "legacy_destiny_lord_hull_locked",
+        "potential": [
+          {
+            "is_ship_size": "destiny_lord"
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 324
+      },
+      {
+        "key": "ARTIFACT_AURA_GUARDIAN_MATRIX",
+        "kind": "utility_component_template",
+        "component_set": "ship_aura_components",
+        "size": "medium",
+        "prerequisites": [],
+        "scope": "legacy_aura_prototype_gate_unverified",
+        "potential": [],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 342
+      },
+      {
+        "key": "ARTIFACT_AURA_GUARDIAN_MATRIX_LARGE_SLOT",
+        "kind": "utility_component_template",
+        "component_set": "station_large_aura_components",
+        "size": "medium",
+        "prerequisites": [],
+        "scope": "legacy_aura_prototype_gate_unverified",
+        "potential": [],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 366
+      },
+      {
+        "key": "ARTIFACT_AURA_BLACK_GATE_SUPPRESSION",
+        "kind": "utility_component_template",
+        "component_set": "station_large_aura_components",
+        "size": "medium",
+        "prerequisites": [],
+        "scope": "legacy_aura_prototype_gate_unverified",
+        "potential": [],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 390
+      },
+      {
+        "key": "ARTIFACT_AURA_BLACK_GATE_SUPPRESSION_TITAN_SLOT",
+        "kind": "utility_component_template",
+        "component_set": "ship_aura_components",
+        "size": "medium",
+        "prerequisites": [],
+        "scope": "legacy_aura_prototype_gate_unverified",
+        "potential": [],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 414
+      },
+      {
+        "key": "EXTRA_LARGE_ARTIFACT_TAROT_JUDGEMENT",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_TAROT_JUDGEMENT",
+        "size": "extra_large",
+        "prerequisites": [],
+        "scope": "legacy_destiny_lord_hull_locked",
+        "potential": [
+          {
+            "is_ship_size": "destiny_lord"
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 438
+      },
+      {
+        "key": "TITANIC_ARTIFACT_FATE_DOMINION",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_DOMINION",
+        "size": "titanic",
+        "prerequisites": [],
+        "scope": "legacy_destiny_lord_hull_locked",
+        "potential": [
+          {
+            "is_ship_size": "destiny_lord"
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_components.txt",
+        "line": 470
+      },
+      {
+        "key": "SMALL_ARTIFACT_FATE_RAY_1",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_RAY_1",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 2
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_FATE_RAY_1",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_RAY_1",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 33
+      },
+      {
+        "key": "LARGE_ARTIFACT_FATE_RAY_1",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_RAY_1",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 64
+      },
+      {
+        "key": "SMALL_ARTIFACT_FATE_RAY_2",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_RAY_2",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 95
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_FATE_RAY_2",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_RAY_2",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 126
+      },
+      {
+        "key": "LARGE_ARTIFACT_FATE_RAY_2",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_RAY_2",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 157
+      },
+      {
+        "key": "SMALL_ARTIFACT_FATE_RAY_3",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_RAY_3",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 188
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_FATE_RAY_3",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_RAY_3",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 218
+      },
+      {
+        "key": "LARGE_ARTIFACT_FATE_RAY_3",
+        "kind": "weapon_component_template",
+        "component_set": "ARTIFACT_FATE_RAY_3",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 248
+      },
+      {
+        "key": "SMALL_ARTIFACT_BLACK_GATE_SHIELD_1",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_BLACK_GATE_SHIELD_1",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 278
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_BLACK_GATE_SHIELD_1",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_BLACK_GATE_SHIELD_1",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 294
+      },
+      {
+        "key": "LARGE_ARTIFACT_BLACK_GATE_SHIELD_1",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_BLACK_GATE_SHIELD_1",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 310
+      },
+      {
+        "key": "SMALL_ARTIFACT_BLACK_GATE_SHIELD_2",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_BLACK_GATE_SHIELD_2",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 326
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_BLACK_GATE_SHIELD_2",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_BLACK_GATE_SHIELD_2",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 342
+      },
+      {
+        "key": "LARGE_ARTIFACT_BLACK_GATE_SHIELD_2",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_BLACK_GATE_SHIELD_2",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 358
+      },
+      {
+        "key": "SMALL_ARTIFACT_BLACK_GATE_SHIELD_3",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_BLACK_GATE_SHIELD_3",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 374
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_BLACK_GATE_SHIELD_3",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_BLACK_GATE_SHIELD_3",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 389
+      },
+      {
+        "key": "LARGE_ARTIFACT_BLACK_GATE_SHIELD_3",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_BLACK_GATE_SHIELD_3",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 404
+      },
+      {
+        "key": "SMALL_ARTIFACT_DESTINY_ARMOR_1",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_DESTINY_ARMOR_1",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 419
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_DESTINY_ARMOR_1",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_DESTINY_ARMOR_1",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 435
+      },
+      {
+        "key": "LARGE_ARTIFACT_DESTINY_ARMOR_1",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_DESTINY_ARMOR_1",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 451
+      },
+      {
+        "key": "SMALL_ARTIFACT_DESTINY_ARMOR_2",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_DESTINY_ARMOR_2",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 467
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_DESTINY_ARMOR_2",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_DESTINY_ARMOR_2",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 483
+      },
+      {
+        "key": "LARGE_ARTIFACT_DESTINY_ARMOR_2",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_DESTINY_ARMOR_2",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 499
+      },
+      {
+        "key": "SMALL_ARTIFACT_DESTINY_ARMOR_3",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_DESTINY_ARMOR_3",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 515
+      },
+      {
+        "key": "MEDIUM_ARTIFACT_DESTINY_ARMOR_3",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_DESTINY_ARMOR_3",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 530
+      },
+      {
+        "key": "LARGE_ARTIFACT_DESTINY_ARMOR_3",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_DESTINY_ARMOR_3",
+        "size": "large",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 545
+      },
+      {
+        "key": "ARTIFACT_TACTICAL_CORE_1",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_TACTICAL_CORE_1",
+        "size": "aux",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "is_ship_class": "shipclass_military"
+          },
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 560
+      },
+      {
+        "key": "ARTIFACT_TACTICAL_CORE_2",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_TACTICAL_CORE_2",
+        "size": "aux",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "is_ship_class": "shipclass_military"
+          },
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 583
+      },
+      {
+        "key": "ARTIFACT_TACTICAL_CORE_3",
+        "kind": "utility_component_template",
+        "component_set": "ARTIFACT_TACTICAL_CORE_3",
+        "size": "aux",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "is_ship_class": "shipclass_military"
+          },
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 607
+      },
+      {
+        "key": "ARTIFACT_COMBAT_COMPUTER_1",
+        "kind": "utility_component_template",
+        "component_set": "combat_computers",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "is_ship_class": "shipclass_military"
+          },
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 630
+      },
+      {
+        "key": "ARTIFACT_COMBAT_COMPUTER_2",
+        "kind": "utility_component_template",
+        "component_set": "combat_computers",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "is_ship_class": "shipclass_military"
+          },
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 654
+      },
+      {
+        "key": "ARTIFACT_COMBAT_COMPUTER_3",
+        "kind": "utility_component_template",
+        "component_set": "combat_computers",
+        "size": "small",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "is_ship_class": "shipclass_military"
+          },
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 679
+      },
+      {
+        "key": "ARTIFACT_SENSOR_1",
+        "kind": "utility_component_template",
+        "component_set": "sensor_components",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_combat_doctrine"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 704
+      },
+      {
+        "key": "ARTIFACT_SENSOR_2",
+        "kind": "utility_component_template",
+        "component_set": "sensor_components",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_resonance_armaments"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 722
+      },
+      {
+        "key": "ARTIFACT_SENSOR_3",
+        "kind": "utility_component_template",
+        "component_set": "sensor_components",
+        "size": "medium",
+        "prerequisites": [
+          "tech_artifact_user_apotheosis_warfare"
+        ],
+        "scope": "public_legacy_technology_gate",
+        "potential": [
+          {
+            "from": [
+              {
+                "owner_main_species": [
+                  {
+                    "is_species_class": "ARTIFACT_USER"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "source": "mod/common/component_templates/aemusa_artifact_tiered_components.txt",
+        "line": 740
+      }
+    ]
+  },
+  "component_tracks": [
+    {
+      "id": "interface_aux",
+      "name": "舰载接口与A槽",
+      "nodes": [
+        "D04",
+        "D10",
+        "D11"
+      ],
+      "role": "D04交付新增标准化供能辅助适配器，D10分化战术／支援A槽，D11负责维修回收侧用途；A槽与必需作战电脑分别登记。"
+    },
+    {
+      "id": "sensor",
+      "name": "舰载传感",
+      "nodes": [
+        "D05"
+      ],
+      "role": "观测型／射控型变体与既有ARTIFACT_SENSOR系列分别映射；A06地表阵列和E06星港接口保留原职责。"
+    },
+    {
+      "id": "weapons",
+      "name": "近程与长程武器",
+      "nodes": [
+        "D06",
+        "D08"
+      ],
+      "role": "武器在射程、追踪、伤害对象、功耗和维护间取舍；S/M/L是同族尺寸，不重复计科技。"
+    },
+    {
+      "id": "shield",
+      "name": "护盾",
+      "nodes": [
+        "D07",
+        "D09"
+      ],
+      "role": "D07偏折护盾、D09分层防御及硬化；与实体装甲的研究入口分开。"
+    },
+    {
+      "id": "armor",
+      "name": "实体装甲",
+      "nodes": [
+        "D15",
+        "D09"
+      ],
+      "role": "D15基础公共符文装甲；复合强化变体要求D15与D09均已研究，不能只研究护盾就得到新装甲族。"
+    },
+    {
+      "id": "power",
+      "name": "舰用能源",
+      "nodes": [
+        "D16",
+        "D13"
+      ],
+      "role": "正常公共舰体功率和维护预算；后期承载另依D13及舰型规格，不复用50000功率的旧专属核心。"
+    },
+    {
+      "id": "thruster",
+      "name": "亚光速推进",
+      "nodes": [
+        "D17",
+        "D13"
+      ],
+      "role": "速度、闪避与能耗取舍；各舰体可装尺寸及自动设计须在对应组件包核对。"
+    },
+    {
+      "id": "ftl",
+      "name": "超空间航行",
+      "nodes": [
+        "D18",
+        "D13"
+      ],
+      "role": "航道航行／充能分工，战略跳跃资格另随高阶舰体责任卡验证；与亚光速推进分开。"
+    },
+    {
+      "id": "computer",
+      "name": "作战电脑",
+      "nodes": [
+        "D10"
+      ],
+      "role": "按交战距离和平台职责提供电脑变体，并分别核对实际行为；保留旧ARTIFACT_COMBAT_COMPUTER系列。"
+    },
+    {
+      "id": "field_hull",
+      "name": "高阶场域与承载",
+      "nodes": [
+        "D12",
+        "D13",
+        "D14"
+      ],
+      "role": "少量指定公共平台的场域、承载与联合防务；光环原型及公共新件分开，范围作用与宿主限制仍待可行性验收。"
+    }
+  ],
+  "army_tracks": [
+    {
+      "id": "landing",
+      "nodes": [
+        "D01",
+        "D19"
+      ],
+      "role": "原守备队保留；新增定向登陆队，强调低附带伤害与目标保存。"
+    },
+    {
+      "id": "garrison",
+      "nodes": [
+        "D20",
+        "D14"
+      ],
+      "role": "有维护、有限驻防，后期进入公共联合防务；不能循环生成可免费撤离的突击军。"
+    },
+    {
+      "id": "siege",
+      "nodes": [
+        "D02",
+        "D21"
+      ],
+      "role": "原共鸣军保留；新增攻坚军，强调耐久与突破，并付出训练、维护及附带伤害代价。"
+    },
+    {
+      "id": "reconstitution",
+      "nodes": [
+        "D22"
+      ],
+      "role": "依赖C11联运和B12回收；原生训练／补充机制，具体数值随军备包确定。"
+    },
+    {
+      "id": "late",
+      "nodes": [
+        "D03",
+        "D14"
+      ],
+      "role": "原终解军团作为现有T5基线继续保留，不再仅为补数量追加更高数值的重复兵种；公共防务资格不读取个人转变。"
+    }
+  ],
+  "batches": [
+    {
+      "id": "R3a",
+      "name": "舰载基础与测距",
+      "nodes": [
+        "D04",
+        "D05",
+        "D15"
+      ]
+    },
+    {
+      "id": "R3b",
+      "name": "近程武器、盾防与动力",
+      "nodes": [
+        "D06",
+        "D07",
+        "D16",
+        "D17"
+      ]
+    },
+    {
+      "id": "R3c",
+      "name": "陆军登陆与驻防",
+      "nodes": [
+        "D19",
+        "D20"
+      ]
+    },
+    {
+      "id": "R3d",
+      "name": "中期军备与攻坚",
+      "nodes": [
+        "D08",
+        "D09",
+        "D11",
+        "D18",
+        "D21"
+      ]
+    },
+    {
+      "id": "R3e",
+      "name": "材料、联运与制度支撑",
+      "nodes": [
+        "B08",
+        "B13",
+        "C11",
+        "C12"
+      ]
+    },
+    {
+      "id": "R3f",
+      "name": "作战电脑与远征整补",
+      "nodes": [
+        "D10",
+        "D22"
+      ]
+    },
+    {
+      "id": "R4_military",
+      "name": "高阶场域、承载与联合防务",
+      "nodes": [
+        "D12",
+        "D13",
+        "D14"
+      ]
+    }
+  ],
+  "compatibility": {
+    "keep_old_technology_keys": [
+      "tech_artifact_user_apotheosis_warfare",
+      "tech_artifact_user_combat_doctrine",
+      "tech_artifact_user_resonance_armaments"
+    ],
+    "existing_techs_and_components_unchanged": true,
+    "delivery": "先增加有独立职责的新变体及研究，保留旧设计和旧总包解锁；是否把旧总包收敛成阶段资格，另作明确的新旧存档迁移包，未落实前保持原行为。",
+    "no_bulk_free_technology": true,
+    "no_component_gate_rewrite_this_turn": true,
+    "private_boundary": "7个命运之主舰型限定旧件保留旧权限；4个无显式科技与potential的光环原型另记宿主条件待核实，不能直接归为公共新组件或个人新奖励。"
+  },
+  "native_checks": [
+    {
+      "path": "common/armies/01_assault_armies.txt",
+      "use": "4.5.2原生陆军基础字段与科技入口；新兵种数值待实施包。"
+    },
+    {
+      "path": "common/armies/00_defense_armies.txt",
+      "use": "守备军区别于可运输突击军，驻防生成与撤销需专项核对。"
+    },
+    {
+      "path": "script_documentation/modifiers.log",
+      "keys": [
+        "planet_defense_armies_add",
+        "planet_army_build_speed_mult",
+        "army_disengage_chance_mult"
+      ],
+      "use": "已查到原生字段，不据此宣称驻军与整补机制已实测。"
+    }
+  ],
+  "validation": {
+    "source_inventory": "checked_read_only",
+    "route_graph": "passed_design_audit",
+    "runtime": "not_run",
+    "balance": "pending",
+    "military_scripts_changed": false
+  },
+  "assets": "以后分别登记陆军类型图标、科技图标与组件图标；组件尺寸变体不默认需要不同图案，个人与公共纹理分开，当前不批量出图。",
+  "source_base": "d5b04f0",
+  "component_variant_technology_requirements": {
+    "composite_armor": [
+      "D09",
+      "D15"
+    ],
+    "advanced_public_reactor": [
+      "D13",
+      "D16"
+    ],
+    "advanced_public_thruster": [
+      "D13",
+      "D17"
+    ],
+    "advanced_public_ftl": [
+      "D13",
+      "D18"
+    ]
+  }
+}
