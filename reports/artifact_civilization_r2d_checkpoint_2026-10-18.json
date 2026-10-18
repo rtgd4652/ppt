@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-18",
+  "package": "R2d",
+  "status": "city_planning_representative_runtime_passed_c09_pending",
+  "source_base": "e3c896b",
+  "source_note": "实际加载e3c896b之上的本轮R2d工作区；包含本记录的中文提交保存最终源码与证据摘要。",
+  "game": {
+    "version": "4.5.2",
+    "checksum": "92e0",
+    "enabled_mod": "mod/aemusa_artifact_user.mod"
+  },
+  "initial_save": "2280.01.01.sav",
+  "counts": {
+    "cold_starts": 1,
+    "initial_save_loads": 1,
+    "critical_reloads": 1,
+    "final_save_reloads": 0,
+    "rr": 0
+  },
+  "controlled_technologies": [
+    "tech_artifact_city_functional_zoning",
+    "tech_artifact_destiny_economy"
+  ],
+  "controlled_scope": "选中殖民地后显式进入owner；两条完整命令各提交一次并观察国家回显。C09没有受控授予。",
+  "normal_actions": {
+    "build": {
+      "building": "building_artifact_city_calculation_room",
+      "queued_date": "2280.01.01",
+      "observed_complete_date": "2280.11.21",
+      "displayed_days": 314,
+      "displayed_cost": {
+        "minerals": 553,
+        "consumer_goods": 85
+      }
+    },
+    "planning": {
+      "decision": "decision_artifact_city_plan_research",
+      "date": "2280.11.21",
+      "displayed_cost": {
+        "energy": 300,
+        "unity": 100
+      },
+      "outcome": "正常启用；三个选择入口收起，出现取消入口；演算室提示三项岗位研究各+5%。",
+      "fee_evidence": "原生费用显示与正常激活；顶部余额以K缩写，未作为逐单位余额差验收。"
+    },
+    "upgrade": {
+      "target": "building_artifact_fate_calculus_institute",
+      "queued_date": "2280.11.21",
+      "displayed_days": 522,
+      "paid_resources_in_save": {
+        "minerals": "1700",
+        "alloys": "425"
+      }
+    }
+  },
+  "critical_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2281.08.06.sav",
+    "bytes": 2286842,
+    "date": "2281.08.06",
+    "colony_id": "9",
+    "planet_id": "290",
+    "owner": "0",
+    "construction": {
+      "item_id": "822083621",
+      "queue": "42",
+      "paying_country": "0",
+      "progress": "293.25",
+      "progress_needed": "600",
+      "resources": {
+        "minerals": "1700",
+        "alloys": "425"
+      },
+      "buildable_planet_upgrade_building": {
+        "building": "building_artifact_fate_calculus_institute",
+        "planet": "9",
+        "zone": "259",
+        "upgrade_building": "502"
+      }
+    },
+    "planning_building": {
+      "id": "502",
+      "type": "building_artifact_city_calculation_room",
+      "position": "2"
+    },
+    "planet_modifiers": [
+      {
+        "items": [
+          {
+            "": {
+              "modifier": "criminal_underworld",
+              "days": "-1"
+            }
+          },
+          {
+            "": {
+              "modifier": "crime_boss_arrested",
+              "days": "780"
+            }
+          },
+          {
+            "": {
+              "modifier": "artifact_city_plan_research",
+              "days": "-1"
+            }
+          }
+        ]
+      }
+    ],
+    "actual_reload_observed": true,
+    "reloaded_ui_remaining_days": 267,
+    "reloaded_ui_progress_percent": 48.87,
+    "reloaded_research_bonuses": {
+      "physics": 0.05,
+      "society": 0.05,
+      "engineering": 0.05
+    }
+  },
+  "final_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2282.08.01.sav",
+    "bytes": 2373005,
+    "date": "2282.08.01",
+    "colony_id": "9",
+    "planet_id": "290",
+    "owner": "0",
+    "planning_building": {
+      "id": "16777655",
+      "type": "building_artifact_fate_calculus_institute",
+      "position": "2"
+    },
+    "low_building_count": 0,
+    "high_building_count": 1,
+    "construction": [],
+    "planet_modifiers": [
+      {
+        "items": [
+          {
+            "": {
+              "modifier": "criminal_underworld",
+              "days": "-1"
+            }
+          },
+          {
+            "": {
+              "modifier": "crime_boss_arrested",
+              "days": "425"
+            }
+          },
+          {
+            "": {
+              "modifier": "artifact_city_plan_research",
+              "days": "-1"
+            }
+          }
+        ]
+      }
+    ],
+    "ui_research_bonuses": {
+      "physics": 0.05,
+      "society": 0.05,
+      "engineering": 0.05
+    },
+    "ui_legacy_modifiers": {
+      "planet_jobs_produces_mult": 0.15,
+      "tarot_analyst_jobs": 6,
+      "artifact_smith_jobs": 3
+    },
+    "ui_state": "暂停、保存后菜单，控制台关闭；能源约96K。"
+  },
+  "verification": {
+    "targeted_tests": {
+      "command": "python -B -m unittest discover -s tools/validation/tests -p test_artifact_city_planning.py -v",
+      "passed": 5,
+      "failed": 0,
+      "scope": "读取真实源码的条件／状态夹具，不是引擎回调或读档模拟。"
+    },
+    "static": {
+      "command": "python -B tools/validation/check_mod.py --game-dir F:/steam/steamapps/common/Stellaris",
+      "status": "passed",
+      "script_files": 142,
+      "events": 250,
+      "localisation_keys": 1584,
+      "registered_states": 791,
+      "referenced_states": 734
+    },
+    "runtime": "正常建造、科研分区、升级和一次进行态关键读档通过。",
+    "runtime_log": "最新error.log无本包新增键或文件命中；存在原版领袖FROM上下文报错和旧未启用ugc描述符提示，不宣称全日志无错。",
+    "save_inspection": "压缩存档只读解析；colony9经planet.colony映射到planet290，未修改gamestate。",
+    "documentation": "JSON与相对链接通过；35公共科技／27行星建筑／1星港建筑与源码吻合，80节点目标、原前置、军备与个人门槛未改。"
+  },
+  "limits": [
+    "C09真实轰炸条件未观察，不造战争、不重跑C2。",
+    "生产／民生分区、取消、来源失效恢复、所有权转让与遗留上下级并存只覆盖源码夹具，未增加引擎场景。",
+    "自然研究抽取、资源平衡及旧高级岗位容量未专项验收。",
+    "最终档未再次载回，唯一关键载回为2281.08.06。"
+  ],
+  "operations": {
+    "input": "仓库既有原生守卫后备脚本；本会话Computer Use未安装。",
+    "focus": "失焦守卫停止输入，自动置前失败后等待用户恢复；期间日期推进，恢复后暂停于2281.08.06，升级尚未完工。",
+    "ime": "首条E04输入被IME影响，未提交；清除自有待输入并切换英文后完整输入、核实、提交。未提交畸形命令。",
+    "archive_manifest": "reports/artifact_civilization_r2d_save_archive_2026-10-18.json",
+    "archived_current_run_autosaves": 5,
+    "deleted_saves": 0,
+    "final_save_directory_count": 100
+  },
+  "screenshots": [
+    "tools/desktop/r2d_low_effects.png",
+    "tools/desktop/r2d_upgrade_checkpoint_ready.png",
+    "tools/desktop/r2d_load_confirm.png",
+    "tools/desktop/r2d_reload_effects.png",
+    "tools/desktop/r2d_high_effects.png",
+    "tools/desktop/r2d_final_saved.png"
+  ],
+  "evidence_note": "截图及temp只读解析全文为本机忽略文件，摘要在本JSON；不会随Git克隆自动携带原始存档。",
+  "next_step": "先细化R2e C10公共研究复现／E05研究园区的成果来源与归档；R2f及军备按独立批次继续，不重跑本包。"
+}

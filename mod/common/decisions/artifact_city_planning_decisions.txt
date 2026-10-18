@@ -1,0 +1,150 @@
+# 科研分区：原生决议正常扣费，状态只保存方向，效益由当地演算设施提供。
+decision_artifact_city_plan_research = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = {
+		category = decisions
+		cost = { energy = 300 unity = 100 }
+	}
+	potential = {
+		is_colony = yes
+		exists = owner
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			has_technology = "tech_artifact_city_functional_zoning"
+		}
+		NOR = {
+			has_modifier = artifact_city_plan_research
+			has_modifier = artifact_city_plan_production
+			has_modifier = artifact_city_plan_services
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_city_plan_requires_control
+			is_controlled_by = owner
+		}
+		custom_tooltip = {
+			fail_text = artifact_city_plan_requires_active_facility
+			OR = {
+				has_active_building = "building_artifact_city_calculation_room"
+				has_active_building = "building_artifact_fate_calculus_institute"
+			}
+		}
+	}
+	effect = {
+		add_modifier = { modifier = artifact_city_plan_research days = -1 }
+	}
+	ai_weight = { weight = 0 }
+}
+
+# 生产分区：原生决议正常扣费，状态只保存方向，效益由当地演算设施提供。
+decision_artifact_city_plan_production = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = {
+		category = decisions
+		cost = { energy = 300 unity = 100 }
+	}
+	potential = {
+		is_colony = yes
+		exists = owner
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			has_technology = "tech_artifact_city_functional_zoning"
+		}
+		NOR = {
+			has_modifier = artifact_city_plan_research
+			has_modifier = artifact_city_plan_production
+			has_modifier = artifact_city_plan_services
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_city_plan_requires_control
+			is_controlled_by = owner
+		}
+		custom_tooltip = {
+			fail_text = artifact_city_plan_requires_active_facility
+			OR = {
+				has_active_building = "building_artifact_city_calculation_room"
+				has_active_building = "building_artifact_fate_calculus_institute"
+			}
+		}
+	}
+	effect = {
+		add_modifier = { modifier = artifact_city_plan_production days = -1 }
+	}
+	ai_weight = { weight = 0 }
+}
+
+# 民生分区：原生决议正常扣费，状态只保存方向，效益由当地演算设施提供。
+decision_artifact_city_plan_services = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = {
+		category = decisions
+		cost = { energy = 300 unity = 100 }
+	}
+	potential = {
+		is_colony = yes
+		exists = owner
+		owner = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			has_technology = "tech_artifact_city_functional_zoning"
+		}
+		NOR = {
+			has_modifier = artifact_city_plan_research
+			has_modifier = artifact_city_plan_production
+			has_modifier = artifact_city_plan_services
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_city_plan_requires_control
+			is_controlled_by = owner
+		}
+		custom_tooltip = {
+			fail_text = artifact_city_plan_requires_active_facility
+			OR = {
+				has_active_building = "building_artifact_city_calculation_room"
+				has_active_building = "building_artifact_fate_calculus_institute"
+			}
+		}
+	}
+	effect = {
+		add_modifier = { modifier = artifact_city_plan_services days = -1 }
+	}
+	ai_weight = { weight = 0 }
+}
+
+# 设施失效后仍可取消既有选择；只撤回本包状态，不退款、不产生结算奖励。
+decision_artifact_city_plan_cancel = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		is_colony = yes
+		exists = owner
+		OR = {
+			has_modifier = artifact_city_plan_research
+			has_modifier = artifact_city_plan_production
+			has_modifier = artifact_city_plan_services
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_city_plan_requires_control
+			is_controlled_by = owner
+		}
+	}
+	effect = {
+		remove_modifier = artifact_city_plan_research
+		remove_modifier = artifact_city_plan_production
+		remove_modifier = artifact_city_plan_services
+	}
+	ai_weight = { weight = 0 }
+}

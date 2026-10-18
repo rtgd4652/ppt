@@ -433,7 +433,7 @@
  building_artifact_seven_day_command:0 "七日调度中枢"
  building_artifact_seven_day_command_desc:0 "中央庭把轮回中的疏散、巡查、补给与作战经验整合为行星级指挥中心，使黑门守望者能稳定维持都市秩序。"
  building_artifact_fate_calculus_institute:0 "命运经济演算院"
- building_artifact_fate_calculus_institute_desc:0 "一座服务于神器使后期经济的行星级演算院。塔罗分析员与神器铸造师在此共同校准科研、工业和命运观测塔的前置数据。"
+ building_artifact_fate_calculus_institute_desc:0 "一座服务于神器使后期经济的行星级演算院。塔罗分析员与神器铸造师在此共同校准科研、工业和命运观测塔的前置数据。研究城市功能分区后，可执行科研、生产或民生规划，并接续原演算室的既有规划。"
  job_artifact_tarot_analyst:0 "塔罗分析员"
  job_artifact_tarot_analyst_plural:0 "塔罗分析员"
  job_artifact_tarot_analyst_desc:0 "塔罗分析员把神器使的直觉、黑门记录与高维传感数据整理为三系研究成果。"

@@ -1,0 +1,6 @@
+# 4.5.2的转让回调作用域为殖民地；跟随原版action.89，以carrier_event清理当地规划。
+on_colony_transfer = {
+	events = {
+		artifact_city_planning.1
+	}
+}

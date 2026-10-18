@@ -10,7 +10,7 @@
  building_artifact_standard_parts_workshop:0 "标准件工坊"
  building_artifact_standard_parts_workshop_desc:0 "生产可更换的基础构件，并积累工程记录。完成神器锻造研究后，可以升级为中央庭神器工坊。"
  building_artifact_community_service_center:0 "社区公共服务中心"
- building_artifact_community_service_center_desc:0 "由社区协调员维持公共服务、日常联络和公共空间，使殖民地的生活与工作得以持续。"
+ building_artifact_community_service_center_desc:0 "由社区协调员维持公共服务、日常联络和公共空间，使殖民地的生活与工作得以持续。研究中央庭灾害统筹后，正常运作且由本国控制的中心在轨道轰炸期间提供稳定度增加5、舒适度需求降低10%的民生保障。"
  building_artifact_basic_civic_factory:0 "基础民生工场"
  building_artifact_basic_civic_factory_desc:0 "将基础原料加工成居民需要的日常用品。完成神器民生产业研究后，可以升级为神器民生工坊。"
  job_artifact_junior_observer:0 "初级观测员"

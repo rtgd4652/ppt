@@ -199,6 +199,8 @@ building_artifact_seven_day_command = {
 
 # 命运经济演算院：观测塔完工前的行星级算力节点，专门服务神器使科研与行政经济。
 building_artifact_fate_calculus_institute = {
+	# 新增低阶升级入口后仍允许按原E01科技直接建造。
+	can_build = yes
 	base_buildtime = 600
 	icon = building_artifact_fate_calculus_institute
 	category = research
@@ -235,6 +237,51 @@ building_artifact_fate_calculus_institute = {
 		job_artifact_tarot_analyst_add = 6
 		job_artifact_relic_artificer_add = 3
 		planet_jobs_produces_mult = 0.15
+	}
+	# 继承当地已付费规划，只提供一份效果；旧费用、岗位和原有经济收益保持。
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_fate_calculus_institute"
+			owner = {
+				has_technology = "tech_artifact_city_functional_zoning"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_modifier = artifact_city_plan_research
+		}
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_fate_calculus_institute"
+			owner = {
+				has_technology = "tech_artifact_city_functional_zoning"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_modifier = artifact_city_plan_production
+		}
+		planet_jobs_alloys_produces_mult = 0.05
+		planet_jobs_consumer_goods_produces_mult = 0.05
+		planet_jobs_minerals_upkeep_mult = 0.05
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_fate_calculus_institute"
+			owner = {
+				has_technology = "tech_artifact_city_functional_zoning"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_modifier = artifact_city_plan_services
+		}
+		planet_stability_add = 3
+		pop_amenities_usage_mult = -0.1
 	}
 }
 

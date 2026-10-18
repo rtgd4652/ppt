@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "date": "2026-10-14",
-  "updated": "2026-10-17",
-  "status": "route_refined_with_r2c_representative_runtime_passed_r2d_spec_and_military_extension",
+  "updated": "2026-10-18",
+  "status": "route_with_r2d_city_representative_runtime_passed_c09_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -570,7 +570,7 @@
     },
     {
       "id": "C09",
-      "name": "风险分区与避难组织",
+      "name": "中央庭灾害统筹",
       "area": "society",
       "tier": 3,
       "prerequisites": [
@@ -579,8 +579,10 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "社区公共服务中心在实际轰炸且可控活跃时提供当地稳定与舒适需求保障；无新增避难楼，C2参数和入口保持。"
+      "status": "implemented_runtime_bombardment_pending",
+      "capability": "中央庭组织疏散、安置与配给；社区服务中心在实际轰炸、控制与活跃条件满足时提供稳定+5、舒适需求-10%。真实轰炸未验，C2保持。",
+      "implementation_key": "tech_artifact_refuge_organization",
+      "runtime_report": "reports/artifact_civilization_r2d_runtime_2026-10-18.md"
     },
     {
       "id": "C10",
@@ -870,8 +872,10 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设无新增岗位的城市经济演算室，付费选择科研、生产或民生方向；每殖民地一个选择，原高级演算院接续。"
+      "status": "implemented_representative_runtime_passed_controlled_research",
+      "capability": "建设无新增岗位的城市经济演算室，付费选择科研、生产或民生方向；每殖民地一个选择，原高级演算院接续。",
+      "implementation_key": "tech_artifact_city_functional_zoning",
+      "runtime_report": "reports/artifact_civilization_r2d_runtime_2026-10-18.md"
     },
     {
       "id": "E05",
@@ -1407,14 +1411,22 @@
           "name": "城市经济演算室",
           "technology": "E04",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "implemented_representative_runtime_passed",
+          "implementation_key": "building_artifact_city_calculation_room",
+          "runtime_report": "reports/artifact_civilization_r2d_runtime_2026-10-18.md"
         },
         {
           "stage": 2,
           "name": "命运经济演算院",
           "technology": "E01",
           "existing_key": "building_artifact_fate_calculus_institute",
-          "status": "existing_definition"
+          "status": "existing_definition",
+          "planning_extension": {
+            "technology": "E04",
+            "status": "representative_upgrade_and_planning_inheritance_passed",
+            "runtime_report": "reports/artifact_civilization_r2d_runtime_2026-10-18.md",
+            "legacy_direct_build": "E01与旧费用／岗位保持；直建兼容经源码夹具核对，未额外建第二座"
+          }
         }
       ]
     },
@@ -1973,9 +1985,9 @@
       "next_step": "先细化R2d治理与城市的范围、用途、费用、保存状态和最小验收；本轮不启动R2d或其他路线"
     },
     "R2d": {
-      "date": "2026-10-17",
-      "status": "spec_refined_source_pending",
-      "runtime_status": "not_run",
+      "date": "2026-10-18",
+      "status": "city_planning_representative_runtime_passed_c09_pending",
+      "runtime_status": "city_planning_representative_path_and_one_critical_reload_passed",
       "balance_status": "pending",
       "spec": "docs/design/artifact_civilization_r2d_implementation_spec_v0.1.json",
       "nodes": [
@@ -1984,14 +1996,30 @@
       ],
       "new_planet_buildings": 1,
       "new_jobs": 0,
-      "next_step": "接入C09／E04源码，完成必要静态检查，再做一条城市规划正常路径与一次升级进行态关键读档。"
+      "next_step": "先细化R2e C10公共研究复现／E05研究园区的成果来源与归档；R2f及军备按独立批次继续，不重跑本包。",
+      "c09_runtime_status": "unverified_actual_bombardment",
+      "technology_keys": {
+        "C09": "tech_artifact_refuge_organization",
+        "E04": "tech_artifact_city_functional_zoning"
+      },
+      "runtime_report": "reports/artifact_civilization_r2d_runtime_2026-10-18.md",
+      "checkpoint": "reports/artifact_civilization_r2d_checkpoint_2026-10-18.json",
+      "final_save": "2282.08.01.sav",
+      "critical_reload_count": 1,
+      "rr_count": 0,
+      "runtime_limits": [
+        "C09真实轰炸条件未观察，不造战争、不重跑C2。",
+        "生产／民生分区、取消、来源失效恢复、所有权转让与遗留上下级并存只覆盖源码夹具，未增加引擎场景。",
+        "自然研究抽取、资源平衡及旧高级岗位容量未专项验收。",
+        "最终档未再次载回，唯一关键载回为2281.08.06。"
+      ]
     }
   },
   "current_counts": {
-    "date": "2026-10-17",
-    "public_technologies": 33,
-    "building_definitions": 26,
-    "note": "当前代码33公共科技／26行星建筑／1星港建筑；v0.3设计目标80科技／27类46阶段，旧19／15仍作为历史baseline。",
+    "date": "2026-10-18",
+    "public_technologies": 35,
+    "building_definitions": 27,
+    "note": "当前代码35公共科技／27行星建筑定义／1星港建筑；v0.3设计目标80科技／27类46阶段，旧19／15仍为历史baseline。",
     "starbase_building_definitions": 1
   },
   "orbital_buildings": [

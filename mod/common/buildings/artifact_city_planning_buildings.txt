@@ -1,0 +1,75 @@
+# 城市经济演算室：使用城市研究槽，先形成当地规划，再沿原槽升级；不增加岗位。
+building_artifact_city_calculation_room = {
+	can_build = yes
+	base_buildtime = 360
+	icon = "building_artifact_fate_calculus_institute"
+	category = research
+	building_sets = { research }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_city_functional_zoning" }
+	upgrades = { "building_artifact_fate_calculus_institute" }
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+	# 已建／在建高级只阻止新建，不能撤销升级中的低级设施。
+	allow = {
+		NOR = {
+			has_building = "building_artifact_fate_calculus_institute"
+			has_building_construction = "building_artifact_fate_calculus_institute"
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 650 consumer_goods = 100 }
+		upkeep = { energy = 4 consumer_goods = 2 }
+	}
+	# 选择标记没有收益；效益由有效设施承担。遗留上下级并存时高级优先，避免重复。
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_city_calculation_room"
+			NOT = { has_active_building = "building_artifact_fate_calculus_institute" }
+			owner = {
+				has_technology = "tech_artifact_city_functional_zoning"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_modifier = artifact_city_plan_research
+		}
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_city_calculation_room"
+			NOT = { has_active_building = "building_artifact_fate_calculus_institute" }
+			owner = {
+				has_technology = "tech_artifact_city_functional_zoning"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_modifier = artifact_city_plan_production
+		}
+		planet_jobs_alloys_produces_mult = 0.05
+		planet_jobs_consumer_goods_produces_mult = 0.05
+		planet_jobs_minerals_upkeep_mult = 0.05
+	}
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_city_calculation_room"
+			NOT = { has_active_building = "building_artifact_fate_calculus_institute" }
+			owner = {
+				has_technology = "tech_artifact_city_functional_zoning"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_modifier = artifact_city_plan_services
+		}
+		planet_stability_add = 3
+		pop_amenities_usage_mult = -0.1
+	}
+}

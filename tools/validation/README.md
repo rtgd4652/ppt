@@ -47,6 +47,16 @@ python -B -m unittest discover -s tools/validation/tests -v
 python -B -m unittest discover -s tools/validation/tests -p test_artifact_foundation_projects.py -v
 ```
 
+## R2d定向检查
+
+读取正式城市规划源码的5项夹具，覆盖正常费用与互斥、无效来源暂停、升级接续与高级优先、原生转让入口仅清本包标记，以及C09的实际轰炸条件。未知语法立即失败；它不模拟引擎回调、UI或存读档。只修改本包时定向运行，不重复全套历史机制：
+
+```powershell
+python -B -m unittest discover -s tools/validation/tests -p test_artifact_city_planning.py -v
+```
+
+2026-10-18正常城市规划与一次进行态读档证据见[运行记录](../../reports/artifact_civilization_r2d_runtime_2026-10-18.md)；C09真实轰炸及其他规划方向仍未作引擎验收。
+
 ## 保存工作区快照
 
 ```powershell

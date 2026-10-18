@@ -1,0 +1,35 @@
+{
+  "date": "2026-10-18",
+  "reason": "原生战役存档数上限阻止另存；分两次无损归档本轮五个自动存档，为唯一关键档与最终档腾出空间。",
+  "moves": [
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2280.07.01.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2d_archive_2026-10-18\\autosave_2280.07.01.sav",
+      "bytes": 2266204
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2281.01.01.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2d_archive_2026-10-18\\autosave_2281.01.01.sav",
+      "bytes": 2262393
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2281.07.01.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2d_archive_2026-10-18\\autosave_2281.07.01.sav",
+      "bytes": 2278641
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2282.01.01.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2d_archive_2026-10-18\\autosave_2282.01.01.sav",
+      "bytes": 2348150
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2282.07.01.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2d_archive_2026-10-18\\autosave_2282.07.01.sav",
+      "bytes": 2376387
+    }
+  ],
+  "manual_saves_unchanged": true,
+  "deleted_files": 0,
+  "remaining_count_after_last_archive": 99,
+  "final_count_after_manual_save": 100
+}

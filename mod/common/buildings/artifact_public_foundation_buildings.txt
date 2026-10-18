@@ -122,6 +122,21 @@ building_artifact_community_service_center = {
 	planet_modifier = {
 		job_artifact_community_coordinator_add = 1
 	}
+	# 中央庭灾害统筹：社区在真实轰炸期间组织疏散与配给，不改写C2的准备或保护状态。
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_community_service_center"
+			has_orbital_bombardment = yes
+			owner = {
+				has_technology = "tech_artifact_refuge_organization"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+		}
+		planet_stability_add = 5
+		pop_amenities_usage_mult = -0.1
+	}
 }
 
 # 基础民生工场：每星球限一，按原生父子升级关系替换岗位。

@@ -1,0 +1,20 @@
+namespace = artifact_city_planning
+
+# 转让不退款、不迁移收益；仅清理R2d三种方向，保留其他包、人物与主线状态。
+carrier_event = {
+	id = artifact_city_planning.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			has_modifier = artifact_city_plan_research
+			has_modifier = artifact_city_plan_production
+			has_modifier = artifact_city_plan_services
+		}
+	}
+	immediate = {
+		remove_modifier = artifact_city_plan_research
+		remove_modifier = artifact_city_plan_production
+		remove_modifier = artifact_city_plan_services
+	}
+}

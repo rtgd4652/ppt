@@ -1,16 +1,16 @@
 {
-  "date": "2026-10-17",
+  "date": "2026-10-18",
   "package": "R2d",
-  "name": "避难组织与城市分区",
-  "status": "spec_refined_source_pending",
-  "source_base": "d5b04f0",
+  "name": "中央庭灾害统筹与城市分区",
+  "status": "city_planning_representative_runtime_passed_c09_pending",
+  "source_base": "e3c896b",
   "scope": {
     "new_public_technologies": 2,
     "new_planet_buildings": 1,
     "new_jobs": 0,
     "new_military_objects": 0,
-    "source_implemented": false,
-    "game_operated": false
+    "source_implemented": true,
+    "game_operated": true
   },
   "research": [
     {
@@ -25,7 +25,8 @@
         "C02",
         "C07"
       ],
-      "unlock": "社区公共服务中心的轰炸期避难组织"
+      "unlock": "中央庭疏散、安置与配给能力；已有社区公共服务中心的轰炸期公共服务保障",
+      "name": "中央庭灾害统筹"
     },
     {
       "id": "E04",
@@ -173,13 +174,15 @@
     ],
     "targeted_changes": [
       "mod/common/buildings/artifact_public_foundation_buildings.txt",
-      "mod/common/buildings/aemusa_buildings.txt"
+      "mod/common/buildings/aemusa_buildings.txt",
+      "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml"
     ],
-    "note": "这是后续完整文件清单，当前均未创建或修改；源码按科技／建筑、规划状态、转让清理小步接入。"
+    "note": "七个新源码文件与四处定向修改均已接入；原高级显式保留直接建造，未改变其费用、原岗位和15%产出。"
   },
   "verification": {
-    "static": "pending_implementation",
-    "runtime": "not_run",
+    "static": "passed",
+    "runtime": "city_planning_representative_path_and_one_critical_reload_passed",
     "balance": "pending",
     "source_contracts": [
       "科技与活跃设施资格、三选一及取消不返还",
@@ -187,8 +190,23 @@
       "升级保留选择且上下级只计一份",
       "转让回调只清除三种本包标记，不碰C2／R1状态"
     ],
-    "minimal_runtime": "一颗殖民地正常建演算室，付费选择科研分区，正常升级；在已有升级进度且选择仍有效时正常另存并实际载回一次，完工核对方向保留、只计一份。缺资源rr，不重跑全部方向。",
-    "c09_runtime": "不为C09额外制造战争或轰炸；未自然观察到相应状态时明确保留未验，不能用城市规划读档宣称轰炸效果通过。"
+    "minimal_runtime": "代表路径已完成：正常建演算室、选择科研分区、升级；2281.08.06进行态实际载回一次，48.87%／267日及三项+5%保持，最终高级接续。其他方向不扩测。",
+    "c09_runtime": "真实轰炸未观察；C09未受控授予，不造战争、不重跑C2。",
+    "targeted_tests": {
+      "passed": 5,
+      "failed": 0
+    },
+    "runtime_report": "reports/artifact_civilization_r2d_runtime_2026-10-18.md",
+    "checkpoint": "reports/artifact_civilization_r2d_checkpoint_2026-10-18.json",
+    "final_save": "2282.08.01.sav",
+    "critical_reload_count": 1,
+    "rr_count": 0,
+    "runtime_limits": [
+      "C09真实轰炸条件未观察，不造战争、不重跑C2。",
+      "生产／民生分区、取消、来源失效恢复、所有权转让与遗留上下级并存只覆盖源码夹具，未增加引擎场景。",
+      "自然研究抽取、资源平衡及旧高级岗位容量未专项验收。",
+      "最终档未再次载回，唯一关键载回为2281.08.06。"
+    ]
   },
   "next_packages": [
     {

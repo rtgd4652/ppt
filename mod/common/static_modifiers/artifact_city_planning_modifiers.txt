@@ -1,0 +1,15 @@
+# 永久方向标记不包含数值收益；有效演算设施按选择提供当地修正。
+artifact_city_plan_research = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+artifact_city_plan_production = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+artifact_city_plan_services = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}

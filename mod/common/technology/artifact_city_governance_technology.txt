@@ -1,0 +1,33 @@
+# R2d公共治理：中央庭的疏散、安置与配给经验成为可复用的民生组织能力。
+tech_artifact_refuge_organization = {
+	area = society
+	icon = "tech_artifact_central_court_protocols"
+	cost = 2400
+	tier = 3
+	category = { statecraft }
+	prerequisites = {
+		"tech_artifact_tarot_economy"
+		"tech_artifact_colony_public_services"
+	}
+	weight = 100
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}
+
+# 城市分区读取公共工程基础；选择与效益保存于当地，不依赖人物或个人转变。
+tech_artifact_city_functional_zoning = {
+	area = society
+	icon = "tech_artifact_tarot_economy"
+	cost = 3000
+	tier = 3
+	category = { statecraft }
+	prerequisites = {
+		"tech_artifact_modular_colony_construction"
+		"tech_artifact_tarot_economy"
+	}
+	weight = 95
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}
