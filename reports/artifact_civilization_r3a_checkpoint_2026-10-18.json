@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-18",
+  "package": "R3a",
+  "status": "source_and_cold_start_saved_equipment_runtime_pending",
+  "source_commit": "66a2a36",
+  "spec_commit": "bdc5d1e",
+  "static": {
+    "status": "pass",
+    "errors": 0,
+    "warnings": 0,
+    "scripts": 149,
+    "localisation_keys": 1629
+  },
+  "source_contract_checks": {
+    "status": "pass",
+    "count": 6,
+    "report": "reports/artifact_civilization_r3a_source_checks_2026-10-18.json"
+  },
+  "counts": {
+    "public_technologies": 41,
+    "planet_building_definitions": 29,
+    "starbase_building_definitions": 1,
+    "component_definitions": 60,
+    "old_component_definitions_preserved": 54
+  },
+  "runtime": {
+    "version": "4.5.2",
+    "checksum": "099e",
+    "game_process_id_at_recording": 25816,
+    "window_handle_at_recording": 1248612,
+    "started_at": "2026-10-18T20:54:01+08:00",
+    "screen": "main_menu",
+    "enabled_mods": [
+      "mod/aemusa_artifact_user.mod"
+    ],
+    "cold_starts": 1,
+    "initial_save_loads": 0,
+    "critical_reloads": 0,
+    "console_submissions": 0,
+    "rr": 0,
+    "new_designs_or_refits": 0,
+    "package_named_errors_found": false,
+    "existing_unrelated_warnings": true,
+    "user_started_from_steam_launcher": true
+  },
+  "baseline_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2289.11.24.sav",
+    "bytes": 2545931,
+    "state": "R2f station enabled; preserve original"
+  },
+  "automation": {
+    "native_input_guard_blocked_before_load": true,
+    "computer_use_plugin": "computer-use@openai-bundled",
+    "computer_use_installed_enabled": true,
+    "computer_use_version": "26.818.41509",
+    "installed_path": "C:\\Users\\Admin\\.codex\\plugins\\cache\\openai-bundled\\computer-use\\26.818.41509",
+    "computer_use_ui_api_called": false,
+    "reason_for_next_turn": "Computer Use docs/guidance.md line237 prohibits mixing PowerShell UI Automation and Computer Use in the same turn; native Windows input already used earlier in this turn.",
+    "next_api": "node_repl import @oai/sky; list_windows; choose exactly one returned Stellaris window; get_window_state; one action and refresh",
+    "old_pending_input": "Belongs to exited PID27944; already submitted hazardous-weather command. Never replay.",
+    "new_command_files": "Three current research inputs prepared under tools/desktop/runtime-backups; none submitted; not an automatic queue."
+  },
+  "pending": [
+    "load R2f enabled checkpoint once",
+    "controlled research only if needed and actually confirmed",
+    "ordinary corvette fit and normal refit",
+    "one result-save reload"
+  ],
+  "implementation_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md"
+}

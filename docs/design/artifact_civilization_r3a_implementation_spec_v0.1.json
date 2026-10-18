@@ -290,7 +290,9 @@
     },
     "balance": "pending",
     "runtime": "pending",
-    "source_check_report": "reports/artifact_civilization_r3a_source_checks_2026-10-18.json"
+    "source_check_report": "reports/artifact_civilization_r3a_source_checks_2026-10-18.json",
+    "cold_start": "4.5.2 (099e), main menu, package errors not found, no save load",
+    "checkpoint": "reports/artifact_civilization_r3a_checkpoint_2026-10-18.json"
   },
   "native_version_read": "4.5.2",
   "target_version": "4.5.1",

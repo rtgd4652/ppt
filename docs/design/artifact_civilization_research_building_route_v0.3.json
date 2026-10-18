@@ -2119,7 +2119,9 @@
       },
       "new_technologies": 3,
       "new_components": 6,
-      "new_component_sets": 2
+      "new_component_sets": 2,
+      "cold_start": "4.5.2 (099e), main menu, package errors not found, no save load",
+      "checkpoint": "reports/artifact_civilization_r3a_checkpoint_2026-10-18.json"
     }
   },
   "current_counts": {
