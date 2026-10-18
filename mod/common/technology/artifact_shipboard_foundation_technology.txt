@@ -1,0 +1,64 @@
+# R3a公共舰载基础：新研究独立解锁新件，旧军备总包与个人路线保持原条件。
+
+# D04 神器舰载接口：交付实际组件，不附加全国修正。
+tech_artifact_shipboard_interface = {
+	area = engineering
+	icon = "tech_artifact_user_combat_doctrine"
+	cost = 1600
+	tier = 2
+	category = {
+		voidcraft
+	}
+	prerequisites = {
+		"tech_artifact_user_combat_doctrine"
+		"tech_artifact_standard_parts"
+	}
+	weight = 110
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# D05 相位测距阵列：交付实际组件，不附加全国修正。
+tech_artifact_phase_ranging_array = {
+	area = physics
+	icon = "tech_artifact_black_gate_observation"
+	cost = 3600
+	tier = 3
+	category = {
+		computing
+	}
+	prerequisites = {
+		"tech_artifact_shipboard_interface"
+		"tech_artifact_long_baseline_measurement"
+	}
+	weight = 90
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# D15 符文舰体装甲：交付实际组件，不附加全国修正。
+tech_artifact_runic_hull_armor = {
+	area = engineering
+	icon = "tech_artifact_relic_fabrication"
+	cost = 3600
+	tier = 3
+	category = {
+		materials
+	}
+	prerequisites = {
+		"tech_artifact_shipboard_interface"
+		"tech_artifact_resonance_material_screening"
+	}
+	weight = 90
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}

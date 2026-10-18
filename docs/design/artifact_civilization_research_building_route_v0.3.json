@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-18",
-  "status": "route_with_r3a_spec_ready",
+  "status": "route_with_r3a_source_implemented_runtime_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -677,13 +677,14 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "spec_ready_not_implemented",
+      "status": "implemented_static_pass_runtime_pending",
       "capability": "独立A槽适配器提供固定30功率，实际占槽／费用／维护；保留D01旧组件。",
       "proposed_key": "tech_artifact_shipboard_interface",
       "category": "voidcraft",
       "cost": 1600,
       "weight": 110,
-      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
+      "implementation_key": "tech_artifact_shipboard_interface"
     },
     {
       "id": "D05",
@@ -696,13 +697,14 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "spec_ready_not_implemented",
+      "status": "implemented_static_pass_runtime_pending",
       "capability": "观测与射控两种同槽选择，范围4/6与追踪5，或范围2/3与追踪20；旧传感器键保留。",
       "proposed_key": "tech_artifact_phase_ranging_array",
       "category": "computing",
       "cost": 3600,
       "weight": 90,
-      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
+      "implementation_key": "tech_artifact_phase_ranging_array"
     },
     {
       "id": "D06",
@@ -1139,8 +1141,9 @@
       "capability": "独立符文装甲族S/M/L为140/420/1260装甲和各0.08硬化，以造价、维护换取抗穿透；未来复合变体仍需D15+D09。",
       "gate": null,
       "existing_key": null,
-      "status": "spec_ready_not_implemented",
-      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json"
+      "status": "implemented_static_pass_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
+      "implementation_key": "tech_artifact_runic_hull_armor"
     },
     {
       "id": "D16",
@@ -2094,10 +2097,10 @@
     },
     "R3a": {
       "date": "2026-10-18",
-      "status": "spec_ready_not_implemented",
-      "runtime_status": "not_started",
+      "status": "implemented_static_pass_runtime_pending",
+      "runtime_status": "pending",
       "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r3a_spec_2026-10-18.md",
+      "report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md",
       "proposed_technology_keys": {
         "D04": "tech_artifact_shipboard_interface",
         "D05": "tech_artifact_phase_ranging_array",
@@ -2106,16 +2109,26 @@
       "planned_technology_count": 3,
       "planned_component_count": 6,
       "planned_new_component_sets": 2,
-      "source_implemented": false,
-      "game_actions_this_spec_turn": 0
+      "source_implemented": true,
+      "game_actions_this_spec_turn": 0,
+      "source_checks": "reports/artifact_civilization_r3a_source_checks_2026-10-18.json",
+      "technology_keys": {
+        "D04": "tech_artifact_shipboard_interface",
+        "D05": "tech_artifact_phase_ranging_array",
+        "D15": "tech_artifact_runic_hull_armor"
+      },
+      "new_technologies": 3,
+      "new_components": 6,
+      "new_component_sets": 2
     }
   },
   "current_counts": {
     "date": "2026-10-18",
-    "public_technologies": 38,
+    "public_technologies": 41,
     "building_definitions": 29,
-    "note": "当前源码38公共科技／29行星建筑定义／1星港建筑；完整设计80项公共科技／27类46阶段，个人4项独立。",
-    "starbase_building_definitions": 1
+    "note": "当前源码41公共科技／29行星建筑定义／1星港建筑／60组件；目标80公共科技／27类46阶段，个人4项独立，运行验收另记。",
+    "starbase_building_definitions": 1,
+    "component_definitions": 60
   },
   "orbital_buildings": [
     {

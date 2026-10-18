@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-18",
+  "package": "R3a",
+  "source_baseline": "bdc5d1e",
+  "status": "pass",
+  "checks": [
+    "legacy component/sets/army semantics unchanged",
+    "new technology prerequisite and public identity links",
+    "six new components mapped to registered slot sets",
+    "mechanical public identity and fire-control military gate",
+    "range and modifier scope match the specification; no upgrade pointer migration",
+    "script/localisation encoding"
+  ],
+  "current_components": 60,
+  "new_components": 6,
+  "new_technologies": 3,
+  "game_runtime": "pending"
+}

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3a_spec_ready_implementation_pending",
+  "status": "r3a_source_implemented_runtime_pending",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -31,8 +31,9 @@
       "capability": "解锁独立的公共符文装甲变体，以合金成本、维护和抗穿透取舍区别护盾；D09后可研究复合强化，不改旧装甲键。",
       "gate": null,
       "existing_key": null,
-      "status": "spec_ready_not_implemented",
-      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json"
+      "status": "implemented_static_pass_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
+      "implementation_key": "tech_artifact_runic_hull_armor"
     },
     {
       "id": "D16",
@@ -1629,8 +1630,9 @@
         "D05",
         "D15"
       ],
-      "status": "spec_ready_not_implemented",
-      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json"
+      "status": "implemented_static_pass_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md"
     },
     {
       "id": "R3b",
@@ -1749,5 +1751,5 @@
   },
   "updated": "2026-10-18",
   "r3a_spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
-  "r3a_report": "reports/artifact_civilization_r3a_spec_2026-10-18.md"
+  "r3a_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md"
 }

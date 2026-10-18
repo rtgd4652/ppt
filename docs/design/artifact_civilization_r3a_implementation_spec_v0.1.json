@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-10-18",
   "package": "R3a",
-  "status": "spec_ready_not_implemented",
+  "status": "implemented_static_pass_runtime_pending",
   "source_baseline": "3e980fe",
   "scope": [
     "D04",
@@ -27,7 +27,8 @@
         "tech_artifact_user_combat_doctrine",
         "tech_artifact_standard_parts"
       ],
-      "icon": "tech_artifact_user_combat_doctrine"
+      "icon": "tech_artifact_user_combat_doctrine",
+      "implementation_key": "tech_artifact_shipboard_interface"
     },
     {
       "id": "D05",
@@ -46,7 +47,8 @@
         "tech_artifact_shipboard_interface",
         "tech_artifact_long_baseline_measurement"
       ],
-      "icon": "tech_artifact_black_gate_observation"
+      "icon": "tech_artifact_black_gate_observation",
+      "implementation_key": "tech_artifact_phase_ranging_array"
     },
     {
       "id": "D15",
@@ -65,7 +67,8 @@
         "tech_artifact_shipboard_interface",
         "tech_artifact_resonance_material_screening"
       ],
-      "icon": "tech_artifact_relic_fabrication"
+      "icon": "tech_artifact_relic_fabrication",
+      "implementation_key": "tech_artifact_runic_hull_armor"
     }
   ],
   "components": [
@@ -233,9 +236,9 @@
     "legacy_sensors_may_remain_stronger": true
   },
   "counts": {
-    "current_public_technologies": 38,
+    "current_public_technologies": 41,
     "planned_public_technologies_after_implementation": 41,
-    "current_component_definitions": 54,
+    "current_component_definitions": 60,
     "planned_component_definitions_after_implementation": 60,
     "planet_building_definitions_unchanged": 29,
     "starbase_building_definitions_unchanged": 1
@@ -262,7 +265,7 @@
     }
   ],
   "validation": {
-    "current": "spec_only",
+    "current": "source_links_and_static_pass",
     "source_checks": [
       "technology references and public gate",
       "component sets, scope and slot mapping",
@@ -286,7 +289,8 @@
       "fixed_aux_power_must_be_observed": true
     },
     "balance": "pending",
-    "runtime": "pending"
+    "runtime": "pending",
+    "source_check_report": "reports/artifact_civilization_r3a_source_checks_2026-10-18.json"
   },
   "native_version_read": "4.5.2",
   "target_version": "4.5.1",
@@ -330,5 +334,7 @@
     "continuous megastructure prototype",
     "other military packages"
   ],
-  "report": "reports/artifact_civilization_r3a_spec_2026-10-18.md"
+  "report": "reports/artifact_civilization_r3a_spec_2026-10-18.md",
+  "implementation_baseline": "bdc5d1e",
+  "implementation_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md"
 }

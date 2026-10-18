@@ -1,0 +1,13 @@
+# R3a新增普通组件集合；不创建新的必需核心槽，传感器复用原生集合。
+
+component_set = {
+	key = "ARTIFACT_STANDARD_POWER_ADAPTER"
+	icon = "GFX_ship_part_reactor_booster_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_RUNIC_HULL_ARMOR"
+	icon = "GFX_ship_part_artifact_destiny_armor_1"
+	icon_frame = 1
+}

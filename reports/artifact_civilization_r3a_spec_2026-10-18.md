@@ -1,6 +1,6 @@
 # R3a 舰载基础与测距规格记录
 
-2026-10-18，源码基线`3e980fe`。用户继续后先细化R3a D04／D05／D15，见[实施规格](../docs/design/artifact_civilization_r3a_implementation_spec_v0.1.md)及[结构化规格](../docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json)。本轮只写计划和接手记录，没有Mod源码变更、控制台命令、游戏冷启动或新读档。
+2026-10-18，源码基线`3e980fe`。用户继续后先细化R3a D04／D05／D15，见[实施规格](../docs/design/artifact_civilization_r3a_implementation_spec_v0.1.md)及[结构化规格](../docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json)。本记录对应先行规格保存点bdc5d1e，形成时只写计划和接手记录；后续源码接入另见[实施记录](artifact_civilization_r3a_implementation_2026-10-18.md)。
 
 三项公共研究计划交付固定30功率A槽适配器、观测／射控两种传感器和一族三尺寸符文装甲，共六个组件定义。原生传感器必需槽集合复用，只新增两个非必需集合；新旧键分开，不迁移或削弱旧三个总包及54个组件。旧中后期传感器仍可能更强，正式迁移和平衡另列，不把此包冒称全树收敛。
 
