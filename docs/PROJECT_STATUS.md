@@ -1,7 +1,7 @@
 # PROJECT_STATUS
 
 > 当前进度唯一入口；更新于 2026-10-18。
-> R3b当前：D06近程共鸣／D07偏折盾／D16舰用供能／D17机动推进已接，4研究、14组件、2集合与3行独立武器CSV；五项合同检查和静态0错误／0警告通过，游戏装配待验。当前45公共科技／29行星建筑／1星港建筑／74组件，旧60件保持，见[实施记录](../reports/artifact_civilization_r3b_implementation_2026-10-18.md)和[检查点](../reports/artifact_civilization_r3b_checkpoint_2026-10-18.json)。
+> R3b当前：D06近程共鸣／D07偏折盾／D16舰用供能／D17机动推进已接，4研究、14组件、2集合，武器参数改为TXT显式定义；五项合同与静态通过；初次装配发现武器CSV未加载，已改为TXT直写并复核，最终构建待重新冷启动验收。当前45公共科技／29行星建筑／1星港建筑／74组件，旧60件保持，见[实施记录](../reports/artifact_civilization_r3b_implementation_2026-10-18.md)和[检查点](../reports/artifact_civilization_r3b_checkpoint_2026-10-18.json)。
 > R3a当前：D04舰载接口／D05相位测距／D15符文装甲已接，普通护卫舰四候选、正常船厂新建和一次结果实际读档通过；A槽空置+5→装入+35，固定供能30实见，两块小型符文装甲合计280保留。最终2291.03.20.sav已保存并载回，原2289.11.24保留。三项研究受控提供，rr／快速造船为0；M／L、战斗、地图感知及自然平衡未扩测。当前41公共科技／29行星建筑／1星港建筑／60组件，见[运行记录](../reports/artifact_civilization_r3a_runtime_2026-10-18.md)和[检查点](../reports/artifact_civilization_r3a_checkpoint_2026-10-18.json)。
 > R2f最新：正常建造、一次停用恢复与一次启用态实际读档通过，宜居性88%→运行93%→停用88%→恢复93%，载回仍93%且建筑加成保留。最终主战役2289.11.24.sav为启用态、2,545,931字节、暂停／菜单；此前停用态已单独无损归档。E07／天气受控提供、rr一次，其他风险和自然平衡未扩测。当前38公共科技／29行星建筑定义／1星港建筑，见[运行记录](../reports/artifact_civilization_r2f_runtime_2026-10-18.md)与[检查点](../reports/artifact_civilization_r2f_checkpoint_2026-10-18.json)。
 > R2e最新：样本正常成果→归档→异地付费复现、园区升级与一次进行态实际载回已通过。关键2287.01.03载回仍2/6、升级剩565日；最终2288.08.11.sav已保存暂停／菜单，尖塔1／园区0、800/800研究主管、复现成果剩260日。来源太乙II与目的地交界都市分别核对，国家样本记录保留。C10／E05受控提供，rr为0；材料、异常现场和自然平衡未扩测。见[运行记录](../reports/artifact_civilization_r2e_runtime_2026-10-18.md)及[检查点](../reports/artifact_civilization_r2e_checkpoint_2026-10-18.json)。

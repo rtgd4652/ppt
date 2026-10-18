@@ -2151,14 +2151,14 @@
     "R3b": {
       "date": "2026-10-18",
       "status": "implemented_static_pass_runtime_pending",
-      "runtime_status": "pending",
+      "runtime_status": "first_fit_found_csv_delivery_failure_final_inline_build_pending",
       "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md",
       "source_checks": "reports/artifact_civilization_r3b_source_checks_2026-10-18.json",
       "new_technologies": 4,
       "new_components": 14,
       "new_component_sets": 2,
-      "weapon_csv_rows": 3
+      "inline_weapons": 3
     }
   },
   "current_counts": {

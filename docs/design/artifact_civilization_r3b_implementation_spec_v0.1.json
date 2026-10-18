@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-10-18",
   "package": "R3b",
-  "status": "implemented_static_pass_runtime_pending",
+  "status": "inline_weapon_fix_static_pass_runtime_pending",
   "source_baseline": "128b81a",
   "scope": [
     "D06",
@@ -92,7 +92,7 @@
         "alloys": 0.05
       },
       "projectile_gfx": "blue_laser_s",
-      "csv": {
+      "weapon_stats": {
         "min_damage": 16,
         "max_damage": 30,
         "hull_damage": 1.0,
@@ -125,7 +125,7 @@
         "alloys": 0.1
       },
       "projectile_gfx": "blue_laser_m",
-      "csv": {
+      "weapon_stats": {
         "min_damage": 40,
         "max_damage": 75,
         "hull_damage": 1.0,
@@ -158,7 +158,7 @@
         "alloys": 0.2
       },
       "projectile_gfx": "blue_laser_l",
-      "csv": {
+      "weapon_stats": {
         "min_damage": 96,
         "max_damage": 180,
         "hull_damage": 1.0,
@@ -418,8 +418,7 @@
     "mod/common/technology/artifact_close_combat_technology.txt",
     "mod/common/component_sets/artifact_close_combat_sets.txt",
     "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
-    "mod/common/component_templates/artifact_close_combat_components.txt",
-    "mod/common/component_templates/artifact_close_combat_weapon_components.csv"
+    "mod/common/component_templates/artifact_close_combat_components.txt"
   ],
   "identity": "owner ARTIFACT_USER and country_uses_bio_ships=no; native hull triggers for reactor/thruster slots",
   "native_reference_version": "4.5.2",
@@ -432,7 +431,8 @@
     "common/component_templates/00_utilities_thrusters.txt",
     "common/component_sets/00_required_sets.txt",
     "common/scripted_triggers/07_scripted_triggers_ships.txt",
-    "common/scripted_variables/02_scripted_variables_component_cost.txt"
+    "common/scripted_variables/02_scripted_variables_component_cost.txt",
+    "common/component_templates/000_documentation.txt"
   ],
   "native_comparison": {
     "shield_t3": {
@@ -496,8 +496,8 @@
     ]
   ],
   "validation": {
-    "source": "five_contract_checks_and_static_pass",
-    "runtime": "pending",
+    "source": "five_contract_checks_and_static_pass_after_inline_fix",
+    "runtime": "initial_fit_found_csv_not_loaded_final_build_pending",
     "plan": "保留2291.03.20起点，只在一艘既有普通护卫舰装入四类新件，经正常船厂改装，保存并实际载回一次。不重测R3a、不逐舰型另造舰，不生成战争；测试研究来源单列。",
     "balance": "pending",
     "source_check_report": "reports/artifact_civilization_r3b_source_checks_2026-10-18.json"
@@ -509,5 +509,11 @@
     "个人核心",
     "批量图标",
     "战斗穷举"
-  ]
+  ],
+  "weapon_stat_delivery": "inline TXT; damage/windup, total_fire_time, power, multipliers, range, accuracy and tracking",
+  "runtime_fix": {
+    "observed": "一个新武器导致设计面板伤害约1049.59、功耗0，独立CSV未提供预期数值；未保存设计或改装实舰。",
+    "correction": "三条新武器改为TXT显式参数，删除仅本轮新增的独立CSV；旧60件和旧CSV均不改。",
+    "runtime_retry": "修复后重新冷启动、恢复原2291.03.20再提供四项测试研究，不能称总共只有一次启动/载入。"
+  }
 }

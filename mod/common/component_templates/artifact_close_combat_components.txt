@@ -8,6 +8,27 @@ weapon_component_template = {
 	type = instant
 	icon = "GFX_ship_part_artifact_fate_ray_1"
 	icon_frame = 1
+	# 显式写入武器参数，避免独立CSV未被加载时落到引擎默认值。
+	power = -18
+	damage = {
+		min = 16
+		max = 30
+	}
+	windup = {
+		min = 3
+		max = 8
+	}
+	total_fire_time = 20
+	hull_damage = 1.0
+	shield_damage = 1.5
+	shield_penetration = 0.0
+	armor_damage = 0.5
+	armor_penetration = 0.0
+	range = 30
+	accuracy = 0.9
+	tracking = 0.7
+	size_damage_factor = 0.0
+	military_power_multiplier = 1.0
 	component_set = "ARTIFACT_CLOSE_RESONANCE_EMITTER"
 	projectile_gfx = "blue_laser_s"
 	tags = {
@@ -49,6 +70,27 @@ weapon_component_template = {
 	type = instant
 	icon = "GFX_ship_part_artifact_fate_ray_1"
 	icon_frame = 1
+	# 显式写入武器参数，避免独立CSV未被加载时落到引擎默认值。
+	power = -38
+	damage = {
+		min = 40
+		max = 75
+	}
+	windup = {
+		min = 4
+		max = 10
+	}
+	total_fire_time = 24
+	hull_damage = 1.0
+	shield_damage = 1.5
+	shield_penetration = 0.0
+	armor_damage = 0.5
+	armor_penetration = 0.0
+	range = 45
+	accuracy = 0.9
+	tracking = 0.45
+	size_damage_factor = 0.0
+	military_power_multiplier = 1.0
 	component_set = "ARTIFACT_CLOSE_RESONANCE_EMITTER"
 	projectile_gfx = "blue_laser_m"
 	tags = {
@@ -90,6 +132,27 @@ weapon_component_template = {
 	type = instant
 	icon = "GFX_ship_part_artifact_fate_ray_1"
 	icon_frame = 1
+	# 显式写入武器参数，避免独立CSV未被加载时落到引擎默认值。
+	power = -80
+	damage = {
+		min = 96
+		max = 180
+	}
+	windup = {
+		min = 5
+		max = 12
+	}
+	total_fire_time = 28
+	hull_damage = 1.0
+	shield_damage = 1.5
+	shield_penetration = 0.0
+	armor_damage = 0.5
+	armor_penetration = 0.0
+	range = 60
+	accuracy = 0.9
+	tracking = 0.2
+	size_damage_factor = 0.0
+	military_power_multiplier = 1.0
 	component_set = "ARTIFACT_CLOSE_RESONANCE_EMITTER"
 	projectile_gfx = "blue_laser_l"
 	tags = {
