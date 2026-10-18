@@ -3,7 +3,7 @@
   "date": "2026-10-18",
   "package": "R2f",
   "source_baseline": "481f53b",
-  "status": "implemented_static_pass_runtime_pending",
+  "status": "normal_build_and_disable_passed_resume_and_reload_pending",
   "scope": [
     "E07",
     "BL25"
@@ -72,8 +72,13 @@
   "validation": {
     "fixture_tests": 5,
     "static": "pass",
-    "runtime": "pending",
-    "balance": "pending"
+    "runtime": "partial_normal_build_and_disable_passed",
+    "balance": "pending",
+    "runtime_report": "reports/artifact_civilization_r2f_runtime_2026-10-18.md",
+    "pending_runtime": [
+      "reenable once",
+      "one actual game reload"
+    ]
   },
   "scope_exclusions": [
     "personal ascension",
@@ -82,5 +87,6 @@
     "mass icon generation",
     "continuous megastructure prototype"
   ],
-  "native_source": "F:/steam/steamapps/common/Stellaris/common/static_modifiers/00_static_modifiers.txt"
+  "native_source": "F:/steam/steamapps/common/Stellaris/common/static_modifiers/00_static_modifiers.txt",
+  "checkpoint": "reports/artifact_civilization_r2f_checkpoint_2026-10-18.json"
 }
