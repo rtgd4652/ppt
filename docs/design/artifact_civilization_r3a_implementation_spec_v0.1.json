@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "package": "R3a",
+  "status": "spec_ready_not_implemented",
+  "source_baseline": "3e980fe",
+  "scope": [
+    "D04",
+    "D05",
+    "D15"
+  ],
+  "technologies": [
+    {
+      "id": "D04",
+      "name": "神器舰载接口",
+      "proposed_key": "tech_artifact_shipboard_interface",
+      "area": "engineering",
+      "tier": 2,
+      "category": "voidcraft",
+      "cost": 1600,
+      "weight": 110,
+      "prerequisites": [
+        "D01",
+        "B06"
+      ],
+      "prerequisite_keys": [
+        "tech_artifact_user_combat_doctrine",
+        "tech_artifact_standard_parts"
+      ],
+      "icon": "tech_artifact_user_combat_doctrine"
+    },
+    {
+      "id": "D05",
+      "name": "相位测距阵列",
+      "proposed_key": "tech_artifact_phase_ranging_array",
+      "area": "physics",
+      "tier": 3,
+      "category": "computing",
+      "cost": 3600,
+      "weight": 90,
+      "prerequisites": [
+        "D04",
+        "A06"
+      ],
+      "prerequisite_keys": [
+        "tech_artifact_shipboard_interface",
+        "tech_artifact_long_baseline_measurement"
+      ],
+      "icon": "tech_artifact_black_gate_observation"
+    },
+    {
+      "id": "D15",
+      "name": "符文舰体装甲",
+      "proposed_key": "tech_artifact_runic_hull_armor",
+      "area": "engineering",
+      "tier": 3,
+      "category": "materials",
+      "cost": 3600,
+      "weight": 90,
+      "prerequisites": [
+        "D04",
+        "B07"
+      ],
+      "prerequisite_keys": [
+        "tech_artifact_shipboard_interface",
+        "tech_artifact_resonance_material_screening"
+      ],
+      "icon": "tech_artifact_relic_fabrication"
+    }
+  ],
+  "components": [
+    {
+      "key": "ARTIFACT_STANDARD_POWER_ADAPTER",
+      "name": "标准化供能适配器",
+      "size": "aux",
+      "component_set": "ARTIFACT_STANDARD_POWER_ADAPTER",
+      "technology": "D04",
+      "power": 30,
+      "cost": {
+        "alloys": 12
+      },
+      "upkeep": {
+        "energy": 0.2,
+        "alloys": 0.02
+      },
+      "ai_weight": 3,
+      "icon": "GFX_ship_part_reactor_booster_1"
+    },
+    {
+      "key": "ARTIFACT_PHASE_OBSERVATION_SENSOR",
+      "name": "观测型相位测距仪",
+      "size": "medium",
+      "component_set": "sensor_components",
+      "technology": "D05",
+      "power": -25,
+      "sensor_range": 4,
+      "hyperlane_range": 6,
+      "ship_modifier": {
+        "ship_tracking_add": 5
+      },
+      "cost": {
+        "alloys": 15
+      },
+      "upkeep": {
+        "energy": 0.15
+      },
+      "ai_weight": 10,
+      "icon": "GFX_ship_part_artifact_sensor_1"
+    },
+    {
+      "key": "ARTIFACT_PHASE_FIRE_CONTROL_SENSOR",
+      "name": "射控型相位测距仪",
+      "size": "medium",
+      "component_set": "sensor_components",
+      "technology": "D05",
+      "power": -20,
+      "sensor_range": 2,
+      "hyperlane_range": 3,
+      "ship_modifier": {
+        "ship_tracking_add": 20
+      },
+      "ship_class": "shipclass_military",
+      "cost": {
+        "alloys": 15
+      },
+      "upkeep": {
+        "energy": 0.15
+      },
+      "ai_weight": 12,
+      "icon": "GFX_ship_part_artifact_sensor_2"
+    },
+    {
+      "key": "SMALL_ARTIFACT_RUNIC_HULL_ARMOR",
+      "name": "小型符文舰体装甲",
+      "size": "small",
+      "component_set": "ARTIFACT_RUNIC_HULL_ARMOR",
+      "technology": "D15",
+      "power": 0,
+      "modifier": {
+        "ship_armor_add": 140
+      },
+      "ship_modifier": {
+        "ship_armor_hardening_add": 0.08
+      },
+      "cost": {
+        "alloys": 18
+      },
+      "upkeep": {
+        "energy": 0.18,
+        "alloys": 0.035
+      },
+      "ai_weight": 12,
+      "icon": "GFX_ship_part_artifact_destiny_armor_1"
+    },
+    {
+      "key": "MEDIUM_ARTIFACT_RUNIC_HULL_ARMOR",
+      "name": "中型符文舰体装甲",
+      "size": "medium",
+      "component_set": "ARTIFACT_RUNIC_HULL_ARMOR",
+      "technology": "D15",
+      "power": 0,
+      "modifier": {
+        "ship_armor_add": 420
+      },
+      "ship_modifier": {
+        "ship_armor_hardening_add": 0.08
+      },
+      "cost": {
+        "alloys": 45
+      },
+      "upkeep": {
+        "energy": 0.35,
+        "alloys": 0.07
+      },
+      "ai_weight": 12,
+      "icon": "GFX_ship_part_artifact_destiny_armor_1"
+    },
+    {
+      "key": "LARGE_ARTIFACT_RUNIC_HULL_ARMOR",
+      "name": "大型符文舰体装甲",
+      "size": "large",
+      "component_set": "ARTIFACT_RUNIC_HULL_ARMOR",
+      "technology": "D15",
+      "power": 0,
+      "modifier": {
+        "ship_armor_add": 1260
+      },
+      "ship_modifier": {
+        "ship_armor_hardening_add": 0.08
+      },
+      "cost": {
+        "alloys": 112
+      },
+      "upkeep": {
+        "energy": 0.7,
+        "alloys": 0.14
+      },
+      "ai_weight": 12,
+      "icon": "GFX_ship_part_artifact_destiny_armor_1"
+    }
+  ],
+  "new_component_sets": [
+    {
+      "key": "ARTIFACT_STANDARD_POWER_ADAPTER",
+      "icon": "GFX_ship_part_reactor_booster_1",
+      "required": false,
+      "core": false
+    },
+    {
+      "key": "ARTIFACT_RUNIC_HULL_ARMOR",
+      "icon": "GFX_ship_part_artifact_destiny_armor_1",
+      "required": false,
+      "core": false
+    }
+  ],
+  "reused_component_set": "sensor_components",
+  "qualification": {
+    "from_country_main_species_class": "ARTIFACT_USER",
+    "country_uses_bio_ships": false,
+    "slot_fit": "native slots; fire-control sensor also military class"
+  },
+  "component_upgrade_links_added": [],
+  "legacy_policy": {
+    "old_component_definitions": 54,
+    "old_public_components": 43,
+    "old_unique_components": 7,
+    "old_aura_prototypes": 4,
+    "old_armies": 3,
+    "old_bundled_technologies": 3,
+    "keys_and_values_preserved": true,
+    "migration_in_this_package": false,
+    "automatic_new_technology_grants": false,
+    "legacy_sensors_may_remain_stronger": true
+  },
+  "counts": {
+    "current_public_technologies": 38,
+    "planned_public_technologies_after_implementation": 41,
+    "current_component_definitions": 54,
+    "planned_component_definitions_after_implementation": 60,
+    "planet_building_definitions_unchanged": 29,
+    "starbase_building_definitions_unchanged": 1
+  },
+  "planned_mod_files": [
+    "mod/common/technology/artifact_shipboard_foundation_technology.txt",
+    "mod/common/component_sets/artifact_shipboard_foundation_sets.txt",
+    "mod/common/component_templates/artifact_shipboard_foundation_components.txt",
+    "mod/localisation/simp_chinese/artifact_shipboard_foundation_l_simp_chinese.yml"
+  ],
+  "implementation_batches": [
+    {
+      "types": [
+        "technology",
+        "component_set",
+        "localisation"
+      ]
+    },
+    {
+      "types": [
+        "utility_component_template",
+        "localisation"
+      ]
+    }
+  ],
+  "validation": {
+    "current": "spec_only",
+    "source_checks": [
+      "technology references and public gate",
+      "component sets, scope and slot mapping",
+      "native power, range, tracking and hardening fields",
+      "all legacy component semantics unchanged"
+    ],
+    "runtime_plan": {
+      "representative_ship": "ordinary corvette",
+      "applicable_candidates_on_this_ship": 4,
+      "final_fit": [
+        "ARTIFACT_STANDARD_POWER_ADAPTER",
+        "ARTIFACT_PHASE_FIRE_CONTROL_SENSOR",
+        "SMALL_ARTIFACT_RUNIC_HULL_ARMOR"
+      ],
+      "normal_refit": true,
+      "actual_reload_limit": 1,
+      "controlled_research_allowed_if_recorded": true,
+      "per_size_fleets_or_saves": false,
+      "combat_proof_claimed": false,
+      "galaxy_sensing_proof_claimed": false,
+      "fixed_aux_power_must_be_observed": true
+    },
+    "balance": "pending",
+    "runtime": "pending"
+  },
+  "native_version_read": "4.5.2",
+  "target_version": "4.5.1",
+  "native_reference_files": [
+    "common/component_templates/00_utilities_aux.txt",
+    "common/component_templates/00_utilities_sensors.txt",
+    "common/component_templates/00_utilities.txt",
+    "common/scripted_variables/02_scripted_variables_component_cost.txt",
+    "common/component_sets/00_required_sets.txt",
+    "common/component_sets/00_utilities.txt",
+    "common/component_sets/00_utilities_aux.txt",
+    "common/ship_sizes/00_ship_sizes.txt",
+    "common/technology/00_phys_tech.txt",
+    "common/technology/00_eng_tech.txt"
+  ],
+  "native_t3_armor_baseline": {
+    "armor": [
+      160,
+      480,
+      1440
+    ],
+    "hardening_per_component": 0.02,
+    "alloy_cost": [
+      12,
+      30,
+      75
+    ]
+  },
+  "native_t3_sensor_baseline": {
+    "sensor_range": 3,
+    "hyperlane_range": 4,
+    "tracking_add": 10,
+    "power": -15,
+    "alloy_cost": 6
+  },
+  "deferred": [
+    "legacy bundled-technology migration",
+    "personal ascension technology",
+    "character combinations",
+    "mass icon generation",
+    "continuous megastructure prototype",
+    "other military packages"
+  ],
+  "report": "reports/artifact_civilization_r3a_spec_2026-10-18.md"
+}

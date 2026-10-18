@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-18",
-  "status": "route_with_r2f_representative_runtime_passed",
+  "status": "route_with_r3a_spec_ready",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -677,8 +677,13 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "解锁新增A槽标准化供能辅助适配器，并作为舰载组件分支的研究入口；不撤销D01旧组件。"
+      "status": "spec_ready_not_implemented",
+      "capability": "独立A槽适配器提供固定30功率，实际占槽／费用／维护；保留D01旧组件。",
+      "proposed_key": "tech_artifact_shipboard_interface",
+      "category": "voidcraft",
+      "cost": 1600,
+      "weight": 110,
+      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json"
     },
     {
       "id": "D05",
@@ -691,8 +696,13 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "研发观测型传感器，强调探测与射控；现有传感器键在迁移时保留。"
+      "status": "spec_ready_not_implemented",
+      "capability": "观测与射控两种同槽选择，范围4/6与追踪5，或范围2/3与追踪20；旧传感器键保留。",
+      "proposed_key": "tech_artifact_phase_ranging_array",
+      "category": "computing",
+      "cost": 3600,
+      "weight": 90,
+      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json"
     },
     {
       "id": "D06",
@@ -1126,10 +1136,11 @@
         "B07"
       ],
       "proposed_key": "tech_artifact_runic_hull_armor",
-      "capability": "解锁独立的公共符文装甲变体，以合金成本、维护和抗穿透取舍区别护盾；D09后可研究复合强化，不改旧装甲键。",
+      "capability": "独立符文装甲族S/M/L为140/420/1260装甲和各0.08硬化，以造价、维护换取抗穿透；未来复合变体仍需D15+D09。",
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented"
+      "status": "spec_ready_not_implemented",
+      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json"
     },
     {
       "id": "D16",
@@ -2080,6 +2091,23 @@
       "critical_reloads": 1,
       "saved_state": "enabled",
       "next_step": "先细化R3a D04／D05／D15规格及旧组件衔接，不重跑R2f。"
+    },
+    "R3a": {
+      "date": "2026-10-18",
+      "status": "spec_ready_not_implemented",
+      "runtime_status": "not_started",
+      "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r3a_spec_2026-10-18.md",
+      "proposed_technology_keys": {
+        "D04": "tech_artifact_shipboard_interface",
+        "D05": "tech_artifact_phase_ranging_array",
+        "D15": "tech_artifact_runic_hull_armor"
+      },
+      "planned_technology_count": 3,
+      "planned_component_count": 6,
+      "planned_new_component_sets": 2,
+      "source_implemented": false,
+      "game_actions_this_spec_turn": 0
     }
   },
   "current_counts": {
