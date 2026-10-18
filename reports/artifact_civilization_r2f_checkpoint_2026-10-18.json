@@ -1,13 +1,15 @@
 {
   "date": "2026-10-18",
   "package": "R2f",
-  "status": "normal_build_and_disable_passed_resume_and_reload_pending",
+  "status": "representative_runtime_passed_controlled_hazard",
   "loaded_source_commit": "7659e71",
   "saved_at_user_request": true,
   "game": {
     "version": "4.5.2",
     "checksum": "913f",
-    "enabled_mods": ["mod/aemusa_artifact_user.mod"],
+    "enabled_mods": [
+      "mod/aemusa_artifact_user.mod"
+    ],
     "paused": true,
     "menu_open": true,
     "console_open": false,
@@ -17,14 +19,14 @@
     "launches": 2,
     "direct_launch_dlc_failure_without_load": 1,
     "initial_save_loads": 1,
-    "critical_reloads": 0,
+    "critical_reloads": 1,
     "rr": 1,
     "controlled_technology_grants": 1,
     "controlled_hazard_additions": 1,
     "instant_completion_commands": 0,
     "normal_builds": 1,
     "disable_operations": 1,
-    "successful_reenable_operations": 0
+    "successful_reenable_operations": 1
   },
   "controlled_sources": {
     "technology": "tech_artifact_environment_buffering",
@@ -42,15 +44,49 @@
     "observed_complete_date": "2289.11.24",
     "completion_exact_date_observed": false,
     "displayed_days": 418,
-    "displayed_cost": {"minerals": 680, "alloys": 170, "exotic_gases": 85},
+    "displayed_cost": {
+      "minerals": 680,
+      "alloys": 170,
+      "exotic_gases": 85
+    },
     "habitable_display_before_hazard": 98,
     "habitable_display_before_build": 88,
     "habitable_display_active": 93,
     "habitable_display_disabled": 88,
-    "active_building_tooltip": {"pop_environment_tolerance": 0.05, "pop_happiness": 0.025}
+    "active_building_tooltip": {
+      "pop_environment_tolerance": 0.05,
+      "pop_happiness": 0.025
+    },
+    "habitable_display_reenabled": 93
   },
   "save": {
     "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2289.11.24.sav",
+    "date": "2289.11.24",
+    "bytes": 2545931,
+    "last_write_time": "2026-10-18T20:31:17.268727+08:00",
+    "read_only_parsed": true,
+    "actually_reloaded_in_game": true,
+    "owner": "0",
+    "controller": "0",
+    "hazard_retained": true,
+    "building_id": "16777802",
+    "building_type": "building_artifact_environment_buffer_station",
+    "disabled": false,
+    "building_position": 4,
+    "energy_ui_approximate": 137000
+  },
+  "baseline_preserved": {
+    "name": "2288.08.11.sav",
+    "bytes": 2532196,
+    "last_write_time": "2026-10-18T19:09:18+08:00"
+  },
+  "archive_manifest": "reports/artifact_civilization_r2f_save_archive_2026-10-18.json",
+  "runtime_report": "reports/artifact_civilization_r2f_runtime_2026-10-18.md",
+  "pending": [],
+  "next_step": "Do not replay R2f. First specify R3a D04/D05/D15 and the old-component compatibility boundary; character combinations, mass icons and continuous megastructure remain deferred.",
+  "resumed_after_user_save": true,
+  "disabled_checkpoint_preserved": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2f_archive_2026-10-18\\2289.11.24-disabled.sav",
     "date": "2289.11.24",
     "bytes": 2545941,
     "last_write_time": "2026-10-18T20:23:34+08:00",
@@ -65,9 +101,24 @@
     "building_position": 4,
     "energy_ui_approximate": 137000
   },
-  "baseline_preserved": {"name": "2288.08.11.sav", "bytes": 2532196, "last_write_time": "2026-10-18T19:09:18+08:00"},
-  "archive_manifest": "reports/artifact_civilization_r2f_save_archive_2026-10-18.json",
-  "runtime_report": "reports/artifact_civilization_r2f_runtime_2026-10-18.md",
-  "pending": ["reenable once and observe restored modifiers", "one actual game reload", "other two risks and natural balance remain unverified"],
-  "next_step": "Resume only on a new continue instruction; inspect current window, use the saved disabled station, then reenable and perform one meaningful reload without replaying prior build or console prerequisites."
+  "reload_result": {
+    "date": "2289.11.24",
+    "paused": true,
+    "habitable_display": 93,
+    "building_count": 1,
+    "building_id": "16777802",
+    "building_position": 4,
+    "active_tooltip": {
+      "pop_environment_tolerance": 0.05,
+      "pop_happiness": 0.025
+    },
+    "original_hazard_retained_in_save": true,
+    "screenshot": "tools/desktop/r2f_reload_active_hint.png"
+  },
+  "unverified": [
+    "weak_magnetic_field engine path",
+    "irradiated_planet engine path",
+    "occupation, transfer and destruction",
+    "natural research and balance"
+  ]
 }

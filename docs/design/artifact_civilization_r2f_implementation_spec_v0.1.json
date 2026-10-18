@@ -3,7 +3,7 @@
   "date": "2026-10-18",
   "package": "R2f",
   "source_baseline": "481f53b",
-  "status": "normal_build_and_disable_passed_resume_and_reload_pending",
+  "status": "representative_runtime_passed_controlled_hazard",
   "scope": [
     "E07",
     "BL25"
@@ -72,13 +72,10 @@
   "validation": {
     "fixture_tests": 5,
     "static": "pass",
-    "runtime": "partial_normal_build_and_disable_passed",
+    "runtime": "representative_build_disable_reenable_reload_passed",
     "balance": "pending",
     "runtime_report": "reports/artifact_civilization_r2f_runtime_2026-10-18.md",
-    "pending_runtime": [
-      "reenable once",
-      "one actual game reload"
-    ]
+    "pending_runtime": []
   },
   "scope_exclusions": [
     "personal ascension",

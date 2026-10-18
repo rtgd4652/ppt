@@ -1,7 +1,19 @@
 {
-  "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2289.01.01.sav",
-  "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2f_archive_2026-10-18\\autosave_2289.01.01.sav",
-  "bytes": 2535484,
-  "last_write_time": "2026-10-18T19:45:39.6129554+08:00",
-  "reason": "R2f own autosave archived without deletion to free native campaign save slot"
+  "date": "2026-10-18",
+  "entries": [
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2289.01.01.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2f_archive_2026-10-18\\autosave_2289.01.01.sav",
+      "bytes": 2535484,
+      "last_write_time": "2026-10-18T19:45:39.6129554+08:00",
+      "reason": "R2f own autosave archived without deletion to free native campaign save slot"
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2289.11.24.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2f_archive_2026-10-18\\2289.11.24-disabled.sav",
+      "bytes": 2545941,
+      "last_write_time": "2026-10-18T20:23:34.9568839+08:00",
+      "reason": "Preserve own disabled checkpoint, release campaign slot, then save active station at the same date through the game UI"
+    }
+  ]
 }

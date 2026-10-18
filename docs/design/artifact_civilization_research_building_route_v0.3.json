@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-18",
-  "status": "route_with_r2f_partial_runtime_saved",
+  "status": "route_with_r2f_representative_runtime_passed",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -924,7 +924,7 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "normal_build_and_disable_passed_resume_and_reload_pending",
+      "status": "representative_runtime_passed_controlled_hazard",
       "capability": "环境缓冲站以原生持续维护减轻危险天气、弱磁场、辐照的部分人口／生产惩罚；保留原风险、其他特征和区划限制。",
       "implementation_key": "tech_artifact_environment_buffering"
     },
@@ -1794,7 +1794,7 @@
           "name": "环境缓冲站",
           "technology": "E07",
           "existing_key": null,
-          "status": "normal_build_and_disable_passed_resume_and_reload_pending",
+          "status": "representative_runtime_passed_controlled_hazard",
           "implementation_key": "building_artifact_environment_buffer_station"
         }
       ]
@@ -2061,8 +2061,8 @@
     },
     "R2f": {
       "date": "2026-10-18",
-      "status": "normal_build_and_disable_passed_resume_and_reload_pending",
-      "runtime_status": "partial",
+      "status": "representative_runtime_passed_controlled_hazard",
+      "runtime_status": "representative_passed",
       "balance_status": "pending",
       "technology_keys": {
         "E07": "tech_artifact_environment_buffering"
@@ -2076,10 +2076,10 @@
       "runtime_report": "reports/artifact_civilization_r2f_runtime_2026-10-18.md",
       "checkpoint": "reports/artifact_civilization_r2f_checkpoint_2026-10-18.json",
       "saved_date": "2289.11.24",
-      "pending": [
-        "reenable once",
-        "one actual game reload"
-      ]
+      "pending": [],
+      "critical_reloads": 1,
+      "saved_state": "enabled",
+      "next_step": "先细化R3a D04／D05／D15规格及旧组件衔接，不重跑R2f。"
     }
   },
   "current_counts": {
@@ -2338,15 +2338,7 @@
       ]
     }
   },
-  "remaining_r2_packages": [
-    {
-      "id": "R2f",
-      "nodes": [
-        "E07"
-      ],
-      "role": "正常建造／禁用撤除已验，2289.11.24停用态保存；启用恢复和一次实际读档待续。"
-    }
-  ],
+  "remaining_r2_packages": [],
   "change_log": {
     "date": "2026-10-17",
     "source": "用户补充陆军与舰船组件科技",
