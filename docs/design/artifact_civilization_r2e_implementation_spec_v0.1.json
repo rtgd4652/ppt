@@ -2,7 +2,7 @@
   "date": "2026-10-18",
   "package": "R2e",
   "source_base": "e034f52",
-  "status": "source_implemented_static_checked_runtime_pending",
+  "status": "source_implemented_sample_representative_runtime_passed",
   "research": [
     {
       "id": "C10",
@@ -118,25 +118,49 @@
     "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml"
   ],
   "runtime": {
-    "status": "deferred_by_user_playing_other_mods",
-    "normal_route": "Actual sample completion, archive, paid reproduction on another colony, campus upgrade",
+    "status": "sample_archive_cross_colony_reproduction_upgrade_and_one_critical_reload_passed",
+    "normal_route": "太乙II正常样本成果与归档；交界都市正常付费复现、园区升级并保留成果。",
     "critical_reload_count_required": 1,
-    "controlled_inputs": [],
+    "controlled_inputs": [
+      "tech_artifact_public_reproduction_protocol",
+      "tech_artifact_research_campus_integration"
+    ],
     "no_direct_result_or_record_console_writes": true,
-    "initial_save_loads": 0,
-    "critical_reloads": 0,
-    "console_commands": 0,
+    "initial_save_loads": 1,
+    "critical_reloads": 1,
+    "final_save_reloads": 0,
+    "manual_console_commands": 1,
+    "automated_console_submissions": 0,
     "rr": 0,
-    "cold_starts": 1,
-    "start_observation": "Vanilla update notice only; process subsequently changed, no input sent.",
-    "user_instruction": "是，先保存本轮源码",
-    "original_mod_configuration_restored": true
+    "instant_completion_commands": 0,
+    "agent_preparation_launches_before_resumption": 1,
+    "formal_process_started_by": "user",
+    "game": {
+      "version": "4.5.2",
+      "checksum": "1068",
+      "enabled_mods": [
+        "mod/aemusa_artifact_user.mod"
+      ]
+    },
+    "user_instruction": "已经重新改为测试mod；用户手动前置已完成",
+    "mod_configuration": "保留用户后来主动切回本Mod的最新设置，不恢复较早16项备份。",
+    "critical_save": "2287.01.03.sav",
+    "final_save": "2288.08.11.sav",
+    "report": "reports/artifact_civilization_r2e_runtime_2026-10-18.md",
+    "checkpoint": "reports/artifact_civilization_r2e_checkpoint_2026-10-18.json",
+    "limits": [
+      "C10／E05为受控研究，正常研究与自然经济平衡未验。",
+      "只跑样本代表路径；材料分支、成果到期后重复付费未扩测。",
+      "真实停用／占领／转让和遗留两楼并存仅夹具覆盖。",
+      "复现先于尖塔完工；未另建复现未结束时切换到尖塔的场景。",
+      "最终档未再次载回，唯一关键载回为2287.01.03。"
+    ]
   },
   "validation": {
     "new_fixtures_passed": 6,
     "touched_r1_fixtures_passed": 13,
     "static_errors": 0,
     "static_warnings": 0,
-    "runtime_status": "pending"
+    "runtime_status": "passed_representative_sample_scope"
   }
 }

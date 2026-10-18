@@ -1,0 +1,293 @@
+{
+  "date": "2026-10-18",
+  "package": "R2e",
+  "status": "sample_representative_runtime_passed_controlled_research",
+  "loaded_source_commit": "38234a9",
+  "game": {
+    "version": "4.5.2",
+    "checksum": "1068",
+    "enabled_mods": [
+      "mod/aemusa_artifact_user.mod"
+    ]
+  },
+  "counts": {
+    "initial_save_loads": 1,
+    "critical_reloads": 1,
+    "final_save_reloads": 0,
+    "manual_console_commands": 1,
+    "automated_console_submissions": 0,
+    "rr": 0,
+    "instant_completion_commands": 0,
+    "agent_preparation_launches_before_resumption": 1,
+    "formal_process_started_by": "user"
+  },
+  "controlled_technologies": [
+    "tech_artifact_public_reproduction_protocol",
+    "tech_artifact_research_campus_integration"
+  ],
+  "controlled_scope": "用户手动在选中行星的owner作用域提供C10与E05；没有控制台写入成果、归档或完成状态。沿用已有测试经济，不验证自然研究和平衡。",
+  "normal_actions": {
+    "campus_build": {
+      "colony": "交界都市",
+      "queued": "2282.08.01",
+      "observed_complete": "2284.05.28",
+      "displayed_days": 418,
+      "displayed_cost": {
+        "minerals": 765,
+        "consumer_goods": 128
+      },
+      "displayed_workforce_capacity": 400
+    },
+    "source_facilities": {
+      "colony": "太乙II",
+      "planet_id": "309",
+      "colony_id": "10",
+      "queued": "2284.05.28",
+      "observed_complete": "2286.07.01",
+      "buildings": [
+        "building_artifact_memory_palace",
+        "building_artifact_sample_repository"
+      ]
+    },
+    "source_project": {
+      "started": "2286.07.01",
+      "cost": {
+        "energy": 200,
+        "consumer_goods": 100
+      },
+      "required_work": 3,
+      "observed_result": "2286.11.01",
+      "completion_date_not_inferred_from_observation": true
+    },
+    "archive": {
+      "date": "2286.11.01",
+      "option": "提交并归档这份样本分析成果",
+      "country_flag": "artifact_public_sample_record",
+      "button_disabled_after_archive": true,
+      "source_modifier_retained": true
+    },
+    "reproduction": {
+      "colony": "交界都市",
+      "started": "2286.11.01",
+      "displayed_paid": {
+        "energy": 300,
+        "consumer_goods": 150
+      },
+      "initial_work": "0/6",
+      "critical_work": "2/6",
+      "observed_result": "2287.05.30",
+      "result_modifier": "artifact_foundation_sample_analysis",
+      "result_effect": {
+        "planet_physics_jobs_produces_mult": 0.1
+      },
+      "base_duration_days": 720,
+      "no_sample_repository_on_destination": true
+    },
+    "upgrade": {
+      "queued": "2286.11.01",
+      "observed_complete": "2288.08.11",
+      "displayed_days": 627,
+      "displayed_cost": {
+        "minerals": 2550,
+        "alloys": 850
+      },
+      "high_capacity": 800,
+      "legacy_jobs_bonus": 0.1
+    }
+  },
+  "critical_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2287.01.03.sav",
+    "bytes": 2466005,
+    "date": "2287.01.03",
+    "planet_id": "3",
+    "colony_id": "0",
+    "owner": "0",
+    "controller": "0",
+    "project_state": {
+      "carrier_binary_flags": "1",
+      "binary_flags": "73",
+      "timed_modifier": {
+        "items": [
+          {
+            "": {
+              "modifier": "artifact_emergency_prepared",
+              "days": "-1"
+            }
+          }
+        ]
+      },
+      "flags": {
+        "has_been_scanned": "63326808",
+        "arf_r1_managed": "63558240",
+        "arf_r1_active": "63558240",
+        "arf_r1_paid": "63558240",
+        "arf_r1_mode_reproduce_sample": "63558240"
+      },
+      "variables": {
+        "arf_r1_progress": "2",
+        "arf_r1_required_work": "6"
+      }
+    },
+    "country_records": {
+      "artifact_public_sample_record": "63558240"
+    },
+    "upgrade": {
+      "queue": "0",
+      "paying_country": "0",
+      "progress": "71.3",
+      "progress_needed": "720",
+      "resources": {
+        "minerals": "2550",
+        "alloys": "850"
+      },
+      "buildable_planet_upgrade_building": {
+        "building": "building_artifact_destiny_research_spire",
+        "planet": "0",
+        "zone": "0",
+        "upgrade_building": "16777724"
+      }
+    },
+    "actual_reload_observed": true,
+    "reloaded_ui_work": "2/6",
+    "reloaded_ui_remaining_upgrade_days": 565,
+    "reloaded_balance_note": "顶部能源仍约38K；未做逐单位经济差值验收。"
+  },
+  "final_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2288.08.11.sav",
+    "bytes": 2532196,
+    "date": "2288.08.11",
+    "planet_id": "3",
+    "colony_id": "0",
+    "project_state": {
+      "carrier_binary_flags": "1",
+      "binary_flags": "73",
+      "timed_modifier": {
+        "items": [
+          {
+            "": {
+              "modifier": "artifact_emergency_prepared",
+              "days": "-1"
+            }
+          },
+          {
+            "": {
+              "modifier": "artifact_foundation_sample_analysis",
+              "days": "260"
+            }
+          }
+        ]
+      },
+      "flags": {
+        "has_been_scanned": "63326808",
+        "arf_r1_managed": "63558240",
+        "arf_r1_completed": "63562560"
+      },
+      "variables": {
+        "arf_r1_progress": "6",
+        "arf_r1_required_work": "6"
+      }
+    },
+    "country_records": {
+      "artifact_public_sample_record": "63558240"
+    },
+    "research_building": {
+      "id": "587",
+      "type": "building_artifact_destiny_research_spire",
+      "position": "5"
+    },
+    "low_building_count": 0,
+    "high_building_count": 1,
+    "relevant_upgrade_items": [],
+    "researcher_job": {
+      "id": "16779362",
+      "data": {
+        "type": "artifact_destiny_researcher",
+        "automated_workforce": "0",
+        "workforce": "800",
+        "max_workforce": "800",
+        "bonus_workforce": "80",
+        "workforce_limit": "800",
+        "automated_workforce_limit": "799",
+        "pop_groups": [
+          {
+            "": {
+              "pop_group": "90",
+              "amount": "800"
+            }
+          }
+        ],
+        "planet": "0",
+        "pop_group": "4294967295"
+      }
+    },
+    "source_planet": {
+      "planet_id": "309",
+      "colony_id": "10",
+      "facilities": [
+        {
+          "id": "67108875",
+          "type": "building_artifact_memory_palace",
+          "position": "2"
+        },
+        {
+          "id": "16777342",
+          "type": "building_artifact_sample_repository",
+          "position": "3"
+        }
+      ],
+      "timed_modifier": {
+        "items": [
+          {
+            "": {
+              "modifier": "criminal_underworld",
+              "days": "-1"
+            }
+          },
+          {
+            "": {
+              "modifier": "artifact_foundation_sample_analysis",
+              "days": "50"
+            }
+          }
+        ]
+      }
+    },
+    "ui_state": "暂停、保存后菜单、控制台和Debug View关闭；能源约17K。"
+  },
+  "verification": {
+    "new_fixture_tests_passed": 6,
+    "touched_r1_fixture_tests_passed": 13,
+    "static_errors": 0,
+    "static_warnings": 0,
+    "existing_source_checks_reused": true,
+    "save_inspection": "结构化只读解析，不改写压缩档；实际载回另由游戏界面确认。",
+    "runtime_log": "最新error.log未命中本包新增键或文件；不宣称全部日志无错。"
+  },
+  "operations": {
+    "input_backend": "仓库原生守卫后备脚本；本轮未安装Computer Use",
+    "stale_pending_input": "pending-input.json为人工接管前未提交草稿，不能重放",
+    "save_archive_manifest": "reports/artifact_civilization_r2e_save_archive_2026-10-18.json",
+    "archived_this_round_autosaves": 1,
+    "archived_older_agent_autosaves": 2,
+    "deleted_saves": 0
+  },
+  "limits": [
+    "C10／E05为受控研究，正常研究与自然经济平衡未验。",
+    "只跑样本代表路径；材料分支、成果到期后重复付费未扩测。",
+    "真实停用／占领／转让和遗留两楼并存仅夹具覆盖。",
+    "复现先于尖塔完工；未另建复现未结束时切换到尖塔的场景。",
+    "最终档未再次载回，唯一关键载回为2287.01.03。"
+  ],
+  "screenshots": [
+    "tools/desktop/r2e_source_result_archive.png",
+    "tools/desktop/r2e_sample_archived.png",
+    "tools/desktop/r2e_reproduction_started.png",
+    "tools/desktop/r2e_critical_reloaded.png",
+    "tools/desktop/r2e_loaded_upgrade_progress.png",
+    "tools/desktop/r2e_replica_result_live.png",
+    "tools/desktop/r2e_spire_capacity_live.png",
+    "tools/desktop/r2e_final_saved_confirmed.png"
+  ],
+  "evidence_note": "截图与完整只读解析为本机忽略文件；原始存档不会随Git克隆携带。",
+  "next_step": "只先细化R2f E07有限环境风险、费用／维护、升级与失效，不重跑R2e或历史包。"
+}

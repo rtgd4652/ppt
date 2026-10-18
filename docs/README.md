@@ -13,7 +13,7 @@
 
 ## 设计与实施
 
-- [R2e公共成果归档与研究园区规格](design/artifact_civilization_r2e_implementation_spec_v0.1.md)：真实成果来源、跨殖民地复现、本族升级与轻量验收；[源码保存及续接](../reports/artifact_civilization_r2e_implementation_2026-10-18.md)区分源码／夹具与未完成的游戏验收。
+- [R2e公共成果归档与研究园区规格](design/artifact_civilization_r2e_implementation_spec_v0.1.md)：真实成果、跨殖民地复现与本族升级；[源码保存](../reports/artifact_civilization_r2e_implementation_2026-10-18.md)、[代表运行](../reports/artifact_civilization_r2e_runtime_2026-10-18.md)及[检查点](../reports/artifact_civilization_r2e_checkpoint_2026-10-18.json)区分受控研究、样本正常流程和未扩测的材料分支。
 
 - [1.0 叙事约束](design/v1.0_narrative_constraints.md)
 - [主线工作包及授权记录](design/aemusa_main_story_implementation_work_packages_v1.0.md)

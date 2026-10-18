@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-18",
-  "status": "route_with_r2e_source_checked_runtime_pending",
+  "status": "route_with_r2e_sample_representative_runtime_passed",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -595,9 +595,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_representative_runtime_passed_controlled_research",
       "capability": "开放成果复现项目，明确研究提交、复核和归档；不读取个人转变。",
-      "implementation_key": "tech_artifact_public_reproduction_protocol"
+      "implementation_key": "tech_artifact_public_reproduction_protocol",
+      "runtime_report": "reports/artifact_civilization_r2e_runtime_2026-10-18.md",
+      "runtime_limits": "C10／E05受控提供；样本归档、跨殖民地付费复现、升级与一次关键读档通过，材料和自然平衡未验。"
     },
     {
       "id": "C11",
@@ -889,9 +891,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_representative_runtime_passed_controlled_research",
       "capability": "建设公共研究园区；专业科研设施形成早期到高阶的升级链。",
-      "implementation_key": "tech_artifact_research_campus_integration"
+      "implementation_key": "tech_artifact_research_campus_integration",
+      "runtime_report": "reports/artifact_civilization_r2e_runtime_2026-10-18.md",
+      "runtime_limits": "C10／E05受控提供；样本归档、跨殖民地付费复现、升级与一次关键读档通过，材料和自然平衡未验。"
     },
     {
       "id": "E06",
@@ -1443,7 +1447,7 @@
           "name": "公共研究园区",
           "technology": "E05",
           "existing_key": null,
-          "status": "source_implemented_static_checked_runtime_pending",
+          "status": "implemented_representative_build_upgrade_runtime_passed",
           "implementation_key": "building_artifact_public_research_campus"
         },
         {
@@ -1451,12 +1455,18 @@
           "name": "命运研究尖塔",
           "technology": "E01",
           "existing_key": "building_artifact_destiny_research_spire",
-          "status": "existing_definition"
+          "status": "implemented_representative_build_upgrade_runtime_passed"
         }
       ],
       "capacity_units": {
         "low": 400,
         "high": 800
+      },
+      "runtime_report": "reports/artifact_civilization_r2e_runtime_2026-10-18.md",
+      "runtime_capacity": {
+        "low_ui": 400,
+        "high_ui": 800,
+        "final_high_employed": 800
       }
     },
     {
@@ -2023,8 +2033,8 @@
     },
     "R2e": {
       "date": "2026-10-18",
-      "status": "source_implemented_static_checked_runtime_pending",
-      "runtime_status": "deferred_by_user_playing_other_mods",
+      "status": "sample_representative_runtime_passed_controlled_research",
+      "runtime_status": "sample_archive_cross_colony_reproduction_upgrade_and_one_critical_reload_passed",
       "balance_status": "pending",
       "technology_keys": {
         "C10": "tech_artifact_public_reproduction_protocol",
@@ -2037,7 +2047,15 @@
       "touched_r1_compatibility_tests_passed": 13,
       "spec": "docs/design/artifact_civilization_r2e_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r2e_implementation_2026-10-18.md",
-      "runtime_note": "用户确认正在玩另一套Mod，本轮只保存源码；没有载档或游戏输入，原16项启用列表与备份完全一致。"
+      "runtime_note": "用户重新切回测试Mod后恢复本包；样本来源、归档、异地付费6月复现及园区400→800升级通过，一次进行态实际载回。两个研究受控提供，材料、现场异常与平衡未扩测。",
+      "runtime_report": "reports/artifact_civilization_r2e_runtime_2026-10-18.md",
+      "runtime_checkpoint": "reports/artifact_civilization_r2e_checkpoint_2026-10-18.json",
+      "initial_save_loads": 1,
+      "critical_reloads": 1,
+      "final_save_reloads": 0,
+      "rr": 0,
+      "critical_save": "2287.01.03.sav",
+      "final_save": "2288.08.11.sav"
     }
   },
   "current_counts": {
@@ -2297,14 +2315,6 @@
     }
   },
   "remaining_r2_packages": [
-    {
-      "id": "R2e",
-      "nodes": [
-        "C10",
-        "E05"
-      ],
-      "role": "成果复现与研究园区，单独明确成果来源和归档语义后实施。"
-    },
     {
       "id": "R2f",
       "nodes": [

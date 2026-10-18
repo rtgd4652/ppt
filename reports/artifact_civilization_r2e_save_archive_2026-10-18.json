@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-18",
+  "reason": "本轮关键档前归档一个自建自动档；最终保存实际出现“存档过多”后，再无损归档R2c的两个自建自动档。保留全部手动、关键与最终档，没有删除。",
+  "moves": [
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2283.01.01.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2e_archive_2026-10-18\\autosave_2283.01.01.sav",
+      "bytes": 2363843
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2279.07.01.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2e_archive_2026-10-18\\autosave_2279.07.01.sav",
+      "bytes": 2183738
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\autosave_2280.01.01.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r2e_archive_2026-10-18\\autosave_2280.01.01.sav",
+      "bytes": 2240843
+    }
+  ],
+  "manual_saves_unchanged": true,
+  "deleted_files": 0,
+  "remaining_count_after_last_archive": 99,
+  "final_count_after_manual_save": 100
+}
