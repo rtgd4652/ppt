@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "package": "R2f",
+  "source_baseline": "481f53b",
+  "status": "implemented_static_pass_runtime_pending",
+  "scope": [
+    "E07",
+    "BL25"
+  ],
+  "technology": {
+    "key": "tech_artifact_environment_buffering",
+    "area": "society",
+    "tier": 4,
+    "category": "new_worlds",
+    "cost": 6000,
+    "prerequisites": [
+      "tech_artifact_city_functional_zoning",
+      "tech_artifact_low_loss_phase_transmission"
+    ]
+  },
+  "building": {
+    "key": "building_artifact_environment_buffer_station",
+    "limit_per_planet": 1,
+    "days": 480,
+    "cost": {
+      "minerals": 800,
+      "alloys": 200,
+      "exotic_gases": 100
+    },
+    "monthly_upkeep": {
+      "energy": 8,
+      "consumer_goods": 2,
+      "exotic_gases": 1
+    },
+    "jobs": 0
+  },
+  "risks": {
+    "hazardous_weather": {
+      "pop_environment_tolerance": 0.05,
+      "pop_happiness": 0.025
+    },
+    "weak_magnetic_field": {
+      "pop_environment_tolerance": 0.025,
+      "logistic_growth_mult": 0.025
+    },
+    "irradiated_planet": {
+      "pop_environment_tolerance": 0.05,
+      "biological_pop_happiness": 0.1,
+      "lithoid_pop_happiness": 0.1,
+      "planet_jobs_food_produces_mult": 0.25
+    }
+  },
+  "source_policy": "Preserve the original hazard, bonuses, district limits and planet class; compensate half the listed 4.5.2 penalties with native additive modifiers.",
+  "operation": [
+    "active building",
+    "owned and controlled by the same qualified country",
+    "E07 and ARTIFACT_USER public identity",
+    "matching native hazard still present"
+  ],
+  "maintenance": "Native building upkeep; resource zero is not a custom immediate shutdown trigger.",
+  "implementation": {
+    "mod_object_types": [
+      "technology",
+      "building",
+      "localisation"
+    ],
+    "new_callbacks": 0,
+    "new_monthly_scans": 0,
+    "permanent_markers": 0
+  },
+  "validation": {
+    "fixture_tests": 5,
+    "static": "pass",
+    "runtime": "pending",
+    "balance": "pending"
+  },
+  "scope_exclusions": [
+    "personal ascension",
+    "character combinations",
+    "R3 and R4",
+    "mass icon generation",
+    "continuous megastructure prototype"
+  ],
+  "native_source": "F:/steam/steamapps/common/Stellaris/common/static_modifiers/00_static_modifiers.txt"
+}

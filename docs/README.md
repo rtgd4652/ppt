@@ -13,6 +13,7 @@
 
 ## 设计与实施
 
+- [R2f环境缓冲规格](design/artifact_civilization_r2f_implementation_spec_v0.1.md)：三类风险、原生维护及失效规则；[实施记录](../reports/artifact_civilization_r2f_implementation_2026-10-18.md)。
 - [R2e公共成果归档与研究园区规格](design/artifact_civilization_r2e_implementation_spec_v0.1.md)：真实成果、跨殖民地复现与本族升级；[源码保存](../reports/artifact_civilization_r2e_implementation_2026-10-18.md)、[代表运行](../reports/artifact_civilization_r2e_runtime_2026-10-18.md)及[检查点](../reports/artifact_civilization_r2e_checkpoint_2026-10-18.json)区分受控研究、样本正常流程和未扩测的材料分支。
 
 - [1.0 叙事约束](design/v1.0_narrative_constraints.md)

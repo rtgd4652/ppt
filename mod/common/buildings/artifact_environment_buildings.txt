@@ -1,0 +1,85 @@
+# 环境缓冲站只减轻三类原生环境风险；不删除来源，不新增岗位、工程账本或月度扫描。
+building_artifact_environment_buffer_station = {
+	can_build = yes
+	base_buildtime = 480
+	icon = "building_artifact_sanctum"
+	category = government
+	building_sets = { government }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_environment_buffering" }
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+	allow = {
+		is_controlled_by = owner
+		custom_tooltip = {
+			fail_text = artifact_environment_requires_risk
+			OR = {
+				has_modifier = hazardous_weather
+				has_modifier = weak_magnetic_field
+				has_modifier = irradiated_planet
+			}
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800
+			alloys = 200
+			exotic_gases = 100
+		}
+		upkeep = {
+			energy = 8
+			consumer_goods = 2
+			exotic_gases = 1
+		}
+	}
+	# 本机4.5.2危险天气：耐受力-10%、幸福度-5%；能源和发电区划的有利特征保留。
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_environment_buffer_station"
+			owner = {
+				has_technology = "tech_artifact_environment_buffering"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_modifier = hazardous_weather
+		}
+		pop_environment_tolerance = 0.05
+		pop_happiness = 0.025
+	}
+	# 弱磁场：耐受力和逻辑斯蒂人口增长各-5%；只缓冲一半，物理研究特征保持。
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_environment_buffer_station"
+			owner = {
+				has_technology = "tech_artifact_environment_buffering"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_modifier = weak_magnetic_field
+		}
+		pop_environment_tolerance = 0.025
+		logistic_growth_mult = 0.025
+	}
+	# 辐照：只缓冲耐受力、生物/石质幸福度和食物岗位产出；不凭空恢复农田。
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			is_controlled_by = owner
+			has_active_building = "building_artifact_environment_buffer_station"
+			owner = {
+				has_technology = "tech_artifact_environment_buffering"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_modifier = irradiated_planet
+		}
+		pop_environment_tolerance = 0.05
+		biological_pop_happiness = 0.10
+		lithoid_pop_happiness = 0.10
+		planet_jobs_food_produces_mult = 0.25
+	}
+}

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-18",
-  "status": "route_with_r2e_sample_representative_runtime_passed",
+  "status": "route_with_r2f_source_implemented_runtime_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -924,8 +924,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设环境缓冲站，以持续维护应对有限环境风险，不自动改造盖亚世界。"
+      "status": "implemented_static_pass_runtime_pending",
+      "capability": "环境缓冲站以原生持续维护减轻危险天气、弱磁场、辐照的部分人口／生产惩罚；保留原风险、其他特征和区划限制。",
+      "implementation_key": "tech_artifact_environment_buffering"
     },
     {
       "id": "E08",
@@ -1793,7 +1794,8 @@
           "name": "环境缓冲站",
           "technology": "E07",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "implemented_static_pass_runtime_pending",
+          "implementation_key": "building_artifact_environment_buffer_station"
         }
       ]
     },
@@ -2056,13 +2058,28 @@
       "rr": 0,
       "critical_save": "2287.01.03.sav",
       "final_save": "2288.08.11.sav"
+    },
+    "R2f": {
+      "date": "2026-10-18",
+      "status": "implemented_static_pass_runtime_pending",
+      "runtime_status": "pending",
+      "balance_status": "pending",
+      "technology_keys": {
+        "E07": "tech_artifact_environment_buffering"
+      },
+      "new_buildings": 1,
+      "new_job_types": 0,
+      "new_callbacks": 0,
+      "fixture_tests_passed": 5,
+      "spec": "docs/design/artifact_civilization_r2f_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r2f_implementation_2026-10-18.md"
     }
   },
   "current_counts": {
     "date": "2026-10-18",
-    "public_technologies": 37,
-    "building_definitions": 28,
-    "note": "当前源码37公共科技／28行星建筑定义／1星港建筑；完整设计80项公共科技／27类46阶段，个人4项独立。",
+    "public_technologies": 38,
+    "building_definitions": 29,
+    "note": "当前源码38公共科技／29行星建筑定义／1星港建筑；完整设计80项公共科技／27类46阶段，个人4项独立。",
     "starbase_building_definitions": 1
   },
   "orbital_buildings": [
@@ -2320,7 +2337,7 @@
       "nodes": [
         "E07"
       ],
-      "role": "环境缓冲，明确有限风险来源与维护后实施。"
+      "role": "源码及5项定向检查通过；正常建造、停用恢复及一次实际读档待验。"
     }
   ],
   "change_log": {

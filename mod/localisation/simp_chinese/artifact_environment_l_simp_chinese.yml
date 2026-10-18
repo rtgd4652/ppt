@@ -1,0 +1,6 @@
+﻿l_simp_chinese:
+ tech_artifact_environment_buffering:0 "行星环境缓冲"
+ tech_artifact_environment_buffering_desc:0 "把城市分区与低损耗相位供能结合，持续维持局部安全的居住与生产环境。解锁环境缓冲站，减轻危险天气、弱磁场或辐照带来的部分惩罚；行星本身的环境特征仍然存在。"
+ building_artifact_environment_buffer_station:0 "环境缓冲站"
+ building_artifact_environment_buffer_station_desc:0 "以持续供能、过滤与局部场调节保护殖民地。危险天气：环境耐受力+5%、幸福度+2.5%；弱磁场：环境耐受力和逻辑斯蒂人口增长各+2.5%；辐照：环境耐受力+5%、生物及石质人口幸福度+10%、食物岗位产出+25%。仅在对应原生环境特征存在时生效，抵消相关惩罚的一半，保留其余特征与区划限制。每星球限一座，基础月维护8能源、2消费品、1异星天然气；停用、损坏、失去本国控制或研究资格时停止缓冲。"
+ artifact_environment_requires_risk:0 "当地需要至少一种可缓冲的环境特征：危险天气、弱磁场或辐照。"

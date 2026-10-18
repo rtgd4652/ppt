@@ -1,0 +1,16 @@
+# R2f公共环境工程：维持当地缓冲条件，不改写行星类型或个人权限。
+tech_artifact_environment_buffering = {
+	area = society
+	icon = "tech_artifact_phase_energy"
+	cost = 6000
+	tier = 4
+	category = { new_worlds }
+	prerequisites = {
+		"tech_artifact_city_functional_zoning"
+		"tech_artifact_low_loss_phase_transmission"
+	}
+	weight = 80
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}
