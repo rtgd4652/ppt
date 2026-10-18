@@ -1,0 +1,34 @@
+# R2e园区：复用研究主管，400容量对应4份每100单位产出，不新增岗位类型。
+building_artifact_public_research_campus = {
+	can_build = yes
+	base_buildtime = 480
+	icon = "building_artifact_destiny_research_spire"
+	category = research
+	building_sets = { research }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_research_campus_integration" }
+	upgrades = { "building_artifact_destiny_research_spire" }
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+	# 排他仅阻止新建，升级排队不能撤销仍在运行的低级设施。
+	allow = {
+		NOR = {
+			has_building = "building_artifact_destiny_research_spire"
+			has_building_construction = "building_artifact_destiny_research_spire"
+		}
+	}
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 900 consumer_goods = 150 }
+		upkeep = { energy = 8 consumer_goods = 4 }
+	}
+	# 遗留并存时高级优先供岗；正常升级由原生建筑队列保存。
+	triggered_planet_modifier = {
+		potential = {
+			NOT = { has_active_building = "building_artifact_destiny_research_spire" }
+		}
+		job_artifact_destiny_researcher_add = 400
+	}
+}

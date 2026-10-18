@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-18",
+  "package": "R2e",
+  "source_base": "e034f52",
+  "status": "source_implemented_static_checked_runtime_pending",
+  "research": [
+    {
+      "id": "C10",
+      "key": "tech_artifact_public_reproduction_protocol",
+      "area": "society",
+      "category": "statecraft",
+      "tier": 3,
+      "cost": 3000,
+      "weight": 95,
+      "prerequisites": [
+        "tech_artifact_memory_cataloguing",
+        "tech_artifact_multi_source_comparison"
+      ]
+    },
+    {
+      "id": "E05",
+      "key": "tech_artifact_research_campus_integration",
+      "area": "physics",
+      "category": "computing",
+      "tier": 3,
+      "cost": 3200,
+      "weight": 90,
+      "prerequisites": [
+        "tech_artifact_city_functional_zoning",
+        "tech_artifact_long_baseline_measurement"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "id": "sample",
+      "flag": "artifact_public_sample_record",
+      "source_modifier": "artifact_foundation_sample_analysis"
+    },
+    {
+      "id": "materials",
+      "flag": "artifact_public_material_record",
+      "source_modifier": "artifact_foundation_materials_study"
+    }
+  ],
+  "archive_buildings": [
+    "building_artifact_memory_archive_room",
+    "building_artifact_memory_palace"
+  ],
+  "archive": {
+    "cost": {},
+    "one_per_country_per_kind": true,
+    "extends_source": false,
+    "retroactive": "Only still-valid, identifiable source modifiers; expired historical results are not inferred."
+  },
+  "building": {
+    "family": "BL06",
+    "key": "building_artifact_public_research_campus",
+    "upgrade_to": "building_artifact_destiny_research_spire",
+    "base_buildtime": 480,
+    "cost": {
+      "minerals": 900,
+      "consumer_goods": 150
+    },
+    "upkeep": {
+      "energy": 8,
+      "consumer_goods": 4
+    },
+    "job": "artifact_destiny_researcher",
+    "low_capacity": 400,
+    "high_capacity": 800,
+    "planet_limit": 1,
+    "existing_high_direct_build_preserved": true,
+    "only_this_family_capacity_migrated": true
+  },
+  "project_modes": [
+    {
+      "id": "reproduce_sample",
+      "record_flag": "artifact_public_sample_record",
+      "cost": {
+        "energy": 300,
+        "consumer_goods": 150
+      },
+      "monthly_steps": 6,
+      "result_modifier": "artifact_foundation_sample_analysis",
+      "days": 720
+    },
+    {
+      "id": "reproduce_materials",
+      "record_flag": "artifact_public_material_record",
+      "cost": {
+        "energy": 300,
+        "consumer_goods": 150
+      },
+      "monthly_steps": 6,
+      "result_modifier": "artifact_foundation_materials_study",
+      "days": 720
+    }
+  ],
+  "state": {
+    "backend": "Existing R1 per-colony ledger and monthly colony-to-carrier adapter",
+    "new_monthly_or_transfer_callbacks": 0,
+    "record_owner": "submitting_country",
+    "transfer": "Abort local paid project without refund; country knowledge is not transferred",
+    "personal_conditions": false
+  },
+  "files_new": [
+    "mod/common/technology/artifact_research_reproduction_technology.txt",
+    "mod/common/buildings/artifact_public_research_buildings.txt",
+    "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+    "tools/validation/tests/test_artifact_research_reproduction.py"
+  ],
+  "files_changed": [
+    "mod/common/buildings/aemusa_buildings.txt",
+    "mod/common/scripted_triggers/artifact_foundation_triggers.txt",
+    "mod/common/scripted_effects/artifact_foundation_effects.txt",
+    "mod/events/artifact_foundation_events.txt",
+    "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml"
+  ],
+  "runtime": {
+    "status": "pending",
+    "normal_route": "Actual sample completion, archive, paid reproduction on another colony, campus upgrade",
+    "critical_reload_count_required": 1,
+    "controlled_inputs": [],
+    "no_direct_result_or_record_console_writes": true
+  },
+  "validation": {
+    "new_fixtures_passed": 6,
+    "touched_r1_fixtures_passed": 13,
+    "static_errors": 0,
+    "static_warnings": 0,
+    "runtime_status": "pending"
+  }
+}

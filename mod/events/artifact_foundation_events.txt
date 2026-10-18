@@ -78,6 +78,22 @@ carrier_event = {
 			}
 		}
 	}
+	# 复现与原方案共用当地名额；缺少公共记录时显示具体条件，不猜测历史来源。
+	option = {
+		name = artifact_foundation.start_reproduce_sample
+		trigger = { owner = { has_technology = "tech_artifact_public_reproduction_protocol" } }
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_foundation.require_reproduce_sample
+				artifact_foundation_can_start_reproduce_sample = yes
+			}
+		}
+		custom_tooltip = artifact_foundation.offer_reproduce_sample
+		hidden_effect = {
+			artifact_foundation_start_reproduce_sample = yes
+			carrier_event = { id = artifact_foundation.30 }
+		}
+	}
 	option = {
 		name = artifact_foundation.close
 	}
@@ -141,6 +157,21 @@ carrier_event = {
 		}
 	}
 	option = {
+		name = artifact_foundation.start_reproduce_materials
+		trigger = { owner = { has_technology = "tech_artifact_public_reproduction_protocol" } }
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_foundation.require_reproduce_materials
+				artifact_foundation_can_start_reproduce_materials = yes
+			}
+		}
+		custom_tooltip = artifact_foundation.offer_reproduce_materials
+		hidden_effect = {
+			artifact_foundation_start_reproduce_materials = yes
+			carrier_event = { id = artifact_foundation.30 }
+		}
+	}
+	option = {
 		name = artifact_foundation.close
 	}
 }
@@ -155,6 +186,38 @@ carrier_event = {
 			artifact_foundation_work_ready = yes
 		}
 		text = artifact_foundation.working_sample_analysis
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_reproduce_sample
+			artifact_foundation_work_ready = yes
+		}
+		text = artifact_foundation.working_reproduce_sample
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_reproduce_sample
+			artifact_foundation_work_ready = no
+		}
+		text = artifact_foundation.paused_reproduce_sample
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_reproduce_materials
+			artifact_foundation_work_ready = yes
+		}
+		text = artifact_foundation.working_reproduce_materials
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_active
+			has_carrier_flag = arf_r1_mode_reproduce_materials
+			artifact_foundation_work_ready = no
+		}
+		text = artifact_foundation.paused_reproduce_materials
 	}
 	desc = {
 		trigger = {
@@ -246,6 +309,43 @@ carrier_event = {
 	is_triggered_only = yes
 	trigger = {
 		artifact_foundation_ui_actor = yes
+	}
+	# 只在真实成果有效时提供提交；已归档会因国家记录而灰显，不重复赠与。
+	option = {
+		name = artifact_research.archive_sample
+		trigger = {
+			has_modifier = artifact_foundation_sample_analysis
+			owner = { has_technology = "tech_artifact_public_reproduction_protocol" }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_research.require_archive_sample
+				artifact_research_can_archive_sample = yes
+			}
+		}
+		custom_tooltip = artifact_research.archive_offer
+		hidden_effect = {
+			artifact_research_archive_sample = yes
+			carrier_event = { id = artifact_foundation.30 }
+		}
+	}
+	option = {
+		name = artifact_research.archive_materials
+		trigger = {
+			has_modifier = artifact_foundation_materials_study
+			owner = { has_technology = "tech_artifact_public_reproduction_protocol" }
+		}
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_research.require_archive_materials
+				artifact_research_can_archive_materials = yes
+			}
+		}
+		custom_tooltip = artifact_research.archive_offer
+		hidden_effect = {
+			artifact_research_archive_materials = yes
+			carrier_event = { id = artifact_foundation.30 }
+		}
 	}
 	option = {
 		name = artifact_foundation.abort

@@ -13,6 +13,8 @@
 
 ## 设计与实施
 
+- [R2e公共成果归档与研究园区规格](design/artifact_civilization_r2e_implementation_spec_v0.1.md)：真实成果来源、跨殖民地复现、本族升级与轻量验收；[源码保存及续接](../reports/artifact_civilization_r2e_implementation_2026-10-18.md)区分源码／夹具与未完成的游戏验收。
+
 - [1.0 叙事约束](design/v1.0_narrative_constraints.md)
 - [主线工作包及授权记录](design/aemusa_main_story_implementation_work_packages_v1.0.md)
 - [AWP-06 专属危机机制提案](design/aemusa_main_story_awp_06_mechanism_proposal.md)

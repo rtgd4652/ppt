@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-18",
-  "status": "route_with_r2d_city_representative_runtime_passed_c09_pending",
+  "status": "route_with_r2e_source_checked_runtime_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -595,8 +595,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "开放成果复现项目，明确研究提交、复核和归档；不读取个人转变。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "开放成果复现项目，明确研究提交、复核和归档；不读取个人转变。",
+      "implementation_key": "tech_artifact_public_reproduction_protocol"
     },
     {
       "id": "C11",
@@ -888,8 +889,9 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设公共研究园区；专业科研设施形成早期到高阶的升级链。"
+      "status": "source_implemented_static_checked_runtime_pending",
+      "capability": "建设公共研究园区；专业科研设施形成早期到高阶的升级链。",
+      "implementation_key": "tech_artifact_research_campus_integration"
     },
     {
       "id": "E06",
@@ -1441,7 +1443,8 @@
           "name": "公共研究园区",
           "technology": "E05",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "source_implemented_static_checked_runtime_pending",
+          "implementation_key": "building_artifact_public_research_campus"
         },
         {
           "stage": 2,
@@ -1450,7 +1453,11 @@
           "existing_key": "building_artifact_destiny_research_spire",
           "status": "existing_definition"
         }
-      ]
+      ],
+      "capacity_units": {
+        "low": 400,
+        "high": 800
+      }
     },
     {
       "id": "BL07",
@@ -2013,13 +2020,30 @@
         "自然研究抽取、资源平衡及旧高级岗位容量未专项验收。",
         "最终档未再次载回，唯一关键载回为2281.08.06。"
       ]
+    },
+    "R2e": {
+      "date": "2026-10-18",
+      "status": "source_implemented_static_checked_runtime_pending",
+      "runtime_status": "pending",
+      "balance_status": "pending",
+      "technology_keys": {
+        "C10": "tech_artifact_public_reproduction_protocol",
+        "E05": "tech_artifact_research_campus_integration"
+      },
+      "new_buildings": 1,
+      "new_job_types": 0,
+      "project_modes_added": 2,
+      "fixture_tests_passed": 6,
+      "touched_r1_compatibility_tests_passed": 13,
+      "spec": "docs/design/artifact_civilization_r2e_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r2e_implementation_2026-10-18.md"
     }
   },
   "current_counts": {
     "date": "2026-10-18",
-    "public_technologies": 35,
-    "building_definitions": 27,
-    "note": "当前代码35公共科技／27行星建筑定义／1星港建筑；v0.3设计目标80科技／27类46阶段，旧19／15仍为历史baseline。",
+    "public_technologies": 37,
+    "building_definitions": 28,
+    "note": "当前源码37公共科技／28行星建筑定义／1星港建筑；完整设计80项公共科技／27类46阶段，个人4项独立。",
     "starbase_building_definitions": 1
   },
   "orbital_buildings": [

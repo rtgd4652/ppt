@@ -285,8 +285,9 @@ building_artifact_fate_calculus_institute = {
 	}
 }
 
-# 命运研究尖塔：神器使后期科研建筑，承载命运观测塔前置演算。
+# 命运研究尖塔：公共园区高阶，保留原E01直建资格；遗留观测塔不是公共复现前置。
 building_artifact_destiny_research_spire = {
+	can_build = yes
 	base_buildtime = 720
 	icon = building_artifact_destiny_research_spire
 	category = research
@@ -298,7 +299,7 @@ building_artifact_destiny_research_spire = {
 	}
 
 	allow = {
-		owner = { has_technology = tech_artifact_destiny_economy }
+		owner = { has_technology = "tech_artifact_destiny_economy" }
 	}
 
 	planet_limit = 1
@@ -310,7 +311,8 @@ building_artifact_destiny_research_spire = {
 	}
 
 	planet_modifier = {
-		job_artifact_destiny_researcher_add = 8
+		# 仅本升级族迁移4.5劳动力容量；岗位自身产出、维护与其他旧建筑不联动修改。
+		job_artifact_destiny_researcher_add = 800
 		planet_jobs_produces_mult = 0.10
 	}
 }

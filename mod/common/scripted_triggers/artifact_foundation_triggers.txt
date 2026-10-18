@@ -42,6 +42,14 @@ artifact_foundation_idle = {
 
 artifact_foundation_mode_site = {
 	OR = {
+		# 复现读取公共知识与科研场地；原四方案仍使用各自旧现场，不相互替代。
+		AND = {
+			OR = {
+				has_carrier_flag = arf_r1_mode_reproduce_sample
+				has_carrier_flag = arf_r1_mode_reproduce_materials
+			}
+			artifact_research_reproduction_site = yes
+		}
 		AND = {
 			has_carrier_flag = arf_r1_mode_sample_analysis
 			OR = {
@@ -169,4 +177,60 @@ artifact_foundation_can_start_materials_study = {
 		has_building = "building_artifact_standard_parts_workshop"
 		has_building = "building_artifact_relic_workshop"
 	}
+}
+
+# 只读取仍有效的真实成果；归档不清理、续期或创建任何当地成果。
+artifact_research_archive_site = {
+	artifact_foundation_ui_actor = yes
+	artifact_foundation_safe_control = yes
+	owner = { has_technology = "tech_artifact_public_reproduction_protocol" }
+	OR = {
+		has_active_building = "building_artifact_memory_archive_room"
+		has_active_building = "building_artifact_memory_palace"
+	}
+}
+
+artifact_research_can_archive_sample = {
+	artifact_research_archive_site = yes
+	has_modifier = artifact_foundation_sample_analysis
+	owner = { NOT = { has_country_flag = artifact_public_sample_record } }
+}
+
+artifact_research_can_archive_materials = {
+	artifact_research_archive_site = yes
+	has_modifier = artifact_foundation_materials_study
+	owner = { NOT = { has_country_flag = artifact_public_material_record } }
+}
+
+# 4.5.2载体作用域下的当地有效园区；停用或升级中的低阶失效时等待高阶接续。
+artifact_research_reproduction_site = {
+	owner = {
+		has_technology = "tech_artifact_public_reproduction_protocol"
+		has_technology = "tech_artifact_research_campus_integration"
+	}
+	OR = {
+		has_active_building = "building_artifact_public_research_campus"
+		has_active_building = "building_artifact_destiny_research_spire"
+	}
+}
+
+artifact_research_reproduction_ready_to_start = {
+	artifact_foundation_ui_actor = yes
+	artifact_foundation_safe_control = yes
+	artifact_foundation_idle = yes
+	artifact_research_reproduction_site = yes
+	owner = {
+		has_resource = { type = energy amount >= 300 }
+		has_resource = { type = consumer_goods amount >= 150 }
+	}
+}
+
+artifact_foundation_can_start_reproduce_sample = {
+	artifact_research_reproduction_ready_to_start = yes
+	owner = { has_country_flag = artifact_public_sample_record }
+}
+
+artifact_foundation_can_start_reproduce_materials = {
+	artifact_research_reproduction_ready_to_start = yes
+	owner = { has_country_flag = artifact_public_material_record }
 }

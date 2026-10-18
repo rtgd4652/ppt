@@ -1,0 +1,33 @@
+# R2e公共方法记录：档案只收录真实有效的公共实验成果，不读取人物或个人权限。
+tech_artifact_public_reproduction_protocol = {
+	area = society
+	icon = "tech_artifact_seven_day_logistics"
+	cost = 3000
+	tier = 3
+	category = { statecraft }
+	prerequisites = {
+		"tech_artifact_memory_cataloguing"
+		"tech_artifact_multi_source_comparison"
+	}
+	weight = 95
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}
+
+# 科研设施整合是公共能力；低阶园区和原研究尖塔承担同一种复现场地。
+tech_artifact_research_campus_integration = {
+	area = physics
+	icon = "tech_artifact_tarot_calculation"
+	cost = 3200
+	tier = 3
+	category = { computing }
+	prerequisites = {
+		"tech_artifact_city_functional_zoning"
+		"tech_artifact_long_baseline_measurement"
+	}
+	weight = 90
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}
