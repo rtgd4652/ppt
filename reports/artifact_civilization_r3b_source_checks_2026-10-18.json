@@ -7,13 +7,13 @@
     "native reactor/thruster slot and hull eligibility separated; frigate asymmetry preserved",
     "public prerequisites, owner identity and mechanical gate; no personal gate or upgrade migration",
     "existing 60 component definitions, legacy sets, armies and technology files unchanged",
-    "existing icons, all new labels, UTF-8 scripts/CSV and BOM localisation"
+    "existing icons, all new labels, UTF-8 scripts and BOM localisation"
   ],
   "count": 5,
   "technologies": 4,
   "components": 14,
   "legacy_files_checked": 10,
-  "runtime": "initial CSV delivery failed; final inline build pending",
+  "runtime": "initial CSV delivery failed unsaved; final inline build representative refit and one actual reload passed",
   "balance": "pending",
   "static": {
     "status": "pass",
@@ -26,5 +26,6 @@
     "referenced_states": 734
   },
   "inline_weapons": 3,
-  "correction": "首次静态CSV对应检查没有覆盖引擎是否读取该文件；已据真实装配异常修复，并核对显式字段。"
+  "correction": "首次静态CSV对应检查没有覆盖引擎是否读取该文件；已据真实装配异常修复，并核对显式字段。",
+  "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md"
 }

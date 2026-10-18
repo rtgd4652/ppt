@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3b_source_implemented_runtime_pending",
+  "status": "r3b_representative_runtime_passed",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -1650,9 +1650,11 @@
         "D16",
         "D17"
       ],
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "representative_fit_normal_refit_and_one_reload_passed",
       "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md"
+      "report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md",
+      "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+      "runtime_limits": "研究按测试前置受控授予，两次构建各四条；自然研究、战斗、各尺寸舰型及平衡未扩测。"
     },
     {
       "id": "R3c",
@@ -1735,7 +1737,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a representative scope passed; remaining batches not run",
+    "runtime": "R3a and R3b representative scopes passed; later batches pending",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1764,5 +1766,6 @@
   "r3a_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md",
   "r3a_runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
   "r3b_spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
-  "r3b_report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md"
+  "r3b_report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md",
+  "r3b_runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md"
 }

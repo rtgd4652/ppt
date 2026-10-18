@@ -1,7 +1,7 @@
 {
   "date": "2026-10-18",
   "package": "R3b",
-  "status": "inline_weapon_fix_runtime_retry_pending",
+  "status": "representative_fit_normal_refit_and_one_reload_passed",
   "source_baseline": "128b81a",
   "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
   "implementation_report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md",
@@ -16,26 +16,45 @@
     "inline_weapon_definitions": 3
   },
   "runtime": {
-    "status": "first_fit_detected_weapon_stat_load_failure",
-    "game_loaded_source": "f05b803 before inline fix",
-    "screen_last_confirmed": "paused 2291.03.20, designer unsaved; bad weapon not saved",
-    "cold_starts": 1,
-    "initial_save_loads": 1,
-    "critical_reloads": 0,
-    "console_submissions": 4,
-    "normal_refits": 0,
-    "rr": 0,
-    "game_process_id_at_recording": 31692,
-    "window_handle_at_recording": 1968690,
-    "version": "4.5.2",
-    "checksum": "19dc",
+    "status": "representative_fit_normal_refit_and_one_reload_passed",
+    "game_loaded_source": "4a8f280",
+    "screen_last_confirmed": "2291.07.08暂停，系统视图；控制台及Debug View关闭",
+    "cold_starts": 2,
+    "initial_save_loads": 2,
+    "critical_reloads": 1,
+    "console_submissions": 8,
     "manual_research_submissions": 0,
-    "valid_component_observations": {
-      "reactor_power_delta": 85,
-      "thruster_power_delta": -20,
-      "shield_capacity": 140,
-      "shield_regen_tooltip": 1.6
-    }
+    "normal_refits": 1,
+    "new_ships": 0,
+    "rr": 0,
+    "instant_build": 0,
+    "game_process_id_at_recording": 29808,
+    "window_handle_at_recording": 4131442,
+    "version": "4.5.2",
+    "checksum": "d543",
+    "weapon_tooltip": {
+      "damage_min": 16,
+      "damage_max": 30,
+      "power_consumption": 18,
+      "range": 30,
+      "tracking": 0.7,
+      "accuracy": 0.9,
+      "displayed_cooldown": 2.55,
+      "shield_damage_bonus": 0.5,
+      "armor_damage_bonus": -0.5
+    },
+    "design": {
+      "power_surplus": 67,
+      "hull": 200,
+      "armor": 280,
+      "shield": 140,
+      "evasion_percent": 76.6,
+      "speed": 229.64
+    },
+    "ship_id": "50333021",
+    "fleet_id": "83888044",
+    "design_id": "234883206",
+    "limits": "研究按测试前置受控授予，两次构建各四条；自然研究、战斗、各尺寸舰型及平衡未扩测。"
   },
   "baseline_save": {
     "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.03.20.sav",
@@ -43,12 +62,18 @@
     "preserve": true
   },
   "pending": [
-    "save inline weapon fix source",
-    "discard unsaved abnormal design and restart final source",
-    "load original 2291.03.20 and grant four controlled research prerequisites",
-    "one normal corvette refit and one result actual reload"
+    "下轮先细化R3c陆军登陆与驻防规格；本轮不启动",
+    "自然研发、真实战斗及整体平衡保留到相应批次；不重复R3b代表流程"
   ],
-  "automation": "原生守卫后端；启动器图像定位+守卫单击正常启动，控制台扫描码开关成功。初次中文草稿已清空未提交，Shift切英文后四条短命令输入/自动回车/获得科技实际回显连续成功。",
-  "limits": "未冷启动/装配前不得称运行通过；战斗、自然研究和平衡不扩测。",
-  "source_commit": "f05b803"
+  "automation": "原生守卫后端：Steam启动器正常点击开始、游戏正常载档、设计器、船厂升级、日期另存和载回成功。英文模式＋扫描码100ms／间隔80ms，四条短研究命令连续输入及自动回车成功。第二进程初次中文改写草稿已清空未提交，短探测确认英文后再输入；不按Shift次数猜输入法状态。读档后失焦守卫拒绝点击，重新Activate成功，未继续扩测。",
+  "limits": "代表装配与正常改装及一次实际载回通过；不能冒称自然研发、战斗平衡或4.5.1全兼容。",
+  "source_commit": "4a8f280",
+  "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+  "result_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.07.08.sav",
+    "bytes": 2566253,
+    "date": "2291.07.08",
+    "actual_reload": 1,
+    "preserve": true
+  }
 }

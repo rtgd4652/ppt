@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-10-18",
   "package": "R3b",
-  "status": "inline_weapon_fix_static_pass_runtime_pending",
+  "status": "representative_fit_normal_refit_and_one_reload_passed",
   "source_baseline": "128b81a",
   "scope": [
     "D06",
@@ -515,5 +515,7 @@
     "observed": "一个新武器导致设计面板伤害约1049.59、功耗0，独立CSV未提供预期数值；未保存设计或改装实舰。",
     "correction": "三条新武器改为TXT显式参数，删除仅本轮新增的独立CSV；旧60件和旧CSV均不改。",
     "runtime_retry": "修复后重新冷启动、恢复原2291.03.20再提供四项测试研究，不能称总共只有一次启动/载入。"
-  }
+  },
+  "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+  "runtime_limits": "研究按测试前置受控授予，两次构建各四条；自然研究、战斗、各尺寸舰型及平衡未扩测。"
 }

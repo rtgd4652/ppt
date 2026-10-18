@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-18",
+  "package": "R3b",
+  "reason": "主战役100个手动存档；无损归档一个旧强制跳章诊断入口档，为唯一正常改装结果腾位",
+  "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\AWP03-forced-ch06-90-entry-2216.sav",
+  "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r3b_archive_2026-10-18\\AWP03-forced-ch06-90-entry-2216.sav",
+  "bytes": 1327849,
+  "deleted": false,
+  "baseline_preserved": "2291.03.20.sav",
+  "restore": "将destination用Move-Item -LiteralPath移回source，先确认source不存在；不覆盖"
+}

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-18",
-  "status": "r3b_source_implemented_runtime_pending",
+  "status": "r3b_representative_runtime_passed",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -2150,8 +2150,10 @@
     },
     "R3b": {
       "date": "2026-10-18",
-      "status": "implemented_static_pass_runtime_pending",
-      "runtime_status": "first_fit_found_csv_delivery_failure_final_inline_build_pending",
+      "status": "representative_fit_normal_refit_and_one_reload_passed",
+      "runtime_status": "inline_weapon_fix_confirmed_normal_refit_and_one_actual_reload_passed",
+      "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+      "result_save": "2291.07.08.sav",
       "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md",
       "source_checks": "reports/artifact_civilization_r3b_source_checks_2026-10-18.json",
@@ -2165,7 +2167,7 @@
     "date": "2026-10-18",
     "public_technologies": 45,
     "building_definitions": 29,
-    "note": "当前源码45公共科技／29行星建筑／1星港建筑／74组件；R3b装配待验，目标80公共科技／27类46阶段、个人4项独立。",
+    "note": "当前源码45公共科技／29行星建筑／1星港建筑／74组件；R3b正常改装及一次读档通过，战斗和平衡未验；目标80公共科技／27类46阶段、个人4项独立。",
     "starbase_building_definitions": 1,
     "component_definitions": 74
   },
@@ -2345,7 +2347,10 @@
           "D07",
           "D16",
           "D17"
-        ]
+        ],
+        "status": "representative_fit_normal_refit_and_one_reload_passed",
+        "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+        "runtime_limits": "研究按测试前置受控授予，两次构建各四条；自然研究、战斗、各尺寸舰型及平衡未扩测。"
       },
       {
         "id": "R3c",
@@ -2427,5 +2432,6 @@
     "old_node_prerequisites_changed": false,
     "buildings_added_to_plan": 0,
     "note": "D07／D09用途细化，已有D01～D14编号、科技前置与旧键保留；D15～D22为新增设计节点。R2d首包收敛为C09／E04，其他R2节点另列。"
-  }
+  },
+  "r3b_runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md"
 }

@@ -1,0 +1,38 @@
+{
+  "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.07.08.sav",
+  "bytes": 2566253,
+  "date": "2291.07.08",
+  "ship_id": "50333021",
+  "fleet": "83888044",
+  "design_id": "234883206",
+  "components": [
+    "CORVETTE_MID_S3",
+    "SMALL_ARTIFACT_CLOSE_RESONANCE_EMITTER",
+    "SMALL_RED_LASER",
+    "SMALL_RED_LASER",
+    "SMALL_ARTIFACT_RUNIC_HULL_ARMOR",
+    "SMALL_ARTIFACT_RESONANCE_DEFLECTOR",
+    "SMALL_ARTIFACT_RUNIC_HULL_ARMOR",
+    "ARTIFACT_STANDARD_POWER_ADAPTER"
+  ],
+  "required_components": [
+    "CORVETTE_ARTIFACT_PHASE_REACTOR",
+    "HYPER_DRIVE_1",
+    "CORVETTE_ARTIFACT_PHASE_THRUSTER",
+    "ARTIFACT_PHASE_FIRE_CONTROL_SENSOR",
+    "COMBAT_COMPUTER_DEFAULT"
+  ],
+  "required_r3b_keys_present": true,
+  "research_keys_in_save": {
+    "tech_artifact_close_resonance_weapons": true,
+    "tech_artifact_resonance_deflection": true,
+    "tech_artifact_ship_phase_power": true,
+    "tech_artifact_phase_maneuvering": true
+  },
+  "baseline": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.03.20.sav",
+    "bytes": 2554916
+  },
+  "actual_game_reload": 1,
+  "limits": "文件读取不代替游戏实际载回；本次已实际载回一次。装配与面板不证明战斗及平衡。"
+}
