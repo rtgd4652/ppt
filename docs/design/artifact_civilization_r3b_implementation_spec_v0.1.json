@@ -1,0 +1,513 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-18",
+  "package": "R3b",
+  "status": "implemented_static_pass_runtime_pending",
+  "source_baseline": "128b81a",
+  "scope": [
+    "D06",
+    "D07",
+    "D16",
+    "D17"
+  ],
+  "technologies": [
+    {
+      "id": "D06",
+      "key": "tech_artifact_close_resonance_weapons",
+      "name": "近程共鸣武器",
+      "area": "physics",
+      "category": "particles",
+      "prerequisites": [
+        "tech_artifact_shipboard_interface",
+        "tech_artifact_resonance_material_screening"
+      ],
+      "icon": "tech_artifact_user_combat_doctrine",
+      "description": "以短射程、高追踪的共鸣束破坏护盾，对实体装甲效率较低；不提供绕过防御或全国伤害加成。",
+      "tier": 3,
+      "cost": 3600,
+      "weight": 90
+    },
+    {
+      "id": "D07",
+      "key": "tech_artifact_resonance_deflection",
+      "name": "共鸣偏折防护",
+      "area": "physics",
+      "category": "field_manipulation",
+      "prerequisites": [
+        "tech_artifact_shipboard_interface",
+        "tech_artifact_resonance_material_screening"
+      ],
+      "icon": "tech_artifact_relic_fabrication",
+      "description": "解锁容量较低、原生回复较快的偏折护盾，以更高功耗维持护盾重建；硬化与复合防御留给后续研究。",
+      "tier": 3,
+      "cost": 3600,
+      "weight": 90
+    },
+    {
+      "id": "D16",
+      "key": "tech_artifact_ship_phase_power",
+      "name": "舰载相位供能",
+      "area": "physics",
+      "category": "particles",
+      "prerequisites": [
+        "tech_artifact_shipboard_interface",
+        "tech_artifact_low_loss_phase_transmission"
+      ],
+      "icon": "tech_artifact_phase_energy",
+      "description": "将低损耗相位传输应用于常规舰用反应堆，以额外造价和维护支持高功耗配装。",
+      "tier": 3,
+      "cost": 3600,
+      "weight": 90
+    },
+    {
+      "id": "D17",
+      "key": "tech_artifact_phase_maneuvering",
+      "name": "相位机动推进",
+      "area": "engineering",
+      "category": "propulsion",
+      "prerequisites": [
+        "tech_artifact_shipboard_interface",
+        "tech_artifact_resonance_material_screening"
+      ],
+      "icon": "tech_artifact_seven_day_logistics",
+      "description": "以额外功耗换取更强闪避，基础速度增幅低于原版同阶推进器；仅改变亚光速机动，不提供跃迁。",
+      "tier": 3,
+      "cost": 3600,
+      "weight": 90
+    }
+  ],
+  "components": [
+    {
+      "key": "SMALL_ARTIFACT_CLOSE_RESONANCE_EMITTER",
+      "name": "小型近程共鸣投射器",
+      "template": "weapon_component_template",
+      "size": "small",
+      "technology": "D06",
+      "component_set": "ARTIFACT_CLOSE_RESONANCE_EMITTER",
+      "icon": "GFX_ship_part_artifact_fate_ray_1",
+      "power": -18,
+      "alloy_cost": 24,
+      "upkeep": {
+        "energy": 0.24,
+        "alloys": 0.05
+      },
+      "projectile_gfx": "blue_laser_s",
+      "csv": {
+        "min_damage": 16,
+        "max_damage": 30,
+        "hull_damage": 1.0,
+        "shield_damage": 1.5,
+        "shield_penetration": 0.0,
+        "armor_damage": 0.5,
+        "armor_penetration": 0.0,
+        "min_windup": 3,
+        "max_windup": 8,
+        "cooldown": 20,
+        "range": 30,
+        "accuracy": 0.9,
+        "tracking": 0.7,
+        "size_damage_factor": 0.0,
+        "military_power_multiplier": 1.0
+      }
+    },
+    {
+      "key": "MEDIUM_ARTIFACT_CLOSE_RESONANCE_EMITTER",
+      "name": "中型近程共鸣投射器",
+      "template": "weapon_component_template",
+      "size": "medium",
+      "technology": "D06",
+      "component_set": "ARTIFACT_CLOSE_RESONANCE_EMITTER",
+      "icon": "GFX_ship_part_artifact_fate_ray_1",
+      "power": -38,
+      "alloy_cost": 60,
+      "upkeep": {
+        "energy": 0.48,
+        "alloys": 0.1
+      },
+      "projectile_gfx": "blue_laser_m",
+      "csv": {
+        "min_damage": 40,
+        "max_damage": 75,
+        "hull_damage": 1.0,
+        "shield_damage": 1.5,
+        "shield_penetration": 0.0,
+        "armor_damage": 0.5,
+        "armor_penetration": 0.0,
+        "min_windup": 4,
+        "max_windup": 10,
+        "cooldown": 24,
+        "range": 45,
+        "accuracy": 0.9,
+        "tracking": 0.45,
+        "size_damage_factor": 0.0,
+        "military_power_multiplier": 1.0
+      }
+    },
+    {
+      "key": "LARGE_ARTIFACT_CLOSE_RESONANCE_EMITTER",
+      "name": "大型近程共鸣投射器",
+      "template": "weapon_component_template",
+      "size": "large",
+      "technology": "D06",
+      "component_set": "ARTIFACT_CLOSE_RESONANCE_EMITTER",
+      "icon": "GFX_ship_part_artifact_fate_ray_1",
+      "power": -80,
+      "alloy_cost": 144,
+      "upkeep": {
+        "energy": 0.96,
+        "alloys": 0.2
+      },
+      "projectile_gfx": "blue_laser_l",
+      "csv": {
+        "min_damage": 96,
+        "max_damage": 180,
+        "hull_damage": 1.0,
+        "shield_damage": 1.5,
+        "shield_penetration": 0.0,
+        "armor_damage": 0.5,
+        "armor_penetration": 0.0,
+        "min_windup": 5,
+        "max_windup": 12,
+        "cooldown": 28,
+        "range": 60,
+        "accuracy": 0.9,
+        "tracking": 0.2,
+        "size_damage_factor": 0.0,
+        "military_power_multiplier": 1.0
+      }
+    },
+    {
+      "key": "SMALL_ARTIFACT_RESONANCE_DEFLECTOR",
+      "name": "小型共鸣偏折护盾",
+      "template": "utility_component_template",
+      "size": "small",
+      "technology": "D07",
+      "component_set": "ARTIFACT_RESONANCE_DEFLECTOR",
+      "icon": "GFX_ship_part_artifact_black_gate_shield_1",
+      "power": -35,
+      "alloy_cost": 18,
+      "upkeep": {
+        "energy": 0.22,
+        "alloys": 0.04
+      },
+      "modifier": {
+        "ship_shield_add": 140,
+        "ship_shield_regen_add_static": 1.6
+      },
+      "ai_weight": 8
+    },
+    {
+      "key": "MEDIUM_ARTIFACT_RESONANCE_DEFLECTOR",
+      "name": "中型共鸣偏折护盾",
+      "template": "utility_component_template",
+      "size": "medium",
+      "technology": "D07",
+      "component_set": "ARTIFACT_RESONANCE_DEFLECTOR",
+      "icon": "GFX_ship_part_artifact_black_gate_shield_1",
+      "power": -70,
+      "alloy_cost": 45,
+      "upkeep": {
+        "energy": 0.44,
+        "alloys": 0.08
+      },
+      "modifier": {
+        "ship_shield_add": 420,
+        "ship_shield_regen_add_static": 4.8
+      },
+      "ai_weight": 8
+    },
+    {
+      "key": "LARGE_ARTIFACT_RESONANCE_DEFLECTOR",
+      "name": "大型共鸣偏折护盾",
+      "template": "utility_component_template",
+      "size": "large",
+      "technology": "D07",
+      "component_set": "ARTIFACT_RESONANCE_DEFLECTOR",
+      "icon": "GFX_ship_part_artifact_black_gate_shield_1",
+      "power": -140,
+      "alloy_cost": 112,
+      "upkeep": {
+        "energy": 0.88,
+        "alloys": 0.16
+      },
+      "modifier": {
+        "ship_shield_add": 1260,
+        "ship_shield_regen_add_static": 14.4
+      },
+      "ai_weight": 8
+    },
+    {
+      "key": "CORVETTE_ARTIFACT_PHASE_REACTOR",
+      "name": "轻型舰载相位反应堆",
+      "template": "utility_component_template",
+      "size": "small",
+      "technology": "D16",
+      "component_set": "power_core",
+      "icon": "GFX_ship_part_reactor_3",
+      "power": 160,
+      "alloy_cost": 35,
+      "upkeep": {
+        "energy": 0.3,
+        "alloys": 0.03
+      },
+      "ship_trigger": "ship_uses_corvette_reactors",
+      "ai_weight": 3
+    },
+    {
+      "key": "DESTROYER_ARTIFACT_PHASE_REACTOR",
+      "name": "中型舰载相位反应堆",
+      "template": "utility_component_template",
+      "size": "small",
+      "technology": "D16",
+      "component_set": "power_core",
+      "icon": "GFX_ship_part_reactor_3",
+      "power": 300,
+      "alloy_cost": 70,
+      "upkeep": {
+        "energy": 0.6,
+        "alloys": 0.06
+      },
+      "ship_trigger": "ship_uses_destroyer_reactors",
+      "ai_weight": 3
+    },
+    {
+      "key": "CRUISER_ARTIFACT_PHASE_REACTOR",
+      "name": "重型舰载相位反应堆",
+      "template": "utility_component_template",
+      "size": "small",
+      "technology": "D16",
+      "component_set": "power_core",
+      "icon": "GFX_ship_part_reactor_3",
+      "power": 600,
+      "alloy_cost": 140,
+      "upkeep": {
+        "energy": 1.2,
+        "alloys": 0.12
+      },
+      "ship_trigger": "ship_uses_cruiser_reactors",
+      "ai_weight": 3
+    },
+    {
+      "key": "BATTLESHIP_ARTIFACT_PHASE_REACTOR",
+      "name": "战列型舰载相位反应堆",
+      "template": "utility_component_template",
+      "size": "small",
+      "technology": "D16",
+      "component_set": "power_core",
+      "icon": "GFX_ship_part_reactor_3",
+      "power": 1200,
+      "alloy_cost": 280,
+      "upkeep": {
+        "energy": 2.4,
+        "alloys": 0.24
+      },
+      "ship_trigger": "ship_uses_battleship_reactors",
+      "ai_weight": 3
+    },
+    {
+      "key": "CORVETTE_ARTIFACT_PHASE_THRUSTER",
+      "name": "轻型相位机动推进器",
+      "template": "utility_component_template",
+      "size": "small",
+      "technology": "D17",
+      "component_set": "thruster_components",
+      "icon": "GFX_ship_part_thruster_3",
+      "power": -30,
+      "alloy_cost": 14,
+      "upkeep": {
+        "energy": 0.1,
+        "alloys": 0.01
+      },
+      "ship_trigger": "ship_uses_corvette_components",
+      "modifier": {
+        "ship_base_speed_mult": 0.4,
+        "ship_evasion_add": 14
+      },
+      "ai_weight": 3
+    },
+    {
+      "key": "DESTROYER_ARTIFACT_PHASE_THRUSTER",
+      "name": "驱逐型相位机动推进器",
+      "template": "utility_component_template",
+      "size": "small",
+      "technology": "D17",
+      "component_set": "thruster_components",
+      "icon": "GFX_ship_part_thruster_3",
+      "power": -60,
+      "alloy_cost": 28,
+      "upkeep": {
+        "energy": 0.2,
+        "alloys": 0.02
+      },
+      "ship_trigger": "ship_uses_destroyer_components",
+      "modifier": {
+        "ship_base_speed_mult": 0.4,
+        "ship_evasion_add": 11
+      },
+      "ai_weight": 3
+    },
+    {
+      "key": "CRUISER_ARTIFACT_PHASE_THRUSTER",
+      "name": "巡洋型相位机动推进器",
+      "template": "utility_component_template",
+      "size": "small",
+      "technology": "D17",
+      "component_set": "thruster_components",
+      "icon": "GFX_ship_part_thruster_3",
+      "power": -120,
+      "alloy_cost": 56,
+      "upkeep": {
+        "energy": 0.4,
+        "alloys": 0.04
+      },
+      "ship_trigger": "ship_uses_cruiser_components",
+      "modifier": {
+        "ship_base_speed_mult": 0.4,
+        "ship_evasion_add": 8
+      },
+      "ai_weight": 3
+    },
+    {
+      "key": "BATTLESHIP_ARTIFACT_PHASE_THRUSTER",
+      "name": "战列型相位机动推进器",
+      "template": "utility_component_template",
+      "size": "small",
+      "technology": "D17",
+      "component_set": "thruster_components",
+      "icon": "GFX_ship_part_thruster_3",
+      "power": -240,
+      "alloy_cost": 112,
+      "upkeep": {
+        "energy": 0.8,
+        "alloys": 0.08
+      },
+      "ship_trigger": "ship_uses_battleship_components",
+      "modifier": {
+        "ship_base_speed_mult": 0.4,
+        "ship_evasion_add": 5
+      },
+      "ai_weight": 3
+    }
+  ],
+  "new_component_sets": [
+    {
+      "key": "ARTIFACT_CLOSE_RESONANCE_EMITTER",
+      "name": "近程共鸣投射器",
+      "icon": "GFX_ship_part_artifact_fate_ray_1"
+    },
+    {
+      "key": "ARTIFACT_RESONANCE_DEFLECTOR",
+      "name": "共鸣偏折护盾",
+      "icon": "GFX_ship_part_artifact_black_gate_shield_1"
+    }
+  ],
+  "reused_component_sets": [
+    "power_core",
+    "thruster_components"
+  ],
+  "counts": {
+    "new_public_technologies": 4,
+    "new_components": 14,
+    "new_component_sets": 2,
+    "public_technologies_after": 45,
+    "components_after": 74,
+    "unchanged_planet_buildings": 29,
+    "unchanged_starbase_buildings": 1
+  },
+  "planned_mod_files": [
+    "mod/common/technology/artifact_close_combat_technology.txt",
+    "mod/common/component_sets/artifact_close_combat_sets.txt",
+    "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+    "mod/common/component_templates/artifact_close_combat_components.txt",
+    "mod/common/component_templates/artifact_close_combat_weapon_components.csv"
+  ],
+  "identity": "owner ARTIFACT_USER and country_uses_bio_ships=no; native hull triggers for reactor/thruster slots",
+  "native_reference_version": "4.5.2",
+  "target_version": "4.5.1",
+  "native_reference_files": [
+    "common/component_templates/00_weapons_energy.txt",
+    "common/component_templates/weapon_components.csv",
+    "common/component_templates/00_utilities_shields.txt",
+    "common/component_templates/00_utilities_reactors.txt",
+    "common/component_templates/00_utilities_thrusters.txt",
+    "common/component_sets/00_required_sets.txt",
+    "common/scripted_triggers/07_scripted_triggers_ships.txt",
+    "common/scripted_variables/02_scripted_variables_component_cost.txt"
+  ],
+  "native_comparison": {
+    "shield_t3": {
+      "capacity": [
+        160,
+        480,
+        1440
+      ],
+      "regen": [
+        0.8,
+        2.4,
+        7.2
+      ],
+      "power": [
+        -25,
+        -50,
+        -100
+      ]
+    },
+    "reactor_t3": {
+      "power": [
+        130,
+        240,
+        480,
+        950
+      ],
+      "alloy_cost": [
+        23,
+        45,
+        90,
+        180
+      ]
+    },
+    "thruster_t3": {
+      "base_speed_mult": 0.5,
+      "evasion": [
+        10,
+        8,
+        6,
+        4
+      ],
+      "power": [
+        -20,
+        -40,
+        -80,
+        -160
+      ]
+    }
+  },
+  "legacy_policy": "旧三总包、60已有组件、已有陆军/舰型/设计及原生必需集合不改；无upgrades_to迁移，不自动授予科技。",
+  "native_hull_note": "复用原生四组判定，轻型包含原生民船；frigate按原版使用驱逐级反应堆、轻型推进，不能把两组资格混为一谈。泰坦、巨像、主宰及个人舰型不新增本包专门版本。",
+  "implementation_batches": [
+    [
+      "technology",
+      "component_set",
+      "localisation"
+    ],
+    [
+      "component_template_and_weapon_csv",
+      "localisation"
+    ]
+  ],
+  "validation": {
+    "source": "five_contract_checks_and_static_pass",
+    "runtime": "pending",
+    "plan": "保留2291.03.20起点，只在一艘既有普通护卫舰装入四类新件，经正常船厂改装，保存并实际载回一次。不重测R3a、不逐舰型另造舰，不生成战争；测试研究来源单列。",
+    "balance": "pending",
+    "source_check_report": "reports/artifact_civilization_r3b_source_checks_2026-10-18.json"
+  },
+  "deferred": [
+    "D08长程武器",
+    "D09复合防御及硬化",
+    "D13高阶承载",
+    "个人核心",
+    "批量图标",
+    "战斗穷举"
+  ]
+}

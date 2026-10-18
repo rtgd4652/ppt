@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3a_representative_runtime_passed_remaining_batches_planned",
+  "status": "r3b_source_implemented_runtime_pending",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -52,7 +52,9 @@
       "capability": "解锁适配正常公共舰体的反应堆族，以功率、造价和维护支持高耗能配置；不用命运之主专属核心填充公共路线。",
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented"
+      "status": "implemented_static_pass_runtime_pending",
+      "implementation_key": "tech_artifact_ship_phase_power",
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
     },
     {
       "id": "D17",
@@ -70,7 +72,9 @@
       "capability": "解锁常规亚光速推进器变体，在速度、闪避、能耗间取舍；与超空间航行分开。",
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented"
+      "status": "implemented_static_pass_runtime_pending",
+      "implementation_key": "tech_artifact_phase_maneuvering",
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
     },
     {
       "id": "D18",
@@ -1645,7 +1649,10 @@
         "D07",
         "D16",
         "D17"
-      ]
+      ],
+      "status": "implemented_static_pass_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md"
     },
     {
       "id": "R3c",
@@ -1755,5 +1762,7 @@
   "updated": "2026-10-18",
   "r3a_spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
   "r3a_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md",
-  "r3a_runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md"
+  "r3a_runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
+  "r3b_spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+  "r3b_report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md"
 }

@@ -1,0 +1,42 @@
+{
+  "date": "2026-10-18",
+  "package": "R3b",
+  "status": "implemented_static_pass_runtime_pending",
+  "source_baseline": "128b81a",
+  "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+  "implementation_report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md",
+  "source_check_report": "reports/artifact_civilization_r3b_source_checks_2026-10-18.json",
+  "counts": {
+    "public_technologies": 45,
+    "component_definitions": 74,
+    "new_technologies": 4,
+    "new_components": 14,
+    "new_weapon_csv_rows": 3,
+    "planet_buildings": 29,
+    "starbase_buildings": 1
+  },
+  "runtime": {
+    "status": "pending",
+    "game_loaded_source": "R3a 66a2a36",
+    "screen_last_confirmed": "R3a result paused at 2291.03.20, ordinary corvette details",
+    "cold_starts": 0,
+    "initial_save_loads": 0,
+    "critical_reloads": 0,
+    "console_submissions": 0,
+    "normal_refits": 0,
+    "rr": 0
+  },
+  "baseline_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.03.20.sav",
+    "bytes": 2554916,
+    "preserve": true
+  },
+  "pending": [
+    "one cold start with only this Mod",
+    "controlled research if needed; source explicitly recorded",
+    "same ordinary corvette four new equipment families and normal refit",
+    "one new result save and one actual reload"
+  ],
+  "automation": "本轮如操作窗口选择仓库原生扫描码/鼠标守卫后备入口，不与Computer Use同回合混用；旧pending与研究文件不得重放。",
+  "limits": "未冷启动/装配前不得称运行通过；战斗、自然研究和平衡不扩测。"
+}

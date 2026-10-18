@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-18",
-  "status": "route_with_r3a_representative_runtime_passed",
+  "status": "r3b_source_implemented_runtime_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -721,8 +721,14 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "开放近距离武器族试制，保持射程和追踪取舍。"
+      "status": "implemented_static_pass_runtime_pending",
+      "capability": "开放近距离武器族试制，保持射程和追踪取舍。",
+      "implementation_key": "tech_artifact_close_resonance_weapons",
+      "proposed_key": "tech_artifact_close_resonance_weapons",
+      "category": "particles",
+      "cost": 3600,
+      "weight": 90,
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
     },
     {
       "id": "D07",
@@ -735,8 +741,14 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "解锁公共偏折护盾变体，以能耗和恢复能力形成取舍；实体装甲入口另列D15。"
+      "status": "implemented_static_pass_runtime_pending",
+      "capability": "解锁公共偏折护盾变体，以能耗和恢复能力形成取舍；实体装甲入口另列D15。",
+      "implementation_key": "tech_artifact_resonance_deflection",
+      "proposed_key": "tech_artifact_resonance_deflection",
+      "category": "field_manipulation",
+      "cost": 3600,
+      "weight": 90,
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
     },
     {
       "id": "D08",
@@ -1167,7 +1179,9 @@
       "capability": "解锁适配正常公共舰体的反应堆族，以功率、造价和维护支持高耗能配置；不用命运之主专属核心填充公共路线。",
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented"
+      "status": "implemented_static_pass_runtime_pending",
+      "implementation_key": "tech_artifact_ship_phase_power",
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
     },
     {
       "id": "D17",
@@ -1185,7 +1199,9 @@
       "capability": "解锁常规亚光速推进器变体，在速度、闪避、能耗间取舍；与超空间航行分开。",
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented"
+      "status": "implemented_static_pass_runtime_pending",
+      "implementation_key": "tech_artifact_phase_maneuvering",
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
     },
     {
       "id": "D18",
@@ -2131,15 +2147,27 @@
       "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
       "runtime_limits": "三项研究受控提供；普通护卫舰四候选与一次结果实际读档通过，M/L装甲、战斗、地图感知、自然研发和平衡未扩测。",
       "result_save": "2291.03.20.sav"
+    },
+    "R3b": {
+      "date": "2026-10-18",
+      "status": "implemented_static_pass_runtime_pending",
+      "runtime_status": "pending",
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md",
+      "source_checks": "reports/artifact_civilization_r3b_source_checks_2026-10-18.json",
+      "new_technologies": 4,
+      "new_components": 14,
+      "new_component_sets": 2,
+      "weapon_csv_rows": 3
     }
   },
   "current_counts": {
     "date": "2026-10-18",
-    "public_technologies": 41,
+    "public_technologies": 45,
     "building_definitions": 29,
-    "note": "当前源码41公共科技／29行星建筑定义／1星港建筑／60组件；目标80公共科技／27类46阶段，个人4项独立，运行验收另记。",
+    "note": "当前源码45公共科技／29行星建筑／1星港建筑／74组件；R3b装配待验，目标80公共科技／27类46阶段、个人4项独立。",
     "starbase_building_definitions": 1,
-    "component_definitions": 60
+    "component_definitions": 74
   },
   "orbital_buildings": [
     {

@@ -1,0 +1,535 @@
+# R3b公共装备：近程破盾、偏折防护、舰用供能与机动的独立选择。
+# 反应堆与推进器使用原生small必需槽，各自复用对应舰型判定。
+
+# 小型近程共鸣投射器：首版参数；实际装配、改装和读档另记。
+weapon_component_template = {
+	key = "SMALL_ARTIFACT_CLOSE_RESONANCE_EMITTER"
+	size = small
+	type = instant
+	icon = "GFX_ship_part_artifact_fate_ray_1"
+	icon_frame = 1
+	component_set = "ARTIFACT_CLOSE_RESONANCE_EMITTER"
+	projectile_gfx = "blue_laser_s"
+	tags = {
+		weapon_type_energy
+		s_slot
+	}
+	ai_tags = {
+		weapon_role_anti_shield
+		gunship
+	}
+	ai_tag_weight = 3
+	potential = {
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_close_resonance_weapons"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 24
+		}
+		upkeep = {
+			energy = 0.24
+			alloys = 0.05
+		}
+	}
+}
+
+# 中型近程共鸣投射器：首版参数；实际装配、改装和读档另记。
+weapon_component_template = {
+	key = "MEDIUM_ARTIFACT_CLOSE_RESONANCE_EMITTER"
+	size = medium
+	type = instant
+	icon = "GFX_ship_part_artifact_fate_ray_1"
+	icon_frame = 1
+	component_set = "ARTIFACT_CLOSE_RESONANCE_EMITTER"
+	projectile_gfx = "blue_laser_m"
+	tags = {
+		weapon_type_energy
+		m_slot
+	}
+	ai_tags = {
+		weapon_role_anti_shield
+		gunship
+	}
+	ai_tag_weight = 3
+	potential = {
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_close_resonance_weapons"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 60
+		}
+		upkeep = {
+			energy = 0.48
+			alloys = 0.1
+		}
+	}
+}
+
+# 大型近程共鸣投射器：首版参数；实际装配、改装和读档另记。
+weapon_component_template = {
+	key = "LARGE_ARTIFACT_CLOSE_RESONANCE_EMITTER"
+	size = large
+	type = instant
+	icon = "GFX_ship_part_artifact_fate_ray_1"
+	icon_frame = 1
+	component_set = "ARTIFACT_CLOSE_RESONANCE_EMITTER"
+	projectile_gfx = "blue_laser_l"
+	tags = {
+		weapon_type_energy
+		l_slot
+	}
+	ai_tags = {
+		weapon_role_anti_shield
+		gunship
+	}
+	ai_tag_weight = 3
+	potential = {
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_close_resonance_weapons"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 144
+		}
+		upkeep = {
+			energy = 0.96
+			alloys = 0.2
+		}
+	}
+}
+
+# 小型共鸣偏折护盾：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "SMALL_ARTIFACT_RESONANCE_DEFLECTOR"
+	size = small
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
+	icon_frame = 1
+	power = -35
+	modifier = {
+		ship_shield_add = 140
+		ship_shield_regen_add_static = 1.6
+	}
+	component_set = "ARTIFACT_RESONANCE_DEFLECTOR"
+	potential = {
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_resonance_deflection"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 18
+		}
+		upkeep = {
+			energy = 0.22
+			alloys = 0.04
+		}
+	}
+	ai_weight = {
+		weight = 8
+	}
+}
+
+# 中型共鸣偏折护盾：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "MEDIUM_ARTIFACT_RESONANCE_DEFLECTOR"
+	size = medium
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
+	icon_frame = 1
+	power = -70
+	modifier = {
+		ship_shield_add = 420
+		ship_shield_regen_add_static = 4.8
+	}
+	component_set = "ARTIFACT_RESONANCE_DEFLECTOR"
+	potential = {
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_resonance_deflection"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 45
+		}
+		upkeep = {
+			energy = 0.44
+			alloys = 0.08
+		}
+	}
+	ai_weight = {
+		weight = 8
+	}
+}
+
+# 大型共鸣偏折护盾：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "LARGE_ARTIFACT_RESONANCE_DEFLECTOR"
+	size = large
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
+	icon_frame = 1
+	power = -140
+	modifier = {
+		ship_shield_add = 1260
+		ship_shield_regen_add_static = 14.4
+	}
+	component_set = "ARTIFACT_RESONANCE_DEFLECTOR"
+	potential = {
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_resonance_deflection"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 112
+		}
+		upkeep = {
+			energy = 0.88
+			alloys = 0.16
+		}
+	}
+	ai_weight = {
+		weight = 8
+	}
+}
+
+# 轻型舰载相位反应堆：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "CORVETTE_ARTIFACT_PHASE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = 160
+	component_set = "power_core"
+	potential = {
+		ship_uses_corvette_reactors = yes
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_ship_phase_power"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 35
+		}
+		upkeep = {
+			energy = 0.3
+			alloys = 0.03
+		}
+	}
+	ai_weight = {
+		weight = 3
+	}
+}
+
+# 中型舰载相位反应堆：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "DESTROYER_ARTIFACT_PHASE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = 300
+	component_set = "power_core"
+	potential = {
+		ship_uses_destroyer_reactors = yes
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_ship_phase_power"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 70
+		}
+		upkeep = {
+			energy = 0.6
+			alloys = 0.06
+		}
+	}
+	ai_weight = {
+		weight = 3
+	}
+}
+
+# 重型舰载相位反应堆：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "CRUISER_ARTIFACT_PHASE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = 600
+	component_set = "power_core"
+	potential = {
+		ship_uses_cruiser_reactors = yes
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_ship_phase_power"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 140
+		}
+		upkeep = {
+			energy = 1.2
+			alloys = 0.12
+		}
+	}
+	ai_weight = {
+		weight = 3
+	}
+}
+
+# 战列型舰载相位反应堆：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "BATTLESHIP_ARTIFACT_PHASE_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = 1200
+	component_set = "power_core"
+	potential = {
+		ship_uses_battleship_reactors = yes
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_ship_phase_power"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 280
+		}
+		upkeep = {
+			energy = 2.4
+			alloys = 0.24
+		}
+	}
+	ai_weight = {
+		weight = 3
+	}
+}
+
+# 轻型相位机动推进器：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "CORVETTE_ARTIFACT_PHASE_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = -30
+	modifier = {
+		ship_base_speed_mult = 0.4
+		ship_evasion_add = 14
+	}
+	component_set = "thruster_components"
+	potential = {
+		ship_uses_corvette_components = yes
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_phase_maneuvering"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 14
+		}
+		upkeep = {
+			energy = 0.1
+			alloys = 0.01
+		}
+	}
+	ai_weight = {
+		weight = 3
+	}
+}
+
+# 驱逐型相位机动推进器：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "DESTROYER_ARTIFACT_PHASE_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = -60
+	modifier = {
+		ship_base_speed_mult = 0.4
+		ship_evasion_add = 11
+	}
+	component_set = "thruster_components"
+	potential = {
+		ship_uses_destroyer_components = yes
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_phase_maneuvering"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 28
+		}
+		upkeep = {
+			energy = 0.2
+			alloys = 0.02
+		}
+	}
+	ai_weight = {
+		weight = 3
+	}
+}
+
+# 巡洋型相位机动推进器：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "CRUISER_ARTIFACT_PHASE_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = -120
+	modifier = {
+		ship_base_speed_mult = 0.4
+		ship_evasion_add = 8
+	}
+	component_set = "thruster_components"
+	potential = {
+		ship_uses_cruiser_components = yes
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_phase_maneuvering"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 56
+		}
+		upkeep = {
+			energy = 0.4
+			alloys = 0.04
+		}
+	}
+	ai_weight = {
+		weight = 3
+	}
+}
+
+# 战列型相位机动推进器：首版参数；实际装配、改装和读档另记。
+utility_component_template = {
+	key = "BATTLESHIP_ARTIFACT_PHASE_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_3"
+	icon_frame = 1
+	power = -240
+	modifier = {
+		ship_base_speed_mult = 0.4
+		ship_evasion_add = 5
+	}
+	component_set = "thruster_components"
+	potential = {
+		ship_uses_battleship_components = yes
+		from = {
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = {
+		"tech_artifact_phase_maneuvering"
+	}
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 112
+		}
+		upkeep = {
+			energy = 0.8
+			alloys = 0.08
+		}
+	}
+	ai_weight = {
+		weight = 3
+	}
+}

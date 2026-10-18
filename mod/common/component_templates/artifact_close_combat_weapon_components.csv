@@ -1,0 +1,5 @@
+# R3b近程武器数值：独立三键，模板中的费用与本表一致。
+key;cost;power;min_damage;max_damage;hull_damage;shield_damage;shield_penetration;armor_damage;armor_penetration;min_windup;max_windup;cooldown;range;accuracy;tracking;size_damage_factor;military_power_multiplier;missile_speed;missile_evasion;missile_shield;missile_armor;missile_health;missile_retarget_range;end
+SMALL_ARTIFACT_CLOSE_RESONANCE_EMITTER;24.00;-18.00;16.00;30.00;1.00;1.50;0.00;0.50;0.00;3.00;8.00;20.00;30.00;0.90;0.70;0.00;1.00;0.00;0.00;0.00;0.00;0.00;0.00;
+MEDIUM_ARTIFACT_CLOSE_RESONANCE_EMITTER;60.00;-38.00;40.00;75.00;1.00;1.50;0.00;0.50;0.00;4.00;10.00;24.00;45.00;0.90;0.45;0.00;1.00;0.00;0.00;0.00;0.00;0.00;0.00;
+LARGE_ARTIFACT_CLOSE_RESONANCE_EMITTER;144.00;-80.00;96.00;180.00;1.00;1.50;0.00;0.50;0.00;5.00;12.00;28.00;60.00;0.90;0.20;0.00;1.00;0.00;0.00;0.00;0.00;0.00;0.00;

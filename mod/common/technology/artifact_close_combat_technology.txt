@@ -1,0 +1,85 @@
+# R3b公共军备研究：独立解锁近程、防护、供能和机动；不改旧总包。
+
+# D06 近程共鸣武器：只交付对应装备，不附加全国修正。
+tech_artifact_close_resonance_weapons = {
+	area = physics
+	icon = "tech_artifact_user_combat_doctrine"
+	cost = 3600
+	tier = 3
+	category = {
+		particles
+	}
+	prerequisites = {
+		"tech_artifact_shipboard_interface"
+		"tech_artifact_resonance_material_screening"
+	}
+	weight = 90
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# D07 共鸣偏折防护：只交付对应装备，不附加全国修正。
+tech_artifact_resonance_deflection = {
+	area = physics
+	icon = "tech_artifact_relic_fabrication"
+	cost = 3600
+	tier = 3
+	category = {
+		field_manipulation
+	}
+	prerequisites = {
+		"tech_artifact_shipboard_interface"
+		"tech_artifact_resonance_material_screening"
+	}
+	weight = 90
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# D16 舰载相位供能：只交付对应装备，不附加全国修正。
+tech_artifact_ship_phase_power = {
+	area = physics
+	icon = "tech_artifact_phase_energy"
+	cost = 3600
+	tier = 3
+	category = {
+		particles
+	}
+	prerequisites = {
+		"tech_artifact_shipboard_interface"
+		"tech_artifact_low_loss_phase_transmission"
+	}
+	weight = 90
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}
+
+# D17 相位机动推进：只交付对应装备，不附加全国修正。
+tech_artifact_phase_maneuvering = {
+	area = engineering
+	icon = "tech_artifact_seven_day_logistics"
+	cost = 3600
+	tier = 3
+	category = {
+		propulsion
+	}
+	prerequisites = {
+		"tech_artifact_shipboard_interface"
+		"tech_artifact_resonance_material_screening"
+	}
+	weight = 90
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}

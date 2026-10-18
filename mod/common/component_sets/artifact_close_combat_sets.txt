@@ -1,0 +1,13 @@
+# R3b仅新增武器和偏折盾可选集合；反应堆、推进器复用原生必需槽。
+
+component_set = {
+	key = "ARTIFACT_CLOSE_RESONANCE_EMITTER"
+	icon = "GFX_ship_part_artifact_fate_ray_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_RESONANCE_DEFLECTOR"
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
+	icon_frame = 1
+}
