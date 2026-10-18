@@ -2,7 +2,7 @@
   "schema_version": 1,
   "date": "2026-10-18",
   "package": "R3a",
-  "status": "implemented_static_pass_runtime_pending",
+  "status": "representative_fit_normal_build_and_one_reload_passed",
   "source_baseline": "3e980fe",
   "scope": [
     "D04",
@@ -265,7 +265,7 @@
     }
   ],
   "validation": {
-    "current": "source_links_and_static_pass",
+    "current": "source_links_static_and_representative_runtime_pass",
     "source_checks": [
       "technology references and public gate",
       "component sets, scope and slot mapping",
@@ -289,10 +289,20 @@
       "fixed_aux_power_must_be_observed": true
     },
     "balance": "pending",
-    "runtime": "pending",
+    "runtime": "representative_fit_normal_build_and_one_reload_passed",
     "source_check_report": "reports/artifact_civilization_r3a_source_checks_2026-10-18.json",
-    "cold_start": "4.5.2 (099e), main menu, package errors not found, no save load",
-    "checkpoint": "reports/artifact_civilization_r3a_checkpoint_2026-10-18.json"
+    "cold_start": "4.5.2 (099e), one cold start, one baseline load, one result reload",
+    "checkpoint": "reports/artifact_civilization_r3a_checkpoint_2026-10-18.json",
+    "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
+    "runtime_limits": "三项研究受控提供；普通护卫舰四候选与一次结果实际读档通过，M/L装甲、战斗、地图感知、自然研发和平衡未扩测。",
+    "runtime_actual": {
+      "normal_new_build": true,
+      "normal_refit": false,
+      "reason": "起点仅有唯一旗舰，故正常新造一艘普通护卫舰，不复用专属核心。",
+      "fixed_aux_power_observed": 30,
+      "result_save": "2291.03.20.sav",
+      "one_result_reload": true
+    }
   },
   "native_version_read": "4.5.2",
   "target_version": "4.5.1",

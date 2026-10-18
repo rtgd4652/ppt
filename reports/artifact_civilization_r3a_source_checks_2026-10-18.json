@@ -14,5 +14,7 @@
   "current_components": 60,
   "new_components": 6,
   "new_technologies": 3,
-  "game_runtime": "pending"
+  "game_runtime": "representative_fit_normal_build_and_one_reload_passed",
+  "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
+  "runtime_limits": "三项研究受控提供；普通护卫舰四候选与一次结果实际读档通过，M/L装甲、战斗、地图感知、自然研发和平衡未扩测。"
 }

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3a_source_implemented_runtime_pending",
+  "status": "r3a_representative_runtime_passed_remaining_batches_planned",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -31,9 +31,10 @@
       "capability": "解锁独立的公共符文装甲变体，以合金成本、维护和抗穿透取舍区别护盾；D09后可研究复合强化，不改旧装甲键。",
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_small_armor_runtime_passed_medium_large_unverified",
       "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
-      "implementation_key": "tech_artifact_runic_hull_armor"
+      "implementation_key": "tech_artifact_runic_hull_armor",
+      "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md"
     },
     {
       "id": "D16",
@@ -1630,9 +1631,11 @@
         "D05",
         "D15"
       ],
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "representative_fit_normal_build_and_one_reload_passed",
       "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md"
+      "report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md",
+      "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
+      "runtime_limits": "三项研究受控提供；普通护卫舰四候选与一次结果实际读档通过，M/L装甲、战斗、地图感知、自然研发和平衡未扩测。"
     },
     {
       "id": "R3b",
@@ -1725,7 +1728,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "not_run",
+    "runtime": "R3a representative scope passed; remaining batches not run",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1751,5 +1754,6 @@
   },
   "updated": "2026-10-18",
   "r3a_spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
-  "r3a_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md"
+  "r3a_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md",
+  "r3a_runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md"
 }

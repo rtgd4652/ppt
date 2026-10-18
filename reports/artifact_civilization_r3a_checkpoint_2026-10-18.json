@@ -1,7 +1,7 @@
 {
   "date": "2026-10-18",
   "package": "R3a",
-  "status": "source_and_cold_start_saved_equipment_runtime_pending",
+  "status": "representative_fit_normal_build_and_one_reload_passed",
   "source_commit": "66a2a36",
   "spec_commit": "bdc5d1e",
   "static": {
@@ -29,24 +29,50 @@
     "game_process_id_at_recording": 25816,
     "window_handle_at_recording": 1248612,
     "started_at": "2026-10-18T20:54:01+08:00",
-    "screen": "main_menu",
+    "screen": "ordinary_corvette_details",
     "enabled_mods": [
       "mod/aemusa_artifact_user.mod"
     ],
     "cold_starts": 1,
-    "initial_save_loads": 0,
-    "critical_reloads": 0,
-    "console_submissions": 0,
+    "initial_save_loads": 1,
+    "critical_reloads": 1,
+    "console_submissions": 1,
     "rr": 0,
-    "new_designs_or_refits": 0,
+    "new_designs_or_refits": 1,
     "package_named_errors_found": false,
     "existing_unrelated_warnings": true,
-    "user_started_from_steam_launcher": true
+    "user_started_from_steam_launcher": true,
+    "game_date": "2291.03.20",
+    "paused": true,
+    "console_open": false,
+    "debug_view_open": false,
+    "console_submission_source": "user_manual_three_research_only",
+    "normal_new_designs": 1,
+    "normal_shipyard_build_orders": 1,
+    "normal_refits": 0,
+    "instant_build_commands": 0,
+    "spawned_ships": 0,
+    "new_wars": 0,
+    "applicable_candidates_checked": 4,
+    "representative_ship": {
+      "name": "庭苏丹",
+      "design_name": "响尾蛇级",
+      "design_id": "33557709",
+      "ship_id": "50333021",
+      "fleet_id": "83888044",
+      "hull": 200,
+      "armor": 280,
+      "shield": 100,
+      "fixed_aux_power_observed": 30,
+      "construction_date_from_save": "2290.01.24",
+      "first_observed_completed": "2290.06.14"
+    }
   },
   "baseline_save": {
     "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2289.11.24.sav",
     "bytes": 2545931,
-    "state": "R2f station enabled; preserve original"
+    "state": "R2f station enabled; preserve original",
+    "last_write_time": "2026-10-18T20:31:17.2687271+08:00"
   },
   "automation": {
     "native_input_guard_blocked_before_load": true,
@@ -54,17 +80,35 @@
     "computer_use_installed_enabled": true,
     "computer_use_version": "26.818.41509",
     "installed_path": "C:\\Users\\Admin\\.codex\\plugins\\cache\\openai-bundled\\computer-use\\26.818.41509",
-    "computer_use_ui_api_called": false,
-    "reason_for_next_turn": "Computer Use docs/guidance.md line237 prohibits mixing PowerShell UI Automation and Computer Use in the same turn; native Windows input already used earlier in this turn.",
-    "next_api": "node_repl import @oai/sky; list_windows; choose exactly one returned Stellaris window; get_window_state; one action and refresh",
+    "computer_use_ui_api_called": true,
+    "next_api": "Re-enumerate current tools and actual window; choose one GUI backend for the turn and do not repeat this package.",
     "old_pending_input": "Belongs to exited PID27944; already submitted hazardous-weather command. Never replay.",
-    "new_command_files": "Three current research inputs prepared under tools/desktop/runtime-backups; none submitted; not an automatic queue."
+    "new_command_files": "Three research files were preparation only; user submitted the combined owner-scoped grant once. Do not replay files or stale pending input.",
+    "previous_turn_backend_boundary": "Computer Use docs/guidance.md line237 prohibits mixing PowerShell UI Automation and Computer Use in the same turn; native Windows input already used earlier in this turn.",
+    "this_turn_backend": "Computer Use only for GUI; node_repl @oai/sky returned window, observe/action/refresh",
+    "mouse_workflows_passed": [
+      "load",
+      "ship_designer",
+      "shipyard",
+      "save_new_date",
+      "result_reload"
+    ],
+    "keyboard_this_turn": "grave and Shift_L+grave were not received; no automatic console submission",
+    "known_native_backend": "英文模式、扫描码、逐键100ms已在历史排障通过；是独立后备脚本，原sky插件未修复。本轮未混用或重复复测。",
+    "keyboard_handoff": "C:\\Users\\Admin\\Desktop\\ppt\\stellaris-keyboard-input-fix\\HANDOFF.md"
   },
-  "pending": [
-    "load R2f enabled checkpoint once",
-    "controlled research only if needed and actually confirmed",
-    "ordinary corvette fit and normal refit",
-    "one result-save reload"
-  ],
-  "implementation_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md"
+  "pending": [],
+  "implementation_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md",
+  "result_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.03.20.sav",
+    "bytes": 2554916,
+    "last_write_time": "2026-10-18T21:19:23.730596+08:00",
+    "actual_reload_count": 1,
+    "design_and_ship_retained": true
+  },
+  "limits": "三项研究受控提供；普通护卫舰四候选与一次结果实际读档通过，M/L装甲、战斗、地图感知、自然研发和平衡未扩测。",
+  "next": "先细化R3b D06/D07/D16/D17规格；本轮不启动下一包。",
+  "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
+  "save_readback_report": "reports/artifact_civilization_r3a_save_readback_2026-10-18.json",
+  "save_archive_report": "reports/artifact_civilization_r3a_save_archive_2026-10-18.json"
 }

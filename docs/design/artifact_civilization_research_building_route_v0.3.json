@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-18",
-  "status": "route_with_r3a_source_implemented_runtime_pending",
+  "status": "route_with_r3a_representative_runtime_passed",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -677,14 +677,16 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_representative_fit_build_reload_passed_controlled_research",
       "capability": "独立A槽适配器提供固定30功率，实际占槽／费用／维护；保留D01旧组件。",
       "proposed_key": "tech_artifact_shipboard_interface",
       "category": "voidcraft",
       "cost": 1600,
       "weight": 110,
       "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
-      "implementation_key": "tech_artifact_shipboard_interface"
+      "implementation_key": "tech_artifact_shipboard_interface",
+      "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
+      "runtime_limits": "三项研究受控提供；普通护卫舰四候选与一次结果实际读档通过，M/L装甲、战斗、地图感知、自然研发和平衡未扩测。"
     },
     {
       "id": "D05",
@@ -697,14 +699,16 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_representative_fit_build_reload_passed_controlled_research",
       "capability": "观测与射控两种同槽选择，范围4/6与追踪5，或范围2/3与追踪20；旧传感器键保留。",
       "proposed_key": "tech_artifact_phase_ranging_array",
       "category": "computing",
       "cost": 3600,
       "weight": 90,
       "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
-      "implementation_key": "tech_artifact_phase_ranging_array"
+      "implementation_key": "tech_artifact_phase_ranging_array",
+      "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
+      "runtime_limits": "三项研究受控提供；普通护卫舰四候选与一次结果实际读档通过，M/L装甲、战斗、地图感知、自然研发和平衡未扩测。"
     },
     {
       "id": "D06",
@@ -1141,9 +1145,11 @@
       "capability": "独立符文装甲族S/M/L为140/420/1260装甲和各0.08硬化，以造价、维护换取抗穿透；未来复合变体仍需D15+D09。",
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_representative_fit_build_reload_passed_controlled_research",
       "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
-      "implementation_key": "tech_artifact_runic_hull_armor"
+      "implementation_key": "tech_artifact_runic_hull_armor",
+      "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
+      "runtime_limits": "三项研究受控提供；普通护卫舰四候选与一次结果实际读档通过，M/L装甲、战斗、地图感知、自然研发和平衡未扩测。"
     },
     {
       "id": "D16",
@@ -2097,8 +2103,8 @@
     },
     "R3a": {
       "date": "2026-10-18",
-      "status": "implemented_static_pass_runtime_pending",
-      "runtime_status": "pending",
+      "status": "representative_fit_normal_build_and_one_reload_passed",
+      "runtime_status": "representative_fit_normal_build_and_one_reload_passed",
       "spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md",
       "proposed_technology_keys": {
@@ -2120,8 +2126,11 @@
       "new_technologies": 3,
       "new_components": 6,
       "new_component_sets": 2,
-      "cold_start": "4.5.2 (099e), main menu, package errors not found, no save load",
-      "checkpoint": "reports/artifact_civilization_r3a_checkpoint_2026-10-18.json"
+      "cold_start": "4.5.2 (099e), one cold start, one baseline load, one result reload",
+      "checkpoint": "reports/artifact_civilization_r3a_checkpoint_2026-10-18.json",
+      "runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
+      "runtime_limits": "三项研究受控提供；普通护卫舰四候选与一次结果实际读档通过，M/L装甲、战斗、地图感知、自然研发和平衡未扩测。",
+      "result_save": "2291.03.20.sav"
     }
   },
   "current_counts": {

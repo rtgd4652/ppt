@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-18",
+  "package": "R3a",
+  "method": "native PowerShell non-recursive move; no deletion or overwrite",
+  "entries": [
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\AWP03-ch05-entry-probe-2216.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r3a_archive_2026-10-18\\AWP03-ch05-entry-probe-2216.sav",
+      "bytes": 1321738,
+      "last_write_time": "2026-09-27T13:03:11.4807599+08:00",
+      "reason": "仅无损归档两个旧AWP03诊断中间档以释放原版存档名额；原战前、战中、各分支结果及R2f起点保留"
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\AWP03-duplicate-start-replay-2216.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r3a_archive_2026-10-18\\AWP03-duplicate-start-replay-2216.sav",
+      "bytes": 1348862,
+      "last_write_time": "2026-09-27T19:48:36.0074301+08:00",
+      "reason": "仅无损归档两个旧AWP03诊断中间档以释放原版存档名额；原战前、战中、各分支结果及R2f起点保留"
+    }
+  ],
+  "campaign_count_after": 99,
+  "baseline_preserved": "2289.11.24.sav"
+}
