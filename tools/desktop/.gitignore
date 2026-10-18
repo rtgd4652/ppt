@@ -1,3 +1,5 @@
 # 桌面输入状态与游戏窗口截图留在本机，不作为发布资产提交。
 pending-input.json
 *.png
+# 临时单Mod测试前的用户启用列表，只作本机恢复，不提交个人配置。
+runtime-backups/

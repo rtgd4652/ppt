@@ -118,11 +118,19 @@
     "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml"
   ],
   "runtime": {
-    "status": "pending",
+    "status": "deferred_by_user_playing_other_mods",
     "normal_route": "Actual sample completion, archive, paid reproduction on another colony, campus upgrade",
     "critical_reload_count_required": 1,
     "controlled_inputs": [],
-    "no_direct_result_or_record_console_writes": true
+    "no_direct_result_or_record_console_writes": true,
+    "initial_save_loads": 0,
+    "critical_reloads": 0,
+    "console_commands": 0,
+    "rr": 0,
+    "cold_starts": 1,
+    "start_observation": "Vanilla update notice only; process subsequently changed, no input sent.",
+    "user_instruction": "是，先保存本轮源码",
+    "original_mod_configuration_restored": true
   },
   "validation": {
     "new_fixtures_passed": 6,

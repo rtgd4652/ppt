@@ -2024,7 +2024,7 @@
     "R2e": {
       "date": "2026-10-18",
       "status": "source_implemented_static_checked_runtime_pending",
-      "runtime_status": "pending",
+      "runtime_status": "deferred_by_user_playing_other_mods",
       "balance_status": "pending",
       "technology_keys": {
         "C10": "tech_artifact_public_reproduction_protocol",
@@ -2036,7 +2036,8 @@
       "fixture_tests_passed": 6,
       "touched_r1_compatibility_tests_passed": 13,
       "spec": "docs/design/artifact_civilization_r2e_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r2e_implementation_2026-10-18.md"
+      "report": "reports/artifact_civilization_r2e_implementation_2026-10-18.md",
+      "runtime_note": "用户确认正在玩另一套Mod，本轮只保存源码；没有载档或游戏输入，原16项启用列表与备份完全一致。"
     }
   },
   "current_counts": {
