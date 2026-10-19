@@ -118,9 +118,20 @@ building_artifact_community_service_center = {
 		upkeep = {
 			energy = 2
 		}
+		# 额外维护只在本设施实际承接驻防时结算。
+		upkeep = {
+			trigger = { artifact_garrison_center_active = yes }
+			energy = 4
+			consumer_goods = 1
+		}
 	}
 	planet_modifier = {
 		job_artifact_community_coordinator_add = 1
+	}
+	# R3c：条件名额由原生防御军系统维护；与额外维护使用相同条件。
+	triggered_planet_modifier = {
+		potential = { artifact_garrison_center_active = yes }
+		planet_defense_armies_add = 2
 	}
 	# 中央庭灾害统筹：社区在真实轰炸期间组织疏散与配给，不改写C2的准备或保护状态。
 	triggered_planet_modifier = {

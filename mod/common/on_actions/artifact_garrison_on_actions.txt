@@ -1,0 +1,10 @@
+# 不新增月度或全银河扫描；转让后清除旧部署，不给新国家免费接管。
+on_colony_transfer = {
+	events = { artifact_garrison.1 }
+}
+on_colony_ownerless = {
+	events = { artifact_garrison.1 }
+}
+on_colony_destroyed = {
+	events = { artifact_garrison.1 }
+}

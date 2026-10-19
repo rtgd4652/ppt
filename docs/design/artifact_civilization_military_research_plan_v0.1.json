@@ -110,8 +110,9 @@
       "proposed_key": "tech_artifact_precision_landings",
       "capability": "解锁低附带伤害的定向登陆队，以较低正面攻坚效率或更高训练成本换取占领目标的保存；不覆盖原守备队。",
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented"
+      "existing_key": "tech_artifact_precision_landings",
+      "status": "implemented_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json"
     },
     {
       "id": "D20",
@@ -128,8 +129,9 @@
       "proposed_key": "tech_artifact_planetary_garrison",
       "capability": "在已有社区服务设施中开放付费驻防方案，提供有维护和当地上限的原生守备军；部队绑定与撤销须在陆军实施包验证。",
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented"
+      "existing_key": "tech_artifact_planetary_garrison",
+      "status": "implemented_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json"
     },
     {
       "id": "D21",
@@ -1662,7 +1664,10 @@
       "nodes": [
         "D19",
         "D20"
-      ]
+      ],
+      "status": "implemented_static_pass_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md"
     },
     {
       "id": "R3d",
@@ -1767,5 +1772,7 @@
   "r3a_runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
   "r3b_spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
   "r3b_report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md",
-  "r3b_runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md"
+  "r3b_runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+  "r3c_spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
+  "r3c_report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md"
 }

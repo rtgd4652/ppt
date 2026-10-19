@@ -30,12 +30,15 @@ DECISIONS = load('mod/common/decisions/artifact_city_planning_decisions.txt')
 MARKERS = load('mod/common/static_modifiers/artifact_city_planning_modifiers.txt')
 EVENTS = load('mod/events/artifact_city_planning_events.txt')
 ACTIONS = load('mod/common/on_actions/artifact_city_planning_on_actions.txt')
+GARRISON_TRIGGERS = load('mod/common/scripted_triggers/artifact_garrison_triggers.txt')
 
 
 def condition(entries, scope):
     # 严格区分国家与殖民地；未知语法立即失败，防止把未实现条件当作通过。
     def term(entry):
         key, value = entry.key, entry.value
+        if key in GARRISON_TRIGGERS:
+            return condition(GARRISON_TRIGGERS[key], scope) == (value == 'yes')
         if key in ('OR', 'NOR', 'NOT'):
             if key == 'NOT':
                 assert len(value) == 1
@@ -57,8 +60,18 @@ def condition(entries, scope):
             return value in scope['techs']
         assert scope['kind'] == 'colony', key
         if key == 'exists':
+            if value == 'event_target:artifact_garrison_owner@this':
+                return scope.get('garrison_owner') is not None
             assert value == 'owner'
             return scope['owner'] is not None
+        if key == 'carrier_is_type':
+            assert value == 'planet'
+            return scope['kind'] == 'colony'
+        if key == 'has_carrier_flag':
+            return value in scope.get('carrier_flags', set())
+        if key == 'is_owned_by':
+            assert value == 'event_target:artifact_garrison_owner@this'
+            return scope['owner'] is scope.get('garrison_owner')
         if key == 'is_colony':
             return value == 'yes'
         if key == 'is_controlled_by':

@@ -1,0 +1,14 @@
+namespace = artifact_garrison
+
+# 4.5.2殖民地转让／消失回调；只清理本包，保留其他公共方案和军队。
+carrier_event = {
+	id = artifact_garrison.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_carrier_flag = artifact_garrison_enabled
+	}
+	immediate = {
+		artifact_garrison_clear = yes
+	}
+}

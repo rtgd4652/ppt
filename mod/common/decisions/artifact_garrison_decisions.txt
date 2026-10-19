@@ -1,0 +1,67 @@
+# 正常行星决议支付一次部署费用；后续维护来自活动设施。
+decision_artifact_enable_garrison = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = {
+		category = decisions
+		cost = {
+			minerals = 300
+			energy = 150
+		}
+	}
+	potential = {
+		is_colony = yes
+		exists = owner
+		owner = {
+			has_technology = "tech_artifact_planetary_garrison"
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		}
+		OR = {
+			NOT = { has_carrier_flag = artifact_garrison_enabled }
+			artifact_garrison_original_owner = no
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_garrison_requires_control
+			is_controlled_by = owner
+		}
+		custom_tooltip = {
+			fail_text = artifact_garrison_requires_facility
+			artifact_garrison_has_facility = yes
+		}
+		custom_tooltip = {
+			fail_text = artifact_garrison_requires_safety
+			has_orbital_bombardment = no
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_garrison_offer
+		hidden_effect = { artifact_garrison_deploy = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+# 来源拆除或原国家失去资格后仍能主动解除；不再扣费或退费。
+decision_artifact_disable_garrison = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		is_colony = yes
+		exists = owner
+		has_carrier_flag = artifact_garrison_enabled
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_garrison_requires_control
+			is_controlled_by = owner
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_garrison_removed
+		hidden_effect = { artifact_garrison_clear = yes }
+	}
+	ai_weight = { weight = 0 }
+}

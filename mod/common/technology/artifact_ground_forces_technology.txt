@@ -1,0 +1,33 @@
+# R3c公共陆军研究；两种用途独立，旧三个军备总包保持。
+tech_artifact_precision_landings = {
+	area = society
+	icon = "tech_artifact_user_combat_doctrine"
+	cost = 1600
+	tier = 2
+	category = { military_theory }
+	prerequisites = {
+		"tech_artifact_user_combat_doctrine"
+		"tech_artifact_colony_public_services"
+	}
+	weight = 110
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}
+
+# 当地驻防只开放有维护的方案，不直接生成军队或提供全国加成。
+tech_artifact_planetary_garrison = {
+	area = society
+	icon = "tech_artifact_central_court_protocols"
+	cost = 3600
+	tier = 3
+	category = { military_theory }
+	prerequisites = {
+		"tech_artifact_precision_landings"
+		"tech_artifact_refuge_organization"
+	}
+	weight = 90
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}

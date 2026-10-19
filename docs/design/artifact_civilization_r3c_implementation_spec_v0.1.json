@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-19",
+  "package": "R3c",
+  "status": "implemented_static_pass_runtime_pending",
+  "source_baseline": "d53243d",
+  "scope": [
+    "D19",
+    "D20"
+  ],
+  "technologies": [
+    {
+      "id": "D19",
+      "key": "tech_artifact_precision_landings",
+      "area": "society",
+      "tier": 2,
+      "category": "military_theory",
+      "cost": 1600,
+      "weight": 110,
+      "prerequisites": [
+        "tech_artifact_user_combat_doctrine",
+        "tech_artifact_colony_public_services"
+      ]
+    },
+    {
+      "id": "D20",
+      "key": "tech_artifact_planetary_garrison",
+      "area": "society",
+      "tier": 3,
+      "category": "military_theory",
+      "cost": 3600,
+      "weight": 90,
+      "prerequisites": [
+        "tech_artifact_precision_landings",
+        "tech_artifact_refuge_organization"
+      ]
+    }
+  ],
+  "landing_army": {
+    "key": "artifact_precision_landing_army",
+    "damage": 0.9,
+    "health": 1.25,
+    "morale": 1.5,
+    "collateral_damage": 0.2,
+    "time": 120,
+    "cost": {
+      "minerals": 150,
+      "consumer_goods": 20
+    },
+    "upkeep": {
+      "energy": 1.5
+    }
+  },
+  "garrison": {
+    "capacity": 2,
+    "native_modifier": "planet_defense_armies_add",
+    "cost": {
+      "minerals": 300,
+      "energy": 150
+    },
+    "additional_upkeep": {
+      "energy": 4,
+      "consumer_goods": 1
+    },
+    "sources": [
+      "building_artifact_community_service_center",
+      "building_artifact_sanctum"
+    ],
+    "priority": "sanctum",
+    "state": "artifact_garrison_enabled",
+    "owner_target": "artifact_garrison_owner@this",
+    "monthly_scan": false,
+    "cleanup": [
+      "on_colony_transfer",
+      "on_colony_ownerless",
+      "on_colony_destroyed"
+    ],
+    "native_army_refresh": "runtime_pending"
+  },
+  "files": [
+    "mod/common/technology/artifact_ground_forces_technology.txt",
+    "mod/common/armies/artifact_ground_forces_armies.txt",
+    "mod/localisation/simp_chinese/artifact_ground_forces_l_simp_chinese.yml",
+    "mod/common/scripted_triggers/artifact_garrison_triggers.txt",
+    "mod/common/scripted_effects/artifact_garrison_effects.txt",
+    "mod/common/decisions/artifact_garrison_decisions.txt",
+    "mod/common/buildings/artifact_public_foundation_buildings.txt",
+    "mod/common/buildings/aemusa_buildings.txt",
+    "mod/events/artifact_garrison_events.txt",
+    "mod/common/on_actions/artifact_garrison_on_actions.txt"
+  ],
+  "counts": {
+    "public_technologies": 47,
+    "army_types": 4,
+    "component_definitions": 74,
+    "planet_buildings": 29,
+    "starbase_buildings": 1
+  },
+  "runtime": {
+    "status": "pending",
+    "baseline_save": "2291.07.08.sav",
+    "plan": "正常招募一支登陆队、付费启用一组驻防、核对维护及当地原生军队，保存一个结果并实际载回一次。",
+    "controlled_research": "按需受控提供D19/D20，仅作为测试前置",
+    "limits": "不追加登陆战争、全族类或逐窗口保存；战斗与自然平衡另列。"
+  }
+}

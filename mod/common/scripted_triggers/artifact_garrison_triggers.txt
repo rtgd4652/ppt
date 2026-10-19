@@ -1,0 +1,56 @@
+# 驻防方案使用行星载体索引；不读取角色、主线或R1工程状态。
+artifact_garrison_original_owner = {
+	exists = owner
+	exists = event_target:artifact_garrison_owner@this
+	is_owned_by = event_target:artifact_garrison_owner@this
+}
+
+artifact_garrison_has_facility = {
+	OR = {
+		has_active_building = "building_artifact_community_service_center"
+		has_active_building = "building_artifact_sanctum"
+	}
+}
+
+# 名额与额外维护共用资格，避免无设施／占领状态仍免费保留收益。
+artifact_garrison_operational = {
+	carrier_is_type = planet
+	is_colony = yes
+	has_carrier_flag = artifact_garrison_enabled
+	artifact_garrison_original_owner = yes
+	is_controlled_by = owner
+	artifact_garrison_has_facility = yes
+	owner = {
+		has_technology = "tech_artifact_planetary_garrison"
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}
+
+# 高低设施遗留共存时，只有分部提供一组名额和一份维护。
+artifact_garrison_center_active = {
+	artifact_garrison_operational = yes
+	has_active_building = "building_artifact_community_service_center"
+	NOT = { has_active_building = "building_artifact_sanctum" }
+}
+
+artifact_garrison_branch_active = {
+	artifact_garrison_operational = yes
+	has_active_building = "building_artifact_sanctum"
+}
+
+artifact_garrison_can_deploy = {
+	carrier_is_type = planet
+	is_colony = yes
+	exists = owner
+	is_controlled_by = owner
+	has_orbital_bombardment = no
+	artifact_garrison_has_facility = yes
+	owner = {
+		has_technology = "tech_artifact_planetary_garrison"
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+	OR = {
+		NOT = { has_carrier_flag = artifact_garrison_enabled }
+		artifact_garrison_original_owner = no
+	}
+}

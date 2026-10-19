@@ -25,12 +25,23 @@ building_artifact_sanctum = {
 		category = planet_buildings
 		cost = { minerals = 300 }
 		upkeep = { energy = 2 }
+		# 分部优先承接，维护与防御军名额共用同一活动条件。
+		upkeep = {
+			trigger = { artifact_garrison_branch_active = yes }
+			energy = 4
+			consumer_goods = 1
+		}
 	}
 
 	planet_modifier = {
 		job_artifact_black_gate_warden_add = 2
 		planet_stability_add = 3
 		planet_amenities_add = 5
+	}
+	# R3c：分部优先承接一组驻防；不叠加社区服务中心的同类方案。
+	triggered_planet_modifier = {
+		potential = { artifact_garrison_branch_active = yes }
+		planet_defense_armies_add = 2
 	}
 }
 

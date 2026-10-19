@@ -201,7 +201,7 @@ R3a三项研究、六个组件及两个新集合已接，定向与静态通过�
 | R2f | E07／BL25 | [规格](artifact_civilization_r2f_implementation_spec_v0.1.md)与源码已接，三类风险及原生维护；受控天气代表流程及一次读档通过，其他风险未扩测 |
 | R3a 舰载基础与测距 | D04／D05／D15 | 3研究／6组件源码已接，普通护卫舰代表运行已通过；旧能力保持 |
 | R3b 近程武器、盾防与动力 | D06／D07／D16／D17 | 已实现，普通护卫舰正常改装及一次读档通过；其他尺寸、战斗和平衡未验 |
-| R3c 陆军登陆与驻防 | D19／D20 | 按依赖细化后实施；旧能力保持 |
+| R3c 陆军登陆与驻防 | D19／D20 | 源码及定向／静态通过；正常招募、驻防与一次读档待验 |
 | R3d 中期军备与攻坚 | D08／D09／D11／D18／D21 | 按依赖细化后实施；旧能力保持 |
 | R3e 材料、联运与制度支撑 | B08／B13／C11／C12 | 按依赖细化后实施；旧能力保持 |
 | R3f 作战电脑与远征整补 | D10／D22 | 按依赖细化后实施；旧能力保持 |
@@ -226,3 +226,5 @@ P01可能性分支建模、P02选定方案重组、P03命运舰体接口、P04�
 [结构化路线](artifact_civilization_research_building_route_v0.3.json) · [军备责任表](artifact_civilization_military_research_plan_v0.1.md) · [R2d规格](artifact_civilization_r2d_implementation_spec_v0.1.md) · [1.0范围](artifact_civilization_1_0_scope_confirmation_2026-10-08.md) · [v0.2历史路线](artifact_civilization_research_building_route_v0.2.md)
 
 R3b最终结果2291.07.08，源码4a8f280，详见[运行记录](../../reports/artifact_civilization_r3b_runtime_2026-10-18.md)；修复重启计入两次起点载入，四项研究受控提供，战斗与平衡未扩测。
+
+2026-10-19：R3c D19／D20、一个独立登陆队和有限付费当地驻防源码及定向／静态检查通过，运行待验，见[R3c规格](artifact_civilization_r3c_implementation_spec_v0.1.md)和[实施记录](../../reports/artifact_civilization_r3c_implementation_2026-10-19.md)。当前47公共科技／4陆军／74组件／29行星建筑／1星港建筑；旧三陆军保持，不以驻防名额静态字段当成实际军队。

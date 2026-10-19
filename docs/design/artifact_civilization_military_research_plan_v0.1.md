@@ -86,3 +86,5 @@ C11联运先于D10／D22，A10与B14先于D12／D13。每包只选一个有代�
 [结构化责任表与逐件盘点](artifact_civilization_military_research_plan_v0.1.json) · [完整路线v0.3](artifact_civilization_research_building_route_v0.3.md)
 
 R3b最终结果2291.07.08，源码4a8f280，详见[运行记录](../../reports/artifact_civilization_r3b_runtime_2026-10-18.md)；修复重启计入两次起点载入，四项研究受控提供，战斗与平衡未扩测。
+
+2026-10-19：R3c D19／D20、一个独立登陆队和有限付费当地驻防源码及定向／静态检查通过，运行待验，见[R3c规格](artifact_civilization_r3c_implementation_spec_v0.1.md)和[实施记录](../../reports/artifact_civilization_r3c_implementation_2026-10-19.md)。当前47公共科技／4陆军／74组件／29行星建筑／1星港建筑；旧三陆军保持，不以驻防名额静态字段当成实际军队。

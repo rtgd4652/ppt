@@ -1,0 +1,17 @@
+# 清理仅移除本包部署与原拥有者，不退款、不触碰既有军队或其他工程。
+artifact_garrison_clear = {
+	remove_carrier_flag = artifact_garrison_enabled
+	clear_global_event_target = artifact_garrison_owner@this
+}
+
+# 资源只由原生决议费用系统扣除；重复调用不能叠加部署或创建军队。
+artifact_garrison_deploy = {
+	if = {
+		limit = { artifact_garrison_can_deploy = yes }
+		artifact_garrison_clear = yes
+		set_carrier_flag = artifact_garrison_enabled
+		owner = {
+			save_global_event_target_as = artifact_garrison_owner@prev
+		}
+	}
+}

@@ -1237,8 +1237,9 @@
       "proposed_key": "tech_artifact_precision_landings",
       "capability": "解锁低附带伤害的定向登陆队，以较低正面攻坚效率或更高训练成本换取占领目标的保存；不覆盖原守备队。",
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented"
+      "existing_key": "tech_artifact_precision_landings",
+      "status": "implemented_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json"
     },
     {
       "id": "D20",
@@ -1255,8 +1256,9 @@
       "proposed_key": "tech_artifact_planetary_garrison",
       "capability": "在已有社区服务设施中开放付费驻防方案，提供有维护和当地上限的原生守备军；部队绑定与撤销须在陆军实施包验证。",
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented"
+      "existing_key": "tech_artifact_planetary_garrison",
+      "status": "implemented_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json"
     },
     {
       "id": "D21",
@@ -2164,12 +2166,13 @@
     }
   },
   "current_counts": {
-    "date": "2026-10-18",
-    "public_technologies": 45,
+    "date": "2026-10-19",
+    "public_technologies": 47,
     "building_definitions": 29,
-    "note": "当前源码45公共科技／29行星建筑／1星港建筑／74组件；R3b正常改装及一次读档通过，战斗和平衡未验；目标80公共科技／27类46阶段、个人4项独立。",
+    "note": "R3c两科技／一登陆兵种及有限付费驻防源码已接，运行待验；组件74、建筑29＋1保持。",
     "starbase_building_definitions": 1,
-    "component_definitions": 74
+    "component_definitions": 74,
+    "army_types": 4
   },
   "orbital_buildings": [
     {
@@ -2358,7 +2361,10 @@
         "nodes": [
           "D19",
           "D20"
-        ]
+        ],
+        "status": "implemented_static_pass_runtime_pending",
+        "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
+        "report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md"
       },
       {
         "id": "R3d",
@@ -2433,5 +2439,7 @@
     "buildings_added_to_plan": 0,
     "note": "D07／D09用途细化，已有D01～D14编号、科技前置与旧键保留；D15～D22为新增设计节点。R2d首包收敛为C09／E04，其他R2节点另列。"
   },
-  "r3b_runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md"
+  "r3b_runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+  "r3c_spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
+  "r3c_report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md"
 }

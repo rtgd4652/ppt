@@ -1,0 +1,22 @@
+# 定向登陆队：降低正面输出并增加训练成本，以较低附带伤害保存占领目标。
+artifact_precision_landing_army = {
+	damage = 0.90
+	health = 1.25
+	morale = 1.50
+	collateral_damage = 0.20
+	time = 120
+	icon = GFX_army_type_artifact_user_guardian
+	prerequisites = { "tech_artifact_precision_landings" }
+	resources = {
+		category = armies
+		cost = {
+			minerals = 150
+			consumer_goods = 20
+		}
+		upkeep = { energy = 1.5 }
+	}
+	potential_country = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+	ai_weight = { base = 70 }
+}
