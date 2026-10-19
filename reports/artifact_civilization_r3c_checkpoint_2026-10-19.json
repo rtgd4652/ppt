@@ -1,22 +1,38 @@
 {
   "date": "2026-10-19",
   "package": "R3c",
-  "status": "implemented_static_pass_runtime_pending",
+  "status": "recruitment_queued_garrison_and_reload_pending",
   "source_baseline": "d53243d",
   "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
   "implementation_report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md",
   "source_check_report": "reports/artifact_civilization_r3c_source_checks_2026-10-19.json",
   "runtime": {
-    "status": "pending",
-    "cold_starts": 0,
-    "initial_save_loads": 0,
+    "status": "recruitment_queued_garrison_and_reload_pending",
+    "cold_starts": 1,
+    "initial_save_loads": 1,
     "critical_reloads": 0,
-    "console_submissions": 0
+    "console_submissions": 2,
+    "version": "4.5.2",
+    "checksum": "5706",
+    "date": "2291.07.08",
+    "screen": "paused game menu; console and Debug View closed",
+    "landing_queued": 1,
+    "landing_completed": 0,
+    "garrison_activated": 0
   },
   "baseline_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.07.08.sav",
   "pending": [
-    "冷启动与本轮唯一正常招募／驻防流程",
-    "保存一个完成态并实际载回一次"
+    "Confirm missing garrison decision entry and native capacity/upkeep",
+    "Complete queued landing army normally",
+    "One meaningful result actual reload; do not repeat research grants"
   ],
-  "boundary": "不恢复旧测试队列；人物组合、图标及连续巨构暂缓。"
+  "boundary": "不恢复旧测试队列；人物组合、图标及连续巨构暂缓。",
+  "source_commit": "b208866",
+  "runtime_report": "reports/artifact_civilization_r3c_runtime_2026-10-19.md",
+  "result_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.07.08-r3c.sav",
+    "bytes": 2590313,
+    "actual_reload": 0,
+    "kind": "research_and_recruitment_queue_checkpoint"
+  }
 }

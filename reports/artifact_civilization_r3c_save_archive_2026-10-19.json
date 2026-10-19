@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-19",
+  "package": "R3c",
+  "reason": "主战役手动档达限，无损归档一个旧参战尝试诊断档，以保留本轮暂停的招募队列检查点",
+  "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\AWP03-ally-join-attempt-2215.sav",
+  "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r3c_archive_2026-10-19\\AWP03-ally-join-attempt-2215.sav",
+  "bytes": 1324745,
+  "deleted": false,
+  "baseline_preserved": "2291.07.08.sav",
+  "restore": "确认source不存在后用Move-Item -LiteralPath把destination移回source，不覆盖"
+}

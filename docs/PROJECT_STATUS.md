@@ -1,6 +1,7 @@
 # PROJECT_STATUS
 
 > 当前进度唯一入口；更新于 2026-10-19。
+> R3c当晚续接：源码b208866冷启动，定向登陆队已正常下单；驻防入口、训练完成与关键读档尚待确认。暂停另存2291.07.08-r3c，原档保留，见[运行记录](../reports/artifact_civilization_r3c_runtime_2026-10-19.md)。本轮结束，不标整包通过。
 > R3c当前：D19／D20、一个定向登陆队、两决议和既有设施条件驻防已接；5项本包、5项受影响检查及静态通过，运行待验。当前47公共科技／4陆军／74组件／29行星建筑／1星港建筑，见[实施记录](../reports/artifact_civilization_r3c_implementation_2026-10-19.md)及[检查点](../reports/artifact_civilization_r3c_checkpoint_2026-10-19.json)。
 > R3b当前：4研究／14组件／2集合已接，45公共科技／29行星建筑／1星港建筑／74组件。初次武器CSV数值故障已改TXT修复，最终d543构建的四类新件普通护卫舰正常改装及一次结果实际读档通过；2291.07.08已保存，原2291.03.20保留。两次冷启动／两次起点载入，研究受控提供；战斗及自然平衡未扩测，见[运行记录](../reports/artifact_civilization_r3b_runtime_2026-10-18.md)和[检查点](../reports/artifact_civilization_r3b_checkpoint_2026-10-18.json)。
 > R3a当前：D04舰载接口／D05相位测距／D15符文装甲已接，普通护卫舰四候选、正常船厂新建和一次结果实际读档通过；A槽空置+5→装入+35，固定供能30实见，两块小型符文装甲合计280保留。最终2291.03.20.sav已保存并载回，原2289.11.24保留。三项研究受控提供，rr／快速造船为0；M／L、战斗、地图感知及自然平衡未扩测。当前41公共科技／29行星建筑／1星港建筑／60组件，见[运行记录](../reports/artifact_civilization_r3a_runtime_2026-10-18.md)和[检查点](../reports/artifact_civilization_r3a_checkpoint_2026-10-18.json)。
