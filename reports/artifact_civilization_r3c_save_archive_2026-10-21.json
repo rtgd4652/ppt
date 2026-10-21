@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-21",
+  "reason": "为R3c问题结果及完成态各保留一个新存档名额；仅无损归档两个旧第五章中间诊断档，完整结局和所有当前基线保留",
+  "files": [
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\AWP03-ch05-00-settled-2216.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r3c_archive_2026-10-21\\AWP03-ch05-00-settled-2216.sav",
+      "bytes": 1321769,
+      "last_write_time": "2026-09-27T13:04:48.4258820+08:00",
+      "verified": true
+    },
+    {
+      "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\AWP03-ch05-10-settled-2216.sav",
+      "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r3c_archive_2026-10-21\\AWP03-ch05-10-settled-2216.sav",
+      "bytes": 1321811,
+      "last_write_time": "2026-09-27T13:06:15.0851359+08:00",
+      "verified": true
+    }
+  ],
+  "recursive": false,
+  "deleted": false
+}

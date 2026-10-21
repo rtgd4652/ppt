@@ -17,9 +17,9 @@ class GroundForcesTests(unittest.TestCase):
     def setUp(self):
         self.country = dict(kind='country', species='ARTIFACT_USER', techs={TECH},
                             resources={'minerals':1000, 'energy':1000})
-        self.site = dict(kind='colony', owner=self.country, controller=self.country,
+        self.site = dict(kind='planet', scope_id=3, owner=self.country, controller=self.country,
                          buildings={CENTER}, inactive=set(), markers=set(), queued=set(),
-                         carrier_flags=set(), bombarded=False, garrison_owner=None)
+                         carrier_flags=set(), bombarded=False, garrison_owners={})
 
     def evaluate_effect(self, entries):
         for e in entries:
@@ -33,11 +33,12 @@ class GroundForcesTests(unittest.TestCase):
             elif e.key == 'remove_carrier_flag':self.site['carrier_flags'].discard(e.value)
             elif e.key == 'set_carrier_flag':self.site['carrier_flags'].add(e.value)
             elif e.key == 'clear_global_event_target':
-                self.assertEqual(e.value,'artifact_garrison_owner@this');self.site['garrison_owner']=None
+                self.assertEqual(e.value,'artifact_garrison_owner@this')
+                self.site['garrison_owners'].pop(('planet', self.site['scope_id']), None)
             elif e.key == 'owner':
                 self.assertEqual([(x.key,x.value) for x in e.value],
                     [('save_global_event_target_as','artifact_garrison_owner@prev')])
-                self.site['garrison_owner']=self.site['owner']
+                self.site['garrison_owners'][('planet', self.site['scope_id'])]=self.site['owner']
             else:raise AssertionError(('unsupported effect',e.key))
 
     def choose(self, name='enable'):
@@ -51,14 +52,16 @@ class GroundForcesTests(unittest.TestCase):
 
     def result(self):
         count=0;extra={}
+        # 对照实际存档：首都殖民地0承载于行星3，建筑从殖民地求值。
+        building_site=dict(self.site,kind='colony',scope_id=0,carrier=self.site)
         for key in (CENTER,BRANCH):
             b=city.BUILDINGS[key]
             for e in b:
-                if e.key=='triggered_planet_modifier' and city.condition(city.block(e.value,'potential'),self.site):
+                if e.key=='triggered_planet_modifier' and city.condition(city.block(e.value,'potential'),building_site):
                     count+=float(scalar(e.value,'planet_defense_armies_add') or 0)
             self.assertEqual(sum(e.key=='resources' for e in b),1)
             for u in city.block(b,'resources'):
-                if u.key=='upkeep' and city.block(u.value,'trigger') and city.condition(city.block(u.value,'trigger'),self.site):
+                if u.key=='upkeep' and city.block(u.value,'trigger') and city.condition(city.block(u.value,'trigger'),building_site):
                     for r in u.value:
                         if r.key!='trigger':extra[r.key]=extra.get(r.key,0)+float(r.value)
         return count,extra
@@ -97,7 +100,17 @@ class GroundForcesTests(unittest.TestCase):
         self.site['bombarded']=True;self.assertFalse(self.choose());self.site['bombarded']=False
         self.country['resources']['minerals']=299;self.assertFalse(self.choose())
         self.country['resources']['minerals']=1000;self.site['inactive']={CENTER};self.assertFalse(self.choose())
-        self.assertIsNone(self.site['garrison_owner']);self.assertNotIn(FLAG,self.site['carrier_flags'])
+        self.assertFalse(self.site['garrison_owners']);self.assertNotIn(FLAG,self.site['carrier_flags'])
+
+    def test_building_colony_index_is_not_the_decision_carrier_index(self):
+        self.assertTrue(self.choose())
+        colony=dict(self.site,kind='colony',scope_id=0,carrier=self.site)
+        # 缺少显式planet跳转时会错查owner0，重现名额和维护同时失效的问题。
+        self.assertFalse(city.condition(city.GARRISON_TRIGGERS['artifact_garrison_operational'],colony))
+        self.assertEqual(self.result(),(2,{'energy':4,'consumer_goods':1}))
+        self.site['garrison_owners'][('colony',0)]=self.country
+        self.site['garrison_owners'].pop(('planet',3))
+        self.assertEqual(self.result(),(0,{}))
 
     def test_landing_tradeoff_and_native_cleanup_without_monthly_spawn_loop(self):
         self.assertLess(float(scalar(ARMY,'damage')),1.05)

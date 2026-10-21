@@ -47,8 +47,14 @@ def condition(entries, scope):
         if key == 'custom_tooltip':
             return condition([e for e in value if e.key != 'fail_text'], scope)
         if key == 'owner':
-            assert scope['kind'] == 'colony'
+            assert scope['kind'] in ('colony', 'planet')
             return condition(value, scope['owner'])
+        if key == 'planet':
+            # 建筑求值的殖民地索引不同于其承载行星；显式跳转才改变@this。
+            assert scope['kind'] in ('colony', 'planet')
+            carrier = scope if scope['kind'] == 'planet' else scope.get(
+                'carrier', dict(scope, kind='planet'))
+            return condition(value, carrier)
         if key == 'owner_main_species':
             assert scope['kind'] == 'country'
             return condition(value, scope)
@@ -58,20 +64,22 @@ def condition(entries, scope):
         if key == 'has_technology':
             assert scope['kind'] == 'country'
             return value in scope['techs']
-        assert scope['kind'] == 'colony', key
+        assert scope['kind'] in ('colony', 'planet'), key
         if key == 'exists':
             if value == 'event_target:artifact_garrison_owner@this':
-                return scope.get('garrison_owner') is not None
+                return scope.get('garrison_owners', {}).get(
+                    (scope['kind'], scope.get('scope_id'))) is not None
             assert value == 'owner'
             return scope['owner'] is not None
         if key == 'carrier_is_type':
             assert value == 'planet'
-            return scope['kind'] == 'colony'
+            return scope['kind'] in ('colony', 'planet')
         if key == 'has_carrier_flag':
             return value in scope.get('carrier_flags', set())
         if key == 'is_owned_by':
             assert value == 'event_target:artifact_garrison_owner@this'
-            return scope['owner'] is scope.get('garrison_owner')
+            return scope['owner'] is scope.get('garrison_owners', {}).get(
+                (scope['kind'], scope.get('scope_id')))
         if key == 'is_colony':
             return value == 'yes'
         if key == 'is_controlled_by':

@@ -27,15 +27,20 @@ artifact_garrison_operational = {
 }
 
 # 高低设施遗留共存时，只有分部提供一组名额和一份维护。
+# 4.5.2建筑在殖民地中求值，须回到承载行星再解析@this；决议保存的是行星索引。
 artifact_garrison_center_active = {
-	artifact_garrison_operational = yes
-	has_active_building = "building_artifact_community_service_center"
-	NOT = { has_active_building = "building_artifact_sanctum" }
+	planet = {
+		artifact_garrison_operational = yes
+		has_active_building = "building_artifact_community_service_center"
+		NOT = { has_active_building = "building_artifact_sanctum" }
+	}
 }
 
 artifact_garrison_branch_active = {
-	artifact_garrison_operational = yes
-	has_active_building = "building_artifact_sanctum"
+	planet = {
+		artifact_garrison_operational = yes
+		has_active_building = "building_artifact_sanctum"
+	}
 }
 
 artifact_garrison_can_deploy = {
