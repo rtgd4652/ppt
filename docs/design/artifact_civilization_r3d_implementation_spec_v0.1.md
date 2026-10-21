@@ -23,3 +23,5 @@
 新文件：artifact_midgame_military_technology.txt、artifact_midgame_military_components.txt、artifact_midgame_military_sets.txt、artifact_resonance_siege_armies.txt、artifact_midgame_military_l_simp_chinese.yml。完整字段见[结构化规格](artifact_civilization_r3d_implementation_spec_v0.1.json)。
 
 首次冷启动另报失效单数ship_upkeep_mult；已按本机原生00_scripted_action_components.txt的后勤光环改为ships_upkeep_mult，并补防回归合同。启动期同时发生图形模块访问异常，因果未定；不据源码修正宣称崩溃已解决。
+
+10月21日收尾复查：修复后第二次冷启动进入4.5.2（ac2e）主菜单，该字段错误未复现；未载档或提交命令。代表装配、训练、本舰维护实际效果和完成态读档仍待验，见[运行记录](../../reports/artifact_civilization_r3d_runtime_2026-10-21.md)。

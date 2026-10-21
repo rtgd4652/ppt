@@ -24,6 +24,8 @@
     }
   },
   "old_mod_files_modified": false,
-  "runtime": "pending",
-  "limits": "只检查源码合同和静态引用；尚无本包冷启动、装配、训练、维修、航行或存读档证据。"
+  "runtime": "main_menu_pass_gameplay_pending",
+  "limits": "6项合同与静态通过；首次启动异常中的维护字段已按4.5.2修正，第二次到主菜单。装配、训练、维修、航行和存读档仍无本包运行证据；崩溃根因未确定。",
+  "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-21.md",
+  "fixed_source_commit": "8b889fc"
 }

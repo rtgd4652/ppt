@@ -16,16 +16,48 @@
     "note": "R3d五科技／11组件／一攻坚军源码与定向／静态通过，运行待验；R3c代表证据保留。"
   },
   "runtime": {
-    "status": "pending",
-    "cold_starts": 0,
+    "status": "main_menu_pass_gameplay_pending",
+    "cold_starts": 2,
+    "startup_crashes": 1,
+    "save_loads": 0,
     "console_submissions": 0,
-    "critical_reloads": 0
+    "research_grants": 0,
+    "ship_refits": 0,
+    "army_recruitments": 0,
+    "critical_reloads": 0,
+    "saved_games_written": 0,
+    "game_version": "4.5.2",
+    "checksum": "ac2e",
+    "enabled_mods": [
+      "mod/aemusa_artifact_user.mod"
+    ],
+    "first_start": "2026-10-21T22:17:54+08:00",
+    "crash_time": "2026-10-21T22:18:15+08:00",
+    "exception": "C0000005 EXCEPTION_ACCESS_VIOLATION",
+    "confirmed_script_error": "ship_upkeep_mult invalid; corrected to native ships_upkeep_mult",
+    "crash_cause_confirmed": false,
+    "fixed_start": "2026-10-21T22:30:02.491905+08:00",
+    "main_menu_capture_time": "2026-10-21T22:31:09.4915284+08:00",
+    "fixed_start_result": "主菜单已确认，字段错误未复现；一次成功启动不证明原崩溃根因。",
+    "error_logs_globally_clean": false,
+    "local_evidence": [
+      "temp/r3d-20261021/run-221754/",
+      "temp/r3d-20261021/run-223002-fixed/"
+    ],
+    "final_state": "主菜单，未载档，控制台未打开；重新识别窗口后再操作。",
+    "historical_game_pid": 21656,
+    "crash_report_sent": false
   },
   "baseline_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.06.22.sav",
   "pending": [
-    "先核对实际时间、唯一游戏窗口、仅本Mod及基线；旧进程尚不含R3d",
-    "冷启动后受控提供五项研究，按正常入口做普通舰代表改装及一支攻坚军训练",
-    "完成态另存并实际载回一次；不重测R1～R3c或展开全部尺寸／战斗／平衡"
+    "下次先核对时间、唯一游戏窗口及仅本Mod；已到修复构建主菜单，不例行反复重启",
+    "保留R3c完成档，按需受控提供五项研究，正常做普通舰代表装配／改装及一支攻坚军训练",
+    "完成态另存并实际载回一次；不重测R1至R3c，不展开全部尺寸／战斗／自然平衡",
+    "若崩溃复现，优先保留同次日志和异常，再决定最小隔离；不将首次字段错误等同已确认根因"
   ],
-  "boundary": "人物组合、批量图标及连续巨构仍暂停；不动用户未跟踪原型，旧pending不重放。"
+  "boundary": "人物组合、批量图标及连续巨构仍暂停；不动用户未跟踪原型，旧pending不重放。",
+  "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-21.md",
+  "fixed_source_commit": "8b889fc",
+  "baseline_save_size": 2549028,
+  "baseline_save_last_write": "2026-10-21T21:34:11.3374641+08:00"
 }
