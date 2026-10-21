@@ -21,3 +21,5 @@
 6项定向与静态检查通过；生成时漏写的武器type及错误AI字段在冷启动前被合同测试拦截并修复。运行仍待验：正常普通舰一套代表装配和改装，单支攻坚军训练，一次完成态实际读档；不展开全部尺寸、实际战斗或自然平衡。R3c证据直接复用。
 
 新文件：artifact_midgame_military_technology.txt、artifact_midgame_military_components.txt、artifact_midgame_military_sets.txt、artifact_resonance_siege_armies.txt、artifact_midgame_military_l_simp_chinese.yml。完整字段见[结构化规格](artifact_civilization_r3d_implementation_spec_v0.1.json)。
+
+首次冷启动另报失效单数ship_upkeep_mult；已按本机原生00_scripted_action_components.txt的后勤光环改为ships_upkeep_mult，并补防回归合同。启动期同时发生图形模块访问异常，因果未定；不据源码修正宣称崩溃已解决。

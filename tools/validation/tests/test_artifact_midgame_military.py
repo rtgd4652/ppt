@@ -66,8 +66,10 @@ class MidgameMilitaryTests(unittest.TestCase):
         self.assertLess(float(scalar(p,'power')),0)
         self.assertGreater(float(scalar(block(p,'modifier'),'ship_hull_regen_add_perc')),0)
         self.assertGreater(float(scalar(block(p,'modifier'),'ship_armor_regen_add_perc')),0)
-        self.assertGreater(float(scalar(block(p,'ship_modifier'),'ship_upkeep_mult')),-1)
-        self.assertLess(float(scalar(block(p,'ship_modifier'),'ship_upkeep_mult')),0)
+        # 以本机4.5.2原生后勤光环为准，不能照抄4.4技能中的失效单数键。
+        self.assertIsNone(scalar(block(p,'ship_modifier'),'ship_upkeep_mult'))
+        self.assertGreater(float(scalar(block(p,'ship_modifier'),'ships_upkeep_mult')),-1)
+        self.assertLess(float(scalar(block(p,'ship_modifier'),'ships_upkeep_mult')),0)
         self.assertFalse({'on_destroy','on_ship_destroyed','produces'} & {e.key for e in p})
         self.assertFalse(block(block(p,'resources'),'produces'))
         self.assertGreater(float(scalar(block(block(p,'resources'),'upkeep'),'alloys')),0)

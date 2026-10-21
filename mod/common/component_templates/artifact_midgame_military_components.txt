@@ -275,7 +275,8 @@ utility_component_template = {
 	# 回收以本舰维护折扣表示；受A槽数限制，不支付资源或订阅摧毁事件。
 	power = -8
 	modifier = { ship_hull_regen_add_perc = 0.03 ship_armor_regen_add_perc = 0.06 }
-	ship_modifier = { ship_upkeep_mult = -0.05 }
+	# 4.5.2原版后勤光环使用复数ships；旧技能资料的单数键已失效。
+	ship_modifier = { ships_upkeep_mult = -0.05 }
 	component_set = "ARTIFACT_REPAIR_RECLAMATION_MODULE"
 	potential = {
 		from = {

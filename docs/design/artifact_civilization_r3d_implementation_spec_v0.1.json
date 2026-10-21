@@ -209,10 +209,10 @@
   "reclamation": {
     "hull_regen_native_field": 0.03,
     "armor_regen_native_field": 0.06,
-    "ship_upkeep_mult": -0.05,
     "slot": "aux",
     "resource_payout": false,
-    "bounded_by": "每模块5%本舰维护折扣，受实际A槽数量约束；无击杀、自毁或全国资源支付事件"
+    "bounded_by": "每模块5%本舰维护折扣，受实际A槽数量约束；无击杀、自毁或全国资源支付事件",
+    "ships_upkeep_mult": -0.05
   },
   "ftl": {
     "set": "ftl_components",
@@ -247,7 +247,8 @@
     "common/component_templates/00_utilities_drives.txt",
     "common/component_templates/00_utilities_aux.txt",
     "common/static_modifiers/16_static_modifiers_overlord.txt",
-    "common/armies/01_assault_armies.txt"
+    "common/armies/01_assault_armies.txt",
+    "common/component_templates/00_scripted_action_components.txt"
   ],
   "runtime_start_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.06.22.sav",
   "runtime_scope": "研究可受控提供；普通护卫舰一套代表装配与正常改装，一支攻坚军正常训练，一次完成态实际读档。不得把前置或科技图标当两条流程均通过。",
