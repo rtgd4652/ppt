@@ -1,0 +1,81 @@
+{
+  "date": "2026-10-21",
+  "source_commit": "d2e88af",
+  "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.06.22.sav",
+  "bytes": 2549028,
+  "game_date": "2292.06.22",
+  "actual_game_reload": 1,
+  "baseline": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.07.08-r3c.sav",
+    "bytes": 2590313
+  },
+  "native_defense_armies": {
+    "before": 9,
+    "after": 11,
+    "before_ids": [
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "16777655"
+    ],
+    "after_ids": [
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "16777655",
+      "134217798",
+      "16777842"
+    ],
+    "added_ids": [
+      "134217798",
+      "16777842"
+    ]
+  },
+  "landing_army": {
+    "id": "117440581",
+    "type": "artifact_precision_landing_army",
+    "owner": "0",
+    "ship": "3852",
+    "health": "250",
+    "morale": "300"
+  },
+  "garrison": {
+    "carrier_planet": "3",
+    "colony": "0",
+    "enabled": true,
+    "original_owner": "0",
+    "owner_target": "artifact_garrison_owner3"
+  },
+  "research_keys_in_player_country": {
+    "tech_artifact_precision_landings": true,
+    "tech_artifact_planetary_garrison": true
+  },
+  "ui_observations": {
+    "post_reload_armies": 11,
+    "garrison_strength": 452,
+    "facility_defense_armies_add": 2,
+    "facility_total_monthly_upkeep": {
+      "energy": 6,
+      "consumer_goods": 1
+    },
+    "additional_upkeep": {
+      "energy": 4,
+      "consumer_goods": 1
+    },
+    "evidence": [
+      "tools/desktop/r3c21_reload_source.png",
+      "tools/desktop/r3c21_reload_armies.png"
+    ]
+  },
+  "limits": "文件读取不替代引擎读档；本次已实际载回一次。研究沿用10月19日受控前置，本日未重授。真实战斗、设施停用恢复、转让回调及自然平衡未作引擎扩测。"
+}

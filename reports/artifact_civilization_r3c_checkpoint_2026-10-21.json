@@ -1,0 +1,63 @@
+{
+  "date": "2026-10-21",
+  "package": "R3c",
+  "status": "representative_recruitment_garrison_and_one_result_reload_passed",
+  "source_baseline": "d53243d",
+  "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
+  "implementation_report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md",
+  "source_check_report": "reports/artifact_civilization_r3c_source_checks_2026-10-21.json",
+  "runtime": {
+    "status": "representative_recruitment_garrison_and_one_result_reload_passed",
+    "date": "2026-10-21",
+    "source_commit": "d2e88af",
+    "version": "4.5.2",
+    "checksum": "ba8b",
+    "cold_starts_this_session": 2,
+    "package_cold_starts_including_oct19": 3,
+    "initial_save_loads_this_session": 1,
+    "repair_recovery_loads": 1,
+    "critical_result_reloads": 1,
+    "console_submissions_this_session": 0,
+    "previous_controlled_research_submissions_oct19": 2,
+    "new_recruitment_orders_this_session": 0,
+    "landing_armies_completed": 1,
+    "garrison_deployments_paid": 1,
+    "native_defense_armies_before": 9,
+    "native_defense_armies_after": 11,
+    "facility_upkeep": {
+      "energy": 6,
+      "consumer_goods": 1
+    },
+    "additional_upkeep": {
+      "energy": 4,
+      "consumer_goods": 1
+    },
+    "game_date": "2292.06.22",
+    "screen": "暂停，首都陆军页，11支防御军；控制台及Debug View关闭",
+    "rr": 0,
+    "instant_completion": 0,
+    "new_wars": 0,
+    "limits": "研究沿用受控前置；正常招募、付费部署、名额逐支补齐和完成态读回通过。停用恢复、转让／毁灭回调只具夹具证据；真实战斗与自然平衡未扩测。"
+  },
+  "baseline_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.07.08-r3c.sav",
+  "pending": [
+    "下一包先细化R3d：D08／D09／D11／D18／D21；不重复R1～R3c代表测试",
+    "战斗、自然研究与平衡留到对应阶段；人物组合、批量图标、连续巨构仍暂停"
+  ],
+  "boundary": "不恢复旧测试队列；人物组合、图标及连续巨构暂缓。",
+  "source_commit": "d2e88af",
+  "runtime_report": "reports/artifact_civilization_r3c_runtime_2026-10-21.md",
+  "result_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.06.22.sav",
+    "bytes": 2549028,
+    "actual_reload": 1,
+    "kind": "正常登陆队与付费驻防完成态"
+  },
+  "save_readback": "reports/artifact_civilization_r3c_save_readback_2026-10-21.json",
+  "repair_save": {
+    "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.03.22.sav",
+    "bytes": 2516732,
+    "actual_repair_recovery_loads": 1
+  },
+  "preserved_r3b_baseline_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.07.08.sav"
+}

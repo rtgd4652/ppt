@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3b_representative_runtime_passed",
+  "status": "r3c_representative_runtime_passed",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -111,8 +111,10 @@
       "capability": "解锁低附带伤害的定向登陆队，以较低正面攻坚效率或更高训练成本换取占领目标的保存；不覆盖原守备队。",
       "gate": null,
       "existing_key": "tech_artifact_precision_landings",
-      "status": "implemented_runtime_pending",
-      "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json"
+      "status": "representative_runtime_passed",
+      "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3c_runtime_2026-10-21.md",
+      "runtime_limits": "研究沿用受控前置；正常招募、付费部署、名额逐支补齐和完成态读回通过。停用恢复、转让／毁灭回调只具夹具证据；真实战斗与自然平衡未扩测。"
     },
     {
       "id": "D20",
@@ -130,8 +132,10 @@
       "capability": "在已有社区服务设施中开放付费驻防方案，提供有维护和当地上限的原生守备军；部队绑定与撤销须在陆军实施包验证。",
       "gate": null,
       "existing_key": "tech_artifact_planetary_garrison",
-      "status": "implemented_runtime_pending",
-      "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json"
+      "status": "representative_runtime_passed",
+      "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3c_runtime_2026-10-21.md",
+      "runtime_limits": "研究沿用受控前置；正常招募、付费部署、名额逐支补齐和完成态读回通过。停用恢复、转让／毁灭回调只具夹具证据；真实战斗与自然平衡未扩测。"
     },
     {
       "id": "D21",
@@ -1665,9 +1669,11 @@
         "D19",
         "D20"
       ],
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "representative_runtime_passed",
       "spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md"
+      "report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md",
+      "runtime_report": "reports/artifact_civilization_r3c_runtime_2026-10-21.md",
+      "runtime_limits": "研究沿用受控前置；正常招募、付费部署、名额逐支补齐和完成态读回通过。停用恢复、转让／毁灭回调只具夹具证据；真实战斗与自然平衡未扩测。"
     },
     {
       "id": "R3d",
@@ -1742,7 +1748,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a and R3b representative scopes passed; later batches pending",
+    "runtime": "R3a、R3b、R3c代表范围通过；R3c停用、转让和实战未作引擎扩测，后续包待实施。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1766,7 +1772,7 @@
       "D18"
     ]
   },
-  "updated": "2026-10-18",
+  "updated": "2026-10-21",
   "r3a_spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
   "r3a_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md",
   "r3a_runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
@@ -1774,5 +1780,16 @@
   "r3b_report": "reports/artifact_civilization_r3b_implementation_2026-10-18.md",
   "r3b_runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
   "r3c_spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
-  "r3c_report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md"
+  "r3c_report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md",
+  "r3c_runtime_report": "reports/artifact_civilization_r3c_runtime_2026-10-21.md",
+  "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
+  "current_counts": {
+    "date": "2026-10-21",
+    "public_technologies": 47,
+    "army_types": 4,
+    "component_definitions": 74,
+    "building_definitions": 29,
+    "starbase_building_definitions": 1,
+    "note": "R3c正常招募／付费驻防及一次完成态实际读档通过；不代表战斗、自然研究及整体平衡。"
+  }
 }
