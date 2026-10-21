@@ -1,0 +1,62 @@
+# R3d五项公共研究：只解锁独立装备和攻坚军，不写全国或个人修正。
+
+# D08 长程相位投射：前置沿用已批准的公共路线。
+tech_artifact_long_range_phase_projection = {
+	area = physics
+	icon = "tech_artifact_user_combat_doctrine"
+	cost = 8000
+	tier = 4
+	category = { particles }
+	prerequisites = { "tech_artifact_user_resonance_armaments" "tech_artifact_close_resonance_weapons" "tech_artifact_low_loss_phase_transmission" }
+	weight = 65
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+# D09 分层相位防御：前置沿用已批准的公共路线。
+tech_artifact_layered_phase_defense = {
+	area = physics
+	icon = "tech_artifact_relic_fabrication"
+	cost = 8000
+	tier = 4
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_user_resonance_armaments" "tech_artifact_resonance_deflection" }
+	weight = 65
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+# D11 战损回收与补给：前置沿用已批准的公共路线。
+tech_artifact_battle_damage_reclamation = {
+	area = engineering
+	icon = "tech_artifact_relic_fabrication"
+	cost = 7200
+	tier = 4
+	category = { industry }
+	prerequisites = { "tech_artifact_user_resonance_armaments" "tech_artifact_byproduct_recycling" }
+	weight = 70
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+# D18 超空间航行协调：前置沿用已批准的公共路线。
+tech_artifact_hyperspace_coordination = {
+	area = physics
+	icon = "tech_artifact_seven_day_logistics"
+	cost = 8000
+	tier = 4
+	category = { particles }
+	prerequisites = { "tech_artifact_user_resonance_armaments" "tech_artifact_phase_maneuvering" "tech_artifact_phase_disturbance_warning" }
+	weight = 65
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+# D21 共鸣攻坚工程：前置沿用已批准的公共路线。
+tech_artifact_resonance_siege_engineering = {
+	area = engineering
+	icon = "tech_artifact_user_combat_doctrine"
+	cost = 8000
+	tier = 4
+	category = { materials }
+	prerequisites = { "tech_artifact_user_resonance_armaments" "tech_artifact_precision_landings" "tech_artifact_low_loss_phase_transmission" }
+	weight = 65
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-21",
+  "package": "R3d",
+  "status": "implemented_static_pass_runtime_pending",
+  "source_baseline": "46afcab",
+  "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+  "implementation_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
+  "source_check_report": "reports/artifact_civilization_r3d_source_checks_2026-10-21.json",
+  "counts": {
+    "date": "2026-10-21",
+    "public_technologies": 52,
+    "army_types": 5,
+    "component_definitions": 85,
+    "building_definitions": 29,
+    "starbase_building_definitions": 1,
+    "note": "R3d五科技／11组件／一攻坚军源码与定向／静态通过，运行待验；R3c代表证据保留。"
+  },
+  "runtime": {
+    "status": "pending",
+    "cold_starts": 0,
+    "console_submissions": 0,
+    "critical_reloads": 0
+  },
+  "baseline_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.06.22.sav",
+  "pending": [
+    "先核对实际时间、唯一游戏窗口、仅本Mod及基线；旧进程尚不含R3d",
+    "冷启动后受控提供五项研究，按正常入口做普通舰代表改装及一支攻坚军训练",
+    "完成态另存并实际载回一次；不重测R1～R3c或展开全部尺寸／战斗／平衡"
+  ],
+  "boundary": "人物组合、批量图标及连续巨构仍暂停；不动用户未跟踪原型，旧pending不重放。"
+}

@@ -1,0 +1,325 @@
+# R3d：长程低追踪、分层防护、舰内维修回收及普通航道引擎；旧设计与旧键保持。
+
+weapon_component_template = {
+	key = "SMALL_ARTIFACT_LONG_RANGE_PHASE_PROJECTOR"
+	size = small
+	type = instant
+	icon = "GFX_ship_part_artifact_fate_ray_1"
+	icon_frame = 1
+	# 武器数值直接写TXT；发射间隔字段不直接等同游戏日。
+	power = -24
+	damage = { min = 30 max = 60 }
+	windup = { min = 4 max = 9 }
+	total_fire_time = 45
+	hull_damage = 1.0
+	shield_damage = 1.0
+	shield_penetration = 0.0
+	armor_damage = 1.25
+	armor_penetration = 0.0
+	range = 70
+	accuracy = 0.85
+	tracking = 0.25
+	size_damage_factor = 0.0
+	military_power_multiplier = 1.0
+	projectile_gfx = "blue_laser_s"
+	tags = { weapon_type_energy s_slot }
+	ai_tags = { weapon_role_anti_armor artillery }
+	component_set = "ARTIFACT_LONG_RANGE_PHASE_PROJECTOR"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_long_range_phase_projection" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 40 }
+		upkeep = { energy = 0.4 alloys = 0.08 }
+	}
+	ai_tag_weight = 3
+}
+
+weapon_component_template = {
+	key = "MEDIUM_ARTIFACT_LONG_RANGE_PHASE_PROJECTOR"
+	size = medium
+	type = instant
+	icon = "GFX_ship_part_artifact_fate_ray_1"
+	icon_frame = 1
+	# 武器数值直接写TXT；发射间隔字段不直接等同游戏日。
+	power = -54
+	damage = { min = 75 max = 150 }
+	windup = { min = 4 max = 9 }
+	total_fire_time = 50
+	hull_damage = 1.0
+	shield_damage = 1.0
+	shield_penetration = 0.0
+	armor_damage = 1.25
+	armor_penetration = 0.0
+	range = 100
+	accuracy = 0.85
+	tracking = 0.1
+	size_damage_factor = 0.0
+	military_power_multiplier = 1.0
+	projectile_gfx = "blue_laser_m"
+	tags = { weapon_type_energy m_slot }
+	ai_tags = { weapon_role_anti_armor artillery }
+	component_set = "ARTIFACT_LONG_RANGE_PHASE_PROJECTOR"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_long_range_phase_projection" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 100 }
+		upkeep = { energy = 1 alloys = 0.2 }
+	}
+	ai_tag_weight = 3
+}
+
+weapon_component_template = {
+	key = "LARGE_ARTIFACT_LONG_RANGE_PHASE_PROJECTOR"
+	size = large
+	type = instant
+	icon = "GFX_ship_part_artifact_fate_ray_1"
+	icon_frame = 1
+	# 武器数值直接写TXT；发射间隔字段不直接等同游戏日。
+	power = -118
+	damage = { min = 180 max = 360 }
+	windup = { min = 4 max = 9 }
+	total_fire_time = 60
+	hull_damage = 1.0
+	shield_damage = 1.0
+	shield_penetration = 0.0
+	armor_damage = 1.25
+	armor_penetration = 0.0
+	range = 130
+	accuracy = 0.85
+	tracking = 0.02
+	size_damage_factor = 0.0
+	military_power_multiplier = 1.0
+	projectile_gfx = "blue_laser_l"
+	tags = { weapon_type_energy l_slot }
+	ai_tags = { weapon_role_anti_armor artillery }
+	component_set = "ARTIFACT_LONG_RANGE_PHASE_PROJECTOR"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_long_range_phase_projection" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 240 }
+		upkeep = { energy = 2.4 alloys = 0.48 }
+	}
+	ai_tag_weight = 3
+}
+
+utility_component_template = {
+	key = "SMALL_ARTIFACT_LAYERED_PHASE_SHIELD"
+	size = small
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
+	icon_frame = 1
+	power = -45
+	modifier = { ship_shield_add = 170 ship_shield_regen_add_static = 1.8 }
+	ship_modifier = { ship_shield_hardening_add = 0.10 }
+	component_set = "ARTIFACT_LAYERED_PHASE_SHIELD"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_layered_phase_defense" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 32 }
+		upkeep = { energy = 0.32 alloys = 0.064 }
+	}
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "MEDIUM_ARTIFACT_LAYERED_PHASE_SHIELD"
+	size = medium
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
+	icon_frame = 1
+	power = -110
+	modifier = { ship_shield_add = 510 ship_shield_regen_add_static = 5.4 }
+	ship_modifier = { ship_shield_hardening_add = 0.10 }
+	component_set = "ARTIFACT_LAYERED_PHASE_SHIELD"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_layered_phase_defense" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 80 }
+		upkeep = { energy = 0.8 alloys = 0.16 }
+	}
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "LARGE_ARTIFACT_LAYERED_PHASE_SHIELD"
+	size = large
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
+	icon_frame = 1
+	power = -260
+	modifier = { ship_shield_add = 1530 ship_shield_regen_add_static = 16.2 }
+	ship_modifier = { ship_shield_hardening_add = 0.10 }
+	component_set = "ARTIFACT_LAYERED_PHASE_SHIELD"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_layered_phase_defense" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 192 }
+		upkeep = { energy = 1.92 alloys = 0.384 }
+	}
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "SMALL_ARTIFACT_COMPOSITE_RUNIC_ARMOR"
+	size = small
+	icon = "GFX_ship_part_artifact_destiny_armor_1"
+	icon_frame = 1
+	# 复合装甲同时要求D09与D15；不因只研究护盾而跨过实体材料路线。
+	power = 0
+	modifier = { ship_armor_add = 175 }
+	ship_modifier = { ship_armor_hardening_add = 0.12 }
+	component_set = "ARTIFACT_COMPOSITE_RUNIC_ARMOR"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_layered_phase_defense" "tech_artifact_runic_hull_armor" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 44 }
+		upkeep = { energy = 0.183333 alloys = 0.0916667 }
+	}
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "MEDIUM_ARTIFACT_COMPOSITE_RUNIC_ARMOR"
+	size = medium
+	icon = "GFX_ship_part_artifact_destiny_armor_1"
+	icon_frame = 1
+	# 复合装甲同时要求D09与D15；不因只研究护盾而跨过实体材料路线。
+	power = 0
+	modifier = { ship_armor_add = 525 }
+	ship_modifier = { ship_armor_hardening_add = 0.12 }
+	component_set = "ARTIFACT_COMPOSITE_RUNIC_ARMOR"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_layered_phase_defense" "tech_artifact_runic_hull_armor" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 110 }
+		upkeep = { energy = 0.458333 alloys = 0.229167 }
+	}
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "LARGE_ARTIFACT_COMPOSITE_RUNIC_ARMOR"
+	size = large
+	icon = "GFX_ship_part_artifact_destiny_armor_1"
+	icon_frame = 1
+	# 复合装甲同时要求D09与D15；不因只研究护盾而跨过实体材料路线。
+	power = 0
+	modifier = { ship_armor_add = 1575 }
+	ship_modifier = { ship_armor_hardening_add = 0.12 }
+	component_set = "ARTIFACT_COMPOSITE_RUNIC_ARMOR"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_layered_phase_defense" "tech_artifact_runic_hull_armor" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 264 }
+		upkeep = { energy = 1.1 alloys = 0.55 }
+	}
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_REPAIR_RECLAMATION_MODULE"
+	size = aux
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+	# 回收以本舰维护折扣表示；受A槽数限制，不支付资源或订阅摧毁事件。
+	power = -8
+	modifier = { ship_hull_regen_add_perc = 0.03 ship_armor_regen_add_perc = 0.06 }
+	ship_modifier = { ship_upkeep_mult = -0.05 }
+	component_set = "ARTIFACT_REPAIR_RECLAMATION_MODULE"
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_battle_damage_reclamation" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 40 }
+		upkeep = { energy = 0.25 alloys = 0.05 }
+	}
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_COORDINATED_HYPER_DRIVE"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_3"
+	icon_frame = 1
+	# 原生航道引擎；提高航行协调但不提供跳跃。
+	power = -18
+	ftl = yes
+	jumpdrive = no
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+		ship_windup_mult = -0.40
+		ship_interstellar_speed_mult = 0.15
+	}
+	component_set = "ftl_components"
+	potential = {
+		is_eager_explorer_ship = no
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+		}
+	}
+	prerequisites = { "tech_artifact_hyperspace_coordination" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 30 }
+		upkeep = { energy = 0.2 alloys = 0.03 }
+	}
+	ai_weight = { weight = 4 }
+}
+

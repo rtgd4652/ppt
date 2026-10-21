@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3c_representative_runtime_passed",
+  "status": "r3d_implemented_runtime_pending",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -92,8 +92,9 @@
       "proposed_key": "tech_artifact_hyperspace_coordination",
       "capability": "解锁公共FTL组件变体，以航道航行和充能性能分工；不自动提供战略跳跃或使用旧专属跃迁核心。",
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented"
+      "existing_key": "tech_artifact_hyperspace_coordination",
+      "status": "implemented_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
     },
     {
       "id": "D19",
@@ -153,8 +154,9 @@
       "proposed_key": "tech_artifact_resonance_siege_engineering",
       "capability": "解锁高耐久的共鸣攻坚军，承担高强度地面突破，以训练、合金维护和更高附带伤害区别定向登陆队。",
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented"
+      "existing_key": "tech_artifact_resonance_siege_engineering",
+      "status": "implemented_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
     },
     {
       "id": "D22",
@@ -1684,7 +1686,10 @@
         "D11",
         "D18",
         "D21"
-      ]
+      ],
+      "status": "implemented_static_pass_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md"
     },
     {
       "id": "R3e",
@@ -1785,11 +1790,14 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-21",
-    "public_technologies": 47,
-    "army_types": 4,
-    "component_definitions": 74,
+    "public_technologies": 52,
+    "army_types": 5,
+    "component_definitions": 85,
     "building_definitions": 29,
     "starbase_building_definitions": 1,
-    "note": "R3c正常招募／付费驻防及一次完成态实际读档通过；不代表战斗、自然研究及整体平衡。"
-  }
+    "note": "R3d五科技／11组件／一攻坚军源码与定向／静态通过，运行待验；R3c代表证据保留。"
+  },
+  "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+  "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
+  "r3d_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-21.json"
 }

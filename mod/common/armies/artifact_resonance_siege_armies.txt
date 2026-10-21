@@ -1,0 +1,17 @@
+# R3d共鸣攻坚军：更高耐久、训练与维护投入，并承担更高附带伤害。
+artifact_resonance_siege_army = {
+	damage = 3.0
+	health = 4.2
+	morale = 4.0
+	collateral_damage = 1.2
+	time = 180
+	icon = "GFX_army_type_artifact_user_resonance"
+	prerequisites = { "tech_artifact_resonance_siege_engineering" }
+	resources = {
+		category = armies
+		cost = { minerals = 480 alloys = 120 }
+		upkeep = { energy = 4 alloys = 0.8 }
+	}
+	potential_country = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	ai_weight = { base = 80 }
+}

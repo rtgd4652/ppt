@@ -1,0 +1,26 @@
+# R3d四个独立可选集合；FTL使用原生必需槽。
+
+component_set = {
+	key = "ARTIFACT_LONG_RANGE_PHASE_PROJECTOR"
+	icon = "GFX_ship_part_artifact_fate_ray_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_LAYERED_PHASE_SHIELD"
+	icon = "GFX_ship_part_artifact_black_gate_shield_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_COMPOSITE_RUNIC_ARMOR"
+	icon = "GFX_ship_part_artifact_destiny_armor_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_REPAIR_RECLAMATION_MODULE"
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+}
+

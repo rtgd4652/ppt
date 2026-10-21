@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-21",
-  "status": "r3c_representative_runtime_passed",
+  "status": "r3d_implemented_runtime_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -761,9 +761,10 @@
         "B09"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "开放长距离武器升级，牺牲近程表现或追踪，不替代全部武器。"
+      "existing_key": "tech_artifact_long_range_phase_projection",
+      "status": "implemented_runtime_pending",
+      "capability": "开放长距离武器升级，牺牲近程表现或追踪，不替代全部武器。",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
     },
     {
       "id": "D09",
@@ -775,9 +776,10 @@
         "D07"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "解锁分层护盾与硬化；复合装甲变体另要求已知D15，组件槽位、功耗和维护构成取舍。"
+      "existing_key": "tech_artifact_layered_phase_defense",
+      "status": "implemented_runtime_pending",
+      "capability": "解锁分层护盾与硬化；复合装甲变体另要求已知D15，组件槽位、功耗和维护构成取舍。",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
     },
     {
       "id": "D10",
@@ -804,9 +806,10 @@
         "B12"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "开放战后维修和有上限的回收方案；不以舰船自毁循环产出资源。"
+      "existing_key": "tech_artifact_battle_damage_reclamation",
+      "status": "implemented_runtime_pending",
+      "capability": "开放战后维修和有上限的回收方案；不以舰船自毁循环产出资源。",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
     },
     {
       "id": "D12",
@@ -1219,8 +1222,9 @@
       "proposed_key": "tech_artifact_hyperspace_coordination",
       "capability": "解锁公共FTL组件变体，以航道航行和充能性能分工；不自动提供战略跳跃或使用旧专属跃迁核心。",
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented"
+      "existing_key": "tech_artifact_hyperspace_coordination",
+      "status": "implemented_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
     },
     {
       "id": "D19",
@@ -1280,8 +1284,9 @@
       "proposed_key": "tech_artifact_resonance_siege_engineering",
       "capability": "解锁高耐久的共鸣攻坚军，承担高强度地面突破，以训练、合金维护和更高附带伤害区别定向登陆队。",
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented"
+      "existing_key": "tech_artifact_resonance_siege_engineering",
+      "status": "implemented_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
     },
     {
       "id": "D22",
@@ -2176,16 +2181,22 @@
       "source_commit": "d2e88af",
       "report": "reports/artifact_civilization_r3c_runtime_2026-10-21.md",
       "checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json"
+    },
+    "R3d": {
+      "date": "2026-10-21",
+      "status": "implemented_static_pass_runtime_pending",
+      "report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
     }
   },
   "current_counts": {
     "date": "2026-10-21",
-    "public_technologies": 47,
-    "army_types": 4,
-    "component_definitions": 74,
+    "public_technologies": 52,
+    "army_types": 5,
+    "component_definitions": 85,
     "building_definitions": 29,
     "starbase_building_definitions": 1,
-    "note": "R3c正常招募／付费驻防及一次完成态实际读档通过；不代表战斗、自然研究及整体平衡。"
+    "note": "R3d五科技／11组件／一攻坚军源码与定向／静态通过，运行待验；R3c代表证据保留。"
   },
   "orbital_buildings": [
     {
@@ -2390,7 +2401,10 @@
           "D11",
           "D18",
           "D21"
-        ]
+        ],
+        "status": "implemented_static_pass_runtime_pending",
+        "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+        "report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md"
       },
       {
         "id": "R3e",
@@ -2458,5 +2472,8 @@
   "r3c_spec": "docs/design/artifact_civilization_r3c_implementation_spec_v0.1.json",
   "r3c_report": "reports/artifact_civilization_r3c_implementation_2026-10-19.md",
   "r3c_runtime_report": "reports/artifact_civilization_r3c_runtime_2026-10-21.md",
-  "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json"
+  "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
+  "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+  "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
+  "r3d_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-21.json"
 }

@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-21",
+  "package": "R3d",
+  "status": "pass",
+  "directed_tests": 6,
+  "contracts": [
+    "真实前置和公共身份",
+    "长程武器显式参数与追踪取舍",
+    "复合装甲同时要求D09及D15",
+    "维修回收占A槽且无资源支付",
+    "FTL必需槽与无战略跳跃",
+    "攻坚军耐久及真实费用取舍"
+  ],
+  "static": {
+    "status": "pass",
+    "errors": [],
+    "warnings": [],
+    "counts": {
+      "script_files": 163,
+      "events": 251,
+      "localization_keys": 1726,
+      "registered_states": 791,
+      "referenced_states": 734
+    }
+  },
+  "old_mod_files_modified": false,
+  "runtime": "pending",
+  "limits": "只检查源码合同和静态引用；尚无本包冷启动、装配、训练、维修、航行或存读档证据。"
+}

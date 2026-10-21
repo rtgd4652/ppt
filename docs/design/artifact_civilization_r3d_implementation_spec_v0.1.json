@@ -1,0 +1,255 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-21",
+  "package": "R3d",
+  "status": "implemented_static_pass_runtime_pending",
+  "source_baseline": "46afcab",
+  "scope": [
+    "D08",
+    "D09",
+    "D11",
+    "D18",
+    "D21"
+  ],
+  "technologies": [
+    {
+      "id": "D08",
+      "key": "tech_artifact_long_range_phase_projection",
+      "area": "physics",
+      "category": [
+        "particles"
+      ],
+      "tier": 4,
+      "cost": 8000,
+      "prerequisites": [
+        "tech_artifact_user_resonance_armaments",
+        "tech_artifact_close_resonance_weapons",
+        "tech_artifact_low_loss_phase_transmission"
+      ]
+    },
+    {
+      "id": "D09",
+      "key": "tech_artifact_layered_phase_defense",
+      "area": "physics",
+      "category": [
+        "field_manipulation"
+      ],
+      "tier": 4,
+      "cost": 8000,
+      "prerequisites": [
+        "tech_artifact_user_resonance_armaments",
+        "tech_artifact_resonance_deflection"
+      ]
+    },
+    {
+      "id": "D11",
+      "key": "tech_artifact_battle_damage_reclamation",
+      "area": "engineering",
+      "category": [
+        "industry"
+      ],
+      "tier": 4,
+      "cost": 7200,
+      "prerequisites": [
+        "tech_artifact_user_resonance_armaments",
+        "tech_artifact_byproduct_recycling"
+      ]
+    },
+    {
+      "id": "D18",
+      "key": "tech_artifact_hyperspace_coordination",
+      "area": "physics",
+      "category": [
+        "particles"
+      ],
+      "tier": 4,
+      "cost": 8000,
+      "prerequisites": [
+        "tech_artifact_user_resonance_armaments",
+        "tech_artifact_phase_maneuvering",
+        "tech_artifact_phase_disturbance_warning"
+      ]
+    },
+    {
+      "id": "D21",
+      "key": "tech_artifact_resonance_siege_engineering",
+      "area": "engineering",
+      "category": [
+        "materials"
+      ],
+      "tier": 4,
+      "cost": 8000,
+      "prerequisites": [
+        "tech_artifact_user_resonance_armaments",
+        "tech_artifact_precision_landings",
+        "tech_artifact_low_loss_phase_transmission"
+      ]
+    }
+  ],
+  "files": [
+    "mod/common/technology/artifact_midgame_military_technology.txt",
+    "mod/common/component_templates/artifact_midgame_military_components.txt",
+    "mod/common/component_sets/artifact_midgame_military_sets.txt",
+    "mod/common/armies/artifact_resonance_siege_armies.txt",
+    "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml"
+  ],
+  "counts": {
+    "date": "2026-10-21",
+    "public_technologies": 52,
+    "army_types": 5,
+    "component_definitions": 85,
+    "building_definitions": 29,
+    "starbase_building_definitions": 1,
+    "note": "R3d五科技／11组件／一攻坚军源码与定向／静态通过，运行待验；R3c代表证据保留。"
+  },
+  "components": [
+    {
+      "key": "SMALL_ARTIFACT_LONG_RANGE_PHASE_PROJECTOR",
+      "size": "small",
+      "set": "ARTIFACT_LONG_RANGE_PHASE_PROJECTOR",
+      "power": -24.0,
+      "prerequisites": [
+        "tech_artifact_long_range_phase_projection"
+      ]
+    },
+    {
+      "key": "MEDIUM_ARTIFACT_LONG_RANGE_PHASE_PROJECTOR",
+      "size": "medium",
+      "set": "ARTIFACT_LONG_RANGE_PHASE_PROJECTOR",
+      "power": -54.0,
+      "prerequisites": [
+        "tech_artifact_long_range_phase_projection"
+      ]
+    },
+    {
+      "key": "LARGE_ARTIFACT_LONG_RANGE_PHASE_PROJECTOR",
+      "size": "large",
+      "set": "ARTIFACT_LONG_RANGE_PHASE_PROJECTOR",
+      "power": -118.0,
+      "prerequisites": [
+        "tech_artifact_long_range_phase_projection"
+      ]
+    },
+    {
+      "key": "SMALL_ARTIFACT_LAYERED_PHASE_SHIELD",
+      "size": "small",
+      "set": "ARTIFACT_LAYERED_PHASE_SHIELD",
+      "power": -45.0,
+      "prerequisites": [
+        "tech_artifact_layered_phase_defense"
+      ]
+    },
+    {
+      "key": "MEDIUM_ARTIFACT_LAYERED_PHASE_SHIELD",
+      "size": "medium",
+      "set": "ARTIFACT_LAYERED_PHASE_SHIELD",
+      "power": -110.0,
+      "prerequisites": [
+        "tech_artifact_layered_phase_defense"
+      ]
+    },
+    {
+      "key": "LARGE_ARTIFACT_LAYERED_PHASE_SHIELD",
+      "size": "large",
+      "set": "ARTIFACT_LAYERED_PHASE_SHIELD",
+      "power": -260.0,
+      "prerequisites": [
+        "tech_artifact_layered_phase_defense"
+      ]
+    },
+    {
+      "key": "SMALL_ARTIFACT_COMPOSITE_RUNIC_ARMOR",
+      "size": "small",
+      "set": "ARTIFACT_COMPOSITE_RUNIC_ARMOR",
+      "power": 0.0,
+      "prerequisites": [
+        "tech_artifact_layered_phase_defense",
+        "tech_artifact_runic_hull_armor"
+      ]
+    },
+    {
+      "key": "MEDIUM_ARTIFACT_COMPOSITE_RUNIC_ARMOR",
+      "size": "medium",
+      "set": "ARTIFACT_COMPOSITE_RUNIC_ARMOR",
+      "power": 0.0,
+      "prerequisites": [
+        "tech_artifact_layered_phase_defense",
+        "tech_artifact_runic_hull_armor"
+      ]
+    },
+    {
+      "key": "LARGE_ARTIFACT_COMPOSITE_RUNIC_ARMOR",
+      "size": "large",
+      "set": "ARTIFACT_COMPOSITE_RUNIC_ARMOR",
+      "power": 0.0,
+      "prerequisites": [
+        "tech_artifact_layered_phase_defense",
+        "tech_artifact_runic_hull_armor"
+      ]
+    },
+    {
+      "key": "ARTIFACT_REPAIR_RECLAMATION_MODULE",
+      "size": "aux",
+      "set": "ARTIFACT_REPAIR_RECLAMATION_MODULE",
+      "power": -8.0,
+      "prerequisites": [
+        "tech_artifact_battle_damage_reclamation"
+      ]
+    },
+    {
+      "key": "ARTIFACT_COORDINATED_HYPER_DRIVE",
+      "size": "small",
+      "set": "ftl_components",
+      "power": -18.0,
+      "prerequisites": [
+        "tech_artifact_hyperspace_coordination"
+      ]
+    }
+  ],
+  "reclamation": {
+    "hull_regen_native_field": 0.03,
+    "armor_regen_native_field": 0.06,
+    "ship_upkeep_mult": -0.05,
+    "slot": "aux",
+    "resource_payout": false,
+    "bounded_by": "每模块5%本舰维护折扣，受实际A槽数量约束；无击杀、自毁或全国资源支付事件"
+  },
+  "ftl": {
+    "set": "ftl_components",
+    "jumpdrive": false,
+    "windup_mult": -0.4,
+    "interstellar_speed_mult": 0.15
+  },
+  "siege_army": {
+    "key": "artifact_resonance_siege_army",
+    "damage": 3.0,
+    "health": 4.2,
+    "morale": 4.0,
+    "collateral_damage": 1.2,
+    "time": 180,
+    "cost": {
+      "minerals": 480,
+      "alloys": 120
+    },
+    "upkeep": {
+      "energy": 4,
+      "alloys": 0.8
+    }
+  },
+  "validation": {
+    "directed_tests": 6,
+    "static": "pass",
+    "runtime": "pending",
+    "balance": "pending"
+  },
+  "native_references": [
+    "common/component_templates/000_documentation.txt",
+    "common/component_templates/00_utilities_drives.txt",
+    "common/component_templates/00_utilities_aux.txt",
+    "common/static_modifiers/16_static_modifiers_overlord.txt",
+    "common/armies/01_assault_armies.txt"
+  ],
+  "runtime_start_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.06.22.sav",
+  "runtime_scope": "研究可受控提供；普通护卫舰一套代表装配与正常改装，一支攻坚军正常训练，一次完成态实际读档。不得把前置或科技图标当两条流程均通过。",
+  "report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md"
+}
