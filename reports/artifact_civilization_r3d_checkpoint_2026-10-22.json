@@ -1,0 +1,30 @@
+{
+  "date": "2026-10-22",
+  "package": "R3d",
+  "source_commit": "8b889fc",
+  "status": "main_menu_pass_research_setup_incomplete_gameplay_pending",
+  "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-22.md",
+  "game_version": "4.5.2",
+  "checksum": "ac2e",
+  "cold_starts_today": 1,
+  "initial_save_loads_today": 1,
+  "initial_load_operator": "user",
+  "manual_five_technology_attempts": 1,
+  "manual_technologies_confirmed_acquired": 0,
+  "automatic_console_submissions": 2,
+  "automatic_submission_results": [
+    "Unknown command",
+    "Activated ascension perk: 神器共鸣之路"
+  ],
+  "public_resonance_perk_activated_in_unsaved_session": true,
+  "D21_last_input_submitted": false,
+  "ship_refits": 0,
+  "siege_army_recruitments": 0,
+  "critical_reloads": 0,
+  "game_saves_written_today": 0,
+  "baseline_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.06.22.sav",
+  "pending": "先确认真实前置与研究状态，再做装配、训练和一次结果读档。原存档保持；当前公共飞升只是未保存的测试状态。",
+  "keyboard_limit": "两空格前导仅一次成功，不宣称全面修复。历史命令及准备文件禁止自动重放。",
+  "crash_cause_confirmed": false,
+  "stop_reason": "用户提醒时间，停止继续测试。"
+}
