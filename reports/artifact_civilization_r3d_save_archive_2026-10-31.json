@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-31",
+  "reason": "主战役101档已达手动保存上限；无损归档一个已由2292.06.22取代的R3c问题中间档，为R3d唯一结果档腾出一位",
+  "source": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.03.22.sav",
+  "destination": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271_r3d_archive_2026-10-31\\2292.03.22.sav",
+  "bytes": 2516732,
+  "last_write_time": "2026-10-21T21:18:07.6570984+08:00",
+  "campaign_count_before": 101,
+  "campaign_count_after_archive": 100,
+  "deleted_files": 0,
+  "protected_saves": [
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.06.22.sav",
+      "bytes": 2549028,
+      "last_write_time": "2026-10-21T21:34:11.3374641+08:00"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.07.08.sav",
+      "bytes": 2566253,
+      "last_write_time": "2026-10-18T22:48:28.8022697+08:00"
+    },
+    {
+      "path": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2291.07.08-r3c.sav",
+      "bytes": 2590313,
+      "last_write_time": "2026-10-19T22:58:36.4261070+08:00"
+    }
+  ],
+  "campaign_count_after_result_save": 101
+}

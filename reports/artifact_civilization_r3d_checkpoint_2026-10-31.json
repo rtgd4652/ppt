@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-31",
+  "package": "R3d",
+  "source_commit": "8b889fc",
+  "session_start_checkpoint": "82759ce",
+  "status": "representative_fit_normal_refit_recruitment_and_one_result_reload_passed",
+  "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+  "game_version": "4.5.2",
+  "checksum": "ac2e",
+  "mod_source_changed": false,
+  "automatic_console_submissions": 8,
+  "controlled_setup": [
+    "ap_artifact_user_resonance_path",
+    "D01",
+    "D02",
+    "D08",
+    "D09",
+    "D11",
+    "D18",
+    "D21"
+  ],
+  "research_natural_play_proven": false,
+  "ship_refits": 1,
+  "siege_army_recruitments": 1,
+  "critical_reloads": 1,
+  "game_result_saves": 1,
+  "result_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2293.10.11.sav",
+  "result_bytes": 2550871,
+  "saved_at": "2026-10-31T02:27:59.9762928+08:00",
+  "game_date": "2293.10.11",
+  "baseline_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2292.06.22.sav",
+  "baseline_bytes": 2549028,
+  "baseline_preserved": true,
+  "ship": {
+    "id": "50333021",
+    "fleet": "83888044",
+    "design": "318769497",
+    "size": "corvette",
+    "hull": 200,
+    "armor": 315,
+    "shield": 170,
+    "design_power_surplus": 5,
+    "components": [
+      "SMALL_ARTIFACT_LONG_RANGE_PHASE_PROJECTOR",
+      "SMALL_ARTIFACT_LAYERED_PHASE_SHIELD",
+      "SMALL_ARTIFACT_COMPOSITE_RUNIC_ARMOR",
+      "ARTIFACT_REPAIR_RECLAMATION_MODULE",
+      "ARTIFACT_COORDINATED_HYPER_DRIVE"
+    ],
+    "repair_modifier_in_actual_ship_tooltip": {
+      "ships_upkeep_mult": -0.05,
+      "daily_hull_regen_percent": 3,
+      "daily_armor_regen_percent": 6
+    },
+    "maintenance_settlement_tested": false
+  },
+  "siege_army": {
+    "id": "16778494",
+    "type": "artifact_resonance_siege_army",
+    "owner": "0",
+    "ship": "167772958",
+    "health": 840,
+    "morale": 800,
+    "native_garrison_count": 11,
+    "post_reload_tooltip_confirmed": true
+  },
+  "counts": {
+    "public_technologies": 52,
+    "components": 85,
+    "army_types": 5,
+    "planet_buildings": 29,
+    "starbase_buildings": 1
+  },
+  "resources_or_rr": 0,
+  "instant_completion": 0,
+  "create_ship_or_army": 0,
+  "hash_checks": 0,
+  "source_checks": "沿用已保存的6项定向及静态通过证据，未因无源码改动重复运行",
+  "runtime_limits": [
+    "研究与公共飞升受控",
+    "M/L尺寸及实际战斗未扩测",
+    "受伤恢复与维护结算未测",
+    "自然科研与整体平衡未验",
+    "旧崩溃根因未确定"
+  ],
+  "archive_manifest": "reports/artifact_civilization_r3d_save_archive_2026-10-31.json",
+  "paused": true,
+  "console_open": false,
+  "debug_view_open": false,
+  "screen": "transport_fleet_details",
+  "keyboard": "用户确认英文后，扫描码100ms、两空格前导、独立提交成功8条；不宣称全部输入环境已修复，准备文件不可重放",
+  "stop_reason": "用户要求终止，本次到此；只做最小记录与中文保存提交",
+  "next_step": "先同步R3d规格与两套路线JSON/表格状态，再细化R3e B08/B13/C11/C12；不重复R3d代表测试",
+  "deferred": [
+    "人物组合",
+    "批量图标",
+    "连续巨构原型"
+  ],
+  "remote_push": false
+}
