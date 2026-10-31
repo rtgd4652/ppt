@@ -1,7 +1,7 @@
 {
   "date": "2026-10-31",
   "source_base": "c6c27fe",
-  "scope": "62项已实现公共科技的显示名称、两层卡面文案与技术注释；18项未实现节点另列。",
+  "scope": "63项已实现公共科技的显示名称、两层卡面文案与技术注释；17项未实现节点另列。",
   "status": "source_grounded_static_passed",
   "entries": [
     {
@@ -480,6 +480,29 @@
         "unknown_boundaries"
       ],
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B14",
+      "key": "tech_artifact_strategic_engineering_supply",
+      "previous_name": "战略工程供应",
+      "name": "战略工程供应",
+      "lore": "中央庭曾在黑门危机中协调救援、城防与重建物资。面向星海的大型建设，这份经验成为长期备料制度：材料有明确去向，下一项工程也知道还有多少余量。",
+      "application": "解锁工程物资集成场，在联运接收端把实存物资集成为一份大型工程备料。全国同时保留一份，交付前可撤回并回收部分材料。",
+      "implementation_note": "只解锁集成场和备料资格；civil_supply消费实存普通物资并逐项扣费，全国至多一份备料。",
+      "technology_file": "mod/common/technology/artifact_strategic_supply_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_strategic_supply_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_strategic_supply_buildings.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "中央庭的资源统筹和普通工程支持神器研究用于文案背景；具体备料机制属于Mod设计，来源审核状态不变。"
     },
     {
       "id": "C01",
@@ -1369,12 +1392,6 @@
       "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
     },
     {
-      "id": "B14",
-      "working_name": "战略工程供应",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
-    {
       "id": "D12",
       "working_name": "有限场域压制",
       "status": "awaits_implementation_text",
@@ -2056,7 +2073,8 @@
         "kind": "related_text"
       }
     ],
-    "related_text_keys": 36
+    "related_text_keys": 36,
+    "historical_scope_note": "本段仅记录首次62项文字整理；随后研发包新增条目见implementation_updates，不重计旧改名数。"
   },
   "source_policy": {
     "index": "knowledge/database/seven_days_knowledge.sqlite",
@@ -2235,5 +2253,15 @@
     }
   ],
   "validation_report": "reports/artifact_technology_text_validation_2026-10-31.json",
-  "writing_guide": "docs/design/artifact_technology_writing_guide_v0.1.md"
+  "writing_guide": "docs/design/artifact_technology_writing_guide_v0.1.md",
+  "implementation_updates": [
+    {
+      "package": "R4b",
+      "date": "2026-10-31",
+      "node": "B14",
+      "source_base": "e6c95c8",
+      "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md"
+    }
+  ]
 }

@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-31",
-  "status": "r3f_static_passed_runtime_pending",
+  "status": "r4b_static_passed_runtime_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -482,8 +482,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设工程物资集成场；为舰体和分段工程支付并锁定供应预算。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "建设工程物资集成场；为舰体和分段工程支付并锁定供应预算。",
+      "implementation_key": "tech_artifact_strategic_engineering_supply",
+      "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md"
     },
     {
       "id": "C01",
@@ -1988,7 +1991,9 @@
           "name": "工程物资集成场",
           "technology": "B14",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "implemented_static_passed_runtime_pending",
+          "implementation_key": "building_artifact_engineering_supply_yard",
+          "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json"
         }
       ]
     },
@@ -2321,16 +2326,32 @@
         "E08"
       ],
       "balance_status": "pending"
+    },
+    "R4b": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "pending_stage_validation",
+      "technologies": [
+        "B14"
+      ],
+      "new_buildings": 1,
+      "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r4b_checkpoint_2026-10-31.json",
+      "real_consumers_pending": [
+        "D13",
+        "E09"
+      ]
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 62,
+    "public_technologies": 63,
     "army_types": 5,
     "component_definitions": 94,
-    "building_definitions": 37,
+    "building_definitions": 38,
     "starbase_building_definitions": 1,
-    "note": "R4a新增3项公共研究、2个建筑定义及实验到公共防护流程；源码检查通过、未启动游戏。R3e部分运行及R3f待验范围按既有报告保留。"
+    "note": "R4b新增B14及BL29集成场；实付备料与撤回、占位、消费接口检查通过，游戏运行待集中验收，D13/E09真实消费者未接。"
   },
   "orbital_buildings": [
     {
@@ -2646,5 +2667,8 @@
   "r4a_report": "reports/artifact_civilization_r4a_implementation_2026-10-31.md",
   "r4a_checkpoint": "reports/artifact_civilization_r4a_checkpoint_2026-10-31.json",
   "technology_text_catalog": "docs/design/artifact_technology_text_catalog_v0.1.json",
-  "technology_text_updated": "2026-10-31"
+  "technology_text_updated": "2026-10-31",
+  "r4b_spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
+  "r4b_report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md",
+  "r4b_checkpoint": "reports/artifact_civilization_r4b_checkpoint_2026-10-31.json"
 }

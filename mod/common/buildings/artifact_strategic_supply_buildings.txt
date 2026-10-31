@@ -1,0 +1,28 @@
+# BL29承接既有仓储与联运；设施不凭空生产物资，不提供额外全国加成。
+building_artifact_engineering_supply_yard = {
+	base_buildtime = 720
+	icon = "building_artifact_relic_workshop"
+	category = resource
+	building_sets = { resource }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_strategic_engineering_supply" }
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+	allow = {
+		has_building = "building_artifact_distribution_depot"
+		has_building = "building_artifact_intercolony_terminal"
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1800
+			alloys = 600
+		}
+		upkeep = {
+			energy = 12
+			consumer_goods = 2
+		}
+	}
+}

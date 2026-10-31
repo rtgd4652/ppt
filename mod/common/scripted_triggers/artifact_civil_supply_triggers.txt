@@ -180,3 +180,43 @@ artifact_rule_anchor_active = {
 	artifact_rule_anchor_site = yes
 	has_modifier = acs_rule_anchor_window
 }
+
+# R4b库存与可用性分开：停用或占领仍占位，不能从别处再生成第二份。
+# 从any_owned_colony进入本触发器前须回到carrier，保证@this使用行星索引。
+artifact_civil_supply_strategic_stock = {
+	has_modifier = acs_strategic_supply_reserved
+	artifact_civil_supply_original_owner = yes
+}
+
+artifact_civil_supply_strategic_site = {
+	artifact_civil_supply_receiver = yes
+	has_active_building = "building_artifact_engineering_supply_yard"
+	owner = { has_technology = "tech_artifact_strategic_engineering_supply" }
+}
+
+artifact_civil_supply_can_strategic_reserve = {
+	artifact_civil_supply_strategic_site = yes
+	artifact_civil_supply_stock = yes
+	owner = {
+		NOT = {
+			any_owned_colony = {
+				carrier = { artifact_civil_supply_strategic_stock = yes }
+			}
+		}
+		has_resource = { type = minerals amount >= 1500 }
+		has_resource = { type = alloys amount >= 900 }
+		has_resource = { type = energy amount >= 500 }
+	}
+}
+
+# 正式消费者先核对本条件和自身目标，再在同一守卫块内消费并启动工程。
+artifact_civil_supply_strategic_ready = {
+	artifact_civil_supply_strategic_stock = yes
+	artifact_civil_supply_strategic_site = yes
+}
+
+# 已付备料允许在设施拆除或科技丢失后撤回；原拥有者、控制与无轰炸仍必需。
+artifact_civil_supply_can_strategic_release = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_strategic_stock = yes
+}

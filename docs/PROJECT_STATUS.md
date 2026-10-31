@@ -4,7 +4,9 @@
 
 ## 当前任务与交付层级
 
-最新完成62项公共科技的名称、卡面与实现注释整理，13项更名，并按七都来源校正36条关联说明；程序语句、数值、键及原有运行状态保持不变。见[整理记录](../reports/artifact_technology_text_revision_2026-10-31.md)及[文案规范](design/artifact_technology_writing_guide_v0.1.md)。本轮未操作游戏。
+最新源码是R4b：B14研究和BL29集成场、实付备料／全国占位／撤回及消费接口已完成，6项新增、21项相关旧检查与总静态通过；未游戏运行。D13／E09真实消费者待后续接入，见[实施记录](../reports/artifact_civilization_r4b_implementation_2026-10-31.md)。
+
+此前完成62项公共科技的名称、卡面与实现注释整理，13项更名，并按七都来源校正36条关联说明；程序语句、数值、键及原有运行状态保持不变。见[整理记录](../reports/artifact_technology_text_revision_2026-10-31.md)及[文案规范](design/artifact_technology_writing_guide_v0.1.md)。本轮未操作游戏。
 
 R4a三项研究、实验升级和规则锚定已实现，7项新增、30项受影响旧检查及总静态通过，尚未运行。R3e正常预留扣费和新档文件核对通过；转运、实际读档及R3f／R4a机制留到集中试玩。R3d代表证据复用。
 
@@ -16,7 +18,7 @@ R4a三项研究、实验升级和规则锚定已实现，7项新增、30项受�
 | 爱缪莎序章至第十章 | 已实现，正常流程及关键读档已有证据 | [AWP-02](../reports/aemusa_main_story_awp_02_validation_report.md)、[AWP-03](../reports/aemusa_main_story_development_2026-09-29.md)、[AWP-04](../reports/aemusa_main_story_awp_04_flow_2026-09-29.md)、[AWP-05](../reports/aemusa_main_story_awp_05_flow_2026-09-29.md)；部分战争／天灾前置受控 |
 | 危机、第十一至十三章 | 新旗舰、两阶段枢纽、三节点首版流程、恢复和损失已有轻量验收 | [里程碑1](../reports/aemusa_main_story_milestone_1_2026-10-07.md)；扩充后的最终Boss和正式资产仍待完成 |
 | 终章与三种结局 | 首版正常终章、三结局、30级补足和结果入口已有证据 | [里程碑2](../reports/aemusa_main_story_milestone_2_2026-10-07.md)；等级前置部分受控，完整1.0全线回归待做 |
-| 完整文明扩展 | R1～R3f及R4a源码已接；R3e预留已验，后续代表流程待集中验证 | [完整路线v0.3](design/artifact_civilization_research_building_route_v0.3.md)；R4a本轮未操作游戏，未验变体及自然平衡如实单列 |
+| 完整文明扩展 | R1～R3f及R4a／R4b源码已接；R3e预留已验，后续代表流程待集中验证 | [完整路线v0.3](design/artifact_civilization_research_building_route_v0.3.md)；R4a／R4b均未操作游戏，未验变体及自然平衡如实单列 |
 | 人物肖像及正式外观 | 十人透明肖像已接；舰／枢纽样品与六个图标目标候选保留 | [肖像](../reports/milestone4_remaining_portraits_2026-10-08.md)、[材质样品](../reports/milestone4_surface_assets_2026-10-08.md)、[图标样品](../art/icons/milestone4_batch02/README.md)；正式资产仍在后续范围 |
 | 跨星系连续巨构 | 有独立原型，连续视觉尚未验证；当前暂停 | [资产计划](art/ASSET_PRODUCTION_PLAN.md)；未跟踪原型不改动、不纳入本次提交 |
 
@@ -24,7 +26,7 @@ R4a三项研究、实验升级和规则锚定已实现，7项新增、30项受�
 
 ## 最近实现：R4a受控实验与公共锚定
 
-当前62项公共科技／94组件／5陆军／37行星建筑定义＋1星港建筑；公共目标80项，还有18项待实现。建筑27类46阶段是设计目标，个人四项候选独立。
+当前63项公共科技／94组件／5陆军／38行星建筑定义＋1星港建筑；公共目标80项，还有17项待实现。建筑27类46阶段是设计目标，个人四项候选独立。
 
 R4a实现A08／A10／E08：样本库升级→付费三阶段实验→提交公共接口→试验场付费部署360日当地防护。准备、实验和恢复分别记录；防护在轰炸时继续运行，设施失效或失控暂停收益、转让清理。旧样本分析和A05样本来源保留。7项新增、30项受影响旧检查及总静态通过；本轮未启动或操作游戏。见[规格](design/artifact_civilization_r4a_implementation_spec_v0.1.md)、[实施记录](../reports/artifact_civilization_r4a_implementation_2026-10-31.md)和[检查点](../reports/artifact_civilization_r4a_checkpoint_2026-10-31.json)。
 
@@ -55,7 +57,7 @@ R3e回合原生扫描码成功开关控制台、提交三条前置命令并操�
 
 ## 当前下一步
 
-1. 源码推进R4b B14战略工程供应，落实集成场和真实支付／锁定预算；A10已接，D12～D14和其余公共高阶节点仍待实现。
+1. 源码推进E09分段大型工程的真实项目、阶段投入与备料消费，再接D13舰体；A10和B14已接，D12～D14和其余公共高阶节点仍待实现。
 2. 另行安排约20分钟集中试玩，合并R3e余项、R3f和R4a代表路径，最终新状态只做一次实际读档。低风险余项不自动阻塞源码，关键引擎故障定向处理。
 3. 人物组合、批量图标与连续巨构继续暂停。公共工程／Boss共通奖励和爱缪莎个人研究保持分离。
 

@@ -1,5 +1,49 @@
 # R3e入口直接使用殖民地决议；固定费用只在效果复核后扣除，原生费用处不重复收取。
 
+# R4b沿用原拥有者守卫；只开放备料与撤回，正式工程消费者另包接入。
+decision_artifact_civil_strategic_reserve = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_building = "building_artifact_engineering_supply_yard"
+		owner = { has_technology = "tech_artifact_strategic_engineering_supply" }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_strategic_supply.require_reserve
+			artifact_civil_supply_can_strategic_reserve = yes
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_strategic_supply.offer_reserve
+		hidden_effect = { artifact_civil_supply_strategic_reserve = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_civil_strategic_release = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_modifier = acs_strategic_supply_reserved
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_strategic_supply.require_release
+			artifact_civil_supply_can_strategic_release = yes
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_strategic_supply.offer_release
+		hidden_effect = { artifact_civil_supply_strategic_release = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
 # R4a只增加公共试验场的限时部署入口，不修改预留库存与联运名额。
 decision_artifact_rule_anchor = {
 	owned_planets_only = yes

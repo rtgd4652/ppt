@@ -1,0 +1,93 @@
+{
+  "date": "2026-10-31",
+  "package": "R4b",
+  "source_base": "e6c95c8",
+  "status": "implemented_static_passed",
+  "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
+  "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md",
+  "completed": [
+    "B14战略工程供应",
+    "BL29工程物资集成场",
+    "实付备料及全国唯一占位",
+    "一次撤回与原拥有者清理",
+    "供后续消费者调用的库存与消费接口",
+    "写前七都来源核对及63项文案目录同步"
+  ],
+  "tests": {
+    "new": {
+      "count": 6,
+      "status": "pass",
+      "command": "python -m unittest discover -s tools/validation/tests -p test_artifact_strategic_supply.py -v"
+    },
+    "affected": {
+      "count": 21,
+      "status": "pass",
+      "modules": [
+        "test_artifact_civil_supply",
+        "test_artifact_joint_operations",
+        "test_artifact_boundary_engineering"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 179,
+        "events": 255,
+        "localization_keys": 1916,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    }
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "pending_command": null,
+    "save_created": null,
+    "required_stage_check": "实际研究/建造和一条备料到撤回或正式消费路径；关键进行态读档并入阶段试玩"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-ARTIFACT"
+    ],
+    "documents": [
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "layer": "mod_design_decision",
+    "review_status_changed": false
+  },
+  "remaining": [
+    "D13舰体与E09分段工程真实消费者尚未实现",
+    "自然抽卡、建造、游戏显示与真实存读档待阶段验收",
+    "数值与造价为首版参数，尚未自然平衡验证"
+  ],
+  "next": "先落实E09真实分段工程及备料消费，再接D13舰体；不重放旧控制台命令",
+  "preserve": [
+    "tools/prototypes/aemusa_cross_system_megastructure/",
+    "原2293.10.11及2293.10.11-r3e-reserve存档",
+    "暂停人物组合和批量图标"
+  ],
+  "consistency": {
+    "status": "pass",
+    "public_technologies": 63,
+    "planet_buildings": 38,
+    "planned_technologies_remaining": 17,
+    "catalog_matches_source": true,
+    "new_icons_exist": true,
+    "utf8_and_localisation_bom": "pass",
+    "git_diff_check": "pass"
+  }
+}

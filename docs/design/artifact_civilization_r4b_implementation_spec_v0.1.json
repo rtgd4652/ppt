@@ -1,0 +1,121 @@
+{
+  "date": "2026-10-31",
+  "package": "R4b",
+  "source_base": "e6c95c8",
+  "status": "implemented_static_passed",
+  "runtime_status": "pending_stage_validation",
+  "nodes": [
+    "B14"
+  ],
+  "building_stages": [
+    "BL29.1"
+  ],
+  "technology": {
+    "id": "B14",
+    "key": "tech_artifact_strategic_engineering_supply",
+    "name": "战略工程供应",
+    "area": "engineering",
+    "tier": 5,
+    "category": "industry",
+    "cost": 20000,
+    "weight": 60,
+    "prerequisites": [
+      "tech_artifact_manufacturing_quality_control",
+      "tech_artifact_distributed_supply_storage",
+      "tech_artifact_intercolony_transport"
+    ]
+  },
+  "building": {
+    "key": "building_artifact_engineering_supply_yard",
+    "name": "工程物资集成场",
+    "planet_limit": 1,
+    "build_days": 720,
+    "cost": {
+      "minerals": 1800,
+      "alloys": 600
+    },
+    "upkeep": {
+      "energy": 12,
+      "consumer_goods": 2
+    },
+    "requires_local_buildings": [
+      "building_artifact_distribution_depot",
+      "building_artifact_intercolony_terminal"
+    ]
+  },
+  "budget": {
+    "scope": "planet",
+    "marker": "acs_strategic_supply_reserved",
+    "original_owner": "acs_owner@this",
+    "country_stock_limit": 1,
+    "reserve_consumes_existing_stock": "acs_supply_reserved",
+    "extra_payment": {
+      "minerals": 1500,
+      "alloys": 900,
+      "energy": 500
+    },
+    "total_materials": {
+      "minerals": 2000,
+      "alloys": 1000
+    },
+    "release_refund": {
+      "minerals": 1600,
+      "alloys": 800
+    },
+    "expiry_days": -1,
+    "passive_bonus": null
+  },
+  "interfaces": {
+    "stock": "artifact_civil_supply_strategic_stock",
+    "ready": "artifact_civil_supply_strategic_ready",
+    "consume": "artifact_civil_supply_strategic_consume",
+    "reserve": "artifact_civil_supply_strategic_reserve",
+    "release": "artifact_civil_supply_strategic_release",
+    "consumer_contract": "同一if同时检查ready和目标资格，再消费并启动真实工程；consume无成功返回值，不得无条件发奖。"
+  },
+  "lifecycle": {
+    "temporary_failure": "控制权、轰炸、设施、研究或接收端失效时保留并占位，恢复后可用",
+    "release": "需要原拥有者控制且无轰炸，不要求场地仍存在",
+    "transfer_or_destruction": "复用civil_supply清理，不退款或继承",
+    "future_consumer": [
+      "D13",
+      "E09"
+    ],
+    "consumer_implemented": false,
+    "new_monthly_scans": 0,
+    "new_on_actions": 0
+  },
+  "lore": {
+    "knowledge_layer": "mod_design_decision",
+    "database_queried_read_only": true,
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-ARTIFACT"
+    ],
+    "sources": [
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "review_status_unchanged": true
+  },
+  "new_runtime_files": [
+    "mod/common/technology/artifact_strategic_supply_technology.txt",
+    "mod/common/buildings/artifact_strategic_supply_buildings.txt",
+    "mod/localisation/simp_chinese/artifact_strategic_supply_l_simp_chinese.yml"
+  ],
+  "changed_runtime_files": [
+    "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "mod/common/decisions/artifact_civil_supply_decisions.txt",
+    "mod/common/static_modifiers/artifact_civil_supply_modifiers.txt"
+  ],
+  "validation": {
+    "new_tests": 6,
+    "affected_tests": 21,
+    "static": "pass",
+    "runtime": "not_run"
+  },
+  "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md",
+  "checkpoint": "reports/artifact_civilization_r4b_checkpoint_2026-10-31.json"
+}

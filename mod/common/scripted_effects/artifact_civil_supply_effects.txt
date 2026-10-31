@@ -2,6 +2,7 @@
 # 决议不另收原生费用，避免折扣后按固定面额退款的套利。
 artifact_civil_supply_clear = {
 	remove_modifier = acs_supply_reserved
+	remove_modifier = acs_strategic_supply_reserved
 	remove_modifier = acs_link_source
 	remove_modifier = acs_link_receiver
 	remove_modifier = acs_refinery_motes
@@ -355,5 +356,40 @@ artifact_rule_anchor_activate = {
 			add_resource = { rare_crystals = -100 }
 		}
 		add_modifier = { modifier = acs_rule_anchor_window days = 360 }
+	}
+}
+
+# R4b面额来自一份500矿物/100合金普通库存及追加材料；效果逐项扣费，不受决议折扣影响。
+artifact_civil_supply_strategic_reserve = {
+	if = {
+		limit = { artifact_civil_supply_can_strategic_reserve = yes }
+		remove_modifier = acs_supply_reserved
+		owner = {
+			add_resource = { minerals = -1500 }
+			add_resource = { alloys = -900 }
+			add_resource = { energy = -500 }
+		}
+		add_modifier = { modifier = acs_strategic_supply_reserved days = -1 }
+	}
+}
+
+# 先清库存再返还80%材料；不退能源，不另生成普通库存，重复调用不产生收益。
+artifact_civil_supply_strategic_release = {
+	if = {
+		limit = { artifact_civil_supply_can_strategic_release = yes }
+		remove_modifier = acs_strategic_supply_reserved
+		owner = {
+			add_resource = { minerals = 1600 }
+			add_resource = { alloys = 800 }
+		}
+	}
+}
+
+# 给D13/E09的行星作用域接口；只消费实存备料，不独立发放奖励。
+# 调用方必须在同一if中核对ready与目标，并启动实际工程；本效果没有“成功”返回值。
+artifact_civil_supply_strategic_consume = {
+	if = {
+		limit = { artifact_civil_supply_strategic_ready = yes }
+		remove_modifier = acs_strategic_supply_reserved
 	}
 }
