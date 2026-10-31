@@ -112,7 +112,11 @@ building_artifact_black_gate_observatory = {
 				}
 			}
 			has_active_building = "building_artifact_black_gate_observatory"
-			has_active_building = "building_artifact_sample_repository"
+			# 样本库升级后继续作为A05实有样本来源，不重复供给收益。
+			OR = {
+				has_active_building = "building_artifact_sample_repository"
+				has_active_building = "building_artifact_controlled_boundary_lab"
+			}
 		}
 		planet_jobs_physics_research_produces_mult = 0.1
 		planet_jobs_engineering_research_produces_mult = 0.05

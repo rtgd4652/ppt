@@ -1,4 +1,10 @@
 # 本包完成收益均为当地原生修正，互斥且不与C2共用键。
+# R4a记录只承载真实结果，不提供额外数值收益。
+artifact_foundation_boundary_result = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
 artifact_foundation_sample_analysis = {
 	planet_jobs_physics_research_produces_mult = 0.1
 }

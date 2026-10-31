@@ -195,7 +195,7 @@ building_artifact_basic_civic_factory = {
 	}
 }
 
-# 异常样本保管库：本包只引用已存在的升级目标。
+# 异常样本保管库：R4a接续高级实验室；只修正这一升级族的4.5容量。
 building_artifact_sample_repository = {
 	can_build = yes
 	base_buildtime = 240
@@ -207,6 +207,13 @@ building_artifact_sample_repository = {
 	planet_limit = 1
 	prerequisites = {
 		"tech_artifact_sample_containment"
+	}
+	upgrades = { "building_artifact_controlled_boundary_lab" }
+	allow = {
+		NOR = {
+			has_building = "building_artifact_controlled_boundary_lab"
+			has_building_construction = "building_artifact_controlled_boundary_lab"
+		}
 	}
 	potential = {
 		exists = owner
@@ -227,8 +234,9 @@ building_artifact_sample_repository = {
 			consumer_goods = 1
 		}
 	}
-	planet_modifier = {
-		job_artifact_junior_observer_add = 1
+	triggered_planet_modifier = {
+		potential = { NOT = { has_active_building = "building_artifact_controlled_boundary_lab" } }
+		job_artifact_junior_observer_add = 100
 	}
 }
 

@@ -1789,7 +1789,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a～R3d各自代表范围通过，沿用既有证据；R3d研究／公共飞升受控，实战、受伤恢复、维护结算差额、全部尺寸和自然平衡未验。R3e源码检查通过，阶段试玩待做；后续R3f未实现。",
+    "runtime": "R3a～R3d代表范围通过，保留研究前置受控和未测边界。R3e正常预留与文件核对通过，转运及实际载回待验；R3f与R4a源码检查通过、未运行，合并阶段验收。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1826,12 +1826,12 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 59,
+    "public_technologies": 62,
     "army_types": 5,
     "component_definitions": 94,
-    "building_definitions": 35,
+    "building_definitions": 37,
     "starbase_building_definitions": 1,
-    "note": "R3f源码：新增2研究、9组件、2集合和1整补决议；运行待集中验证。R3e仅预留扣费及文件核对已通过，转运与实际读档待验。"
+    "note": "R4a新增3项公共研究、2个建筑定义及实验到公共防护流程；源码检查通过、未启动游戏。R3e部分运行及R3f待验范围按既有报告保留。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -1844,5 +1844,8 @@
   "r3f_spec": "docs/design/artifact_civilization_r3f_implementation_spec_v0.1.json",
   "r3f_report": "reports/artifact_civilization_r3f_implementation_2026-10-31.md",
   "r3f_checkpoint": "reports/artifact_civilization_r3f_checkpoint_2026-10-31.json",
-  "r3e_runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md"
+  "r3e_runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md",
+  "r4a_spec": "docs/design/artifact_civilization_r4a_implementation_spec_v0.1.json",
+  "r4a_report": "reports/artifact_civilization_r4a_implementation_2026-10-31.md",
+  "r4a_checkpoint": "reports/artifact_civilization_r4a_checkpoint_2026-10-31.json"
 }

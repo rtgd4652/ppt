@@ -14,6 +14,7 @@ artifact_civil_supply_clear = {
 	remove_modifier = acs_civic_adjusting
 	remove_modifier = acs_construction_supply
 	remove_modifier = acs_expedition_reconstitution
+	remove_modifier = acs_rule_anchor_window
 	remove_carrier_flag = acs_managed
 	if = { limit = { exists = event_target:acs_owner@this } clear_global_event_target = acs_owner@this }
 }
@@ -341,5 +342,18 @@ artifact_civil_supply_monthly = {
 			artifact_civil_supply_original_owner = no
 		}
 		artifact_civil_supply_clear = yes
+	}
+}
+
+# 付费部署复用原物资管理身份；有效期内不能重入扣费或续期。
+artifact_rule_anchor_activate = {
+	if = {
+		limit = { artifact_rule_anchor_can_activate = yes }
+		artifact_civil_supply_ensure_owner = yes
+		owner = {
+			add_resource = { energy = -500 }
+			add_resource = { rare_crystals = -100 }
+		}
+		add_modifier = { modifier = acs_rule_anchor_window days = 360 }
 	}
 }

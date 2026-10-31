@@ -152,3 +152,31 @@ artifact_civil_supply_expedition_active = {
 	artifact_civil_supply_receiver = yes
 	owner = { has_technology = "tech_artifact_expedition_reconstitution" }
 }
+
+# R4a试验场只复用已有原拥有者与清理；不要求预留物资或联运端点。
+artifact_rule_anchor_site = {
+	has_active_building = "building_artifact_rule_anchor_test_site"
+	owner = {
+		has_technology = "tech_artifact_rule_anchoring_engineering"
+		has_country_flag = artifact_public_rule_interface_record
+	}
+}
+
+artifact_rule_anchor_can_activate = {
+	artifact_civil_supply_safe = yes
+	artifact_rule_anchor_site = yes
+	NOT = { has_modifier = acs_rule_anchor_window }
+	owner = {
+		has_resource = { type = energy amount >= 500 }
+		has_resource = { type = rare_crystals amount >= 100 }
+	}
+}
+
+# 运行条件必须允许轰炸，否则在真正遭受攻击时会错误地停用防护。
+artifact_rule_anchor_active = {
+	artifact_civil_supply_actor = yes
+	artifact_civil_supply_original_owner = yes
+	is_controlled_by = owner
+	artifact_rule_anchor_site = yes
+	has_modifier = acs_rule_anchor_window
+}

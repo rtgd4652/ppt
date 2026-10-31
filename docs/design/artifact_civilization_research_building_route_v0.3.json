@@ -205,9 +205,13 @@
         "B07"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "升级样本保管库，开放有限场地的边界实验；准备、实验与恢复分别记录。"
+      "existing_key": "tech_artifact_controlled_boundary_experiments",
+      "status": "implemented_static_passed",
+      "capability": "升级样本保管库，开放有限场地的边界实验；准备、实验与恢复分别记录。",
+      "implementation_key": "tech_artifact_controlled_boundary_experiments",
+      "runtime_status": "not_run",
+      "implementation_package": "R4a",
+      "spec": "docs/design/artifact_civilization_r4a_implementation_spec_v0.1.json"
     },
     {
       "id": "A09",
@@ -233,9 +237,13 @@
         "B09"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "为规则锚定与有限压制提供可复核接口；不授予个人命运权限。"
+      "existing_key": "tech_artifact_stable_rule_interface",
+      "status": "implemented_static_passed",
+      "capability": "为规则锚定与有限压制提供可复核接口；不授予个人命运权限。",
+      "implementation_key": "tech_artifact_stable_rule_interface",
+      "runtime_status": "not_run",
+      "implementation_package": "R4a",
+      "spec": "docs/design/artifact_civilization_r4a_implementation_spec_v0.1.json"
     },
     {
       "id": "A11",
@@ -1012,9 +1020,13 @@
         "A10"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设公共锚定试验场；不替代主线现实基线枢纽，不写个人授权事实。"
+      "existing_key": "tech_artifact_rule_anchoring_engineering",
+      "status": "implemented_static_passed",
+      "capability": "建设公共锚定试验场；不替代主线现实基线枢纽，不写个人授权事实。",
+      "implementation_key": "tech_artifact_rule_anchoring_engineering",
+      "runtime_status": "not_run",
+      "implementation_package": "R4a",
+      "spec": "docs/design/artifact_civilization_r4a_implementation_spec_v0.1.json"
     },
     {
       "id": "E09",
@@ -1799,7 +1811,10 @@
           "name": "受控边界实验室",
           "technology": "A08",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "implemented_static_passed",
+          "implementation_key": "building_artifact_controlled_boundary_lab",
+          "runtime_status": "not_run",
+          "implementation_package": "R4a"
         }
       ]
     },
@@ -1918,7 +1933,10 @@
           "name": "规则锚定试验场",
           "technology": "E08",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "implemented_static_passed",
+          "implementation_key": "building_artifact_rule_anchor_test_site",
+          "runtime_status": "not_run",
+          "implementation_package": "R4a"
         },
         {
           "stage": 2,
@@ -2289,16 +2307,30 @@
         "D22"
       ],
       "balance_status": "pending"
+    },
+    "R4a": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "spec": "docs/design/artifact_civilization_r4a_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4a_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r4a_checkpoint_2026-10-31.json",
+      "nodes": [
+        "A08",
+        "A10",
+        "E08"
+      ],
+      "balance_status": "pending"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 59,
+    "public_technologies": 62,
     "army_types": 5,
     "component_definitions": 94,
-    "building_definitions": 35,
+    "building_definitions": 37,
     "starbase_building_definitions": 1,
-    "note": "R3f源码：新增2研究、9组件、2集合和1整补决议；运行待集中验证。R3e仅预留扣费及文件核对已通过，转运与实际读档待验。"
+    "note": "R4a新增3项公共研究、2个建筑定义及实验到公共防护流程；源码检查通过、未启动游戏。R3e部分运行及R3f待验范围按既有报告保留。"
   },
   "orbital_buildings": [
     {
@@ -2536,7 +2568,14 @@
         "nodes": [
           "D10",
           "D22"
-        ]
+        ],
+        "date": "2026-10-31",
+        "status": "implemented_static_passed",
+        "runtime_status": "not_run",
+        "spec": "docs/design/artifact_civilization_r3f_implementation_spec_v0.1.json",
+        "report": "reports/artifact_civilization_r3f_implementation_2026-10-31.md",
+        "checkpoint": "reports/artifact_civilization_r3f_checkpoint_2026-10-31.json",
+        "balance_status": "pending"
       },
       {
         "id": "R4_military",
@@ -2549,7 +2588,7 @@
       }
     ],
     "current_army_definitions": 5,
-    "current_component_definitions": 85,
+    "current_component_definitions": 94,
     "public_legacy_component_definitions": 43,
     "legacy_hull_locked_components": 7,
     "legacy_aura_prototypes": 4,
@@ -2602,5 +2641,8 @@
   "r3f_spec": "docs/design/artifact_civilization_r3f_implementation_spec_v0.1.json",
   "r3f_report": "reports/artifact_civilization_r3f_implementation_2026-10-31.md",
   "r3f_checkpoint": "reports/artifact_civilization_r3f_checkpoint_2026-10-31.json",
-  "r3e_runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md"
+  "r3e_runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md",
+  "r4a_spec": "docs/design/artifact_civilization_r4a_implementation_spec_v0.1.json",
+  "r4a_report": "reports/artifact_civilization_r4a_implementation_2026-10-31.md",
+  "r4a_checkpoint": "reports/artifact_civilization_r4a_checkpoint_2026-10-31.json"
 }

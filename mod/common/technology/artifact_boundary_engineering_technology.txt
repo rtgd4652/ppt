@@ -1,0 +1,33 @@
+# R4a公共实验与接口；科技抽取只沿批准依赖，实际运行另核对真实实验记录。
+tech_artifact_controlled_boundary_experiments = {
+	area = physics
+	icon = "tech_artifact_black_gate_observation"
+	cost = 6000
+	tier = 4
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_long_baseline_measurement" "tech_artifact_resonance_material_screening" }
+	weight = 75
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+tech_artifact_stable_rule_interface = {
+	area = physics
+	icon = "tech_artifact_tarot_calculation"
+	cost = 6400
+	tier = 4
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_controlled_boundary_experiments" "tech_artifact_low_loss_phase_transmission" }
+	weight = 70
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+tech_artifact_rule_anchoring_engineering = {
+	area = physics
+	icon = "tech_artifact_central_court_protocols"
+	cost = 6800
+	tier = 4
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_orbital_coordination" "tech_artifact_stable_rule_interface" }
+	weight = 65
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}

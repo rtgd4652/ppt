@@ -10,6 +10,11 @@ artifact_foundation_clear = {
 	remove_carrier_flag = arf_r1_mode_materials_study
 	remove_carrier_flag = arf_r1_mode_reproduce_sample
 	remove_carrier_flag = arf_r1_mode_reproduce_materials
+	remove_carrier_flag = arf_r1_mode_boundary_experiment
+	remove_modifier = artifact_foundation_boundary_result
+	clear_variable = arf_r4_preparation
+	clear_variable = arf_r4_experiment
+	clear_variable = arf_r4_recovery
 	remove_modifier = artifact_foundation_sample_analysis
 	remove_modifier = artifact_foundation_basic_construction
 	remove_modifier = artifact_foundation_precision_construction
@@ -133,6 +138,13 @@ artifact_foundation_start_materials_study = {
 }
 
 artifact_foundation_abort = {
+	# 失去现场或主动中止时保留已完成阶段，不能把失败记录作为有效成果。
+	if = {
+		limit = { has_carrier_flag = arf_r1_mode_boundary_experiment }
+		set_variable = { which = arf_r4_last_preparation value = arf_r4_preparation }
+		set_variable = { which = arf_r4_last_experiment value = arf_r4_experiment }
+		set_variable = { which = arf_r4_last_recovery value = arf_r4_recovery }
+	}
 	if = {
 		limit = {
 			has_carrier_flag = arf_r1_active
@@ -162,6 +174,10 @@ artifact_foundation_complete = {
 		remove_carrier_flag = arf_r1_paid
 		set_carrier_flag = arf_r1_completed
 		if = {
+			limit = { has_carrier_flag = arf_r1_mode_boundary_experiment }
+			add_modifier = { modifier = artifact_foundation_boundary_result days = 720 }
+		}
+		else_if = {
 			limit = {
 				OR = {
 					has_carrier_flag = arf_r1_mode_sample_analysis
@@ -209,6 +225,7 @@ artifact_foundation_complete = {
 		remove_carrier_flag = arf_r1_mode_materials_study
 		remove_carrier_flag = arf_r1_mode_reproduce_sample
 		remove_carrier_flag = arf_r1_mode_reproduce_materials
+		remove_carrier_flag = arf_r1_mode_boundary_experiment
 	}
 }
 
@@ -239,6 +256,10 @@ artifact_foundation_monthly_planet = {
 			limit = {
 				artifact_foundation_work_ready = yes
 			}
+			if = {
+				limit = { has_carrier_flag = arf_r1_mode_boundary_experiment }
+				artifact_foundation_advance_boundary = yes
+			}
 			change_variable = {
 				which = arf_r1_progress
 				value = 1
@@ -253,6 +274,7 @@ artifact_foundation_monthly_planet = {
 				has_modifier = artifact_foundation_basic_construction
 				has_modifier = artifact_foundation_precision_construction
 				has_modifier = artifact_foundation_materials_study
+				has_modifier = artifact_foundation_boundary_result
 			}
 		}
 		artifact_foundation_clear = yes
@@ -298,5 +320,45 @@ artifact_foundation_start_reproduce_materials = {
 		artifact_foundation_begin = yes
 		set_carrier_flag = arf_r1_mode_reproduce_materials
 		set_variable = { which = arf_r1_required_work value = 6 }
+	}
+}
+
+# 付费、共享槽位与原拥有者建账一次完成；窗口重入只读取现场。
+artifact_foundation_start_boundary = {
+	if = {
+		limit = { artifact_foundation_can_start_boundary = yes }
+		owner = {
+			add_resource = { energy = -600 }
+			add_resource = { consumer_goods = -200 }
+			add_resource = { alloys = -100 }
+		}
+		artifact_foundation_begin = yes
+		set_carrier_flag = arf_r1_mode_boundary_experiment
+		set_variable = { which = arf_r1_required_work value = 6 }
+		set_variable = { which = arf_r4_preparation value = 0 }
+		set_variable = { which = arf_r4_experiment value = 0 }
+		set_variable = { which = arf_r4_recovery value = 0 }
+	}
+}
+
+# 一个有效月度只推进一个阶段，避免同月从准备直接跳到结算。
+artifact_foundation_advance_boundary = {
+	if = {
+		limit = { NOT = { check_variable = { which = arf_r4_preparation value >= 2 } } }
+		change_variable = { which = arf_r4_preparation value = 1 }
+	}
+	else_if = {
+		limit = { NOT = { check_variable = { which = arf_r4_experiment value >= 3 } } }
+		change_variable = { which = arf_r4_experiment value = 1 }
+	}
+	else = { change_variable = { which = arf_r4_recovery value = 1 } }
+}
+
+# 公共接口归国家，消耗本地真实记录；不触碰主线枢纽或个人转变。
+artifact_boundary_archive = {
+	if = {
+		limit = { artifact_boundary_can_archive = yes }
+		owner = { set_country_flag = artifact_public_rule_interface_record }
+		artifact_foundation_clear = yes
 	}
 }

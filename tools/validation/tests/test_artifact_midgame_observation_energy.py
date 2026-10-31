@@ -31,6 +31,9 @@ def condition(entries, scope):
     # 未支持的语法或作用域立即失败，不把owner与当地现场合并成同一对象。
     def term(entry):
         key, value = entry.key, entry.value
+        # R4a样本来源允许低级库或高级实验室，仍然限定为当地有效设施。
+        if key == 'OR':
+            return any(term(e) for e in value)
         if key == 'NOR':
             return not any(term(e) for e in value)
         if key == 'exists':

@@ -1,4 +1,10 @@
 # 方向标记本身没有收益；实际岗位／有效设施负责派生收益。交付的工程物资为定期修正。
+# R4a窗口不直接带减伤；有效试验场负责供源，停用即停止收益。
+acs_rule_anchor_window = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
 acs_supply_reserved = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
 	icon_frame = 1

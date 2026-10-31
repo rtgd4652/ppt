@@ -1,0 +1,39 @@
+# BL17高级沿原槽升级；继续承担样本分析，不为个人路线提供权限。
+building_artifact_controlled_boundary_lab = {
+	can_build = no
+	base_buildtime = 600
+	icon = "building_artifact_black_gate_observatory"
+	category = research
+	building_sets = { research }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_controlled_boundary_experiments" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 1200 alloys = 300 consumer_goods = 200 }
+		upkeep = { energy = 12 consumer_goods = 4 }
+	}
+	planet_modifier = { job_artifact_junior_observer_add = 300 }
+}
+
+# BL26公共场地不占用主线枢纽身份；防护来自一次付费窗口，不是常驻加成。
+building_artifact_rule_anchor_test_site = {
+	can_build = yes
+	base_buildtime = 600
+	icon = "building_artifact_sanctum"
+	category = research
+	building_sets = { research }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_rule_anchoring_engineering" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 1400 alloys = 400 }
+		upkeep = { energy = 10 rare_crystals = 1 }
+	}
+	# 建筑修正从殖民地回到行星载体，保持原拥有者目标的索引一致。
+	triggered_planet_modifier = {
+		potential = { planet = { artifact_rule_anchor_active = yes } }
+		planet_orbital_bombardment_damage = -0.20
+	}
+}

@@ -1,0 +1,149 @@
+{
+  "date": "2026-10-31",
+  "package": "R4a",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "source_base": "272dc13",
+  "nodes": [
+    "A08",
+    "A10",
+    "E08"
+  ],
+  "technologies": [
+    {
+      "id": "A08",
+      "key": "tech_artifact_controlled_boundary_experiments",
+      "area": "physics",
+      "tier": 4,
+      "cost": 6000,
+      "prerequisites": [
+        "tech_artifact_long_baseline_measurement",
+        "tech_artifact_resonance_material_screening"
+      ]
+    },
+    {
+      "id": "A10",
+      "key": "tech_artifact_stable_rule_interface",
+      "area": "physics",
+      "tier": 4,
+      "cost": 6400,
+      "prerequisites": [
+        "tech_artifact_controlled_boundary_experiments",
+        "tech_artifact_low_loss_phase_transmission"
+      ]
+    },
+    {
+      "id": "E08",
+      "key": "tech_artifact_rule_anchoring_engineering",
+      "area": "physics",
+      "tier": 4,
+      "cost": 6800,
+      "prerequisites": [
+        "tech_artifact_orbital_coordination",
+        "tech_artifact_stable_rule_interface"
+      ]
+    }
+  ],
+  "buildings": [
+    {
+      "id": "BL17",
+      "stage": 2,
+      "key": "building_artifact_controlled_boundary_lab",
+      "build_days": 600,
+      "cost": {
+        "minerals": 1200,
+        "alloys": 300,
+        "consumer_goods": 200
+      },
+      "upkeep": {
+        "energy": 12,
+        "consumer_goods": 4
+      },
+      "capacity": 300,
+      "parent_capacity": 100,
+      "keeps_sample_analysis_and_A05_source": true
+    },
+    {
+      "id": "BL26",
+      "stage": 1,
+      "key": "building_artifact_rule_anchor_test_site",
+      "build_days": 600,
+      "cost": {
+        "minerals": 1400,
+        "alloys": 400
+      },
+      "upkeep": {
+        "energy": 10,
+        "rare_crystals": 1
+      }
+    }
+  ],
+  "experiment": {
+    "entry": "decision_artifact_foundation_boundary",
+    "mode": "arf_r1_mode_boundary_experiment",
+    "cost": {
+      "energy": 600,
+      "consumer_goods": 200,
+      "alloys": 100
+    },
+    "stages": {
+      "preparation": 2,
+      "experiment": 3,
+      "recovery": 1
+    },
+    "shared_foundation_slot": true,
+    "one_unarchived_experiment_per_country": true,
+    "result": "artifact_foundation_boundary_result",
+    "result_days": 720,
+    "record": "artifact_public_rule_interface_record",
+    "archive_requires_technology": "tech_artifact_stable_rule_interface",
+    "archive_consumes_local_result": true,
+    "no_hidden_technology_draw_gate": true,
+    "pause": [
+      "inactive_or_missing_lab",
+      "not_controlled",
+      "bombarded",
+      "research_missing"
+    ],
+    "abort": [
+      "ownership_lost",
+      "colony_destroyed",
+      "user_abort"
+    ],
+    "refund": false
+  },
+  "anchor": {
+    "entry": "decision_artifact_rule_anchor",
+    "effect": "artifact_rule_anchor_activate",
+    "cost": {
+      "energy": 500,
+      "rare_crystals": 100
+    },
+    "window": "acs_rule_anchor_window",
+    "days": 360,
+    "modifier": {
+      "planet_orbital_bombardment_damage": -0.2
+    },
+    "activation_requires_no_bombardment": true,
+    "operates_during_bombardment": true,
+    "effect_provider": "active_building_with_original_owner_and_control",
+    "timer_continues_when_disabled": true,
+    "renew_before_expiry": false,
+    "ownership_tracking": "acs_owner@this",
+    "new_monthly_scan": false
+  },
+  "boundaries": [
+    "public_only",
+    "no_personal_ascension",
+    "no_main_story_hub_or_crisis_progress",
+    "no_new_galaxy_scan",
+    "deferred_icons",
+    "B14_next_package"
+  ],
+  "validation": {
+    "new_tests": 7,
+    "affected_tests": 30,
+    "static": "pass",
+    "runtime": "not_run"
+  }
+}

@@ -37,11 +37,16 @@ artifact_foundation_idle = {
 		has_modifier = artifact_foundation_basic_construction
 		has_modifier = artifact_foundation_precision_construction
 		has_modifier = artifact_foundation_materials_study
+		has_modifier = artifact_foundation_boundary_result
 	}
 }
 
 artifact_foundation_mode_site = {
 	OR = {
+		AND = {
+			has_carrier_flag = arf_r1_mode_boundary_experiment
+			artifact_boundary_lab = yes
+		}
 		# 复现读取公共知识与科研场地；原四方案仍使用各自旧现场，不相互替代。
 		AND = {
 			OR = {
@@ -54,6 +59,7 @@ artifact_foundation_mode_site = {
 			has_carrier_flag = arf_r1_mode_sample_analysis
 			OR = {
 				has_building = "building_artifact_sample_repository"
+				has_building = "building_artifact_controlled_boundary_lab"
 			}
 		}
 		AND = {
@@ -104,6 +110,43 @@ artifact_foundation_can_start_sample_analysis = {
 	}
 	OR = {
 		has_building = "building_artifact_sample_repository"
+		has_building = "building_artifact_controlled_boundary_lab"
+	}
+}
+
+# R4a只扩展公共项目的一种模式；真实实验记录不作为科技抽卡的隐藏前置。
+artifact_boundary_lab = {
+	has_active_building = "building_artifact_controlled_boundary_lab"
+	owner = { has_technology = "tech_artifact_controlled_boundary_experiments" }
+}
+
+artifact_foundation_can_start_boundary = {
+	artifact_foundation_ui_actor = yes
+	artifact_foundation_safe_control = yes
+	artifact_foundation_idle = yes
+	artifact_boundary_lab = yes
+	owner = {
+		NOT = { has_country_flag = artifact_public_rule_interface_record }
+		NOT = {
+			any_owned_colony = {
+				OR = { has_carrier_flag = arf_r1_mode_boundary_experiment has_modifier = artifact_foundation_boundary_result }
+			}
+		}
+		has_resource = { type = energy amount >= 600 }
+		has_resource = { type = consumer_goods amount >= 200 }
+		has_resource = { type = alloys amount >= 100 }
+	}
+}
+
+artifact_boundary_can_archive = {
+	artifact_foundation_ui_actor = yes
+	artifact_foundation_original_owner = yes
+	artifact_foundation_safe_control = yes
+	artifact_boundary_lab = yes
+	has_modifier = artifact_foundation_boundary_result
+	owner = {
+		has_technology = "tech_artifact_stable_rule_interface"
+		NOT = { has_country_flag = artifact_public_rule_interface_record }
 	}
 }
 

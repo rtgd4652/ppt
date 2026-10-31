@@ -179,6 +179,40 @@ carrier_event = {
 carrier_event = {
 	id = artifact_foundation.30
 	title = artifact_foundation.status_title
+	# 三阶段独立保存；展示只读，任何窗口都不能推进月度工作。
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_mode_boundary_experiment
+			artifact_foundation_work_ready = yes
+			NOT = { check_variable = { which = arf_r4_preparation value >= 2 } }
+		}
+		text = artifact_boundary.preparing
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_mode_boundary_experiment
+			artifact_foundation_work_ready = yes
+			check_variable = { which = arf_r4_preparation value >= 2 }
+			NOT = { check_variable = { which = arf_r4_experiment value >= 3 } }
+		}
+		text = artifact_boundary.experimenting
+	}
+	desc = {
+		trigger = {
+			has_carrier_flag = arf_r1_mode_boundary_experiment
+			artifact_foundation_work_ready = yes
+			check_variable = { which = arf_r4_experiment value >= 3 }
+		}
+		text = artifact_boundary.recovering
+	}
+	desc = {
+		trigger = { has_carrier_flag = arf_r1_mode_boundary_experiment artifact_foundation_work_ready = no }
+		text = artifact_boundary.paused
+	}
+	desc = {
+		trigger = { has_modifier = artifact_foundation_boundary_result }
+		text = artifact_boundary.result
+	}
 	desc = {
 		trigger = {
 			has_carrier_flag = arf_r1_active
@@ -310,6 +344,19 @@ carrier_event = {
 	trigger = {
 		artifact_foundation_ui_actor = yes
 	}
+	# A10提交只消费三阶段完成的真实记录，不收费或改写其他国家知识。
+	option = {
+		name = artifact_boundary.archive
+		trigger = { has_modifier = artifact_foundation_boundary_result }
+		allow = {
+			custom_tooltip = { fail_text = artifact_boundary.require_archive artifact_boundary_can_archive = yes }
+		}
+		custom_tooltip = artifact_boundary.offer_archive
+		hidden_effect = {
+			artifact_boundary_archive = yes
+			carrier_event = { id = artifact_foundation.30 }
+		}
+	}
 	# 只在真实成果有效时提供提交；已归档会因国家记录而灰显，不重复赠与。
 	option = {
 		name = artifact_research.archive_sample
@@ -373,4 +420,26 @@ carrier_event = {
 	option = {
 		name = artifact_foundation.close
 	}
+}
+
+# A08选择页仍通过现有公共项目状态页查看结果与中止，不增加白夜馆分页。
+carrier_event = {
+	id = artifact_foundation.40
+	title = artifact_boundary.title
+	desc = artifact_boundary.intro
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = { artifact_foundation_ui_actor = yes }
+	option = {
+		name = artifact_boundary.start
+		allow = {
+			custom_tooltip = { fail_text = artifact_boundary.require_start artifact_foundation_can_start_boundary = yes }
+		}
+		custom_tooltip = artifact_boundary.offer_start
+		hidden_effect = {
+			artifact_foundation_start_boundary = yes
+			carrier_event = { id = artifact_foundation.30 }
+		}
+	}
+	option = { name = artifact_foundation.close }
 }

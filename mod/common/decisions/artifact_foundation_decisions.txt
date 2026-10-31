@@ -1,4 +1,24 @@
 # 入口本身不收费；各方案在提交时重新核实并扣费，不会双收。
+decision_artifact_foundation_boundary = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_foundation_actor = yes
+		owner = { has_technology = "tech_artifact_controlled_boundary_experiments" }
+	}
+	effect = {
+		owner = { save_event_target_as = arf_r1_ui_owner }
+		if = {
+			limit = { artifact_foundation_idle = yes }
+			carrier_event = { id = artifact_foundation.40 }
+		}
+		else = { carrier_event = { id = artifact_foundation.30 } }
+	}
+	ai_weight = { weight = 0 }
+}
+
+# 原样本入口保留，升级后的实验室仍能使用原方案。
 decision_artifact_foundation_sample = {
 	owned_planets_only = yes
 	sound = "event_administrative_work"
