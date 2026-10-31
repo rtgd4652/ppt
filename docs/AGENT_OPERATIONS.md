@@ -28,6 +28,8 @@ R3d详细证据见[运行结果](../reports/artifact_civilization_r3d_runtime_20
 
 同日后续独立回合统一使用原生后端，扫描码控制台开关、两项研究与设施命令共3条实际提交成功。中文模式第一次输入未提交，清理本轮已知文本、在空行切换后成功；无需重复历史help排障。失焦与截图过期守卫仍会停止操作，自动另存名被拦截后由用户完成一次保存；不把控制台成功称为所有输入已解决。命令归档在本地`runtime-backups/r3e-reserve-2026-10-31/`，不是待执行队列；详见[R3e实际运行](../reports/artifact_civilization_r3e_runtime_2026-10-31.md)。
 
+补充R5g实证：19:01的Computer Use回合通过Steam和Paradox“继续”实际载入隔离档。Steam主进程启动后短暂没有可操作窗口，随后`list_windows`找到steamwebhelper的Steam窗口；可访问性树的隐藏“开始”无反馈，可见按钮坐标点击成功。群星grave一次未接收，未输入测试命令。停电后另开恢复回合，选择已有原生扫描码/鼠标守卫；按新进程与实际英文状态处理，旧句柄和命令请求作废。记录见[R5g恢复](../reports/artifact_civilization_r5g_recovery_2026-10-31.md)。
+
 ## Codex长上下文与新功能使用约定
 
 用户于2026-10-31要求开启长上下文，并在后续工作中使用适合任务的Codex新功能。已在本机 `C:\Users\Admin\.codex\config.toml` 写入：

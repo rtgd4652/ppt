@@ -4,6 +4,8 @@
 
 ## 当前任务与交付层级
 
+停电恢复：19:01已实际冷启动/载入R5g（620cd5a，4.5.2，仅本Mod），发现的两阶段总览图标缺失已在源码补齐，同时补建造图标。停电后原档可解压、未修改；图标源/静态通过，重启复核与正常玩法待做。旧手动命令请求撤回。见[恢复记录](../reports/artifact_civilization_r5g_recovery_2026-10-31.md)与[检查点](../reports/artifact_civilization_r5g_recovery_checkpoint_2026-10-31.json)。以下各包段落保留源码交付时的检查状态，最新运行边界以本记录为准。
+
 最新源码是R5g：F08“传承造境工程”接入两阶段公共平台与主动启用，安全荒芜星球可转为普通大陆世界，再正常殖民。5项新增、6项相关及静态通过，运行未验。公共80项源码已接齐，下一步阶段代表试玩、Boss深化和正式资产。见[记录](../reports/artifact_civilization_r5g_implementation_2026-10-31.md)。
 
 此前完成62项公共科技的名称、卡面与实现注释整理，13项更名，并按七都来源校正36条关联说明；程序语句、数值、键及原有运行状态保持不变。见[整理记录](../reports/artifact_technology_text_revision_2026-10-31.md)及[文案规范](design/artifact_technology_writing_guide_v0.1.md)。本轮未操作游戏。
@@ -18,7 +20,7 @@ R4a三项研究、实验升级和规则锚定已实现，7项新增、30项受�
 | 爱缪莎序章至第十章 | 已实现，正常流程及关键读档已有证据 | [AWP-02](../reports/aemusa_main_story_awp_02_validation_report.md)、[AWP-03](../reports/aemusa_main_story_development_2026-09-29.md)、[AWP-04](../reports/aemusa_main_story_awp_04_flow_2026-09-29.md)、[AWP-05](../reports/aemusa_main_story_awp_05_flow_2026-09-29.md)；部分战争／天灾前置受控 |
 | 危机、第十一至十三章 | 新旗舰、两阶段枢纽、三节点首版流程、恢复和损失已有轻量验收 | [里程碑1](../reports/aemusa_main_story_milestone_1_2026-10-07.md)；扩充后的最终Boss和正式资产仍待完成 |
 | 终章与三种结局 | 首版正常终章、三结局、30级补足和结果入口已有证据 | [里程碑2](../reports/aemusa_main_story_milestone_2_2026-10-07.md)；等级前置部分受控，完整1.0全线回归待做 |
-| 完整文明扩展 | R1～R3f、R4a～R4l及R5a～R5g源码已接；R3e预留已验，后续代表流程待集中验证 | [完整路线v0.3](design/artifact_civilization_research_building_route_v0.3.md)；R4a～R4l及R5a～R5g均未操作游戏，未验变体及自然平衡如实单列 |
+| 完整文明扩展 | R1～R3f、R4a～R4l及R5a～R5g源码已接；R3e预留已验，后续代表流程待集中验证 | [完整路线v0.3](design/artifact_civilization_research_building_route_v0.3.md)；R5g已冷启动/载档，新增功能、未验变体及自然平衡仍按代表流程核对 |
 | 人物肖像及正式外观 | 十人透明肖像已接；舰／枢纽样品与六个图标目标候选保留 | [肖像](../reports/milestone4_remaining_portraits_2026-10-08.md)、[材质样品](../reports/milestone4_surface_assets_2026-10-08.md)、[图标样品](../art/icons/milestone4_batch02/README.md)；正式资产仍在后续范围 |
 | 跨星系连续巨构 | 有独立原型，连续视觉尚未验证；当前暂停 | [资产计划](art/ASSET_PRODUCTION_PLAN.md)；未跟踪原型不改动、不纳入本次提交 |
 
@@ -85,11 +87,11 @@ R3e四条同族升级、物资账本、有限两端联运、精炼与共治源�
 
 ## 当前续接点
 
-本轮R5g源码以`d547dcd`为基线，中文提交通过`git log -1`获取。上次游戏记录加载`8131d5b`，版本4.5.2（eb95）；中文标签补丁、科技文字、R3f及R4a／R4b／R4c／R4d／R4e／R4f／R4g／R4h／R4i／R4j／R4k／R4l／R5a／R5b／R5c／R5d／R5e／R5f／R5g未重新载入，本轮未查看窗口。不要把旧进程结果当成本包运行通过。
+当前已提交源码为`620cd5a`，图标恢复修复的中文保存点通过`git log -1`获取。最近实际加载同为`620cd5a`，19:01已载入，版本4.5.2；图标新增未重新加载，新增功能仍待代表试玩。
 
 最新隔离档为 `C:\Users\Admin\Documents\Paradox Interactive\Stellaris\save games\_-258619271\2293.10.11-r3e-reserve.sav`，2,573,589字节，用户另存并由助手读取核对；尚未实际载回。首都一份物资、两端未登记。原2293.10.11、2292.06.22和2291两份基线保留；本机无损备份在`runtime-backups/r3e-reserve-2026-10-31/`，不入Git。
 
-R3e回合原生扫描码成功开关控制台、提交三条前置命令并操作正常预留决议；联运登记及自动改名被失焦／截图守卫拦截，未执行。最后自动观察为暂停的保存菜单，用户随后确认另存完成。后续R4a／R4b／R4c／R4d／R4e／R4f／R4g／R4h／R4i／R4j／R4k／R4l／R5a／R5b／R5c／R5d／R5e／R5f／R5g没有操作游戏，也没有待补交输入。旧存档舰队与第三方预设警告继续保留于R3e检查点，不因低风险功能扩测旧问题。
+R3e回合原生扫描码成功开关控制台、提交三条前置命令并操作正常预留决议；联运登记及自动改名被失焦／截图守卫拦截，未执行。最后自动观察为暂停的保存菜单，用户随后确认另存完成。后续R4a／R4b／R4c／R4d／R4e／R4f／R4g／R4h／R4i／R4j／R4k／R4l／R5a／R5b／R5c／R5d／R5e／R5f／R5g新增功能仍待验；19:01已实际载入R5g。停电前手动前置未确认，本轮旧请求撤回，后续先核实现状。旧存档舰队与第三方预设警告继续保留于R3e检查点，不因低风险功能扩测旧问题。
 
 ## 当前下一步
 

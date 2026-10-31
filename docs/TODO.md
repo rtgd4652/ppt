@@ -4,6 +4,8 @@
 
 ## 当前接手点
 
+- [x] R5g停电续接：原档和图标修复保留，原档meta/gamestate可解压；补齐2阶段×建造/总览4个sprite，引用原版DDS并通过静态。19:01冷启动/载档已观察，玩法及修复重载未验。见[恢复检查点](../reports/artifact_civilization_r5g_recovery_checkpoint_2026-10-31.json)；先核实时态，不补交旧命令。
+
 - [x] R5g F08传承造境工程、两阶段平台与安全目标一次启用已接；5项新增、6项相关及静态通过，运行未验。公共80项源码已接齐。见[记录](../reports/artifact_civilization_r5g_implementation_2026-10-31.md)。下一步约20分钟阶段代表试玩，优先D12/F08，共用关键读档，再推进Boss深化与正式资产。
 
 - [x] R5f F07中庭级传承XL舰首、3舰装/2集合，原解译/定型/工业接口保持，4项新增、17项相关与静态通过，运行未验。见[记录](../reports/artifact_civilization_r5f_implementation_2026-10-31.md)。F08已由R5g接入造境平台。

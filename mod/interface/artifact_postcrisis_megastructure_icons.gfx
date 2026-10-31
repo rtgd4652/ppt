@@ -1,0 +1,19 @@
+# 造境平台的临时建造/总览图标；复用已核实的原版资源，正式美术另行交付。
+spriteTypes = {
+	spriteType = {
+		name = "GFX_artifact_postcrisis_world_former_0_build_icon"
+		texturefile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_artifact_postcrisis_world_former_1_build_icon"
+		texturefile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_artifact_postcrisis_world_former_0_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+	spriteType = {
+		name = "GFX_artifact_postcrisis_world_former_1_outliner_icon"
+		texturefile = "gfx/interface/icons/megastructures/ring_world.dds"
+	}
+}
