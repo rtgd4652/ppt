@@ -1,5 +1,8 @@
 # 神器使专属建筑：中央庭统筹神器使行动，在黑门威胁下维持城市秩序。
 building_artifact_sanctum = {
+	# R3e：保留原入口，沿本槽升级；同族高级已建／在建时不另建低级。
+	can_build = yes
+	upgrades = { "building_artifact_coordination_center" }
 	base_buildtime = 240
 	icon = building_artifact_sanctum
 	category = government
@@ -19,6 +22,7 @@ building_artifact_sanctum = {
 	}
 
 	# 每颗星球限一座，代表该星球的中央庭分部。
+	allow = { NOR = { has_building = "building_artifact_coordination_center" has_building_construction = "building_artifact_coordination_center" } }
 	planet_limit = 1
 
 	resources = {
@@ -33,8 +37,9 @@ building_artifact_sanctum = {
 		}
 	}
 
-	planet_modifier = {
-		job_artifact_black_gate_warden_add = 2
+	triggered_planet_modifier = {
+		potential = { NOT = { has_active_building = "building_artifact_coordination_center" } }
+		job_artifact_black_gate_warden_add = 200
 		planet_stability_add = 3
 		planet_amenities_add = 5
 	}
@@ -330,6 +335,9 @@ building_artifact_destiny_research_spire = {
 
 # 共鸣合金圣炉：神器使后期合金建筑，支撑命运之主与超大舰队。
 building_artifact_resonance_alloy_forge = {
+	# R3e：保留原入口，沿本槽升级；同族高级已建／在建时不另建低级。
+	can_build = yes
+	upgrades = { "building_artifact_precision_alloy_forge" }
 	base_buildtime = 720
 	icon = building_artifact_resonance_alloy_forge
 	category = manufacturing
@@ -341,6 +349,7 @@ building_artifact_resonance_alloy_forge = {
 	}
 
 	allow = {
+		NOR = { has_building = "building_artifact_precision_alloy_forge" has_building_construction = "building_artifact_precision_alloy_forge" }
 		owner = { has_technology = tech_artifact_resonance_manufacturing }
 	}
 
@@ -352,8 +361,9 @@ building_artifact_resonance_alloy_forge = {
 		upkeep = { energy = 35 }
 	}
 
-	planet_modifier = {
-		job_artifact_resonance_metallurgist_add = 8
+	triggered_planet_modifier = {
+		potential = { NOT = { has_active_building = "building_artifact_precision_alloy_forge" } }
+		job_artifact_resonance_metallurgist_add = 800
 	}
 }
 
@@ -490,6 +500,9 @@ building_artifact_phase_mine = {
 
 # 稀有共鸣精炼所：集中产出三类基础稀有资源。
 building_artifact_rare_resonance_refinery = {
+	# R3e：保留原入口，沿本槽升级；同族高级已建／在建时不另建低级。
+	can_build = yes
+	upgrades = { "building_artifact_directed_resonance_refinery" }
 	base_buildtime = 720
 	icon = building_artifact_rare_resonance_refinery
 	category = resource
@@ -501,6 +514,7 @@ building_artifact_rare_resonance_refinery = {
 	}
 
 	allow = {
+		NOR = { has_building = "building_artifact_directed_resonance_refinery" has_building_construction = "building_artifact_directed_resonance_refinery" }
 		owner = { has_technology = tech_artifact_rare_resonance }
 	}
 
@@ -512,8 +526,9 @@ building_artifact_rare_resonance_refinery = {
 		upkeep = { energy = 40 }
 	}
 
-	planet_modifier = {
-		job_artifact_rare_resonator_add = 6
+	triggered_planet_modifier = {
+		potential = { NOT = { has_active_building = "building_artifact_directed_resonance_refinery" } }
+		job_artifact_rare_resonator_add = 600
 	}
 }
 
@@ -550,6 +565,9 @@ building_artifact_memory_palace = {
 
 # 星海契约议事厅：神器使后期影响力建筑。
 building_artifact_covenant_chamber = {
+	# R3e：保留原入口，沿本槽升级；同族高级已建／在建时不另建低级。
+	can_build = yes
+	upgrades = { "building_artifact_cogovernance_assembly" }
 	base_buildtime = 720
 	icon = building_artifact_covenant_chamber
 	category = government
@@ -561,6 +579,7 @@ building_artifact_covenant_chamber = {
 	}
 
 	allow = {
+		NOR = { has_building = "building_artifact_cogovernance_assembly" has_building_construction = "building_artifact_cogovernance_assembly" }
 		owner = { has_technology = tech_artifact_covenant_administration }
 	}
 
@@ -572,8 +591,9 @@ building_artifact_covenant_chamber = {
 		upkeep = { energy = 50 consumer_goods = 20 }
 	}
 
-	planet_modifier = {
-		job_artifact_covenant_envoy_add = 3
+	triggered_planet_modifier = {
+		potential = { NOT = { has_active_building = "building_artifact_cogovernance_assembly" } }
+		job_artifact_covenant_envoy_add = 300
 		planet_stability_add = 5
 	}
 }

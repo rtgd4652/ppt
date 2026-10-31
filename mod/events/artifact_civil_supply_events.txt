@@ -1,0 +1,38 @@
+namespace = artifact_civil_supply
+
+# 只扫描已登记本包状态的殖民地；回到载体，避免动态目标索引错位。
+country_event = {
+    id = artifact_civil_supply.1
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { any_owned_colony = { has_carrier_flag = acs_managed } }
+    immediate = {
+        every_owned_colony = {
+            limit = { has_carrier_flag = acs_managed }
+            carrier = { artifact_civil_supply_monthly = yes }
+        }
+    }
+}
+
+# 转让不让新拥有者领取前任的退款，也不继承精炼、共治或运输端点。
+carrier_event = {
+    id = artifact_civil_supply.2
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_carrier_flag = acs_managed }
+    immediate = {
+        if = {
+            limit = { artifact_civil_supply_original_owner = no }
+            artifact_civil_supply_clear = yes
+        }
+    }
+}
+
+# 毁灭回调可能早于原拥有者清空，故不再次比较原拥有者。
+carrier_event = {
+    id = artifact_civil_supply.3
+    hide_window = yes
+    is_triggered_only = yes
+    trigger = { has_carrier_flag = acs_managed }
+    immediate = { artifact_civil_supply_clear = yes }
+}

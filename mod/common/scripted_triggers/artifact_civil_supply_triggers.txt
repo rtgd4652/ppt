@@ -1,0 +1,135 @@
+# R3e入口与实时供源条件；殖民地枚举／岗位须先回到carrier，再求@this拥有者。
+artifact_civil_supply_actor = {
+	carrier_is_type = planet
+	is_colony = yes
+	exists = owner
+	owner = { is_ai = no owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+artifact_civil_supply_original_owner = {
+	exists = owner
+	exists = event_target:acs_owner@this
+	is_owned_by = event_target:acs_owner@this
+}
+
+artifact_civil_supply_claimable = {
+	OR = { NOT = { has_carrier_flag = acs_managed } artifact_civil_supply_original_owner = yes }
+}
+
+artifact_civil_supply_safe = {
+	artifact_civil_supply_actor = yes
+	is_controlled_by = owner
+	has_orbital_bombardment = no
+	artifact_civil_supply_claimable = yes
+}
+
+artifact_civil_supply_depot = {
+	has_active_building = "building_artifact_distribution_depot"
+	owner = { has_technology = "tech_artifact_distributed_supply_storage" }
+}
+
+artifact_civil_supply_terminal = {
+	artifact_civil_supply_depot = yes
+	has_active_building = "building_artifact_intercolony_terminal"
+	owner = { has_technology = "tech_artifact_intercolony_transport" }
+}
+
+artifact_civil_supply_stock = {
+	has_modifier = acs_supply_reserved
+	artifact_civil_supply_original_owner = yes
+}
+
+artifact_civil_supply_receiver = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_terminal = yes
+	artifact_civil_supply_original_owner = yes
+	has_modifier = acs_link_receiver
+}
+
+artifact_civil_supply_can_reserve = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_depot = yes
+	NOT = { has_modifier = acs_supply_reserved }
+	owner = { has_resource = { type = minerals amount >= 500 } has_resource = { type = alloys amount >= 100 } }
+}
+
+artifact_civil_supply_can_refund = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_stock = yes
+}
+
+artifact_civil_supply_can_construction = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_depot = yes
+	artifact_civil_supply_stock = yes
+	NOT = { has_modifier = acs_construction_supply }
+}
+
+artifact_civil_supply_can_register_source = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_terminal = yes
+	NOR = { has_modifier = acs_link_source has_modifier = acs_link_receiver }
+	owner = { NOT = { any_owned_colony = { has_modifier = acs_link_source } } }
+}
+
+artifact_civil_supply_can_register_receiver = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_terminal = yes
+	NOR = { has_modifier = acs_link_source has_modifier = acs_link_receiver }
+	owner = { NOT = { any_owned_colony = { has_modifier = acs_link_receiver } } }
+}
+
+artifact_civil_supply_can_unregister = {
+	artifact_civil_supply_actor = yes
+	artifact_civil_supply_original_owner = yes
+	OR = { has_modifier = acs_link_source has_modifier = acs_link_receiver }
+}
+
+artifact_civil_supply_can_transfer = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_terminal = yes
+	artifact_civil_supply_stock = yes
+	has_modifier = acs_link_source
+	owner = { has_resource = { type = energy amount >= 100 } any_owned_colony = { carrier = { artifact_civil_supply_receiver = yes NOT = { has_modifier = acs_supply_reserved } } } }
+}
+
+artifact_civil_supply_can_megastructure = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_terminal = yes
+	artifact_civil_supply_stock = yes
+	has_modifier = acs_link_source
+	owner = { NOT = { has_modifier = acs_megastructure_supply } has_resource = { type = energy amount >= 1000 } has_resource = { type = alloys amount >= 300 } any_owned_megastructure = { always = yes } any_owned_colony = { carrier = { artifact_civil_supply_receiver = yes artifact_civil_supply_stock = yes } } }
+}
+
+artifact_civil_supply_refinery_site = {
+	has_active_building = "building_artifact_directed_resonance_refinery"
+	owner = { has_technology = "tech_artifact_directed_resonance_refining" }
+}
+
+artifact_civil_supply_can_refinery = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_refinery_site = yes
+	NOT = { has_modifier = acs_refinery_adjusting }
+	owner = { has_resource = { type = energy amount >= 300 } has_resource = { type = minerals amount >= 200 } }
+}
+
+artifact_civil_supply_refinery_specialized = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_original_owner = yes
+	artifact_civil_supply_refinery_site = yes
+	NOT = { has_modifier = acs_refinery_adjusting }
+	OR = { has_modifier = acs_refinery_motes has_modifier = acs_refinery_crystals has_modifier = acs_refinery_gases }
+}
+
+artifact_civil_supply_can_civic = {
+	artifact_civil_supply_safe = yes
+	owner = { has_technology = "tech_artifact_covenant_cogovernance" has_resource = { type = energy amount >= 500 } has_resource = { type = unity amount >= 250 } }
+	OR = { has_active_building = "building_artifact_coordination_center" has_active_building = "building_artifact_cogovernance_assembly" }
+	NOT = { has_modifier = acs_civic_adjusting }
+}
+
+artifact_civil_supply_can_cancel_civic = {
+	artifact_civil_supply_actor = yes
+	artifact_civil_supply_original_owner = yes
+	OR = { has_modifier = acs_civic_industry has_modifier = acs_civic_research has_modifier = acs_civic_services }
+}

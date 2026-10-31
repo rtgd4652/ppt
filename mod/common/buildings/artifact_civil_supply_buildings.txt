@@ -1,0 +1,222 @@
+# R3e同族升级与有限物资载体；高级设施不需要独立人物资格。
+
+building_artifact_precision_alloy_forge = {
+	can_build = no
+	base_buildtime = 720
+	icon = "building_artifact_resonance_alloy_forge"
+	category = manufacturing
+	building_sets = { manufacturing }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_manufacturing_quality_control" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1600 alloys = 600
+		}
+		upkeep = {
+			energy = 50
+		}
+	}
+	planet_modifier = {
+		job_artifact_resonance_metallurgist_add = 1000
+	}
+}
+
+building_artifact_directed_resonance_refinery = {
+	can_build = no
+	base_buildtime = 720
+	icon = "building_artifact_rare_resonance_refinery"
+	category = resource
+	building_sets = { resource }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_directed_resonance_refining" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1800 alloys = 600
+		}
+		upkeep = {
+			energy = 50
+		}
+	}
+	planet_modifier = {
+		job_artifact_directed_resonator_add = 600
+	}
+}
+
+building_artifact_coordination_center = {
+	can_build = no
+	base_buildtime = 480
+	icon = "building_artifact_sanctum"
+	category = government
+	building_sets = { government }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_covenant_cogovernance" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1200 unity = 600
+		}
+		upkeep = {
+			energy = 8 consumer_goods = 4
+		}
+		upkeep = {
+			trigger = { artifact_garrison_coordination_active = yes }
+			energy = 4
+			consumer_goods = 1
+		}
+	}
+	planet_modifier = {
+		job_artifact_black_gate_warden_add = 300
+		planet_stability_add = 4
+		planet_amenities_add = 10
+	}
+	triggered_planet_modifier = {
+		potential = { artifact_garrison_coordination_active = yes }
+		planet_defense_armies_add = 2
+	}
+	# 两座高级设施并存时由统筹中心供给唯一一份共治收益。
+	triggered_planet_modifier = {
+		potential = {
+			has_active_building = "building_artifact_coordination_center"
+			planet = { artifact_civil_supply_original_owner = yes artifact_civil_supply_safe = yes }
+			owner = { has_technology = "tech_artifact_covenant_cogovernance" }
+			has_modifier = acs_civic_industry
+			NOT = { has_modifier = acs_civic_adjusting }
+		}
+		planet_jobs_alloys_produces_mult = 0.10
+		planet_jobs_minerals_upkeep_mult = 0.05
+	}
+	# 两座高级设施并存时由统筹中心供给唯一一份共治收益。
+	triggered_planet_modifier = {
+		potential = {
+			has_active_building = "building_artifact_coordination_center"
+			planet = { artifact_civil_supply_original_owner = yes artifact_civil_supply_safe = yes }
+			owner = { has_technology = "tech_artifact_covenant_cogovernance" }
+			has_modifier = acs_civic_research
+			NOT = { has_modifier = acs_civic_adjusting }
+		}
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+		planet_jobs_consumer_goods_upkeep_mult = 0.05
+	}
+	# 两座高级设施并存时由统筹中心供给唯一一份共治收益。
+	triggered_planet_modifier = {
+		potential = {
+			has_active_building = "building_artifact_coordination_center"
+			planet = { artifact_civil_supply_original_owner = yes artifact_civil_supply_safe = yes }
+			owner = { has_technology = "tech_artifact_covenant_cogovernance" }
+			has_modifier = acs_civic_services
+			NOT = { has_modifier = acs_civic_adjusting }
+		}
+		planet_stability_add = 3
+		pop_amenities_usage_mult = -0.10
+	}
+}
+
+building_artifact_cogovernance_assembly = {
+	can_build = no
+	base_buildtime = 720
+	icon = "building_artifact_covenant_chamber"
+	category = government
+	building_sets = { government }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_covenant_cogovernance" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 2000 unity = 1200
+		}
+		upkeep = {
+			energy = 65 consumer_goods = 25
+		}
+	}
+	planet_modifier = {
+		job_artifact_covenant_envoy_add = 400
+		planet_stability_add = 5
+	}
+	# 两座高级设施并存时由统筹中心供给唯一一份共治收益。
+	triggered_planet_modifier = {
+		potential = {
+			has_active_building = "building_artifact_cogovernance_assembly"
+			planet = { artifact_civil_supply_original_owner = yes artifact_civil_supply_safe = yes }
+			owner = { has_technology = "tech_artifact_covenant_cogovernance" }
+			has_modifier = acs_civic_industry
+			NOT = { has_modifier = acs_civic_adjusting }
+			NOT = { has_active_building = "building_artifact_coordination_center" }
+		}
+		planet_jobs_alloys_produces_mult = 0.10
+		planet_jobs_minerals_upkeep_mult = 0.05
+	}
+	# 两座高级设施并存时由统筹中心供给唯一一份共治收益。
+	triggered_planet_modifier = {
+		potential = {
+			has_active_building = "building_artifact_cogovernance_assembly"
+			planet = { artifact_civil_supply_original_owner = yes artifact_civil_supply_safe = yes }
+			owner = { has_technology = "tech_artifact_covenant_cogovernance" }
+			has_modifier = acs_civic_research
+			NOT = { has_modifier = acs_civic_adjusting }
+			NOT = { has_active_building = "building_artifact_coordination_center" }
+		}
+		planet_jobs_physics_research_produces_mult = 0.05
+		planet_jobs_society_research_produces_mult = 0.05
+		planet_jobs_engineering_research_produces_mult = 0.05
+		planet_jobs_consumer_goods_upkeep_mult = 0.05
+	}
+	# 两座高级设施并存时由统筹中心供给唯一一份共治收益。
+	triggered_planet_modifier = {
+		potential = {
+			has_active_building = "building_artifact_cogovernance_assembly"
+			planet = { artifact_civil_supply_original_owner = yes artifact_civil_supply_safe = yes }
+			owner = { has_technology = "tech_artifact_covenant_cogovernance" }
+			has_modifier = acs_civic_services
+			NOT = { has_modifier = acs_civic_adjusting }
+			NOT = { has_active_building = "building_artifact_coordination_center" }
+		}
+		planet_stability_add = 3
+		pop_amenities_usage_mult = -0.10
+	}
+}
+
+building_artifact_distribution_depot = {
+	base_buildtime = 240
+	icon = "building_artifact_civic_goods_manufactory"
+	category = resource
+	building_sets = { resource }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_distributed_supply_storage" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 600 alloys = 100
+		}
+		upkeep = {
+			energy = 3
+		}
+	}
+}
+
+building_artifact_intercolony_terminal = {
+	base_buildtime = 360
+	icon = "building_artifact_covenant_chamber"
+	category = resource
+	building_sets = { resource }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_intercolony_transport" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 800 alloys = 200
+		}
+		upkeep = {
+			energy = 5 consumer_goods = 1
+		}
+	}
+}

@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3d_representative_runtime_passed_r3e_not_implemented",
+  "status": "r3e_implemented_static_passed_runtime_pending",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -1707,10 +1707,19 @@
       "name": "材料、联运与制度支撑",
       "nodes": [
         "B08",
+        "B11",
         "B13",
         "C11",
         "C12"
-      ]
+      ],
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "pending_stage_validation",
+      "spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",
+      "dependency_note": "C11 requires B11; implement its approved storage node in the same batch",
+      "balance_status": "pending"
     },
     {
       "id": "R3f",
@@ -1764,7 +1773,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a～R3d各自代表范围通过，沿用既有证据；R3d研究／公共飞升受控，实战、受伤恢复、维护结算差额、全部尺寸和自然平衡未验。R3e及后续包待实施。",
+    "runtime": "R3a～R3d各自代表范围通过，沿用既有证据；R3d研究／公共飞升受控，实战、受伤恢复、维护结算差额、全部尺寸和自然平衡未验。R3e源码检查通过，阶段试玩待做；后续R3f未实现。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1800,17 +1809,20 @@
   "r3c_runtime_report": "reports/artifact_civilization_r3c_runtime_2026-10-21.md",
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
-    "date": "2026-10-21",
-    "public_technologies": 52,
+    "date": "2026-10-31",
+    "public_technologies": 57,
     "army_types": 5,
     "component_definitions": 85,
-    "building_definitions": 29,
+    "building_definitions": 35,
     "starbase_building_definitions": 1,
-    "note": "源码数量沿用10月21日盘点；10月31日R3d代表配装、正常改装、攻坚军训练与一次结果实际读档通过，边界见运行报告。"
+    "note": "R3e源码：新增5研究（含C11必要前置B11）、6行星建筑和1岗位；运行待阶段试玩。R3d代表证据复用。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
   "r3d_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-31.json",
   "validation_policy": "docs/DEVELOPMENT_WORKFLOW.md",
-  "r3d_runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md"
+  "r3d_runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+  "r3e_spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
+  "r3e_report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
+  "r3e_checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json"
 }

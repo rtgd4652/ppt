@@ -1,0 +1,331 @@
+# 固定物资由效果实际逐项扣除；先移除库存再退款／转运，调用重复也不重复结算。
+# 决议不另收原生费用，避免折扣后按固定面额退款的套利。
+artifact_civil_supply_clear = {
+	remove_modifier = acs_supply_reserved
+	remove_modifier = acs_link_source
+	remove_modifier = acs_link_receiver
+	remove_modifier = acs_refinery_motes
+	remove_modifier = acs_refinery_crystals
+	remove_modifier = acs_refinery_gases
+	remove_modifier = acs_refinery_adjusting
+	remove_modifier = acs_civic_industry
+	remove_modifier = acs_civic_research
+	remove_modifier = acs_civic_services
+	remove_modifier = acs_civic_adjusting
+	remove_modifier = acs_construction_supply
+	remove_carrier_flag = acs_managed
+	if = { limit = { exists = event_target:acs_owner@this } clear_global_event_target = acs_owner@this }
+}
+
+artifact_civil_supply_ensure_owner = {
+	if = { limit = { artifact_civil_supply_original_owner = no } artifact_civil_supply_clear = yes set_carrier_flag = acs_managed owner = { save_global_event_target_as = acs_owner@prev } }
+}
+
+artifact_civil_supply_reserve = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_reserve = yes
+		}
+		artifact_civil_supply_ensure_owner = yes
+		owner = {
+			add_resource = {
+				minerals = -500
+			}
+
+			add_resource = {
+				alloys = -100
+			}
+		}
+		add_modifier = { modifier = acs_supply_reserved days = -1 }
+	}
+}
+
+artifact_civil_supply_refund = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_refund = yes
+		}
+		remove_modifier = acs_supply_reserved
+		owner = {
+			add_resource = {
+				minerals = 400
+			}
+
+			add_resource = {
+				alloys = 80
+			}
+		}
+	}
+}
+
+artifact_civil_supply_construction = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_construction = yes
+		}
+		remove_modifier = acs_supply_reserved
+		add_modifier = { modifier = acs_construction_supply days = 180 }
+	}
+}
+
+artifact_civil_supply_register_source = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_register_source = yes
+		}
+		artifact_civil_supply_ensure_owner = yes
+		add_modifier = { modifier = acs_link_source days = -1 }
+	}
+}
+
+artifact_civil_supply_register_receiver = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_register_receiver = yes
+		}
+		artifact_civil_supply_ensure_owner = yes
+		add_modifier = { modifier = acs_link_receiver days = -1 }
+	}
+}
+
+artifact_civil_supply_unregister = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_unregister = yes
+		}
+		remove_modifier = acs_link_source
+		remove_modifier = acs_link_receiver
+	}
+}
+
+artifact_civil_supply_transfer = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_transfer = yes
+		}
+		owner = {
+			add_resource = {
+				energy = -100
+			}
+		}
+		remove_modifier = acs_supply_reserved
+		owner = {
+			random_owned_colony = {
+				limit = {
+					carrier = { artifact_civil_supply_receiver = yes NOT = { has_modifier = acs_supply_reserved } }
+				}
+				carrier = { add_modifier = { modifier = acs_supply_reserved days = -1 } }
+			}
+		}
+	}
+}
+
+artifact_civil_supply_megastructure = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_megastructure = yes
+		}
+		owner = {
+			add_resource = {
+				energy = -1000
+			}
+
+			add_resource = {
+				alloys = -300
+			}
+		}
+		remove_modifier = acs_supply_reserved
+		owner = {
+			random_owned_colony = {
+				limit = {
+					carrier = { artifact_civil_supply_receiver = yes artifact_civil_supply_stock = yes }
+				}
+				carrier = { remove_modifier = acs_supply_reserved }
+			}
+			add_modifier = { modifier = acs_megastructure_supply days = 360 }
+		}
+	}
+}
+
+artifact_civil_supply_clear_refinery = {
+	remove_modifier = acs_refinery_motes
+	remove_modifier = acs_refinery_crystals
+	remove_modifier = acs_refinery_gases
+}
+
+artifact_civil_supply_refinery_motes = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_refinery = yes
+			NOT = { has_modifier = acs_refinery_motes }
+		}
+		artifact_civil_supply_ensure_owner = yes
+		owner = {
+			add_resource = {
+				energy = -300
+			}
+
+			add_resource = {
+				minerals = -200
+			}
+		}
+		artifact_civil_supply_clear_refinery = yes
+		add_modifier = { modifier = acs_refinery_adjusting days = 90 }
+		add_modifier = { modifier = acs_refinery_motes days = -1 }
+	}
+}
+
+artifact_civil_supply_refinery_crystals = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_refinery = yes
+			NOT = { has_modifier = acs_refinery_crystals }
+		}
+		artifact_civil_supply_ensure_owner = yes
+		owner = {
+			add_resource = {
+				energy = -300
+			}
+
+			add_resource = {
+				minerals = -200
+			}
+		}
+		artifact_civil_supply_clear_refinery = yes
+		add_modifier = { modifier = acs_refinery_adjusting days = 90 }
+		add_modifier = { modifier = acs_refinery_crystals days = -1 }
+	}
+}
+
+artifact_civil_supply_refinery_gases = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_refinery = yes
+			NOT = { has_modifier = acs_refinery_gases }
+		}
+		artifact_civil_supply_ensure_owner = yes
+		owner = {
+			add_resource = {
+				energy = -300
+			}
+
+			add_resource = {
+				minerals = -200
+			}
+		}
+		artifact_civil_supply_clear_refinery = yes
+		add_modifier = { modifier = acs_refinery_adjusting days = 90 }
+		add_modifier = { modifier = acs_refinery_gases days = -1 }
+	}
+}
+
+artifact_civil_supply_refinery_balanced = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_refinery = yes
+			OR = { has_modifier = acs_refinery_motes has_modifier = acs_refinery_crystals has_modifier = acs_refinery_gases }
+		}
+		artifact_civil_supply_ensure_owner = yes
+		owner = {
+			add_resource = {
+				energy = -300
+			}
+
+			add_resource = {
+				minerals = -200
+			}
+		}
+		artifact_civil_supply_clear_refinery = yes
+		add_modifier = { modifier = acs_refinery_adjusting days = 90 }
+	}
+}
+
+artifact_civil_supply_clear_civic = {
+	remove_modifier = acs_civic_industry
+	remove_modifier = acs_civic_research
+	remove_modifier = acs_civic_services
+}
+
+artifact_civil_supply_civic_industry = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_civic = yes
+			NOT = { has_modifier = acs_civic_industry }
+		}
+		artifact_civil_supply_ensure_owner = yes
+		owner = {
+			add_resource = {
+				energy = -500
+			}
+
+			add_resource = {
+				unity = -250
+			}
+		}
+		artifact_civil_supply_clear_civic = yes
+		add_modifier = { modifier = acs_civic_adjusting days = 180 }
+		add_modifier = { modifier = acs_civic_industry days = -1 }
+	}
+}
+
+artifact_civil_supply_civic_research = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_civic = yes
+			NOT = { has_modifier = acs_civic_research }
+		}
+		artifact_civil_supply_ensure_owner = yes
+		owner = {
+			add_resource = {
+				energy = -500
+			}
+
+			add_resource = {
+				unity = -250
+			}
+		}
+		artifact_civil_supply_clear_civic = yes
+		add_modifier = { modifier = acs_civic_adjusting days = 180 }
+		add_modifier = { modifier = acs_civic_research days = -1 }
+	}
+}
+
+artifact_civil_supply_civic_services = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_civic = yes
+			NOT = { has_modifier = acs_civic_services }
+		}
+		artifact_civil_supply_ensure_owner = yes
+		owner = {
+			add_resource = {
+				energy = -500
+			}
+
+			add_resource = {
+				unity = -250
+			}
+		}
+		artifact_civil_supply_clear_civic = yes
+		add_modifier = { modifier = acs_civic_adjusting days = 180 }
+		add_modifier = { modifier = acs_civic_services days = -1 }
+	}
+}
+
+artifact_civil_supply_cancel_civic = {
+	if = {
+		limit = {
+			artifact_civil_supply_can_cancel_civic = yes
+		}
+		artifact_civil_supply_clear_civic = yes
+	}
+}
+
+artifact_civil_supply_monthly = {
+	if = {
+		limit = {
+			artifact_civil_supply_original_owner = no
+		}
+		artifact_civil_supply_clear = yes
+	}
+}

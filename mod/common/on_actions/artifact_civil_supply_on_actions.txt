@@ -1,0 +1,5 @@
+# R3e独立订阅；不重写已有主线、人物或公共工程的回调。
+on_monthly_pulse_country = { events = { artifact_civil_supply.1 } }
+on_colony_transfer = { events = { artifact_civil_supply.2 } }
+on_colony_ownerless = { events = { artifact_civil_supply.2 } }
+on_colony_destroyed = { events = { artifact_civil_supply.3 } }

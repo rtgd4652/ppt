@@ -1,0 +1,61 @@
+# R3e公共工业与制度；B11补齐联运前置，不读取个人转变或角色组合。
+
+# B08：以既有公共研究为前置。
+tech_artifact_manufacturing_quality_control = {
+	area = engineering
+	icon = "tech_artifact_resonance_manufacturing"
+	cost = 10000
+	tier = 4
+	category = { materials }
+	prerequisites = { "tech_artifact_resonance_manufacturing" "tech_artifact_resonance_material_screening" }
+	weight = 80
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+# B11：以既有公共研究为前置。
+tech_artifact_distributed_supply_storage = {
+	area = society
+	icon = "tech_artifact_central_court_protocols"
+	cost = 1500
+	tier = 2
+	category = { statecraft }
+	prerequisites = { "tech_artifact_standard_parts" "tech_artifact_central_court_protocols" }
+	weight = 80
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+# B13：以既有公共研究为前置。
+tech_artifact_directed_resonance_refining = {
+	area = engineering
+	icon = "tech_artifact_rare_resonance"
+	cost = 18000
+	tier = 5
+	category = { materials }
+	prerequisites = { "tech_artifact_rare_resonance" "tech_artifact_manufacturing_quality_control" }
+	weight = 80
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+# C11：以既有公共研究为前置。
+tech_artifact_intercolony_transport = {
+	area = society
+	icon = "tech_artifact_seven_day_logistics"
+	cost = 10000
+	tier = 4
+	category = { statecraft }
+	prerequisites = { "tech_artifact_seven_day_logistics" "tech_artifact_distributed_supply_storage" }
+	weight = 80
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+# C12：以既有公共研究为前置。
+tech_artifact_covenant_cogovernance = {
+	area = society
+	icon = "tech_artifact_covenant_administration"
+	cost = 18000
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_artifact_covenant_administration" "tech_artifact_intercolony_transport" }
+	weight = 80
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}

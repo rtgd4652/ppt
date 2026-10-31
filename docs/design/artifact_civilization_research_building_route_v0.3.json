@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-31",
-  "status": "r3d_representative_runtime_passed_r3e_not_implemented",
+  "status": "r3e_implemented_static_passed_runtime_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -374,9 +374,11 @@
         "B07"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "升级共鸣合金圣炉；提高稳定供给能力并承担更高维护，不追加无差别全局乘区。"
+      "existing_key": "tech_artifact_manufacturing_quality_control",
+      "status": "implemented_static_passed",
+      "capability": "升级共鸣合金圣炉；提高稳定供给能力并承担更高维护，不追加无差别全局乘区。",
+      "runtime_status": "pending_stage_validation",
+      "implementation_package": "R3e"
     },
     {
       "id": "B09",
@@ -420,9 +422,11 @@
         "C01"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设配给仓；为选定工程预留物资，取消时按明确规则返还或消耗。"
+      "existing_key": "tech_artifact_distributed_supply_storage",
+      "status": "implemented_static_passed",
+      "capability": "建设配给仓；为选定工程预留物资，取消时按明确规则返还或消耗。",
+      "runtime_status": "pending_stage_validation",
+      "implementation_package": "R3e"
     },
     {
       "id": "B12",
@@ -451,9 +455,11 @@
         "B08"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "精炼所升级，选择主产物方案；切换有成本和恢复期，不同时叠满三类专精。"
+      "existing_key": "tech_artifact_directed_resonance_refining",
+      "status": "implemented_static_passed",
+      "capability": "精炼所升级，选择主产物方案；切换有成本和恢复期，不同时叠满三类专精。",
+      "runtime_status": "pending_stage_validation",
+      "implementation_package": "R3e"
     },
     {
       "id": "B14",
@@ -627,9 +633,11 @@
         "B11"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设联运换装站，连接有限选定殖民地与大型工程供应。"
+      "existing_key": "tech_artifact_intercolony_transport",
+      "status": "implemented_static_passed",
+      "capability": "建设联运换装站，连接有限选定殖民地与大型工程供应。",
+      "runtime_status": "pending_stage_validation",
+      "implementation_package": "R3e"
     },
     {
       "id": "C12",
@@ -641,9 +649,11 @@
         "C11"
       ],
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "升级指挥中心和契约议事厅；允许有成本地调整公共运行方案。"
+      "existing_key": "tech_artifact_covenant_cogovernance",
+      "status": "implemented_static_passed",
+      "capability": "升级指挥中心和契约议事厅；允许有成本地调整公共运行方案。",
+      "runtime_status": "pending_stage_validation",
+      "implementation_package": "R3e"
     },
     {
       "id": "D01",
@@ -1410,8 +1420,9 @@
           "stage": 2,
           "name": "中央庭统筹中心",
           "technology": "C12",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
+          "existing_key": "building_artifact_coordination_center",
+          "status": "implemented_static_passed",
+          "runtime_status": "pending_stage_validation"
         }
       ]
     },
@@ -1570,8 +1581,9 @@
           "stage": 2,
           "name": "共鸣精密合金炉",
           "technology": "B08",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
+          "existing_key": "building_artifact_precision_alloy_forge",
+          "status": "implemented_static_passed",
+          "runtime_status": "pending_stage_validation"
         }
       ]
     },
@@ -1685,8 +1697,9 @@
           "stage": 2,
           "name": "定向共鸣精炼中心",
           "technology": "B13",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
+          "existing_key": "building_artifact_directed_resonance_refinery",
+          "status": "implemented_static_passed",
+          "runtime_status": "pending_stage_validation"
         }
       ]
     },
@@ -1730,8 +1743,9 @@
           "stage": 2,
           "name": "文明共治议事院",
           "technology": "C12",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
+          "existing_key": "building_artifact_cogovernance_assembly",
+          "status": "implemented_static_passed",
+          "runtime_status": "pending_stage_validation"
         }
       ]
     },
@@ -1814,8 +1828,9 @@
           "stage": 1,
           "name": "分布式配给仓",
           "technology": "B11",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
+          "existing_key": "building_artifact_distribution_depot",
+          "status": "implemented_static_passed",
+          "runtime_status": "pending_stage_validation"
         }
       ]
     },
@@ -1861,8 +1876,9 @@
           "stage": 1,
           "name": "联运换装站",
           "technology": "C11",
-          "existing_key": null,
-          "status": "proposed_not_implemented"
+          "existing_key": "building_artifact_intercolony_terminal",
+          "status": "implemented_static_passed",
+          "runtime_status": "pending_stage_validation"
         }
       ]
     },
@@ -2233,16 +2249,33 @@
       "runtime_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-31.json",
       "runtime_limits": "研究与公共飞升受控；M/L、实战、受伤恢复、维护结算差额及自然科研和平衡未扩测；旧崩溃根因未确定。",
       "balance_status": "pending"
+    },
+    "R3e": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "pending_stage_validation",
+      "spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",
+      "nodes": [
+        "B08",
+        "B11",
+        "B13",
+        "C11",
+        "C12"
+      ],
+      "dependency_note": "C11 requires B11; implement its approved storage node in the same batch",
+      "balance_status": "pending"
     }
   },
   "current_counts": {
-    "date": "2026-10-21",
-    "public_technologies": 52,
+    "date": "2026-10-31",
+    "public_technologies": 57,
     "army_types": 5,
     "component_definitions": 85,
-    "building_definitions": 29,
+    "building_definitions": 35,
     "starbase_building_definitions": 1,
-    "note": "源码数量沿用10月21日盘点；10月31日R3d代表配装、正常改装、攻坚军训练与一次结果实际读档通过，边界见运行报告。"
+    "note": "R3e源码：新增5研究（含C11必要前置B11）、6行星建筑和1岗位；运行待阶段试玩。R3d代表证据复用。"
   },
   "orbital_buildings": [
     {
@@ -2460,10 +2493,19 @@
         "name": "材料、联运与制度支撑",
         "nodes": [
           "B08",
+          "B11",
           "B13",
           "C11",
           "C12"
-        ]
+        ],
+        "date": "2026-10-31",
+        "status": "implemented_static_passed",
+        "runtime_status": "pending_stage_validation",
+        "spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
+        "report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
+        "checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",
+        "dependency_note": "C11 requires B11; implement its approved storage node in the same batch",
+        "balance_status": "pending"
       },
       {
         "id": "R3f",
@@ -2530,5 +2572,8 @@
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
   "r3d_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-31.json",
   "validation_policy": "docs/DEVELOPMENT_WORKFLOW.md",
-  "r3d_runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md"
+  "r3d_runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+  "r3e_spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
+  "r3e_report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
+  "r3e_checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json"
 }

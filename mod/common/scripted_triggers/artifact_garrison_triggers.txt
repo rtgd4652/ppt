@@ -9,6 +9,7 @@ artifact_garrison_has_facility = {
 	OR = {
 		has_active_building = "building_artifact_community_service_center"
 		has_active_building = "building_artifact_sanctum"
+		has_active_building = "building_artifact_coordination_center"
 	}
 }
 
@@ -32,7 +33,7 @@ artifact_garrison_center_active = {
 	planet = {
 		artifact_garrison_operational = yes
 		has_active_building = "building_artifact_community_service_center"
-		NOT = { has_active_building = "building_artifact_sanctum" }
+		NOR = { has_active_building = "building_artifact_sanctum" has_active_building = "building_artifact_coordination_center" }
 	}
 }
 
@@ -40,6 +41,15 @@ artifact_garrison_branch_active = {
 	planet = {
 		artifact_garrison_operational = yes
 		has_active_building = "building_artifact_sanctum"
+		NOT = { has_active_building = "building_artifact_coordination_center" }
+	}
+}
+
+# R3e升级后仍承接原两支驻防与维护，高级优先于分部和社区。
+artifact_garrison_coordination_active = {
+	planet = {
+		artifact_garrison_operational = yes
+		has_active_building = "building_artifact_coordination_center"
 	}
 }
 

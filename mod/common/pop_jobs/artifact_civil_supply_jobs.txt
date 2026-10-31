@@ -1,0 +1,47 @@
+# 定向精炼师：三类互斥主产物，调整期回到原配方。
+artifact_directed_resonator = {
+	swappable_data = { default = { icon = gas_refiner } }
+	category = specialist
+	tags = { strategic_resource volatile_motes rare_crystals exotic_gases }
+	possible_pre_triggers = { has_owner = yes is_being_purged = no is_being_assimilated = no is_sapient = yes }
+	possible_precalc = can_fill_specialist_job
+	possible = { complex_specialist_job_check_trigger = yes owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_jobs
+		produces = {
+			trigger = { colony = { carrier = { has_modifier = acs_refinery_adjusting } } }
+			volatile_motes = 3
+			rare_crystals = 3
+			exotic_gases = 3
+		}
+		produces = {
+			trigger = { colony = { carrier = { NOT = { has_modifier = acs_refinery_adjusting } artifact_civil_supply_refinery_specialized = no } } }
+			volatile_motes = 3.5
+			rare_crystals = 3.5
+			exotic_gases = 3.5
+		}
+		produces = {
+			trigger = { colony = { carrier = { artifact_civil_supply_refinery_specialized = yes has_modifier = acs_refinery_motes } } }
+			volatile_motes = 6
+			rare_crystals = 1.5
+			exotic_gases = 1.5
+		}
+		produces = {
+			trigger = { colony = { carrier = { artifact_civil_supply_refinery_specialized = yes has_modifier = acs_refinery_crystals } } }
+			volatile_motes = 1.5
+			rare_crystals = 6
+			exotic_gases = 1.5
+		}
+		produces = {
+			trigger = { colony = { carrier = { artifact_civil_supply_refinery_specialized = yes has_modifier = acs_refinery_gases } } }
+			volatile_motes = 1.5
+			rare_crystals = 1.5
+			exotic_gases = 6
+		}
+		upkeep = {
+			minerals = 20
+			energy = 10
+		}
+	}
+	weight = { weight = 5 }
+}

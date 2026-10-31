@@ -1,0 +1,182 @@
+{
+  "date": "2026-10-31",
+  "package": "R3e",
+  "status": "implemented_static_passed",
+  "scope": [
+    "B08",
+    "B11",
+    "B13",
+    "C11",
+    "C12"
+  ],
+  "added_dependency": "B11 is required by C11 and was not previously implemented",
+  "technologies": [
+    {
+      "id": "B08",
+      "key": "tech_artifact_manufacturing_quality_control",
+      "area": "engineering",
+      "tier": 4,
+      "cost": 10000,
+      "prerequisites": [
+        "tech_artifact_resonance_manufacturing",
+        "tech_artifact_resonance_material_screening"
+      ]
+    },
+    {
+      "id": "B11",
+      "key": "tech_artifact_distributed_supply_storage",
+      "area": "society",
+      "tier": 2,
+      "cost": 1500,
+      "prerequisites": [
+        "tech_artifact_standard_parts",
+        "tech_artifact_central_court_protocols"
+      ]
+    },
+    {
+      "id": "B13",
+      "key": "tech_artifact_directed_resonance_refining",
+      "area": "engineering",
+      "tier": 5,
+      "cost": 18000,
+      "prerequisites": [
+        "tech_artifact_rare_resonance",
+        "tech_artifact_manufacturing_quality_control"
+      ]
+    },
+    {
+      "id": "C11",
+      "key": "tech_artifact_intercolony_transport",
+      "area": "society",
+      "tier": 4,
+      "cost": 10000,
+      "prerequisites": [
+        "tech_artifact_seven_day_logistics",
+        "tech_artifact_distributed_supply_storage"
+      ]
+    },
+    {
+      "id": "C12",
+      "key": "tech_artifact_covenant_cogovernance",
+      "area": "society",
+      "tier": 5,
+      "cost": 18000,
+      "prerequisites": [
+        "tech_artifact_covenant_administration",
+        "tech_artifact_intercolony_transport"
+      ]
+    }
+  ],
+  "counts_after": {
+    "public_technologies": 57,
+    "planet_buildings": 35,
+    "starbase_buildings": 1,
+    "components": 85,
+    "army_types": 5
+  },
+  "runtime": "pending_stage_validation",
+  "balance": "pending",
+  "decisions": [
+    {
+      "action": "reserve",
+      "condition": "can_reserve",
+      "technology": "tech_artifact_distributed_supply_storage"
+    },
+    {
+      "action": "refund",
+      "condition": "can_refund",
+      "technology": null
+    },
+    {
+      "action": "construction",
+      "condition": "can_construction",
+      "technology": "tech_artifact_distributed_supply_storage"
+    },
+    {
+      "action": "register_source",
+      "condition": "can_register_source",
+      "technology": "tech_artifact_intercolony_transport"
+    },
+    {
+      "action": "register_receiver",
+      "condition": "can_register_receiver",
+      "technology": "tech_artifact_intercolony_transport"
+    },
+    {
+      "action": "unregister",
+      "condition": "can_unregister",
+      "technology": null
+    },
+    {
+      "action": "transfer",
+      "condition": "can_transfer",
+      "technology": "tech_artifact_intercolony_transport"
+    },
+    {
+      "action": "megastructure",
+      "condition": "can_megastructure",
+      "technology": "tech_artifact_intercolony_transport"
+    },
+    {
+      "action": "refinery_motes",
+      "condition": "can_refinery",
+      "technology": "tech_artifact_directed_resonance_refining"
+    },
+    {
+      "action": "refinery_crystals",
+      "condition": "can_refinery",
+      "technology": "tech_artifact_directed_resonance_refining"
+    },
+    {
+      "action": "refinery_gases",
+      "condition": "can_refinery",
+      "technology": "tech_artifact_directed_resonance_refining"
+    },
+    {
+      "action": "refinery_balanced",
+      "condition": "can_refinery",
+      "technology": "tech_artifact_directed_resonance_refining"
+    },
+    {
+      "action": "civic_industry",
+      "condition": "can_civic",
+      "technology": "tech_artifact_covenant_cogovernance"
+    },
+    {
+      "action": "civic_research",
+      "condition": "can_civic",
+      "technology": "tech_artifact_covenant_cogovernance"
+    },
+    {
+      "action": "civic_services",
+      "condition": "can_civic",
+      "technology": "tech_artifact_covenant_cogovernance"
+    },
+    {
+      "action": "cancel_civic",
+      "condition": "can_cancel_civic",
+      "technology": null
+    }
+  ],
+  "state": {
+    "planet_owner_target": "acs_owner@this",
+    "managed_flag": "acs_managed",
+    "stock": {
+      "minerals": 500,
+      "alloys": 100
+    },
+    "refund": {
+      "minerals": 400,
+      "alloys": 80
+    },
+    "network_limit": "one_source_and_one_receiver_per_country",
+    "refinery_adjustment_days": 90,
+    "civic_adjustment_days": 180
+  },
+  "checks": {
+    "check_mod": "pass_zero_errors_zero_warnings",
+    "civil_supply_tests": 8,
+    "related_ground_forces_tests": 6,
+    "related_city_planning_tests": 5
+  }
+}
