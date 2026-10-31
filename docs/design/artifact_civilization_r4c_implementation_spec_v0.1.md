@@ -8,6 +8,8 @@
 
 本机原版`common/ascension_perks/00_ascension_perks.txt`的`ap_master_builders`使用`country_megastructure_build_cap_add = 1`。建筑的`triggered_country_modifier`由原版建筑样例和既有观测阵列确认。复用这些接口；不授予任何具体巨构的研究资格，不解锁个人舰船或替代新巨构责任卡。
 
+2026-10-31补充对照Gigastructural Engineering及ACOT，见[源码参考与取舍](artifact_large_engineering_mod_reference_2026-10-31.md)。E09首版保留为营建基础，不继续为额外名额增加管理环节；后续空间巨构优先使用原生升级链、费用和工期，特殊投入及能力再用脚本衔接。这次仅补设计依据，以下参数、运行脚本和待验状态保持。
+
 ## 正常流程与初始参数
 
 1. 研究E09（E08＋B14，工程T5／工业，22000研究，权重60）。
