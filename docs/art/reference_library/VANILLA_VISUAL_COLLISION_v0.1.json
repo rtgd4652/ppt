@@ -1,0 +1,125 @@
+{
+  "date": "2026-10-31",
+  "game_reference": "local Stellaris 4.5.2 definitions",
+  "status": "candidate_references_pending_visual_comparison",
+  "references": [
+    {
+      "id": "VV-01",
+      "game_relative_source": "common/megastructures/00_ring_world.txt",
+      "types": [
+        "ring_world_1",
+        "ring_world_2",
+        "ring_world_ruined"
+      ],
+      "entities": [
+        "construction_platform_entity",
+        "ringworld_3x_seams_entity",
+        "ringworld_destroyed_entity"
+      ],
+      "status": "source_indexed_visual_inspection_pending",
+      "comparison_question": "圆形空间结构的用途与主轮廓",
+      "observed_shape": null,
+      "media_in_repository": false
+    },
+    {
+      "id": "VV-02",
+      "game_relative_source": "common/megastructures/03_think_tank.txt",
+      "types": [
+        "think_tank_0",
+        "think_tank_1",
+        "think_tank_2",
+        "think_tank_3"
+      ],
+      "entities": [
+        "construction_platform_entity",
+        "think_tank_destroyed_01_entity",
+        "thinktank_phase_01_entity",
+        "thinktank_phase_02_entity",
+        "thinktank_phase_03_entity"
+      ],
+      "status": "source_indexed_visual_inspection_pending",
+      "comparison_question": "核心/支臂/科研平台的主次关系",
+      "observed_shape": null,
+      "media_in_repository": false
+    },
+    {
+      "id": "VV-03",
+      "game_relative_source": "common/megastructures/02_spy_orb.txt",
+      "types": [
+        "spy_orb_0",
+        "spy_orb_1",
+        "spy_orb_2",
+        "spy_orb_3"
+      ],
+      "entities": [
+        "construction_platform_entity",
+        "spy_orb_destroyed_entity",
+        "spyorb_phase_01_entity",
+        "spyorb_phase_02_entity",
+        "spyorb_phase_03_entity",
+        "spyorb_phase_04_entity"
+      ],
+      "status": "source_indexed_visual_inspection_pending",
+      "comparison_question": "观测系统的悬浮层级与中心识别",
+      "observed_shape": null,
+      "media_in_repository": false
+    },
+    {
+      "id": "VV-04",
+      "game_relative_source": "common/megastructures/07_strategic_coordination_center.txt",
+      "types": [
+        "strategic_coordination_center_0",
+        "strategic_coordination_center_1",
+        "strategic_coordination_center_2",
+        "strategic_coordination_center_3"
+      ],
+      "entities": [
+        "construction_platform_entity",
+        "strategic_coordination_center_01_destroyed_entity",
+        "strategic_coordination_center_stage_1_entity",
+        "strategic_coordination_center_stage_2_entity",
+        "strategic_coordination_center_stage_3_entity"
+      ],
+      "status": "source_indexed_visual_inspection_pending",
+      "comparison_question": "军事指挥设施的工程框架",
+      "observed_shape": null,
+      "media_in_repository": false
+    },
+    {
+      "id": "VV-05",
+      "game_relative_source": "common/megastructures/habitats.txt",
+      "types": [
+        "habitat_central_complex",
+        "habitat_central_complex_ruined",
+        "habitat_central_complex_restored",
+        "habitat_major_orbital"
+      ],
+      "entities": [
+        "habitat_destroyed_01_entity",
+        "habitat_phase_01_entity",
+        "habitat_phase_02_entity",
+        "habitat_phase_03_entity"
+      ],
+      "status": "source_indexed_visual_inspection_pending",
+      "comparison_question": "居住设施、对接与维护空间",
+      "observed_shape": null,
+      "media_in_repository": false
+    },
+    {
+      "id": "VV-06",
+      "game_relative_source": "common/megastructures/16_cosmogenesis_world.txt",
+      "types": [
+        "cosmogenesis_world_ruined"
+      ],
+      "entities": [
+        "neural_calculator_destroyed_entity"
+      ],
+      "status": "source_indexed_visual_inspection_pending",
+      "comparison_question": "高级空间工程的边界表达",
+      "observed_shape": null,
+      "media_in_repository": false
+    }
+  ],
+  "rights": "Native files are local analysis references; no vanilla geometry/textures copied into this package.",
+  "criterion": "移除配色、发光和徽记后比较轮廓、接口组织与异常结构用途；没有完成目视对照就不标为通过。"
+}

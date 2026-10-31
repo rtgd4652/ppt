@@ -1,0 +1,10 @@
+{
+  "status": "pass",
+  "source_reopened": true,
+  "parts": 6,
+  "collection_instances": 16,
+  "packed_project_dds": 3,
+  "font_bytes_embedded": false,
+  "external_blend_libraries": 0,
+  "checks": "saved mesh counts, finite vertices, asset marks, locator names, previews; no engine validation"
+}

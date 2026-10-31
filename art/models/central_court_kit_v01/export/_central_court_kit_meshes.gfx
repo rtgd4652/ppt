@@ -1,0 +1,81 @@
+# 中央庭部件库灰模样品注册；尚未复制到mod运行目录。
+objectTypes = {
+    pdxmesh = {
+        name = "cck_01_spine_mesh"
+        file = "gfx/models/central_court_kit_v01/cck_01_spine.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cck_01_spine"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "cck_02_junction_mesh"
+        file = "gfx/models/central_court_kit_v01/cck_02_junction.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cck_02_junction"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "cck_03_noncontact_mesh"
+        file = "gfx/models/central_court_kit_v01/cck_03_noncontact.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cck_03_noncontact"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "cck_04_core_frame_mesh"
+        file = "gfx/models/central_court_kit_v01/cck_04_core_frame.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cck_04_core_frame"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "cck_05_calibration_mesh"
+        file = "gfx/models/central_court_kit_v01/cck_05_calibration.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cck_05_calibration"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "cck_06_service_mesh"
+        file = "gfx/models/central_court_kit_v01/cck_06_service.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cck_06_service"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+}

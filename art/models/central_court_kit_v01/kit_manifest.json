@@ -1,0 +1,359 @@
+{
+  "date": "2026-10-31",
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "blender": "5.1.2",
+  "new_geometry": true,
+  "legacy_geometry_used": false,
+  "individual_artifacts_replicated": false,
+  "coordinate": "+Y forward, +Z up; construction units, not final game scale",
+  "common_port_width": 2.4,
+  "parts": [
+    {
+      "part": "cck_01_spine",
+      "triangles": 376,
+      "locators": [
+        "cc_in",
+        "cc_out",
+        "cc_service"
+      ],
+      "mesh": "art/models/central_court_kit_v01/export/cck_01_spine.mesh",
+      "shape_names": [
+        "cck_01_spine"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "kit_id": "CCK-01",
+      "label": "工程脊梁",
+      "ports": {
+        "cc_in": {
+          "position": [
+            0.0,
+            -3.200000047683716,
+            0.0
+          ],
+          "angle": 3.1415927410125732
+        },
+        "cc_out": {
+          "position": [
+            0.0,
+            3.200000047683716,
+            0.0
+          ],
+          "angle": 0.0
+        },
+        "cc_service": {
+          "position": [
+            0.0,
+            0.0,
+            1.149999976158142
+          ],
+          "angle": 0.0
+        }
+      }
+    },
+    {
+      "part": "cck_02_junction",
+      "triangles": 448,
+      "locators": [
+        "cc_in",
+        "cc_left",
+        "cc_out",
+        "cc_right",
+        "cc_service"
+      ],
+      "mesh": "art/models/central_court_kit_v01/export/cck_02_junction.mesh",
+      "shape_names": [
+        "cck_02_junction"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "kit_id": "CCK-02",
+      "label": "四向接口座",
+      "ports": {
+        "cc_in": {
+          "position": [
+            0.0,
+            -1.600000023841858,
+            0.0
+          ],
+          "angle": 3.1415927410125732
+        },
+        "cc_out": {
+          "position": [
+            0.0,
+            1.600000023841858,
+            0.0
+          ],
+          "angle": 0.0
+        },
+        "cc_service": {
+          "position": [
+            0.0,
+            0.0,
+            1.149999976158142
+          ],
+          "angle": 0.0
+        },
+        "cc_left": {
+          "position": [
+            -1.600000023841858,
+            0.0,
+            0.0
+          ],
+          "angle": 1.5707963705062866
+        },
+        "cc_right": {
+          "position": [
+            1.600000023841858,
+            0.0,
+            0.0
+          ],
+          "angle": -1.5707963705062866
+        }
+      }
+    },
+    {
+      "part": "cck_03_noncontact",
+      "triangles": 512,
+      "locators": [
+        "cc_in",
+        "cc_out",
+        "cc_service"
+      ],
+      "mesh": "art/models/central_court_kit_v01/export/cck_03_noncontact.mesh",
+      "shape_names": [
+        "cck_03_noncontact"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "kit_id": "CCK-03",
+      "label": "非接触联接器",
+      "ports": {
+        "cc_in": {
+          "position": [
+            0.0,
+            -3.200000047683716,
+            0.0
+          ],
+          "angle": 3.1415927410125732
+        },
+        "cc_out": {
+          "position": [
+            0.0,
+            3.200000047683716,
+            0.0
+          ],
+          "angle": 0.0
+        },
+        "cc_service": {
+          "position": [
+            0.0,
+            0.0,
+            1.149999976158142
+          ],
+          "angle": 0.0
+        }
+      }
+    },
+    {
+      "part": "cck_04_core_frame",
+      "triangles": 664,
+      "locators": [
+        "cc_in",
+        "cc_out",
+        "cc_service"
+      ],
+      "mesh": "art/models/central_court_kit_v01/export/cck_04_core_frame.mesh",
+      "shape_names": [
+        "cck_04_core_frame"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "kit_id": "CCK-04",
+      "label": "规则核心框",
+      "ports": {
+        "cc_in": {
+          "position": [
+            0.0,
+            -3.200000047683716,
+            0.0
+          ],
+          "angle": 3.1415927410125732
+        },
+        "cc_out": {
+          "position": [
+            0.0,
+            3.200000047683716,
+            0.0
+          ],
+          "angle": 0.0
+        },
+        "cc_service": {
+          "position": [
+            0.0,
+            0.0,
+            1.149999976158142
+          ],
+          "angle": 0.0
+        }
+      }
+    },
+    {
+      "part": "cck_05_calibration",
+      "triangles": 512,
+      "locators": [
+        "cc_in",
+        "cc_out",
+        "cc_service"
+      ],
+      "mesh": "art/models/central_court_kit_v01/export/cck_05_calibration.mesh",
+      "shape_names": [
+        "cck_05_calibration"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "kit_id": "CCK-05",
+      "label": "观测标定叉",
+      "ports": {
+        "cc_in": {
+          "position": [
+            0.0,
+            -3.200000047683716,
+            0.0
+          ],
+          "angle": 3.1415927410125732
+        },
+        "cc_out": {
+          "position": [
+            0.0,
+            3.200000047683716,
+            0.0
+          ],
+          "angle": 0.0
+        },
+        "cc_service": {
+          "position": [
+            0.0,
+            0.0,
+            1.149999976158142
+          ],
+          "angle": 0.0
+        }
+      }
+    },
+    {
+      "part": "cck_06_service",
+      "triangles": 396,
+      "locators": [
+        "cc_in",
+        "cc_out",
+        "cc_service"
+      ],
+      "mesh": "art/models/central_court_kit_v01/export/cck_06_service.mesh",
+      "shape_names": [
+        "cck_06_service"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "kit_id": "CCK-06",
+      "label": "检修护板",
+      "ports": {
+        "cc_in": {
+          "position": [
+            0.0,
+            -1.600000023841858,
+            0.0
+          ],
+          "angle": 3.1415927410125732
+        },
+        "cc_out": {
+          "position": [
+            0.0,
+            1.600000023841858,
+            0.0
+          ],
+          "angle": 0.0
+        },
+        "cc_service": {
+          "position": [
+            0.0,
+            0.0,
+            1.149999976158142
+          ],
+          "angle": 0.0
+        }
+      }
+    }
+  ],
+  "assembly_connections": [
+    {
+      "parent": "组合_工程脊梁",
+      "port": "cc_out",
+      "child": "cck_03_noncontact.002",
+      "distance": 0.0,
+      "normal_dot": -1.0
+    },
+    {
+      "parent": "cck_03_noncontact.002",
+      "port": "cc_out",
+      "child": "cck_04_core_frame.002",
+      "distance": 0.0,
+      "normal_dot": -1.0
+    },
+    {
+      "parent": "cck_04_core_frame.002",
+      "port": "cc_out",
+      "child": "cck_05_calibration.002",
+      "distance": 0.0,
+      "normal_dot": -1.0
+    },
+    {
+      "parent": "组合_四向接口座",
+      "port": "cc_in",
+      "child": "cck_03_noncontact.003",
+      "distance": 5.720643228842747e-07,
+      "normal_dot": -1.0000000000000209
+    },
+    {
+      "parent": "组合_四向接口座",
+      "port": "cc_out",
+      "child": "cck_04_core_frame.003",
+      "distance": 1.1920928955078125e-07,
+      "normal_dot": -1.0
+    },
+    {
+      "parent": "组合_四向接口座",
+      "port": "cc_left",
+      "child": "cck_01_spine.002",
+      "distance": 3.9966237913868144e-07,
+      "normal_dot": -0.9999999999999943
+    },
+    {
+      "parent": "组合_四向接口座",
+      "port": "cc_right",
+      "child": "cck_05_calibration.003",
+      "distance": 1.1920928955078125e-07,
+      "normal_dot": -1.0000000000000033
+    }
+  ],
+  "noncontact_internal_gap": 0.9,
+  "noncontact_gap_geometry_checked": true,
+  "export_chain": "project existing export_group + installed io_pdx_mesh; names/textures read back",
+  "game_scale_and_render": "not_run",
+  "formal_assets_approved": false,
+  "vanilla_visual_collision": "pending_visual_comparison",
+  "source_blend": "art/models/central_court_kit_v01/central_court_kit_v01.blend",
+  "previews": [
+    "art/models/central_court_kit_v01/previews/kit_gray.png",
+    "art/models/central_court_kit_v01/previews/kit_silhouette.png",
+    "art/models/central_court_kit_v01/previews/assembly_linear.png",
+    "art/models/central_court_kit_v01/previews/assembly_station.png"
+  ],
+  "font_path": "C:\\Windows\\Fonts\\msyh.ttc",
+  "font_packed": false,
+  "external_blend_libraries": 0,
+  "gfx_sample": "art/models/central_court_kit_v01/export/_central_court_kit_meshes.gfx",
+  "preview_material": "uniform neutral gray / black silhouette; source retains export material",
+  "source_textures": "project milestone4_graybox generated gray placeholders; no vanilla meshes copied"
+}

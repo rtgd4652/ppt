@@ -86,3 +86,7 @@ python tools/art/build_reference_index.py --check --strict
 - 是否满足 Stellaris 的尺寸、DDS、模型、LOD、定位器和性能要求。
 
 任何一项未确认，都不得把参考图直接复制进正式资产目录。
+
+## 原版视觉撞车库
+
+新增[六组原生定义入口](VANILLA_VISUAL_COLLISION_v0.1.md)及结构化记录。当前仅定位源码/实体，目视造型比较待做；不因此批准资产复用或将Kit辨识度标为通过。
