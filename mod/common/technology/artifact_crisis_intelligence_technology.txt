@@ -1,0 +1,15 @@
+# F02 危机信号鉴别：真实公共接触记录开放研究候选，不检查个人终解。
+# common_crisis_contact是路线设计概念，实际映射见本包contacted接口。
+tech_artifact_crisis_signal_identification = {
+	area = physics
+	icon = "tech_artifact_black_gate_observation"
+	cost = 30000
+	tier = 5
+	category = { computing }
+	prerequisites = { "tech_artifact_high_dimensional_model_review" "tech_artifact_rule_anchoring_engineering" }
+	weight = 50
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		artifact_crisis_intelligence_contacted = yes
+	}
+}

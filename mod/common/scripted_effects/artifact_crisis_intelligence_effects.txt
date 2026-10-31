@@ -1,0 +1,17 @@
+# 复用既有模型与持久接触资料，即时免费归档；不重复制造月度调查。
+# 从不写入主线旗标、计数、胜利、个人决定或边界身份。
+artifact_crisis_intelligence_identify = {
+	if = {
+		limit = { artifact_crisis_intelligence_can_identify = yes }
+		owner = { add_modifier = { modifier = aci_signal_identified days = -1 } }
+	}
+}
+
+# 正常决议扣费一次；本效果不重查扣费前余额，也不刷新已有窗口。
+artifact_crisis_intelligence_listen = {
+	if = {
+		limit = { artifact_crisis_intelligence_can_listen = yes }
+		artifact_civil_supply_ensure_owner = yes
+		add_modifier = { modifier = acs_crisis_listening_window days = 360 }
+	}
+}

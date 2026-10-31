@@ -1,0 +1,77 @@
+# 国家只读来源。边界回应经过原第九章付费复测后成为持久记录。
+# 兼容已有专属危机档：已初始化且至少一个节点真实归档，也构成接触证据。
+# 原版危机发生、准备初始化、短期现场标记和个人转变均不单独构成资格。
+artifact_crisis_intelligence_contacted = {
+	OR = {
+		has_country_flag = aemusa_ms_country_boundary_echo_verified
+		AND = {
+			has_country_flag = aemusa_ms_crisis_exclusive_initialized
+			is_variable_set = aemusa_ms_country_anchors_archived
+			check_variable = { which = aemusa_ms_country_anchors_archived value >= 1 }
+		}
+	}
+}
+
+artifact_crisis_intelligence_archive_site = {
+	artifact_civil_supply_safe = yes
+	owner = {
+		has_technology = "tech_artifact_crisis_signal_identification"
+		has_technology = "tech_artifact_rule_anchoring_engineering"
+	}
+	OR = {
+		has_active_building = "building_artifact_high_dimensional_review_station"
+		has_active_building = "building_artifact_rule_anchor_test_site"
+	}
+}
+
+artifact_crisis_intelligence_can_identify = {
+	artifact_crisis_intelligence_archive_site = yes
+	owner = {
+		artifact_crisis_intelligence_contacted = yes
+		artifact_observation_review_archived = yes
+		NOT = { has_modifier = aci_signal_identified }
+	}
+}
+
+# F03/F04后续消费者读取国家资料；场地失效不抹去完成知识。
+artifact_crisis_intelligence_identified = {
+	has_technology = "tech_artifact_crisis_signal_identification"
+	has_modifier = aci_signal_identified
+}
+
+artifact_crisis_intelligence_listening_site = {
+	artifact_civil_supply_safe = yes
+	has_active_building = "building_artifact_rule_anchor_test_site"
+	owner = {
+		artifact_crisis_intelligence_identified = yes
+		has_technology = "tech_artifact_rule_anchoring_engineering"
+		has_technology = "tech_artifact_orbital_coordination"
+	}
+}
+
+artifact_crisis_intelligence_can_listen = {
+	artifact_crisis_intelligence_listening_site = yes
+	NOT = { has_modifier = acs_crisis_listening_window }
+	# 实际消费者是当地有效本国轨道接口，不为不存在的星港预付无效窗口。
+	# 行星 -> 国家 -> 原行星 -> 星系 -> 星港，PREVPREVPREV回到本国。
+	owner = {
+		prev = {
+			solar_system = {
+				exists = starbase
+				starbase = {
+					is_normal_starbase = yes
+					is_owned_by = prevprevprev
+					is_controlled_by = owner
+					has_starbase_building = "artifact_orbital_observation_link"
+				}
+			}
+		}
+	}
+}
+
+# 先查定期标记，旧消费者没有本窗口时不读取新档案；360日时钟不因停用暂停。
+artifact_crisis_intelligence_listening_active = {
+	has_modifier = acs_crisis_listening_window
+	artifact_civil_supply_original_owner = yes
+	artifact_crisis_intelligence_listening_site = yes
+}

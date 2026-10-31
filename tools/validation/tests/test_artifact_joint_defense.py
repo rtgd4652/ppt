@@ -21,6 +21,7 @@ CENTER, BRANCH, HIGH = ('building_artifact_community_service_center',
 text = (ROOT / 'mod/common/scripted_triggers/artifact_joint_defense_triggers.txt').read_text(encoding='utf-8')
 text = re.sub(r'has_starbase_size\s*>=', 'has_starbase_size_ge =', text)
 TRIGGERS = {**base.load('mod/common/scripted_triggers/artifact_garrison_triggers.txt'),
+            **base.load('mod/common/scripted_triggers/artifact_crisis_intelligence_triggers.txt'),
             **{e.key:e.value for e in parse(text)}}
 EFFECTS = {**base.load('mod/common/scripted_effects/artifact_garrison_effects.txt'),
            **base.load('mod/common/scripted_effects/artifact_joint_defense_effects.txt')}

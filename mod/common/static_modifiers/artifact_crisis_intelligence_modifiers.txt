@@ -1,0 +1,9 @@
+# 国家知识与地方窗口分开；探测由既有星港条件修正提供，不产生全银河视野。
+aci_signal_identified = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+acs_crisis_listening_window = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}

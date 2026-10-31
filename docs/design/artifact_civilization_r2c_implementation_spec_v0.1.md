@@ -43,3 +43,5 @@
 实际舰队视野、真实隐形舰发现、跨殖民地并行唯一限额及自然研究／平衡仍未验证；升级替换和一次保存恢复已有代表引擎证据。属性提示不能证明发现真实目标，其他来源场景不扩测。下一步先细化R2d治理与城市；人物组合、批量图标、连续巨构继续暂停。
 
 [结构化规格](artifact_civilization_r2c_implementation_spec_v0.1.json) · [源码交付](../../reports/artifact_civilization_r2c_implementation_2026-10-17.md)
+
+2026-10-31 R5a扩展：F02本国鉴别档案与付费地方监听可成为E06星港隐形探测的替代来源；原A07研究和有效阵列要求仍保留，二者共用一份修正，不叠加多个殖民地。原A06/A09资格保持。新路径仅源码检查通过，原历史运行证据不扩张，见[R5a规格](artifact_civilization_r5a_implementation_spec_v0.1.md)。

@@ -25,6 +25,7 @@ def block(entries, key):
 
 BUILDINGS = load('mod/common/buildings/artifact_midgame_sensing_buildings.txt')
 RELAY = load('mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt')['artifact_orbital_observation_link']
+SIGNAL_TRIGGERS = load('mod/common/scripted_triggers/artifact_crisis_intelligence_triggers.txt')
 
 
 def condition(entries, scope, history=()):
@@ -38,6 +39,16 @@ def condition(entries, scope, history=()):
 
     def term(entry):
         key, value = entry.key, entry.value
+        if key in SIGNAL_TRIGGERS:
+            return condition(SIGNAL_TRIGGERS[key], scope, history) == (value == 'yes')
+        if key == 'AND':
+            return condition(value, scope, history)
+        if key == 'carrier':
+            assert scope['kind'] == 'colony'
+            return condition(value, scope['carrier'], history + (scope,))
+        if key == 'has_modifier':
+            assert scope['kind'] == 'planet'
+            return value in scope['modifiers']
         if key == 'NOT':
             assert len(value) == 1
             return not term(value[0])
@@ -96,6 +107,8 @@ class SensingTests(unittest.TestCase):
         self.system = dict(kind='system', colonies=[])
         self.site = dict(kind='colony', owner=self.country, controller=self.country,
                          occupied=False, buildings={LOW}, inactive=set(), queued=set())
+        # 旧阵列场景没有F02窗口；显式保持载体身份。正向监听由F02完整栈检查覆盖。
+        self.site['carrier'] = dict(kind='planet', modifiers=set())
         self.country['colonies'].append(self.site)
         self.system['colonies'].append(self.site)
         self.base = dict(kind='starbase', owner=self.country, controller=self.country,

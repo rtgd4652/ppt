@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-31",
+  "package": "R5a",
+  "source_base": "a816b87",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "nodes": [
+    "F02"
+  ],
+  "technology": {
+    "id": "F02",
+    "key": "tech_artifact_crisis_signal_identification",
+    "name": "危机信号鉴别",
+    "area": "physics",
+    "tier": 5,
+    "cost": 30000,
+    "weight": 50,
+    "category": "computing",
+    "prerequisites": [
+      "tech_artifact_high_dimensional_model_review",
+      "tech_artifact_rule_anchoring_engineering"
+    ],
+    "gate": {
+      "concept": "common_crisis_contact",
+      "implementation_trigger": "artifact_crisis_intelligence_contacted",
+      "read_only": true,
+      "earliest": {
+        "flag": "aemusa_ms_country_boundary_echo_verified",
+        "file": "mod/events/aemusa_main_story_chapter_09_events.txt",
+        "event": "aemusa_ms.1411",
+        "meaning": "原第九章付费30日边界回应复测结算，持久保留；不是见证者口述或个人终解"
+      },
+      "legacy": {
+        "initialized_flag": "aemusa_ms_crisis_exclusive_initialized",
+        "counter": "aemusa_ms_country_anchors_archived",
+        "requires_variable_set": true,
+        "minimum": 1,
+        "source": "mod/common/scripted_effects/aemusa_ms_exclusive_effects.txt",
+        "init_effect": "aemusa_ms_exclusive_initialize: initializes counter to 0",
+        "archive_effect": "aemusa_ms_anchor_archive: increments after actual field/battle/analysis closure",
+        "meaning": "归档包括解放或资源损失结果，足以证明接触，不表示胜利"
+      },
+      "excluded": [
+        "vanilla crisis occurred alone",
+        "exclusive initialized with zero/absent archive counter",
+        "volatile onsite baseline alone",
+        "boundary verification still pending",
+        "personal transformation/level/leader presence"
+      ],
+      "story_files_modified": false
+    }
+  },
+  "lore": "独立复测留下的边界回应，可以与现场记录中的异常模式相互对照。研究者为能够重现的征兆建立识别标准，让常规观测和公共防务知道应当注意什么，也清楚哪些解释仍然缺乏证据。",
+  "application": "实际接触记录开放研究。配合已完成的模型复核，可在观测复核站或锚定试验场免费归档信号鉴别结果。此后在有本国轨道观测协同接口的星系，支付300能源／100消费品，使锚定试验场监听360日，为当地星港提供1点隐形探测；与预警阵列不叠加。档案供后续公共反制读取。",
+  "identification": {
+    "entry": "decision_artifact_crisis_signal_archive",
+    "cost": {},
+    "effective_months": 0,
+    "inputs": [
+      "F02/E08 research",
+      "persistent public contact via mapped gate",
+      "A11 research + completed amr_model_reviewed",
+      "own controlled safe active final review station or rule anchor test site"
+    ],
+    "country_record": "aci_signal_identified",
+    "duration": -1,
+    "repeat": "blocked after country record exists",
+    "source_consumed_or_extended": false,
+    "site_transfer": "does not transfer or remove original country knowledge"
+  },
+  "listening": {
+    "entry": "decision_artifact_crisis_listening",
+    "base_cost": {
+      "energy": 300,
+      "consumer_goods": 100
+    },
+    "payment": "native decision once; effect no second debit",
+    "marker": "acs_crisis_listening_window",
+    "duration_days": 360,
+    "site": "active own rule anchor test site with original ACS owner",
+    "requires": [
+      "identified country record",
+      "F02/E08/E06 research",
+      "safe own control and no bombardment",
+      "same-system owned controlled normal starbase with artifact_orbital_observation_link"
+    ],
+    "effect": "ship_cloaking_detection_add = 1 on that station through existing E06 triggered block",
+    "old_A07_path": "still requires A07 and an active owned phase warning array; alternative shares same modifier block",
+    "stacking": "one per starbase even with multiple colonies/windows or A07 array",
+    "invalid": "no supply, 360-day clock continues; eligible supply resumes during remaining time",
+    "repeat": "no refresh or fee while marker exists",
+    "cleanup": "existing ACS transfer/ownerless/destroy clear removes local window"
+  },
+  "interfaces": {
+    "exported_country_trigger": "artifact_crisis_intelligence_identified",
+    "actual_consumer": "E06 listener detection",
+    "future_consumers": [
+      "F03",
+      "F04"
+    ],
+    "personal_transformation_required": false,
+    "story_flags_written": [],
+    "story_variables_written": []
+  },
+  "performance": {
+    "new_events": 0,
+    "new_monthly_subscriptions": 0,
+    "new_daily_scans": 0,
+    "new_variables": 0,
+    "new_global_targets": 0,
+    "new_country_modifiers": 1,
+    "new_planet_modifiers": 1
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-BLACK-GATE",
+      "TERM-BLACK-GATE-RESEARCH-SYSTEM",
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md",
+      "knowledge/world/fact_canon_mystery_matrix_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false,
+    "constraint": "可复测信号与公共风险识别属于工程转译；保留黑门/异常本质未知，不把接触、反制和胜利混同。"
+  },
+  "native_reference": {
+    "reference": "本机既有4.5.2 is_variable_set、原生决议费用与E06 ship_cloaking_detection_add接口",
+    "target_4_5_1_compatibility": "pending",
+    "new_global_targets": 0,
+    "scope": "country knowledge / planet window / same-system owned controlled starbase"
+  },
+  "validation": {
+    "new": {
+      "count": 6,
+      "status": "pass",
+      "module": "test_artifact_crisis_intelligence"
+    },
+    "affected": {
+      "count": 22,
+      "status": "pass",
+      "modules": [
+        "test_artifact_observation_review",
+        "test_artifact_observation_calibration",
+        "test_artifact_joint_defense",
+        "test_artifact_midgame_sensing"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 232,
+        "events": 260,
+        "localization_keys": 2172,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "fixture_note": "A11模型及原主线来源为此前接口输入；不重新执行私人剧情，不把源旗标夹具写成自然接触。执行正常决议和正式E06条件修正。",
+    "limitations": [
+      "研究抽取、决议实际收费/计时、原生隐形发现、显示与真实存读档未验。",
+      "旧感知夹具显式提供无监听标记的行星载体；正向监听由F02完整栈夹具验证，未知条件仍报错。"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "save_created": null,
+    "pending_command": null,
+    "priority": "阶段试玩仍优先D12；F02可随一条观测/公共危机代表链取必要片段，共用关键读档，不另加逐窗/逐包要求。"
+  },
+  "files": [
+    "mod/common/decisions/artifact_crisis_intelligence_decisions.txt",
+    "mod/common/scripted_effects/artifact_crisis_intelligence_effects.txt",
+    "mod/common/scripted_triggers/artifact_crisis_intelligence_triggers.txt",
+    "mod/common/static_modifiers/artifact_crisis_intelligence_modifiers.txt",
+    "mod/common/technology/artifact_crisis_intelligence_technology.txt",
+    "mod/localisation/simp_chinese/artifact_crisis_intelligence_l_simp_chinese.yml",
+    "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+    "tools/validation/tests/test_artifact_joint_defense.py",
+    "tools/validation/tests/test_artifact_midgame_sensing.py",
+    "tools/validation/tests/test_artifact_crisis_intelligence.py",
+    "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r5a_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r5a_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "docs/design/artifact_civilization_r2c_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r2c_implementation_spec_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}

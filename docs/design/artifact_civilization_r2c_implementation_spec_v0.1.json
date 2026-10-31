@@ -189,5 +189,15 @@
     "mod/common/buildings/artifact_midgame_sensing_buildings.txt",
     "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
     "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml"
+  ],
+  "compatibility_updates": [
+    {
+      "date": "2026-10-31",
+      "package": "R5a",
+      "status": "source_tests_passed_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5a_implementation_2026-10-31.md",
+      "note": "F02档案＋付费监听成为E06隐形探测替代来源；A07仍需研究和阵列，同块不叠加，旧A06/A09来源保持；新路径运行未验。"
+    }
   ]
 }

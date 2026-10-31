@@ -27,7 +27,7 @@
     "vanilla_assault_armies_and_lasers": "既有原版突击军与激光科技；保留原字段。",
     "public_resonance_and_vanilla_combat_computers": "既有公共共鸣飞升及原版基础战斗电脑；保留原字段。",
     "public_apotheosis_and_vanilla_zero_point": "既有公共终解飞升及原版零点能源；保留原字段。",
-    "common_crisis_contact": "新增设计概念：已接触最终危机的公共调查资格；不是现成脚本键，实施时映射既有公共危机状态。",
+    "common_crisis_contact": "R5a已映射artifact_crisis_intelligence_contacted：原边界回应复测持久记录，或已初始化且至少一处真实归档节点；只读，不要求个人终解。",
     "final_boss_common_victory": "新增设计概念：共同最终胜利记录；对三种合法结局一致，不读取个人正式转变。"
   },
   "branches": [
@@ -263,7 +263,14 @@
       "capability": "观测站最终升级，真实联校档案＋公共接口支持付费4有效月度模型复核；既有危机事实/锚点损失可非重复补录，国家档案用于A12。",
       "implementation_key": "tech_artifact_high_dimensional_model_review",
       "spec": "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md"
+      "report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md",
+      "compatibility_updates": [
+        {
+          "package": "R5a",
+          "spec": "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.json",
+          "note": "A11完成模型被F02复用；E06添加同块非叠加的付费监听来源，旧资格保持，新路径运行未验。"
+        }
+      ]
     },
     {
       "id": "A12",
@@ -1035,7 +1042,14 @@
       "status": "implemented_representative_runtime_passed_controlled_research",
       "capability": "解锁正常星港建筑槽内轨道观测接口，只读同星本国活跃阵列，不计入行星46阶段。",
       "implementation_key": "tech_artifact_orbital_coordination",
-      "runtime_report": "reports/artifact_civilization_r2c_runtime_2026-10-17.md"
+      "runtime_report": "reports/artifact_civilization_r2c_runtime_2026-10-17.md",
+      "compatibility_updates": [
+        {
+          "package": "R5a",
+          "spec": "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.json",
+          "note": "A11完成模型被F02复用；E06添加同块非叠加的付费监听来源，旧资格保持，新路径运行未验。"
+        }
+      ]
     },
     {
       "id": "E07",
@@ -1183,8 +1197,12 @@
       ],
       "gate": "common_crisis_contact",
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "鉴别已接触的最终危机信号，开放公共预警和反制研究候选。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "持久公共接触开放研究，真实模型免费归档信号；锚定试验场付费监听360日，经E06提供单份星港探测，资料供F03/F04读取。",
+      "implementation_key": "tech_artifact_crisis_signal_identification",
+      "spec": "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5a_implementation_2026-10-31.md",
+      "implementation_gate": "artifact_crisis_intelligence_contacted"
     },
     {
       "id": "F03",
@@ -2573,18 +2591,34 @@
       "report": "reports/artifact_civilization_r4l_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r4l_checkpoint_2026-10-31.json",
       "next_step": "推进F02危机信号鉴别（A11＋E08）：先核对既有最终危机公开接触/调查事实，把common_crisis_contact设计概念映射为真实接口，该名称不是现成脚本键。复用已有资料接公共预警/反制候选，保留个人转变边界；随后F03～F08、最终Boss深化与公共胜利奖励。集中试玩仍优先D12，其他必要代表共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
+    },
+    "R5a": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "nodes": [
+        "F02"
+      ],
+      "new_buildings": 0,
+      "new_components": 0,
+      "new_events": 0,
+      "new_on_actions": 0,
+      "spec": "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5a_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r5a_checkpoint_2026-10-31.json",
+      "next_step": "推进F03公共反制预案（F02＋A12＋D14）：复用artifact_crisis_intelligence_identified与artifact_public_theory_qualified，接危机联合防务中心和可部署公共反制；科研/鉴别不等于已反制或胜利，不要求个人终解。随后F04～F08与最终Boss深化/公共胜利奖励收束。集中试玩仍优先D12，其他必要代表共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 73,
+    "public_technologies": 74,
     "army_types": 5,
     "component_definitions": 111,
     "building_definitions": 40,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 7,
-    "note": "R4l新增E12，真实命运都市已付C12工业协调统筹E09/E11费用；6项新增、33项相关及静态通过，运行未验。常规公共节点源码已接齐，剩余F02～F08。"
+    "planned_technologies_remaining": 6,
+    "note": "R5a新增F02真实接触候选、免费鉴别与付费地方监听，接E06同一探测块；6项新增、22项相关及静态通过，运行未验。"
   },
   "orbital_buildings": [
     {
@@ -2936,5 +2970,39 @@
   "r4k_checkpoint": "reports/artifact_civilization_r4k_checkpoint_2026-10-31.json",
   "r4l_spec": "docs/design/artifact_civilization_r4l_implementation_spec_v0.1.json",
   "r4l_report": "reports/artifact_civilization_r4l_implementation_2026-10-31.md",
-  "r4l_checkpoint": "reports/artifact_civilization_r4l_checkpoint_2026-10-31.json"
+  "r4l_checkpoint": "reports/artifact_civilization_r4l_checkpoint_2026-10-31.json",
+  "gate_implementations": {
+    "common_crisis_contact": {
+      "concept": "common_crisis_contact",
+      "implementation_trigger": "artifact_crisis_intelligence_contacted",
+      "read_only": true,
+      "earliest": {
+        "flag": "aemusa_ms_country_boundary_echo_verified",
+        "file": "mod/events/aemusa_main_story_chapter_09_events.txt",
+        "event": "aemusa_ms.1411",
+        "meaning": "原第九章付费30日边界回应复测结算，持久保留；不是见证者口述或个人终解"
+      },
+      "legacy": {
+        "initialized_flag": "aemusa_ms_crisis_exclusive_initialized",
+        "counter": "aemusa_ms_country_anchors_archived",
+        "requires_variable_set": true,
+        "minimum": 1,
+        "source": "mod/common/scripted_effects/aemusa_ms_exclusive_effects.txt",
+        "init_effect": "aemusa_ms_exclusive_initialize: initializes counter to 0",
+        "archive_effect": "aemusa_ms_anchor_archive: increments after actual field/battle/analysis closure",
+        "meaning": "归档包括解放或资源损失结果，足以证明接触，不表示胜利"
+      },
+      "excluded": [
+        "vanilla crisis occurred alone",
+        "exclusive initialized with zero/absent archive counter",
+        "volatile onsite baseline alone",
+        "boundary verification still pending",
+        "personal transformation/level/leader presence"
+      ],
+      "story_files_modified": false
+    }
+  },
+  "r5a_spec": "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.json",
+  "r5a_report": "reports/artifact_civilization_r5a_implementation_2026-10-31.md",
+  "r5a_checkpoint": "reports/artifact_civilization_r5a_checkpoint_2026-10-31.json"
 }

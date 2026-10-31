@@ -24,6 +24,8 @@ artifact_civil_supply_clear = {
 	remove_modifier = acs_observation_source
 	remove_modifier = acs_observation_peer
 	remove_modifier = acs_observation_window
+	# F02只清地方监听窗口，原国家信号鉴别知识保留。
+	remove_modifier = acs_crisis_listening_window
 	# A11复核过程随原拥有者清理；国家已完成模型与事实记录保留。
 	remove_modifier = acs_model_review_project
 	clear_variable = acs_model_review_work

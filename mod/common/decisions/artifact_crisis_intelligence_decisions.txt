@@ -1,0 +1,37 @@
+decision_artifact_crisis_signal_archive = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		owner = {
+			has_technology = "tech_artifact_crisis_signal_identification"
+			NOT = { has_modifier = aci_signal_identified }
+		}
+		OR = { has_building = "building_artifact_high_dimensional_review_station" has_building = "building_artifact_rule_anchor_test_site" }
+	}
+	allow = { custom_tooltip = { fail_text = aci.require_archive artifact_crisis_intelligence_can_identify = yes } }
+	effect = {
+		custom_tooltip = aci.offer_archive
+		hidden_effect = { artifact_crisis_intelligence_identify = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_crisis_listening = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = { category = decisions cost = { energy = 300 consumer_goods = 100 } }
+	potential = {
+		artifact_civil_supply_actor = yes
+		owner = { has_technology = "tech_artifact_crisis_signal_identification" }
+		has_building = "building_artifact_rule_anchor_test_site"
+	}
+	allow = { custom_tooltip = { fail_text = aci.require_listening artifact_crisis_intelligence_can_listen = yes } }
+	effect = {
+		custom_tooltip = aci.offer_listening
+		hidden_effect = { artifact_crisis_intelligence_listen = yes }
+	}
+	ai_weight = { weight = 0 }
+}
