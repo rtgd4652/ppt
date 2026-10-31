@@ -119,7 +119,7 @@
     },
     {
       "id": "A03",
-      "name": "基准观测与仪器标定",
+      "name": "基准观测标定",
       "area": "physics",
       "tier": 1,
       "prerequisites": [
@@ -229,7 +229,7 @@
     },
     {
       "id": "A10",
-      "name": "稳定规则接口",
+      "name": "边界稳定理论",
       "area": "physics",
       "tier": 4,
       "prerequisites": [
@@ -341,7 +341,7 @@
     },
     {
       "id": "B06",
-      "name": "前线维修与标准件",
+      "name": "标准构件工程",
       "area": "engineering",
       "tier": 1,
       "prerequisites": [
@@ -374,7 +374,7 @@
     },
     {
       "id": "B08",
-      "name": "共鸣制造质量控制",
+      "name": "共鸣精密制造",
       "area": "engineering",
       "tier": 4,
       "prerequisites": [
@@ -456,7 +456,7 @@
     },
     {
       "id": "B13",
-      "name": "稀有共鸣定向精炼",
+      "name": "定向共鸣精炼",
       "area": "engineering",
       "tier": 5,
       "prerequisites": [
@@ -617,7 +617,7 @@
     },
     {
       "id": "C10",
-      "name": "公共研究复现协议",
+      "name": "实验复现体系",
       "area": "society",
       "tier": 3,
       "prerequisites": [
@@ -634,7 +634,7 @@
     },
     {
       "id": "C11",
-      "name": "跨殖民地联运",
+      "name": "星际物资联运",
       "area": "society",
       "tier": 4,
       "prerequisites": [
@@ -769,7 +769,7 @@
     },
     {
       "id": "D07",
-      "name": "共鸣偏折防护",
+      "name": "共鸣偏折护盾",
       "area": "physics",
       "tier": 3,
       "prerequisites": [
@@ -845,7 +845,7 @@
     },
     {
       "id": "D11",
-      "name": "战损回收与补给",
+      "name": "舰内维修循环",
       "area": "engineering",
       "tier": 4,
       "prerequisites": [
@@ -904,7 +904,7 @@
     },
     {
       "id": "E01",
-      "name": "命运经济矩阵",
+      "name": "行星经济矩阵",
       "area": "physics",
       "tier": 4,
       "prerequisites": [
@@ -931,7 +931,7 @@
     },
     {
       "id": "E03",
-      "name": "殖民地模块化营建",
+      "name": "模块化营建",
       "area": "engineering",
       "tier": 2,
       "prerequisites": [
@@ -964,7 +964,7 @@
     },
     {
       "id": "E05",
-      "name": "研究园区整合",
+      "name": "科研平台工程",
       "area": "physics",
       "tier": 3,
       "prerequisites": [
@@ -1353,7 +1353,7 @@
     },
     {
       "id": "D22",
-      "name": "远征轮换与整补",
+      "name": "远征整补体系",
       "area": "society",
       "tier": 4,
       "category": "military_theory",
@@ -2644,5 +2644,7 @@
   "r3e_runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md",
   "r4a_spec": "docs/design/artifact_civilization_r4a_implementation_spec_v0.1.json",
   "r4a_report": "reports/artifact_civilization_r4a_implementation_2026-10-31.md",
-  "r4a_checkpoint": "reports/artifact_civilization_r4a_checkpoint_2026-10-31.json"
+  "r4a_checkpoint": "reports/artifact_civilization_r4a_checkpoint_2026-10-31.json",
+  "technology_text_catalog": "docs/design/artifact_technology_text_catalog_v0.1.json",
+  "technology_text_updated": "2026-10-31"
 }

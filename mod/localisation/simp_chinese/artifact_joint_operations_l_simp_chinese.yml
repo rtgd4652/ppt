@@ -1,8 +1,8 @@
 ﻿l_simp_chinese:
  tech_artifact_joint_combat_core:0 "联合作战核心"
- tech_artifact_joint_combat_core_desc:0 "根据舰体职责组织近程、警戒、线列、炮击、航母、突击与平台作战。开放各自的作战电脑，以及占用辅助槽的战术和支援模块。"
- tech_artifact_expedition_reconstitution:0 "远征轮换与整补"
- tech_artifact_expedition_reconstitution_desc:0 "联运接收端可投入既有工程物资、能源和消费品，开设有期限的当地训练支援。补充兵力仍须由当地正常招募并运往前线。"
+ tech_artifact_joint_combat_core_desc:0 "舰队中的不同舰体承担不同距离和节奏的任务。按职责配置的作战核心协调各自的接敌方式与火力安排。\n\n§H应用§!：解锁七种职责作战电脑，以及战术和支援辅助模块；按舰体与用途选择配置。"
+ tech_artifact_expedition_reconstitution:0 "远征整补体系"
+ tech_artifact_expedition_reconstitution_desc:0 "联运接收地把物资、训练与人员补充安排在同一流程中。前线需要的后备力量能够在持续供应下做好准备。\n\n§H应用§!：接收端可投入预留物资、能源和消费品，开启限期训练支援，提高当地新军训练速度与初始经验。"
  ARTIFACT_JOINT_COMPUTER_SWARM:0 "联合蜂群电脑"
  ARTIFACT_JOINT_COMPUTER_SWARM_DESC:0 "适用于近程蜂群职责，侧重规避与持续开火。舰船依照蜂群队形接敌。"
  ARTIFACT_JOINT_COMPUTER_PICKET:0 "联合警戒电脑"

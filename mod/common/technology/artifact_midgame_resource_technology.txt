@@ -1,4 +1,8 @@
-# R2a矿脉开发与循环回收；只接公共文明前置，不读取个人转变或人物组合。
+# 矿业测绘与副产物回收研究。开发条件、有效产业来源和持续维护由设施及岗位管理。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# B10 精准矿脉测绘
+# 实现：建筑条件检查当地采矿开发；本节点不创建矿脉或自动解锁B04，既有升级链保持。
 tech_artifact_precision_vein_mapping = {
 	area = engineering
 	icon = "tech_artifact_phase_extraction"
@@ -18,7 +22,8 @@ tech_artifact_precision_vein_mapping = {
 	}
 }
 
-# 通过持续岗位和真实维护回收生产副产物，不增加可刷取的垃圾货币。
+# B12 副产物闭环利用
+# 实现：资源由artifact_midgame_resource_jobs持续结算；有效产业来源约束回收岗位，不由事件返还已支付工程费用。
 tech_artifact_byproduct_recycling = {
 	area = engineering
 	icon = "tech_artifact_resonance_manufacturing"

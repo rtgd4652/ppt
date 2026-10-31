@@ -1,4 +1,8 @@
-# R2b公共研究：复用现有观测设施；不读取人物组合、个人飞升或主线转变。
+# 观测比对与相位传输。比对由有效场地派生，供能由岗位结算，不创建额外项目账本。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# A05 多源异常比对
+# 实现：收益由观测站的triggered_planet_modifier提供；样本库与高级实验室是同一来源的替代项，停用后失效。
 tech_artifact_multi_source_comparison = {
 	area = physics
 	icon = "tech_artifact_black_gate_observation"
@@ -19,7 +23,8 @@ tech_artifact_multi_source_comparison = {
 	}
 }
 
-# 为试验供能站提供独立中期入口；原高级反应堆继续使用旧B03科技。
+# B09 低损耗相位传输
+# 实现：供能岗位消耗消费品、试验站持续消耗合金；高阶反应堆保留B03资格，不能由本科技直接取得。
 tech_artifact_low_loss_phase_transmission = {
 	area = physics
 	icon = "tech_artifact_phase_energy"

@@ -1,6 +1,8 @@
-# R3a公共舰载基础：新研究独立解锁新件，旧军备总包与个人路线保持原条件。
+# 舰载适配、测距与实体防护研究。只解锁各自组件，保留既有军备总包与舰船设计。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
 
-# D04 神器舰载接口：交付实际组件，不附加全国修正。
+# D04 神器舰载接口
+# 实现：组件提供固定30功率且占A槽；实际输出来自artifact_shipboard_foundation_components，不替换主反应堆。
 tech_artifact_shipboard_interface = {
 	area = engineering
 	icon = "tech_artifact_user_combat_doctrine"
@@ -21,7 +23,8 @@ tech_artifact_shipboard_interface = {
 	}
 }
 
-# D05 相位测距阵列：交付实际组件，不附加全国修正。
+# D05 相位测距阵列
+# 实现：两种变体共用传感器槽，组件承担范围与追踪取舍；不将观测和射控收益合并为同一免费升级。
 tech_artifact_phase_ranging_array = {
 	area = physics
 	icon = "tech_artifact_black_gate_observation"
@@ -42,7 +45,8 @@ tech_artifact_phase_ranging_array = {
 	}
 }
 
-# D15 符文舰体装甲：交付实际组件，不附加全国修正。
+# D15 符文舰体装甲
+# 实现：基础符文装甲读取D15；复合型号另需D09，保留旧装甲与现有舰船设计的解锁条件。
 tech_artifact_runic_hull_armor = {
 	area = engineering
 	icon = "tech_artifact_relic_fabrication"

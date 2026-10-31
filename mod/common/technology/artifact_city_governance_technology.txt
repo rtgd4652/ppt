@@ -1,4 +1,8 @@
-# R2d公共治理：中央庭的疏散、安置与配给经验成为可复用的民生组织能力。
+# 公共灾害应对与城市规划研究。当地效益由设施和规划状态负责，不修改都市改造的一次性资格。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# C09 中央庭灾害统筹
+# 实现：收益由社区设施条件修正提供，必须实际轰炸且本国控制；当前不降低轰炸伤害或阻止人口损失。
 tech_artifact_refuge_organization = {
 	area = society
 	icon = "tech_artifact_central_court_protocols"
@@ -15,7 +19,8 @@ tech_artifact_refuge_organization = {
 	}
 }
 
-# 城市分区读取公共工程基础；选择与效益保存于当地，不依赖人物或个人转变。
+# E04 城市功能分区
+# 实现：规划状态位于当地，由artifact_city_planning维护；三方向互斥，不占用或重置C2命运都市的一次性资格。
 tech_artifact_city_functional_zoning = {
 	area = society
 	icon = "tech_artifact_tarot_economy"

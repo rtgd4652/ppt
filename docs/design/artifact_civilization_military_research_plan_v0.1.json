@@ -168,7 +168,7 @@
     },
     {
       "id": "D22",
-      "name": "远征轮换与整补",
+      "name": "远征整补体系",
       "area": "society",
       "tier": 4,
       "category": "military_theory",
@@ -1847,5 +1847,7 @@
   "r3e_runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md",
   "r4a_spec": "docs/design/artifact_civilization_r4a_implementation_spec_v0.1.json",
   "r4a_report": "reports/artifact_civilization_r4a_implementation_2026-10-31.md",
-  "r4a_checkpoint": "reports/artifact_civilization_r4a_checkpoint_2026-10-31.json"
+  "r4a_checkpoint": "reports/artifact_civilization_r4a_checkpoint_2026-10-31.json",
+  "technology_text_catalog": "docs/design/artifact_technology_text_catalog_v0.1.json",
+  "technology_text_updated": "2026-10-31"
 }

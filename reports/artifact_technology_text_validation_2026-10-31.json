@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-31",
+  "source_base": "c6c27fe",
+  "kind": "text_and_comment_validation",
+  "technology_count": 62,
+  "renamed_count": 13,
+  "changed_localisation_key_count": 111,
+  "script_files": [
+    {
+      "file": "mod/common/technology/aemusa_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_boundary_engineering_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_city_governance_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_civil_supply_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_close_combat_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_environment_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_ground_forces_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_joint_operations_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_midgame_military_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_midgame_observation_energy_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_midgame_resource_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_midgame_sensing_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_public_foundation_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_research_reproduction_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    },
+    {
+      "file": "mod/common/technology/artifact_shipboard_foundation_technology.txt",
+      "executable_unchanged": true,
+      "utf8_no_bom": true
+    }
+  ],
+  "localisation_files": [
+    {
+      "file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_city_planning_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_environment_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_ground_forces_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_joint_operations_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_midgame_observation_energy_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_midgame_resource_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/artifact_shipboard_foundation_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    },
+    {
+      "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "keys_preserved": true,
+      "utf8_bom": true
+    }
+  ],
+  "catalog_and_current_route_checked": true,
+  "source_files_exist": true,
+  "issues": [],
+  "related_numeric_differences_for_review": [],
+  "runtime": "not_run_text_only",
+  "database": "read_only_no_mutation",
+  "status": "pass",
+  "selected_glossary_terms_match_source_json": true,
+  "outdated_renamed_terms_in_localisation": [],
+  "protected_placeholders_preserved": true,
+  "related_numeric_values_preserved": true,
+  "last_copy_adjustment": "E08应用段保留轰炸开始前部署限制；已定向核对目录与本地化一致。",
+  "mod_static_check": {
+    "command": "python tools/validation/check_mod.py --game-dir F:/steam/steamapps/common/Stellaris --json",
+    "status": "pass",
+    "errors": [],
+    "warnings": [],
+    "counts": {
+      "script_files": 177,
+      "events": 255,
+      "localization_keys": 1902,
+      "registered_states": 791,
+      "referenced_states": 734
+    },
+    "scope": "结构和显式引用检查，不改变既有运行验收状态"
+  },
+  "pending": [
+    "18项未实现节点随具体能力落实卡面",
+    "下一次既定阶段试玩顺带查看卡面长度，不为纯文案另开游戏"
+  ],
+  "next_source_package": "R4b B14战略工程供应"
+}

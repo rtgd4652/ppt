@@ -1,4 +1,8 @@
-# R3c公共陆军研究；两种用途独立，旧三个军备总包保持。
+# 定向登陆与当地驻防研究。进攻军和设施派生的防御军各用独立入口，不能互相替代。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# D19 定向登陆学
+# 实现：独立陆军类型由artifact_ground_forces_armies定义；降低附带伤害不等于保证居民或建筑免受损失。
 tech_artifact_precision_landings = {
 	area = society
 	icon = "tech_artifact_user_combat_doctrine"
@@ -15,7 +19,8 @@ tech_artifact_precision_landings = {
 	}
 }
 
-# 当地驻防只开放有维护的方案，不直接生成军队或提供全国加成。
+# D20 行星驻防统筹
+# 实现：驻防由artifact_garrison状态与有效建筑派生原生防御军；失控和供源失效按现有规则处理，不生成可免费循环运出的进攻军。
 tech_artifact_planetary_garrison = {
 	area = society
 	icon = "tech_artifact_central_court_protocols"

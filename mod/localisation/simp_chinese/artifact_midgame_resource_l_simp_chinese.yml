@@ -1,8 +1,8 @@
 ﻿l_simp_chinese:
  tech_artifact_precision_vein_mapping:0 "精准矿脉测绘"
- tech_artifact_precision_vein_mapping_desc:0 "以共鸣材料研究标定矿区，记录矿体分布与采掘边界。\n\n解锁§Y矿脉测绘站§!；当地须已有普通采矿区，后续仍需完成原§Y相位矿脉采掘§!研究才能升级。"
+ tech_artifact_precision_vein_mapping_desc:0 "矿体的走向、密度与异常边界被共同纳入测绘。采掘计划因此能够沿着可用矿层展开，并为后续稳定工程留下依据。\n\n§H应用§!：在已有普通采矿区的殖民地建设矿脉测绘站，随后可沿相位矿脉采掘研究升级。"
  tech_artifact_byproduct_recycling:0 "副产物闭环利用"
- tech_artifact_byproduct_recycling_desc:0 "将采矿与制造副产物纳入持续回收，通过岗位、能源和耗材投入换取可再利用物资。\n\n解锁§Y循环回收处理厂§!；不会凭空结算资源或返还已消耗的工程预算。"
+ tech_artifact_byproduct_recycling_desc:0 "回收工序被接入采矿与制造流程，残余材料在分选、处理后重新进入生产。持续运转需要人员、能源与耗材。\n\n§H应用§!：解锁循环回收处理厂，以岗位和维护投入回收可用资源。"
  building_artifact_vein_mapping_station:0 "矿脉测绘站"
  building_artifact_vein_mapping_station_desc:0 "为已开发的普通矿区绘制精密记录，提供矿脉测绘员岗位。完成相位矿脉采掘后，可升级为原相位矿脉稳定站；同一殖民地上下级不能并存。"
  building_artifact_byproduct_recycling_plant:0 "循环回收处理厂"

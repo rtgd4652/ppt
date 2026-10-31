@@ -1,8 +1,8 @@
 ﻿l_simp_chinese:
  tech_artifact_refuge_organization:0 "中央庭灾害统筹"
- tech_artifact_refuge_organization_desc:0 "把中央庭的疏散、安置与物资配给纳入社区日常预案。遭受轨道轰炸时，本国控制下正常运作的社区公共服务中心使当地稳定度增加5、舒适度需求降低10%，协助居民维持基本生活。"
+ tech_artifact_refuge_organization_desc:0 "黑门危机中的疏散与安置经验，如今也用于应对来自轨道的威胁。避难路线、应急配给和服务人员被纳入常备安排，在城市受损时维持基本生活。\n\n§H应用§!：轰炸期间，本国控制下的有效社区公共服务中心提供稳定度+5、舒适度需求−10%。"
  tech_artifact_city_functional_zoning:0 "城市功能分区"
- tech_artifact_city_functional_zoning_desc:0 "用塔罗演算协调研究、生产与民生设施的布局。解锁城市经济演算室，并允许在当地演算设施运行时付费选择一个规划方向；规划可以随建筑升级延续。"
+ tech_artifact_city_functional_zoning_desc:0 "城市布局与资源流向可以围绕当前需要重新组织。研究、生产和民生各自获得清晰的位置，调整也需要相应投入。\n\n§H应用§!：解锁城市经济演算室，可在有效演算设施中付费选择一个当地规划方向；规划可随设施升级延续。"
  building_artifact_city_calculation_room:0 "城市经济演算室"
  building_artifact_city_calculation_room_desc:0 "为殖民地编制研究、生产或民生规划。每次选择消耗300能源和100凝聚力，同时只保留一个方向。设施停用、损坏或被占领时暂停收益，恢复后继续执行；可在原槽位升级为命运经济演算院。"
  decision_artifact_city_plan_research:0 "城市规划：科研分区"

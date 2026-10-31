@@ -1,4 +1,8 @@
-# R3f公共协同与整补：继承已实现的联运前置，不读取个人转变或替换旧军备总包。
+# 按职责配装与远征训练研究。电脑行为归组件，训练支援复用已有物资和接收端身份。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# D10 联合作战核心
+# 实现：七种电脑使用各自原生行为和舰体职责条件；A槽模块只修改本舰，不作为全舰队光环。
 tech_artifact_joint_combat_core = {
 	area = society
 	icon = "tech_artifact_central_court_protocols"
@@ -10,6 +14,8 @@ tech_artifact_joint_combat_core = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
+# D22 远征整补体系
+# 实现：复用civil_supply库存与接收端身份；360日训练支援不治疗现有部队，费用及设施失效逻辑由决议和有效建筑核对。
 tech_artifact_expedition_reconstitution = {
 	area = society
 	icon = "tech_artifact_seven_day_logistics"

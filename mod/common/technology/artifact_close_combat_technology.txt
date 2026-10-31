@@ -1,6 +1,8 @@
-# R3b公共军备研究：独立解锁近程、防护、供能和机动；不改旧总包。
+# 近程武器、偏折护盾与舰载动力研究。组件参数承担取舍，不在科技层追加全国战斗收益。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
 
-# D06 近程共鸣武器：只交付对应装备，不附加全国修正。
+# D06 近程共鸣武器
+# 实现：S/M/L参数显式定义于artifact_close_combat_components；本科技无国家伤害修正，也不赋予防御穿透。
 tech_artifact_close_resonance_weapons = {
 	area = physics
 	icon = "tech_artifact_user_combat_doctrine"
@@ -21,7 +23,8 @@ tech_artifact_close_resonance_weapons = {
 	}
 }
 
-# D07 共鸣偏折防护：只交付对应装备，不附加全国修正。
+# D07 共鸣偏折护盾
+# 实现：偏折护盾的容量、回复与耗能由各尺寸组件定义；硬化不是本研究的固有收益。
 tech_artifact_resonance_deflection = {
 	area = physics
 	icon = "tech_artifact_relic_fabrication"
@@ -42,7 +45,8 @@ tech_artifact_resonance_deflection = {
 	}
 }
 
-# D16 舰载相位供能：只交付对应装备，不附加全国修正。
+# D16 舰载相位供能
+# 实现：公共反应堆族由组件和舰体限制决定；个人专属核心及未来D13承载条件另行处理。
 tech_artifact_ship_phase_power = {
 	area = physics
 	icon = "tech_artifact_phase_energy"
@@ -63,7 +67,8 @@ tech_artifact_ship_phase_power = {
 	}
 }
 
-# D17 相位机动推进：只交付对应装备，不附加全国修正。
+# D17 相位机动推进
+# 实现：使用常规thruster槽；当前速度、闪避和功耗取舍由组件定义，不开放跃迁或更改FTL类型。
 tech_artifact_phase_maneuvering = {
 	area = engineering
 	icon = "tech_artifact_seven_day_logistics"

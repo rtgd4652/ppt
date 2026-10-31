@@ -1,4 +1,8 @@
-# R2f公共环境工程：维持当地缓冲条件，不改写行星类型或个人权限。
+# 环境缓冲研究。设施按具体风险提供有限补偿，保留原行星特征与开发限制。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# E07 行星环境缓冲
+# 实现：artifact_environment_buildings按具体行星修正提供局部补偿；维护持续结算，不移除原风险特征或改写星球类型。
 tech_artifact_environment_buffering = {
 	area = society
 	icon = "tech_artifact_phase_energy"

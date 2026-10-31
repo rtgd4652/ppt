@@ -1,8 +1,8 @@
 ﻿l_simp_chinese:
  tech_artifact_precision_landings:0 "定向登陆学"
- tech_artifact_precision_landings_desc:0 "让战术小队围绕明确目标行动，减少对居民区和基础设施的波及。定向登陆队牺牲部分正面输出，并承担更长训练与物资投入。"
+ tech_artifact_precision_landings_desc:0 "明确的作战目标、行动边界与撤离计划，使登陆队能够集中力量完成局部任务，同时减少对周围区域的破坏。\n\n§H应用§!：解锁低附带伤害的定向登陆队，以较低正面输出和更长训练换取目标区域的保存。"
  tech_artifact_planetary_garrison:0 "行星驻防统筹"
- tech_artifact_planetary_garrison_desc:0 "把当地公共服务、补给和防御部署衔接起来。社区公共服务中心或中央庭分部可承接一组有维护的当地驻防，部队由原生防御军系统管理。"
+ tech_artifact_planetary_garrison_desc:0 "防御部署与当地服务、维护和配给设施接续，使守备力量能够长期驻留。动员能力因此成为城市日常组织的一部分。\n\n§H应用§!：通过有效治理设施付费建立当地驻防，持续承担维护；守备军留在殖民地执行防御任务。"
  artifact_precision_landing_army:0 "定向登陆队"
  artifact_precision_landing_army_plural:0 "定向登陆队"
  artifact_precision_landing_army_desc:0 "以低附带伤害执行地面目标任务的专业队伍。正面输出低于神器使守备队，训练更久，并需要消费品与较高能源维护。"

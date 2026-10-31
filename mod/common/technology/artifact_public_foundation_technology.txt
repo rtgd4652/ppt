@@ -1,5 +1,8 @@
-# R1a公共基础研究；不读取个人等级、人物组合或命运授权。
-# 基准观测与仪器标定：只开放本包设施，主动项目后续接入。
+# 公共研究、制造与民生基础。科技声明资格，建筑与公共项目负责实际岗位、扣费和月度进度。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# A03 基准观测标定
+# 实现：解锁基准观测站；低级建造与高级接续由建筑定义管理，不由研究完成事件直接造楼。
 tech_artifact_baseline_observation_calibration = {
 	area = physics
 	icon = "tech_artifact_black_gate_observation"
@@ -19,7 +22,8 @@ tech_artifact_baseline_observation_calibration = {
 	}
 }
 
-# 前线维修与标准件：只开放本包设施，主动项目后续接入。
+# B06 标准构件工程
+# 实现：场地供artifact_foundation读取；材料试制与营建仍需各自研究及实际投入，科技不产生舰船维修效果。
 tech_artifact_standard_parts = {
 	area = engineering
 	icon = "tech_artifact_relic_fabrication"
@@ -39,7 +43,8 @@ tech_artifact_standard_parts = {
 	}
 }
 
-# 殖民地公共服务：只开放本包设施，主动项目后续接入。
+# C07 殖民地公共服务
+# 实现：只解锁基础设施；轰炸民生支援与驻防分别由C09、D20及实际付费决议启用。
 tech_artifact_colony_public_services = {
 	area = society
 	icon = "tech_artifact_central_court_protocols"
@@ -59,7 +64,8 @@ tech_artifact_colony_public_services = {
 	}
 }
 
-# 异常样本封存：公共路线不读取人物与个人授权。
+# A04 异常样本封存
+# 实现：样本分析使用artifact_foundation共享项目槽，3次有效月度完成；实际扣费、暂停和清理由项目效果处理。
 tech_artifact_sample_containment = {
 	area = physics
 	icon = "tech_artifact_black_gate_observation"
@@ -79,7 +85,8 @@ tech_artifact_sample_containment = {
 	}
 }
 
-# 共鸣材料筛选：公共路线不读取人物与个人授权。
+# B07 共鸣材料筛选
+# 实现：材料试制及精密营建由artifact_foundation处理，和其他当地公共项目互斥；不增设材料货币。
 tech_artifact_resonance_material_screening = {
 	area = engineering
 	icon = "tech_artifact_relic_fabrication"
@@ -100,7 +107,8 @@ tech_artifact_resonance_material_screening = {
 	}
 }
 
-# 记忆档案编目：公共路线不读取人物与个人授权。
+# C08 记忆档案编目
+# 实现：解锁记忆档案室并衔接高级记忆宫；文案只指留存档案与个人记述，不承诺恢复所有轮回记忆。
 tech_artifact_memory_cataloguing = {
 	area = society
 	icon = "tech_artifact_seven_day_logistics"
@@ -121,7 +129,8 @@ tech_artifact_memory_cataloguing = {
 	}
 }
 
-# 殖民地模块化营建：公共路线不读取人物与个人授权。
+# E03 模块化营建
+# 实现：基础和精密营建使用artifact_foundation公共项目槽；4次有效月度后提供720日收益，不直接生成建筑。
 tech_artifact_modular_colony_construction = {
 	area = engineering
 	icon = "tech_artifact_central_court_protocols"

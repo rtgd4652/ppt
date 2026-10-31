@@ -1,6 +1,8 @@
-# 文明科技树：16项共有研究与3项军备研究，只读取文明研究／传统／公共飞升条件。
-# 爱缪莎正式转变的专属科技独立制作；旧舰／旧塔研究见 aemusa_legacy_technology.txt。
-# 塔罗演算：神器文明共有研究入口，保留文明身份和科技层级，不依赖个人30级飞升。
+# 文明基础研究与三档军备总包。资格只读取文明、研究、传统或公共飞升；个人路线与遗留旧舰旧塔研究独立。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# A01 塔罗演算
+# 实现：共有计算分支入口；只提供异常研究速度，不检查个人等级。塔罗案例转译为研究方法，不复制爱缪莎预言或主线命运权限。
 tech_artifact_tarot_calculation = {
 	area = physics
 	icon = tech_artifact_tarot_calculation
@@ -17,7 +19,8 @@ tech_artifact_tarot_calculation = {
 	}
 }
 
-# 黑门观测：解锁观测站，并作为后续共有研究的前置；现有武器由军备科技解锁。
+# A02 黑门观测体系
+# 实现：观测站通过prerequisites读取资格；舰船传感范围由科技modifier提供，武器解锁仍归军备分支。
 tech_artifact_black_gate_observation = {
 	area = physics
 	icon = tech_artifact_black_gate_observation
@@ -35,7 +38,8 @@ tech_artifact_black_gate_observation = {
 	}
 }
 
-# 神器锻造：解锁神器工坊，并作为共鸣制造的前置；现有舰船组件由军备科技解锁。
+# B01 神器锻造
+# 实现：建筑与后续研究读取科技资格；此处锻造的是工程材料与构件，不量产神器或神器使；舰船武器入口独立。
 tech_artifact_relic_fabrication = {
 	area = engineering
 	icon = tech_artifact_relic_fabrication
@@ -49,7 +53,8 @@ tech_artifact_relic_fabrication = {
 	}
 }
 
-# 中央庭调度协议：把神器使行动编制从单星球指挥扩展为跨殖民地治理。
+# C01 中央庭调度协议
+# 实现：国家法令经费由科技modifier提供；本节点不是角色组合或个人授权入口。
 tech_artifact_central_court_protocols = {
 	area = society
 	icon = tech_artifact_central_court_protocols
@@ -67,7 +72,8 @@ tech_artifact_central_court_protocols = {
 	}
 }
 
-# 塔罗经济演算：将无数次七日分歧整理为生产、科研与行政的预测模型。
+# C02 塔罗经济演算
+# 实现：artifact_engineering从白夜馆系统入口读取本科技；保留丽、安单人及自由协作。塔罗方法来自角色案例转译，不直接结算后续研究。
 tech_artifact_tarot_economy = {
 	area = physics
 	icon = tech_artifact_tarot_economy
@@ -83,7 +89,8 @@ tech_artifact_tarot_economy = {
 	# 通过白夜馆开放首都工坊试验，实际资格由工程模块读取此科技。
 }
 
-# 共鸣制造体系：将神器碎片、相位合金与中央庭工坊规范合并为后期舰队工业线。
+# B02 共鸣制造体系
+# 实现：合金修正来自科技modifier；工坊岗位和首都试验工作量分别由建筑与artifact_engineering模块读取，勿合并为免费工程完成。
 tech_artifact_resonance_manufacturing = {
 	area = engineering
 	icon = tech_artifact_resonance_manufacturing
@@ -101,7 +108,8 @@ tech_artifact_resonance_manufacturing = {
 	}
 }
 
-# 七日后勤网络：把中央庭守望传统转化为行星级调度制度，解锁七日调度中枢。
+# C03 七日后勤网络
+# 实现：potential保留tr_artifact_court_finish；建筑、C2与其他公共前置读取同一科技，不能为文字整理删除传统门槛。
 tech_artifact_seven_day_logistics = {
 	area = society
 	icon = tech_artifact_seven_day_logistics
@@ -120,7 +128,8 @@ tech_artifact_seven_day_logistics = {
 	}
 }
 
-# 命运经济矩阵：文明共有的后期经济研究，解锁命运经济演算院与研究尖塔。
+# E01 行星经济矩阵
+# 实现：保留两座既有高级设施和产业修正；内部键及建筑名称兼容保留。公共经济演算不读取或授予个人命运权限。
 tech_artifact_destiny_economy = {
 	area = physics
 	icon = tech_artifact_destiny_economy
@@ -135,13 +144,14 @@ tech_artifact_destiny_economy = {
 	}
 
 	modifier = {
-		# 当前版本会把分学科科研速度修正判为无效，保留已验证的资源产出加成。
+		# 分学科科研速度字段曾被引擎判为无效；国家层保留工业产出修正，研究能力由具体设施提供。
 		country_alloys_produces_mult = 0.05
 		country_consumer_goods_produces_mult = 0.05
 	}
 }
 
-# 相位能源网：解锁神器使后期能量建筑。
+# B03 相位能源网
+# 实现：能源网及相位供能源自本Mod工程设计；仓储由科技modifier提供，设施负责能源产出，不把幻力或黑核定义为能源点。
 tech_artifact_phase_energy = {
 	area = physics
 	icon = tech_artifact_phase_energy
@@ -159,7 +169,8 @@ tech_artifact_phase_energy = {
 	}
 }
 
-# 相位矿脉采掘：解锁神器使后期矿石建筑。
+# B04 相位矿脉采掘
+# 实现：稳定站沿既有矿业建筑链接续；country_resource_max_add保持10000，不因文字调整改变旧档容量。
 tech_artifact_phase_extraction = {
 	area = engineering
 	icon = tech_artifact_phase_extraction
@@ -177,7 +188,8 @@ tech_artifact_phase_extraction = {
 	}
 }
 
-# 交界商业网络：解锁神器使后期贸易建筑。
+# C04 交界商业网络
+# 实现：商业塔的岗位与维护在建筑模块中；科技modifier只提供现有凝聚力加成，不承诺新的外交或贸易路线系统。
 tech_artifact_crossing_trade = {
 	area = society
 	icon = tech_artifact_crossing_trade
@@ -195,7 +207,8 @@ tech_artifact_crossing_trade = {
 	}
 }
 
-# 神器民生产业：解锁神器使后期消费品建筑。
+# C05 神器民生产业
+# 实现：消费品加成来自科技modifier，实际岗位来自建筑；保持与B02制造前置的连接。
 tech_artifact_civic_industry = {
 	area = engineering
 	icon = tech_artifact_civic_industry
@@ -213,7 +226,8 @@ tech_artifact_civic_industry = {
 	}
 }
 
-# 稀有共鸣精炼：解锁神器使三类基础稀有资源建筑。
+# B05 稀有共鸣精炼
+# 实现：精炼岗位承担三种资源的实际生产与维护；科技只解锁设施，定向配方由B13另行开放。
 tech_artifact_rare_resonance = {
 	area = engineering
 	icon = tech_artifact_rare_resonance
@@ -228,7 +242,8 @@ tech_artifact_rare_resonance = {
 	}
 }
 
-# 星海契约行政：解锁神器使后期影响力建筑。
+# C06 星海契约行政
+# 实现：当前能力为议事厅资格和国家法令经费；不修改星海共同体决议或外交规则。
 tech_artifact_covenant_administration = {
 	area = society
 	icon = tech_artifact_covenant_administration
@@ -247,7 +262,8 @@ tech_artifact_covenant_administration = {
 	}
 }
 
-# 旧日神器档案修复：解锁神器使小文物资源建筑。
+# F01 旧日神器档案修复
+# 实现：解锁档案馆及小型文物岗位；minor_artifacts是原版资源映射，不是量产神器、黑核或幻力结晶。
 tech_artifact_relic_archive_restoration = {
 	area = society
 	icon = tech_artifact_relic_archive_restoration
@@ -262,7 +278,8 @@ tech_artifact_relic_archive_restoration = {
 	}
 }
 
-# 命运都市工程：解锁神器使专属的理想城式星球改造。
+# E02 命运都市工程
+# 实现：C2决议继续核对公共飞升、行星准备与一次性国家记录；本科技不自动改造星球或重置冷却。
 tech_artifact_destiny_city_project = {
 	area = engineering
 	icon = tech_artifact_destiny_city_project
@@ -277,7 +294,8 @@ tech_artifact_destiny_city_project = {
 	}
 }
 
-# 神器使战斗编制：解锁神器使前期陆军、基础专属武器、防御组件和战术核心。
+# D01 神器使战斗编制
+# 实现：遗留基础军备总包由现有陆军与组件读取；研究只依赖基础军科，迁移前不得撤销旧解锁条件。
 tech_artifact_user_combat_doctrine = {
 	area = society
 	icon = tech_artifact_user_combat_doctrine
@@ -291,7 +309,8 @@ tech_artifact_user_combat_doctrine = {
 	}
 }
 
-# 神器共鸣军备：解锁神器使中期陆军和等同原版后期强度的舰船武器与组件。
+# D02 神器共鸣军备
+# 实现：保留ap_artifact_user_resonance_path；本节点是既有中阶军备资格，具体强度由组件和陆军定义决定。
 tech_artifact_user_resonance_armaments = {
 	area = engineering
 	icon = tech_artifact_user_resonance_armaments
@@ -306,7 +325,8 @@ tech_artifact_user_resonance_armaments = {
 	}
 }
 
-# 神器终解战争学：解锁神器使后期超模陆军、终局舰船武器、护盾、装甲、电脑、传感器与 A 槽核心。
+# D03 神器终解战争学
+# 实现：保留公共终解飞升与原版零点能源前置；终解是当前Mod公共军备阶段用语，不据此宣称原作统一状态或授予爱缪莎正式转变。
 tech_artifact_user_apotheosis_warfare = {
 	area = engineering
 	icon = tech_artifact_user_apotheosis_warfare

@@ -1,6 +1,8 @@
-# R3d五项公共研究：只解锁独立装备和攻坚军，不写全国或个人修正。
+# 远距火力、分层防御、舰内维修、航行与攻坚研究。科技只声明资格，装备参数由相应组件或陆军定义。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
 
-# D08 长程相位投射：前置沿用已批准的公共路线。
+# D08 长程相位投射
+# 实现：射程、追踪与冷却写在artifact_midgame_military_components，科技无全局射程加成。
 tech_artifact_long_range_phase_projection = {
 	area = physics
 	icon = "tech_artifact_user_combat_doctrine"
@@ -12,7 +14,8 @@ tech_artifact_long_range_phase_projection = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
-# D09 分层相位防御：前置沿用已批准的公共路线。
+# D09 分层相位防御
+# 实现：护盾读取D09，复合装甲同时读取D09和D15；双前置在组件层核对，不改写D09科技树依赖。
 tech_artifact_layered_phase_defense = {
 	area = physics
 	icon = "tech_artifact_relic_fabrication"
@@ -24,7 +27,8 @@ tech_artifact_layered_phase_defense = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
-# D11 战损回收与补给：前置沿用已批准的公共路线。
+# D11 舰内维修循环
+# 实现：恢复使用舰体与装甲原生再生字段；维护使用ship_modifier中的ships_upkeep_mult，禁止重新使用曾导致加载故障的无效维护字段。
 tech_artifact_battle_damage_reclamation = {
 	area = engineering
 	icon = "tech_artifact_relic_fabrication"
@@ -36,7 +40,8 @@ tech_artifact_battle_damage_reclamation = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
-# D18 超空间航行协调：前置沿用已批准的公共路线。
+# D18 超空间航行协调
+# 实现：使用常规FTL组件；只改变已配置的超空间性能字段，不赋予任意跳跃能力。
 tech_artifact_hyperspace_coordination = {
 	area = physics
 	icon = "tech_artifact_seven_day_logistics"
@@ -48,7 +53,8 @@ tech_artifact_hyperspace_coordination = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
-# D21 共鸣攻坚工程：前置沿用已批准的公共路线。
+# D21 共鸣攻坚工程
+# 实现：独立攻坚军由artifact_resonance_siege_armies定义；与定向登陆队保留不同代价和用途，不替代旧军种。
 tech_artifact_resonance_siege_engineering = {
 	area = engineering
 	icon = "tech_artifact_user_combat_doctrine"
@@ -59,4 +65,3 @@ tech_artifact_resonance_siege_engineering = {
 	weight = 65
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
-

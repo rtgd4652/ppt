@@ -1,4 +1,8 @@
-# R4a公共实验与接口；科技抽取只沿批准依赖，实际运行另核对真实实验记录。
+# 受控实验与公共锚定研究。科技前置决定研究资格，实验记录归档和防护部署分别核对实际条件。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# A08 受控边界实验
+# 实现：artifact_foundation复用当地项目槽和原拥有者；准备2次、实验3次、恢复1次有效月度，全部完成才生成720日记录。
 tech_artifact_controlled_boundary_experiments = {
 	area = physics
 	icon = "tech_artifact_black_gate_observation"
@@ -10,6 +14,8 @@ tech_artifact_controlled_boundary_experiments = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
+# A10 边界稳定理论
+# 实现：科技抽卡只读批准前置；artifact_boundary_archive核对真实结果并写国家接口记录，不授予主线枢纽或个人权限。
 tech_artifact_stable_rule_interface = {
 	area = physics
 	icon = "tech_artifact_tarot_calculation"
@@ -21,6 +27,8 @@ tech_artifact_stable_rule_interface = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
+# E08 规则锚定工程
+# 实现：civil_supply记录部署窗口和原拥有者；建筑提供−20%轰炸伤害，运行条件必须允许轰炸，不能套用启动时的无轰炸限制。
 tech_artifact_rule_anchoring_engineering = {
 	area = physics
 	icon = "tech_artifact_central_court_protocols"

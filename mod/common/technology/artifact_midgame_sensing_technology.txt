@@ -1,4 +1,8 @@
-# R2c公共观测研究：测量、预警、轨道支援分别解锁，不读取个人权限或剧情阶段。
+# 地表阵列与轨道观测研究。感知收益依赖实际设施及控制，当前不推演未来危机。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# A06 长基线高维测量
+# 实现：唯一阵列及其国家收益由artifact_midgame_sensing_buildings管理；科技本身不扫描目标或预测事件。
 tech_artifact_long_baseline_measurement = {
 	area = physics
 	icon = "tech_artifact_black_gate_observation"
@@ -18,7 +22,8 @@ tech_artifact_long_baseline_measurement = {
 	}
 }
 
-# 预警建立在实有测量基础上；只提高原生可探测目标的判读，不生成未来事件。
+# A07 相位扰动预警
+# 实现：读取真实阵列与同星轨道接口；当前能力是传感、航道探知及隐形探测，不承担专属危机事件预报。
 tech_artifact_phase_disturbance_warning = {
 	area = physics
 	icon = "tech_artifact_black_gate_observation"
@@ -38,7 +43,8 @@ tech_artifact_phase_disturbance_warning = {
 	}
 }
 
-# 轨道接口是星港建筑，不额外创建行星设施、舰载组件或巨构。
+# E06 轨道协同工程
+# 实现：接口占用星港建筑槽；同星阵列、拥有者与控制条件在artifact_midgame_sensing模块读取，不新增行星建筑。
 tech_artifact_orbital_coordination = {
 	area = engineering
 	icon = "tech_artifact_central_court_protocols"

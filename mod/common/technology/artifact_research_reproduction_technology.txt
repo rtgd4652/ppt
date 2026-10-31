@@ -1,4 +1,8 @@
-# R2e公共方法记录：档案只收录真实有效的公共实验成果，不读取人物或个人权限。
+# 公共方法归档与科研场地研究。实验成果、知识记录与付费复现各自核对，不能用研究完成代替真实成果。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
+
+# C10 实验复现体系
+# 实现：artifact_research_archive只接受有效样本或材料修正；国家方法永久保存，复现仍需E05与当地项目槽，不补算失效历史。
 tech_artifact_public_reproduction_protocol = {
 	area = society
 	icon = "tech_artifact_seven_day_logistics"
@@ -15,7 +19,8 @@ tech_artifact_public_reproduction_protocol = {
 	}
 }
 
-# 科研设施整合是公共能力；低阶园区和原研究尖塔承担同一种复现场地。
+# E05 科研平台工程
+# 实现：园区与尖塔是E05复现场地的替代项；研究主管容量400和800，复现复用R1付费与原拥有者账本。
 tech_artifact_research_campus_integration = {
 	area = physics
 	icon = "tech_artifact_tarot_calculation"

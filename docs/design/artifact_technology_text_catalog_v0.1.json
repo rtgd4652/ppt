@@ -1,0 +1,2239 @@
+{
+  "date": "2026-10-31",
+  "source_base": "c6c27fe",
+  "scope": "62项已实现公共科技的显示名称、两层卡面文案与技术注释；18项未实现节点另列。",
+  "status": "source_grounded_static_passed",
+  "entries": [
+    {
+      "id": "A01",
+      "key": "tech_artifact_tarot_calculation",
+      "previous_name": "塔罗演算",
+      "name": "塔罗演算",
+      "lore": "爱缪莎的塔罗与计算能力为异常研究提供了独特案例。研究者记录牌阵、判断条件与实际结果，尝试提炼可由仪器和实验检验的分析方法。",
+      "application": "提高异常现象研究速度，为黑门观测与中央庭调度研究奠定基础。",
+      "implementation_note": "共有计算分支入口；只提供异常研究速度，不检查个人等级。塔罗案例转译为研究方法，不复制爱缪莎预言或主线命运权限。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "aemusa_tarot"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "A02",
+      "key": "tech_artifact_black_gate_observation",
+      "previous_name": "黑门观测体系",
+      "name": "黑门观测体系",
+      "lore": "交界都市留下的黑门观测记录，如今有了持续积累和相互比对的条件。研究者将这套方法带入星际环境，寻找异常边界的变化，也保留尚无法解释的部分。",
+      "application": "解锁黑门观测站并提高舰船传感器范围，为神器锻造与经济演算提供观测基础。",
+      "implementation_note": "观测站通过prerequisites读取资格；舰船传感范围由科技modifier提供，武器解锁仍归军备分支。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "A03",
+      "key": "tech_artifact_baseline_observation_calibration",
+      "previous_name": "基准观测与仪器标定",
+      "name": "基准观测标定",
+      "lore": "从交界都市的旧观测点到远方殖民地，记录只有采用共同尺度，才能彼此比较。基准站持续校正仪器，让研究者分辨测量误差与真正的异常。",
+      "application": "解锁基准观测站；取得黑门观测体系后可升级为黑门观测站。",
+      "implementation_note": "解锁基准观测站；低级建造与高级接续由建筑定义管理，不由研究完成事件直接造楼。",
+      "technology_file": "mod/common/technology/artifact_public_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_public_foundation_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "A04",
+      "key": "tech_artifact_sample_containment",
+      "previous_name": "异常样本封存",
+      "name": "异常样本封存",
+      "lore": "黑门危机留下了危险样本，也留下了接近未知的教训。隔离、追踪和取用规程让研究能够继续，撤离通道与封存措施始终是设施的一部分。",
+      "application": "解锁异常样本保管库。通过行星决议投入物资进行样本分析，取得有期限的当地研究成果。",
+      "implementation_note": "样本分析使用artifact_foundation共享项目槽，3次有效月度完成；实际扣费、暂停和清理由项目效果处理。",
+      "technology_file": "mod/common/technology/artifact_public_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_public_foundation_buildings.txt",
+        "mod/common/decisions/artifact_foundation_decisions.txt",
+        "mod/common/scripted_triggers/artifact_foundation_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "A05",
+      "key": "tech_artifact_multi_source_comparison",
+      "previous_name": "多源异常比对",
+      "name": "多源异常比对",
+      "lore": "远距观测给出异常的轮廓，封存样本揭示其局部响应。两类证据彼此校正，可以排除单一观测手段无法识别的误差。",
+      "application": "同一殖民地的黑门观测站与样本保管库或受控边界实验室同时运行时，提高当地物理与工程研究产出。",
+      "implementation_note": "收益由观测站的triggered_planet_modifier提供；样本库与高级实验室是同一来源的替代项，停用后失效。",
+      "technology_file": "mod/common/technology/artifact_midgame_observation_energy_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_observation_energy_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "A06",
+      "key": "tech_artifact_long_baseline_measurement",
+      "previous_name": "长基线高维测量",
+      "name": "长基线高维测量",
+      "lore": "拉开测量节点的距离，再将记录对齐到同一基准，微弱的相位差便能成为判断远方结构的线索。",
+      "application": "解锁全帝国限一处的长基线传感阵列，扩展传感网络，并为轨道观测协同提供地表基线。",
+      "implementation_note": "唯一阵列及其国家收益由artifact_midgame_sensing_buildings管理；科技本身不扫描目标或预测事件。",
+      "technology_file": "mod/common/technology/artifact_midgame_sensing_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_midgame_sensing_buildings.txt",
+        "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "A07",
+      "key": "tech_artifact_phase_disturbance_warning",
+      "previous_name": "相位扰动预警",
+      "name": "相位扰动预警",
+      "lore": "航道活动与隐匿航迹都会扰动周围的相位环境。持续校正背景噪声，使观测网络能够更早辨认这些微小变化。",
+      "application": "长基线阵列可升级为相位预警阵列，扩大航道探知；配合同星轨道观测接口可加强隐形探测。",
+      "implementation_note": "读取真实阵列与同星轨道接口；当前能力是传感、航道探知及隐形探测，不承担专属危机事件预报。",
+      "technology_file": "mod/common/technology/artifact_midgame_sensing_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_midgame_sensing_buildings.txt",
+        "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "A08",
+      "key": "tech_artifact_controlled_boundary_experiments",
+      "previous_name": "受控边界实验",
+      "name": "受控边界实验",
+      "lore": "研究者开始主动设置异常的发生条件，在有限场地内建立边界、测量响应，再将现场恢复到原有基准。恢复本身也是实验必须回答的问题。",
+      "application": "样本库可升级为受控边界实验室。通过行星决议付费完成准备、实验和恢复，取得可提交的实验记录。",
+      "implementation_note": "artifact_foundation复用当地项目槽和原拥有者；准备2次、实验3次、恢复1次有效月度，全部完成才生成720日记录。",
+      "technology_file": "mod/common/technology/artifact_boundary_engineering_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_boundary_engineering_buildings.txt",
+        "mod/common/decisions/artifact_foundation_decisions.txt",
+        "mod/common/scripted_triggers/artifact_foundation_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "A10",
+      "key": "tech_artifact_stable_rule_interface",
+      "previous_name": "稳定规则接口",
+      "name": "边界稳定理论",
+      "lore": "完整的实验记录揭示了异常边界维持与衰减的条件。把这些条件写成可重复验证的规则，工程设施便有了采用同一方法的基础。",
+      "application": "在有效实验室提交完整边界实验记录，形成供本国锚定试验场使用的稳定规则接口。",
+      "implementation_note": "科技抽卡只读批准前置；artifact_boundary_archive核对真实结果并写国家接口记录，不授予主线枢纽或个人权限。",
+      "technology_file": "mod/common/technology/artifact_boundary_engineering_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/scripted_triggers/artifact_foundation_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B01",
+      "key": "tech_artifact_relic_fabrication",
+      "previous_name": "神器锻造",
+      "name": "神器锻造",
+      "lore": "中央庭工坊记录神器使参与加工时的材料响应，将可重复的温度、形变与处理步骤整理为工艺。仪器承接了精密控制，个体共鸣仍由神器使本人维持。",
+      "application": "解锁中央庭神器工坊，为共鸣制造研究提供基础。",
+      "implementation_note": "建筑与后续研究读取科技资格；此处锻造的是工程材料与构件，不量产神器或神器使；舰船武器入口独立。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/scripted_triggers/artifact_engineering_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B02",
+      "key": "tech_artifact_resonance_manufacturing",
+      "previous_name": "共鸣制造体系",
+      "name": "共鸣制造体系",
+      "lore": "从原料处理到最终检验，适合工程应用的共鸣条件被纳入制造工序。工坊之间能够交付相同标准的材料与构件，神器使的个体经验也有了可供比较的记录。",
+      "application": "解锁共鸣合金圣炉，增加神器工坊岗位并提高合金产出；同时提高首都工坊试验的月度工作量。",
+      "implementation_note": "合金修正来自科技modifier；工坊岗位和首都试验工作量分别由建筑与artifact_engineering模块读取，勿合并为免费工程完成。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/scripted_effects/artifact_engineering_effects.txt",
+        "mod/common/scripted_triggers/artifact_engineering_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B03",
+      "key": "tech_artifact_phase_energy",
+      "previous_name": "相位能源网",
+      "name": "相位能源网",
+      "lore": "黑门观测为能量研究提供了新的线索。工程人员在隔离设施内检验可控的能量交换，再以调节与储能系统将供能接入日常电网。",
+      "application": "解锁黑门相位反应堆，并增加资源储存上限。",
+      "implementation_note": "能源网及相位供能源自本Mod工程设计；仓储由科技modifier提供，设施负责能源产出，不把幻力或黑核定义为能源点。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/scripted_effects/artifact_engineering_effects.txt",
+        "mod/common/scripted_triggers/artifact_engineering_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B04",
+      "key": "tech_artifact_phase_extraction",
+      "previous_name": "相位矿脉采掘",
+      "name": "相位矿脉采掘",
+      "lore": "深层矿体中的相位扰动曾使常规开采难以持续。共鸣支撑结构为矿层提供稳定条件，让采掘设备能够长期作业。",
+      "application": "解锁相位矿脉稳定站，并增加资源储存上限。",
+      "implementation_note": "稳定站沿既有矿业建筑链接续；country_resource_max_add保持10000，不因文字调整改变旧档容量。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B05",
+      "key": "tech_artifact_rare_resonance",
+      "previous_name": "稀有共鸣精炼",
+      "name": "稀有共鸣精炼",
+      "lore": "相位材料对不同共鸣条件的响应，使其中混杂的稀有成分能够分离。稳定控制这些条件是连续精炼的关键。",
+      "application": "解锁稀有共鸣精炼所，生产易爆微粒、稀有水晶和异星天然气。",
+      "implementation_note": "精炼岗位承担三种资源的实际生产与维护；科技只解锁设施，定向配方由B13另行开放。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B06",
+      "key": "tech_artifact_standard_parts",
+      "previous_name": "前线维修与标准件",
+      "name": "标准构件工程",
+      "lore": "统一的尺寸、公差与接头，让损坏的构件能够在遥远殖民地得到替换。可维护性从设计之初就成为工程标准。",
+      "application": "解锁标准件工坊，为材料试制和模块化营建提供场地；取得神器锻造后可升级为中央庭神器工坊。",
+      "implementation_note": "场地供artifact_foundation读取；材料试制与营建仍需各自研究及实际投入，科技不产生舰船维修效果。",
+      "technology_file": "mod/common/technology/artifact_public_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_public_foundation_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B07",
+      "key": "tech_artifact_resonance_material_screening",
+      "previous_name": "共鸣材料筛选",
+      "name": "共鸣材料筛选",
+      "lore": "材料在稳定状态下的表现不足以决定其用途。反复比较不同共鸣条件下的响应，才能选出适合研究与工程的构件。",
+      "application": "在标准件工坊或中央庭神器工坊付费开展材料试制，并为精密营建提供材料基础。",
+      "implementation_note": "材料试制及精密营建由artifact_foundation处理，和其他当地公共项目互斥；不增设材料货币。",
+      "technology_file": "mod/common/technology/artifact_public_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/decisions/artifact_foundation_decisions.txt",
+        "mod/common/scripted_triggers/artifact_foundation_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B08",
+      "key": "tech_artifact_manufacturing_quality_control",
+      "previous_name": "共鸣制造质量控制",
+      "name": "共鸣精密制造",
+      "lore": "持续记录炉况与构件误差，使共鸣制造能够控制更细的公差。生产规模扩大时，合格材料的稳定供应同样得到保障。",
+      "application": "共鸣合金圣炉可升级为共鸣精密合金炉，增加冶金岗位容量并承担更高维护。",
+      "implementation_note": "只解锁原槽建筑升级；产能取决于实际岗位就业，新增维护写在高级建筑中，不提供额外全国乘区。",
+      "technology_file": "mod/common/technology/artifact_civil_supply_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_civil_supply_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B09",
+      "key": "tech_artifact_low_loss_phase_transmission",
+      "previous_name": "低损耗相位传输",
+      "name": "低损耗相位传输",
+      "lore": "以共鸣材料约束能量传输中的相位偏移，可以减少途中耗散。持续校准所需的设备和耗材成为这套供能体系的一部分。",
+      "application": "解锁相位供能试验站，生产能源与物理研究；取得相位能源网后可升级为黑门相位反应堆。",
+      "implementation_note": "供能岗位消耗消费品、试验站持续消耗合金；高阶反应堆保留B03资格，不能由本科技直接取得。",
+      "technology_file": "mod/common/technology/artifact_midgame_observation_energy_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_observation_energy_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_midgame_observation_energy_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B10",
+      "key": "tech_artifact_precision_vein_mapping",
+      "previous_name": "精准矿脉测绘",
+      "name": "精准矿脉测绘",
+      "lore": "矿体的走向、密度与异常边界被共同纳入测绘。采掘计划因此能够沿着可用矿层展开，并为后续稳定工程留下依据。",
+      "application": "在已有普通采矿区的殖民地建设矿脉测绘站，随后可沿相位矿脉采掘研究升级。",
+      "implementation_note": "建筑条件检查当地采矿开发；本节点不创建矿脉或自动解锁B04，既有升级链保持。",
+      "technology_file": "mod/common/technology/artifact_midgame_resource_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_resource_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_midgame_resource_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B11",
+      "key": "tech_artifact_distributed_supply_storage",
+      "previous_name": "分布式配给仓储",
+      "name": "分布式配给仓储",
+      "lore": "工程所需的材料在使用之前就被分类、编组和留存。殖民地因此能够在日常供给之外，为明确的施工任务准备物资。",
+      "application": "解锁分布式配给仓。每颗殖民地可付费预留一份工程物资，用于当地施工或后续联运。",
+      "implementation_note": "库存为acs_supply_reserved与原拥有者记录；预留逐项扣500矿物、100合金，退款与交付由civil_supply效果处理。",
+      "technology_file": "mod/common/technology/artifact_civil_supply_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_civil_supply_buildings.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B12",
+      "key": "tech_artifact_byproduct_recycling",
+      "previous_name": "副产物闭环利用",
+      "name": "副产物闭环利用",
+      "lore": "回收工序被接入采矿与制造流程，残余材料在分选、处理后重新进入生产。持续运转需要人员、能源与耗材。",
+      "application": "解锁循环回收处理厂，以岗位和维护投入回收可用资源。",
+      "implementation_note": "资源由artifact_midgame_resource_jobs持续结算；有效产业来源约束回收岗位，不由事件返还已支付工程费用。",
+      "technology_file": "mod/common/technology/artifact_midgame_resource_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_resource_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_midgame_resource_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "B13",
+      "key": "tech_artifact_directed_resonance_refining",
+      "previous_name": "稀有共鸣定向精炼",
+      "name": "定向共鸣精炼",
+      "lore": "同一批原料可以通过不同的共鸣条件偏向某种产物。调节生产线需要时间，却让稀有资源供应能够响应实际需求。",
+      "application": "精炼所可升级为定向共鸣精炼中心，付费切换均衡生产或一种优先产物。",
+      "implementation_note": "civil_supply保存互斥配方；调整90日期间使用基础配方，三种优先产物不能同时获得满额收益。",
+      "technology_file": "mod/common/technology/artifact_civil_supply_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_civil_supply_buildings.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C01",
+      "key": "tech_artifact_central_court_protocols",
+      "previous_name": "中央庭调度协议",
+      "name": "中央庭调度协议",
+      "lore": "中央庭曾把巡查、救援与物资申请汇集到同一张调度表上。如今这套经验延伸到星海，让远方殖民地也能明确谁负责、谁支援，以及资源将送往何处。",
+      "application": "增加法令经费，为经济演算与交界商业网络研究提供行政基础。",
+      "implementation_note": "国家法令经费由科技modifier提供；本节点不是角色组合或个人授权入口。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/scripted_triggers/artifact_engineering_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C02",
+      "key": "tech_artifact_tarot_economy",
+      "previous_name": "塔罗经济演算",
+      "name": "塔罗经济演算",
+      "lore": "塔罗演算启发了比较不同选择的研究方法。中央庭将它用于物资与建设方案，在实际试验中检验收益、代价和风险，让下一步投入有据可循。",
+      "application": "从白夜馆进入首都工坊试验，投入物资为一个后续研究方向建立试验条件；取得候选后仍需完成研究。",
+      "implementation_note": "artifact_engineering从白夜馆系统入口读取本科技；保留丽、安单人及自由协作。塔罗方法来自角色案例转译，不直接结算后续研究。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/scripted_triggers/artifact_engineering_triggers.txt",
+        "mod/events/artifact_engineering_events.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history",
+        "aemusa_tarot"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C03",
+      "key": "tech_artifact_seven_day_logistics",
+      "previous_name": "七日后勤网络",
+      "name": "七日后勤网络",
+      "lore": "七日危机中的疏散、补给与守望经验，被整理为能够长期运作的后勤制度。它连接日常供给与应急储备，让城市在下一次危机到来时仍有余地。",
+      "application": "解锁七日调度中枢与中央庭记忆宫，并提高凝聚力产出；需要完成中央庭守望传统树。",
+      "implementation_note": "potential保留tr_artifact_court_finish；建筑、C2与其他公共前置读取同一科技，不能为文字整理删除传统门槛。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/decisions/artifact_emergency_decisions.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C04",
+      "key": "tech_artifact_crossing_trade",
+      "previous_name": "交界商业网络",
+      "name": "交界商业网络",
+      "lore": "从交界都市的街区市场到殖民地港口，交易建立在安全通行与持续信任之上。相互连接的市场，让遥远社区也能获得稳定供应。",
+      "application": "解锁交界商业塔，并提高凝聚力产出。",
+      "implementation_note": "商业塔的岗位与维护在建筑模块中；科技modifier只提供现有凝聚力加成，不承诺新的外交或贸易路线系统。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/scripted_effects/artifact_engineering_effects.txt",
+        "mod/common/scripted_triggers/artifact_engineering_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C05",
+      "key": "tech_artifact_civic_industry",
+      "previous_name": "神器民生产业",
+      "name": "神器民生产业",
+      "lore": "神器研究中适合反复使用的材料工艺走出了试验场。工匠将它们用于工具、居住用品与公共设施，让异常研究的成果进入普通人的生活。",
+      "application": "解锁神器民生工坊，并提高消费品产出。",
+      "implementation_note": "消费品加成来自科技modifier，实际岗位来自建筑；保持与B02制造前置的连接。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C06",
+      "key": "tech_artifact_covenant_administration",
+      "previous_name": "星海契约行政",
+      "name": "星海契约行政",
+      "lore": "中央庭的协调职责随殖民地一同延伸。跨越星系的承诺需要明确责任、权限与履约方式，才能让相隔遥远的社区保持可预期的合作。",
+      "application": "解锁星海契约议事厅，并增加法令经费。",
+      "implementation_note": "当前能力为议事厅资格和国家法令经费；不修改星海共同体决议或外交规则。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C07",
+      "key": "tech_artifact_colony_public_services",
+      "previous_name": "殖民地公共服务",
+      "name": "殖民地公共服务",
+      "lore": "交界都市的重建经验首先关乎人的生活：有水、有食物、有能够求助的地方。殖民规划把供给、维护与社区服务一同带入新的家园。",
+      "application": "解锁社区公共服务中心和基础民生工场，为后续灾害应对与驻防提供场地。",
+      "implementation_note": "只解锁基础设施；轰炸民生支援与驻防分别由C09、D20及实际付费决议启用。",
+      "technology_file": "mod/common/technology/artifact_public_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_public_foundation_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C08",
+      "key": "tech_artifact_memory_cataloguing",
+      "previous_name": "记忆档案编目",
+      "name": "记忆档案编目",
+      "lore": "七日轮回结束后，保存下来的档案与幸存者的记述终于能够持续积累。编目工作标明来源、分歧和缺页，让后来者知道哪些经验可以依循，哪些仍待查证。",
+      "application": "解锁记忆档案室；取得七日后勤网络后可升级为中央庭记忆宫。",
+      "implementation_note": "解锁记忆档案室并衔接高级记忆宫；文案只指留存档案与个人记述，不承诺恢复所有轮回记忆。",
+      "technology_file": "mod/common/technology/artifact_public_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_public_foundation_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C09",
+      "key": "tech_artifact_refuge_organization",
+      "previous_name": "中央庭灾害统筹",
+      "name": "中央庭灾害统筹",
+      "lore": "黑门危机中的疏散与安置经验，如今也用于应对来自轨道的威胁。避难路线、应急配给和服务人员被纳入常备安排，在城市受损时维持基本生活。",
+      "application": "轰炸期间，本国控制下的有效社区公共服务中心提供稳定度+5、舒适度需求−10%。",
+      "implementation_note": "收益由社区设施条件修正提供，必须实际轰炸且本国控制；当前不降低轰炸伤害或阻止人口损失。",
+      "technology_file": "mod/common/technology/artifact_city_governance_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_city_planning_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_public_foundation_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C10",
+      "key": "tech_artifact_public_reproduction_protocol",
+      "previous_name": "公共研究复现协议",
+      "name": "实验复现体系",
+      "lore": "研究方法与结果一起保存，其他研究者才能重新建立相同的实验条件。一次试验的价值因此能够延伸到更多殖民地。",
+      "application": "通过当地项目页归档仍有效的样本或材料成果；配合科研园区，在其他殖民地付费复现对应成果。",
+      "implementation_note": "artifact_research_archive只接受有效样本或材料修正；国家方法永久保存，复现仍需E05与当地项目槽，不补算失效历史。",
+      "technology_file": "mod/common/technology/artifact_research_reproduction_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/scripted_triggers/artifact_foundation_triggers.txt",
+        "mod/events/artifact_foundation_events.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C11",
+      "key": "tech_artifact_intercolony_transport",
+      "previous_name": "跨殖民地联运",
+      "name": "星际物资联运",
+      "lore": "物资在始发地就按用途编组，并在接收地完成交接。两处设施共同维护的调度记录，让分散的储备能够服务同一项工程。",
+      "application": "解锁联运换装站，连接一处始发端和一处接收端，转运已预留物资或共同供应大型工程。",
+      "implementation_note": "civil_supply只管理一对登记端点；转运消费实存库存，失控、停用与拥有者变化由原有守卫处理。",
+      "technology_file": "mod/common/technology/artifact_civil_supply_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_civil_supply_buildings.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "C12",
+      "key": "tech_artifact_covenant_cogovernance",
+      "previous_name": "文明契约共治",
+      "name": "文明契约共治",
+      "lore": "公共资源的分配需要让生产、研究与生活保障都拥有明确的位置。共同约定的调整程序，使城市能够有序改变运行重点。",
+      "application": "升级中央庭治理设施，在工业、科研和民生之间付费调整当地方案。",
+      "implementation_note": "共治方案由civil_supply互斥标记保存，180日调整期；两种高级治理设施并存时只供给一份方案收益。",
+      "technology_file": "mod/common/technology/artifact_civil_supply_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_civil_supply_buildings.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D01",
+      "key": "tech_artifact_user_combat_doctrine",
+      "previous_name": "神器使战斗编制",
+      "name": "神器使战斗编制",
+      "lore": "神器使、常规部队与舰载设备各有所长。共同的训练和指挥规程把这些力量安排在相互支持的位置，也为人员轮换与救援留下余地。",
+      "application": "解锁基础神器军队与舰船装备，为后续共鸣军备研究建立基础。",
+      "implementation_note": "遗留基础军备总包由现有陆军与组件读取；研究只依赖基础军科，迁移前不得撤销旧解锁条件。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/armies/aemusa_artifact_armies.txt",
+        "mod/common/component_templates/aemusa_artifact_tiered_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D02",
+      "key": "tech_artifact_user_resonance_armaments",
+      "previous_name": "神器共鸣军备",
+      "name": "神器共鸣军备",
+      "lore": "军备围绕已记录的共鸣表现调整承载、供能与防护。统一的校准规程，让不同部队能够在各自的任务中使用这些工程成果。",
+      "application": "解锁共鸣军队与相应舰船装备；需要神器共鸣之路。",
+      "implementation_note": "保留ap_artifact_user_resonance_path；本节点是既有中阶军备资格，具体强度由组件和陆军定义决定。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/armies/aemusa_artifact_armies.txt",
+        "mod/common/component_templates/aemusa_artifact_components.txt",
+        "mod/common/component_templates/aemusa_artifact_tiered_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D03",
+      "key": "tech_artifact_user_apotheosis_warfare",
+      "previous_name": "神器终解战争学",
+      "name": "神器终解战争学",
+      "lore": "随着神器工程进入终解阶段，公共军备需要同时容纳高负荷设备、常规部队与神器使协作。供能、人员轮换和指挥制度必须一同成熟。",
+      "application": "解锁终解军队与高阶舰船装备；需要神器终解之路。",
+      "implementation_note": "保留公共终解飞升与原版零点能源前置；终解是当前Mod公共军备阶段用语，不据此宣称原作统一状态或授予爱缪莎正式转变。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/armies/aemusa_artifact_armies.txt",
+        "mod/common/component_templates/aemusa_artifact_tiered_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D04",
+      "key": "tech_artifact_shipboard_interface",
+      "previous_name": "神器舰载接口",
+      "name": "神器舰载接口",
+      "lore": "共鸣装置的监测与供能被接入舰体标准接口。舰员通过仪器管理负载，常规船厂也能维护装置周围的承载结构。",
+      "application": "解锁辅助槽供能适配器，提供额外功率；占用辅助槽并承担制造与维护费用。",
+      "implementation_note": "组件提供固定30功率且占A槽；实际输出来自artifact_shipboard_foundation_components，不替换主反应堆。",
+      "technology_file": "mod/common/technology/artifact_shipboard_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_shipboard_foundation_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_shipboard_foundation_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D05",
+      "key": "tech_artifact_phase_ranging_array",
+      "previous_name": "相位测距阵列",
+      "name": "相位测距阵列",
+      "lore": "相位差测量被缩小到舰载尺度。相同的感知基础可以用于拉远观测距离，也可以专注于跟踪交战中的目标。",
+      "application": "解锁观测型与射控型相位测距仪，分别侧重远距感知和近距追踪。",
+      "implementation_note": "两种变体共用传感器槽，组件承担范围与追踪取舍；不将观测和射控收益合并为同一免费升级。",
+      "technology_file": "mod/common/technology/artifact_shipboard_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_shipboard_foundation_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_shipboard_foundation_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D06",
+      "key": "tech_artifact_close_resonance_weapons",
+      "previous_name": "近程共鸣武器",
+      "name": "近程共鸣武器",
+      "lore": "近距离持续扰动目标的能量场，可以使护盾难以维持完整结构。快速追踪让共鸣束能够跟随短促而频繁的机动。",
+      "application": "解锁短射程、高追踪的共鸣武器，擅长削弱护盾，对实体装甲效果较弱。",
+      "implementation_note": "S/M/L参数显式定义于artifact_close_combat_components；本科技无国家伤害修正，也不赋予防御穿透。",
+      "technology_file": "mod/common/technology/artifact_close_combat_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_close_combat_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D07",
+      "key": "tech_artifact_resonance_deflection",
+      "previous_name": "共鸣偏折防护",
+      "name": "共鸣偏折护盾",
+      "lore": "防护场持续重建受击区域，以更快的恢复补偿有限的容量。维持这种响应需要更高的供能。",
+      "application": "解锁共鸣偏折护盾，在护盾容量、恢复速度和功耗之间形成新的取舍。",
+      "implementation_note": "偏折护盾的容量、回复与耗能由各尺寸组件定义；硬化不是本研究的固有收益。",
+      "technology_file": "mod/common/technology/artifact_close_combat_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_close_combat_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D08",
+      "key": "tech_artifact_long_range_phase_projection",
+      "previous_name": "长程相位投射",
+      "name": "长程相位投射",
+      "lore": "将相位能量集中并维持到更远距离，使舰队能够在目标接近前展开火力。稳定投射所需的准备限制了开火频率。",
+      "application": "解锁远程相位武器；较低追踪和较长发射间隔使其更适合远距交战。",
+      "implementation_note": "射程、追踪与冷却写在artifact_midgame_military_components，科技无全局射程加成。",
+      "technology_file": "mod/common/technology/artifact_midgame_military_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_midgame_military_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D09",
+      "key": "tech_artifact_layered_phase_defense",
+      "previous_name": "分层相位防御",
+      "name": "分层相位防御",
+      "lore": "多层防护分别处理冲击与穿透，降低单一防护层失效后的风险。分层结构需要更复杂的供能与维护。",
+      "application": "解锁分层护盾；另具备符文舰体装甲研究时，可使用复合符文装甲。",
+      "implementation_note": "护盾读取D09，复合装甲同时读取D09和D15；双前置在组件层核对，不改写D09科技树依赖。",
+      "technology_file": "mod/common/technology/artifact_midgame_military_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_midgame_military_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D10",
+      "key": "tech_artifact_joint_combat_core",
+      "previous_name": "联合作战核心",
+      "name": "联合作战核心",
+      "lore": "舰队中的不同舰体承担不同距离和节奏的任务。按职责配置的作战核心协调各自的接敌方式与火力安排。",
+      "application": "解锁七种职责作战电脑，以及战术和支援辅助模块；按舰体与用途选择配置。",
+      "implementation_note": "七种电脑使用各自原生行为和舰体职责条件；A槽模块只修改本舰，不作为全舰队光环。",
+      "technology_file": "mod/common/technology/artifact_joint_operations_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_joint_operations_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_joint_operations_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D11",
+      "key": "tech_artifact_battle_damage_reclamation",
+      "previous_name": "战损回收与补给",
+      "name": "舰内维修循环",
+      "lore": "受损材料经过分选与处理，重新进入舰内维修流程。恢复设备和材料循环共同降低长期航行的补给压力。",
+      "application": "解锁辅助槽维修模块，恢复舰体与装甲，并降低本舰维护；装置持续消耗能源和材料。",
+      "implementation_note": "恢复使用舰体与装甲原生再生字段；维护使用ship_modifier中的ships_upkeep_mult，禁止重新使用曾导致加载故障的无效维护字段。",
+      "technology_file": "mod/common/technology/artifact_midgame_military_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_midgame_military_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D15",
+      "key": "tech_artifact_runic_hull_armor",
+      "previous_name": "符文舰体装甲",
+      "name": "符文舰体装甲",
+      "lore": "符文结构被嵌入实体装甲，使穿透作用更难绕过防护。材料与维护上的额外投入换来了新的抗打击方式。",
+      "application": "解锁三种尺寸的符文装甲，以装甲容量和额外维护换取装甲硬化。",
+      "implementation_note": "基础符文装甲读取D15；复合型号另需D09，保留旧装甲与现有舰船设计的解锁条件。",
+      "technology_file": "mod/common/technology/artifact_shipboard_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_shipboard_foundation_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_midgame_military_components.txt",
+        "mod/common/component_templates/artifact_shipboard_foundation_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D16",
+      "key": "tech_artifact_ship_phase_power",
+      "previous_name": "舰载相位供能",
+      "name": "舰载相位供能",
+      "lore": "相位传输装置被整合进常规舰用反应堆，为高负荷装备提供稳定功率。更复杂的结构提高了制造和维护成本。",
+      "application": "解锁适配常规舰体的相位反应堆，为高耗能配装提供供能选择。",
+      "implementation_note": "公共反应堆族由组件和舰体限制决定；个人专属核心及未来D13承载条件另行处理。",
+      "technology_file": "mod/common/technology/artifact_close_combat_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_close_combat_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D17",
+      "key": "tech_artifact_phase_maneuvering",
+      "previous_name": "相位机动推进",
+      "name": "相位机动推进",
+      "lore": "推进控制把更多功率用于姿态修正和规避动作。舰船获得更灵活的战术机动，同时为持续加速保留不同的取舍。",
+      "application": "解锁相位推进器，以较高功耗强化亚光速规避与机动。",
+      "implementation_note": "使用常规thruster槽；当前速度、闪避和功耗取舍由组件定义，不开放跃迁或更改FTL类型。",
+      "technology_file": "mod/common/technology/artifact_close_combat_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_close_combat_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D18",
+      "key": "tech_artifact_hyperspace_coordination",
+      "previous_name": "超空间航行协调",
+      "name": "超空间航行协调",
+      "lore": "舰载系统持续校正进入航道前的相位条件，减少充能准备中的冗余。舰队因而能够更有效地沿既有航道移动。",
+      "application": "解锁协同超空间引擎，以更高功耗与维护改善充能和星际航行效率。",
+      "implementation_note": "使用常规FTL组件；只改变已配置的超空间性能字段，不赋予任意跳跃能力。",
+      "technology_file": "mod/common/technology/artifact_midgame_military_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_midgame_military_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D19",
+      "key": "tech_artifact_precision_landings",
+      "previous_name": "定向登陆学",
+      "name": "定向登陆学",
+      "lore": "明确的作战目标、行动边界与撤离计划，使登陆队能够集中力量完成局部任务，同时减少对周围区域的破坏。",
+      "application": "解锁低附带伤害的定向登陆队，以较低正面输出和更长训练换取目标区域的保存。",
+      "implementation_note": "独立陆军类型由artifact_ground_forces_armies定义；降低附带伤害不等于保证居民或建筑免受损失。",
+      "technology_file": "mod/common/technology/artifact_ground_forces_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_ground_forces_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/armies/artifact_ground_forces_armies.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D20",
+      "key": "tech_artifact_planetary_garrison",
+      "previous_name": "行星驻防统筹",
+      "name": "行星驻防统筹",
+      "lore": "防御部署与当地服务、维护和配给设施接续，使守备力量能够长期驻留。动员能力因此成为城市日常组织的一部分。",
+      "application": "通过有效治理设施付费建立当地驻防，持续承担维护；守备军留在殖民地执行防御任务。",
+      "implementation_note": "驻防由artifact_garrison状态与有效建筑派生原生防御军；失控和供源失效按现有规则处理，不生成可免费循环运出的进攻军。",
+      "technology_file": "mod/common/technology/artifact_ground_forces_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_ground_forces_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/decisions/artifact_garrison_decisions.txt",
+        "mod/common/scripted_triggers/artifact_garrison_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D21",
+      "key": "tech_artifact_resonance_siege_engineering",
+      "previous_name": "共鸣攻坚工程",
+      "name": "共鸣攻坚工程",
+      "lore": "共鸣防护与重型突破装备共同支撑持续推进。更高耐久让部队能够承担强攻任务，也提高了部署成本与战场破坏。",
+      "application": "解锁共鸣攻坚军，具有较高耐久，同时承担更长训练、更高维护和更大附带伤害。",
+      "implementation_note": "独立攻坚军由artifact_resonance_siege_armies定义；与定向登陆队保留不同代价和用途，不替代旧军种。",
+      "technology_file": "mod/common/technology/artifact_midgame_military_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/armies/artifact_resonance_siege_armies.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "D22",
+      "key": "tech_artifact_expedition_reconstitution",
+      "previous_name": "远征轮换与整补",
+      "name": "远征整补体系",
+      "lore": "联运接收地把物资、训练与人员补充安排在同一流程中。前线需要的后备力量能够在持续供应下做好准备。",
+      "application": "接收端可投入预留物资、能源和消费品，开启限期训练支援，提高当地新军训练速度与初始经验。",
+      "implementation_note": "复用civil_supply库存与接收端身份；360日训练支援不治疗现有部队，费用及设施失效逻辑由决议和有效建筑核对。",
+      "technology_file": "mod/common/technology/artifact_joint_operations_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_joint_operations_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/decisions/artifact_civil_supply_decisions.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "E01",
+      "key": "tech_artifact_destiny_economy",
+      "previous_name": "命运经济矩阵",
+      "name": "行星经济矩阵",
+      "lore": "从塔罗演算发展出的方案比较方法，被用于更大规模的生产与研究调度。城市能够检验不同资源配置的结果，并据此调整下一阶段的建设。",
+      "application": "解锁命运经济演算院与命运研究尖塔，提高合金和消费品产出，并为后续城市工程提供基础。",
+      "implementation_note": "保留两座既有高级设施和产业修正；内部键及建筑名称兼容保留。公共经济演算不读取或授予个人命运权限。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history",
+        "aemusa_tarot"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "E02",
+      "key": "tech_artifact_destiny_city_project",
+      "previous_name": "命运都市工程",
+      "name": "命运都市工程",
+      "lore": "从交界都市的重建到星际殖民，人类逐渐学会把居住、生产与研究纳入同一座人工城市。行星环境本身成为长期建设的一部分，也承载着共同选择的未来。",
+      "application": "完成神器终解之路及行星准备后，可付费将一颗符合条件的行星改造为命运都市；每个帝国只能创建一次。",
+      "implementation_note": "C2决议继续核对公共飞升、行星准备与一次性国家记录；本科技不自动改造星球或重置冷却。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/decisions/aemusa_destiny_city_decisions.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "E03",
+      "key": "tech_artifact_modular_colony_construction",
+      "previous_name": "殖民地模块化营建",
+      "name": "模块化营建",
+      "lore": "建筑构件在工坊中预先准备，现场施工围绕标准模块展开。物资与工序的提前协调减少了复杂工程中的等待。",
+      "application": "在标准件工坊或中央庭神器工坊付费组织营建，为当地建筑施工提供有期限的支援。",
+      "implementation_note": "基础和精密营建使用artifact_foundation公共项目槽；4次有效月度后提供720日收益，不直接生成建筑。",
+      "technology_file": "mod/common/technology/artifact_public_foundation_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/decisions/artifact_foundation_decisions.txt",
+        "mod/common/scripted_triggers/artifact_foundation_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "E04",
+      "key": "tech_artifact_city_functional_zoning",
+      "previous_name": "城市功能分区",
+      "name": "城市功能分区",
+      "lore": "城市布局与资源流向可以围绕当前需要重新组织。研究、生产和民生各自获得清晰的位置，调整也需要相应投入。",
+      "application": "解锁城市经济演算室，可在有效演算设施中付费选择一个当地规划方向；规划可随设施升级延续。",
+      "implementation_note": "规划状态位于当地，由artifact_city_planning维护；三方向互斥，不占用或重置C2命运都市的一次性资格。",
+      "technology_file": "mod/common/technology/artifact_city_governance_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_city_planning_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/buildings/artifact_city_planning_buildings.txt",
+        "mod/common/decisions/artifact_city_planning_decisions.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "E05",
+      "key": "tech_artifact_research_campus_integration",
+      "previous_name": "研究园区整合",
+      "name": "科研平台工程",
+      "lore": "稳定的实验条件、人员支持与演算设备被建成长期科研平台。已有方法可以在这里重新实施，新的研究也有了可持续的场地。",
+      "application": "解锁公共研究园区，可升级为命运研究尖塔。掌握$tech_artifact_public_reproduction_protocol$并归档方法后，可付费复现样本或材料成果。",
+      "implementation_note": "园区与尖塔是E05复现场地的替代项；研究主管容量400和800，复现复用R1付费与原拥有者账本。",
+      "technology_file": "mod/common/technology/artifact_research_reproduction_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_public_research_buildings.txt",
+        "mod/common/scripted_triggers/artifact_foundation_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "E06",
+      "key": "tech_artifact_orbital_coordination",
+      "previous_name": "轨道协同工程",
+      "name": "轨道协同工程",
+      "lore": "地表基线与轨道观测设备共享校正结果，使两处设施能够共同辨认更远的信号。维持这条观测链需要稳定的供源与控制。",
+      "application": "解锁星港建筑轨道观测接口，配合同星本国有效阵列提供观测支援。",
+      "implementation_note": "接口占用星港建筑槽；同星阵列、拥有者与控制条件在artifact_midgame_sensing模块读取，不新增行星建筑。",
+      "technology_file": "mod/common/technology/artifact_midgame_sensing_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "E07",
+      "key": "tech_artifact_environment_buffering",
+      "previous_name": "行星环境缓冲",
+      "name": "行星环境缓冲",
+      "lore": "灾后城市对安全生活空间的需要延伸到了异星。持续供能的缓冲设施为居民区与生产场地维持局部环境，让殖民地能够适应部分恶劣自然条件。",
+      "application": "解锁环境缓冲站，减轻危险天气、弱磁场或辐照造成的部分惩罚；原有行星特征与开发限制仍然存在。",
+      "implementation_note": "artifact_environment_buildings按具体行星修正提供局部补偿；维护持续结算，不移除原风险特征或改写星球类型。",
+      "technology_file": "mod/common/technology/artifact_environment_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_environment_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_environment_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "E08",
+      "key": "tech_artifact_rule_anchoring_engineering",
+      "previous_name": "规则锚定工程",
+      "name": "规则锚定工程",
+      "lore": "经验证的边界条件被部署到公共设施，并在持续供能下短时维持。实验室中的稳定方法由此成为保护殖民地的工程能力。",
+      "application": "取得稳定规则接口记录后，可在轰炸开始前，于规则锚定试验场付费部署360日当地防护，减轻轨道轰炸伤害。",
+      "implementation_note": "civil_supply记录部署窗口和原拥有者；建筑提供−20%轰炸伤害，运行条件必须允许轰炸，不能套用启动时的无轰炸限制。",
+      "technology_file": "mod/common/technology/artifact_boundary_engineering_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_boundary_engineering_buildings.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    },
+    {
+      "id": "F01",
+      "key": "tech_artifact_relic_archive_restoration",
+      "previous_name": "旧日神器档案修复",
+      "name": "旧日神器档案修复",
+      "lore": "旧档案中的器物记录与保存下来的历史样本被重新编目。修复工作恢复了它们的研究价值，也为后续神器考据留下能够反复查验的材料。",
+      "application": "解锁旧日神器档案馆，其岗位生产小型文物。",
+      "implementation_note": "解锁档案馆及小型文物岗位；minor_artifacts是原版资源映射，不是量产神器、黑核或幻力结晶。",
+      "technology_file": "mod/common/technology/aemusa_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/aemusa_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history",
+        "unknown_boundaries"
+      ],
+      "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
+    }
+  ],
+  "unimplemented_nodes": [
+    {
+      "id": "A09",
+      "working_name": "跨殖民地观测联校",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "A11",
+      "working_name": "高维模型复核",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "A12",
+      "working_name": "公共神器理论",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "B14",
+      "working_name": "战略工程供应",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "D12",
+      "working_name": "有限场域压制",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "D13",
+      "working_name": "终解舰体承载",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "D14",
+      "working_name": "文明联合防务",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "E09",
+      "working_name": "分段大型工程",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "E10",
+      "working_name": "公共战略舰体工程",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "E11",
+      "working_name": "星系协同基础设施",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "E12",
+      "working_name": "文明工程统筹",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "F02",
+      "working_name": "危机信号鉴别",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "F03",
+      "working_name": "公共反制预案",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "F04",
+      "working_name": "应急工程冗余",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "F05",
+      "working_name": "文明联合恢复",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "F06",
+      "working_name": "灾后记录解译",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "F07",
+      "working_name": "终局舰船工程",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    },
+    {
+      "id": "F08",
+      "working_name": "终局巨构工程",
+      "status": "awaits_implementation_text",
+      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+    }
+  ],
+  "f07_f08_note": "终局舰船工程、终局巨构工程保留内部任务名；正式名称与文案等待奖励实际能力确定，不能靠华丽名称先行认领新能力。",
+  "applied": {
+    "renamed_technologies": 13,
+    "rewritten_technology_descriptions": 62,
+    "technology_definitions_with_notes": 62,
+    "localisation_files": [
+      "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_city_planning_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_environment_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_ground_forces_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_joint_operations_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_midgame_observation_energy_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_midgame_resource_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/artifact_shipboard_foundation_l_simp_chinese.yml",
+      "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml"
+    ],
+    "technology_files": [
+      "mod/common/technology/aemusa_technology.txt",
+      "mod/common/technology/artifact_public_foundation_technology.txt",
+      "mod/common/technology/artifact_midgame_observation_energy_technology.txt",
+      "mod/common/technology/artifact_midgame_sensing_technology.txt",
+      "mod/common/technology/artifact_boundary_engineering_technology.txt",
+      "mod/common/technology/artifact_civil_supply_technology.txt",
+      "mod/common/technology/artifact_midgame_resource_technology.txt",
+      "mod/common/technology/artifact_city_governance_technology.txt",
+      "mod/common/technology/artifact_research_reproduction_technology.txt",
+      "mod/common/technology/artifact_shipboard_foundation_technology.txt",
+      "mod/common/technology/artifact_close_combat_technology.txt",
+      "mod/common/technology/artifact_midgame_military_technology.txt",
+      "mod/common/technology/artifact_joint_operations_technology.txt",
+      "mod/common/technology/artifact_ground_forces_technology.txt",
+      "mod/common/technology/artifact_environment_technology.txt"
+    ],
+    "changed_localisation_keys": [
+      {
+        "key": "tech_artifact_controlled_boundary_experiments_desc",
+        "file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_stable_rule_interface",
+        "file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_stable_rule_interface_desc",
+        "file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_rule_anchoring_engineering_desc",
+        "file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "artifact_boundary.result",
+        "file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "artifact_boundary.require_archive",
+        "file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "tech_artifact_refuge_organization_desc",
+        "file": "mod/localisation/simp_chinese/artifact_city_planning_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_city_functional_zoning_desc",
+        "file": "mod/localisation/simp_chinese/artifact_city_planning_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_manufacturing_quality_control",
+        "file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_manufacturing_quality_control_desc",
+        "file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_distributed_supply_storage_desc",
+        "file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_directed_resonance_refining",
+        "file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_directed_resonance_refining_desc",
+        "file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_intercolony_transport",
+        "file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_intercolony_transport_desc",
+        "file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_covenant_cogovernance_desc",
+        "file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_close_resonance_weapons_desc",
+        "file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_resonance_deflection",
+        "file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_resonance_deflection_desc",
+        "file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_ship_phase_power_desc",
+        "file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_phase_maneuvering_desc",
+        "file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "ARTIFACT_RESONANCE_DEFLECTOR_DESC",
+        "file": "mod/localisation/simp_chinese/artifact_close_combat_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "tech_artifact_environment_buffering_desc",
+        "file": "mod/localisation/simp_chinese/artifact_environment_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "building_artifact_environment_buffer_station_desc",
+        "file": "mod/localisation/simp_chinese/artifact_environment_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "tech_artifact_sample_containment_desc",
+        "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_resonance_material_screening_desc",
+        "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_memory_cataloguing_desc",
+        "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_modular_colony_construction",
+        "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_modular_colony_construction_desc",
+        "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "artifact_foundation.sample_intro",
+        "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "artifact_foundation.benefit_sample_analysis",
+        "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "artifact_foundation.benefit_materials_study",
+        "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "tech_artifact_precision_landings_desc",
+        "file": "mod/localisation/simp_chinese/artifact_ground_forces_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_planetary_garrison_desc",
+        "file": "mod/localisation/simp_chinese/artifact_ground_forces_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_joint_combat_core_desc",
+        "file": "mod/localisation/simp_chinese/artifact_joint_operations_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_expedition_reconstitution",
+        "file": "mod/localisation/simp_chinese/artifact_joint_operations_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_expedition_reconstitution_desc",
+        "file": "mod/localisation/simp_chinese/artifact_joint_operations_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_long_range_phase_projection_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_layered_phase_defense_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_battle_damage_reclamation",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_battle_damage_reclamation_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_hyperspace_coordination_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_resonance_siege_engineering_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_military_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_multi_source_comparison_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_observation_energy_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_low_loss_phase_transmission_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_observation_energy_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_precision_vein_mapping_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_resource_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_byproduct_recycling_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_resource_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_long_baseline_measurement_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_phase_disturbance_warning_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_orbital_coordination_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "building_artifact_phase_warning_array_desc",
+        "file": "mod/localisation/simp_chinese/artifact_midgame_sensing_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "tech_artifact_baseline_observation_calibration",
+        "file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_baseline_observation_calibration_desc",
+        "file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_standard_parts",
+        "file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_standard_parts_desc",
+        "file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_colony_public_services_desc",
+        "file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_public_reproduction_protocol",
+        "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_public_reproduction_protocol_desc",
+        "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_research_campus_integration",
+        "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_research_campus_integration_desc",
+        "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "artifact_research.require_archive_sample",
+        "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "artifact_research.require_archive_materials",
+        "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "artifact_foundation.require_reproduce_sample",
+        "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "artifact_foundation.require_reproduce_materials",
+        "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "tech_artifact_shipboard_interface_desc",
+        "file": "mod/localisation/simp_chinese/artifact_shipboard_foundation_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_phase_ranging_array_desc",
+        "file": "mod/localisation/simp_chinese/artifact_shipboard_foundation_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_runic_hull_armor_desc",
+        "file": "mod/localisation/simp_chinese/artifact_shipboard_foundation_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_tarot_calculation_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_black_gate_observation_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_relic_fabrication_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_central_court_protocols_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_tarot_economy_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_resonance_manufacturing_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_seven_day_logistics_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_destiny_economy",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_destiny_economy_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_phase_energy_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_phase_extraction_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_crossing_trade_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_civic_industry_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_rare_resonance_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_covenant_administration_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_relic_archive_restoration_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_destiny_city_project_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "building_artifact_black_gate_observatory_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "building_artifact_relic_workshop_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "building_artifact_fate_calculus_institute_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "job_artifact_tarot_analyst_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "job_artifact_relic_artificer_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "building_artifact_destiny_research_spire_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "building_artifact_resonance_alloy_forge_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "building_artifact_civic_goods_manufactory_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "building_artifact_phase_reactor_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "building_artifact_rare_resonance_refinery_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "building_artifact_memory_palace_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "building_artifact_relic_archive_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "job_artifact_destiny_researcher_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "job_artifact_resonance_metallurgist_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "job_artifact_phase_technician_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "job_artifact_rare_resonator_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "tech_artifact_user_combat_doctrine_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_user_resonance_armaments_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "tech_artifact_user_apotheosis_warfare_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "technology"
+      },
+      {
+        "key": "artifact_user_guardian_army_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "artifact_user_resonance_army_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "artifact_user_apotheosis_army_desc",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "ARTIFACT_TACTICAL_CORE_3_DESC",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "ARTIFACT_COMBAT_COMPUTER_2_DESC",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "ARTIFACT_COMBAT_COMPUTER_3_DESC",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "ARTIFACT_SENSOR_2_DESC",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      },
+      {
+        "key": "ARTIFACT_SENSOR_3_DESC",
+        "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+        "kind": "related_text"
+      }
+    ],
+    "related_text_keys": 36
+  },
+  "source_policy": {
+    "index": "knowledge/database/seven_days_knowledge.sqlite",
+    "query_mode": "read_only",
+    "authority": "结构化JSON、Markdown及角色来源文本；SQLite仅用于定位，不作新设定权威",
+    "review_date": "2026-10-31",
+    "all_technology_copy_layer": "mod_design_decision",
+    "review_status_unchanged": true,
+    "future_workflow": "写新科技名称、背景、效果说明与注释之前，先查询七都数据库并读其指向来源，再核对实际脚本。"
+  },
+  "source_groups": {
+    "terms": {
+      "references": [
+        {
+          "path": "tools/knowledge/data/core_terms_v0.1.json",
+          "sections": [
+            "TERM-ARTIFACT",
+            "TERM-ARTIFACT-WIELDER",
+            "TERM-PHANTOM-ENERGY",
+            "TERM-BLACK-GATE",
+            "TERM-ARTIFACT-SCIENCE"
+          ]
+        }
+      ],
+      "use": "沿用术语边界；原作术语中的under_review保留，project_defined仅代表项目定义。"
+    },
+    "artifact_science": {
+      "references": [
+        {
+          "path": "knowledge/artifacts/artifact_bible_v0.1.md",
+          "sections": [
+            "1. 神器定义",
+            "2. 神器与普通科技区别",
+            "4. 神器与黑门关系",
+            "6. 神器使诞生机制（世界观解释）",
+            "8. 神器科学体系"
+          ]
+        }
+      ],
+      "use": "以普通工程支撑神器研究；工程材料可以标准化，个体神器与共鸣不能作为量产设备。"
+    },
+    "unknown_boundaries": {
+      "references": [
+        {
+          "path": "knowledge/world/fact_canon_mystery_matrix_v0.1.md",
+          "sections": [
+            "FCM-005",
+            "FCM-008",
+            "FCM-016",
+            "MYS-003",
+            "MYS-008",
+            "MYS-010"
+          ]
+        }
+      ],
+      "use": "不将黑门、幻力、能源点与小型文物互换；相位工程、材料应用、规则锚定是Mod转译，不补写黑门起源与命运终极答案。"
+    },
+    "central_court_history": {
+      "references": [
+        {
+          "path": "knowledge/organizations/organization_bible_v0.1.md",
+          "sections": [
+            "中央庭",
+            "神器研究体系",
+            "黑门研究体系"
+          ]
+        },
+        {
+          "path": "knowledge/world/fact_canon_mystery_matrix_v0.1.md",
+          "sections": [
+            "5. 项目正史的最小闭包",
+            "FCM-018"
+          ]
+        }
+      ],
+      "use": "以灾后公共治理、连续历史与跨学科研究为文明语气；保留记录缺口，白夜馆只作为玩家界面入口。"
+    },
+    "aemusa_tarot": {
+      "references": [
+        {
+          "path": "knowledge/characters/爱缪莎.md",
+          "sections": [
+            "神器故事1—3",
+            "日常故事1",
+            "日常故事3",
+            "羁绊片段4"
+          ]
+        },
+        {
+          "path": "knowledge/characters/aemusa_character_v0.1.md",
+          "sections": [
+            "2. MOD 历史定位",
+            "3. 神器设定",
+            "5. 剧情定位"
+          ]
+        }
+      ],
+      "use": "卡牌・塔罗牌、计算能力与个人预言来自角色资料；转译为公共研究方法是Mod设计，不泛化个人能力，不将角色故事写成普遍宇宙定律。"
+    },
+    "public_military": {
+      "references": [
+        {
+          "path": "knowledge/artifacts/artifact_bible_v0.1.md",
+          "sections": [
+            "2. 神器与普通科技区别",
+            "6. 神器使诞生机制（世界观解释）"
+          ]
+        },
+        {
+          "path": "docs/design/artifact_civilization_research_building_route_v0.3.json",
+          "sections": [
+            "D01",
+            "D02",
+            "D03",
+            "gates"
+          ]
+        }
+      ],
+      "use": "保留既有公共军备阶段；共鸣设备、符文装甲与终解军备是本Mod工程层，终解未在本次数据库查询中获得独立原作定义，不新增原作断言。"
+    }
+  },
+  "queried_term_states": [
+    {
+      "term_id": "TERM-ARTIFACT",
+      "title": "神器",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review"
+    },
+    {
+      "term_id": "TERM-ARTIFACT-WIELDER",
+      "title": "神器使",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review"
+    },
+    {
+      "term_id": "TERM-PHANTOM-ENERGY",
+      "title": "幻力",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review"
+    },
+    {
+      "term_id": "TERM-BLACK-GATE",
+      "title": "黑门",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review"
+    },
+    {
+      "term_id": "TERM-BLACK-GATE-CORE",
+      "title": "黑门之核",
+      "knowledge_layer": "original_fact",
+      "review_status": "under_review"
+    },
+    {
+      "term_id": "TERM-CENTRAL-COURT",
+      "title": "中央庭",
+      "knowledge_layer": "project_interpretation",
+      "review_status": "under_review"
+    },
+    {
+      "term_id": "TERM-ARTIFACT-SCIENCE",
+      "title": "神器科学",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined"
+    },
+    {
+      "term_id": "TERM-ARTIFACT-RESEARCH-SYSTEM",
+      "title": "神器研究体系",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined"
+    },
+    {
+      "term_id": "TERM-FATE-RULES",
+      "title": "命运规则",
+      "knowledge_layer": "mod_design_decision",
+      "review_status": "project_defined"
+    }
+  ],
+  "validation_report": "reports/artifact_technology_text_validation_2026-10-31.json",
+  "writing_guide": "docs/design/artifact_technology_writing_guide_v0.1.md"
+}

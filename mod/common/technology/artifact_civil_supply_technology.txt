@@ -1,6 +1,8 @@
-# R3e公共工业与制度；B11补齐联运前置，不读取个人转变或角色组合。
+# 公共工业、物资与共治研究。civil_supply管理已支付库存、有限联运端点和当地方案。
+# 玩家名称与说明见本地化；文字维护对照见 docs/design/artifact_technology_text_catalog_v0.1.json。
 
-# B08：以既有公共研究为前置。
+# B08 共鸣精密制造
+# 实现：只解锁原槽建筑升级；产能取决于实际岗位就业，新增维护写在高级建筑中，不提供额外全国乘区。
 tech_artifact_manufacturing_quality_control = {
 	area = engineering
 	icon = "tech_artifact_resonance_manufacturing"
@@ -12,7 +14,8 @@ tech_artifact_manufacturing_quality_control = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
-# B11：以既有公共研究为前置。
+# B11 分布式配给仓储
+# 实现：库存为acs_supply_reserved与原拥有者记录；预留逐项扣500矿物、100合金，退款与交付由civil_supply效果处理。
 tech_artifact_distributed_supply_storage = {
 	area = society
 	icon = "tech_artifact_central_court_protocols"
@@ -24,7 +27,8 @@ tech_artifact_distributed_supply_storage = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
-# B13：以既有公共研究为前置。
+# B13 定向共鸣精炼
+# 实现：civil_supply保存互斥配方；调整90日期间使用基础配方，三种优先产物不能同时获得满额收益。
 tech_artifact_directed_resonance_refining = {
 	area = engineering
 	icon = "tech_artifact_rare_resonance"
@@ -36,7 +40,8 @@ tech_artifact_directed_resonance_refining = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
-# C11：以既有公共研究为前置。
+# C11 星际物资联运
+# 实现：civil_supply只管理一对登记端点；转运消费实存库存，失控、停用与拥有者变化由原有守卫处理。
 tech_artifact_intercolony_transport = {
 	area = society
 	icon = "tech_artifact_seven_day_logistics"
@@ -48,7 +53,8 @@ tech_artifact_intercolony_transport = {
 	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
 }
 
-# C12：以既有公共研究为前置。
+# C12 文明契约共治
+# 实现：共治方案由civil_supply互斥标记保存，180日调整期；两种高级治理设施并存时只供给一份方案收益。
 tech_artifact_covenant_cogovernance = {
 	area = society
 	icon = "tech_artifact_covenant_administration"
