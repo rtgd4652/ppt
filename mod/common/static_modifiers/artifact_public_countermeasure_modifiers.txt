@@ -1,0 +1,15 @@
+# 地方实付备料与国家共享冷却不含免费战斗收益；命中效果由具体投影舰船保存。
+acc_countermeasure_ready = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+acc_recharging = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+acc_projection_disrupted = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+	ship_weapon_damage = -0.20
+	ship_fire_rate_mult = -0.10
+}

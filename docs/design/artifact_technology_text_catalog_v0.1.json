@@ -271,7 +271,7 @@
       "name": "公共神器理论",
       "lore": "神器研究逐渐积累了可以相互检验的模型、方法与适用边界。中央庭将这些认识整理为公共工程标准，使异常研究的成果能够走出少数实验室，并继续接受来自实际应用的修正。",
       "application": "在高维观测复核站汇编已完成的模型与至少一种已归档的样本或材料方法，免费取得本国公共工程资格。工程物资集成场和规则锚定试验场随后可按原费用复现对应方法；后续公共反制仍需独立研究与危机资料。",
-      "implementation_note": "真实A11模型与至少一种C10方法免费即时汇编；本国资格使B14/E08工程现场复用原付费复现，不创建未知方法或改变个人/危机进度。",
+      "implementation_note": "真实A11模型与至少一种C10方法免费即时汇编；本国资格使B14/E08工程现场复用原付费复现，不创建未知方法或改变个人/危机进度。R5b由F03中心读取实际记录/当地联防，来源保持，新反制路径运行未验。",
       "technology_file": "mod/common/technology/artifact_public_theory_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_public_theory_l_simp_chinese.yml",
       "consumer_files": [
@@ -280,7 +280,8 @@
         "mod/common/scripted_triggers/artifact_public_theory_triggers.txt",
         "mod/common/static_modifiers/artifact_public_theory_modifiers.txt",
         "mod/common/scripted_triggers/artifact_foundation_triggers.txt",
-        "mod/events/artifact_foundation_events.txt"
+        "mod/events/artifact_foundation_events.txt",
+        "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1163,7 +1164,7 @@
       "name": "文明联合防务",
       "lore": "中央庭在灾难中积累的守护经验，既来自前线，也来自维持补给、疏散和公共秩序的人们。进入星际时代，地表驻防与轨道星港被纳入同一套可持续的行动安排：让不同岗位共享情报与责任，使一座殖民地能够共同应对威胁。",
       "application": "开放行星联合防务部署。已有驻防方案与同星系本国轨道观测接口就绪后，可投入物资，强化当地防御军的伤害和耐久，并提高该星港的射速与索敌。每颗殖民地分别承担维护，同一星港的收益不随联防殖民地数量叠加。",
-      "implementation_note": "正常决议付费，复用D20原拥有者/设施优先级与E06轨道接口；收益和额外维护同守卫，同星港不叠加。原生实际扣费/结算/战斗/读档未验。",
+      "implementation_note": "正常决议付费，复用D20原拥有者/设施优先级与E06轨道接口；收益和额外维护同守卫，同星港不叠加。原生实际扣费/结算/战斗/读档未验。R5b由F03中心读取实际记录/当地联防，来源保持，新反制路径运行未验。",
       "technology_file": "mod/common/technology/artifact_joint_defense_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_joint_defense_l_simp_chinese.yml",
       "consumer_files": [
@@ -1175,7 +1176,8 @@
         "mod/common/buildings/aemusa_buildings.txt",
         "mod/common/buildings/artifact_civil_supply_buildings.txt",
         "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
-        "mod/common/scripted_effects/artifact_garrison_effects.txt"
+        "mod/common/scripted_effects/artifact_garrison_effects.txt",
+        "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1670,7 +1672,7 @@
       "name": "危机信号鉴别",
       "lore": "独立复测留下的边界回应，可以与现场记录中的异常模式相互对照。研究者为能够重现的征兆建立识别标准，让常规观测和公共防务知道应当注意什么，也清楚哪些解释仍然缺乏证据。",
       "application": "实际接触记录开放研究。配合已完成的模型复核，可在观测复核站或锚定试验场免费归档信号鉴别结果。此后在有本国轨道观测协同接口的星系，支付300能源／100消费品，使锚定试验场监听360日，为当地星港提供1点隐形探测；与预警阵列不叠加。档案供后续公共反制读取。",
-      "implementation_note": "只读持久接触来源，复用A11完成模型免费鉴别；付费360日监听接E06单份探测，与A07不叠加，国家知识/地方窗口分开。",
+      "implementation_note": "只读持久接触来源，复用A11完成模型免费鉴别；付费360日监听接E06单份探测，与A07不叠加，国家知识/地方窗口分开。R5b由F03中心读取实际记录/当地联防，来源保持，新反制路径运行未验。",
       "technology_file": "mod/common/technology/artifact_crisis_intelligence_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_crisis_intelligence_l_simp_chinese.yml",
       "consumer_files": [
@@ -1679,7 +1681,8 @@
         "mod/common/scripted_triggers/artifact_crisis_intelligence_triggers.txt",
         "mod/common/static_modifiers/artifact_crisis_intelligence_modifiers.txt",
         "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
-        "mod/common/scripted_effects/artifact_civil_supply_effects.txt"
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1689,15 +1692,37 @@
         "central_court_history"
       ],
       "source_note": "写前查七都术语并读黑门/神器/组织与开放谜团来源；信号识别和监听是Mod设计，不宣称黑门同源、预知未来或个人转变，原审核状态不变。"
+    },
+    {
+      "id": "F03",
+      "key": "tech_artifact_public_countermeasure_plan",
+      "previous_name": "公共反制预案",
+      "name": "公共反制预案",
+      "lore": "中央庭把信号识别资料、可复核的工程方法与联防队伍的现场经验写入同一份预案。研究者说明反制能够干预的部分，物资部门准备器材，常规舰队在接触中把有限的机会转化为实际战果。",
+      "application": "建设全国一处危机联合防务中心。在有效联防和公共档案支持下，投入800能源／500合金／100稀有水晶准备一份反制物资。作战舰队抵达投影所在星系后，由中心下达部署，使当时敌方投影作战舰的武器伤害修正−20%、射速修正−10%，持续90日；全帝国冷却180日。战斗仍由正常舰队完成。",
+      "implementation_note": "正常中心实付备料，现场舰队存在后部署；原危机投影舰船90日武器伤害−20%/射速−10%，国家180日冷却。研究不是直接胜利，个人资格分离。",
+      "technology_file": "mod/common/technology/artifact_public_countermeasure_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_public_countermeasure_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_public_countermeasure_buildings.txt",
+        "mod/common/decisions/artifact_public_countermeasure_decisions.txt",
+        "mod/common/scripted_effects/artifact_public_countermeasure_effects.txt",
+        "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt",
+        "mod/common/static_modifiers/artifact_public_countermeasure_modifiers.txt",
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "central_court_history",
+        "public_military"
+      ],
+      "source_note": "写前查中央庭/神器科学/黑门研究术语并读组织与普通工业来源；反制中心和数值属Mod设计，未改变原审核状态或黑门未知边界。"
     }
   ],
   "unimplemented_nodes": [
-    {
-      "id": "F03",
-      "working_name": "公共反制预案",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
     {
       "id": "F04",
       "working_name": "应急工程冗余",
@@ -2639,6 +2664,18 @@
       "remaining": 6,
       "spec": "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r5a_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R5b",
+      "nodes": [
+        "F03"
+      ],
+      "added": 1,
+      "implemented_total": 75,
+      "remaining": 5,
+      "spec": "docs/design/artifact_civilization_r5b_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5b_implementation_2026-10-31.md"
     }
   ]
 }

@@ -1,0 +1,227 @@
+{
+  "date": "2026-10-31",
+  "package": "R5b",
+  "source_base": "2ab0f21",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "nodes": [
+    "F03"
+  ],
+  "technology": {
+    "id": "F03",
+    "key": "tech_artifact_public_countermeasure_plan",
+    "name": "公共反制预案",
+    "area": "society",
+    "tier": 5,
+    "cost": 30000,
+    "weight": 45,
+    "category": "military_theory",
+    "prerequisites": [
+      "tech_artifact_crisis_signal_identification",
+      "tech_artifact_public_artifact_theory",
+      "tech_artifact_civilization_joint_defense"
+    ]
+  },
+  "lore": "中央庭把信号识别资料、可复核的工程方法与联防队伍的现场经验写入同一份预案。研究者说明反制能够干预的部分，物资部门准备器材，常规舰队在接触中把有限的机会转化为实际战果。",
+  "application": "建设全国一处危机联合防务中心。在有效联防和公共档案支持下，投入800能源／500合金／100稀有水晶准备一份反制物资。作战舰队抵达投影所在星系后，由中心下达部署，使当时敌方投影作战舰的武器伤害修正−20%、射速修正−10%，持续90日；全帝国冷却180日。战斗仍由正常舰队完成。",
+  "building": {
+    "id": "BL27",
+    "stage": 1,
+    "key": "building_artifact_crisis_joint_defense_center",
+    "name": "危机联合防务中心",
+    "base_buildtime": 720,
+    "planet_limit": 1,
+    "empire_limit": 1,
+    "cost": {
+      "minerals": 1800,
+      "alloys": 600
+    },
+    "upkeep": {
+      "energy": 20,
+      "consumer_goods": 4
+    },
+    "icon": "building_artifact_sanctum",
+    "requires": [
+      "F03 research",
+      "completed F02 identification",
+      "qualified A12 methods",
+      "active local D14 garrison/orbital joint defense"
+    ],
+    "jobs_added": 0,
+    "permanent_country_combat_bonus": false
+  },
+  "preparation": {
+    "entry": "decision_artifact_public_countermeasure_prepare",
+    "base_cost": {
+      "energy": 800,
+      "alloys": 500,
+      "rare_crystals": 100
+    },
+    "payment": "native decision once; effect no second debit",
+    "local_stock": "acc_countermeasure_ready",
+    "stock_duration": -1,
+    "origin": "existing ACS acs_owner@this",
+    "limit": "one stock across all owned colonies, including paused stock",
+    "requires": [
+      "own controlled active center",
+      "F02/A12 records and F03 research",
+      "active D14",
+      "safe non-bombarded site"
+    ],
+    "can_prepare_during_cooldown": true,
+    "discard_entry": "decision_artifact_public_countermeasure_discard",
+    "refund": false,
+    "discard": "original owner may discard own stock even if center/tech/control fail; other stock unchanged"
+  },
+  "deployment": {
+    "entry": "decision_artifact_public_countermeasure_deploy",
+    "cost": "one local prepared stock; no new resource fee",
+    "source": "own controlled uncloaked enabled fleet with enabled military ship and at least one eligible hostile projection in system",
+    "selection": "random one eligible own fleet; affects eligible projections in its current system only",
+    "effect": "acc_projection_disrupted on eligible military ships: ship_weapon_damage -0.20, ship_fire_rate_mult -0.10",
+    "duration_days": 90,
+    "country_cooldown": "acc_recharging",
+    "cooldown_days": 180,
+    "atomic": "full center/stock/cooldown/field guard before consumption; subsequent field selection independent of consumed stock",
+    "bombardment": "already prepared stock can fire while center bombarded if control and joint defense still valid",
+    "timer": "no refresh/stack of existing hit; no late arrivals; leaving system keeps remaining time",
+    "target_contract": {
+      "producer": "mod/common/scripted_effects/aemusa_ms_exclusive_effects.txt",
+      "producer_effect": "aemusa_ms_anchor_form",
+      "country_type": "aemusa_convergence",
+      "fleet_flag": "aemusa_ms_anchor_projection",
+      "producer_modified": false,
+      "scope": "source fleet -> same solar system -> target fleet -> military ships",
+      "hostility": "target controller is_hostile source controller; explicit PREV stack, independent of UI ROOT",
+      "exclude": [
+        "ordinary countries even with copied fleet flag",
+        "unmarked fleets",
+        "other systems",
+        "cloaked/civilian/disabled fleets",
+        "non-military/disabled/already-hit ships"
+      ],
+      "last_hit_tracking": false,
+      "story_state_written": false
+    }
+  },
+  "lifecycle": {
+    "unavailable": "center/control/D14/archive/research loss blocks use but retains stock and nation slot; restoration resumes",
+    "transfer_or_destroy": "existing ACS clear removes unspent local stock; original knowledge/country cooldown and fired ship timers unchanged"
+  },
+  "interfaces": {
+    "read": [
+      "artifact_crisis_intelligence_identified",
+      "artifact_public_theory_qualified",
+      "artifact_joint_defense_operational"
+    ],
+    "personal_transformation_required": false,
+    "story_flags_written": [],
+    "story_variables_written": [],
+    "new_victory_effect": false,
+    "existing_battle_and_analysis": "projection must still be defeated by actual combat; original anchor investigation/analysis remains"
+  },
+  "performance": {
+    "new_events": 0,
+    "new_on_actions": 0,
+    "new_monthly_subscriptions": 0,
+    "new_daily_scans": 0,
+    "new_variables": 0,
+    "new_global_targets": 0,
+    "scan": "prepare checks own colonies; deployment checks own fleets, then chosen current system fleets/ships; on demand only"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-BLACK-GATE-RESEARCH-SYSTEM",
+      "TERM-ARTIFACT"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false,
+    "constraint": "中央庭公共协调、科学验证与普通工业共同支撑防务；中心、费用和干扰效果为Mod设计，不量产个人神器，不宣称已解释黑门本质。"
+  },
+  "native_reference": {
+    "reference": "本机4.5.2原版和script_documentation：原生决议cost、any/random_owned_fleet、any/every_fleet_in_system、controller、ship_weapon_damage、ship_fire_rate_mult",
+    "target_4_5_1_compatibility": "pending",
+    "new_global_targets": 0,
+    "scope": "planet stock / country cooldown / per-ship timed effect"
+  },
+  "validation": {
+    "new": {
+      "count": 6,
+      "status": "pass",
+      "module": "test_artifact_public_countermeasure"
+    },
+    "affected": {
+      "count": 22,
+      "status": "pass",
+      "modules": [
+        "test_artifact_crisis_intelligence",
+        "test_artifact_public_theory",
+        "test_artifact_joint_defense",
+        "test_artifact_field_suppression"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 238,
+        "events": 260,
+        "localization_keys": 2194,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "fixture_note": "F02/A12完成知识与D14联防是已验证接口输入；正式准备/部署/放弃决议及效果执行严格作用域栈，未知语法报错。",
+    "limitations": [
+      "原生研究抽取、建筑建造/帝国限额、实际扣费、真实战斗/计时/显示和存读档未验。",
+      "28项为源码检查；资源、控制和倒计时夹具不是原生运行或序列化证据。"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "save_created": null,
+    "pending_command": null,
+    "priority": "阶段试玩仍优先D12；F03仅取中心备料和真实投影现场效果的必要代表，共用关键读档，不逐包重测。"
+  },
+  "files": [
+    "mod/common/buildings/artifact_public_countermeasure_buildings.txt",
+    "mod/common/decisions/artifact_public_countermeasure_decisions.txt",
+    "mod/common/scripted_effects/artifact_public_countermeasure_effects.txt",
+    "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt",
+    "mod/common/static_modifiers/artifact_public_countermeasure_modifiers.txt",
+    "mod/common/technology/artifact_public_countermeasure_technology.txt",
+    "mod/localisation/simp_chinese/artifact_public_countermeasure_l_simp_chinese.yml",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "tools/validation/tests/test_artifact_public_countermeasure.py",
+    "docs/design/artifact_civilization_r5b_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r5b_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r5b_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r5b_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}

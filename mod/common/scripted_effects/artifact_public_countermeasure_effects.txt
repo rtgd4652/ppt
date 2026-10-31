@@ -1,0 +1,42 @@
+# 物资由原生准备决议支付一次；无额外退款或公共知识写入。
+artifact_public_countermeasure_prepare = {
+	if = {
+		limit = { artifact_public_countermeasure_can_prepare = yes }
+		artifact_civil_supply_ensure_owner = yes
+		add_modifier = { modifier = acc_countermeasure_ready days = -1 }
+	}
+}
+
+artifact_public_countermeasure_discard = {
+	if = {
+		limit = { artifact_public_countermeasure_can_discard = yes }
+		remove_modifier = acc_countermeasure_ready
+	}
+}
+
+# 同一守卫复核中心、物资、冷却与现场，再消费一份；目标条件不依赖已消费的库存。
+# 部署只改变真实投影舰船的暂时战斗能力，不写主线胜利/战斗/锚点计数。
+artifact_public_countermeasure_deploy = {
+	if = {
+		limit = { artifact_public_countermeasure_can_deploy = yes }
+		remove_modifier = acc_countermeasure_ready
+		owner = {
+			add_modifier = { modifier = acc_recharging days = 180 }
+			random_owned_fleet = {
+				limit = { artifact_public_countermeasure_field_fleet_ready = yes }
+				solar_system = {
+					every_fleet_in_system = {
+						limit = {
+							artifact_public_countermeasure_target_fleet = yes
+							artifact_public_countermeasure_target_is_hostile = yes
+						}
+						every_owned_ship = {
+							limit = { artifact_public_countermeasure_target_ship = yes }
+							add_modifier = { modifier = acc_projection_disrupted days = 90 }
+						}
+					}
+				}
+			}
+		}
+	}
+}

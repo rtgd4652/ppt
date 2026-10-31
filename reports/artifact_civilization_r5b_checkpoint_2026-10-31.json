@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-31",
+  "package": "R5b",
+  "source_base": "2ab0f21",
+  "status": "implemented_static_passed",
+  "spec": "docs/design/artifact_civilization_r5b_implementation_spec_v0.1.json",
+  "report": "reports/artifact_civilization_r5b_implementation_2026-10-31.md",
+  "completed": [
+    "F03研究/BL27正常中心建造入口",
+    "正常实付唯一备料/部署/放弃三决议",
+    "原危机投影现场舰船限时削弱及国家共享冷却",
+    "ACS地方清理，原国家知识/已发动计时保留",
+    "七都来源、科技目录/路线/当前交接同步"
+  ],
+  "validation": {
+    "new": {
+      "count": 6,
+      "status": "pass",
+      "module": "test_artifact_public_countermeasure"
+    },
+    "affected": {
+      "count": 22,
+      "status": "pass",
+      "modules": [
+        "test_artifact_crisis_intelligence",
+        "test_artifact_public_theory",
+        "test_artifact_joint_defense",
+        "test_artifact_field_suppression"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 238,
+        "events": 260,
+        "localization_keys": 2194,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "fixture_note": "F02/A12完成知识与D14联防是已验证接口输入；正式准备/部署/放弃决议及效果执行严格作用域栈，未知语法报错。",
+    "limitations": [
+      "原生研究抽取、建筑建造/帝国限额、实际扣费、真实战斗/计时/显示和存读档未验。",
+      "28项为源码检查；资源、控制和倒计时夹具不是原生运行或序列化证据。"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "save_created": null,
+    "pending_command": null,
+    "priority": "阶段试玩仍优先D12；F03仅取中心备料和真实投影现场效果的必要代表，共用关键读档，不逐包重测。"
+  },
+  "current_counts": {
+    "date": "2026-10-31",
+    "public_technologies": 75,
+    "army_types": 5,
+    "component_definitions": 111,
+    "building_definitions": 41,
+    "starbase_building_definitions": 1,
+    "public_strategic_ship_sizes": 1,
+    "planned_technologies_remaining": 5,
+    "note": "R5b新增F03及全国一处BL27中心，实付备料后支援现场舰队，限时削弱原危机投影；6项新增、22项相关及静态通过，运行未验。"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-BLACK-GATE-RESEARCH-SYSTEM",
+      "TERM-ARTIFACT"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false,
+    "constraint": "中央庭公共协调、科学验证与普通工业共同支撑防务；中心、费用和干扰效果为Mod设计，不量产个人神器，不宣称已解释黑门本质。"
+  },
+  "target_contract": {
+    "producer": "mod/common/scripted_effects/aemusa_ms_exclusive_effects.txt",
+    "producer_effect": "aemusa_ms_anchor_form",
+    "country_type": "aemusa_convergence",
+    "fleet_flag": "aemusa_ms_anchor_projection",
+    "producer_modified": false,
+    "scope": "source fleet -> same solar system -> target fleet -> military ships",
+    "hostility": "target controller is_hostile source controller; explicit PREV stack, independent of UI ROOT",
+    "exclude": [
+      "ordinary countries even with copied fleet flag",
+      "unmarked fleets",
+      "other systems",
+      "cloaked/civilian/disabled fleets",
+      "non-military/disabled/already-hit ships"
+    ],
+    "last_hit_tracking": false,
+    "story_state_written": false
+  },
+  "native_reference": {
+    "reference": "本机4.5.2原版和script_documentation：原生决议cost、any/random_owned_fleet、any/every_fleet_in_system、controller、ship_weapon_damage、ship_fire_rate_mult",
+    "target_4_5_1_compatibility": "pending",
+    "new_global_targets": 0,
+    "scope": "planet stock / country cooldown / per-ship timed effect"
+  },
+  "next_step": "推进F04应急工程冗余（F02＋B14＋E09）：先核对BL26升级、实际备料及工程修复接口，再接修复备件和冗余预算。公共资料只读，不重置C2冷却、不改唯一旗舰90／75／60日恢复。随后F05～F08、最终Boss深化和共有胜利奖励/结尾。阶段试玩仍优先D12，F03取中心备料与投影现场反制的必要片段，共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。",
+  "save_state": {
+    "latest_retained": "2293.10.11-r3e-reserve.sav",
+    "inspected_this_turn": false,
+    "modified_this_turn": false
+  },
+  "protected_untracked": "tools/prototypes/aemusa_cross_system_megastructure/",
+  "paused": [
+    "人物组合/固定搭档待用户决定",
+    "批量图标",
+    "连续巨构原型"
+  ],
+  "files": [
+    "mod/common/buildings/artifact_public_countermeasure_buildings.txt",
+    "mod/common/decisions/artifact_public_countermeasure_decisions.txt",
+    "mod/common/scripted_effects/artifact_public_countermeasure_effects.txt",
+    "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt",
+    "mod/common/static_modifiers/artifact_public_countermeasure_modifiers.txt",
+    "mod/common/technology/artifact_public_countermeasure_technology.txt",
+    "mod/localisation/simp_chinese/artifact_public_countermeasure_l_simp_chinese.yml",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "tools/validation/tests/test_artifact_public_countermeasure.py",
+    "docs/design/artifact_civilization_r5b_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r5b_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r5b_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r5b_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}

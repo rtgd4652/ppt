@@ -1,0 +1,21 @@
+# BL27首版只承接准备/部署职责，收益来自一次实付反制，没有常驻全国战斗加成。
+building_artifact_crisis_joint_defense_center = {
+	can_build = yes
+	base_buildtime = 720
+	icon = "building_artifact_sanctum"
+	category = government
+	building_sets = { government }
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	prerequisites = { "tech_artifact_public_countermeasure_plan" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	allow = {
+		artifact_joint_defense_operational = yes
+		owner = { artifact_crisis_intelligence_identified = yes artifact_public_theory_qualified = yes }
+	}
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 1800 alloys = 600 }
+		upkeep = { energy = 20 consumer_goods = 4 }
+	}
+}

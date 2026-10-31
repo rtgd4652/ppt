@@ -1,0 +1,98 @@
+# 中心作战资格允许遭受轰炸：已准备物资在本国控制/联防仍有效时可以用于反制。
+artifact_public_countermeasure_center_operational = {
+	artifact_civil_supply_actor = yes
+	is_controlled_by = owner
+	has_active_building = "building_artifact_crisis_joint_defense_center"
+	artifact_joint_defense_operational = yes
+	owner = {
+		has_technology = "tech_artifact_public_countermeasure_plan"
+		artifact_crisis_intelligence_identified = yes
+		artifact_public_theory_qualified = yes
+	}
+}
+
+artifact_public_countermeasure_stock = {
+	has_modifier = acc_countermeasure_ready
+	artifact_civil_supply_original_owner = yes
+}
+
+artifact_public_countermeasure_stock_usable = {
+	artifact_public_countermeasure_stock = yes
+	artifact_public_countermeasure_center_operational = yes
+}
+
+artifact_public_countermeasure_can_prepare = {
+	artifact_public_countermeasure_center_operational = yes
+	artifact_civil_supply_safe = yes
+	owner = {
+		# 暂停的备料仍占位；准备与行动冷却分开，可在冷却中为下一次备料。
+		NOT = { any_owned_colony = { carrier = { has_modifier = acc_countermeasure_ready } } }
+	}
+}
+
+artifact_public_countermeasure_can_discard = {
+	artifact_civil_supply_actor = yes
+	artifact_public_countermeasure_stock = yes
+}
+
+# 舰船只读筛选；已命中的剩余90日不叠加/刷新，后来者不补算。
+artifact_public_countermeasure_target_ship = {
+	is_ship_class = shipclass_military
+	is_disabled = no
+	NOT = { has_modifier = acc_projection_disrupted }
+}
+
+# 只认原专属危机已生成的投影舰队，普通敌军和别的国家即便同名也不会被命中。
+artifact_public_countermeasure_target_fleet = {
+	has_fleet_flag = aemusa_ms_anchor_projection
+	exists = owner
+	owner = { is_country_type = aemusa_convergence }
+	exists = controller
+	is_civilian = no
+	is_cloaked = no
+	is_disabled = no
+	any_owned_ship = { artifact_public_countermeasure_target_ship = yes }
+}
+
+# 调用约定为发射舰队 -> 星系 -> 目标舰队；不依赖界面/事件ROOT。
+# 目标控制国 -> 发射舰队 -> 发射控制国 -> 目标控制国，最后PREV是发射控制国。
+artifact_public_countermeasure_target_is_hostile = {
+	controller = {
+		prevprevprev = {
+			controller = {
+				prevprev = { is_hostile = prev }
+			}
+		}
+	}
+}
+
+artifact_public_countermeasure_has_targets = {
+	exists = solar_system
+	solar_system = {
+		any_fleet_in_system = {
+			artifact_public_countermeasure_target_fleet = yes
+			artifact_public_countermeasure_target_is_hostile = yes
+		}
+	}
+}
+
+# 现场作战队伍不要求专属舰型或模块；星港/平台无可用的shipclass_military舰船。
+# 本条件不读取备料/冷却，保证在消耗后仍能选择同一合法现场。
+artifact_public_countermeasure_field_fleet_ready = {
+	exists = owner
+	exists = controller
+	is_owned_by = controller
+	is_civilian = no
+	is_cloaked = no
+	is_disabled = no
+	any_owned_ship = { is_ship_class = shipclass_military is_disabled = no }
+	artifact_public_countermeasure_has_targets = yes
+}
+
+artifact_public_countermeasure_can_deploy = {
+	artifact_public_countermeasure_stock_usable = yes
+	owner = {
+		NOT = { has_modifier = acc_recharging }
+		any_owned_fleet = { artifact_public_countermeasure_field_fleet_ready = yes }
+	}
+}

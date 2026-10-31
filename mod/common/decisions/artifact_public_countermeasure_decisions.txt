@@ -1,0 +1,48 @@
+decision_artifact_public_countermeasure_prepare = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = { category = decisions cost = { energy = 800 alloys = 500 rare_crystals = 100 } }
+	potential = {
+		artifact_civil_supply_actor = yes
+		owner = { has_technology = "tech_artifact_public_countermeasure_plan" }
+		has_building = "building_artifact_crisis_joint_defense_center"
+	}
+	allow = { custom_tooltip = { fail_text = acc.require_prepare artifact_public_countermeasure_can_prepare = yes } }
+	effect = {
+		custom_tooltip = acc.offer_prepare
+		hidden_effect = { artifact_public_countermeasure_prepare = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_public_countermeasure_deploy = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		OR = { has_building = "building_artifact_crisis_joint_defense_center" has_modifier = acc_countermeasure_ready }
+		owner = { has_technology = "tech_artifact_public_countermeasure_plan" }
+	}
+	allow = { custom_tooltip = { fail_text = acc.require_deploy artifact_public_countermeasure_can_deploy = yes } }
+	effect = {
+		custom_tooltip = acc.offer_deploy
+		hidden_effect = { artifact_public_countermeasure_deploy = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+# 即便中心停用/拆除/被占领或研究失效，原拥有者仍可放弃库存，不清其他物资。
+decision_artifact_public_countermeasure_discard = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = { artifact_civil_supply_actor = yes has_modifier = acc_countermeasure_ready }
+	allow = { custom_tooltip = { fail_text = acc.require_discard artifact_public_countermeasure_can_discard = yes } }
+	effect = {
+		custom_tooltip = acc.offer_discard
+		hidden_effect = { artifact_public_countermeasure_discard = yes }
+	}
+	ai_weight = { weight = 0 }
+}

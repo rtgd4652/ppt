@@ -1,0 +1,11 @@
+# F03公共反制保留F02+A12+D14；实际准备读取已完成档案和现役联防，不授予个人权限。
+tech_artifact_public_countermeasure_plan = {
+	area = society
+	icon = "tech_artifact_central_court_protocols"
+	cost = 30000
+	tier = 5
+	category = { military_theory }
+	prerequisites = { "tech_artifact_crisis_signal_identification" "tech_artifact_public_artifact_theory" "tech_artifact_civilization_joint_defense" }
+	weight = 45
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
