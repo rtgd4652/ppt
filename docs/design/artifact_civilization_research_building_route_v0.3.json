@@ -28,7 +28,7 @@
     "public_resonance_and_vanilla_combat_computers": "既有公共共鸣飞升及原版基础战斗电脑；保留原字段。",
     "public_apotheosis_and_vanilla_zero_point": "既有公共终解飞升及原版零点能源；保留原字段。",
     "common_crisis_contact": "R5a已映射artifact_crisis_intelligence_contacted：原边界回应复测持久记录，或已初始化且至少一处真实归档节点；只读，不要求个人终解。",
-    "final_boss_common_victory": "新增设计概念：共同最终胜利记录；对三种合法结局一致，不读取个人正式转变。"
+    "final_boss_common_victory": "R5e已映射artifact_postcrisis_common_victory：原独立危机完成/已结算/胜利结算三旗，只读且早于三终局个人选择，不重验已结束现场。"
   },
   "branches": [
     {
@@ -1220,7 +1220,14 @@
       "gate": null,
       "existing_key": "tech_artifact_relic_archive_restoration",
       "status": "existing_baseline_extension_proposed",
-      "capability": "保留旧日档案馆和小型文物岗位，作为公共知识保存而非个人记忆读取。"
+      "capability": "保留旧日档案馆和小型文物岗位，作为公共知识保存而非个人记忆读取。",
+      "compatibility_updates": [
+        {
+          "package": "R5e",
+          "spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
+          "note": "F06保留两研究前置，F01原岗位/资源和F05本地恢复保持；共同胜利另读取原危机结算，不把F05收尾当作胜利。"
+        }
+      ]
     },
     {
       "id": "F02",
@@ -1317,7 +1324,14 @@
       "capability": "工场以真实地方荒废度启动实付重建，每有效月度减5，最多6次；暂停保留进度，危机期间可用，收尾不等于胜利。",
       "implementation_key": "tech_artifact_civilization_joint_recovery",
       "spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md"
+      "report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md",
+      "compatibility_updates": [
+        {
+          "package": "R5e",
+          "spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
+          "note": "F06保留两研究前置，F01原岗位/资源和F05本地恢复保持；共同胜利另读取原危机结算，不把F05收尾当作胜利。"
+        }
+      ]
     },
     {
       "id": "F06",
@@ -1330,8 +1344,12 @@
       ],
       "gate": "final_boss_common_victory",
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "升级旧日档案馆，解译共同胜利记录；所有合法结局共享入口。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "共同胜利后升级档案馆，一次付费即时解译，国家永久研究速度+10%，输出后续F07/F08资格；三种终局共享。",
+      "implementation_key": "tech_artifact_post_disaster_record_decoding",
+      "spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5e_implementation_2026-10-31.md",
+      "implementation_gate": "artifact_postcrisis_common_victory"
     },
     {
       "id": "F07",
@@ -1953,7 +1971,11 @@
           "name": "文明传承档案馆",
           "technology": "F06",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "implemented_static_passed",
+          "implementation_key": "building_artifact_civilization_heritage_archive",
+          "runtime_status": "not_run",
+          "implementation_package": "R5e",
+          "spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json"
         }
       ]
     },
@@ -2738,18 +2760,34 @@
       "report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r5d_checkpoint_2026-10-31.json",
       "next_step": "推进F06灾后记录解译（F01＋F05）：先把final_boss_common_victory映射到实际共同胜利记录，确认三种合法结局共享、与个人转变分离，再接BL15文明传承档案馆升级及真实解译。F05收尾记录不是Boss胜利；不靠额外回写剧情伪造资格。随后F07/F08共有舰船/巨构奖励、最终Boss深化和结尾整合。阶段试玩仍约20分钟、优先D12，其余必要代表共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
+    },
+    "R5e": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "nodes": [
+        "F06"
+      ],
+      "new_buildings": 1,
+      "new_components": 0,
+      "new_events": 0,
+      "new_on_actions": 0,
+      "spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5e_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r5e_checkpoint_2026-10-31.json",
+      "next_step": "推进F07终局舰船工程（F06＋E10）：先读已批准公共奖励、现有中庭级/部件与个人旗舰边界，读取artifact_postcrisis_records_decoded，为战后交付更强公共舰用能力并保留正常设计/建造。F08随后接公共巨构奖励，胜利后不另设长期危机；正式外观仍须定稿。共同Boss胜利已映射，不重写剧情或重查个人结局。阶段试玩仍优先D12，其他必要代表共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 77,
+    "public_technologies": 78,
     "army_types": 5,
     "component_definitions": 111,
-    "building_definitions": 43,
+    "building_definitions": 44,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 3,
-    "note": "R5d新增F05/BL28，真实物资与费用换取最多6次地方月度恢复；6项新增、27项相关及静态通过，运行未验。"
+    "planned_technologies_remaining": 2,
+    "note": "R5e新增F06/BL15升级，实际共同胜利映射、一次解译/永久研究加速及后续公共资格接口；6项新增、25项相关及静态通过，运行未验。"
   },
   "orbital_buildings": [
     {
@@ -3131,6 +3169,35 @@
         "personal transformation/level/leader presence"
       ],
       "story_files_modified": false
+    },
+    "final_boss_common_victory": {
+      "concept": "final_boss_common_victory",
+      "implementation_trigger": "artifact_postcrisis_common_victory",
+      "read_only": true,
+      "flags": [
+        "aemusa_ms_crisis_exclusive_completed",
+        "aemusa_ms_crisis_exclusive_settled",
+        "aemusa_ms_country_settlement_exclusive_crisis_victory_done"
+      ],
+      "producer": "mod/common/scripted_effects/aemusa_ms_exclusive_effects.txt",
+      "producer_effect": "aemusa_ms_exclusive_settle",
+      "producer_guard": "exclusive context/active, exactly 3 anchors archived and 3 projections defeated, separate future reopening, no prior victory settlement",
+      "entry": "mod/events/aemusa_ms_exclusive_events.txt: aemusa_exclusive.60 settle -> original effect; .80 records chapter13 afterward",
+      "chronology": "common victory precedes finale identity/player/aemusa choices",
+      "endings": [
+        "ending_fate_sovereign_settled",
+        "ending_non_transform_player_refusal_settled",
+        "ending_non_transform_aemusa_refusal_settled"
+      ],
+      "excluded": [
+        "counts alone without actual settlement",
+        "partial completion flags",
+        "F05 rebuild receipt",
+        "vanilla crisis victory alone",
+        "personal level/class/leader presence/sovereign trait as alternative proof"
+      ],
+      "story_files_modified": false,
+      "legacy": "three flags written together by current producer; partial records not inferred or silently backfilled"
     }
   },
   "r5a_spec": "docs/design/artifact_civilization_r5a_implementation_spec_v0.1.json",
@@ -3144,5 +3211,8 @@
   "r5c_checkpoint": "reports/artifact_civilization_r5c_checkpoint_2026-10-31.json",
   "r5d_spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
   "r5d_report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md",
-  "r5d_checkpoint": "reports/artifact_civilization_r5d_checkpoint_2026-10-31.json"
+  "r5d_checkpoint": "reports/artifact_civilization_r5d_checkpoint_2026-10-31.json",
+  "r5e_spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
+  "r5e_report": "reports/artifact_civilization_r5e_implementation_2026-10-31.md",
+  "r5e_checkpoint": "reports/artifact_civilization_r5e_checkpoint_2026-10-31.json"
 }

@@ -631,7 +631,7 @@ building_artifact_covenant_chamber = {
 # 旧日神器档案馆：神器使后期文物资源建筑。
 building_artifact_relic_archive = {
 	base_buildtime = 720
-	icon = building_artifact_relic_archive
+	icon = "building_artifact_relic_archive"
 	category = research
 	building_sets = { research unity }
 
@@ -641,8 +641,13 @@ building_artifact_relic_archive = {
 	}
 
 	allow = {
-		owner = { has_technology = tech_artifact_relic_archive_restoration }
+		owner = { has_technology = "tech_artifact_relic_archive_restoration" }
+		NOR = {
+			has_building = "building_artifact_civilization_heritage_archive"
+			has_building_construction = "building_artifact_civilization_heritage_archive"
+		}
 	}
+	upgrades = { "building_artifact_civilization_heritage_archive" }
 
 	planet_limit = 1
 
@@ -652,7 +657,9 @@ building_artifact_relic_archive = {
 		upkeep = { energy = 60 consumer_goods = 20 }
 	}
 
-	planet_modifier = {
+	# 正常升级保留原岗位/产出；遗留两级并存时只由高阶供源，避免重复计入。
+	triggered_planet_modifier = {
+		potential = { NOT = { has_active_building = "building_artifact_civilization_heritage_archive" } }
 		job_artifact_relic_curator_add = 3
 		planet_jobs_produces_mult = 0.05
 	}

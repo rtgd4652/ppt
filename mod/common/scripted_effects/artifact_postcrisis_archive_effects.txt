@@ -1,0 +1,12 @@
+# 同守卫核对胜利、场地、余额及未归档；原生决议不另扣费，多档案馆也只付/得一次。
+artifact_postcrisis_archive_decode = {
+	if = {
+		limit = { artifact_postcrisis_archive_can_decode = yes }
+		owner = {
+			add_resource = { energy = -500 }
+			add_resource = { consumer_goods = -200 }
+			add_resource = { minor_artifacts = -20 }
+			add_modifier = { modifier = aph_victory_records_decoded days = -1 }
+		}
+	}
+}

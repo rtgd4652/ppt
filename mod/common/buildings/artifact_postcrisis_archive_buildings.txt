@@ -1,0 +1,21 @@
+# BL15第二阶段沿原档案馆升级；岗位与原5%地方产出照旧，实际解译另需一次投入。
+building_artifact_civilization_heritage_archive = {
+	can_build = no
+	base_buildtime = 360
+	icon = "building_artifact_relic_archive"
+	category = research
+	building_sets = { research unity }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_post_disaster_record_decoding" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	allow = { owner = { artifact_postcrisis_common_victory = yes } }
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 4500 alloys = 1400 unity = 1200 }
+		upkeep = { energy = 60 consumer_goods = 20 }
+	}
+	planet_modifier = {
+		job_artifact_relic_curator_add = 3
+		planet_jobs_produces_mult = 0.05
+	}
+}

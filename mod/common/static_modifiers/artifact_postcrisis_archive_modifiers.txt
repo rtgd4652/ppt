@@ -1,0 +1,6 @@
+# 完成的公共知识仅保存于付款国家，永久一份；失去设施不抹去资料或重收材料。
+aph_victory_records_decoded = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+	all_technology_research_speed = 0.10
+}

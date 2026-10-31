@@ -1807,7 +1807,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f、R4a～R4l及R5a～R5d源码检查通过、运行未验。F05实付地方荒废度恢复已接，无新部件/舰船恢复效果；阶段试玩仍优先D12。",
+    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f、R4a～R4l及R5a～R5e源码检查通过、运行未验。F06共享胜利/解译资格已接，无新舰用装备；阶段试玩仍优先D12。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1844,14 +1844,14 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 77,
+    "public_technologies": 78,
     "army_types": 5,
     "component_definitions": 111,
-    "building_definitions": 43,
+    "building_definitions": 44,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 3,
-    "note": "R5d新增F05/BL28，真实物资与费用换取最多6次地方月度恢复；6项新增、27项相关及静态通过，运行未验。"
+    "planned_technologies_remaining": 2,
+    "note": "R5e新增F06/BL15升级，实际共同胜利映射、一次解译/永久研究加速及后续公共资格接口；6项新增、25项相关及静态通过，运行未验。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -2081,5 +2081,21 @@
     "report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md",
     "checkpoint": "reports/artifact_civilization_r5d_checkpoint_2026-10-31.json",
     "next_step": "推进F06灾后记录解译（F01＋F05）：先把final_boss_common_victory映射到实际共同胜利记录，确认三种合法结局共享、与个人转变分离，再接BL15文明传承档案馆升级及真实解译。F05收尾记录不是Boss胜利；不靠额外回写剧情伪造资格。随后F07/F08共有舰船/巨构奖励、最终Boss深化和结尾整合。阶段试玩仍约20分钟、优先D12，其余必要代表共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
+  },
+  "r5e_postcrisis_archive": {
+    "date": "2026-10-31",
+    "status": "implemented_static_passed",
+    "runtime_status": "not_run",
+    "nodes": [
+      "F06"
+    ],
+    "new_buildings": 1,
+    "new_components": 0,
+    "new_events": 0,
+    "new_on_actions": 0,
+    "spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
+    "report": "reports/artifact_civilization_r5e_implementation_2026-10-31.md",
+    "checkpoint": "reports/artifact_civilization_r5e_checkpoint_2026-10-31.json",
+    "next_step": "推进F07终局舰船工程（F06＋E10）：先读已批准公共奖励、现有中庭级/部件与个人旗舰边界，读取artifact_postcrisis_records_decoded，为战后交付更强公共舰用能力并保留正常设计/建造。F08随后接公共巨构奖励，胜利后不另设长期危机；正式外观仍须定稿。共同Boss胜利已映射，不重写剧情或重查个人结局。阶段试玩仍优先D12，其他必要代表共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
   }
 }

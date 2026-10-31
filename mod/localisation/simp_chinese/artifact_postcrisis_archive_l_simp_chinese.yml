@@ -1,0 +1,11 @@
+﻿l_simp_chinese:
+ tech_artifact_post_disaster_record_decoding:0 "灾后记录解译"
+ tech_artifact_post_disaster_record_decoding_desc:0 "共同取得的胜利留下了设备读数、战场记录与幸存者的证言。中央庭把这些资料与保存下来的旧日样本交叉编目，使危机中的经验成为能够继续检验的公共知识，而不是只留在少数人的回忆中。\n\n§H应用§!：专属危机的共同胜利结算后开放研究，并将旧日神器档案馆升级为文明传承档案馆。支付500能源、200消费品和20小型文物，立即完成一次解译，永久获得10%研究速度修正，为战后工程研发保存共同资料。所有合法结局共享入口，个人转变不影响资格。"
+ building_artifact_civilization_heritage_archive:0 "文明传承档案馆"
+ building_artifact_civilization_heritage_archive_desc:0 "旧日文物编录与共同胜利资料在这里互相校验。沿原档案馆升级并保留既有岗位和生产职能；实际解译需另行投入一次物资。设施本身不会自动授予解译成果或个人记忆。"
+ decision_artifact_postcrisis_archive_decode:0 "解译共同胜利记录"
+ decision_artifact_postcrisis_archive_decode_desc:0 "支付500能源、200消费品与20小型文物，立即将共同胜利资料归档为本国公共知识。全国只完成一次，不设置新的等待或危机循环。"
+ aph.require_decode:0 "需要本国专属危机已完成共同胜利结算，掌握灾后记录解译，安全控制下的活跃文明传承档案馆，以及500能源、200消费品、20小型文物。本国尚未完成解译；个人转变、等级和是否在场不影响资格。"
+ aph.offer_decode:0 "支付500能源、200消费品、20小型文物，立即归档本国共同胜利知识，研究速度修正永久+10%。全国一份，不因多座档案馆叠加；失去设施不抹去知识，转让也不赠给新拥有者。"
+ aph_victory_records_decoded:0 "共同胜利记录已解译"
+ aph_victory_records_decoded_desc:0 "本国已将共同胜利资料整理为可复核的公共知识。研究速度修正+10%，永久保留；后续工程研发仍需各自研究与建造条件。\n\n这份记录不读取个人完整轮回记忆，不授予个人命运权限，也不返还已结算损失。"

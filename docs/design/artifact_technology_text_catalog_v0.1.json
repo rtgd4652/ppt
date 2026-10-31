@@ -1658,11 +1658,13 @@
       "name": "旧日神器档案修复",
       "lore": "旧档案中的器物记录与保存下来的历史样本被重新编目。修复工作恢复了它们的研究价值，也为后续神器考据留下能够反复查验的材料。",
       "application": "解锁旧日神器档案馆，其岗位生产小型文物。",
-      "implementation_note": "解锁档案馆及小型文物岗位；minor_artifacts是原版资源映射，不是量产神器、黑核或幻力结晶。",
+      "implementation_note": "解锁档案馆及小型文物岗位；minor_artifacts是原版资源映射，不是量产神器、黑核或幻力结晶。R5e接F06研究与档案馆升级，原文物/本地恢复保持，不视为共同胜利替代来源。",
       "technology_file": "mod/common/technology/aemusa_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
       "consumer_files": [
-        "mod/common/buildings/aemusa_buildings.txt"
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/technology/artifact_postcrisis_archive_technology.txt",
+        "mod/common/buildings/artifact_postcrisis_archive_buildings.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1774,7 +1776,7 @@
       "name": "文明联合恢复",
       "lore": "中央庭曾把疏散、救治、配给与城市重建接续成一项长期责任。进入星海后，这种经验成为各殖民地能够共同调用的恢复方法：防卫仍在继续时，工场也可以开始修复生活与生产所依赖的环境。",
       "application": "建设灾后重建工场。殖民地荒废度至少10时，投入一份已备物资、500能源和200消费品，开展全国同时一处的重建项目。每个有效月度降低5点荒废度，最多6次；低于5时提前收尾，余量按原生机制恢复。失控、轰炸或工场停用时暂停，保留进度；危机期间可用。",
-      "implementation_note": "真实荒废度≥10，普通库存+500能源/200消费品，最多6次有效月度各减5；低于5提前收尾。原生建筑维修独立，不返还历史损失或授予危机胜利。",
+      "implementation_note": "真实荒废度≥10，普通库存+500能源/200消费品，最多6次有效月度各减5；低于5提前收尾。原生建筑维修独立，不返还历史损失或授予危机胜利。R5e接F06研究与档案馆升级，原文物/本地恢复保持，不视为共同胜利替代来源。",
       "technology_file": "mod/common/technology/artifact_civil_reconstruction_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_civil_reconstruction_l_simp_chinese.yml",
       "consumer_files": [
@@ -1784,7 +1786,9 @@
         "mod/common/scripted_triggers/artifact_civil_reconstruction_triggers.txt",
         "mod/common/static_modifiers/artifact_civil_reconstruction_modifiers.txt",
         "mod/events/artifact_civil_reconstruction_events.txt",
-        "mod/common/scripted_effects/artifact_civil_supply_effects.txt"
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/common/technology/artifact_postcrisis_archive_technology.txt",
+        "mod/common/buildings/artifact_postcrisis_archive_buildings.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1794,15 +1798,36 @@
         "central_court_history"
       ],
       "source_note": "写前查七都中央庭/神器科学/黑门研究/神器并读组织重建和普通工业来源；公共恢复项目与数值属Mod设计，原审核状态保留。"
+    },
+    {
+      "id": "F06",
+      "key": "tech_artifact_post_disaster_record_decoding",
+      "previous_name": "灾后记录解译",
+      "name": "灾后记录解译",
+      "lore": "共同取得的胜利留下了设备读数、战场记录与幸存者的证言。中央庭把这些资料与保存下来的旧日样本交叉编目，使危机中的经验成为能够继续检验的公共知识，而不是只留在少数人的回忆中。",
+      "application": "专属危机的共同胜利结算后开放研究，并将旧日神器档案馆升级为文明传承档案馆。支付500能源、200消费品和20小型文物，立即完成一次解译，永久获得10%研究速度修正，为战后工程研发保存共同资料。所有合法结局共享入口，个人转变不影响资格。",
+      "implementation_note": "原共同胜利三旗开放正常研究；档案馆升级后500能源/200消费品/20小型文物即时解译，国家永久研究速度+10%和后续资格。三终局共享，个人记忆/身份独立。",
+      "technology_file": "mod/common/technology/artifact_postcrisis_archive_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_postcrisis_archive_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_postcrisis_archive_buildings.txt",
+        "mod/common/decisions/artifact_postcrisis_archive_decisions.txt",
+        "mod/common/scripted_effects/artifact_postcrisis_archive_effects.txt",
+        "mod/common/scripted_triggers/artifact_postcrisis_archive_triggers.txt",
+        "mod/common/static_modifiers/artifact_postcrisis_archive_modifiers.txt",
+        "mod/common/buildings/aemusa_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "central_court_history"
+      ],
+      "source_note": "写前查七都并读连续历史/公共记录与未知边界；共同胜利解译属于Mod工程，非完整轮回记忆读取，原审核状态保留。"
     }
   ],
   "unimplemented_nodes": [
-    {
-      "id": "F06",
-      "working_name": "灾后记录解译",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
     {
       "id": "F07",
       "working_name": "终局舰船工程",
@@ -2762,6 +2787,18 @@
       "remaining": 3,
       "spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R5e",
+      "nodes": [
+        "F06"
+      ],
+      "added": 1,
+      "implemented_total": 78,
+      "remaining": 2,
+      "spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5e_implementation_2026-10-31.md"
     }
   ]
 }

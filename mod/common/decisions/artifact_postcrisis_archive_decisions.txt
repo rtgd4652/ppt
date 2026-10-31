@@ -1,0 +1,16 @@
+decision_artifact_postcrisis_archive_decode = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_building = "building_artifact_civilization_heritage_archive"
+		owner = { has_technology = "tech_artifact_post_disaster_record_decoding" }
+	}
+	allow = { custom_tooltip = { fail_text = aph.require_decode artifact_postcrisis_archive_can_decode = yes } }
+	effect = {
+		custom_tooltip = aph.offer_decode
+		hidden_effect = { artifact_postcrisis_archive_decode = yes }
+	}
+	ai_weight = { weight = 0 }
+}

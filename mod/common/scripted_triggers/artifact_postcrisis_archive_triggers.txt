@@ -1,0 +1,36 @@
+# 三旗由aemusa_ms_exclusive_settle同次写入。只读持久结算，不重验已结束的现场。
+# 旧生产者已核对3个归档/3场真实投影战斗与独立重开未来行动，早于终局身份选择。
+artifact_postcrisis_common_victory = {
+	has_country_flag = aemusa_ms_crisis_exclusive_completed
+	has_country_flag = aemusa_ms_crisis_exclusive_settled
+	has_country_flag = aemusa_ms_country_settlement_exclusive_crisis_victory_done
+}
+
+# 国家知识不依赖继续保有原档案馆；F07/F08后续资格读取本接口。
+artifact_postcrisis_records_decoded = {
+	has_technology = "tech_artifact_post_disaster_record_decoding"
+	artifact_postcrisis_common_victory = yes
+	has_modifier = aph_victory_records_decoded
+}
+
+# 即时归档只向当前国家付费/存知识，不建立地方库存或ACS拥有者目标。
+artifact_postcrisis_archive_site = {
+	artifact_civil_supply_actor = yes
+	is_controlled_by = owner
+	has_orbital_bombardment = no
+	has_active_building = "building_artifact_civilization_heritage_archive"
+	owner = {
+		has_technology = "tech_artifact_post_disaster_record_decoding"
+		artifact_postcrisis_common_victory = yes
+	}
+}
+
+artifact_postcrisis_archive_can_decode = {
+	artifact_postcrisis_archive_site = yes
+	owner = {
+		NOT = { has_modifier = aph_victory_records_decoded }
+		has_resource = { type = energy amount >= 500 }
+		has_resource = { type = consumer_goods amount >= 200 }
+		has_resource = { type = minor_artifacts amount >= 20 }
+	}
+}
