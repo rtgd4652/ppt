@@ -1,0 +1,104 @@
+# 国家清理只撤本国登记角色、工作量和两个端点；不退款、不清档案、不清ACS库存。
+artifact_observation_calibration_clear = {
+	if = {
+		limit = { exists = event_target:aoc_source@this }
+		event_target:aoc_source@this = {
+			if = {
+				limit = { is_owned_by = prev artifact_civil_supply_original_owner = yes }
+				remove_modifier = acs_observation_source
+			}
+		}
+		clear_global_event_target = aoc_source@this
+	}
+	if = {
+		limit = { exists = event_target:aoc_peer@this }
+		event_target:aoc_peer@this = {
+			if = {
+				limit = { is_owned_by = prev artifact_civil_supply_original_owner = yes }
+				remove_modifier = acs_observation_peer
+			}
+		}
+		clear_global_event_target = aoc_peer@this
+	}
+	remove_modifier = aoc_tracking
+	remove_modifier = aoc_calibrating
+	clear_variable = aoc_work
+}
+
+artifact_observation_calibration_register_source = {
+	if = {
+		limit = { artifact_observation_calibration_can_register_source = yes }
+		artifact_civil_supply_ensure_owner = yes
+		save_event_target_as = aoc_selected_source
+		owner = {
+			artifact_observation_calibration_clear = yes
+			event_target:aoc_selected_source = {
+				add_modifier = { modifier = acs_observation_source days = -1 }
+				# 当前行星，PREV为所属国，按国家索引保存唯一基准端。
+				save_global_event_target_as = aoc_source@prev
+			}
+			add_modifier = { modifier = aoc_tracking days = -1 }
+		}
+	}
+}
+
+artifact_observation_calibration_register_peer = {
+	if = {
+		limit = { artifact_observation_calibration_can_register_peer = yes }
+		artifact_civil_supply_ensure_owner = yes
+		save_event_target_as = aoc_selected_peer
+		owner = {
+			event_target:aoc_selected_peer = {
+				add_modifier = { modifier = acs_observation_peer days = -1 }
+				save_global_event_target_as = aoc_peer@prev
+			}
+		}
+	}
+}
+
+# 启动与应用费用由原生决议支付一次；复核不读取扣费前余额。
+artifact_observation_calibration_start = {
+	if = {
+		limit = { artifact_observation_calibration_can_start = yes }
+		add_modifier = { modifier = aoc_calibrating days = -1 }
+		set_variable = { which = aoc_work value = 0 }
+	}
+}
+
+artifact_observation_calibration_apply = {
+	if = {
+		limit = { artifact_observation_calibration_can_apply = yes }
+		artifact_civil_supply_ensure_owner = yes
+		add_modifier = { modifier = acs_observation_window days = 360 }
+	}
+}
+
+# 接到既有ACS国家月度入口；只核对两处目标。控制/设施失效保留进度，
+# 转让、消失或角色记录已被清理则撤销未完成项目；已完成知识留在原国家。
+artifact_observation_calibration_monthly = {
+	if = {
+		limit = { has_modifier = aoc_tracking }
+		if = {
+			limit = {
+				OR = {
+					has_modifier = aoc_calibration_archive
+					artifact_observation_calibration_selection_intact = no
+				}
+			}
+			artifact_observation_calibration_clear = yes
+		}
+		else_if = {
+			limit = {
+				has_modifier = aoc_calibrating
+				artifact_observation_calibration_network_ready = yes
+			}
+			change_variable = { which = aoc_work value = 1 }
+			if = {
+				limit = { check_variable = { which = aoc_work value >= 6 } }
+				add_modifier = { modifier = aoc_calibration_archive days = -1 }
+				artifact_observation_calibration_clear = yes
+				country_event = { id = artifact_observation_calibration.1 }
+			}
+		}
+	}
+}

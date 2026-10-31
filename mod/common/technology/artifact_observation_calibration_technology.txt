@@ -1,0 +1,14 @@
+# A09保留A06＋C03前置；一处唯一阵列与异星系普通观测站完成联校。
+# 实际成果是本国档案与可付费部署的轨道支持，不复制唯一阵列或预知危机。
+tech_artifact_cross_colony_calibration = {
+	area = physics
+	icon = "tech_artifact_black_gate_observation"
+	cost = 8000
+	tier = 4
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_long_baseline_measurement" "tech_artifact_seven_day_logistics" }
+	weight = 65
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	}
+}

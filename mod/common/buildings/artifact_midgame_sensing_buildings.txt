@@ -1,4 +1,4 @@
-# R2c首版只组织一处公共基准站；A09联校另行扩展，不让多殖民地堆叠全境传感。
+# 一处公共基准站；A09以它配对异星系普通观测站，不扩唯一阵列限额或堆叠全境传感。
 building_artifact_long_baseline_array = {
 	can_build = yes
 	base_buildtime = 360

@@ -1,0 +1,142 @@
+# 行星载体入口。ACS只负责本地拥有者与转让清理，联校使用独立的国家端点索引。
+artifact_observation_calibration_actor = {
+	artifact_civil_supply_actor = yes
+	owner = { has_technology = "tech_artifact_cross_colony_calibration" }
+}
+
+artifact_observation_calibration_source_site = {
+	artifact_observation_calibration_actor = yes
+	artifact_civil_supply_safe = yes
+	OR = {
+		has_active_building = "building_artifact_long_baseline_array"
+		has_active_building = "building_artifact_phase_warning_array"
+	}
+}
+
+# A11升级BL02时须将新阶段接回本资格，保持对照端与已付费地方窗口继续可用。
+artifact_observation_calibration_peer_site = {
+	artifact_observation_calibration_actor = yes
+	artifact_civil_supply_safe = yes
+	OR = {
+		has_active_building = "building_artifact_baseline_observation_station"
+		has_active_building = "building_artifact_black_gate_observatory"
+	}
+}
+
+# 国家作用域：已选端点仍是原拥有者的合法殖民地；控制权/设施失效另作暂停。
+# 登记阶段允许尚无对照端，运行阶段不允许丢失对照端后无限挂起。
+artifact_observation_calibration_selection_intact = {
+	exists = event_target:aoc_source@this
+	event_target:aoc_source@this = {
+		is_colony = yes
+		is_owned_by = prev
+		artifact_civil_supply_original_owner = yes
+		has_modifier = acs_observation_source
+	}
+	OR = {
+		AND = {
+			NOT = { exists = event_target:aoc_peer@this }
+			NOT = { has_modifier = aoc_calibrating }
+		}
+		AND = {
+			exists = event_target:aoc_peer@this
+			event_target:aoc_peer@this = {
+				is_colony = yes
+				is_owned_by = prev
+				artifact_civil_supply_original_owner = yes
+				has_modifier = acs_observation_peer
+			}
+		}
+	}
+}
+
+# 对照行星 -> 拥有国 -> 基准行星 -> 基准星系；PREVPREVPREV回到对照行星。
+artifact_observation_calibration_peer_is_remote = {
+	exists = solar_system
+	owner = {
+		exists = event_target:aoc_source@this
+		event_target:aoc_source@this = {
+			solar_system = {
+				NOT = { is_same_value = prevprevprev.solar_system }
+			}
+		}
+	}
+}
+
+artifact_observation_calibration_can_register_source = {
+	artifact_observation_calibration_source_site = yes
+	owner = {
+		NOR = { has_modifier = aoc_tracking has_modifier = aoc_calibration_archive }
+	}
+}
+
+artifact_observation_calibration_can_register_peer = {
+	artifact_observation_calibration_peer_site = yes
+	owner = {
+		has_modifier = aoc_tracking
+		NOR = { has_modifier = aoc_calibrating has_modifier = aoc_calibration_archive }
+		NOT = { exists = event_target:aoc_peer@this }
+		artifact_observation_calibration_selection_intact = yes
+	}
+	artifact_observation_calibration_peer_is_remote = yes
+}
+
+# 国家作用域，运行只直接核对两处已登记目标，不枚举银河寻找替代站。
+artifact_observation_calibration_network_ready = {
+	artifact_observation_calibration_selection_intact = yes
+	exists = event_target:aoc_peer@this
+	event_target:aoc_source@this = { artifact_observation_calibration_source_site = yes }
+	event_target:aoc_peer@this = {
+		artifact_observation_calibration_peer_site = yes
+		artifact_observation_calibration_peer_is_remote = yes
+	}
+}
+
+artifact_observation_calibration_can_start = {
+	has_modifier = aoc_tracking
+	NOR = { has_modifier = aoc_calibrating has_modifier = aoc_calibration_archive }
+	artifact_observation_calibration_network_ready = yes
+}
+
+# 国家知识接口供A11/A12后续消费者读取；本包不授予未实现研究或个人资格。
+artifact_observation_calibration_archived = {
+	has_technology = "tech_artifact_cross_colony_calibration"
+	has_modifier = aoc_calibration_archive
+}
+
+# 360日窗口只属于本国已登记管理的观测端；设施/控制失效不暂停期限。
+artifact_observation_calibration_window_operational = {
+	artifact_observation_calibration_peer_site = yes
+	artifact_civil_supply_original_owner = yes
+	has_modifier = acs_observation_window
+	owner = { artifact_observation_calibration_archived = yes }
+}
+
+artifact_observation_calibration_can_apply = {
+	artifact_observation_calibration_peer_site = yes
+	NOT = { has_modifier = acs_observation_window }
+	owner = {
+		artifact_observation_calibration_archived = yes
+		has_technology = "tech_artifact_orbital_coordination"
+	}
+	solar_system = {
+		exists = starbase
+		starbase = {
+			is_normal_starbase = yes
+			is_owned_by = prevprev.owner
+			is_controlled_by = owner
+			has_starbase_building = "artifact_orbital_observation_link"
+		}
+		# 已有本国有效唯一阵列的星系不必重复付费获得同一基准支持。
+		NOT = {
+			any_system_planet_colony = {
+				is_owned_by = prevprev.owner
+				is_occupied_flag = no
+				OR = {
+					has_active_building = "building_artifact_long_baseline_array"
+					has_active_building = "building_artifact_phase_warning_array"
+				}
+			}
+		}
+	}
+}

@@ -178,6 +178,37 @@
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
     },
     {
+      "id": "A09",
+      "key": "tech_artifact_cross_colony_calibration",
+      "previous_name": "跨殖民地观测联校",
+      "name": "跨殖民地观测联校",
+      "lore": "同一种扰动在不同殖民地留下的记录，也会混入仪器、环境和观测时序造成的差异。中央庭将长基线阵列与地方观测站纳入共同校核，在保留原始记录的同时辨认这些偏差，使一地积累的经验能够被别处的研究者继续使用。",
+      "application": "指定一处长基线基准端与另一星系的一处普通观测端，付费完成联校并保存本国档案。档案允许地方观测站按期投入物资，为同星本国轨道接口提供基准感知支持；后续模型复核也可读取这份成果。",
+      "implementation_note": "唯一阵列＋异星系普通观测端，原生付费/六有效月度/本国档案；档案提供付费地方E06供源，复用同一修正块。原生目标保存/扣费/感知/读档未验。",
+      "technology_file": "mod/common/technology/artifact_observation_calibration_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_observation_calibration_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/decisions/artifact_observation_calibration_decisions.txt",
+        "mod/common/scripted_effects/artifact_observation_calibration_effects.txt",
+        "mod/common/scripted_triggers/artifact_observation_calibration_triggers.txt",
+        "mod/common/static_modifiers/artifact_observation_calibration_modifiers.txt",
+        "mod/events/artifact_observation_calibration_events.txt",
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/events/artifact_civil_supply_events.txt",
+        "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
+        "mod/common/buildings/artifact_midgame_sensing_buildings.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "central_court_history",
+        "public_military"
+      ],
+      "source_note": "先查七都数据库并读神器/组织/核心术语源；联校是可重复观测与误差校核的Mod工程转译，保留黑门未知，不建立预知能力，来源审核状态不变。"
+    },
+    {
       "id": "A10",
       "key": "tech_artifact_stable_rule_interface",
       "previous_name": "稳定规则接口",
@@ -1513,12 +1544,6 @@
   ],
   "unimplemented_nodes": [
     {
-      "id": "A09",
-      "working_name": "跨殖民地观测联校",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
-    {
       "id": "A11",
       "working_name": "高维模型复核",
       "status": "awaits_implementation_text",
@@ -2423,6 +2448,18 @@
       "remaining": 12,
       "spec": "docs/design/artifact_civilization_r4g_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4g_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R4h",
+      "nodes": [
+        "A09"
+      ],
+      "added": 1,
+      "implemented_total": 69,
+      "remaining": 11,
+      "spec": "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4h_implementation_2026-10-31.md"
     }
   ]
 }

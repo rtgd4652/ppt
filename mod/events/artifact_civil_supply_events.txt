@@ -37,13 +37,23 @@ carrier_event = {
 	option = { name = artifact_hull.close }
 }
 
-# 只扫描已登记本包状态的殖民地；回到载体，避免动态目标索引错位。
+# 物资只扫描已登记殖民地并回到载体；A09从国家引用直接核对两端，避免索引错位。
 country_event = {
     id = artifact_civil_supply.1
     hide_window = yes
     is_triggered_only = yes
-    trigger = { any_owned_colony = { has_carrier_flag = acs_managed } }
+    trigger = {
+        OR = {
+            any_owned_colony = { has_carrier_flag = acs_managed }
+            # 两端均丢失后仍须清理国家登记，不能依赖已不存在的自有殖民地标记。
+            has_modifier = aoc_tracking
+        }
+    }
     immediate = {
+        if = {
+            limit = { has_modifier = aoc_tracking }
+            artifact_observation_calibration_monthly = yes
+        }
         every_owned_colony = {
             limit = { has_carrier_flag = acs_managed }
             carrier = { artifact_civil_supply_monthly = yes }

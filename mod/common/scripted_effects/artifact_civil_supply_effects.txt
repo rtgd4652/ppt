@@ -18,6 +18,10 @@ artifact_civil_supply_clear = {
 	remove_modifier = acs_construction_supply
 	remove_modifier = acs_expedition_reconstitution
 	remove_modifier = acs_rule_anchor_window
+	# A09本地角色/应用随原拥有者清理；国家档案和两端存续由国家月度单独核对。
+	remove_modifier = acs_observation_source
+	remove_modifier = acs_observation_peer
+	remove_modifier = acs_observation_window
 	remove_carrier_flag = acs_managed
 	if = { limit = { exists = event_target:acs_owner@this } clear_global_event_target = acs_owner@this }
 }

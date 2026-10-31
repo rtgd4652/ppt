@@ -52,6 +52,14 @@ artifact_orbital_observation_link = {
 							OR = {
 								has_active_building = "building_artifact_long_baseline_array"
 								has_active_building = "building_artifact_phase_warning_array"
+								# A09把付费地方观测端作为替代来源；共用本块，不能叠加一份基准支持。
+								owner = {
+									has_technology = "tech_artifact_cross_colony_calibration"
+									has_modifier = aoc_calibration_archive
+									prev = {
+										carrier = { artifact_observation_calibration_window_operational = yes }
+									}
+								}
 							}
 						}
 					}

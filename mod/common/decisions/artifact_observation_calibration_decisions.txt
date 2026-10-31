@@ -1,0 +1,122 @@
+# 行星入口读写国家登记；只允许一对指定端点，启动后须撤销才能重选。
+decision_artifact_observation_register_source = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_observation_calibration_actor = yes
+		OR = { has_building = "building_artifact_long_baseline_array" has_building = "building_artifact_phase_warning_array" }
+		owner = { NOT = { has_modifier = aoc_calibration_archive } }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = aoc.requires_source
+			artifact_observation_calibration_can_register_source = yes
+		}
+	}
+	effect = {
+		custom_tooltip = aoc.offer_source
+		hidden_effect = { artifact_observation_calibration_register_source = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_observation_register_peer = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_observation_calibration_actor = yes
+		OR = { has_building = "building_artifact_baseline_observation_station" has_building = "building_artifact_black_gate_observatory" }
+		owner = { NOT = { has_modifier = aoc_calibration_archive } }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = aoc.requires_peer
+			artifact_observation_calibration_can_register_peer = yes
+		}
+	}
+	effect = {
+		custom_tooltip = aoc.offer_peer
+		hidden_effect = { artifact_observation_calibration_register_peer = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_observation_start = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = {
+		category = decisions
+		cost = { energy = 600 consumer_goods = 300 alloys = 100 }
+	}
+	potential = {
+		artifact_observation_calibration_actor = yes
+		owner = {
+			has_modifier = aoc_tracking
+			NOR = { has_modifier = aoc_calibrating has_modifier = aoc_calibration_archive }
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = aoc.requires_network
+			owner = { artifact_observation_calibration_can_start = yes }
+		}
+	}
+	effect = {
+		custom_tooltip = aoc.offer_start
+		hidden_effect = { owner = { artifact_observation_calibration_start = yes } }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_observation_status = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = { artifact_observation_calibration_actor = yes }
+	effect = { owner = { country_event = { id = artifact_observation_calibration.1 } } }
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_observation_cancel = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_observation_calibration_actor = yes
+		owner = { has_modifier = aoc_tracking }
+	}
+	effect = {
+		custom_tooltip = aoc.offer_cancel
+		hidden_effect = { owner = { artifact_observation_calibration_clear = yes } }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_observation_apply = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = {
+		category = decisions
+		cost = { energy = 300 consumer_goods = 100 }
+	}
+	potential = {
+		artifact_observation_calibration_actor = yes
+		OR = { has_building = "building_artifact_baseline_observation_station" has_building = "building_artifact_black_gate_observatory" }
+		owner = { artifact_observation_calibration_archived = yes }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = aoc.requires_application
+			artifact_observation_calibration_can_apply = yes
+		}
+	}
+	effect = {
+		custom_tooltip = aoc.offer_apply
+		hidden_effect = { artifact_observation_calibration_apply = yes }
+	}
+	ai_weight = { weight = 0 }
+}

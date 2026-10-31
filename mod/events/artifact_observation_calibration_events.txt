@@ -1,0 +1,42 @@
+namespace = artifact_observation_calibration
+
+# 只读国家进度页，也作为一次完成通知；无支付、换端点或推进选项。
+country_event = {
+	id = artifact_observation_calibration.1
+	title = aoc.title
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = { has_technology = "tech_artifact_cross_colony_calibration" }
+	desc = {
+		trigger = { has_modifier = aoc_calibration_archive }
+		text = aoc.archived
+	}
+	desc = {
+		trigger = { NOR = { has_modifier = aoc_calibration_archive has_modifier = aoc_tracking } }
+		text = aoc.intro
+	}
+	desc = {
+		trigger = {
+			has_modifier = aoc_tracking
+			NOR = { has_modifier = aoc_calibration_archive has_modifier = aoc_calibrating }
+		}
+		text = aoc.pairing
+	}
+	desc = {
+		trigger = {
+			has_modifier = aoc_calibrating
+			NOT = { has_modifier = aoc_calibration_archive }
+			artifact_observation_calibration_network_ready = yes
+		}
+		text = aoc.working
+	}
+	desc = {
+		trigger = {
+			has_modifier = aoc_calibrating
+			NOT = { has_modifier = aoc_calibration_archive }
+			artifact_observation_calibration_network_ready = no
+		}
+		text = aoc.paused
+	}
+	option = { name = aoc.close }
+}

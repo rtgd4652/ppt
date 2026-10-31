@@ -224,8 +224,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "在选定的有限观测站之间完成联校项目；不逐日扫描全银河。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "指定唯一阵列与异星系普通观测端，付费完成六次有效月度并归档；档案开放360日付费地方E06基准供源，同星港不叠加。",
+      "implementation_key": "tech_artifact_cross_colony_calibration",
+      "spec": "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4h_implementation_2026-10-31.md"
     },
     {
       "id": "A10",
@@ -2434,18 +2437,34 @@
       "report": "reports/artifact_civilization_r4g_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r4g_checkpoint_2026-10-31.json",
       "next_step": "推进A09跨殖民地观测联校（A06＋C03）：围绕有限的指定观测端点实现付费联校与可复用成果，接A11/A12后续。集中试玩优先确认D12原生行动，D14同星联防和维护合并代表路径；人物组合、连续巨构和批量图标仍暂停。"
+    },
+    "R4h": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "nodes": [
+        "A09"
+      ],
+      "new_components": 0,
+      "new_buildings": 0,
+      "new_events": 1,
+      "new_on_actions": 0,
+      "spec": "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4h_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r4h_checkpoint_2026-10-31.json",
+      "next_step": "推进A11高维模型复核（A09＋A10）：读取真实联校档案与公共接口，接BL02观测站最终升级和可复核记录；A12随后。集中试玩仍优先D12原生行动，D14/A09选择必要代表共用关键读档，余项保留；人物组合、连续巨构和批量图标仍暂停。"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 68,
+    "public_technologies": 69,
     "army_types": 5,
     "component_definitions": 111,
     "building_definitions": 39,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 12,
-    "note": "R4g新增D14，复用三种驻防设施、轨道接口与原拥有者清理；6项新检查、18项受影响检查及静态通过，运行未验。"
+    "planned_technologies_remaining": 11,
+    "note": "R4h新增A09：两端联校、档案与360日地方观测支持；6项新增、12项相关检查及静态通过，运行未验。"
   },
   "orbital_buildings": [
     {
@@ -2782,5 +2801,8 @@
   "r4f_checkpoint": "reports/artifact_civilization_r4f_checkpoint_2026-10-31.json",
   "r4g_spec": "docs/design/artifact_civilization_r4g_implementation_spec_v0.1.json",
   "r4g_report": "reports/artifact_civilization_r4g_implementation_2026-10-31.md",
-  "r4g_checkpoint": "reports/artifact_civilization_r4g_checkpoint_2026-10-31.json"
+  "r4g_checkpoint": "reports/artifact_civilization_r4g_checkpoint_2026-10-31.json",
+  "r4h_spec": "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.json",
+  "r4h_report": "reports/artifact_civilization_r4h_implementation_2026-10-31.md",
+  "r4h_checkpoint": "reports/artifact_civilization_r4h_checkpoint_2026-10-31.json"
 }

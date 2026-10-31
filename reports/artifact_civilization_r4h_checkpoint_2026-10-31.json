@@ -1,0 +1,133 @@
+{
+  "date": "2026-10-31",
+  "package": "R4h",
+  "source_base": "802d436",
+  "status": "implemented_static_passed",
+  "spec": "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.json",
+  "report": "reports/artifact_civilization_r4h_implementation_2026-10-31.md",
+  "completed": [
+    "A09研究与一对异星系指定端点",
+    "正常付费六次有效月度、只读进度与本国永久档案",
+    "付费360日地方观测供源，接入既有E06同一基准修正块",
+    "原拥有者/转让清理、国家月度全失端点清理与文档同步"
+  ],
+  "tests": {
+    "new": {
+      "count": 6,
+      "status": "pass",
+      "module": "test_artifact_observation_calibration"
+    },
+    "affected": {
+      "count": 12,
+      "status": "pass",
+      "modules": [
+        "test_artifact_civil_supply",
+        "test_artifact_midgame_sensing"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 208,
+        "events": 259,
+        "localization_keys": 2097,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "fixture_note": "首次新夹具缺少has_building分支，补齐标准条件后18项通过；未据此修改产品脚本。",
+    "limitations": [
+      "执行正式条件/效果、既有月度与轨道消费者；原生费用、计时和修正应用仍由外部契约代表。",
+      "没有启动游戏，不把两端引用、计时夹具或源码提示当成原生序列化/传感/读档证据。"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "pending_command": null,
+    "save_created": null,
+    "next_stage": "约20分钟集中试玩仍优先D12新行动；A09两端登记到档案/地方应用只在预算允许时取一条代表，与D14共用一次关键读档，余项保留。"
+  },
+  "current_counts": {
+    "date": "2026-10-31",
+    "public_technologies": 69,
+    "army_types": 5,
+    "component_definitions": 111,
+    "building_definitions": 39,
+    "starbase_building_definitions": 1,
+    "public_strategic_ship_sizes": 1,
+    "planned_technologies_remaining": 11,
+    "note": "R4h新增A09：两端联校、档案与360日地方观测支持；6项新增、12项相关检查及静态通过，运行未验。"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-BLACK-GATE-RESEARCH-SYSTEM",
+      "TERM-BLACK-GATE",
+      "TERM-CENTRAL-COURT"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false,
+    "constraint": "跨站比对与偏差校核是Mod科学方法设计；不揭示黑门完整本质、不建立预言能力或复制唯一阵列。"
+  },
+  "native_reference": {
+    "game_source_version": "本机4.5.2 / eb95源码；本轮未启动游戏",
+    "target_4_5_1_compatibility": "pending",
+    "reference": "本机script_documentation中事件目标/动态索引、is_same_value与作用域说明；既有ACS月度、原拥有者清理与E06原生条件修正。",
+    "contract": "国家索引保存两个行星目标；决议费用一次由原生扣除；普通观测端经付费窗口可替代E06基准供源，共用一个修正块。"
+  },
+  "remaining": [
+    "D12原生行动、D14维护及A09两端/应用的实际代表验证待阶段试玩",
+    "A09国家动态端点目标序列化和关键读档未验",
+    "余11公共节点：A11/A12/E11/E12/F02～F08",
+    "4.5.1兼容、正式图标和自然平衡未验"
+  ],
+  "next": "推进A11高维模型复核（A09＋A10）：读取真实联校档案与公共接口，接BL02观测站最终升级和可复核记录；A12随后。集中试玩仍优先D12原生行动，D14/A09选择必要代表共用关键读档，余项保留；人物组合、连续巨构和批量图标仍暂停。",
+  "preserve": [
+    "tools/prototypes/aemusa_cross_system_megastructure/",
+    "2293.10.11-r3e-reserve及此前基线存档",
+    "暂停人物组合、连续巨构和批量图标"
+  ],
+  "files": [
+    "mod/common/decisions/artifact_observation_calibration_decisions.txt",
+    "mod/common/scripted_effects/artifact_observation_calibration_effects.txt",
+    "mod/common/scripted_triggers/artifact_observation_calibration_triggers.txt",
+    "mod/common/static_modifiers/artifact_observation_calibration_modifiers.txt",
+    "mod/common/technology/artifact_observation_calibration_technology.txt",
+    "mod/events/artifact_observation_calibration_events.txt",
+    "mod/localisation/simp_chinese/artifact_observation_calibration_l_simp_chinese.yml",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "mod/events/artifact_civil_supply_events.txt",
+    "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
+    "mod/common/buildings/artifact_midgame_sensing_buildings.txt",
+    "tools/validation/tests/test_artifact_observation_calibration.py",
+    "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r4h_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r4h_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}
