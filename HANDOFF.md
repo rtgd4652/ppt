@@ -4,6 +4,9 @@
 
 ## 当前授权与工作状态
 
+
+- 新增公共配色离线研究：两图/独立源文件，沿已批准的深蓝灰/雾银/冷青/琥珀职责，五网格几何保持、重开通过。具体轮廓与材质待评审，未做正式游戏贴图/未安装。见[研究记录](reports/central_court_material_study_2026-10-31.md)；本轮进入晚间收尾，下一步按整体/配色反馈收敛，不恢复旧排障或暂停任务。
+
 - 最新完成一舰一构整体候选：中庭级F07炮击代表3段＋F08造境平台2阶段，5网格PDX回读/源文件重开通过，4张预览；具体外观待评审，未安装。见[整体候选](art/models/central_court_full_candidates_v01/README.md)和[检查点](reports/central_court_full_candidates_checkpoint_2026-10-31.json)。本轮局部对照2例原版静态网格，其他5组仍待做；未操作游戏。
 
 - 最新完成公共3D Kit候选：6新部件、2组合、4预览、6个可回读PDX网格及Blender源文件；7接口位置/朝向和源文件重开通过。具体外观待评审，未安装游戏。见[部件库](art/models/central_court_kit_v01/README.md)、[视觉规范](docs/art/ARTIFACT_CIVILIZATION_3D_VISUAL_LANGUAGE_v0.1.md)和[检查点](reports/central_court_kit_v01_checkpoint_2026-10-31.json)。本轮未操作游戏或继续键盘排障。
@@ -11,7 +14,7 @@
 - 停电续接完成：335f408已冷启动并载回原档，两阶段缺失sprite报错消失。守卫新增同次置前/动作及有界部分清理，9项源码检查、实际控制台开/关与残留清理通过；完整命令没有提交，F08/D12玩法仍未验。看[恢复检查点](reports/artifact_civilization_r5g_recovery_checkpoint_2026-10-31.json)；本轮GUI已收尾，无待补交命令，不再重放历史输入排障。
 
 - 最新完成R5g F08“传承造境工程”及图标注册补齐；公共80项科技源码已接齐。5项新增/6项相关源码检查复用，本轮图标与总静态通过；正常建造/造境/殖民仍待阶段代表试玩。
-- 当前看[完整外观候选检查点](reports/central_court_full_candidates_checkpoint_2026-10-31.json)；下一步根据整体轮廓反馈改比例/功能区，收口外观后再做材质/LOD/必要效果与接入。不是把“继续”记为具体造型批准。F08/D12玩法仍未验；组合/批量图标/连续原型暂停。
+- 当前看[配色研究检查点](reports/central_court_material_study_checkpoint_2026-10-31.json)；整体候选和配色均待评审，未安装。晚间已进入收尾，下次按具体轮廓/配色反馈收敛，再制作正式图集、LOD与必要接入。
 - 用户强调参考大型Mod、避免繁琐测试。已读Gigas与ACOT的[大型工程写法](docs/design/artifact_large_engineering_mod_reference_2026-10-31.md)，并补读舰R／久远之旅／群星争霸的[物种文明组织方式](docs/design/artifact_species_pack_mod_reference_2026-10-31.md)：复用原生建造，分别管理文明、剧情与个人资格，让研究连接实际能力。E09首版保留；D13承载与E10战略舰体沿用原分工。两轮只补参考文档，未操作游戏，已有检查直接复用。
 - 又按用户要求查看晨曦的[减伤与复活源码](docs/design/artifact_dawn_ship_survival_mod_reference_2026-10-31.md)：原生比例／固定减伤、失能修复原舰、舰毁后按旧设计补造；区分已接线与注释所称功能。我们的新旗舰仍用国家记录、唯一实例、90／75／60日冷却后首都重建；失能方案保留为备用。该参考轮只补文档；随后R4d已采用原生减伤字段，旗舰恢复方案未改。
 - 写科技、设施及相关文案前，先查七都数据库并读其指向来源，再核对脚本；不只沿用现有本地化。遵守[文案规范](docs/design/artifact_technology_writing_guide_v0.1.md)，[逐项目录](docs/design/artifact_technology_text_catalog_v0.1.json)提供来源与实现对照。源审核状态保留，工程转译不冒充原作事实。
@@ -26,7 +29,7 @@
 | --- | --- |
 | 仓库根目录 | `C:\Users\Admin\Desktop\ppt\simple_leader_edict`；父目录 `ppt` 不是本仓库的 Git 根目录 |
 | 分支 | `knowledge/source-rebuild-v0.1`；接手时用 Git 复核 |
-| 上次开发保存点 | `f362606`为本批完整候选基线；最新中文提交通过`git log -1`获取 |
+| 上次开发保存点 | `af11982`为本轮配色研究基线；最新中文提交通过`git log -1`获取 |
 | 最近实际运行的 Mod 源码 | 最近已观察为`335f408`于20:37加载、4.5.2，仅本Mod；后续更改在桌面工具/离线美术和记录中。当前轮未再查看游戏，新玩法仍未验 |
 | 唯一游戏加载目录 | 仓库内 `mod/` |
 | 游戏可执行文件 | `F:\steam\steamapps\common\Stellaris\stellaris.exe` |

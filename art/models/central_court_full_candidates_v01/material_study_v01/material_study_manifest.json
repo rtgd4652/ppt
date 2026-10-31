@@ -1,0 +1,74 @@
+{
+  "date": "2026-10-31",
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "geometry_changed": false,
+  "source_gray": "art\\models\\central_court_full_candidates_v01\\central_court_full_candidates_v01.blend",
+  "source_blend": "art\\models\\central_court_full_candidates_v01\\material_study_v01\\central_court_material_study_v01.blend",
+  "previews": [
+    "art/models/central_court_full_candidates_v01/material_study_v01/ship_material_study.png",
+    "art/models/central_court_full_candidates_v01/material_study_v01/worldformer_material_study.png"
+  ],
+  "palette": {
+    "navy": "182630",
+    "graphite": "304651",
+    "white": "D6D9D5",
+    "silver": "9BA8AE",
+    "cyan": "69C1CC",
+    "amber": "D39A55"
+  },
+  "palette_reference": "docs/art/calibration/CENTRAL_COURT_MATERIAL_CALIBRATION.md",
+  "material_method": "离线逐面分区与Blender节点材质，未烘焙正式DDS/UV图集",
+  "area_by_role": {
+    "cc_candidate_cruiser_bow": {
+      "navy": 469.31383680179715,
+      "graphite": 197.78598104417324,
+      "white": 22.55245180800557,
+      "silver": 0.1490124361589551,
+      "cyan": 0,
+      "amber": 0
+    },
+    "cc_candidate_cruiser_mid": {
+      "navy": 663.1638331564609,
+      "graphite": 261.2477460168302,
+      "white": 50.74906622734852,
+      "silver": 0.7481427084421739,
+      "cyan": 0,
+      "amber": 0
+    },
+    "cc_candidate_cruiser_stern": {
+      "navy": 385.8789197942242,
+      "graphite": 117.86679864861071,
+      "white": 22.02266515791416,
+      "silver": 0.73603042261675,
+      "cyan": 19.72781265899539,
+      "amber": 0
+    },
+    "cc_candidate_worldformer_active": {
+      "navy": 697.1426457034831,
+      "graphite": 264.35787690244615,
+      "white": 76.99481496401131,
+      "silver": 163.70632937853225,
+      "cyan": 22.46827481291257,
+      "amber": 12.50463274231879
+    },
+    "cc_candidate_worldformer_base": {
+      "navy": 624.8072276990861,
+      "graphite": 216.2461997643113,
+      "white": 75.05979416705668,
+      "silver": 0,
+      "cyan": 0,
+      "amber": 0
+    }
+  },
+  "mesh_triangles": {
+    "cc_candidate_cruiser_bow": 328,
+    "cc_candidate_cruiser_mid": 2360,
+    "cc_candidate_cruiser_stern": 1444,
+    "cc_candidate_worldformer_active": 6996,
+    "cc_candidate_worldformer_base": 3532
+  },
+  "saved_reopen": "pass",
+  "game_exposure_and_performance": "not_run",
+  "formal_asset_approved": false
+}

@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-31",
+  "source_base": "af11982",
+  "package": "public-material-study-v0.1",
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "formal_shape_approved": false,
+  "formal_material_approved": false,
+  "geometry_changed": false,
+  "source_reopened": true,
+  "game_operated": false,
+  "gray_source_modified": false,
+  "palette_reference": "docs/art/calibration/CENTRAL_COURT_MATERIAL_CALIBRATION.md",
+  "palette": {
+    "navy": "182630",
+    "graphite": "304651",
+    "white": "D6D9D5",
+    "silver": "9BA8AE",
+    "cyan": "69C1CC",
+    "amber": "D39A55"
+  },
+  "source_blend": "art\\models\\central_court_full_candidates_v01\\material_study_v01\\central_court_material_study_v01.blend",
+  "previews": [
+    "art/models/central_court_full_candidates_v01/material_study_v01/ship_material_study.png",
+    "art/models/central_court_full_candidates_v01/material_study_v01/worldformer_material_study.png"
+  ],
+  "limitations": [
+    "逐面规则/节点材质，非正式UV/DDS",
+    "游戏曝光、LOD、效果和性能未验",
+    "F08/D12玩法仍未验"
+  ],
+  "next_step": "晚间收尾已保存；下次按具体整体/配色反馈收敛，再制作正式材质通道、LOD和必要接入。",
+  "files": [
+    "HANDOFF.md",
+    "art/models/central_court_full_candidates_v01/README.md",
+    "art/models/central_court_full_candidates_v01/material_study_v01/README.md",
+    "art/models/central_court_full_candidates_v01/material_study_v01/central_court_material_study_v01.blend",
+    "art/models/central_court_full_candidates_v01/material_study_v01/material_study_manifest.json",
+    "art/models/central_court_full_candidates_v01/material_study_v01/ship_material_study.png",
+    "art/models/central_court_full_candidates_v01/material_study_v01/worldformer_material_study.png",
+    "docs/PROJECT_STATUS.md",
+    "docs/TODO.md",
+    "reports/central_court_material_study_2026-10-31.md",
+    "reports/central_court_material_study_checkpoint_2026-10-31.json",
+    "tools/art/render_central_court_material_study.py"
+  ]
+}
