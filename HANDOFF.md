@@ -6,7 +6,7 @@
 
 - 最新完成R4c E09分段大型工程与BL30营建场：真实备料消费、三阶段投入、停复工及有效完成态的额外巨构建造名额已接。7项新增、27项相关旧检查与总静态通过；本轮未操作游戏，原生容量行为待验。见[实施记录](reports/artifact_civilization_r4c_implementation_2026-10-31.md)。
 - 当前看[R4c检查点](reports/artifact_civilization_r4c_checkpoint_2026-10-31.json)；后续落实D13终解舰体承载的公共能力与真实消费者。R3e、R3f、R4a、R4b、R4c余项合并安排阶段试玩，旧证据直接复用。
-- 用户再次强调参考大型Mod、避免繁琐测试。已读本机Gigas与ACOT，结论见[大型工程参考](docs/design/artifact_large_engineering_mod_reference_2026-10-31.md)：后续空间巨构优先原生升级链；E09首版保留，不扩展管理步骤或专门测试。本次只改文档，未操作游戏，已有源码检查直接复用。
+- 用户强调参考大型Mod、避免繁琐测试。已读Gigas与ACOT的[大型工程写法](docs/design/artifact_large_engineering_mod_reference_2026-10-31.md)，并补读舰R／久远之旅／群星争霸的[物种文明组织方式](docs/design/artifact_species_pack_mod_reference_2026-10-31.md)：复用原生建造，分别管理文明、剧情与个人资格，让研究连接实际能力。E09首版保留；D13承载与E10战略舰体沿用原分工。两轮只补参考文档，未操作游戏，已有检查直接复用。
 - 写科技、设施及相关文案前，先查七都数据库并读其指向来源，再核对脚本；不只沿用现有本地化。遵守[文案规范](docs/design/artifact_technology_writing_guide_v0.1.md)，[逐项目录](docs/design/artifact_technology_text_catalog_v0.1.json)提供来源与实现对照。源审核状态保留，工程转译不冒充原作事实。
 - 用户最新要求优先于旧文档和助手记忆。10月30日晚“不用在意时间”仅适用于已结束的那次工作；长期仍按北京时间22:30收尾、23:00前结束。
 - 测试采用[开发与验收工作流](docs/DEVELOPMENT_WORKFLOW.md)：连续开发、阶段验收；普通试玩约20分钟，自动操作排障最多10分钟。未做的低风险测试不自动阻塞下一个包。
