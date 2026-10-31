@@ -155,7 +155,10 @@ artifact_civil_supply_expedition_active = {
 
 # R4a试验场只复用已有原拥有者与清理；不要求预留物资或联运端点。
 artifact_rule_anchor_site = {
-	has_active_building = "building_artifact_rule_anchor_test_site"
+	OR = {
+		has_active_building = "building_artifact_rule_anchor_test_site"
+		has_active_building = "building_artifact_redundant_rule_anchor_station"
+	}
 	owner = {
 		has_technology = "tech_artifact_rule_anchoring_engineering"
 		has_country_flag = artifact_public_rule_interface_record
@@ -233,6 +236,18 @@ artifact_civil_supply_segmented_site = {
 	}
 	has_active_building = "building_artifact_large_engineering_yard"
 	owner = { has_technology = "tech_artifact_segmented_large_engineering" }
+}
+
+# F04的备用物流仅供已付阶段月度施工与进度页读取；付款/新开工不调用本条件。
+artifact_civil_supply_segmented_work_site = {
+	OR = {
+		artifact_civil_supply_segmented_site = yes
+		AND = {
+			has_modifier = aer_support_window
+			artifact_engineering_redundancy_active = yes
+			has_active_building = "building_artifact_large_engineering_yard"
+		}
+	}
 }
 
 # 与B14备料位分别计数；本项目完成后仍占位，失控或停用也不能从其他星球重开。

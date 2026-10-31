@@ -36,7 +36,10 @@ artifact_public_theory_engineering_site = {
 		}
 		AND = {
 			owner = { has_technology = "tech_artifact_rule_anchoring_engineering" }
-			has_active_building = "building_artifact_rule_anchor_test_site"
+			OR = {
+				has_active_building = "building_artifact_rule_anchor_test_site"
+				has_active_building = "building_artifact_redundant_rule_anchor_station"
+			}
 		}
 	}
 }

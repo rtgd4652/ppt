@@ -1807,7 +1807,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f、R4a～R4l和R5a/R5b源码检查通过、运行未验。F03中心备料/投影现场反制已接，阶段试玩仍优先D12，其余必要片段共用关键读档。",
+    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f、R4a～R4l及R5a～R5c源码检查通过、运行未验。F04备件与已付营建备用物流已接，阶段试玩仍优先D12，必要代表共用关键读档。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1844,14 +1844,14 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 75,
+    "public_technologies": 76,
     "army_types": 5,
     "component_definitions": 111,
-    "building_definitions": 41,
+    "building_definitions": 42,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 5,
-    "note": "R5b新增F03及全国一处BL27中心，实付备料后支援现场舰队，限时削弱原危机投影；6项新增、22项相关及静态通过，运行未验。"
+    "planned_technologies_remaining": 4,
+    "note": "R5c新增F04/BL26升级，实存备件支持360日当地施工及已付营建备用物流；保留旧用途。6项新增、37项相关及静态通过，运行未验。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -2049,5 +2049,21 @@
     "report": "reports/artifact_civilization_r5b_implementation_2026-10-31.md",
     "checkpoint": "reports/artifact_civilization_r5b_checkpoint_2026-10-31.json",
     "next_step": "推进F04应急工程冗余（F02＋B14＋E09）：先核对BL26升级、实际备料及工程修复接口，再接修复备件和冗余预算。公共资料只读，不重置C2冷却、不改唯一旗舰90／75／60日恢复。随后F05～F08、最终Boss深化和共有胜利奖励/结尾。阶段试玩仍优先D12，F03取中心备料与投影现场反制的必要片段，共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
+  },
+  "r5c_engineering_redundancy": {
+    "date": "2026-10-31",
+    "status": "implemented_static_passed",
+    "runtime_status": "not_run",
+    "nodes": [
+      "F04"
+    ],
+    "new_buildings": 1,
+    "new_components": 0,
+    "new_events": 0,
+    "new_on_actions": 0,
+    "spec": "docs/design/artifact_civilization_r5c_implementation_spec_v0.1.json",
+    "report": "reports/artifact_civilization_r5c_implementation_2026-10-31.md",
+    "checkpoint": "reports/artifact_civilization_r5c_checkpoint_2026-10-31.json",
+    "next_step": "推进F05文明联合恢复（F03＋F04）：先核对殖民地损伤、现有恢复工程和原生维修接口，再接BL28灾后重建工场与实际投入。危机期间可用，不要求先赢最终Boss，不返还已结算锚点损失，不重置C2或唯一旗舰恢复。随后F06～F08、最终Boss深化及共有胜利奖励/结尾。阶段试玩继续约20分钟、优先D12；F04只取一次断供续工/升级继承的必要片段，共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
   }
 }

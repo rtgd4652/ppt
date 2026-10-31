@@ -271,7 +271,7 @@
       "name": "公共神器理论",
       "lore": "神器研究逐渐积累了可以相互检验的模型、方法与适用边界。中央庭将这些认识整理为公共工程标准，使异常研究的成果能够走出少数实验室，并继续接受来自实际应用的修正。",
       "application": "在高维观测复核站汇编已完成的模型与至少一种已归档的样本或材料方法，免费取得本国公共工程资格。工程物资集成场和规则锚定试验场随后可按原费用复现对应方法；后续公共反制仍需独立研究与危机资料。",
-      "implementation_note": "真实A11模型与至少一种C10方法免费即时汇编；本国资格使B14/E08工程现场复用原付费复现，不创建未知方法或改变个人/危机进度。R5b由F03中心读取实际记录/当地联防，来源保持，新反制路径运行未验。",
+      "implementation_note": "真实A11模型与至少一种C10方法免费即时汇编；本国资格使B14/E08工程现场复用原付费复现，不创建未知方法或改变个人/危机进度。R5b由F03中心读取实际记录/当地联防，来源保持，新反制路径运行未验。R5c：高阶锚定站仍能复现公共方法，原研究/实付/名额保持。运行未验。",
       "technology_file": "mod/common/technology/artifact_public_theory_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_public_theory_l_simp_chinese.yml",
       "consumer_files": [
@@ -281,7 +281,9 @@
         "mod/common/static_modifiers/artifact_public_theory_modifiers.txt",
         "mod/common/scripted_triggers/artifact_foundation_triggers.txt",
         "mod/events/artifact_foundation_events.txt",
-        "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt"
+        "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt",
+        "mod/common/buildings/artifact_engineering_redundancy_buildings.txt",
+        "mod/common/scripted_triggers/artifact_engineering_redundancy_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -582,14 +584,16 @@
       "name": "战略工程供应",
       "lore": "中央庭曾在黑门危机中协调救援、城防与重建物资。面向星海的大型建设，这份经验成为长期备料制度：材料有明确去向，下一项工程也知道还有多少余量。",
       "application": "解锁工程物资集成场，在联运接收端把实存物资集成为一份大型工程备料。全国同时保留一份，交付前可撤回并回收部分材料。",
-      "implementation_note": "只解锁集成场和备料资格；civil_supply消费实存普通物资并逐项扣费，全国至多一份备料。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。",
+      "implementation_note": "只解锁集成场和备料资格；civil_supply消费实存普通物资并逐项扣费，全国至多一份备料。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。R5c：F04消费一份真实ready备料转存备件，无复制/额外收费或退款。运行未验。",
       "technology_file": "mod/common/technology/artifact_strategic_supply_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_strategic_supply_l_simp_chinese.yml",
       "consumer_files": [
         "mod/common/buildings/artifact_strategic_supply_buildings.txt",
         "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
         "mod/common/decisions/artifact_civil_supply_decisions.txt",
-        "mod/common/scripted_triggers/artifact_system_engineering_triggers.txt"
+        "mod/common/scripted_triggers/artifact_system_engineering_triggers.txt",
+        "mod/common/buildings/artifact_engineering_redundancy_buildings.txt",
+        "mod/common/scripted_triggers/artifact_engineering_redundancy_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1519,13 +1523,15 @@
       "name": "规则锚定工程",
       "lore": "经验证的边界条件被部署到公共设施，并在持续供能下短时维持。实验室中的稳定方法由此成为保护殖民地的工程能力。",
       "application": "取得稳定规则接口记录后，可在轰炸开始前，于规则锚定试验场付费部署360日当地防护，减轻轨道轰炸伤害。",
-      "implementation_note": "civil_supply记录部署窗口和原拥有者；建筑提供−20%轰炸伤害，运行条件必须允许轰炸，不能套用启动时的无轰炸限制。",
+      "implementation_note": "civil_supply记录部署窗口和原拥有者；建筑提供−20%轰炸伤害，运行条件必须允许轰炸，不能套用启动时的无轰炸限制。R5c：BL26升级继承原防护，不免费开启/续期；遗留两级不叠加。运行未验。",
       "technology_file": "mod/common/technology/artifact_boundary_engineering_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_boundary_engineering_l_simp_chinese.yml",
       "consumer_files": [
         "mod/common/buildings/artifact_boundary_engineering_buildings.txt",
         "mod/common/decisions/artifact_civil_supply_decisions.txt",
-        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt"
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+        "mod/common/buildings/artifact_engineering_redundancy_buildings.txt",
+        "mod/common/scripted_triggers/artifact_engineering_redundancy_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1543,7 +1549,7 @@
       "name": "分段大型工程",
       "lore": "交界都市重建时，中央庭学会让不同队伍接续同一项工程。进入星海后，营建被拆分为可以独立验收的区段，物资、装配与试运行各有责任和交接条件。",
       "application": "解锁大型工程营建场。投入工程备料，逐段完成准备、装配与试运行；有效营建场提供§G+1§!巨型结构同时建造名额，全国一处。具体巨构仍需各自的研究与建造条件。",
-      "implementation_note": "解锁营建场与三阶段工程，逐段消费真实物资；运行收益由有效建筑提供，不永久写入国家。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。",
+      "implementation_note": "解锁营建场与三阶段工程，逐段消费真实物资；运行收益由有效建筑提供，不永久写入国家。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。R5c：已付阶段可用当地应急支援维持物流；新开工/阶段付款及完成容量条件和工期保持。运行未验。",
       "technology_file": "mod/common/technology/artifact_segmented_engineering_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_segmented_engineering_l_simp_chinese.yml",
       "consumer_files": [
@@ -1553,7 +1559,9 @@
         "mod/common/decisions/artifact_civil_supply_decisions.txt",
         "mod/events/artifact_civil_supply_events.txt",
         "mod/common/scripted_triggers/artifact_system_engineering_triggers.txt",
-        "mod/common/scripted_triggers/artifact_civil_engineering_triggers.txt"
+        "mod/common/scripted_triggers/artifact_civil_engineering_triggers.txt",
+        "mod/common/buildings/artifact_engineering_redundancy_buildings.txt",
+        "mod/common/scripted_triggers/artifact_engineering_redundancy_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1672,7 +1680,7 @@
       "name": "危机信号鉴别",
       "lore": "独立复测留下的边界回应，可以与现场记录中的异常模式相互对照。研究者为能够重现的征兆建立识别标准，让常规观测和公共防务知道应当注意什么，也清楚哪些解释仍然缺乏证据。",
       "application": "实际接触记录开放研究。配合已完成的模型复核，可在观测复核站或锚定试验场免费归档信号鉴别结果。此后在有本国轨道观测协同接口的星系，支付300能源／100消费品，使锚定试验场监听360日，为当地星港提供1点隐形探测；与预警阵列不叠加。档案供后续公共反制读取。",
-      "implementation_note": "只读持久接触来源，复用A11完成模型免费鉴别；付费360日监听接E06单份探测，与A07不叠加，国家知识/地方窗口分开。R5b由F03中心读取实际记录/当地联防，来源保持，新反制路径运行未验。",
+      "implementation_note": "只读持久接触来源，复用A11完成模型免费鉴别；付费360日监听接E06单份探测，与A07不叠加，国家知识/地方窗口分开。R5b由F03中心读取实际记录/当地联防，来源保持，新反制路径运行未验。R5c：BL26升级继承鉴别/监听，F04只读本国完成档案。运行未验。",
       "technology_file": "mod/common/technology/artifact_crisis_intelligence_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_crisis_intelligence_l_simp_chinese.yml",
       "consumer_files": [
@@ -1682,7 +1690,9 @@
         "mod/common/static_modifiers/artifact_crisis_intelligence_modifiers.txt",
         "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
         "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
-        "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt"
+        "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt",
+        "mod/common/buildings/artifact_engineering_redundancy_buildings.txt",
+        "mod/common/scripted_triggers/artifact_engineering_redundancy_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1720,15 +1730,43 @@
         "public_military"
       ],
       "source_note": "写前查中央庭/神器科学/黑门研究术语并读组织与普通工业来源；反制中心和数值属Mod设计，未改变原审核状态或黑门未知边界。"
+    },
+    {
+      "id": "F04",
+      "key": "tech_artifact_emergency_engineering_redundancy",
+      "previous_name": "应急工程冗余",
+      "name": "应急工程冗余",
+      "lore": "灾难中的重建经验让中央庭明白，关键工程不能把全部余地都留给一条供给线。锚定设施开始保存可替换构件和应急调度预算，在常规物流中断时，让已经投入的工作仍有条件继续。",
+      "application": "把规则锚定试验场升级为冗余规则锚定站，保留原防护、监听和公共方法用途。将当地一份已实付的大型工程备料预存为备件，按需启用360日应急支援：当地建筑建造速度修正+25%，并为已付款的营建阶段提供备用物流。核心营建场和本国安全控制仍必需，新阶段投入保留原条件。",
+      "implementation_note": "实存B14备件投入360日当地支援，施工+25%并支持已付E09阶段备用物流；核心场地和安全仍必需，新阶段原价/工期保持，不瞬间修复。",
+      "technology_file": "mod/common/technology/artifact_engineering_redundancy_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_engineering_redundancy_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_engineering_redundancy_buildings.txt",
+        "mod/common/decisions/artifact_engineering_redundancy_decisions.txt",
+        "mod/common/scripted_effects/artifact_engineering_redundancy_effects.txt",
+        "mod/common/scripted_triggers/artifact_engineering_redundancy_triggers.txt",
+        "mod/common/static_modifiers/artifact_engineering_redundancy_modifiers.txt",
+        "mod/common/buildings/artifact_boundary_engineering_buildings.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt",
+        "mod/common/decisions/artifact_crisis_intelligence_decisions.txt",
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+        "mod/common/scripted_triggers/artifact_crisis_intelligence_triggers.txt",
+        "mod/common/scripted_triggers/artifact_public_theory_triggers.txt",
+        "mod/events/artifact_civil_supply_events.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "central_court_history"
+      ],
+      "source_note": "写前查中央庭/神器科学/黑门研究/神器术语及组织、普通工业来源；备件与备用物流为Mod工程设计，审核状态和未知边界保持。"
     }
   ],
   "unimplemented_nodes": [
-    {
-      "id": "F04",
-      "working_name": "应急工程冗余",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
     {
       "id": "F05",
       "working_name": "文明联合恢复",
@@ -2676,6 +2714,18 @@
       "remaining": 5,
       "spec": "docs/design/artifact_civilization_r5b_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r5b_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R5c",
+      "nodes": [
+        "F04"
+      ],
+      "added": 1,
+      "implemented_total": 76,
+      "remaining": 4,
+      "spec": "docs/design/artifact_civilization_r5c_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5c_implementation_2026-10-31.md"
     }
   ]
 }

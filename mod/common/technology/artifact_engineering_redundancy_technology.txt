@@ -1,0 +1,11 @@
+# F04沿用F02+B14+E09，公共应急工程不改C2保护/冷却或唯一旗舰恢复。
+tech_artifact_emergency_engineering_redundancy = {
+	area = engineering
+	icon = "tech_artifact_resonance_manufacturing"
+	cost = 30000
+	tier = 5
+	category = { industry }
+	prerequisites = { "tech_artifact_crisis_signal_identification" "tech_artifact_strategic_engineering_supply" "tech_artifact_segmented_large_engineering" }
+	weight = 45
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}

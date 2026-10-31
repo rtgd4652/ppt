@@ -8,7 +8,11 @@ decision_artifact_crisis_signal_archive = {
 			has_technology = "tech_artifact_crisis_signal_identification"
 			NOT = { has_modifier = aci_signal_identified }
 		}
-		OR = { has_building = "building_artifact_high_dimensional_review_station" has_building = "building_artifact_rule_anchor_test_site" }
+		OR = {
+			has_building = "building_artifact_high_dimensional_review_station"
+			has_building = "building_artifact_rule_anchor_test_site"
+			has_building = "building_artifact_redundant_rule_anchor_station"
+		}
 	}
 	allow = { custom_tooltip = { fail_text = aci.require_archive artifact_crisis_intelligence_can_identify = yes } }
 	effect = {
@@ -26,7 +30,10 @@ decision_artifact_crisis_listening = {
 	potential = {
 		artifact_civil_supply_actor = yes
 		owner = { has_technology = "tech_artifact_crisis_signal_identification" }
-		has_building = "building_artifact_rule_anchor_test_site"
+		OR = {
+			has_building = "building_artifact_rule_anchor_test_site"
+			has_building = "building_artifact_redundant_rule_anchor_station"
+		}
 	}
 	allow = { custom_tooltip = { fail_text = aci.require_listening artifact_crisis_intelligence_can_listen = yes } }
 	effect = {

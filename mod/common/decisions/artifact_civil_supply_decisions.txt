@@ -51,7 +51,10 @@ decision_artifact_rule_anchor = {
 	icon = "decision_artifact_destiny_city_project"
 	potential = {
 		artifact_civil_supply_actor = yes
-		has_building = "building_artifact_rule_anchor_test_site"
+		OR = {
+			has_building = "building_artifact_rule_anchor_test_site"
+			has_building = "building_artifact_redundant_rule_anchor_station"
+		}
 		owner = { has_technology = "tech_artifact_rule_anchoring_engineering" }
 	}
 	allow = {

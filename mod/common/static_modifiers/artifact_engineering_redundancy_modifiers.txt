@@ -1,0 +1,9 @@
+# 库存和时间标记不直接给收益；有效冗余站与原月度施工分别读取。
+aer_spares_reserved = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+aer_support_window = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}

@@ -25,7 +25,15 @@ building_artifact_rule_anchor_test_site = {
 	building_sets = { research }
 	planet_limit = 1
 	prerequisites = { "tech_artifact_rule_anchoring_engineering" }
+	upgrades = { "building_artifact_redundant_rule_anchor_station" }
 	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	# 升级后的同一职能不允许再补造低级站；存在资格不依赖升级队列。
+	allow = {
+		NOR = {
+			has_building = "building_artifact_redundant_rule_anchor_station"
+			has_building_construction = "building_artifact_redundant_rule_anchor_station"
+		}
+	}
 	resources = {
 		category = planet_buildings
 		cost = { minerals = 1400 alloys = 400 }
@@ -33,7 +41,10 @@ building_artifact_rule_anchor_test_site = {
 	}
 	# 建筑修正从殖民地回到行星载体，保持原拥有者目标的索引一致。
 	triggered_planet_modifier = {
-		potential = { planet = { artifact_rule_anchor_active = yes } }
+		potential = {
+			NOT = { has_active_building = "building_artifact_redundant_rule_anchor_station" }
+			planet = { artifact_rule_anchor_active = yes }
+		}
 		planet_orbital_bombardment_damage = -0.20
 	}
 }

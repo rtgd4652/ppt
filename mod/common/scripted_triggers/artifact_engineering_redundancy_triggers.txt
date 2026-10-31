@@ -1,0 +1,46 @@
+# 备件只在当前安全、有效的本国公共设施投入；不借用个人神器或主线基线枢纽。
+artifact_engineering_redundancy_site = {
+	artifact_civil_supply_safe = yes
+	has_active_building = "building_artifact_redundant_rule_anchor_station"
+	owner = {
+		has_technology = "tech_artifact_emergency_engineering_redundancy"
+		has_technology = "tech_artifact_segmented_large_engineering"
+		artifact_crisis_intelligence_identified = yes
+	}
+}
+
+artifact_engineering_redundancy_stock = {
+	has_modifier = aer_spares_reserved
+	artifact_civil_supply_original_owner = yes
+}
+
+artifact_engineering_redundancy_can_reserve = {
+	artifact_engineering_redundancy_site = yes
+	artifact_civil_supply_strategic_ready = yes
+	owner = {
+		# 失效库存仍占位，不能另存一份；允许为当前支援结束后预备下一份。
+		NOT = { any_owned_colony = { carrier = { has_modifier = aer_spares_reserved } } }
+	}
+}
+
+artifact_engineering_redundancy_can_activate = {
+	artifact_engineering_redundancy_site = yes
+	artifact_engineering_redundancy_stock = yes
+	owner = {
+		# 地方窗口全国同时一个，停用不停表，不提前刷新或把支援复制到其他场地。
+		NOT = { any_owned_colony = { carrier = { has_modifier = aer_support_window } } }
+	}
+}
+
+# 运行只读已支付的窗口。备件在启动时已消费，运行不再依赖原物流设施。
+artifact_engineering_redundancy_active = {
+	has_modifier = aer_support_window
+	artifact_civil_supply_original_owner = yes
+	artifact_engineering_redundancy_site = yes
+}
+
+# 场地或研究失效后仍可放弃原库存；不返还材料，不撤销正在计时的支援。
+artifact_engineering_redundancy_can_discard = {
+	artifact_civil_supply_actor = yes
+	artifact_engineering_redundancy_stock = yes
+}

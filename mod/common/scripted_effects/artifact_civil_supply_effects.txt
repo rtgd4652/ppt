@@ -28,6 +28,9 @@ artifact_civil_supply_clear = {
 	remove_modifier = acs_crisis_listening_window
 	# F03只清尚未部署的地方备料；已命中舰船和原国家冷却保留自身计时。
 	remove_modifier = acc_countermeasure_ready
+	# F04地方备件与支援随原拥有者清理；不重置公共知识、C2或旗舰恢复。
+	remove_modifier = aer_spares_reserved
+	remove_modifier = aer_support_window
 	# A11复核过程随原拥有者清理；国家已完成模型与事实记录保留。
 	remove_modifier = acs_model_review_project
 	clear_variable = acs_model_review_work
@@ -539,7 +542,9 @@ artifact_civil_supply_segmented_monthly = {
 	if = {
 		limit = {
 			artifact_civil_supply_segmented_project = yes
-			artifact_civil_supply_segmented_site = yes
+			# 应急支援只替代已付阶段的物流资格，核心营建场/本国控制仍必需。
+			# 新开工、阶段付款及完成容量继续使用原条件；不加速工作量或越过验收。
+			artifact_civil_supply_segmented_work_site = yes
 		}
 		if = {
 			limit = { has_modifier = acs_segmented_preparing }

@@ -1,0 +1,43 @@
+# 三项决议不另收费：材料已经在B14备料时实际支付。
+decision_artifact_engineering_redundancy_reserve = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_building = "building_artifact_redundant_rule_anchor_station"
+		owner = { has_technology = "tech_artifact_emergency_engineering_redundancy" }
+	}
+	allow = { custom_tooltip = { fail_text = aer.require_reserve artifact_engineering_redundancy_can_reserve = yes } }
+	effect = {
+		custom_tooltip = aer.offer_reserve
+		hidden_effect = { artifact_engineering_redundancy_reserve = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_engineering_redundancy_activate = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = { artifact_civil_supply_actor = yes has_modifier = aer_spares_reserved }
+	allow = { custom_tooltip = { fail_text = aer.require_activate artifact_engineering_redundancy_can_activate = yes } }
+	effect = {
+		custom_tooltip = aer.offer_activate
+		hidden_effect = { artifact_engineering_redundancy_activate = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_engineering_redundancy_discard = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = { artifact_civil_supply_actor = yes has_modifier = aer_spares_reserved }
+	allow = { custom_tooltip = { fail_text = aer.require_discard artifact_engineering_redundancy_can_discard = yes } }
+	effect = {
+		custom_tooltip = aer.offer_discard
+		hidden_effect = { artifact_engineering_redundancy_discard = yes }
+	}
+	ai_weight = { weight = 0 }
+}

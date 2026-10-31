@@ -1,0 +1,23 @@
+# 同一守卫验证设施和ready，再消费一份真实B14库存；不增加或退回任何资源。
+artifact_engineering_redundancy_reserve = {
+	if = {
+		limit = { artifact_engineering_redundancy_can_reserve = yes }
+		artifact_civil_supply_strategic_consume = yes
+		add_modifier = { modifier = aer_spares_reserved days = -1 }
+	}
+}
+
+artifact_engineering_redundancy_activate = {
+	if = {
+		limit = { artifact_engineering_redundancy_can_activate = yes }
+		remove_modifier = aer_spares_reserved
+		add_modifier = { modifier = aer_support_window days = 360 }
+	}
+}
+
+artifact_engineering_redundancy_discard = {
+	if = {
+		limit = { artifact_engineering_redundancy_can_discard = yes }
+		remove_modifier = aer_spares_reserved
+	}
+}

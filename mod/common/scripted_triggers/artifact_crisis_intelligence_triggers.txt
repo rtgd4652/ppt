@@ -21,6 +21,7 @@ artifact_crisis_intelligence_archive_site = {
 	OR = {
 		has_active_building = "building_artifact_high_dimensional_review_station"
 		has_active_building = "building_artifact_rule_anchor_test_site"
+		has_active_building = "building_artifact_redundant_rule_anchor_station"
 	}
 }
 
@@ -41,7 +42,10 @@ artifact_crisis_intelligence_identified = {
 
 artifact_crisis_intelligence_listening_site = {
 	artifact_civil_supply_safe = yes
-	has_active_building = "building_artifact_rule_anchor_test_site"
+	OR = {
+		has_active_building = "building_artifact_rule_anchor_test_site"
+		has_active_building = "building_artifact_redundant_rule_anchor_station"
+	}
 	owner = {
 		artifact_crisis_intelligence_identified = yes
 		has_technology = "tech_artifact_rule_anchoring_engineering"

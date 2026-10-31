@@ -98,35 +98,35 @@ carrier_event = {
 	desc = {
 		trigger = {
 			has_modifier = acs_segmented_preparing
-			artifact_civil_supply_segmented_site = yes
+			artifact_civil_supply_segmented_work_site = yes
 		}
 		text = artifact_segmented.preparing
 	}
 	desc = {
 		trigger = {
 			has_modifier = acs_segmented_prepared
-			artifact_civil_supply_segmented_site = yes
+			artifact_civil_supply_segmented_work_site = yes
 		}
 		text = artifact_segmented.prepared
 	}
 	desc = {
 		trigger = {
 			has_modifier = acs_segmented_assembling
-			artifact_civil_supply_segmented_site = yes
+			artifact_civil_supply_segmented_work_site = yes
 		}
 		text = artifact_segmented.assembling
 	}
 	desc = {
 		trigger = {
 			has_modifier = acs_segmented_assembled
-			artifact_civil_supply_segmented_site = yes
+			artifact_civil_supply_segmented_work_site = yes
 		}
 		text = artifact_segmented.assembled
 	}
 	desc = {
 		trigger = {
 			has_modifier = acs_segmented_commissioning
-			artifact_civil_supply_segmented_site = yes
+			artifact_civil_supply_segmented_work_site = yes
 		}
 		text = artifact_segmented.commissioning
 	}
@@ -134,7 +134,7 @@ carrier_event = {
 		trigger = {
 			has_modifier = acs_segmented_project
 			NOT = { has_modifier = acs_segmented_operational }
-			artifact_civil_supply_segmented_site = no
+			artifact_civil_supply_segmented_work_site = no
 		}
 		text = artifact_segmented.paused
 	}

@@ -1,0 +1,26 @@
+# BL26第二阶段沿原槽升级；保留原防护，备件/预算由实付窗口供源。
+building_artifact_redundant_rule_anchor_station = {
+	can_build = no
+	base_buildtime = 720
+	icon = "building_artifact_sanctum"
+	category = research
+	building_sets = { research }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_emergency_engineering_redundancy" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	allow = { owner = { artifact_crisis_intelligence_identified = yes } }
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 2000 alloys = 800 rare_crystals = 200 }
+		upkeep = { energy = 14 rare_crystals = 2 }
+	}
+	# 原防护的拥有者/研究/窗口继续独立核对，不因升级免费开启或续期。
+	triggered_planet_modifier = {
+		potential = { planet = { artifact_rule_anchor_active = yes } }
+		planet_orbital_bombardment_damage = -0.20
+	}
+	triggered_planet_modifier = {
+		potential = { planet = { artifact_engineering_redundancy_active = yes } }
+		planet_building_build_speed_mult = 0.25
+	}
+}
