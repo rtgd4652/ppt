@@ -47,3 +47,5 @@
 5. **保持轻量验证。** 本轮只做文档引用和差异检查；不新增测试或载档。后续只检查新改动的核心风险，原生流程取代表路径，沿用已有证据，不穷举这些外部包或追求全面兼容。
 
 本记录是后续按需查阅的入口，不是待执行测试队列。大型工程的原生阶段链另见[工程参考](artifact_large_engineering_mod_reference_2026-10-31.md)，D13／E10分工见[完整路线](artifact_civilization_research_building_route_v0.3.md)及[军备责任表](artifact_civilization_military_research_plan_v0.1.md)。
+
+用户随后指定的晨曦舰船机制已单列[减伤与复活参考](artifact_dawn_ship_survival_mod_reference_2026-10-31.md)：已读比例／固定减伤、原舰失能修复、舰毁后按旧设计补造及对应回调，并核对本机原生字段。保留本项目现有冷却与唯一记录，本次只补参考，未改游戏脚本或运行测试。
