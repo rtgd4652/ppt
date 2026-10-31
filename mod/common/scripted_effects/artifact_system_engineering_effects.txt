@@ -1,0 +1,31 @@
+# 免费指定全国一处施工端点；复用ACS拥有者身份，保留已存在的其他库存。
+artifact_system_engineering_register = {
+	if = {
+		limit = { artifact_system_engineering_can_register = yes }
+		artifact_civil_supply_ensure_owner = yes
+		add_modifier = { modifier = acs_remote_engineering_receiver days = -1 }
+	}
+}
+
+artifact_system_engineering_unregister = {
+	if = {
+		limit = { artifact_system_engineering_can_unregister = yes }
+		remove_modifier = acs_remote_engineering_receiver
+	}
+}
+
+# 原生决议不另收费：先验证两端和余额，再移除一份实存备料，扣费并交付。
+# 目标全国唯一且交付条件不依赖刚移除的始发库存，不能凭空生成第二份备料。
+artifact_system_engineering_dispatch = {
+	if = {
+		limit = { artifact_system_engineering_can_dispatch = yes }
+		remove_modifier = acs_strategic_supply_reserved
+		owner = {
+			add_resource = { energy = -500 }
+			random_owned_colony = {
+				limit = { carrier = { artifact_system_engineering_delivery_target = yes } }
+				carrier = { add_modifier = { modifier = acs_strategic_supply_reserved days = -1 } }
+			}
+		}
+	}
+}

@@ -10,6 +10,7 @@ ROOT = foundation.ROOT
 load, child = foundation.load, foundation.child
 PREFIX = 'artifact_civil_supply_'
 TRIGGERS = load('mod/common/scripted_triggers/artifact_civil_supply_triggers.txt')
+TRIGGERS.update(load('mod/common/scripted_triggers/artifact_system_engineering_triggers.txt'))
 TRIGGERS.update(load('mod/common/scripted_triggers/artifact_garrison_triggers.txt'))
 EFFECTS = load('mod/common/scripted_effects/artifact_civil_supply_effects.txt')
 DECISIONS = load('mod/common/decisions/artifact_civil_supply_decisions.txt')

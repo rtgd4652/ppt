@@ -495,7 +495,14 @@
       "capability": "建设集成场并实付一份全国备料，可撤回或交付E09营建／D13承载试验；两种消费者均已接，运行待阶段试玩。",
       "implementation_key": "tech_artifact_strategic_engineering_supply",
       "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md"
+      "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md",
+      "compatibility_updates": [
+        {
+          "package": "R4k",
+          "spec": "docs/design/artifact_civilization_r4k_implementation_spec_v0.1.json",
+          "note": "支持E11实际交付的备料/工程端点，原费用与唯一项目守卫保持，运行未验。"
+        }
+      ]
     },
     {
       "id": "C01",
@@ -904,7 +911,14 @@
       "capability": "一份真实工程备料完成6次有效月度承载试验，归档永久国家定型记录；开放承载缓冲器及分别依赖D16／D17／D18的公共高阶反应堆、推进器、航道引擎。E10舰体与个人唯一舰独立。",
       "implementation_key": "tech_artifact_terminal_hull_support",
       "spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md"
+      "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md",
+      "compatibility_updates": [
+        {
+          "package": "R4k",
+          "spec": "docs/design/artifact_civilization_r4k_implementation_spec_v0.1.json",
+          "note": "支持E11实际交付的备料/工程端点，原费用与唯一项目守卫保持，运行未验。"
+        }
+      ]
     },
     {
       "id": "D14",
@@ -1064,7 +1078,14 @@
       "capability": "分段投入真实备料、装配与试运行；有效完成态营建场提供1个额外巨型结构同时建造名额，具体巨构仍需独立研究和条件。",
       "implementation_key": "tech_artifact_segmented_large_engineering",
       "spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md"
+      "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md",
+      "compatibility_updates": [
+        {
+          "package": "R4k",
+          "spec": "docs/design/artifact_civilization_r4k_implementation_spec_v0.1.json",
+          "note": "支持E11实际交付的备料/工程端点，原费用与唯一项目守卫保持，运行未验。"
+        }
+      ]
     },
     {
       "id": "E10",
@@ -1094,8 +1115,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "提供跨星系工程的供给与调度资格；连续视觉原型仍按原计划另验。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "全国唯一异星系工程端点，500能源实际搬运一份B14备料；原E09/D13现场接续工作，常规接收端无需迁移。",
+      "implementation_key": "tech_artifact_interstellar_engineering_coordination",
+      "spec": "docs/design/artifact_civilization_r4k_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4k_implementation_2026-10-31.md"
     },
     {
       "id": "E12",
@@ -2494,18 +2518,34 @@
       "report": "reports/artifact_civilization_r4j_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r4j_checkpoint_2026-10-31.json",
       "next_step": "推进E11星系协同基础设施（E09＋C12）：复用现有供给/联运与分段营建成果，落实跨星系工程供给及调度的实际消费者；连续视觉原型仍暂停。随后E12文明工程统筹，再接F02～F08与最终Boss收束。阶段试玩仍优先D12新行动，其余取必要代表共用关键读档，不逐包重测。"
+    },
+    "R4k": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "nodes": [
+        "E11"
+      ],
+      "new_buildings": 0,
+      "new_components": 0,
+      "new_events": 0,
+      "new_on_actions": 0,
+      "spec": "docs/design/artifact_civilization_r4k_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4k_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r4k_checkpoint_2026-10-31.json",
+      "next_step": "推进E12文明工程统筹（E02＋E11＋C12）：复用都市、工程供给和既有运行方案，落实有成本的公共工程预算/调整能力，保留原唯一都市上限；随后F02～F08及最终Boss/公共奖励收束。集中试玩仍优先D12新行动，其他取必要代表共用关键读档，不逐包重跑；人物组合、连续巨构与批量图标仍暂停。"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 71,
+    "public_technologies": 72,
     "army_types": 5,
     "component_definitions": 111,
     "building_definitions": 40,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 9,
-    "note": "R4j新增A12免费即时汇编，工程现场复用C10付费复现；5项新增、19项相关源码检查与静态通过，运行未验。"
+    "planned_technologies_remaining": 8,
+    "note": "R4k新增E11异星系备料交付，复用E09/D13实际工程；6项新增、27项相关源码检查及静态通过，运行未验。"
   },
   "orbital_buildings": [
     {
@@ -2851,5 +2891,8 @@
   "r4i_checkpoint": "reports/artifact_civilization_r4i_checkpoint_2026-10-31.json",
   "r4j_spec": "docs/design/artifact_civilization_r4j_implementation_spec_v0.1.json",
   "r4j_report": "reports/artifact_civilization_r4j_implementation_2026-10-31.md",
-  "r4j_checkpoint": "reports/artifact_civilization_r4j_checkpoint_2026-10-31.json"
+  "r4j_checkpoint": "reports/artifact_civilization_r4j_checkpoint_2026-10-31.json",
+  "r4k_spec": "docs/design/artifact_civilization_r4k_implementation_spec_v0.1.json",
+  "r4k_report": "reports/artifact_civilization_r4k_implementation_2026-10-31.md",
+  "r4k_checkpoint": "reports/artifact_civilization_r4k_checkpoint_2026-10-31.json"
 }

@@ -1,0 +1,5 @@
+# 单独的工程端点身份；无免费产出、额外并行容量或常驻全国修正。
+acs_remote_engineering_receiver = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}

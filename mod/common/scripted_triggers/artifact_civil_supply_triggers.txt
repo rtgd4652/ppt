@@ -212,7 +212,10 @@ artifact_civil_supply_can_strategic_reserve = {
 # 正式消费者先核对本条件和自身目标，再在同一守卫块内消费并启动工程。
 artifact_civil_supply_strategic_ready = {
 	artifact_civil_supply_strategic_stock = yes
-	artifact_civil_supply_strategic_site = yes
+	OR = {
+		artifact_civil_supply_strategic_site = yes
+		artifact_system_engineering_receiver = yes
+	}
 }
 
 # 已付备料允许在设施拆除或科技丢失后撤回；原拥有者、控制与无轰炸仍必需。
@@ -221,9 +224,13 @@ artifact_civil_supply_can_strategic_release = {
 	artifact_civil_supply_strategic_stock = yes
 }
 
-# R4c施工期间依赖有效接收端；完成后的运营条件另列，允许把接收端调往别处。
+# R4c施工沿用常规接收端；R4k允许已登记的工程端点承接异星系运抵备料。
+# 完成后的运营条件另列，允许把端点调往别处。
 artifact_civil_supply_segmented_site = {
-	artifact_civil_supply_strategic_site = yes
+	OR = {
+		artifact_civil_supply_strategic_site = yes
+		artifact_system_engineering_receiver = yes
+	}
 	has_active_building = "building_artifact_large_engineering_yard"
 	owner = { has_technology = "tech_artifact_segmented_large_engineering" }
 }
@@ -282,7 +289,10 @@ artifact_civil_supply_segmented_operational = {
 
 # R4d承载试验复用集成场与有效接收端；原拥有者标记与营建/普通库存共用。
 artifact_civil_supply_hull_site = {
-	artifact_civil_supply_strategic_site = yes
+	OR = {
+		artifact_civil_supply_strategic_site = yes
+		artifact_system_engineering_receiver = yes
+	}
 	owner = { has_technology = "tech_artifact_terminal_hull_support" }
 }
 

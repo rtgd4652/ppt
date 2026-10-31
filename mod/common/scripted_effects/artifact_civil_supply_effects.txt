@@ -7,6 +7,8 @@ artifact_civil_supply_clear = {
 	remove_modifier = acs_strategic_supply_reserved
 	remove_modifier = acs_link_source
 	remove_modifier = acs_link_receiver
+	# R4k工程端点随原拥有者清理；不随星球转让给新国家。
+	remove_modifier = acs_remote_engineering_receiver
 	remove_modifier = acs_refinery_motes
 	remove_modifier = acs_refinery_crystals
 	remove_modifier = acs_refinery_gases

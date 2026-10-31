@@ -117,5 +117,15 @@
     "runtime": "not_run"
   },
   "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md",
-  "checkpoint": "reports/artifact_civilization_r4b_checkpoint_2026-10-31.json"
+  "checkpoint": "reports/artifact_civilization_r4b_checkpoint_2026-10-31.json",
+  "compatibility_updates": [
+    {
+      "date": "2026-10-31",
+      "package": "R4k",
+      "spec": "docs/design/artifact_civilization_r4k_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4k_implementation_2026-10-31.md",
+      "status": "source_tests_passed_runtime_pending",
+      "note": "E11异星系工程点可接收一份B14备料，原ready/E09/D13现场增加此合法身份；B14集成仍限普通接收端，费用/工期/唯一项目和国家知识归属不变。"
+    }
+  ]
 }

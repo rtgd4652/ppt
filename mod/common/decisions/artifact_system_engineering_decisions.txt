@@ -1,0 +1,49 @@
+decision_artifact_system_engineering_register = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		owner = { has_technology = "tech_artifact_interstellar_engineering_coordination" }
+		has_building = "building_artifact_engineering_supply_yard"
+		NOT = { has_modifier = acs_remote_engineering_receiver }
+	}
+	allow = { custom_tooltip = { fail_text = ase.require_register artifact_system_engineering_can_register = yes } }
+	effect = {
+		custom_tooltip = ase.offer_register
+		hidden_effect = { artifact_system_engineering_register = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+# 拆除设施、失去研究后仍可撤销自己的端点，不留下不可释放的国家占位。
+decision_artifact_system_engineering_unregister = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = { artifact_civil_supply_actor = yes has_modifier = acs_remote_engineering_receiver }
+	allow = { custom_tooltip = { fail_text = ase.require_unregister artifact_system_engineering_can_unregister = yes } }
+	effect = {
+		custom_tooltip = ase.offer_unregister
+		hidden_effect = { artifact_system_engineering_unregister = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_system_engineering_dispatch = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		owner = { has_technology = "tech_artifact_interstellar_engineering_coordination" }
+		has_building = "building_artifact_engineering_supply_yard"
+		has_modifier = acs_link_receiver
+	}
+	allow = { custom_tooltip = { fail_text = ase.require_dispatch artifact_system_engineering_can_dispatch = yes } }
+	effect = {
+		custom_tooltip = ase.offer_dispatch
+		hidden_effect = { artifact_system_engineering_dispatch = yes }
+	}
+	ai_weight = { weight = 0 }
+}

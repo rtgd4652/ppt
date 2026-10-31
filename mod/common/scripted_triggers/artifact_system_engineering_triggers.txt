@@ -1,0 +1,69 @@
+# 施工地不占用C11常规接收端；需要既有配给仓、联运站、集成场和相应研究。
+artifact_system_engineering_site = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_terminal = yes
+	has_active_building = "building_artifact_engineering_supply_yard"
+	owner = {
+		has_technology = "tech_artifact_interstellar_engineering_coordination"
+		has_technology = "tech_artifact_strategic_engineering_supply"
+	}
+}
+
+# 施工地 -> 国家 -> 原施工地 -> 星系 -> 殖民地，PREVPREVPREV是本国。
+# 只用于登记/交付时的异星系核对；已运抵材料不再依赖原始站持续在线。
+artifact_system_engineering_is_remote = {
+	exists = solar_system
+	owner = {
+		prev = {
+			solar_system = {
+				NOT = {
+					any_system_planet_colony = {
+						is_owned_by = prevprevprev
+						carrier = { has_modifier = acs_link_receiver }
+					}
+				}
+			}
+		}
+	}
+}
+
+artifact_system_engineering_can_register = {
+	artifact_system_engineering_site = yes
+	artifact_system_engineering_is_remote = yes
+	NOT = { has_modifier = acs_remote_engineering_receiver }
+	owner = {
+		NOT = { any_owned_colony = { carrier = { has_modifier = acs_remote_engineering_receiver } } }
+		any_owned_colony = { carrier = { artifact_civil_supply_strategic_site = yes } }
+	}
+}
+
+artifact_system_engineering_receiver = {
+	artifact_system_engineering_site = yes
+	artifact_civil_supply_original_owner = yes
+	has_modifier = acs_remote_engineering_receiver
+}
+
+# 允许设施失效、占领或工程暂停时撤销登记；不退款/搬运库存，不清理工程进度。
+artifact_system_engineering_can_unregister = {
+	artifact_civil_supply_actor = yes
+	artifact_civil_supply_original_owner = yes
+	has_modifier = acs_remote_engineering_receiver
+}
+
+# 此条件不依赖始发备料，保证移除始发库存后目标仍在同一守卫中有效。
+artifact_system_engineering_delivery_target = {
+	artifact_system_engineering_receiver = yes
+	artifact_system_engineering_is_remote = yes
+	NOT = { has_modifier = acs_strategic_supply_reserved }
+}
+
+artifact_system_engineering_can_dispatch = {
+	# 始发地仍须为常规接收端，不能从新施工地无限接力。
+	artifact_civil_supply_strategic_site = yes
+	artifact_civil_supply_strategic_stock = yes
+	owner = {
+		has_technology = "tech_artifact_interstellar_engineering_coordination"
+		has_resource = { type = energy amount >= 500 }
+		any_owned_colony = { carrier = { artifact_system_engineering_delivery_target = yes } }
+	}
+}
