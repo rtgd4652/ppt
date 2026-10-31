@@ -1,0 +1,178 @@
+{
+  "date": "2026-10-31",
+  "package": "R4c",
+  "source_base": "d35ac20",
+  "status": "implemented_static_passed",
+  "runtime_status": "pending_stage_validation",
+  "nodes": [
+    "E09"
+  ],
+  "building_stages": [
+    "BL30.1"
+  ],
+  "technology": {
+    "id": "E09",
+    "key": "tech_artifact_segmented_large_engineering",
+    "name": "分段大型工程",
+    "area": "engineering",
+    "tier": 5,
+    "category": "industry",
+    "cost": 22000,
+    "weight": 60,
+    "prerequisites": [
+      "tech_artifact_rule_anchoring_engineering",
+      "tech_artifact_strategic_engineering_supply"
+    ]
+  },
+  "building": {
+    "key": "building_artifact_large_engineering_yard",
+    "name": "大型工程营建场",
+    "planet_limit": 1,
+    "empire_limit": 1,
+    "build_days": 720,
+    "cost": {
+      "minerals": 1500,
+      "alloys": 800
+    },
+    "upkeep": {
+      "energy": 20,
+      "consumer_goods": 4
+    },
+    "requires_local_buildings": [
+      "building_artifact_distribution_depot",
+      "building_artifact_intercolony_terminal",
+      "building_artifact_engineering_supply_yard"
+    ],
+    "conditional_country_modifier": {
+      "country_megastructure_build_cap_add": 1
+    },
+    "requires_completed_project": true
+  },
+  "project": {
+    "scope": "planet",
+    "unique_marker": "acs_segmented_project",
+    "original_owner": "acs_owner@this",
+    "management_flag": "acs_managed",
+    "progress_variable": "acs_segmented_work",
+    "country_limit": 1,
+    "completed_state_retains_slot": true,
+    "stage_confirmation": "玩家通过行星决议分别确认；等待不推进、不扣款",
+    "stages": [
+      {
+        "id": "preparation",
+        "start_decision": "decision_artifact_civil_segmented_start",
+        "payment": {
+          "consumes_actual_stock": "acs_strategic_supply_reserved"
+        },
+        "valid_months": 3,
+        "active_marker": "acs_segmented_preparing",
+        "next_marker": "acs_segmented_prepared"
+      },
+      {
+        "id": "assembly",
+        "start_decision": "decision_artifact_civil_segmented_assemble",
+        "payment": {
+          "minerals": 1000,
+          "alloys": 1500
+        },
+        "valid_months": 4,
+        "active_marker": "acs_segmented_assembling",
+        "next_marker": "acs_segmented_assembled"
+      },
+      {
+        "id": "commissioning",
+        "start_decision": "decision_artifact_civil_segmented_commission",
+        "payment": {
+          "energy": 1000,
+          "consumer_goods": 300
+        },
+        "valid_months": 2,
+        "active_marker": "acs_segmented_commissioning",
+        "next_marker": "acs_segmented_operational"
+      }
+    ],
+    "paid_project_total_including_stock_excluding_buildings_and_transport": {
+      "minerals": 3000,
+      "alloys": 2500,
+      "energy": 1500,
+      "consumer_goods": 300
+    },
+    "automatic_popups": false,
+    "status_event": "artifact_civil_supply.10",
+    "status_event_read_only": true
+  },
+  "interfaces": {
+    "site": "artifact_civil_supply_segmented_site",
+    "project": "artifact_civil_supply_segmented_project",
+    "start": "artifact_civil_supply_segmented_start",
+    "assemble": "artifact_civil_supply_segmented_assemble",
+    "commission": "artifact_civil_supply_segmented_commission",
+    "operational": "artifact_civil_supply_segmented_operational",
+    "monthly": "artifact_civil_supply_segmented_monthly",
+    "clear": "artifact_civil_supply_segmented_clear",
+    "cancel": "artifact_civil_supply_segmented_cancel",
+    "budget_consumed_by_start": "artifact_civil_supply_strategic_consume",
+    "consumer_contract": "同一守卫核对场地、ready、全国项目位，消费后立即建立真实项目；消费调用无成功返回值。"
+  },
+  "lifecycle": {
+    "construction_requires": "原拥有者、控制且无轰炸、有效接收端、配给仓、联运站、集成场、营建场及研究",
+    "construction_interrupt": "保留已付阶段和工作量，停工月份不补算",
+    "operation_requires": "原拥有者、控制且无轰炸、有效营建场及E09；不再依赖接收端和集成场",
+    "operation_interrupt": "完成态保留占位，条件建筑停止提供额外容量，恢复后继续",
+    "cancel": "原拥有者控制且无轰炸时清除本项目，无退款；保留其他库存和状态，允许设施拆除后取消",
+    "transfer_or_destruction": "复用公共清理，无退款、无继承",
+    "new_monthly_scans": 0,
+    "new_on_actions": 0
+  },
+  "native_evidence": [
+    {
+      "path": "F:/steam/steamapps/common/Stellaris/common/ascension_perks/00_ascension_perks.txt",
+      "object": "ap_master_builders",
+      "key": "country_megastructure_build_cap_add"
+    },
+    {
+      "path": "F:/steam/steamapps/common/Stellaris/common/buildings/00_example.txt",
+      "key": "triggered_country_modifier"
+    },
+    {
+      "path": "F:/steam/steamapps/common/Stellaris/common/buildings/13_fallen_empire_buildings.txt",
+      "key": "triggered_country_modifier"
+    }
+  ],
+  "lore": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-ARTIFACT"
+    ],
+    "documents": [
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "layer": "mod_design_decision",
+    "review_status_changed": false
+  },
+  "new_runtime_files": [
+    "mod/common/technology/artifact_segmented_engineering_technology.txt",
+    "mod/common/buildings/artifact_segmented_engineering_buildings.txt",
+    "mod/localisation/simp_chinese/artifact_segmented_engineering_l_simp_chinese.yml"
+  ],
+  "changed_runtime_files": [
+    "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "mod/common/decisions/artifact_civil_supply_decisions.txt",
+    "mod/common/static_modifiers/artifact_civil_supply_modifiers.txt",
+    "mod/events/artifact_civil_supply_events.txt"
+  ],
+  "validation": {
+    "new_tests": 7,
+    "affected_tests": 27,
+    "static": "pass",
+    "runtime": "not_run",
+    "native_queue_and_capacity_behavior": "pending"
+  },
+  "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md",
+  "checkpoint": "reports/artifact_civilization_r4c_checkpoint_2026-10-31.json"
+}

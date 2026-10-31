@@ -1,7 +1,7 @@
 {
   "date": "2026-10-31",
   "source_base": "c6c27fe",
-  "scope": "63项已实现公共科技的显示名称、两层卡面文案与技术注释；17项未实现节点另列。",
+  "scope": "64项已实现公共科技的显示名称、两层卡面文案与技术注释；16项未实现节点另列。",
   "status": "source_grounded_static_passed",
   "entries": [
     {
@@ -1350,6 +1350,31 @@
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
     },
     {
+      "id": "E09",
+      "key": "tech_artifact_segmented_large_engineering",
+      "previous_name": "分段大型工程",
+      "name": "分段大型工程",
+      "lore": "交界都市重建时，中央庭学会让不同队伍接续同一项工程。进入星海后，营建被拆分为可以独立验收的区段，物资、装配与试运行各有责任和交接条件。",
+      "application": "解锁大型工程营建场。投入工程备料，逐段完成准备、装配与试运行；有效营建场提供§G+1§!巨型结构同时建造名额，全国一处。具体巨构仍需各自的研究与建造条件。",
+      "implementation_note": "解锁营建场与三阶段工程，逐段消费真实物资；运行收益由有效建筑提供，不永久写入国家。",
+      "technology_file": "mod/common/technology/artifact_segmented_engineering_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_segmented_engineering_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_segmented_engineering_buildings.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt",
+        "mod/events/artifact_civil_supply_events.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "中央庭灾后重建和科研统筹用于文明背景；分段验收、工程支付和并行容量属于Mod设计，来源审核状态不变。"
+    },
+    {
       "id": "F01",
       "key": "tech_artifact_relic_archive_restoration",
       "previous_name": "旧日神器档案修复",
@@ -1406,12 +1431,6 @@
     {
       "id": "D14",
       "working_name": "文明联合防务",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
-    {
-      "id": "E09",
-      "working_name": "分段大型工程",
       "status": "awaits_implementation_text",
       "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
     },
@@ -2262,6 +2281,14 @@
       "source_base": "e6c95c8",
       "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md"
+    },
+    {
+      "package": "R4c",
+      "date": "2026-10-31",
+      "node": "E09",
+      "source_base": "d35ac20",
+      "spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md"
     }
   ]
 }

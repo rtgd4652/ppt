@@ -1789,7 +1789,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a～R3d代表范围通过，保留研究前置受控和未测边界。R3e正常预留与文件核对通过，转运及实际载回待验；R3f与R4a源码检查通过、未运行，合并阶段验收。",
+    "runtime": "R3a～R3d代表范围通过，保留研究受控和未测边界。R3e正常预留与文件核对通过，转运及实际载回待验；R3f和R4a／R4b／R4c源码检查通过、未运行，合并阶段验收。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1826,12 +1826,12 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 63,
+    "public_technologies": 64,
     "army_types": 5,
     "component_definitions": 94,
-    "building_definitions": 38,
+    "building_definitions": 39,
     "starbase_building_definitions": 1,
-    "note": "R4b新增B14及BL29集成场；实付备料与撤回、占位、消费接口检查通过，游戏运行待集中验收，D13/E09真实消费者未接。"
+    "note": "R4c新增E09及BL30，B14已有真实工程消费者；分段扣款、停复工、条件容量和清理检查通过，实际运行待阶段验收。D13尚未实现。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -1854,6 +1854,14 @@
     "status": "source_and_necessary_checks_passed_runtime_pending",
     "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
     "consumer_contract": "同一if同时检查ready和目标资格，再消费并启动真实工程；consume无成功返回值，不得无条件发奖。",
-    "D13": "not_implemented"
+    "D13": "not_implemented",
+    "E09": "implemented_static_passed_runtime_pending",
+    "consumer_spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json"
+  },
+  "r4c_engineering_dependency": {
+    "status": "source_and_necessary_checks_passed_runtime_pending",
+    "spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
+    "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md",
+    "scope": "公共营建场的分段预算消费者已接；无新增舰船组件或陆军，不解锁D13或个人舰体。"
   }
 }

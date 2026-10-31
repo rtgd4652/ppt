@@ -78,7 +78,8 @@ class World(foundation.World):
         d = DECISIONS['decision_artifact_civil_' + action]
         if not self.condition(child(d, 'potential'), p, {}):
             return False
-        if not self.condition(child(d, 'allow'), p, {}):
+        # 只读决议可以省略allow；此时没有额外执行条件。
+        if not self.condition(child(d, 'allow') or [], p, {}):
             return False
         self.execute(child(d, 'effect'), p, {})
         return True

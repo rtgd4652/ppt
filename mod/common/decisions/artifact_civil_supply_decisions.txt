@@ -445,3 +445,106 @@ decision_artifact_civil_cancel_civic = {
 	}
 	ai_weight = { weight = 0 }
 }
+
+# R4c所有付款由决议直接复核；进度页面只读，旧窗口不能对新拥有者结算。
+
+decision_artifact_civil_segmented_start = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_building = "building_artifact_large_engineering_yard"
+		owner = { has_technology = "tech_artifact_segmented_large_engineering" }
+		NOT = { has_modifier = acs_segmented_project }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_segmented.require_start
+			artifact_civil_supply_can_segmented_start = yes
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_segmented.offer_start
+		hidden_effect = { artifact_civil_supply_segmented_start = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_civil_segmented_assemble = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_modifier = acs_segmented_prepared
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_segmented.require_assemble
+			artifact_civil_supply_can_segmented_assemble = yes
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_segmented.offer_assemble
+		hidden_effect = { artifact_civil_supply_segmented_assemble = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_civil_segmented_commission = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_modifier = acs_segmented_assembled
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_segmented.require_commission
+			artifact_civil_supply_can_segmented_commission = yes
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_segmented.offer_commission
+		hidden_effect = { artifact_civil_supply_segmented_commission = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_civil_segmented_cancel = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_modifier = acs_segmented_project
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_segmented.require_cancel
+			artifact_civil_supply_can_segmented_cancel = yes
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_segmented.offer_cancel
+		hidden_effect = { artifact_civil_supply_segmented_cancel = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_civil_segmented_status = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		OR = {
+			has_building = "building_artifact_large_engineering_yard"
+			has_modifier = acs_segmented_project
+		}
+	}
+	effect = { carrier_event = { id = artifact_civil_supply.10 } }
+	ai_weight = { weight = 0 }
+}

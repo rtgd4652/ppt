@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-31",
+  "package": "R4c",
+  "source_base": "d35ac20",
+  "status": "implemented_static_passed",
+  "spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
+  "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md",
+  "completed": [
+    "E09分段大型工程及BL30大型工程营建场",
+    "B14真实备料消费者、三段付款与玩家确认",
+    "复用月度的停复工与原拥有者清理",
+    "全国唯一完成态与条件容量供源",
+    "只读进度页及七都来源文案目录同步"
+  ],
+  "tests": {
+    "new": {
+      "count": 7,
+      "status": "pass",
+      "command": "python -m unittest discover -s tools/validation/tests -p test_artifact_segmented_engineering.py -v"
+    },
+    "affected": {
+      "count": 27,
+      "status": "pass",
+      "modules": [
+        "test_artifact_strategic_supply",
+        "test_artifact_civil_supply",
+        "test_artifact_joint_operations",
+        "test_artifact_boundary_engineering"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 181,
+        "events": 256,
+        "localization_keys": 1963,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    }
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "pending_command": null,
+    "save_created": null,
+    "required_stage_check": "代表正常营建到容量供给、一次关键读档；原生巨构类型和容量失效时队列行为按实际观察记录，不穷举全部巨构"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-ARTIFACT"
+    ],
+    "documents": [
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "layer": "mod_design_decision",
+    "review_status_changed": false
+  },
+  "native_evidence": [
+    {
+      "path": "F:/steam/steamapps/common/Stellaris/common/ascension_perks/00_ascension_perks.txt",
+      "object": "ap_master_builders",
+      "key": "country_megastructure_build_cap_add"
+    },
+    {
+      "path": "F:/steam/steamapps/common/Stellaris/common/buildings/00_example.txt",
+      "key": "triggered_country_modifier"
+    },
+    {
+      "path": "F:/steam/steamapps/common/Stellaris/common/buildings/13_fallen_empire_buildings.txt",
+      "key": "triggered_country_modifier"
+    }
+  ],
+  "remaining": [
+    "原生容量、正常建造、游戏显示与关键读档待阶段试玩",
+    "数值和造价为首版参数，尚未自然平衡验证",
+    "D13舰体和具体新巨构仍待各自能力实现"
+  ],
+  "next": "落实D13终解舰体承载的公共能力与真实消费者；R3e至R4c待验项合并阶段试玩，不重放旧命令",
+  "preserve": [
+    "tools/prototypes/aemusa_cross_system_megastructure/",
+    "原2293.10.11及2293.10.11-r3e-reserve存档",
+    "暂停人物组合和批量图标"
+  ],
+  "current_counts": {
+    "date": "2026-10-31",
+    "public_technologies": 64,
+    "army_types": 5,
+    "component_definitions": 94,
+    "building_definitions": 39,
+    "starbase_building_definitions": 1,
+    "note": "R4c新增E09及BL30，B14已有真实工程消费者；分段扣款、停复工、条件容量和清理检查通过，实际运行待阶段验收。D13尚未实现。"
+  },
+  "consistency": {
+    "status": "pass",
+    "public_technologies": 64,
+    "planet_buildings": 39,
+    "planned_technologies_remaining": 16,
+    "catalog_matches_source": true,
+    "new_localisation_keys": 47,
+    "new_icons_exist": true,
+    "utf8_and_localisation_bom": "pass",
+    "B14_has_E09_consumer": true,
+    "git_diff_check": "pass"
+  }
+}

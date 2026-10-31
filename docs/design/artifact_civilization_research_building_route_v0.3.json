@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-31",
-  "status": "r4b_static_passed_runtime_pending",
+  "status": "r4c_static_passed_runtime_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -483,7 +483,7 @@
       "gate": null,
       "existing_key": null,
       "status": "implemented_static_passed_runtime_pending",
-      "capability": "建设工程物资集成场；为舰体和分段工程支付并锁定供应预算。",
+      "capability": "建设集成场并实付一份全国备料，可撤回或交付E09营建项目；D13舰体消费者待接。",
       "implementation_key": "tech_artifact_strategic_engineering_supply",
       "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md"
@@ -1042,8 +1042,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "开放分阶段投入与大型营建场；巨构具体能力仍需对应责任卡。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "分段投入真实备料、装配与试运行；有效完成态营建场提供1个额外巨型结构同时建造名额，具体巨构仍需独立研究和条件。",
+      "implementation_key": "tech_artifact_segmented_large_engineering",
+      "spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md"
     },
     {
       "id": "E10",
@@ -2001,14 +2004,16 @@
       "id": "BL30",
       "name": "模块化营建",
       "role": "工程",
-      "distinct_function": "仅在E09后承担大型分段工程；E03低级营建由工坊组织。",
+      "distinct_function": "E09后组织三阶段付费营建，完成态有效设施提供额外巨构并行容量；E03低级营建仍由工坊组织。",
       "stages": [
         {
           "stage": 1,
           "name": "大型工程营建场",
           "technology": "E09",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "implemented_static_passed_runtime_pending",
+          "implementation_key": "building_artifact_large_engineering_yard",
+          "spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json"
         }
       ]
     }
@@ -2339,19 +2344,34 @@
       "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r4b_checkpoint_2026-10-31.json",
       "real_consumers_pending": [
-        "D13",
+        "D13"
+      ],
+      "real_consumers_implemented": [
         "E09"
       ]
+    },
+    "R4c": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "pending_stage_validation",
+      "technologies": [
+        "E09"
+      ],
+      "new_buildings": 1,
+      "spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r4c_checkpoint_2026-10-31.json",
+      "balance_status": "pending"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 63,
+    "public_technologies": 64,
     "army_types": 5,
     "component_definitions": 94,
-    "building_definitions": 38,
+    "building_definitions": 39,
     "starbase_building_definitions": 1,
-    "note": "R4b新增B14及BL29集成场；实付备料与撤回、占位、消费接口检查通过，游戏运行待集中验收，D13/E09真实消费者未接。"
+    "note": "R4c新增E09及BL30，B14已有真实工程消费者；分段扣款、停复工、条件容量和清理检查通过，实际运行待阶段验收。D13尚未实现。"
   },
   "orbital_buildings": [
     {
@@ -2670,5 +2690,8 @@
   "technology_text_updated": "2026-10-31",
   "r4b_spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
   "r4b_report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md",
-  "r4b_checkpoint": "reports/artifact_civilization_r4b_checkpoint_2026-10-31.json"
+  "r4b_checkpoint": "reports/artifact_civilization_r4b_checkpoint_2026-10-31.json",
+  "r4c_spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
+  "r4c_report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md",
+  "r4c_checkpoint": "reports/artifact_civilization_r4c_checkpoint_2026-10-31.json"
 }

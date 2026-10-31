@@ -1,6 +1,7 @@
 # 固定物资由效果实际逐项扣除；先移除库存再退款／转运，调用重复也不重复结算。
 # 决议不另收原生费用，避免折扣后按固定面额退款的套利。
 artifact_civil_supply_clear = {
+	artifact_civil_supply_segmented_clear = yes
 	remove_modifier = acs_supply_reserved
 	remove_modifier = acs_strategic_supply_reserved
 	remove_modifier = acs_link_source
@@ -344,6 +345,7 @@ artifact_civil_supply_monthly = {
 		}
 		artifact_civil_supply_clear = yes
 	}
+	else = { artifact_civil_supply_segmented_monthly = yes }
 }
 
 # 付费部署复用原物资管理身份；有效期内不能重入扣费或续期。
@@ -391,5 +393,103 @@ artifact_civil_supply_strategic_consume = {
 	if = {
 		limit = { artifact_civil_supply_strategic_ready = yes }
 		remove_modifier = acs_strategic_supply_reserved
+	}
+}
+
+# 清理本项目不触碰新备料、普通库存或其他工程；转让/毁灭由外层公共清理一并处理。
+artifact_civil_supply_segmented_clear = {
+	remove_modifier = acs_segmented_project
+	remove_modifier = acs_segmented_preparing
+	remove_modifier = acs_segmented_prepared
+	remove_modifier = acs_segmented_assembling
+	remove_modifier = acs_segmented_assembled
+	remove_modifier = acs_segmented_commissioning
+	remove_modifier = acs_segmented_operational
+	clear_variable = acs_segmented_work
+}
+
+# 同一守卫同时检查场地、备料与全国占位；消费后立即创建真实工程，不发放空奖励。
+artifact_civil_supply_segmented_start = {
+	if = {
+		limit = { artifact_civil_supply_can_segmented_start = yes }
+		artifact_civil_supply_strategic_consume = yes
+		artifact_civil_supply_segmented_clear = yes
+		add_modifier = { modifier = acs_segmented_project days = -1 }
+		add_modifier = { modifier = acs_segmented_preparing days = -1 }
+		set_variable = { which = acs_segmented_work value = 0 }
+	}
+}
+
+# 后续阶段由玩家确认再逐项扣款；不存在自动付款或按折扣价付费再退固定面额。
+artifact_civil_supply_segmented_assemble = {
+	if = {
+		limit = { artifact_civil_supply_can_segmented_assemble = yes }
+		owner = {
+			add_resource = { minerals = -1000 }
+			add_resource = { alloys = -1500 }
+		}
+		remove_modifier = acs_segmented_prepared
+		add_modifier = { modifier = acs_segmented_assembling days = -1 }
+		set_variable = { which = acs_segmented_work value = 0 }
+	}
+}
+
+artifact_civil_supply_segmented_commission = {
+	if = {
+		limit = { artifact_civil_supply_can_segmented_commission = yes }
+		owner = {
+			add_resource = { energy = -1000 }
+			add_resource = { consumer_goods = -300 }
+		}
+		remove_modifier = acs_segmented_assembled
+		add_modifier = { modifier = acs_segmented_commissioning days = -1 }
+		set_variable = { which = acs_segmented_work value = 0 }
+	}
+}
+
+artifact_civil_supply_segmented_cancel = {
+	if = {
+		limit = { artifact_civil_supply_can_segmented_cancel = yes }
+		artifact_civil_supply_segmented_clear = yes
+	}
+}
+
+# 原月度入口调用；if/else_if保证单次只推进一个已付阶段，等待确认不推进、不补跑。
+artifact_civil_supply_segmented_monthly = {
+	if = {
+		limit = {
+			artifact_civil_supply_segmented_project = yes
+			artifact_civil_supply_segmented_site = yes
+		}
+		if = {
+			limit = { has_modifier = acs_segmented_preparing }
+			change_variable = { which = acs_segmented_work value = 1 }
+			if = {
+				limit = { check_variable = { which = acs_segmented_work value >= 3 } }
+				remove_modifier = acs_segmented_preparing
+				add_modifier = { modifier = acs_segmented_prepared days = -1 }
+				set_variable = { which = acs_segmented_work value = 0 }
+			}
+		}
+		else_if = {
+			limit = { has_modifier = acs_segmented_assembling }
+			change_variable = { which = acs_segmented_work value = 1 }
+			if = {
+				limit = { check_variable = { which = acs_segmented_work value >= 4 } }
+				remove_modifier = acs_segmented_assembling
+				add_modifier = { modifier = acs_segmented_assembled days = -1 }
+				set_variable = { which = acs_segmented_work value = 0 }
+			}
+		}
+		else_if = {
+			limit = { has_modifier = acs_segmented_commissioning }
+			change_variable = { which = acs_segmented_work value = 1 }
+			if = {
+				limit = { check_variable = { which = acs_segmented_work value >= 2 } }
+				remove_modifier = acs_segmented_commissioning
+				add_modifier = { modifier = acs_segmented_operational days = -1 }
+				clear_variable = acs_segmented_work
+			}
+		}
 	}
 }

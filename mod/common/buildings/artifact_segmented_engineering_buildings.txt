@@ -1,0 +1,35 @@
+# BL30只是场地；真实备料、装配与试运行全部完成后才供给额外并行容量。
+building_artifact_large_engineering_yard = {
+	base_buildtime = 720
+	icon = "building_artifact_relic_workshop"
+	category = manufacturing
+	building_sets = { manufacturing }
+	planet_limit = 1
+	empire_limit = { base = 1 }
+	prerequisites = { "tech_artifact_segmented_large_engineering" }
+	potential = {
+		exists = owner
+		owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+	}
+	allow = {
+		has_building = "building_artifact_distribution_depot"
+		has_building = "building_artifact_intercolony_terminal"
+		has_building = "building_artifact_engineering_supply_yard"
+	}
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1500
+			alloys = 800
+		}
+		upkeep = {
+			energy = 20
+			consumer_goods = 4
+		}
+	}
+	# 与原版建筑的条件国家修正一致；返回planet后再取动态原拥有者索引。
+	triggered_country_modifier = {
+		potential = { planet = { artifact_civil_supply_segmented_operational = yes } }
+		country_megastructure_build_cap_add = 1
+	}
+}

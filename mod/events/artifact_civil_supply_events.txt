@@ -36,3 +36,71 @@ carrier_event = {
     trigger = { has_carrier_flag = acs_managed }
     immediate = { artifact_civil_supply_clear = yes }
 }
+
+# R4c只读进度页；每个合法状态恰好一段说明，无扣费或推进选项。
+carrier_event = {
+	id = artifact_civil_supply.10
+	title = artifact_segmented.title
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = { artifact_civil_supply_actor = yes }
+	desc = {
+		trigger = { NOT = { has_modifier = acs_segmented_project } }
+		text = artifact_segmented.intro
+	}
+	desc = {
+		trigger = {
+			has_modifier = acs_segmented_preparing
+			artifact_civil_supply_segmented_site = yes
+		}
+		text = artifact_segmented.preparing
+	}
+	desc = {
+		trigger = {
+			has_modifier = acs_segmented_prepared
+			artifact_civil_supply_segmented_site = yes
+		}
+		text = artifact_segmented.prepared
+	}
+	desc = {
+		trigger = {
+			has_modifier = acs_segmented_assembling
+			artifact_civil_supply_segmented_site = yes
+		}
+		text = artifact_segmented.assembling
+	}
+	desc = {
+		trigger = {
+			has_modifier = acs_segmented_assembled
+			artifact_civil_supply_segmented_site = yes
+		}
+		text = artifact_segmented.assembled
+	}
+	desc = {
+		trigger = {
+			has_modifier = acs_segmented_commissioning
+			artifact_civil_supply_segmented_site = yes
+		}
+		text = artifact_segmented.commissioning
+	}
+	desc = {
+		trigger = {
+			has_modifier = acs_segmented_project
+			NOT = { has_modifier = acs_segmented_operational }
+			artifact_civil_supply_segmented_site = no
+		}
+		text = artifact_segmented.paused
+	}
+	desc = {
+		trigger = { artifact_civil_supply_segmented_operational = yes }
+		text = artifact_segmented.operational
+	}
+	desc = {
+		trigger = {
+			has_modifier = acs_segmented_operational
+			artifact_civil_supply_segmented_operational = no
+		}
+		text = artifact_segmented.offline
+	}
+	option = { name = artifact_segmented.close }
+}

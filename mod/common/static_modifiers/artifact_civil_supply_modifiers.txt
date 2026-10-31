@@ -84,3 +84,40 @@ acs_expedition_reconstitution = {
 	icon_frame = 1
 }
 
+
+# R4c阶段及占位标记均无数值收益；有效营建场提供国家并行容量。
+acs_segmented_project = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+acs_segmented_preparing = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+acs_segmented_prepared = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+acs_segmented_assembling = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+acs_segmented_assembled = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+acs_segmented_commissioning = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+acs_segmented_operational = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
