@@ -117,7 +117,14 @@ class JointOperationsTests(unittest.TestCase):
             self.assertEqual(scalar(p, 'ship_behavior'), role)
             self.assertEqual(scalar(p, 'size'), 'small')
             required = 'ship_uses_platform_computers' if role == 'platform' else f'ship_uses_{role}_role'
-            self.assertEqual(scalar(child(p, 'potential'), required), 'yes')
+            potential = child(p, 'potential')
+            # R4e仅为炮击/航母增加明确舰型，原角色助手仍是原生舰型的入口。
+            if role in ('artillery', 'carrier'):
+                choices = child(potential, 'OR')
+                self.assertEqual(scalar(choices, required), 'yes')
+                self.assertEqual(scalar(choices, 'is_ship_size'), 'artifact_strategic_cruiser')
+            else:
+                self.assertEqual(scalar(potential, required), 'yes')
             self.assertIsNone(scalar(p, 'upgrades_to'))
         for key in ('ARTIFACT_TACTICAL_COORDINATION_MODULE', 'ARTIFACT_SUPPORT_COORDINATION_MODULE'):
             p = PARTS[key]

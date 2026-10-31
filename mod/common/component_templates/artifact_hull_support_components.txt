@@ -1,5 +1,5 @@
 # D13公共承载组件：工程定型记录与分支研究同时成立后开放，沿用原生槽位。
-# 当前仅适配五种常规舰体；E10战略舰体以后显式扩展，个人唯一舰不继承这些资格。
+# 尺寸核心仍限原五种常规舰体；R4e仅为航道引擎与缓冲器显式加入中庭级，个人唯一舰不继承。
 # 原生减伤参考晨曦及本机原版；不订阅逐次受击、失能或摧毁事件。
 
 # 轻型终解承载反应堆：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
@@ -274,7 +274,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = -30
 	component_set = "ftl_components"
-	size_restriction = { corvette frigate destroyer cruiser battleship }
+	size_restriction = { corvette frigate destroyer cruiser battleship artifact_strategic_cruiser }
 	ftl = yes
 	jumpdrive = no
 	ship_modifier = {
@@ -312,7 +312,7 @@ utility_component_template = {
 	icon_frame = 1
 	power = -30
 	component_set = "ARTIFACT_TERMINAL_LOAD_FRAME"
-	size_restriction = { corvette frigate destroyer cruiser battleship }
+	size_restriction = { corvette frigate destroyer cruiser battleship artifact_strategic_cruiser }
 	modifier = {
 		ship_hull_mult = 0.15
 	}

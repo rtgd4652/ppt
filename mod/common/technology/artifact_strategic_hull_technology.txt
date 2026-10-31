@@ -1,0 +1,16 @@
+# E10 公共战略舰体工程：分段营建与承载定型接到真实设计器和正常船厂。
+# 中央庭组织公共工程的星际延展属于Mod设计；不量产人格共鸣或读取个人转变。
+# 基础核心随本研究提供，较高阶的供能、推进和航道组件仍分别要求原分支研究。
+tech_artifact_strategic_hull_engineering = {
+	area = engineering
+	icon = "tech_battleships"
+	cost = 28000
+	tier = 5
+	category = { voidcraft }
+	prerequisites = { "tech_artifact_segmented_large_engineering" "tech_artifact_terminal_hull_support" }
+	weight = 50
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+}

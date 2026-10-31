@@ -1403,6 +1403,33 @@
       "source_note": "中央庭灾后重建和科研统筹用于文明背景；分段验收、工程支付和并行容量属于Mod设计，来源审核状态不变。"
     },
     {
+      "id": "E10",
+      "key": "tech_artifact_strategic_hull_engineering",
+      "previous_name": "公共战略舰体工程",
+      "name": "公共战略舰体工程",
+      "lore": "中央庭将营建场的分段装配经验与承载试验的负荷记录交给造舰团队。中庭级保留可识别的舰体骨架、武备和维护空间，把经验证的共鸣工程集中到一个可以正常建造、维修和改装的公共平台上。",
+      "application": "开放中庭级战略舰及配套基础核心，可选择炮击或航母中段。建造需要本国承载定型记录、正在运营的大型工程营建场，以及擎天堡船厂或完工的巨型船坞。每艘正常支付合金、建造时间和维护；高阶供能、推进、航道与联合电脑仍需对应研究。",
+      "implementation_note": "1公共舰种、4区段、6核心；国家定型与运营工业分层，原生船厂付费建造。较高阶组件保留分支研究，个人舰和复活不变。",
+      "technology_file": "mod/common/technology/artifact_strategic_hull_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_strategic_hull_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/scripted_triggers/artifact_strategic_hull_triggers.txt",
+        "mod/common/ship_sizes/artifact_strategic_cruiser.txt",
+        "mod/common/section_templates/artifact_strategic_cruiser_sections.txt",
+        "mod/common/component_templates/artifact_strategic_hull_components.txt",
+        "mod/common/component_templates/artifact_hull_support_components.txt",
+        "mod/common/component_templates/artifact_joint_operations_components.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history",
+        "public_military"
+      ],
+      "source_note": "先查七都数据库和术语/神器/组织源；中庭级与公共军工属Mod延展，不作为原作已发生的星际历史，来源审核状态不变。"
+    },
+    {
       "id": "F01",
       "key": "tech_artifact_relic_archive_restoration",
       "previous_name": "旧日神器档案修复",
@@ -1453,12 +1480,6 @@
     {
       "id": "D14",
       "working_name": "文明联合防务",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
-    {
-      "id": "E10",
-      "working_name": "公共战略舰体工程",
       "status": "awaits_implementation_text",
       "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
     },
@@ -2319,6 +2340,18 @@
       "source_base": "262b8be",
       "spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R4e",
+      "nodes": [
+        "E10"
+      ],
+      "added": 1,
+      "implemented_total": 66,
+      "remaining": 14,
+      "spec": "docs/design/artifact_civilization_r4e_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md"
     }
   ]
 }

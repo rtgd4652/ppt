@@ -1,0 +1,33 @@
+# 国家作用域：持久知识决定设计/核心部件资格；工业现场只决定能否新下单。
+# 不把营建场当前状态放进部件potential，避免停用或占领时已有设计失去核心。
+artifact_strategic_hull_available = {
+	owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	country_uses_bio_ships = no
+	has_technology = "tech_artifact_strategic_hull_engineering"
+	has_modifier = acs_hull_qualified
+}
+
+# 国家作用域：只读既有E09有效运营条件，原拥有者、占领、轰炸和设施状态仍生效。
+# 不消费第二份备料，不写永久工业许可，不添加月度扫描或新状态。
+artifact_strategic_hull_industry_ready = {
+	any_owned_colony = {
+		carrier = { artifact_civil_supply_segmented_operational = yes }
+	}
+}
+
+# 建造场所作用域：沿用原生船厂；不要求泰坦科技、个人旗舰或额外角色。
+artifact_strategic_hull_yard_ready = {
+	OR = {
+		AND = {
+			is_scope_type = starbase
+			has_starbase_size >= starbase_citadel
+		}
+		AND = {
+			is_scope_type = megastructure
+			OR = {
+				is_megastructure_type = mega_shipyard_3
+				is_megastructure_type = mega_shipyard_restored
+			}
+		}
+	}
+}

@@ -1,0 +1,202 @@
+# E10核心仅适配中庭级公共舰；基础件保证分支研究未齐时仍能设计与付费造舰。
+# 已归档的国家定型决定装配资格；当前营建场运营情况仅在新建下单时核对。
+# 原版普通舰核心助手有显式舰型白名单，因此新增独立适配，不覆盖那些助手。
+
+# 中庭级承载反应堆：首版参数，实际设计器和自动设计留待阶段试玩。
+utility_component_template = {
+	key = "ARTIFACT_STRATEGIC_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 2000
+	component_set = "power_core"
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_strategic_hull_available = yes }
+	}
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_strategic_hull_engineering" }
+	upgrades_to = "ARTIFACT_STRATEGIC_TERMINAL_REACTOR"
+	resources = {
+		category = ship_components
+		cost = { alloys = 450 }
+		upkeep = {
+			energy = 4
+			alloys = 0.45
+		}
+	}
+	ai_weight = { weight = 2 }
+}
+
+# 中庭级机动推进器：首版参数，实际设计器和自动设计留待阶段试玩。
+utility_component_template = {
+	key = "ARTIFACT_STRATEGIC_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -180
+	component_set = "thruster_components"
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_strategic_hull_available = yes }
+	}
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_strategic_hull_engineering" }
+	upgrades_to = "ARTIFACT_STRATEGIC_TERMINAL_THRUSTER"
+	modifier = {
+		ship_base_speed_mult = 0.4
+		ship_evasion_add = 2
+	}
+	resources = {
+		category = ship_components
+		cost = { alloys = 160 }
+		upkeep = {
+			energy = 1.2
+			alloys = 0.16
+		}
+	}
+	ai_weight = { weight = 2 }
+}
+
+# 中庭级炮击控制：首版参数，实际设计器和自动设计留待阶段试玩。
+utility_component_template = {
+	key = "ARTIFACT_STRATEGIC_COMPUTER_ARTILLERY"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_basic"
+	icon_frame = 1
+	power = -15
+	component_set = "combat_computers"
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_strategic_hull_available = yes }
+	}
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_strategic_hull_engineering" }
+	ship_behavior = "artillery"
+	upgrade_path = artillery
+	ai_tags = { artillery }
+	ai_tag_weight = 0
+	ship_modifier = {
+		ship_fire_rate_mult = 0.05
+		ship_weapon_range_mult = 0.15
+	}
+	resources = {
+		category = ship_components
+		cost = { alloys = 40 }
+		upkeep = {
+			energy = 0.25
+			alloys = 0.04
+		}
+	}
+	ai_weight = { weight = 2 }
+}
+
+# 中庭级航空控制：首版参数，实际设计器和自动设计留待阶段试玩。
+utility_component_template = {
+	key = "ARTIFACT_STRATEGIC_COMPUTER_CARRIER"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_basic"
+	icon_frame = 1
+	power = -15
+	component_set = "combat_computers"
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_strategic_hull_available = yes }
+	}
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_strategic_hull_engineering" }
+	ship_behavior = "carrier"
+	upgrade_path = carrier
+	ai_tags = { carrier }
+	ai_tag_weight = 0
+	ship_modifier = {
+		ship_engagement_range_mult = 0.5
+	}
+	resources = {
+		category = ship_components
+		cost = { alloys = 40 }
+		upkeep = {
+			energy = 0.25
+			alloys = 0.04
+		}
+	}
+	ai_weight = { weight = 2 }
+}
+
+# 中庭级终解承载反应堆：首版参数，实际设计器和自动设计留待阶段试玩。
+utility_component_template = {
+	key = "ARTIFACT_STRATEGIC_TERMINAL_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 3200
+	component_set = "power_core"
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_strategic_hull_available = yes }
+	}
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_strategic_hull_engineering" "tech_artifact_ship_phase_power" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 650 }
+		upkeep = {
+			energy = 5.5
+			alloys = 0.65
+		}
+	}
+	ai_weight = { weight = 8 }
+}
+
+# 中庭级终解承载推进器：首版参数，实际设计器和自动设计留待阶段试玩。
+utility_component_template = {
+	key = "ARTIFACT_STRATEGIC_TERMINAL_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -450
+	component_set = "thruster_components"
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_strategic_hull_available = yes }
+	}
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_strategic_hull_engineering" "tech_artifact_phase_maneuvering" }
+	modifier = {
+		ship_base_speed_mult = 0.85
+		ship_evasion_add = 3
+	}
+	resources = {
+		category = ship_components
+		cost = { alloys = 240 }
+		upkeep = {
+			energy = 1.6
+			alloys = 0.24
+		}
+	}
+	ai_weight = { weight = 8 }
+}

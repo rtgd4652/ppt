@@ -1841,12 +1841,14 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 65,
+    "public_technologies": 66,
     "army_types": 5,
-    "component_definitions": 104,
+    "component_definitions": 110,
     "building_definitions": 39,
     "starbase_building_definitions": 1,
-    "note": "R4d新增D13和10个公共组件定义；一份B14备料完成承载试验后开放装配资格，源码和必要检查通过，运行待阶段试玩。E10战略舰体仍待实现。"
+    "public_strategic_ship_sizes": 1,
+    "planned_technologies_remaining": 14,
+    "note": "R4e公共战略舰及6核心源码通过，4个既有组件显式适配；D12/D14仍待实现。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -1892,5 +1894,13 @@
     "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md",
     "checkpoint": "reports/artifact_civilization_r4d_checkpoint_2026-10-31.json",
     "balance_status": "pending"
+  },
+  "r4e_strategic_hull": {
+    "status": "implemented_static_passed",
+    "runtime_status": "not_run",
+    "spec": "docs/design/artifact_civilization_r4e_implementation_spec_v0.1.json",
+    "report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md",
+    "checkpoint": "reports/artifact_civilization_r4e_checkpoint_2026-10-31.json",
+    "inherited_requirements": "E09运行工业 + D13持久定型；D16/D17/D18/D10分支不被替代"
   }
 }

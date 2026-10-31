@@ -182,9 +182,12 @@ class HullSupportTests(unittest.TestCase):
                 self.a['techs'].remove(research)
                 self.assertFalse(self.w.component_country_ready(key), (key, research))
                 self.a['techs'].add(research)
-            # 新件只开放明确列出的普通舰型，不让个人唯一舰或将来E10舰型隐式继承。
+            # R4e只显式扩展通用航道/缓冲器；尺寸核心仍限原五类，个人舰始终不继承。
             sizes = {e.value for e in foundation.child(body, 'size_restriction')}
-            self.assertTrue(sizes <= {'corvette', 'frigate', 'destroyer', 'cruiser', 'battleship'})
+            allowed = {'corvette', 'frigate', 'destroyer', 'cruiser', 'battleship'}
+            if key in ('ARTIFACT_TERMINAL_HYPER_DRIVE', 'ARTIFACT_TERMINAL_LOAD_FRAME'):
+                allowed.add('artifact_strategic_cruiser')
+            self.assertTrue(sizes <= allowed)
         self.a['bio'] = True
         self.assertFalse(any(self.w.component_country_ready(k) for k in PARTS))
 

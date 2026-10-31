@@ -1,0 +1,243 @@
+{
+  "date": "2026-10-31",
+  "package": "R4e",
+  "source_base": "b8c94ee",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "nodes": [
+    "E10"
+  ],
+  "technology": {
+    "id": "E10",
+    "key": "tech_artifact_strategic_hull_engineering",
+    "name": "公共战略舰体工程",
+    "area": "engineering",
+    "tier": 5,
+    "cost": 28000,
+    "weight": 50,
+    "category": "voidcraft",
+    "prerequisites": [
+      "tech_artifact_segmented_large_engineering",
+      "tech_artifact_terminal_hull_support"
+    ]
+  },
+  "lore": "中央庭将营建场的分段装配经验与承载试验的负荷记录交给造舰团队。中庭级保留可识别的舰体骨架、武备和维护空间，把经验证的共鸣工程集中到一个可以正常建造、维修和改装的公共平台上。",
+  "application": "开放中庭级战略舰及配套基础核心，可选择炮击或航母中段。建造需要本国承载定型记录、正在运营的大型工程营建场，以及擎天堡船厂或完工的巨型船坞。每艘正常支付合金、建造时间和维护；高阶供能、推进、航道与联合电脑仍需对应研究。",
+  "hull": {
+    "key": "artifact_strategic_cruiser",
+    "name": "中庭级战略舰",
+    "hitpoints": 9600,
+    "speed": 80,
+    "evasion": 3,
+    "naval_capacity": 60,
+    "build_days": 960,
+    "base_alloy_cost": 1200,
+    "section_alloy_cost": 800,
+    "total_before_components": 3600,
+    "upkeep": {
+      "energy": 12,
+      "alloys": 6
+    },
+    "logistics": {
+      "trade": 12
+    },
+    "designable": true,
+    "hero_ship": false,
+    "resurrection": false,
+    "hard_numeric_count_limit": null,
+    "entity": "battleship_entity",
+    "asset_status": "vanilla_gameplay_placeholder"
+  },
+  "sections": {
+    "count": 4,
+    "configurations": 2,
+    "artillery": "6L",
+    "carrier": "3L/2H/2S/2PD",
+    "large_defense_slots": 8,
+    "aux_slots": 2,
+    "carrier_prerequisite": "tech_strike_craft_1"
+  },
+  "components": [
+    {
+      "key": "ARTIFACT_STRATEGIC_REACTOR",
+      "name": "中庭级承载反应堆",
+      "family": "power_core",
+      "power": 2000,
+      "cost": 450,
+      "upkeep": {
+        "energy": 4,
+        "alloys": 0.45
+      },
+      "icon": "GFX_ship_part_reactor_5",
+      "upgrade": "ARTIFACT_STRATEGIC_TERMINAL_REACTOR",
+      "desc": "适配公共战略舰体的基础供能单元。以已定型的承载结构分配负荷，为常规武备留出可用功率。"
+    },
+    {
+      "key": "ARTIFACT_STRATEGIC_THRUSTER",
+      "name": "中庭级机动推进器",
+      "family": "thruster_components",
+      "power": -180,
+      "cost": 160,
+      "upkeep": {
+        "energy": 1.2,
+        "alloys": 0.16
+      },
+      "icon": "GFX_ship_part_thruster_4",
+      "modifier": {
+        "ship_base_speed_mult": 0.4,
+        "ship_evasion_add": 2
+      },
+      "upgrade": "ARTIFACT_STRATEGIC_TERMINAL_THRUSTER",
+      "desc": "沿舰体骨架布置的基础推进单元。推进负荷通过承载框架传递，保持大型平台的可控机动。"
+    },
+    {
+      "key": "ARTIFACT_STRATEGIC_COMPUTER_ARTILLERY",
+      "name": "中庭级炮击控制",
+      "family": "combat_computers",
+      "power": -15,
+      "cost": 40,
+      "upkeep": {
+        "energy": 0.25,
+        "alloys": 0.04
+      },
+      "icon": "GFX_ship_part_computer_artillery_basic",
+      "behavior": "artillery",
+      "ship_modifier": {
+        "ship_fire_rate_mult": 0.05,
+        "ship_weapon_range_mult": 0.15
+      },
+      "desc": "为公共战略舰保留远程火力位置；需要更强的联合射击协调时，可改装联合战术核心提供的电脑。"
+    },
+    {
+      "key": "ARTIFACT_STRATEGIC_COMPUTER_CARRIER",
+      "name": "中庭级航空控制",
+      "family": "combat_computers",
+      "power": -15,
+      "cost": 40,
+      "upkeep": {
+        "energy": 0.25,
+        "alloys": 0.04
+      },
+      "icon": "GFX_ship_part_computer_carrier_basic",
+      "behavior": "carrier",
+      "ship_modifier": {
+        "ship_engagement_range_mult": 0.5
+      },
+      "desc": "协调舰载机放飞与母舰交战位置。提高交战启动距离，不直接扩大各型武器射程，也不提供舰载机研究。"
+    },
+    {
+      "key": "ARTIFACT_STRATEGIC_TERMINAL_REACTOR",
+      "name": "中庭级终解承载反应堆",
+      "family": "power_core",
+      "power": 3200,
+      "cost": 650,
+      "upkeep": {
+        "energy": 5.5,
+        "alloys": 0.65
+      },
+      "icon": "GFX_ship_part_reactor_5",
+      "branch": "tech_artifact_ship_phase_power",
+      "desc": "将舰载相位供能应用于战略舰体的高负荷系统。额外功率伴随更高的造价与维护；基础舰体研究不能替代相位供能研究。"
+    },
+    {
+      "key": "ARTIFACT_STRATEGIC_TERMINAL_THRUSTER",
+      "name": "中庭级终解承载推进器",
+      "family": "thruster_components",
+      "power": -450,
+      "cost": 240,
+      "upkeep": {
+        "energy": 1.6,
+        "alloys": 0.24
+      },
+      "icon": "GFX_ship_part_thruster_4",
+      "branch": "tech_artifact_phase_maneuvering",
+      "modifier": {
+        "ship_base_speed_mult": 0.85,
+        "ship_evasion_add": 3
+      },
+      "desc": "以相位机动研究改进战略舰的推进负荷分配。更快的亚光速机动需要更高功率，仍须完成对应推进研究。"
+    }
+  ],
+  "adapted_existing_components": [
+    "ARTIFACT_TERMINAL_HYPER_DRIVE",
+    "ARTIFACT_TERMINAL_LOAD_FRAME",
+    "ARTIFACT_JOINT_COMPUTER_ARTILLERY",
+    "ARTIFACT_JOINT_COMPUTER_CARRIER"
+  ],
+  "gates": {
+    "design_cores": "E10 + acs_hull_qualified + ARTIFACT_USER + non-bioship",
+    "new_construction": "design_cores + original-owner operational E09 yard + citadel/complete mega shipyard",
+    "inactive_industry": "new orders blocked; ship/design and durable core qualification not deleted",
+    "building_queue_behavior": "engine-dependent; runtime pending"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-ARTIFACT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-CENTRAL-COURT"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/artifacts/artifact_bible_v0.1.md",
+      "knowledge/organizations/organization_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false
+  },
+  "validation": {
+    "new": {
+      "count": 5,
+      "status": "pass",
+      "module": "test_artifact_strategic_hull"
+    },
+    "affected": {
+      "count": 12,
+      "status": "pass",
+      "modules": [
+        "test_artifact_hull_support",
+        "test_artifact_joint_operations"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 189,
+        "events": 257,
+        "localization_keys": 2030,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "references": {
+      "section_locator_matches": 4,
+      "new_component_icons_exist": 6,
+      "native_sensor_and_hyperdrive_entry_checked": true
+    },
+    "limitations": [
+      "条件执行器不模拟原生队列、自动设计、模型显示或战斗。",
+      "原生在建队列、工业失效期间的改装和自然平衡尚未验证。"
+    ]
+  },
+  "files": [
+    "mod/common/technology/artifact_strategic_hull_technology.txt",
+    "mod/common/scripted_triggers/artifact_strategic_hull_triggers.txt",
+    "mod/common/ship_sizes/artifact_strategic_cruiser.txt",
+    "mod/common/section_templates/artifact_strategic_cruiser_sections.txt",
+    "mod/common/component_templates/artifact_strategic_hull_components.txt",
+    "mod/localisation/simp_chinese/artifact_strategic_hull_l_simp_chinese.yml",
+    "mod/common/component_templates/artifact_hull_support_components.txt",
+    "mod/common/component_templates/artifact_joint_operations_components.txt",
+    "tools/validation/tests/test_artifact_strategic_hull.py",
+    "tools/validation/tests/test_artifact_hull_support.py",
+    "tools/validation/tests/test_artifact_joint_operations.py"
+  ]
+}

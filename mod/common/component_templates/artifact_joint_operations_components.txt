@@ -75,7 +75,8 @@ utility_component_template = {
 	ship_behavior = "artillery"
 	upgrade_path = artillery
 	potential = {
-		ship_uses_artillery_role = yes
+		# R4e显式适配公共战略舰，不扩大其他角色或个人舰权限。
+		OR = { ship_uses_artillery_role = yes is_ship_size = artifact_strategic_cruiser }
 		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
 	}
 	prerequisites = { "tech_artifact_joint_combat_core" }
@@ -96,7 +97,8 @@ utility_component_template = {
 	ship_behavior = "carrier"
 	upgrade_path = carrier
 	potential = {
-		ship_uses_carrier_role = yes
+		# R4e显式适配公共战略舰，不扩大其他角色或个人舰权限。
+		OR = { ship_uses_carrier_role = yes is_ship_size = artifact_strategic_cruiser }
 		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
 	}
 	prerequisites = { "tech_artifact_joint_combat_core" }

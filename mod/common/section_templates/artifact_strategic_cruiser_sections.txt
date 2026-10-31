@@ -1,0 +1,117 @@
+# 区段仅供中庭级：使用原版实体和真实炮位，不复制第三方模型或改动原版区段。
+# 同一舰体选炮击/航母中段；八个大型防御槽、两个辅助槽，武器仍按已研究装备选配。
+ship_section_template = {
+	key = "ARTIFACT_STRATEGIC_BOW"
+	ship_size = artifact_strategic_cruiser
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "battleship_bow_L2_entity"
+	icon = "GFX_ship_part_core_bow"
+	ai_tags = { artillery carrier }
+	ai_weight = { weight = 10 }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+	large_utility_slots = 4
+	resources = { category = ship_sections cost = { alloys = 800 } }
+}
+
+ship_section_template = {
+	key = "ARTIFACT_STRATEGIC_MID_ARTILLERY"
+	ship_size = artifact_strategic_cruiser
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "battleship_mid_L3_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { artillery }
+	ai_weight = { weight = 10 }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		locatorname = "large_gun_03"
+	}
+	large_utility_slots = 4
+	resources = { category = ship_sections cost = { alloys = 800 } }
+}
+
+ship_section_template = {
+	key = "ARTIFACT_STRATEGIC_MID_CARRIER"
+	ship_size = artifact_strategic_cruiser
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "battleship_mid_S4LHB_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { carrier }
+	ai_weight = { weight = 10 }
+	# 没有舰载机研究时仍可先用炮击构型；航母区段不送舰载机技术。
+	prerequisites = { "tech_strike_craft_1" }
+	component_slot = {
+		name = "SMALL_GUN_01"
+		template = "small_turret"
+		locatorname = "small_gun_01"
+	}
+	component_slot = {
+		name = "SMALL_GUN_02"
+		template = "small_turret"
+		locatorname = "small_gun_02"
+	}
+	component_slot = {
+		name = "SMALL_GUN_03"
+		template = "point_defence_turret"
+		locatorname = "small_gun_03"
+	}
+	component_slot = {
+		name = "SMALL_GUN_04"
+		template = "point_defence_turret"
+		locatorname = "small_gun_04"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "strike_craft_locator_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		rotation = -90
+		locatorname = "strike_craft_locator_02"
+	}
+	large_utility_slots = 4
+	resources = { category = ship_sections cost = { alloys = 800 } }
+}
+
+ship_section_template = {
+	key = "ARTIFACT_STRATEGIC_STERN"
+	ship_size = artifact_strategic_cruiser
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "battleship_stern_L1_entity"
+	icon = "GFX_ship_part_core_stern"
+	ai_tags = { artillery carrier }
+	ai_weight = { weight = 10 }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	aux_utility_slots = 2
+	resources = { category = ship_sections cost = { alloys = 800 } }
+}

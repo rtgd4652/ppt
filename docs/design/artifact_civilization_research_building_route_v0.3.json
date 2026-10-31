@@ -1062,8 +1062,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "提供公共战略舰体研究资格，与主线既有唯一旗舰及个人专属舰分开。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "解锁中庭级公共战略舰、炮击/航母区段与基础核心；定型记录、运营营建场及合格船厂共同允许正常付费建造，个人唯一舰独立。",
+      "implementation_key": "tech_artifact_strategic_hull_engineering",
+      "spec": "docs/design/artifact_civilization_r4e_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md"
     },
     {
       "id": "E11",
@@ -2379,16 +2382,33 @@
       "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r4d_checkpoint_2026-10-31.json",
       "balance_status": "pending"
+    },
+    "R4e": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "nodes": [
+        "E10"
+      ],
+      "new_ship_sizes": 1,
+      "new_sections": 4,
+      "new_components": 6,
+      "spec": "docs/design/artifact_civilization_r4e_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r4e_checkpoint_2026-10-31.json",
+      "next_step": "推进D12有限场域压制：以已有公共战略舰为候选宿主，先核对付费限时能力的原生作用范围；D14及其余节点后续，连续巨构仍暂停。"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 65,
+    "public_technologies": 66,
     "army_types": 5,
-    "component_definitions": 104,
+    "component_definitions": 110,
     "building_definitions": 39,
     "starbase_building_definitions": 1,
-    "note": "R4d新增D13和10个公共组件定义；一份B14备料完成承载试验后开放装配资格，源码和必要检查通过，运行待阶段试玩。E10战略舰体仍待实现。"
+    "public_strategic_ship_sizes": 1,
+    "planned_technologies_remaining": 14,
+    "note": "R4e新增E10、1公共舰种、4区段和6核心；5项新检查、12项相关检查及静态通过，运行待阶段试玩。"
   },
   "orbital_buildings": [
     {
@@ -2646,7 +2666,7 @@
       }
     ],
     "current_army_definitions": 5,
-    "current_component_definitions": 94,
+    "current_component_definitions": 110,
     "public_legacy_component_definitions": 43,
     "legacy_hull_locked_components": 7,
     "legacy_aura_prototypes": 4,
@@ -2713,5 +2733,8 @@
   "r4c_checkpoint": "reports/artifact_civilization_r4c_checkpoint_2026-10-31.json",
   "r4d_spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
   "r4d_report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md",
-  "r4d_checkpoint": "reports/artifact_civilization_r4d_checkpoint_2026-10-31.json"
+  "r4d_checkpoint": "reports/artifact_civilization_r4d_checkpoint_2026-10-31.json",
+  "r4e_spec": "docs/design/artifact_civilization_r4e_implementation_spec_v0.1.json",
+  "r4e_report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md",
+  "r4e_checkpoint": "reports/artifact_civilization_r4e_checkpoint_2026-10-31.json"
 }
