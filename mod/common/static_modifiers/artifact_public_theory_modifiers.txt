@@ -1,0 +1,5 @@
+# 本国已汇编的公共知识，无全国产出加成；场地转让不转让知识。
+apt_public_engineering_methods = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}

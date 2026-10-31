@@ -1,0 +1,22 @@
+# 汇编无新费用与等待，不占用或清理当地公共实验/物资名额。
+decision_artifact_public_theory_compile = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_foundation_actor = yes
+		has_building = "building_artifact_high_dimensional_review_station"
+		owner = {
+			has_technology = "tech_artifact_public_artifact_theory"
+			NOT = { has_modifier = apt_public_engineering_methods }
+		}
+	}
+	allow = {
+		custom_tooltip = { fail_text = apt.requires_compile artifact_public_theory_can_compile = yes }
+	}
+	effect = {
+		custom_tooltip = apt.offer_compile
+		hidden_effect = { artifact_public_theory_compile = yes }
+	}
+	ai_weight = { weight = 0 }
+}

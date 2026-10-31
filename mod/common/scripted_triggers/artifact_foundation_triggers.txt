@@ -47,7 +47,7 @@ artifact_foundation_mode_site = {
 			has_carrier_flag = arf_r1_mode_boundary_experiment
 			artifact_boundary_lab = yes
 		}
-		# 复现读取公共知识与科研场地；原四方案仍使用各自旧现场，不相互替代。
+		# 复现读取公共知识与合格科研/工程场地；原四方案仍使用各自旧现场，不相互替代。
 		AND = {
 			OR = {
 				has_carrier_flag = arf_r1_mode_reproduce_sample
@@ -245,15 +245,19 @@ artifact_research_can_archive_materials = {
 	owner = { NOT = { has_country_flag = artifact_public_material_record } }
 }
 
-# 4.5.2载体作用域下的当地有效园区；停用或升级中的低阶失效时等待高阶接续。
+# 旧园区路径保留；A12汇编后增加工程现场路径，继续复用原付费/工作量/清理。
+# 普通园区无需A12，工程现场也不借研究完成跳过真实方法与模型归档。
 artifact_research_reproduction_site = {
-	owner = {
-		has_technology = "tech_artifact_public_reproduction_protocol"
-		has_technology = "tech_artifact_research_campus_integration"
-	}
+	owner = { has_technology = "tech_artifact_public_reproduction_protocol" }
 	OR = {
-		has_active_building = "building_artifact_public_research_campus"
-		has_active_building = "building_artifact_destiny_research_spire"
+		AND = {
+			owner = { has_technology = "tech_artifact_research_campus_integration" }
+			OR = {
+				has_active_building = "building_artifact_public_research_campus"
+				has_active_building = "building_artifact_destiny_research_spire"
+			}
+		}
+		artifact_public_theory_engineering_site = yes
 	}
 }
 

@@ -1807,7 +1807,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f及R4a～R4i源码检查通过、运行未验；阶段试玩仍优先D12，观测升级/复核与A09支持取必要代表。",
+    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f及R4a～R4j源码检查通过、运行未验；集中试玩仍优先D12，其余取必要代表，不逐包重测。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1844,14 +1844,14 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 70,
+    "public_technologies": 71,
     "army_types": 5,
     "component_definitions": 111,
     "building_definitions": 40,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 10,
-    "note": "R4i新增A11/BL02最终站与付费模型复核；A05/A09升级兼容，6项新增、16项相关检查及静态通过，运行未验。"
+    "planned_technologies_remaining": 9,
+    "note": "R4j新增A12免费即时汇编，工程现场复用C10付费复现；5项新增、19项相关源码检查与静态通过，运行未验。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -1968,5 +1968,21 @@
     "report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md",
     "checkpoint": "reports/artifact_civilization_r4i_checkpoint_2026-10-31.json",
     "next_step": "推进A12公共神器理论（A11＋C10）：优先汇总既有模型复核与公共复现成果为公共工程/反制资格，复用已完成记录，避免再复制同类月度项目；E11/E12随后。集中试玩仍优先D12新行动，其余取必要代表共用关键读档；人物组合、连续巨构和批量图标继续暂停。"
+  },
+  "r4j_public_theory": {
+    "date": "2026-10-31",
+    "status": "implemented_static_passed",
+    "runtime_status": "not_run",
+    "nodes": [
+      "A12"
+    ],
+    "new_buildings": 0,
+    "new_components": 0,
+    "new_events": 0,
+    "new_on_actions": 0,
+    "spec": "docs/design/artifact_civilization_r4j_implementation_spec_v0.1.json",
+    "report": "reports/artifact_civilization_r4j_implementation_2026-10-31.md",
+    "checkpoint": "reports/artifact_civilization_r4j_checkpoint_2026-10-31.json",
+    "next_step": "推进E11星系协同基础设施（E09＋C12）：复用现有供给/联运与分段营建成果，落实跨星系工程供给及调度的实际消费者；连续视觉原型仍暂停。随后E12文明工程统筹，再接F02～F08与最终Boss收束。阶段试玩仍优先D12新行动，其余取必要代表共用关键读档，不逐包重测。"
   }
 }

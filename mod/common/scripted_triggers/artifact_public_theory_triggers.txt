@@ -1,0 +1,42 @@
+# 国家知识接口：不读取个人转变、危机发生或胜利，后续F03仍有自己的条件。
+artifact_public_theory_qualified = {
+	has_technology = "tech_artifact_public_artifact_theory"
+	has_modifier = apt_public_engineering_methods
+}
+
+# 至少一种真实方法即可汇编；未归档的另一种方法不会因此凭空获得。
+artifact_public_theory_sources = {
+	artifact_observation_review_archived = yes
+	has_technology = "tech_artifact_public_reproduction_protocol"
+	OR = {
+		has_country_flag = artifact_public_sample_record
+		has_country_flag = artifact_public_material_record
+	}
+}
+
+artifact_public_theory_can_compile = {
+	artifact_foundation_actor = yes
+	artifact_foundation_safe_control = yes
+	has_active_building = "building_artifact_high_dimensional_review_station"
+	owner = {
+		has_technology = "tech_artifact_public_artifact_theory"
+		artifact_public_theory_sources = yes
+		NOT = { has_modifier = apt_public_engineering_methods }
+	}
+}
+
+# 新的实际消费者：合格国家可在工程现场复用C10项目，保留各场地研究。
+# 不要求E05园区，但仍需对应已归档方法、旧项目名额、实付物资与有效月度。
+artifact_public_theory_engineering_site = {
+	owner = { artifact_public_theory_qualified = yes }
+	OR = {
+		AND = {
+			owner = { has_technology = "tech_artifact_strategic_engineering_supply" }
+			has_active_building = "building_artifact_engineering_supply_yard"
+		}
+		AND = {
+			owner = { has_technology = "tech_artifact_rule_anchoring_engineering" }
+			has_active_building = "building_artifact_rule_anchor_test_site"
+		}
+	}
+}

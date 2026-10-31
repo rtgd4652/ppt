@@ -18,7 +18,9 @@ def load(path):
     # 检查器解析器不保留比较符；夹具显式保留这两个实际用到的比较。
     text=re.sub(r'\b(value|amount)\s*>=\s*([\w.-]+)',r'\1_ge = \2',text)
     return {e.key:e.value for e in parse(text) if e.key}
-TRIGGERS=load('mod/common/scripted_triggers/artifact_foundation_triggers.txt')
+# C10场地条件已接A12工程分支；保留严格条件解析，不把未知接口默认为通过。
+TRIGGERS={**load('mod/common/scripted_triggers/artifact_foundation_triggers.txt'),
+          **load('mod/common/scripted_triggers/artifact_public_theory_triggers.txt')}
 EFFECTS=load('mod/common/scripted_effects/artifact_foundation_effects.txt')
 DECISIONS=load('mod/common/decisions/artifact_foundation_decisions.txt')
 EVENTS={scalar(e.value,'id'):e.value for e in parse((ROOT/'mod/events/artifact_foundation_events.txt').read_text(encoding='utf-8')) if e.key.endswith('_event')}

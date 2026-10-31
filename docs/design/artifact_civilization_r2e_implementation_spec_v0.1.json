@@ -162,5 +162,15 @@
     "static_errors": 0,
     "static_warnings": 0,
     "runtime_status": "passed_representative_sample_scope"
-  }
+  },
+  "compatibility_updates": [
+    {
+      "date": "2026-10-31",
+      "package": "R4j",
+      "status": "source_tests_passed_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r4j_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4j_implementation_2026-10-31.md",
+      "note": "A12已汇编国家可在B14集成场/E08锚定试验场复用旧付费复现；旧E05园区不要求A12，新路径运行未验。"
+    }
+  ]
 }

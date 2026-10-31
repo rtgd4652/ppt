@@ -1,0 +1,8 @@
+# 汇编已经支付并完成的知识，免费即时归档；不消费/延长成果，不写主线事实。
+# 正常决议与效果共用同一守卫，重复调用不会重复写入或生成当地成果。
+artifact_public_theory_compile = {
+	if = {
+		limit = { artifact_public_theory_can_compile = yes }
+		owner = { add_modifier = { modifier = apt_public_engineering_methods days = -1 } }
+	}
+}

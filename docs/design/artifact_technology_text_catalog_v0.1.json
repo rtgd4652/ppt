@@ -264,6 +264,33 @@
       "source_note": "先查七都数据库并读神器/组织/术语来源；模型适用条件与证据可审查属Mod设计，来源审核状态不变；只读已有危机事实和实际锚点损失，不声称反制/胜利已验证。"
     },
     {
+      "id": "A12",
+      "key": "tech_artifact_public_artifact_theory",
+      "previous_name": "公共神器理论",
+      "name": "公共神器理论",
+      "lore": "神器研究逐渐积累了可以相互检验的模型、方法与适用边界。中央庭将这些认识整理为公共工程标准，使异常研究的成果能够走出少数实验室，并继续接受来自实际应用的修正。",
+      "application": "在高维观测复核站汇编已完成的模型与至少一种已归档的样本或材料方法，免费取得本国公共工程资格。工程物资集成场和规则锚定试验场随后可按原费用复现对应方法；后续公共反制仍需独立研究与危机资料。",
+      "implementation_note": "真实A11模型与至少一种C10方法免费即时汇编；本国资格使B14/E08工程现场复用原付费复现，不创建未知方法或改变个人/危机进度。",
+      "technology_file": "mod/common/technology/artifact_public_theory_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_public_theory_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/decisions/artifact_public_theory_decisions.txt",
+        "mod/common/scripted_effects/artifact_public_theory_effects.txt",
+        "mod/common/scripted_triggers/artifact_public_theory_triggers.txt",
+        "mod/common/static_modifiers/artifact_public_theory_modifiers.txt",
+        "mod/common/scripted_triggers/artifact_foundation_triggers.txt",
+        "mod/events/artifact_foundation_events.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "central_court_history"
+      ],
+      "source_note": "写前查询七都数据库并读神器/组织/术语来源；公共理论是可检验方法的Mod工程转译，不宣称量产神器、解释黑门本质或取得危机胜利，来源审核状态不变。"
+    },
+    {
       "id": "B01",
       "key": "tech_artifact_relic_fabrication",
       "previous_name": "神器锻造",
@@ -770,13 +797,14 @@
       "previous_name": "公共研究复现协议",
       "name": "实验复现体系",
       "lore": "研究方法与结果一起保存，其他研究者才能重新建立相同的实验条件。一次试验的价值因此能够延伸到更多殖民地。",
-      "application": "通过当地项目页归档仍有效的样本或材料成果；配合科研园区，在其他殖民地付费复现对应成果。",
-      "implementation_note": "artifact_research_archive只接受有效样本或材料修正；国家方法永久保存，复现仍需E05与当地项目槽，不补算失效历史。",
+      "application": "通过当地项目页归档仍有效的样本或材料成果；配合科研园区，在其他殖民地付费复现对应成果。完成公共神器理论汇编后，也可在合格工程现场复现。",
+      "implementation_note": "只归档有效样本/材料成果；E05园区或A12合格工程现场复用旧付费/项目槽，国家方法永久保存，不补算历史。",
       "technology_file": "mod/common/technology/artifact_research_reproduction_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
       "consumer_files": [
         "mod/common/scripted_triggers/artifact_foundation_triggers.txt",
-        "mod/events/artifact_foundation_events.txt"
+        "mod/events/artifact_foundation_events.txt",
+        "mod/common/scripted_triggers/artifact_public_theory_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1577,12 +1605,6 @@
     }
   ],
   "unimplemented_nodes": [
-    {
-      "id": "A12",
-      "working_name": "公共神器理论",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
     {
       "id": "E11",
       "working_name": "星系协同基础设施",
@@ -2500,6 +2522,18 @@
       "remaining": 10,
       "spec": "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R4j",
+      "nodes": [
+        "A12"
+      ],
+      "added": 1,
+      "implemented_total": 71,
+      "remaining": 9,
+      "spec": "docs/design/artifact_civilization_r4j_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4j_implementation_2026-10-31.md"
     }
   ]
 }

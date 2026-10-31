@@ -1,0 +1,191 @@
+{
+  "date": "2026-10-31",
+  "package": "R4j",
+  "source_base": "51644bd",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "nodes": [
+    "A12"
+  ],
+  "technology": {
+    "id": "A12",
+    "key": "tech_artifact_public_artifact_theory",
+    "name": "公共神器理论",
+    "area": "physics",
+    "tier": 5,
+    "cost": 30000,
+    "weight": 45,
+    "category": "field_manipulation",
+    "prerequisites": [
+      "tech_artifact_high_dimensional_model_review",
+      "tech_artifact_public_reproduction_protocol"
+    ]
+  },
+  "lore": "神器研究逐渐积累了可以相互检验的模型、方法与适用边界。中央庭将这些认识整理为公共工程标准，使异常研究的成果能够走出少数实验室，并继续接受来自实际应用的修正。",
+  "application": "在高维观测复核站汇编已完成的模型与至少一种已归档的样本或材料方法，免费取得本国公共工程资格。工程物资集成场和规则锚定试验场随后可按原费用复现对应方法；后续公共反制仍需独立研究与危机资料。",
+  "compilation": {
+    "entry": "decision_artifact_public_theory_compile",
+    "site": "building_artifact_high_dimensional_review_station",
+    "inputs": [
+      "A12研究",
+      "artifact_observation_review_archived：A11研究与amr_model_reviewed",
+      "C10研究",
+      "至少一种本国artifact_public_sample_record或artifact_public_material_record"
+    ],
+    "safety": "owned and controlled active final review station; no bombardment",
+    "cost": {},
+    "effective_months": 0,
+    "record": "apt_public_engineering_methods",
+    "record_scope": "country",
+    "record_duration": -1,
+    "read_only_inputs": true,
+    "existing_projects": "no local slot occupation, no clearing, consumption, extension or new progress",
+    "repeat": "normal entry hides after certification; guarded effect does nothing on repeat"
+  },
+  "interfaces": {
+    "exported_country_trigger": "artifact_public_theory_qualified",
+    "requires": [
+      "A12 research",
+      "apt_public_engineering_methods"
+    ],
+    "later_consumer": "F03公共反制的理论资格；F02危机信号与D14等前置仍独立，当前未实现F03",
+    "qualification_survives_site_transfer": true,
+    "knowledge_transfers_with_planet": false,
+    "personal_transformation_required": false,
+    "crisis_or_victory_required": false
+  },
+  "consumer": {
+    "name": "C10工程现场复现",
+    "trigger": "artifact_public_theory_engineering_site",
+    "alternate_sites": [
+      {
+        "building": "building_artifact_engineering_supply_yard",
+        "technology": "tech_artifact_strategic_engineering_supply"
+      },
+      {
+        "building": "building_artifact_rule_anchor_test_site",
+        "technology": "tech_artifact_rule_anchoring_engineering"
+      }
+    ],
+    "old_E05_path": "unchanged; ordinary active research campus/spire still works without A12",
+    "new_E05_requirement": false,
+    "own_relevant_method_required": true,
+    "cost": {
+      "energy": 300,
+      "consumer_goods": 150
+    },
+    "effective_months": 6,
+    "results": {
+      "sample": "physics jobs +10%, 720 days",
+      "materials": "engineering jobs +10%, 720 days"
+    },
+    "shared_slot": "existing R1/C10 local public project slot",
+    "lifecycle": "existing payment guard, monthly pause/resume and original-owner transfer/destroy cleanup; no second fee",
+    "sources_consumed": false,
+    "unknown_method_created": false
+  },
+  "performance": {
+    "new_events": 0,
+    "new_monthly_subscriptions": 0,
+    "new_daily_scans": 0,
+    "new_variables": 0,
+    "new_country_modifiers": 1
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-ARTIFACT",
+      "TERM-CENTRAL-COURT",
+      "TERM-BLACK-GATE-RESEARCH-SYSTEM",
+      "TERM-BLACK-GATE"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/artifacts/artifact_bible_v0.1.md",
+      "knowledge/organizations/organization_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false,
+    "constraint": "共享可复核方法与适用边界，不量产个人神器，不把公共理论写成已经解释黑门本质或取得危机胜利。"
+  },
+  "native_reference": {
+    "game_source_version": "本机4.5.2 / eb95既有脚本接口，本轮未运行",
+    "target_4_5_1_compatibility": "pending",
+    "reference": "沿用原生免费行星决议/国家修正与已用C10付费、有效月度、原拥有者清理。"
+  },
+  "validation": {
+    "new": {
+      "count": 5,
+      "status": "pass",
+      "module": "test_artifact_public_theory"
+    },
+    "affected": {
+      "count": 19,
+      "status": "pass",
+      "modules": [
+        "test_artifact_research_reproduction",
+        "test_artifact_foundation_projects"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 220,
+        "events": 260,
+        "localization_keys": 2140,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "fixture_note": "A11完成模型作为已验证接口输入；C10方法在本次夹具中通过原正常项目完成及归档取得。",
+    "limitations": [
+      "执行正式决议/条件/效果与既有C10月度、转让清理，不代表原生可见性、研究抽取、费用结算或存读档通过。",
+      "C10旧园区的历史代表运行证据保留，不能扩张为A12新工程现场运行证据。"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "save_created": null,
+    "pending_command": null,
+    "priority": "阶段试玩仍优先D12新行动；A12可随一条观测/工程代表路径顺带检查，不另立逐包存读档要求。"
+  },
+  "files": [
+    "mod/common/decisions/artifact_public_theory_decisions.txt",
+    "mod/common/scripted_effects/artifact_public_theory_effects.txt",
+    "mod/common/scripted_triggers/artifact_public_theory_triggers.txt",
+    "mod/common/static_modifiers/artifact_public_theory_modifiers.txt",
+    "mod/common/technology/artifact_public_theory_technology.txt",
+    "mod/localisation/simp_chinese/artifact_public_theory_l_simp_chinese.yml",
+    "mod/common/scripted_triggers/artifact_foundation_triggers.txt",
+    "mod/common/technology/artifact_research_reproduction_technology.txt",
+    "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+    "tools/validation/tests/test_artifact_foundation_projects.py",
+    "tools/validation/tests/test_artifact_public_theory.py",
+    "docs/design/artifact_civilization_r4j_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r4j_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r4j_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r4j_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "docs/design/artifact_civilization_r2e_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r2e_implementation_spec_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}

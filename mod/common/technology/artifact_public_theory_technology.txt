@@ -1,0 +1,12 @@
+# A12 公共神器理论：复用A11模型与C10真实方法，不再另建月度项目。
+# 研究本身只开放汇编入口；国家工程资格与后续反制成果分别核对。
+tech_artifact_public_artifact_theory = {
+	area = physics
+	icon = "tech_artifact_tarot_calculation"
+	cost = 30000
+	tier = 5
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_high_dimensional_model_review" "tech_artifact_public_reproduction_protocol" }
+	weight = 45
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
