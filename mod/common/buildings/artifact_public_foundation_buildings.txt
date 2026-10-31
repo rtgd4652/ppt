@@ -124,6 +124,15 @@ building_artifact_community_service_center = {
 			energy = 4
 			consumer_goods = 1
 		}
+		# D14只在已研究且本设施实际承担联防时增加维护。
+		upkeep = {
+			trigger = {
+				owner = { has_technology = "tech_artifact_civilization_joint_defense" }
+				artifact_joint_defense_center_active = yes
+			}
+			energy = 4
+			alloys = 1
+		}
 	}
 	planet_modifier = {
 		job_artifact_community_coordinator_add = 1
@@ -132,6 +141,15 @@ building_artifact_community_service_center = {
 	triggered_planet_modifier = {
 		potential = { artifact_garrison_center_active = yes }
 		planet_defense_armies_add = 2
+	}
+	# 守军质量与上述额外维护共用资格；原驻防名额保持不变。
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_technology = "tech_artifact_civilization_joint_defense" }
+			artifact_joint_defense_center_active = yes
+		}
+		army_defense_damage_mult = 0.25
+		army_defense_health_mult = 0.25
 	}
 	# 中央庭灾害统筹：社区在真实轰炸期间组织疏散与配给，不改写C2的准备或保护状态。
 	triggered_planet_modifier = {

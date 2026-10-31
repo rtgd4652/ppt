@@ -1,6 +1,8 @@
-# 清理仅移除本包部署与原拥有者，不退款、不触碰既有军队或其他工程。
+# 清理驻防、依附的联防登记与原拥有者；不退款、不触碰既有军队或其他工程。
 artifact_garrison_clear = {
 	remove_carrier_flag = artifact_garrison_enabled
+	# D14依附于本次驻防，撤销/重部署及既有转让、毁灭回调一并清理联防登记。
+	remove_modifier = ajd_deployed
 	# 首次部署尚无原拥有者目标，不向引擎请求移除不存在的目标。
 	if = {
 		limit = { exists = event_target:artifact_garrison_owner@this }

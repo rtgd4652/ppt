@@ -1060,6 +1060,36 @@
       "source_note": "只读查询七都数据库并阅读对应术语、神器与组织资料；普通工业提供安全载体，承载试验与公共组件是Mod设计，终解沿用Mod军备阶段用语，来源审核状态不变。"
     },
     {
+      "id": "D14",
+      "key": "tech_artifact_civilization_joint_defense",
+      "previous_name": "文明联合防务",
+      "name": "文明联合防务",
+      "lore": "中央庭在灾难中积累的守护经验，既来自前线，也来自维持补给、疏散和公共秩序的人们。进入星际时代，地表驻防与轨道星港被纳入同一套可持续的行动安排：让不同岗位共享情报与责任，使一座殖民地能够共同应对威胁。",
+      "application": "开放行星联合防务部署。已有驻防方案与同星系本国轨道观测接口就绪后，可投入物资，强化当地防御军的伤害和耐久，并提高该星港的射速与索敌。每颗殖民地分别承担维护，同一星港的收益不随联防殖民地数量叠加。",
+      "implementation_note": "正常决议付费，复用D20原拥有者/设施优先级与E06轨道接口；收益和额外维护同守卫，同星港不叠加。原生实际扣费/结算/战斗/读档未验。",
+      "technology_file": "mod/common/technology/artifact_joint_defense_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_joint_defense_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/decisions/artifact_joint_defense_decisions.txt",
+        "mod/common/scripted_effects/artifact_joint_defense_effects.txt",
+        "mod/common/scripted_triggers/artifact_joint_defense_triggers.txt",
+        "mod/common/static_modifiers/artifact_joint_defense_modifiers.txt",
+        "mod/common/buildings/artifact_public_foundation_buildings.txt",
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/buildings/artifact_civil_supply_buildings.txt",
+        "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
+        "mod/common/scripted_effects/artifact_garrison_effects.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "central_court_history",
+        "artifact_science",
+        "public_military"
+      ],
+      "source_note": "先查七都数据库并读中央庭/神器/核心术语源；联防承接公共守护与跨专业统筹，是Mod星际转译，不把指挥使等同普通军事指挥或复制其个人能力，来源审核状态不变。"
+    },
+    {
       "id": "D15",
       "key": "tech_artifact_runic_hull_armor",
       "previous_name": "符文舰体装甲",
@@ -1497,12 +1527,6 @@
     {
       "id": "A12",
       "working_name": "公共神器理论",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
-    {
-      "id": "D14",
-      "working_name": "文明联合防务",
       "status": "awaits_implementation_text",
       "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
     },
@@ -2387,6 +2411,18 @@
       "remaining": 13,
       "spec": "docs/design/artifact_civilization_r4f_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4f_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R4g",
+      "nodes": [
+        "D14"
+      ],
+      "added": 1,
+      "implemented_total": 68,
+      "remaining": 12,
+      "spec": "docs/design/artifact_civilization_r4g_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4g_implementation_2026-10-31.md"
     }
   ]
 }

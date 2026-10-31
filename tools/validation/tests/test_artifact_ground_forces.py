@@ -31,6 +31,7 @@ class GroundForcesTests(unittest.TestCase):
             elif e.key == 'hidden_effect':self.evaluate_effect(e.value)
             elif e.key == 'custom_tooltip':pass
             elif e.key == 'remove_carrier_flag':self.site['carrier_flags'].discard(e.value)
+            elif e.key == 'remove_modifier':self.site['markers'].discard(e.value)
             elif e.key == 'set_carrier_flag':self.site['carrier_flags'].add(e.value)
             elif e.key == 'clear_global_event_target':
                 self.assertEqual(e.value,'artifact_garrison_owner@this')

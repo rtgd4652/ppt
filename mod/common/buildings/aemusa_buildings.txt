@@ -35,6 +35,15 @@ building_artifact_sanctum = {
 			energy = 4
 			consumer_goods = 1
 		}
+		# 分部沿用原驻防优先级，联防收益和维护不与低级社区叠加。
+		upkeep = {
+			trigger = {
+				owner = { has_technology = "tech_artifact_civilization_joint_defense" }
+				artifact_joint_defense_branch_active = yes
+			}
+			energy = 4
+			alloys = 1
+		}
 	}
 
 	triggered_planet_modifier = {
@@ -47,6 +56,14 @@ building_artifact_sanctum = {
 	triggered_planet_modifier = {
 		potential = { artifact_garrison_branch_active = yes }
 		planet_defense_armies_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_technology = "tech_artifact_civilization_joint_defense" }
+			artifact_joint_defense_branch_active = yes
+		}
+		army_defense_damage_mult = 0.25
+		army_defense_health_mult = 0.25
 	}
 }
 

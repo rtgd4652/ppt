@@ -1,0 +1,94 @@
+# 行星载体作用域：读取所在星系的正常星港，不借异星系、外国或被占领的接口。
+# 行星 -> 星系 -> 星港，PREVPREV明确返回部署行星。
+artifact_joint_defense_has_orbital_link = {
+	exists = owner
+	exists = solar_system
+	solar_system = {
+		exists = starbase
+		starbase = {
+			is_normal_starbase = yes
+			has_starbase_size >= starbase_starport
+			is_owned_by = prevprev.owner
+			is_controlled_by = owner
+			has_starbase_building = "artifact_orbital_observation_link"
+			owner = {
+				has_technology = "tech_artifact_orbital_coordination"
+			}
+		}
+	}
+}
+
+# 联防登记依附于原D20驻防拥有者，不另建国家目标或月度任务。
+# 轰炸不暂停现有防务；占领、设施失效或接口丢失会同时停止新增收益与维护。
+artifact_joint_defense_operational = {
+	carrier_is_type = planet
+	is_colony = yes
+	has_modifier = ajd_deployed
+	artifact_garrison_operational = yes
+	owner = {
+		has_technology = "tech_artifact_civilization_joint_defense"
+	}
+	artifact_joint_defense_has_orbital_link = yes
+}
+
+artifact_joint_defense_can_deploy = {
+	carrier_is_type = planet
+	is_colony = yes
+	NOT = {
+		has_modifier = ajd_deployed
+	}
+	artifact_garrison_operational = yes
+	owner = {
+		has_technology = "tech_artifact_civilization_joint_defense"
+	}
+	artifact_joint_defense_has_orbital_link = yes
+}
+
+# 建筑从殖民地求值：沿用原驻防设施优先级，再回到行星读取登记。
+# 三种设施遗留并存时，只有原驻防实际承接者提供一份加成和额外维护。
+artifact_joint_defense_center_active = {
+	artifact_garrison_center_active = yes
+	planet = {
+		artifact_joint_defense_operational = yes
+	}
+}
+
+artifact_joint_defense_branch_active = {
+	artifact_garrison_branch_active = yes
+	planet = {
+		artifact_joint_defense_operational = yes
+	}
+}
+
+artifact_joint_defense_coordination_active = {
+	artifact_garrison_coordination_active = yes
+	planet = {
+		artifact_joint_defense_operational = yes
+	}
+}
+
+# 星港作用域：只判定是否存在有效本国联防殖民地，不按殖民地数量叠加。
+# 星港 -> 星系 -> 殖民地，PREVPREV指回星港；行星判定仍由原拥有者守卫负责。
+artifact_joint_defense_station_active = {
+	exists = owner
+	is_normal_starbase = yes
+	has_starbase_size >= starbase_starport
+	is_controlled_by = owner
+	has_starbase_building = "artifact_orbital_observation_link"
+	owner = {
+		has_technology = "tech_artifact_civilization_joint_defense"
+		has_technology = "tech_artifact_orbital_coordination"
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+	solar_system = {
+		any_system_planet_colony = {
+			is_owned_by = prevprev.owner
+			carrier_is_type = planet
+			planet = {
+				artifact_joint_defense_operational = yes
+			}
+		}
+	}
+}

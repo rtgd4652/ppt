@@ -1,0 +1,16 @@
+# D14：把公共作战与共治研究接到既有驻防和轨道接口，不读取个人转变。
+# 科技保留D10＋C12前置；实际部署另需已生效的D20驻防和本星系E06接口。
+tech_artifact_civilization_joint_defense = {
+	area = society
+	icon = "tech_artifact_central_court_protocols"
+	cost = 24000
+	tier = 5
+	category = { military_theory }
+	prerequisites = { "tech_artifact_joint_combat_core" "tech_artifact_covenant_cogovernance" }
+	weight = 50
+	potential = {
+		owner_main_species = {
+			is_species_class = "ARTIFACT_USER"
+		}
+	}
+}

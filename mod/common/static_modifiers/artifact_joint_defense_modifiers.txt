@@ -1,0 +1,5 @@
+# 仅显示已付费登记；实际收益和维护读取活动设施/同星系接口，不固定附着在标记上。
+ajd_deployed = {
+	icon = "gfx/interface/icons/modifiers/mod_planet_army_build_time_mult.dds"
+	icon_frame = 1
+}

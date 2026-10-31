@@ -68,6 +68,15 @@ building_artifact_coordination_center = {
 			energy = 4
 			consumer_goods = 1
 		}
+		# 高级统筹设施优先承接一份联防，不另加军队名额。
+		upkeep = {
+			trigger = {
+				owner = { has_technology = "tech_artifact_civilization_joint_defense" }
+				artifact_joint_defense_coordination_active = yes
+			}
+			energy = 4
+			alloys = 1
+		}
 	}
 	planet_modifier = {
 		job_artifact_black_gate_warden_add = 300
@@ -77,6 +86,14 @@ building_artifact_coordination_center = {
 	triggered_planet_modifier = {
 		potential = { artifact_garrison_coordination_active = yes }
 		planet_defense_armies_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = {
+			owner = { has_technology = "tech_artifact_civilization_joint_defense" }
+			artifact_joint_defense_coordination_active = yes
+		}
+		army_defense_damage_mult = 0.25
+		army_defense_health_mult = 0.25
 	}
 	# 两座高级设施并存时由统筹中心供给唯一一份共治收益。
 	triggered_planet_modifier = {

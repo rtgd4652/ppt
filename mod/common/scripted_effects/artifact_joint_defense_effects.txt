@@ -1,0 +1,17 @@
+# 费用只由原生决议扣除；守卫不检查扣费前余额，精确余额也能正常登记。
+artifact_joint_defense_deploy = {
+	if = {
+		limit = {
+			artifact_joint_defense_can_deploy = yes
+		}
+		add_modifier = {
+			modifier = ajd_deployed
+			days = -1
+		}
+	}
+}
+
+# 主动撤销只清理本方案，不退款，也不撤销原D20驻防。
+artifact_joint_defense_clear = {
+	remove_modifier = ajd_deployed
+}

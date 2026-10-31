@@ -85,6 +85,17 @@ artifact_orbital_observation_link = {
 		}
 		ship_cloaking_detection_add = 1
 	}
+	# D14复用既有轨道接口。本星系至少一个有效本国联防殖民地即提供一份星港收益；
+	# 不按殖民地数叠加，不作用于机动舰队或防御平台，原观测收益继续独立判定。
+	triggered_station_modifier = {
+		potential = {
+			exists = owner
+			owner = { has_technology = "tech_artifact_civilization_joint_defense" }
+			artifact_joint_defense_station_active = yes
+		}
+		ship_fire_rate_mult = 0.15
+		ship_tracking_add = 10
+	}
 	ai_weight = {
 		weight = 10
 		modifier = {

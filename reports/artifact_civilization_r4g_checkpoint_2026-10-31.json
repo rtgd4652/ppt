@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-31",
+  "package": "R4g",
+  "source_base": "7ef9403",
+  "status": "implemented_static_passed",
+  "spec": "docs/design/artifact_civilization_r4g_implementation_spec_v0.1.json",
+  "report": "reports/artifact_civilization_r4g_implementation_2026-10-31.md",
+  "completed": [
+    "D14研究与正常行星联防部署/撤销决议",
+    "三种驻防设施同一优先级提供守军质量与一份额外维护",
+    "既有轨道接口按本星系有效来源提供单份星港收益",
+    "复用D20原拥有者与清理，无新月度/事件；七都来源与交接同步"
+  ],
+  "tests": {
+    "new": {
+      "count": 6,
+      "status": "pass",
+      "module": "test_artifact_joint_defense"
+    },
+    "affected": {
+      "count": 18,
+      "status": "pass",
+      "modules": [
+        "test_artifact_ground_forces",
+        "test_artifact_midgame_sensing",
+        "test_artifact_civil_supply"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 202,
+        "events": 258,
+        "localization_keys": 2055,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "limitations": [
+      "夹具解释正式条件/效果和作用域链，原生费用、条件修正/维护结算及回调投递为外部契约。",
+      "未启动游戏，不将源码数值、维护夹具或普通数据结构当作真实战斗/月度扣费/存读档证据。"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "pending_command": null,
+    "save_created": null,
+    "required_stage_check": "约20分钟集中试玩中，以一处已生效驻防＋同星轨道接口正常付费部署，观察地表/星港收益及额外维护；与D12共用一次关键读档。停用/恢复只抽一处，不另造全面战争或逐设施档。"
+  },
+  "current_counts": {
+    "date": "2026-10-31",
+    "public_technologies": 68,
+    "army_types": 5,
+    "component_definitions": 111,
+    "building_definitions": 39,
+    "starbase_building_definitions": 1,
+    "public_strategic_ship_sizes": 1,
+    "planned_technologies_remaining": 12,
+    "note": "R4g新增D14，复用三种驻防设施、轨道接口与原拥有者清理；6项新检查、18项受影响检查及静态通过，运行未验。"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-CENTRAL-COURT-SEVEN",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-COMMANDER"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false,
+    "constraint": "中央庭承担跨专业协调和公共守护；联防为Mod星际延展，不量产神器或将指挥使个人支援能力变为公共舰队能力。"
+  },
+  "native_reference": {
+    "game_source_version": "本机4.5.2 / eb95源码；本轮未启动游戏",
+    "target_4_5_1_compatibility": "pending",
+    "files": [
+      "common/starbase_buildings/00_starbase_buildings.txt",
+      "common/static_modifiers/21_static_modifiers_cosmic_storms.txt",
+      "common/static_modifiers/22_static_modifiers_machine_age.txt",
+      "script_documentation/scopes.log",
+      "script_documentation/modifiers.log"
+    ],
+    "contract": "决议原生cost一次扣费，条件planet/station_modifier由活动设施提供；殖民地先跳转planet再解析驻防拥有者，星港按同星系本国殖民地的存在判定一次。"
+  },
+  "remaining": [
+    "D12原生行动、D14实际加成/维护及代表关键读档待集中试玩",
+    "4.5.1兼容、正式图标和自然平衡未验",
+    "余12公共节点：A09/A11/A12/E11/E12/F02～F08"
+  ],
+  "next": "推进A09跨殖民地观测联校（A06＋C03）：围绕有限的指定观测端点实现付费联校与可复用成果，接A11/A12后续。集中试玩优先确认D12原生行动，D14同星联防和维护合并代表路径；人物组合、连续巨构和批量图标仍暂停。",
+  "preserve": [
+    "tools/prototypes/aemusa_cross_system_megastructure/",
+    "2293.10.11-r3e-reserve及此前基线存档",
+    "暂停人物组合、连续巨构和批量图标"
+  ],
+  "files": [
+    "mod/common/decisions/artifact_joint_defense_decisions.txt",
+    "mod/common/scripted_effects/artifact_joint_defense_effects.txt",
+    "mod/common/scripted_triggers/artifact_joint_defense_triggers.txt",
+    "mod/common/static_modifiers/artifact_joint_defense_modifiers.txt",
+    "mod/common/technology/artifact_joint_defense_technology.txt",
+    "mod/localisation/simp_chinese/artifact_joint_defense_l_simp_chinese.yml",
+    "mod/common/buildings/artifact_public_foundation_buildings.txt",
+    "mod/common/buildings/aemusa_buildings.txt",
+    "mod/common/buildings/artifact_civil_supply_buildings.txt",
+    "mod/common/starbase_buildings/artifact_orbital_observation_buildings.txt",
+    "mod/common/scripted_effects/artifact_garrison_effects.txt",
+    "tools/validation/tests/test_artifact_ground_forces.py",
+    "tools/validation/tests/test_artifact_joint_defense.py",
+    "docs/design/artifact_civilization_r4g_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r4g_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r4g_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r4g_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}

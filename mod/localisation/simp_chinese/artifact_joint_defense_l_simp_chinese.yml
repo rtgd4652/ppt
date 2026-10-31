@@ -1,0 +1,13 @@
+﻿l_simp_chinese:
+ tech_artifact_civilization_joint_defense:0 "文明联合防务"
+ tech_artifact_civilization_joint_defense_desc:0 "中央庭在灾难中积累的守护经验，既来自前线，也来自维持补给、疏散和公共秩序的人们。进入星际时代，地表驻防与轨道星港被纳入同一套可持续的行动安排：让不同岗位共享情报与责任，使一座殖民地能够共同应对威胁。\n\n§Y应用：§!开放行星联合防务部署。已有驻防方案与同星系本国轨道观测接口就绪后，可投入物资，强化当地防御军的伤害和耐久，并提高该星港的射速与索敌。每颗殖民地分别承担维护，同一星港的收益不随联防殖民地数量叠加。"
+ decision_artifact_enable_joint_defense:0 "部署中央庭联合防务"
+ decision_artifact_enable_joint_defense_desc:0 "将当地防御军与轨道接口纳入共同部署。需要已生效的行星驻防，以及同星系内本国控制的正常星港和已建成的轨道观测接口。"
+ decision_artifact_disable_joint_defense:0 "撤销中央庭联合防务"
+ decision_artifact_disable_joint_defense_desc:0 "结束联防协同，保留原有行星驻防。暂停期间也可撤销；再次部署须重新投入物资。"
+ artifact_joint_defense_requires_garrison:0 "需要本国控制的殖民地、有效驻防设施，以及由本国部署且仍在生效的行星驻防方案。"
+ artifact_joint_defense_requires_orbital_link:0 "需要同一星系内本国拥有并控制的正常星港（至少星港级），已建成轨道观测接口并完成对应研究。"
+ artifact_joint_defense_offer:0 "登记联合防务。有效运行时，当地防御军伤害与生命值各§G+25%§!，额外维护为每月§Y4§!£energy£能源、§Y1§!£alloys£合金；原驻防名额保持不变。\n同星系星港射速§G+15%§!、索敌§G+10§!，每座星港只获得一份加成。\n\n行星或星港失控、设施失效、接口拆除时暂停收益及上述额外维护，恢复后继续；轰炸本身不暂停已运行的防务。撤销驻防或殖民地转让会清除联防登记，已投入物资不退还。"
+ artifact_joint_defense_removed:0 "撤销联防登记与对应收益/额外维护，保留原有行星驻防。已投入物资不退还。"
+ ajd_deployed:0 "中央庭联合防务登记"
+ ajd_deployed_desc:0 "已完成联防部署登记。收益需当地驻防、活动设施和同星系本国轨道观测接口同时就绪；暂时失效时保留登记，暂停联防收益及额外维护。撤销原驻防或殖民地转让时清除。"

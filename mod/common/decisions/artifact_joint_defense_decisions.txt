@@ -1,0 +1,73 @@
+# 在正常行星决议中一次支付登记费；收益和额外维护由既有活动设施结算。
+decision_artifact_enable_joint_defense = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = {
+		category = decisions
+		cost = {
+			energy = 500
+			alloys = 300
+			consumer_goods = 200
+		}
+	}
+	potential = {
+		is_colony = yes
+		exists = owner
+		owner = {
+			has_technology = "tech_artifact_civilization_joint_defense"
+			owner_main_species = {
+				is_species_class = "ARTIFACT_USER"
+			}
+		}
+		NOT = {
+			has_modifier = ajd_deployed
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_joint_defense_requires_garrison
+			artifact_garrison_operational = yes
+		}
+		custom_tooltip = {
+			fail_text = artifact_joint_defense_requires_orbital_link
+			artifact_joint_defense_has_orbital_link = yes
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_joint_defense_offer
+		hidden_effect = {
+			artifact_joint_defense_deploy = yes
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# 暂停期间仍可撤销；无需维持科技或轨道接口，只要求本国控制行星。
+decision_artifact_disable_joint_defense = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		is_colony = yes
+		exists = owner
+		has_modifier = ajd_deployed
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_garrison_requires_control
+			is_controlled_by = owner
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_joint_defense_removed
+		hidden_effect = {
+			artifact_joint_defense_clear = yes
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
