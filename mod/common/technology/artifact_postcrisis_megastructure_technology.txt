@@ -1,0 +1,14 @@
+# F08：解译共同胜利资料后研发公共造境工程，个人转变与神器复制不参与资格。
+tech_artifact_postcrisis_megastructure_engineering = {
+	area = engineering
+	icon = "tech_artifact_resonance_manufacturing" # 复用已注册DDS；E11科技键本身没有独立图标。
+	cost = 18000
+	tier = 5
+	category = { voidcraft }
+	prerequisites = { "tech_artifact_post_disaster_record_decoding" "tech_artifact_interstellar_engineering_coordination" }
+	weight = 100
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		artifact_postcrisis_records_decoded = yes
+	}
+}

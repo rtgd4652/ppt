@@ -1807,7 +1807,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f、R4a～R4l及R5a～R5f源码检查通过、运行未验。F07三舰装/XL舰首先接原中庭级，阶段试玩仍优先D12，取必要代表。",
+    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f、R4a～R4l及R5a～R5g源码检查通过、运行未验。80项公共源码齐备；阶段试玩优先D12/F08，F07有余量取一艘代表，共用关键读档。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1844,14 +1844,16 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 79,
+    "public_technologies": 80,
     "army_types": 5,
     "component_definitions": 114,
     "building_definitions": 44,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 1,
-    "note": "R5f新增F07、传承脊炮舰首及3件中庭级舰装，正常设计/建造/改装；4项新增、17项相关及静态通过，运行未验。"
+    "postcrisis_megastructure_families": 1,
+    "postcrisis_megastructure_stages": 2,
+    "planned_technologies_remaining": 0,
+    "note": "R5g补齐F08：两阶段传承造境平台与一次启用生成普通可殖民世界。公共科技80/80仅指源码；运行、正式资产及完整1.0未验收。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -2116,5 +2118,24 @@
     "report": "reports/artifact_civilization_r5f_implementation_2026-10-31.md",
     "checkpoint": "reports/artifact_civilization_r5f_checkpoint_2026-10-31.json",
     "next_step": "推进F08终局巨构工程（F06＋E11）：读取artifact_postcrisis_records_decoded，先核对批准的公共巨构奖励、现有基线枢纽与正常巨构建造接口。连续巨构原型继续暂停，不以旧塔充当新路线；胜利后只做有限奖励与结尾，不另开长期危机。之后整合Boss深化、正式资产与一次全线衔接回归，源码80项不等于完整1.0交付。集中试玩仍优先D12，F07只取一艘传承改型的必要代表，共用关键读档；人物组合、批量图标继续暂停。"
+  },
+  "r5g_postcrisis_megastructure": {
+    "date": "2026-10-31",
+    "status": "implemented_static_passed",
+    "runtime_status": "not_run",
+    "nodes": [
+      "F08"
+    ],
+    "new_megastructure_families": 1,
+    "new_megastructure_stages": 2,
+    "new_edicts": 1,
+    "new_buildings": 0,
+    "new_components": 0,
+    "new_events": 0,
+    "new_on_actions": 0,
+    "spec": "docs/design/artifact_civilization_r5g_implementation_spec_v0.1.json",
+    "report": "reports/artifact_civilization_r5g_implementation_2026-10-31.md",
+    "checkpoint": "reports/artifact_civilization_r5g_checkpoint_2026-10-31.json",
+    "next_step": "公共科技80项源码已接齐，转入一次约20分钟的阶段代表试玩：优先D12原生费用/限时效果和F08正常两阶段建造、启用与可殖民性；有余量再取F07一艘代表，共用一处关键读档，不逐组件或逐窗存档。关键引擎失败及时修复，其余未验列明。随后推进最终Boss深化、正式资产/结尾整合和发布前全线回归；正式新外观仍需定稿。人物组合、批量图标、独立连续巨构原型继续暂停，胜利后不另开长期危机。"
   }
 }

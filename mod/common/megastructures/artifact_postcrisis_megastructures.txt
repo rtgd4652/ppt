@@ -1,0 +1,84 @@
+# F08公共开发型巨构：原生两阶段付费建设，启用后形成普通可殖民世界。
+# 基址/居住站实体仅为玩法占位；独立连续巨构原型、旧塔及现实基线枢纽保持原状。
+artifact_postcrisis_world_former_0 = {
+	entity = "construction_platform_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_construction_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = 0 y = -20 }
+	build_time = 180
+	construction_blocks_and_blocked_by = self_type
+	prerequisites = { "tech_artifact_postcrisis_megastructure_engineering" }
+	resources = {
+		category = megastructures
+		cost = { alloys = 5000 energy = 2000 }
+		upkeep = { energy = 10 }
+	}
+	potential = { artifact_postcrisis_megastructure_available = yes }
+	possible = {
+		custom_tooltip = {
+			fail_text = "apm_requires_owned_controlled_system"
+			is_inside_border = from
+			artifact_postcrisis_world_former_system_controlled = yes
+		}
+		# 名额只检查新订单，不在potential写开工旗使自己的在建项目失效。
+		from = {
+			custom_tooltip = {
+				fail_text = "apm_requires_no_owned_platform"
+				NOT = { artifact_postcrisis_world_former_owned = yes }
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_existing_megastructure"
+			has_no_non_gate_megastructure = yes
+			NOT = { any_system_planet = { is_planet_class = pc_cosmogenesis_world } }
+		}
+	}
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "apm_requires_safe_barren_world"
+				artifact_postcrisis_world_former_target = yes
+				is_surveyed = { who = prev.from status = yes }
+				NOR = { has_planet_flag = megastructure has_planet_flag = has_megastructure }
+			}
+		}
+	}
+	on_build_complete = {
+		fromfrom = { planet = { set_planet_flag = has_megastructure set_planet_flag = apm_platform_site } }
+	}
+	ai_weight = { weight = 0 }
+}
+
+artifact_postcrisis_world_former_1 = {
+	entity = "habitat_phase_03_entity"
+	construction_entity = "construction_platform_entity"
+	portrait = "GFX_megastructure_habitat_background"
+	place_entity_on_planet_plane = no
+	entity_offset = { x = 7 y = -7 }
+	upgrade_from = { artifact_postcrisis_world_former_0 }
+	build_time = 360
+	construction_blocks_and_blocked_by = self_type
+	prerequisites = { "tech_artifact_postcrisis_megastructure_engineering" }
+	resources = {
+		category = megastructures
+		cost = { alloys = 10000 energy = 5000 }
+		upkeep = { energy = 25 }
+	}
+	potential = { artifact_postcrisis_megastructure_available = yes }
+	possible = {
+		custom_tooltip = {
+			fail_text = "apm_requires_owned_controlled_system"
+			is_inside_border = from
+			artifact_postcrisis_world_former_system_controlled = yes
+		}
+		custom_tooltip = {
+			fail_text = "apm_requires_safe_barren_world"
+			fromfrom = { planet = { artifact_postcrisis_world_former_target = yes } }
+		}
+	}
+	on_build_complete = {
+		fromfrom = { planet = { set_planet_flag = has_megastructure set_planet_flag = apm_platform_site } }
+	}
+	ai_weight = { weight = 0 }
+}

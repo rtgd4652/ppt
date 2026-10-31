@@ -1,0 +1,25 @@
+# 国家作用域。入口和实效重复核验，非法控制台直调也不能绕过知识/实体/现场条件。
+artifact_postcrisis_world_former_activate = {
+	if = {
+		limit = { artifact_postcrisis_world_former_can_activate = yes }
+		random_owned_megastructure = {
+			limit = { artifact_postcrisis_world_former_ready = yes }
+			# 先留下本实体的一次性收据；如兼并取得多处，每次只启用一处合格平台。
+			set_megastructure_flag = apm_world_formed
+			planet = {
+				set_planet_flag = apm_world_formed
+				# 只清理由本家族完工写入的占位旗，不清空其他资源/剧情状态。
+				if = {
+					limit = { has_planet_flag = apm_platform_site }
+					remove_planet_flag = has_megastructure
+					remove_planet_flag = apm_platform_site
+				}
+				change_pc = pc_continental
+				# 普通大陆适用的原生地貌，为正常殖民提供能源/采矿/农业区划条件。
+				add_deposit = d_rushing_waterfalls
+				add_deposit = d_rich_mountain
+				add_deposit = d_fertile_lands
+			}
+		}
+	}
+}

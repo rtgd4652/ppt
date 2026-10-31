@@ -1,0 +1,63 @@
+# 国家知识只读F06公共接口；夺取实体不会获得对方的胜利、解译或科技。
+artifact_postcrisis_megastructure_available = {
+	owner_main_species = { is_species_class = "ARTIFACT_USER" }
+	has_technology = "tech_artifact_postcrisis_megastructure_engineering"
+	artifact_postcrisis_records_decoded = yes
+}
+
+# 行星作用域；不含平台自身的通用占位旗，供选址和启用再次核对同一真实目标。
+artifact_postcrisis_world_former_target = {
+	OR = { is_planet_class = pc_barren is_planet_class = pc_barren_cold }
+	planet_size >= 10
+	planet_size <= 30
+	is_colony = no
+	is_under_colonization = no
+	is_terraforming = no
+	is_moon = no
+	has_anomaly = no
+	num_deposits = 0
+	NOR = {
+		exists = owner
+		exists = archaeological_site
+		has_planet_flag = aemusa_ms_anchor_used
+		has_planet_flag = aemusa_ms_anchor_active
+		has_planet_flag = apm_world_formed
+	}
+}
+
+# 星系作用域。只比较本站拥有者/控制者，不借外部ROOT猜测调用国。
+artifact_postcrisis_world_former_system_controlled = {
+	exists = starbase
+	starbase = {
+		exists = owner
+		exists = controller
+		controller = { prev = { owner = { is_same_value = prevprev } } }
+	}
+}
+
+# 国家作用域；基址与运行态共同占用一处名额，失去实体后可按正常费用重建。
+artifact_postcrisis_world_former_owned = {
+	any_owned_megastructure = {
+		OR = {
+			is_megastructure_type = artifact_postcrisis_world_former_0
+			is_megastructure_type = artifact_postcrisis_world_former_1
+		}
+	}
+}
+
+# 巨构作用域，直接上层必须是调用国。已启用实体继续存在，但不会重复生成世界。
+artifact_postcrisis_world_former_ready = {
+	is_megastructure_type = artifact_postcrisis_world_former_1
+	NOT = { has_megastructure_flag = apm_world_formed }
+	planet = { artifact_postcrisis_world_former_target = yes }
+	solar_system = {
+		exists = owner
+		owner = { is_same_value = prevprevprev }
+		artifact_postcrisis_world_former_system_controlled = yes
+	}
+}
+
+artifact_postcrisis_world_former_can_activate = {
+	artifact_postcrisis_megastructure_available = yes
+	any_owned_megastructure = { artifact_postcrisis_world_former_ready = yes }
+}

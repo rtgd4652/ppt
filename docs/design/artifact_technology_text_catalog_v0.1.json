@@ -1607,7 +1607,7 @@
       "name": "星系协同基础设施",
       "lore": "中央庭的资源协调不再局限于一座城市或一颗行星。分散在不同星系的仓储、换装站与施工队采用共同的清单和交接标准，让已经集成的工程备料能够送到真正需要它的现场。",
       "application": "登记一处异星系工程接收点，从常规联运接收端支付500能源，将一份已备妥的大型工程备料运抵当地。施工点可接续分段营建或舰体承载试验，无需搬动原常规接收端；原工程的研究、设施、费用和工期仍须满足。命运都市的文明工程统筹生效时，运输费降为300能源。",
-      "implementation_note": "E11登记全国唯一异星系工程点，始发普通接收端实际移除一份B14备料并扣500能源后交付；E09/D13读取替代现场，原费用/月度/清理保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。",
+      "implementation_note": "E11登记全国唯一异星系工程点，始发普通接收端实际移除一份B14备料并扣500能源后交付；E09/D13读取替代现场，原费用/月度/清理保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。R5g成为F08公共造境巨构的真实依赖，旧源码不改，运行未验。",
       "technology_file": "mod/common/technology/artifact_system_engineering_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_system_engineering_l_simp_chinese.yml",
       "consumer_files": [
@@ -1617,7 +1617,9 @@
         "mod/common/static_modifiers/artifact_system_engineering_modifiers.txt",
         "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
         "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
-        "mod/common/scripted_triggers/artifact_civil_engineering_triggers.txt"
+        "mod/common/scripted_triggers/artifact_civil_engineering_triggers.txt",
+        "mod/common/technology/artifact_postcrisis_megastructure_technology.txt",
+        "mod/common/scripted_triggers/artifact_postcrisis_megastructure_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1808,7 +1810,7 @@
       "name": "灾后记录解译",
       "lore": "共同取得的胜利留下了设备读数、战场记录与幸存者的证言。中央庭把这些资料与保存下来的旧日样本交叉编目，使危机中的经验成为能够继续检验的公共知识，而不是只留在少数人的回忆中。",
       "application": "专属危机的共同胜利结算后开放研究，并将旧日神器档案馆升级为文明传承档案馆。支付500能源、200消费品和20小型文物，立即完成一次解译，永久获得10%研究速度修正，为战后工程研发保存共同资料。所有合法结局共享入口，个人转变不影响资格。",
-      "implementation_note": "原共同胜利三旗开放正常研究；档案馆升级后500能源/200消费品/20小型文物即时解译，国家永久研究速度+10%和后续资格。三终局共享，个人记忆/身份独立。R5f成为F07真实依赖：已解译和原中庭级/定型衔接，旧源码不改，运行未验。",
+      "implementation_note": "原共同胜利三旗开放正常研究；档案馆升级后500能源/200消费品/20小型文物即时解译，国家永久研究速度+10%和后续资格。三终局共享，个人记忆/身份独立。R5f成为F07真实依赖：已解译和原中庭级/定型衔接，旧源码不改，运行未验。R5g成为F08公共造境巨构的真实依赖，旧源码不改，运行未验。",
       "technology_file": "mod/common/technology/artifact_postcrisis_archive_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_postcrisis_archive_l_simp_chinese.yml",
       "consumer_files": [
@@ -1819,7 +1821,9 @@
         "mod/common/static_modifiers/artifact_postcrisis_archive_modifiers.txt",
         "mod/common/buildings/aemusa_buildings.txt",
         "mod/common/scripted_triggers/artifact_postcrisis_fleet_triggers.txt",
-        "mod/common/component_templates/artifact_postcrisis_fleet_components.txt"
+        "mod/common/component_templates/artifact_postcrisis_fleet_components.txt",
+        "mod/common/technology/artifact_postcrisis_megastructure_technology.txt",
+        "mod/common/scripted_triggers/artifact_postcrisis_megastructure_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1854,17 +1858,35 @@
         "public_military"
       ],
       "source_note": "写前查七都中央庭/神器科学/神器及普通工业来源；公共舰装为Mod设计，不复制个人神器/指挥使能力，来源审核状态保留。"
-    }
-  ],
-  "unimplemented_nodes": [
+    },
     {
       "id": "F08",
-      "working_name": "终局巨构工程",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
+      "key": "tech_artifact_postcrisis_megastructure_engineering",
+      "previous_name": "终局巨构工程",
+      "name": "传承造境工程",
+      "lore": "胜利留下的观测资料，经由中央庭的共同编目与工程验证，逐渐成为可以重复应用的建造条件。传承造境平台把这些条件与星际施工体系结合，在荒芜天体上建立大气、水循环和能够延续的生态基础，为后来的居民留出新的家园。",
+      "application": "解译共同胜利资料后，开放传承造境平台。建造船在本国受控星系的已调查、10～30规模空置荒芜星球旁建设基址，再升级为运行态；启用法令将该星球改为普通大陆世界，随后正常殖民。矿藏、异常、遗址、正在改造或殖民的天体及旧危机锚点均不纳入；正常建设要求本国尚无平台，每处启用一次。",
+      "implementation_note": "新增两阶段付费巨构，1天法令入口点击启用；真实安全荒芜目标改为大陆并添加适用地貌，正常殖民。实效重验公共知识/实体/控制，每处一次，不回填旧锚点、变更C2或复制私人神器。",
+      "technology_file": "mod/common/technology/artifact_postcrisis_megastructure_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_postcrisis_megastructure_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/edicts/artifact_postcrisis_megastructure_edicts.txt",
+        "mod/common/megastructures/artifact_postcrisis_megastructures.txt",
+        "mod/common/scripted_effects/artifact_postcrisis_megastructure_effects.txt",
+        "mod/common/scripted_triggers/artifact_postcrisis_megastructure_triggers.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "central_court_history"
+      ],
+      "source_note": "先查七都中央庭/神器科学/神器并读对应来源；造境为Mod公共工程设计，不作为新增原作事实；审核状态保持。"
     }
   ],
-  "f07_f08_note": "终局舰船工程、终局巨构工程保留内部任务名；正式名称与文案等待奖励实际能力确定，不能靠华丽名称先行认领新能力。",
+  "unimplemented_nodes": [],
+  "f07_f08_note": "F07实际能力为中庭级传承舰装，保留现有科技名；F08按已实现能力命名为传承造境工程，旧名终局巨构工程保留为内部任务对照。两项均运行未验，正式外观待定。",
   "applied": {
     "renamed_technologies": 13,
     "rewritten_technology_descriptions": 62,
@@ -2834,6 +2856,18 @@
       "remaining": 1,
       "spec": "docs/design/artifact_civilization_r5f_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r5f_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R5g",
+      "nodes": [
+        "F08"
+      ],
+      "added": 1,
+      "implemented_total": 80,
+      "remaining": 0,
+      "spec": "docs/design/artifact_civilization_r5g_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5g_implementation_2026-10-31.md"
     }
   ]
 }

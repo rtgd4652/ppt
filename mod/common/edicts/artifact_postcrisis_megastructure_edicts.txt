@@ -1,0 +1,21 @@
+# 沿用项目已验证的一天入口，效果点击时执行；零时长法令曾导致打开内阁崩溃。
+edict_artifact_activate_world_former = {
+	length = 1
+	icon = "GFX_edict_type_policy"
+	potential = {
+		is_ai = no
+		artifact_postcrisis_megastructure_available = yes
+		artifact_postcrisis_world_former_owned = yes
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = "apm_requires_ready_platform"
+			artifact_postcrisis_world_former_can_activate = yes
+		}
+	}
+	effect = {
+		custom_tooltip = apm_world_forming_result
+		hidden_effect = { artifact_postcrisis_world_former_activate = yes }
+	}
+	ai_weight = { weight = 0 }
+}
