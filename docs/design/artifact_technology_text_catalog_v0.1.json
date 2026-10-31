@@ -1578,7 +1578,7 @@
       "name": "公共战略舰体工程",
       "lore": "中央庭将营建场的分段装配经验与承载试验的负荷记录交给造舰团队。中庭级保留可识别的舰体骨架、武备和维护空间，把经验证的共鸣工程集中到一个可以正常建造、维修和改装的公共平台上。",
       "application": "开放中庭级战略舰及配套基础核心，可选择炮击或航母中段。建造需要本国承载定型记录、正在运营的大型工程营建场，以及擎天堡船厂或完工的巨型船坞。每艘正常支付合金、建造时间和维护；高阶供能、推进、航道与联合电脑仍需对应研究。",
-      "implementation_note": "1公共舰种、4区段、6核心；国家定型与运营工业分层，原生船厂付费建造。较高阶组件保留分支研究，个人舰和复活不变。",
+      "implementation_note": "1公共舰种、4区段、6核心；国家定型与运营工业分层，原生船厂付费建造。较高阶组件保留分支研究，个人舰和复活不变。R5f成为F07真实依赖：已解译和原中庭级/定型衔接，旧源码不改，运行未验。",
       "technology_file": "mod/common/technology/artifact_strategic_hull_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_strategic_hull_l_simp_chinese.yml",
       "consumer_files": [
@@ -1587,7 +1587,9 @@
         "mod/common/section_templates/artifact_strategic_cruiser_sections.txt",
         "mod/common/component_templates/artifact_strategic_hull_components.txt",
         "mod/common/component_templates/artifact_hull_support_components.txt",
-        "mod/common/component_templates/artifact_joint_operations_components.txt"
+        "mod/common/component_templates/artifact_joint_operations_components.txt",
+        "mod/common/scripted_triggers/artifact_postcrisis_fleet_triggers.txt",
+        "mod/common/component_templates/artifact_postcrisis_fleet_components.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1806,7 +1808,7 @@
       "name": "灾后记录解译",
       "lore": "共同取得的胜利留下了设备读数、战场记录与幸存者的证言。中央庭把这些资料与保存下来的旧日样本交叉编目，使危机中的经验成为能够继续检验的公共知识，而不是只留在少数人的回忆中。",
       "application": "专属危机的共同胜利结算后开放研究，并将旧日神器档案馆升级为文明传承档案馆。支付500能源、200消费品和20小型文物，立即完成一次解译，永久获得10%研究速度修正，为战后工程研发保存共同资料。所有合法结局共享入口，个人转变不影响资格。",
-      "implementation_note": "原共同胜利三旗开放正常研究；档案馆升级后500能源/200消费品/20小型文物即时解译，国家永久研究速度+10%和后续资格。三终局共享，个人记忆/身份独立。",
+      "implementation_note": "原共同胜利三旗开放正常研究；档案馆升级后500能源/200消费品/20小型文物即时解译，国家永久研究速度+10%和后续资格。三终局共享，个人记忆/身份独立。R5f成为F07真实依赖：已解译和原中庭级/定型衔接，旧源码不改，运行未验。",
       "technology_file": "mod/common/technology/artifact_postcrisis_archive_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_postcrisis_archive_l_simp_chinese.yml",
       "consumer_files": [
@@ -1815,7 +1817,9 @@
         "mod/common/scripted_effects/artifact_postcrisis_archive_effects.txt",
         "mod/common/scripted_triggers/artifact_postcrisis_archive_triggers.txt",
         "mod/common/static_modifiers/artifact_postcrisis_archive_modifiers.txt",
-        "mod/common/buildings/aemusa_buildings.txt"
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/scripted_triggers/artifact_postcrisis_fleet_triggers.txt",
+        "mod/common/component_templates/artifact_postcrisis_fleet_components.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1825,15 +1829,34 @@
         "central_court_history"
       ],
       "source_note": "写前查七都并读连续历史/公共记录与未知边界；共同胜利解译属于Mod工程，非完整轮回记忆读取，原审核状态保留。"
+    },
+    {
+      "id": "F07",
+      "key": "tech_artifact_postcrisis_ship_engineering",
+      "previous_name": "终局舰船工程",
+      "name": "终局舰船工程",
+      "lore": "危机中共同完成的观测、制造与作战记录，终于能够进入同一套舰装设计。中央庭将这些经验转化为可检验的供能、武器与整备部件，让取得胜利的普通舰队也能承接下一阶段的工程成果。",
+      "application": "共同胜利资料解译后，为中庭级战略舰开放传承改型：将舰首2L武器改为1X，同时少一格大型防护，配套汇流脊炮、4000功率反应堆与整备骨架。沿用正常设计、付费建造和改装，不另开长期试验；原舰体、工业和承载定型条件保持。",
+      "implementation_note": "沿原中庭级新增1X/3L防护舰首和3组件；共享解译与原定型决定装配，原工业管新订单。未赠船、不改旧设计/个人恢复，原生再生及正常改装待验。",
+      "technology_file": "mod/common/technology/artifact_postcrisis_fleet_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_postcrisis_fleet_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_sets/artifact_postcrisis_fleet_sets.txt",
+        "mod/common/component_templates/artifact_postcrisis_fleet_components.txt",
+        "mod/common/scripted_triggers/artifact_postcrisis_fleet_triggers.txt",
+        "mod/common/section_templates/artifact_postcrisis_fleet_sections.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history",
+        "public_military"
+      ],
+      "source_note": "写前查七都中央庭/神器科学/神器及普通工业来源；公共舰装为Mod设计，不复制个人神器/指挥使能力，来源审核状态保留。"
     }
   ],
   "unimplemented_nodes": [
-    {
-      "id": "F07",
-      "working_name": "终局舰船工程",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
     {
       "id": "F08",
       "working_name": "终局巨构工程",
@@ -2799,6 +2822,18 @@
       "remaining": 2,
       "spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r5e_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R5f",
+      "nodes": [
+        "F07"
+      ],
+      "added": 1,
+      "implemented_total": 79,
+      "remaining": 1,
+      "spec": "docs/design/artifact_civilization_r5f_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5f_implementation_2026-10-31.md"
     }
   ]
 }

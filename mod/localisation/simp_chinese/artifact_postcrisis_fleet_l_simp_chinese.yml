@@ -1,0 +1,10 @@
+﻿l_simp_chinese:
+ tech_artifact_postcrisis_ship_engineering:0 "终局舰船工程"
+ tech_artifact_postcrisis_ship_engineering_desc:0 "危机中共同完成的观测、制造与作战记录，终于能够进入同一套舰装设计。中央庭将这些经验转化为可检验的供能、武器与整备部件，让取得胜利的普通舰队也能承接下一阶段的工程成果。\n\n§H应用§!：共同胜利资料解译后，为中庭级战略舰开放传承改型：将舰首2L武器改为1X，同时少一格大型防护，配套汇流脊炮、4000功率反应堆与整备骨架。沿用正常设计、付费建造和改装，不另开长期试验；原舰体、工业和承载定型条件保持。"
+ ARTIFACT_POSTCRISIS_SPINAL_BOW:0 "传承脊炮舰首"
+ ARTIFACT_POSTCRISIS_SPINAL_LANCE:0 "传承型汇流脊炮"
+ ARTIFACT_POSTCRISIS_SPINAL_LANCE_DESC:0 "中庭级传承改型的前射主炮。汇流结构把供能送入有限射界的远程火力通道，适合攻击重型目标；需要额外功率与材料，仍按实际命中、护盾和装甲规则结算。"
+ ARTIFACT_POSTCRISIS_REACTOR:0 "传承型相位反应堆"
+ ARTIFACT_POSTCRISIS_REACTOR_DESC:0 "为中庭级传承舰装提供4000功率。新核心与旧核心并存，装配、造价和维护由设计器及船厂正常结算。"
+ ARTIFACT_POSTCRISIS_RECOVERY_FRAME:0 "归航整备骨架"
+ ARTIFACT_POSTCRISIS_RECOVERY_FRAME_DESC:0 "提高本舰船体与装甲上限，并提供原生结构再生。占用辅助槽，可与既有场域模块按任务取舍；同类修正按原生加法，舰毁后的补充仍走正常建造。"

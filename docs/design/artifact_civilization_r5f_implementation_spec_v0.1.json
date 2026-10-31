@@ -1,0 +1,253 @@
+{
+  "date": "2026-10-31",
+  "package": "R5f",
+  "source_base": "7d87e8a",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "nodes": [
+    "F07"
+  ],
+  "technology": {
+    "id": "F07",
+    "key": "tech_artifact_postcrisis_ship_engineering",
+    "name": "终局舰船工程",
+    "area": "engineering",
+    "tier": 5,
+    "cost": 18000,
+    "weight": 100,
+    "category": "voidcraft",
+    "prerequisites": [
+      "tech_artifact_post_disaster_record_decoding",
+      "tech_artifact_strategic_hull_engineering"
+    ],
+    "potential": "Artifact-user, non-bio, artifact_postcrisis_records_decoded"
+  },
+  "lore": "危机中共同完成的观测、制造与作战记录，终于能够进入同一套舰装设计。中央庭将这些经验转化为可检验的供能、武器与整备部件，让取得胜利的普通舰队也能承接下一阶段的工程成果。",
+  "application": "共同胜利资料解译后，为中庭级战略舰开放传承改型：将舰首2L武器改为1X，同时少一格大型防护，配套汇流脊炮、4000功率反应堆与整备骨架。沿用正常设计、付费建造和改装，不另开长期试验；原舰体、工业和承载定型条件保持。",
+  "qualification": {
+    "trigger": "artifact_postcrisis_fleet_available",
+    "requires": [
+      "original artifact_strategic_hull_available including acs_hull_qualified",
+      "F07 research",
+      "F06 decoded common victory record"
+    ],
+    "personal_required": false,
+    "current_industry_required_for_components": false,
+    "current_industry_for_new_orders": "original E10 active E09 industry and citadel/complete mega shipyard"
+  },
+  "variant": {
+    "label": "中庭级传承改型",
+    "ship_size_unchanged": "artifact_strategic_cruiser",
+    "predefined_designs_added": 0,
+    "new_section": "ARTIFACT_POSTCRISIS_SPINAL_BOW",
+    "section_slot": "bow",
+    "section_cost": {
+      "alloys": 1200
+    },
+    "original_bow_cost": {
+      "alloys": 800
+    },
+    "replacement": "old bow 2L weapons +4L defense -> new bow 1X weapon +3L defense",
+    "artillery": "1X +4L; 7L defense +2A",
+    "carrier": "1X +1L +2H +2S +2PD; 7L defense +2A, original strike craft research still required",
+    "old_sections_retained": true,
+    "body_stats_and_slots_unchanged": true,
+    "new_unique_hull": false,
+    "free_ships": false
+  },
+  "components": [
+    {
+      "key": "ARTIFACT_POSTCRISIS_SPINAL_LANCE",
+      "name": "传承型汇流脊炮",
+      "size": "extra_large",
+      "power": -600,
+      "damage": {
+        "min": 1200,
+        "max": 2400
+      },
+      "windup": {
+        "min": 20,
+        "max": 35
+      },
+      "total_fire_time": 140,
+      "fire_time_note": "engine field, not a direct game-day promise",
+      "damage_multipliers": {
+        "hull": 1.5,
+        "shield": 0.75,
+        "armor": 1.75
+      },
+      "penetration": {
+        "shield": 0,
+        "armor": 0
+      },
+      "range": 180,
+      "accuracy": 0.9,
+      "tracking": 0.05,
+      "firing_arc": 25,
+      "cost": {
+        "alloys": 600,
+        "rare_crystals": 30
+      },
+      "upkeep": {
+        "energy": 6,
+        "alloys": 0.6
+      }
+    },
+    {
+      "key": "ARTIFACT_POSTCRISIS_REACTOR",
+      "name": "传承型相位反应堆",
+      "size": "small",
+      "component_set": "power_core",
+      "power": 4000,
+      "cost": {
+        "alloys": 1000,
+        "rare_crystals": 20
+      },
+      "upkeep": {
+        "energy": 8,
+        "alloys": 1
+      }
+    },
+    {
+      "key": "ARTIFACT_POSTCRISIS_RECOVERY_FRAME",
+      "name": "归航整备骨架",
+      "size": "aux",
+      "power": -150,
+      "modifiers": {
+        "ship_hull_mult": 0.25,
+        "ship_armor_mult": 0.25,
+        "ship_hull_regen_add_perc": 0.075,
+        "ship_armor_regen_add_perc": 0.15
+      },
+      "cost": {
+        "alloys": 300,
+        "rare_crystals": 30
+      },
+      "upkeep": {
+        "energy": 2,
+        "alloys": 0.3
+      },
+      "stacking": "native additive within existing two A slots; shares choices with D12/other A modules"
+    }
+  ],
+  "compatibility": {
+    "ship_restriction": "all three new components only artifact_strategic_cruiser; native/old destiny lord/personal flagship excluded",
+    "old_component_keys_changed": [],
+    "old_upgrades_to_changed": [],
+    "automatic_migration": false,
+    "preserved": [
+      "old E10 six cores/four sections",
+      "D13 qualification and D12 action/cooldown",
+      "original industrial/new-order rules",
+      "personal flagship unique instance and 90/75/60 recovery",
+      "story/decision/C2 states"
+    ],
+    "native_queue_and_refit_during_industry_loss": "not verified; component eligibility alone does not prove refit/queue behavior"
+  },
+  "performance": {
+    "new_events": 0,
+    "new_monthly_subscriptions": 0,
+    "new_variables": 0,
+    "new_global_targets": 0,
+    "new_scripted_actions": 0,
+    "new_country_bonuses": 0
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-ARTIFACT"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md",
+      "docs/design/artifact_civilization_1_0_scope_confirmation_2026-10-08.md",
+      "docs/design/artifact_civilization_growth_and_combinations_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false,
+    "constraint": "公共工程标准与器材生产，不复制个人神器/指挥使支援或改写英雄身份；战后有限奖励，不另开Boss。"
+  },
+  "native_reference": {
+    "reference": "本机4.5.2 battleship.txt脊炮实体/XL固定槽；00_weapons_extra_large.txt长矛图标/特效/射界；00_utilities_aux.txt原生再生；既有R3b TXT显式武器参数",
+    "target_4_5_1_compatibility": "pending",
+    "entity": "battleship_bow_XL1_entity",
+    "slot": "invisible_extra_large_fixed",
+    "locator": "xl_gun_01",
+    "projectile": "tachyon_lance",
+    "ai": "原has_no_valid_xl_weapon硬编码原版科技，改用本包已解译/定型资格控制新区段权重",
+    "regen": "raw ship_hull_regen_add_perc .075 / ship_armor_regen_add_perc .15, native timing/conditions; no resurrection",
+    "formal_assets": false
+  },
+  "validation": {
+    "new": {
+      "count": 4,
+      "status": "pass",
+      "module": "test_artifact_postcrisis_fleet"
+    },
+    "affected": {
+      "count": 17,
+      "status": "pass",
+      "modules": [
+        "test_artifact_strategic_hull",
+        "test_artifact_hull_support",
+        "test_artifact_postcrisis_archive"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 262,
+        "events": 261,
+        "localization_keys": 2257,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "fixture_note": "F06解译及D13定型为已验证接口输入；执行正式F07/原E10资格，检查船型/生物舰/工业分离和新增供能闭包。",
+    "limitations": [
+      "原生设计器显示、自动设计、完整配装功耗、正常改装/造舰、真实战斗/再生和读档未验。",
+      "21项为源码检查；新增主炮/骨架与既有基础核心的供能余量不是全顶配或实际DPS证明。"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "save_created": null,
+    "pending_command": null,
+    "priority": "集中试玩仍优先D12；F07只取一艘传承改型代表，配装/改装或建造，必要战斗/再生片段及共用关键读档，不逐组件/区段穷举。"
+  },
+  "files": [
+    "mod/common/component_sets/artifact_postcrisis_fleet_sets.txt",
+    "mod/common/component_templates/artifact_postcrisis_fleet_components.txt",
+    "mod/common/scripted_triggers/artifact_postcrisis_fleet_triggers.txt",
+    "mod/common/section_templates/artifact_postcrisis_fleet_sections.txt",
+    "mod/common/technology/artifact_postcrisis_fleet_technology.txt",
+    "mod/localisation/simp_chinese/artifact_postcrisis_fleet_l_simp_chinese.yml",
+    "tools/validation/tests/test_artifact_postcrisis_fleet.py",
+    "docs/design/artifact_civilization_r5f_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r5f_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r5f_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r5f_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}

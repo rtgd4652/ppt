@@ -1,0 +1,7 @@
+# 国家知识只决定装配资格；当前工业供源继续由E10原船厂下单条件核对。
+# 不重新读取角色在场/等级/职业或个人转变，也不把工业停用变为已有设计失效。
+artifact_postcrisis_fleet_available = {
+	artifact_strategic_hull_available = yes
+	has_technology = "tech_artifact_postcrisis_ship_engineering"
+	artifact_postcrisis_records_decoded = yes
+}

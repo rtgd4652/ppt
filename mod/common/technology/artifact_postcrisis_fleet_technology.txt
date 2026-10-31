@@ -1,0 +1,15 @@
+# F07胜利后的有限收尾研究；共享已解译资料与E10，不再组织第二轮试验/Boss。
+tech_artifact_postcrisis_ship_engineering = {
+	area = engineering
+	icon = "tech_artifact_resonance_manufacturing"
+	cost = 18000
+	tier = 5
+	category = { voidcraft }
+	prerequisites = { "tech_artifact_post_disaster_record_decoding" "tech_artifact_strategic_hull_engineering" }
+	weight = 100
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+		artifact_postcrisis_records_decoded = yes
+	}
+}

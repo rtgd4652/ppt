@@ -1,0 +1,24 @@
+# 中庭级传承舰首采用原版脊炮实体/真实XL定位器；正式中央庭造型仍待美术定稿。
+# 旧舰首的2L武器/4L防护配置仍可选；本区段改为1X/3L防护，中段/舰尾照常选配。
+ship_section_template = {
+	key = "ARTIFACT_POSTCRISIS_SPINAL_BOW"
+	ship_size = artifact_strategic_cruiser
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "battleship_bow_XL1_entity"
+	icon = "GFX_ship_part_core_bow"
+	ai_tags = { artillery carrier }
+	prerequisites = { "tech_artifact_postcrisis_ship_engineering" }
+	ai_weight = {
+		weight = 20
+		# 原has_no_valid_xl_weapon硬编码原版科技，不能识别本包主炮。
+		modifier = { factor = 0 artifact_postcrisis_fleet_available = no }
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}
+	large_utility_slots = 3
+	resources = { category = ship_sections cost = { alloys = 1200 } }
+}

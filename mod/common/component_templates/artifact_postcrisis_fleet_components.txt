@@ -1,0 +1,104 @@
+# F07传承舰装仅供中庭级公共舰，已解译共同知识与D13原定型仍必需。
+# 参数显式写入TXT；沿用原版特效/图标作玩法占位，正式外观另行制作。
+weapon_component_template = {
+	key = "ARTIFACT_POSTCRISIS_SPINAL_LANCE"
+	size = extra_large
+	type = instant
+	icon = "GFX_ship_part_energy_lance_2"
+	icon_frame = 1
+	power = -600
+	damage = { min = 1200 max = 2400 }
+	windup = { min = 20 max = 35 }
+	total_fire_time = 140
+	hull_damage = 1.5
+	shield_damage = 0.75
+	shield_penetration = 0.0
+	armor_damage = 1.75
+	armor_penetration = 0.0
+	range = 180
+	accuracy = 0.9
+	tracking = 0.05
+	firing_arc = 25.0
+	use_ship_main_target = no
+	size_damage_factor = 0.0
+	military_power_multiplier = 1.0
+	component_set = "ARTIFACT_POSTCRISIS_SPINAL_LANCE"
+	projectile_gfx = "tachyon_lance"
+	tags = { weapon_type_energy weapon_role_artillery x_slot }
+	ai_tags = { weapon_role_artillery artillery }
+	ai_tag_weight = 4
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_postcrisis_fleet_available = yes }
+	}
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_postcrisis_ship_engineering" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 600 rare_crystals = 30 }
+		upkeep = { energy = 6 alloys = 0.6 }
+	}
+}
+
+# 必需small供能槽；与旧核心并存，不自动迁移旧设计。
+utility_component_template = {
+	key = "ARTIFACT_POSTCRISIS_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 4000
+	component_set = "power_core"
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_postcrisis_fleet_available = yes }
+	}
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_postcrisis_ship_engineering" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 1000 rare_crystals = 20 }
+		upkeep = { energy = 8 alloys = 1 }
+	}
+	ai_weight = { weight = 12 }
+}
+
+# 原生再生是本舰维修能力，不生成替代舰、不修改英雄恢复或战损账本。
+# 可在两个A槽自行取舍；同型数值按原生加法，不能称作独立乘区或无限生存。
+utility_component_template = {
+	key = "ARTIFACT_POSTCRISIS_RECOVERY_FRAME"
+	size = aux
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+	power = -150
+	component_set = "ARTIFACT_POSTCRISIS_RECOVERY_FRAME"
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_postcrisis_fleet_available = yes }
+	}
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_postcrisis_ship_engineering" }
+	modifier = {
+		ship_hull_mult = 0.25
+		ship_armor_mult = 0.25
+		ship_hull_regen_add_perc = 0.075
+		ship_armor_regen_add_perc = 0.15
+	}
+	resources = {
+		category = ship_components
+		cost = { alloys = 300 rare_crystals = 30 }
+		upkeep = { energy = 2 alloys = 0.3 }
+	}
+	ai_weight = { weight = 12 }
+}

@@ -1,0 +1,11 @@
+# 只为新主炮/A槽建立可选集合；反应堆仍用原生power_core。
+component_set = {
+	key = "ARTIFACT_POSTCRISIS_SPINAL_LANCE"
+	icon = "GFX_ship_part_energy_lance_2"
+	icon_frame = 1
+}
+component_set = {
+	key = "ARTIFACT_POSTCRISIS_RECOVERY_FRAME"
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+}

@@ -1164,7 +1164,14 @@
       "capability": "解锁中庭级公共战略舰、炮击/航母区段与基础核心；定型记录、运营营建场及合格船厂共同允许正常付费建造，个人唯一舰独立。",
       "implementation_key": "tech_artifact_strategic_hull_engineering",
       "spec": "docs/design/artifact_civilization_r4e_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md"
+      "report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md",
+      "compatibility_updates": [
+        {
+          "package": "R5f",
+          "spec": "docs/design/artifact_civilization_r5f_implementation_spec_v0.1.json",
+          "note": "F07读取已解译与承载资格，沿中庭级添加区段/舰装；旧设计/组件/工业来源保持，原生运行未验。"
+        }
+      ]
     },
     {
       "id": "E11",
@@ -1349,7 +1356,14 @@
       "implementation_key": "tech_artifact_post_disaster_record_decoding",
       "spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r5e_implementation_2026-10-31.md",
-      "implementation_gate": "artifact_postcrisis_common_victory"
+      "implementation_gate": "artifact_postcrisis_common_victory",
+      "compatibility_updates": [
+        {
+          "package": "R5f",
+          "spec": "docs/design/artifact_civilization_r5f_implementation_spec_v0.1.json",
+          "note": "F07读取已解译与承载资格，沿中庭级添加区段/舰装；旧设计/组件/工业来源保持，原生运行未验。"
+        }
+      ]
     },
     {
       "id": "F07",
@@ -1362,8 +1376,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "交付胜利后的公共舰船奖励研发；缩短研究收尾，不再设置第二轮Boss。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "已解译共同胜利后正常研发中庭级传承改型：XL舰首、主炮/供能/整备三舰装，沿原设计/工业/定型规则，正常付费建造与改装。",
+      "implementation_key": "tech_artifact_postcrisis_ship_engineering",
+      "spec": "docs/design/artifact_civilization_r5f_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5f_implementation_2026-10-31.md"
     },
     {
       "id": "F08",
@@ -2776,18 +2793,37 @@
       "report": "reports/artifact_civilization_r5e_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r5e_checkpoint_2026-10-31.json",
       "next_step": "推进F07终局舰船工程（F06＋E10）：先读已批准公共奖励、现有中庭级/部件与个人旗舰边界，读取artifact_postcrisis_records_decoded，为战后交付更强公共舰用能力并保留正常设计/建造。F08随后接公共巨构奖励，胜利后不另设长期危机；正式外观仍须定稿。共同Boss胜利已映射，不重写剧情或重查个人结局。阶段试玩仍优先D12，其他必要代表共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
+    },
+    "R5f": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "nodes": [
+        "F07"
+      ],
+      "new_buildings": 0,
+      "new_components": 3,
+      "new_component_sets": 2,
+      "new_sections": 1,
+      "new_ship_sizes": 0,
+      "new_events": 0,
+      "new_on_actions": 0,
+      "spec": "docs/design/artifact_civilization_r5f_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5f_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r5f_checkpoint_2026-10-31.json",
+      "next_step": "推进F08终局巨构工程（F06＋E11）：读取artifact_postcrisis_records_decoded，先核对批准的公共巨构奖励、现有基线枢纽与正常巨构建造接口。连续巨构原型继续暂停，不以旧塔充当新路线；胜利后只做有限奖励与结尾，不另开长期危机。之后整合Boss深化、正式资产与一次全线衔接回归，源码80项不等于完整1.0交付。集中试玩仍优先D12，F07只取一艘传承改型的必要代表，共用关键读档；人物组合、批量图标继续暂停。"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 78,
+    "public_technologies": 79,
     "army_types": 5,
-    "component_definitions": 111,
+    "component_definitions": 114,
     "building_definitions": 44,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 2,
-    "note": "R5e新增F06/BL15升级，实际共同胜利映射、一次解译/永久研究加速及后续公共资格接口；6项新增、25项相关及静态通过，运行未验。"
+    "planned_technologies_remaining": 1,
+    "note": "R5f新增F07、传承脊炮舰首及3件中庭级舰装，正常设计/建造/改装；4项新增、17项相关及静态通过，运行未验。"
   },
   "orbital_buildings": [
     {
@@ -3214,5 +3250,8 @@
   "r5d_checkpoint": "reports/artifact_civilization_r5d_checkpoint_2026-10-31.json",
   "r5e_spec": "docs/design/artifact_civilization_r5e_implementation_spec_v0.1.json",
   "r5e_report": "reports/artifact_civilization_r5e_implementation_2026-10-31.md",
-  "r5e_checkpoint": "reports/artifact_civilization_r5e_checkpoint_2026-10-31.json"
+  "r5e_checkpoint": "reports/artifact_civilization_r5e_checkpoint_2026-10-31.json",
+  "r5f_spec": "docs/design/artifact_civilization_r5f_implementation_spec_v0.1.json",
+  "r5f_report": "reports/artifact_civilization_r5f_implementation_2026-10-31.md",
+  "r5f_checkpoint": "reports/artifact_civilization_r5f_checkpoint_2026-10-31.json"
 }
