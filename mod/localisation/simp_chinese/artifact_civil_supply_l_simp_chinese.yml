@@ -113,3 +113,4 @@
  acs_construction_supply_desc:0 "预留物资已投入当地施工。效果期间不能重复交付；失去殖民地时停止。"
  acs_megastructure_supply:0 "大型工程供应"
  acs_megastructure_supply_desc:0 "两地物资已投入大型工程。效果期间不能再次交付；运输端后续停用不撤回已交付供应。"
+ mod_planet_jobs_minerals_upkeep_mult:0 "岗位矿物维护费"

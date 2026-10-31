@@ -24,7 +24,7 @@
 | 压缩存档与日志只读解析 | 可定位真实国家、设计、舰船及军队；文件读取不能替代实际游戏读档 |
 | Python原画／DDS及Blender离线生产 | 已有构建流程；按对应资产README调用，不重建全部素材。操作用户现有Blender场景前核实场景与任务 |
 
-本轮详细证据见[R3d运行结果](../reports/artifact_civilization_r3d_runtime_2026-10-31.md)。旧窗口PID、截图位置和命令均为历史记录。
+R3d详细证据见[运行结果](../reports/artifact_civilization_r3d_runtime_2026-10-31.md)。10月31日R3e阶段又通过Computer Use完成Steam启动、游戏库启动、Paradox启动器点击“开始游戏”、群星冷启动与旧档载入；启动器按钮当前可由可访问性树读取。群星`grave`开关键两次未接收，未提交命令，不将鼠标成功等同键盘成功。见[R3e记录](../reports/artifact_civilization_r3e_implementation_2026-10-31.md)。旧窗口ID、坐标和输入文件不作为执行依据。
 
 ## Codex长上下文与新功能使用约定
 

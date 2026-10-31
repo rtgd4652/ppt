@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3e_implemented_static_passed_runtime_pending",
+  "status": "r3e_static_and_cold_load_passed_gameplay_pending",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -1714,7 +1714,7 @@
       ],
       "date": "2026-10-31",
       "status": "implemented_static_passed",
-      "runtime_status": "pending_stage_validation",
+      "runtime_status": "cold_start_and_baseline_load_passed_gameplay_pending",
       "spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",

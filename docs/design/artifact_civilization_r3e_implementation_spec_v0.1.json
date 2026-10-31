@@ -74,7 +74,7 @@
     "components": 85,
     "army_types": 5
   },
-  "runtime": "pending_stage_validation",
+  "runtime": "cold_start_and_baseline_load_passed_gameplay_pending",
   "balance": "pending",
   "decisions": [
     {
@@ -178,5 +178,7 @@
     "civil_supply_tests": 8,
     "related_ground_forces_tests": 6,
     "related_city_planning_tests": 5
-  }
+  },
+  "runtime_checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",
+  "localization_keys": 115
 }

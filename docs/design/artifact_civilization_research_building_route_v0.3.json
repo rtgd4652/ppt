@@ -2,7 +2,7 @@
   "schema_version": 2,
   "date": "2026-10-14",
   "updated": "2026-10-31",
-  "status": "r3e_implemented_static_passed_runtime_pending",
+  "status": "r3e_static_and_cold_load_passed_gameplay_pending",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -2253,7 +2253,7 @@
     "R3e": {
       "date": "2026-10-31",
       "status": "implemented_static_passed",
-      "runtime_status": "pending_stage_validation",
+      "runtime_status": "cold_start_and_baseline_load_passed_gameplay_pending",
       "spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",
@@ -2500,7 +2500,7 @@
         ],
         "date": "2026-10-31",
         "status": "implemented_static_passed",
-        "runtime_status": "pending_stage_validation",
+        "runtime_status": "cold_start_and_baseline_load_passed_gameplay_pending",
         "spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
         "report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
         "checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",

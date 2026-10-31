@@ -9,7 +9,8 @@
 - [x] 同步R3d规格、军备责任表和完整路线的Markdown／JSON运行状态；已完成历史报告里的“下次先同步”。
 - [x] 完善交接入口、可用操作、额度不足保存模板与[阶段验收规则](DEVELOPMENT_WORKFLOW.md)。此前整理已完成；后续用户恢复开发，本轮R3e源码已新增。
 - [x] R3e B08／B11／B13／C11／C12实现及必要检查通过；B11是C11必要前置。见[实施记录](../reports/artifact_civilization_r3e_implementation_2026-10-31.md)。
-- [ ] R3e限时阶段试玩：入口、物资链和一次关键读档；实际执行状态见[检查点](../reports/artifact_civilization_r3e_checkpoint_2026-10-31.json)。
+- [x] R3e冷启动并载入原2293.10.11结果档；补齐启动发现的维护费中文标签。
+- [ ] R3e核心阶段试玩：入口、物资链和一次新状态关键读档；控制台开关键未接收，本轮未输入任何命令。实际执行状态见[检查点](../reports/artifact_civilization_r3e_checkpoint_2026-10-31.json)。
 
 ## 当前实现与下一包
 

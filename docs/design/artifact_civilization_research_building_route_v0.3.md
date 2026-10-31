@@ -239,4 +239,4 @@ R3b最终结果2291.07.08，源码4a8f280，详见[运行记录](../../reports/a
 
 2026-10-31：R3d代表装配与正常改装、单支攻坚军正常训练、一次2293.10.11结果实际读档通过；研究和公共飞升受控，未扩测全部尺寸、战斗、受伤恢复、维护结算差额及自然平衡，见[运行结果](../../reports/artifact_civilization_r3d_runtime_2026-10-31.md)。规格和路线状态已同步；R3e后续实施见下条，旧待验记录无需重做。
 
-2026-10-31后续：R3e五项研究（含必要前置B11）、六建筑、一岗位、付费物资账本／两端联运／精炼与共治决议已实现；8项新增、11项相关检查及总静态通过。阶段试玩尚未进行，见[规格](artifact_civilization_r3e_implementation_spec_v0.1.md)和[实施记录](../../reports/artifact_civilization_r3e_implementation_2026-10-31.md)。
+2026-10-31后续：R3e五项研究（含必要前置B11）、六建筑、一岗位、付费物资账本／两端联运／精炼与共治决议已实现；8项新增、11项相关检查及总静态通过。已冷启动并载入旧结果档；核心物资流程尚未执行，维护费中文标签已补但未重新载入。见[规格](artifact_civilization_r3e_implementation_spec_v0.1.md)和[实施记录](../../reports/artifact_civilization_r3e_implementation_2026-10-31.md)。
