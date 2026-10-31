@@ -63,7 +63,7 @@ artifact_system_engineering_can_dispatch = {
 	artifact_civil_supply_strategic_stock = yes
 	owner = {
 		has_technology = "tech_artifact_interstellar_engineering_coordination"
-		has_resource = { type = energy amount >= 500 }
+		artifact_civil_engineering_can_pay_dispatch = yes
 		any_owned_colony = { carrier = { artifact_system_engineering_delivery_target = yes } }
 	}
 }

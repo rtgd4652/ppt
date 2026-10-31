@@ -183,6 +183,14 @@
       "report": "reports/artifact_civilization_r4k_implementation_2026-10-31.md",
       "status": "source_tests_passed_runtime_pending",
       "note": "E11异星系工程点可接收一份B14备料，原ready/E09/D13现场增加此合法身份；B14集成仍限普通接收端，费用/工期/唯一项目和国家知识归属不变。"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R4l",
+      "status": "source_tests_passed_runtime_pending",
+      "spec": "docs/design/artifact_civilization_r4l_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4l_implementation_2026-10-31.md",
+      "note": "标准费用保留；有效E12命运都市工业协调在付款时降低E09装配/试运行或E11运输费。来源失效恢复标准价，不补扣已付阶段；新路径运行未验。"
     }
   ]
 }

@@ -16,6 +16,7 @@ LONG = 'building_artifact_long_baseline_array'
 OBS = 'building_artifact_baseline_observation_station'
 ARCHIVE = 'aoc_calibration_archive'
 TRIGGERS = {**joint.base.load('mod/common/scripted_triggers/artifact_civil_supply_triggers.txt'),
+            **joint.base.load('mod/common/scripted_triggers/artifact_civil_engineering_triggers.txt'),
             **joint.base.load('mod/common/scripted_triggers/artifact_observation_calibration_triggers.txt')}
 EFFECTS = {**joint.base.load('mod/common/scripted_effects/artifact_civil_supply_effects.txt'),
            **joint.base.load('mod/common/scripted_effects/artifact_observation_calibration_effects.txt')}

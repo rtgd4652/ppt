@@ -486,8 +486,16 @@ artifact_civil_supply_segmented_assemble = {
 	if = {
 		limit = { artifact_civil_supply_can_segmented_assemble = yes }
 		owner = {
-			add_resource = { minerals = -1000 }
-			add_resource = { alloys = -1500 }
+			# 付款时读取仍有效的都市统筹；已付阶段不追溯、不退款。
+			if = {
+				limit = { artifact_civil_engineering_budget_active = yes }
+				add_resource = { minerals = -750 }
+				add_resource = { alloys = -1200 }
+			}
+			else = {
+				add_resource = { minerals = -1000 }
+				add_resource = { alloys = -1500 }
+			}
 		}
 		remove_modifier = acs_segmented_prepared
 		add_modifier = { modifier = acs_segmented_assembling days = -1 }
@@ -499,8 +507,15 @@ artifact_civil_supply_segmented_commission = {
 	if = {
 		limit = { artifact_civil_supply_can_segmented_commission = yes }
 		owner = {
-			add_resource = { energy = -1000 }
-			add_resource = { consumer_goods = -300 }
+			if = {
+				limit = { artifact_civil_engineering_budget_active = yes }
+				add_resource = { energy = -750 }
+				add_resource = { consumer_goods = -225 }
+			}
+			else = {
+				add_resource = { energy = -1000 }
+				add_resource = { consumer_goods = -300 }
+			}
 		}
 		remove_modifier = acs_segmented_assembled
 		add_modifier = { modifier = acs_segmented_commissioning days = -1 }

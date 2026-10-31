@@ -1807,7 +1807,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f及R4a～R4k源码检查通过、运行未验；阶段试玩仍优先D12，E11可并入必要物资/工程代表，不逐包重测。",
+    "runtime": "R3a～R3d代表运行通过；R3e预留/文件核对通过。R3f及R4a～R4l源码检查通过、运行未验；常规节点源码已接齐，集中试玩仍优先D12，其他取必要代表。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1844,14 +1844,14 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 72,
+    "public_technologies": 73,
     "army_types": 5,
     "component_definitions": 111,
     "building_definitions": 40,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 8,
-    "note": "R4k新增E11异星系备料交付，复用E09/D13实际工程；6项新增、27项相关源码检查及静态通过，运行未验。"
+    "planned_technologies_remaining": 7,
+    "note": "R4l新增E12，真实命运都市已付C12工业协调统筹E09/E11费用；6项新增、33项相关及静态通过，运行未验。常规公共节点源码已接齐，剩余F02～F08。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -2000,5 +2000,22 @@
     "report": "reports/artifact_civilization_r4k_implementation_2026-10-31.md",
     "checkpoint": "reports/artifact_civilization_r4k_checkpoint_2026-10-31.json",
     "next_step": "推进E12文明工程统筹（E02＋E11＋C12）：复用都市、工程供给和既有运行方案，落实有成本的公共工程预算/调整能力，保留原唯一都市上限；随后F02～F08及最终Boss/公共奖励收束。集中试玩仍优先D12新行动，其他取必要代表共用关键读档，不逐包重跑；人物组合、连续巨构与批量图标仍暂停。"
+  },
+  "r4l_civil_engineering": {
+    "date": "2026-10-31",
+    "status": "implemented_static_passed",
+    "runtime_status": "not_run",
+    "nodes": [
+      "E12"
+    ],
+    "new_buildings": 0,
+    "new_components": 0,
+    "new_events": 0,
+    "new_on_actions": 0,
+    "new_states": 0,
+    "spec": "docs/design/artifact_civilization_r4l_implementation_spec_v0.1.json",
+    "report": "reports/artifact_civilization_r4l_implementation_2026-10-31.md",
+    "checkpoint": "reports/artifact_civilization_r4l_checkpoint_2026-10-31.json",
+    "next_step": "推进F02危机信号鉴别（A11＋E08）：先核对既有最终危机公开接触/调查事实，把common_crisis_contact设计概念映射为真实接口，该名称不是现成脚本键。复用已有资料接公共预警/反制候选，保留个人转变边界；随后F03～F08、最终Boss深化与公共胜利奖励。集中试玩仍优先D12，其他必要代表共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
   }
 }

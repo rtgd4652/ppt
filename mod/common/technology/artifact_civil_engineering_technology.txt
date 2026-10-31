@@ -1,0 +1,12 @@
+# E12 文明工程统筹：以命运都市实际运作的工业协调支撑公共工程预算。
+# 沿用已付费C12方案及180日调整，不新增都市或重置旧一次性资格。
+tech_artifact_civil_engineering_coordination = {
+	area = society
+	icon = "tech_artifact_covenant_administration"
+	cost = 30000
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_artifact_destiny_city_project" "tech_artifact_interstellar_engineering_coordination" "tech_artifact_covenant_cogovernance" }
+	weight = 40
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}

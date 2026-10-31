@@ -1,0 +1,66 @@
+# 只读实际都市与既有公共方案；C2永久标记、个人转变和都市数量完全不改写。
+# 预算不依赖当前余额，避免扣费过程因余额改变而切换费用档位。
+artifact_civil_engineering_budget_city = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_original_owner = yes
+	is_planet_class = "pc_artifact_destiny_city"
+	has_modifier = acs_civic_industry
+	NOT = { has_modifier = acs_civic_adjusting }
+	OR = {
+		has_active_building = "building_artifact_coordination_center"
+		has_active_building = "building_artifact_cogovernance_assembly"
+	}
+	owner = {
+		has_technology = "tech_artifact_civil_engineering_coordination"
+		has_technology = "tech_artifact_covenant_cogovernance"
+	}
+}
+
+# 国家按需查询一个布尔资格；遗留多座同类设施/都市也不会叠加折扣。
+artifact_civil_engineering_budget_active = {
+	has_technology = "tech_artifact_civil_engineering_coordination"
+	any_owned_colony = { carrier = { artifact_civil_engineering_budget_city = yes } }
+}
+
+artifact_civil_engineering_can_pay_assembly = {
+	OR = {
+		AND = {
+			artifact_civil_engineering_budget_active = yes
+			has_resource = { type = minerals amount >= 750 }
+			has_resource = { type = alloys amount >= 1200 }
+		}
+		AND = {
+			artifact_civil_engineering_budget_active = no
+			has_resource = { type = minerals amount >= 1000 }
+			has_resource = { type = alloys amount >= 1500 }
+		}
+	}
+}
+
+artifact_civil_engineering_can_pay_commission = {
+	OR = {
+		AND = {
+			artifact_civil_engineering_budget_active = yes
+			has_resource = { type = energy amount >= 750 }
+			has_resource = { type = consumer_goods amount >= 225 }
+		}
+		AND = {
+			artifact_civil_engineering_budget_active = no
+			has_resource = { type = energy amount >= 1000 }
+			has_resource = { type = consumer_goods amount >= 300 }
+		}
+	}
+}
+
+artifact_civil_engineering_can_pay_dispatch = {
+	OR = {
+		AND = {
+			artifact_civil_engineering_budget_active = yes
+			has_resource = { type = energy amount >= 300 }
+		}
+		AND = {
+			artifact_civil_engineering_budget_active = no
+			has_resource = { type = energy amount >= 500 }
+		}
+	}
+}

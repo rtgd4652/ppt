@@ -257,20 +257,14 @@ artifact_civil_supply_can_segmented_assemble = {
 	artifact_civil_supply_segmented_site = yes
 	artifact_civil_supply_segmented_project = yes
 	has_modifier = acs_segmented_prepared
-	owner = {
-		has_resource = { type = minerals amount >= 1000 }
-		has_resource = { type = alloys amount >= 1500 }
-	}
+	owner = { artifact_civil_engineering_can_pay_assembly = yes }
 }
 
 artifact_civil_supply_can_segmented_commission = {
 	artifact_civil_supply_segmented_site = yes
 	artifact_civil_supply_segmented_project = yes
 	has_modifier = acs_segmented_assembled
-	owner = {
-		has_resource = { type = energy amount >= 1000 }
-		has_resource = { type = consumer_goods amount >= 300 }
-	}
+	owner = { artifact_civil_engineering_can_pay_commission = yes }
 }
 
 artifact_civil_supply_can_segmented_cancel = {

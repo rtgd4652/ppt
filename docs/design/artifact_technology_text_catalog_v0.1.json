@@ -845,13 +845,14 @@
       "name": "文明契约共治",
       "lore": "公共资源的分配需要让生产、研究与生活保障都拥有明确的位置。共同约定的调整程序，使城市能够有序改变运行重点。",
       "application": "升级中央庭治理设施，在工业、科研和民生之间付费调整当地方案。",
-      "implementation_note": "共治方案由civil_supply互斥标记保存，180日调整期；两种高级治理设施并存时只供给一份方案收益。",
+      "implementation_note": "共治方案由civil_supply互斥标记保存，180日调整期；两种高级治理设施并存时只供给一份方案收益。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。",
       "technology_file": "mod/common/technology/artifact_civil_supply_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_civil_supply_l_simp_chinese.yml",
       "consumer_files": [
         "mod/common/buildings/artifact_civil_supply_buildings.txt",
         "mod/common/decisions/artifact_civil_supply_decisions.txt",
-        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt"
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+        "mod/common/scripted_triggers/artifact_civil_engineering_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1538,7 +1539,7 @@
       "name": "分段大型工程",
       "lore": "交界都市重建时，中央庭学会让不同队伍接续同一项工程。进入星海后，营建被拆分为可以独立验收的区段，物资、装配与试运行各有责任和交接条件。",
       "application": "解锁大型工程营建场。投入工程备料，逐段完成准备、装配与试运行；有效营建场提供§G+1§!巨型结构同时建造名额，全国一处。具体巨构仍需各自的研究与建造条件。",
-      "implementation_note": "解锁营建场与三阶段工程，逐段消费真实物资；运行收益由有效建筑提供，不永久写入国家。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。",
+      "implementation_note": "解锁营建场与三阶段工程，逐段消费真实物资；运行收益由有效建筑提供，不永久写入国家。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。",
       "technology_file": "mod/common/technology/artifact_segmented_engineering_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_segmented_engineering_l_simp_chinese.yml",
       "consumer_files": [
@@ -1547,7 +1548,8 @@
         "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
         "mod/common/decisions/artifact_civil_supply_decisions.txt",
         "mod/events/artifact_civil_supply_events.txt",
-        "mod/common/scripted_triggers/artifact_system_engineering_triggers.txt"
+        "mod/common/scripted_triggers/artifact_system_engineering_triggers.txt",
+        "mod/common/scripted_triggers/artifact_civil_engineering_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1590,8 +1592,8 @@
       "previous_name": "星系协同基础设施",
       "name": "星系协同基础设施",
       "lore": "中央庭的资源协调不再局限于一座城市或一颗行星。分散在不同星系的仓储、换装站与施工队采用共同的清单和交接标准，让已经集成的工程备料能够送到真正需要它的现场。",
-      "application": "登记一处异星系工程接收点，从常规联运接收端支付500能源，将一份已备妥的大型工程备料运抵当地。施工点可接续分段营建或舰体承载试验，无需搬动原常规接收端；原工程的研究、设施、费用和工期仍须满足。",
-      "implementation_note": "E11登记全国唯一异星系工程点，始发普通接收端实际移除一份B14备料并扣500能源后交付；E09/D13读取替代现场，原费用/月度/清理保持。",
+      "application": "登记一处异星系工程接收点，从常规联运接收端支付500能源，将一份已备妥的大型工程备料运抵当地。施工点可接续分段营建或舰体承载试验，无需搬动原常规接收端；原工程的研究、设施、费用和工期仍须满足。命运都市的文明工程统筹生效时，运输费降为300能源。",
+      "implementation_note": "E11登记全国唯一异星系工程点，始发普通接收端实际移除一份B14备料并扣500能源后交付；E09/D13读取替代现场，原费用/月度/清理保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。",
       "technology_file": "mod/common/technology/artifact_system_engineering_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_system_engineering_l_simp_chinese.yml",
       "consumer_files": [
@@ -1600,7 +1602,8 @@
         "mod/common/scripted_triggers/artifact_system_engineering_triggers.txt",
         "mod/common/static_modifiers/artifact_system_engineering_modifiers.txt",
         "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
-        "mod/common/scripted_effects/artifact_civil_supply_effects.txt"
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/common/scripted_triggers/artifact_civil_engineering_triggers.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1609,6 +1612,32 @@
         "central_court_history"
       ],
       "source_note": "写前查七都索引及术语/神器/中央庭来源；公共设施、资源统筹与交接制度是Mod工程转译，来源审核状态保留。"
+    },
+    {
+      "id": "E12",
+      "key": "tech_artifact_civil_engineering_coordination",
+      "previous_name": "文明工程统筹",
+      "name": "文明工程统筹",
+      "lore": "一座命运都市既要维持市民的生活，也要承担面向整个文明的建设责任。中央庭让城市工业、物资联运与施工队共同安排采购和交接，把分散支出纳入可以核对的工程预算。",
+      "application": "命运都市采用已付费的“工业协调”公共方案、完成180日调整并保持治理设施正常后，可统筹指定工程支出：跨星系备料交付300能源，营建装配750矿物／1200合金，试运行750能源／225消费品。费用按付款时条件核定；都市运行调整沿原费用，原有唯一都市限制保持。",
+      "implementation_note": "读取真实都市与已付C12工业协调；付款时降低E09装配/试运行与E11运输费用，不变都市唯一性和原物资/工期，不加新状态。",
+      "technology_file": "mod/common/technology/artifact_civil_engineering_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_civil_engineering_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/scripted_triggers/artifact_civil_engineering_triggers.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/common/scripted_triggers/artifact_system_engineering_triggers.txt",
+        "mod/common/scripted_effects/artifact_system_engineering_effects.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history"
+      ],
+      "source_note": "先查七都索引并读术语、中央庭和神器来源；治理/资源统筹为设计背景，具体预算与游戏费用属Mod设计，保留来源审核状态。"
     },
     {
       "id": "F01",
@@ -1634,12 +1663,6 @@
     }
   ],
   "unimplemented_nodes": [
-    {
-      "id": "E12",
-      "working_name": "文明工程统筹",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
     {
       "id": "F02",
       "working_name": "危机信号鉴别",
@@ -2569,6 +2592,18 @@
       "remaining": 8,
       "spec": "docs/design/artifact_civilization_r4k_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4k_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R4l",
+      "nodes": [
+        "E12"
+      ],
+      "added": 1,
+      "implemented_total": 73,
+      "remaining": 7,
+      "spec": "docs/design/artifact_civilization_r4l_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4l_implementation_2026-10-31.md"
     }
   ]
 }

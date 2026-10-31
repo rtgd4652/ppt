@@ -21,7 +21,14 @@ artifact_system_engineering_dispatch = {
 		limit = { artifact_system_engineering_can_dispatch = yes }
 		remove_modifier = acs_strategic_supply_reserved
 		owner = {
-			add_resource = { energy = -500 }
+			# 都市统筹按付款时条件降低运输支出，备料数量和目标规则保持。
+			if = {
+				limit = { artifact_civil_engineering_budget_active = yes }
+				add_resource = { energy = -300 }
+			}
+			else = { add_resource = { energy = -500 } }
+		}
+		owner = {
 			random_owned_colony = {
 				limit = { carrier = { artifact_system_engineering_delivery_target = yes } }
 				carrier = { add_modifier = { modifier = acs_strategic_supply_reserved days = -1 } }
