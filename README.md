@@ -8,9 +8,15 @@
 
 ## 新会话入口
 
+先读[HANDOFF：跨AI短交接](HANDOFF.md)、[共享规范](AGENTS.md)与[TODO当前事项](docs/TODO.md)，即可确认授权、保存点和下一步。需要操作游戏时再读操作说明；下面的详细设计与历史证据按需查阅，不要求接手时全部通读。
+
+后续执行[开发与验收工作流](docs/DEVELOPMENT_WORKFLOW.md)：连续开发、阶段验收，普通试玩约20分钟、同一自动操作问题排障最多10分钟；使用[交接模板](docs/templates/AI_HANDOFF_TEMPLATE.md)在额度不足前保存，不因更换AI重测历史包。
+
+## 按需设计与证据
+
 1. [当前进度](docs/PROJECT_STATUS.md)：当前工作包、完成层级、阻塞和下一步。
    接手操作见 [可用操作与执行条件](docs/AGENT_OPERATIONS.md)：游戏启动、截图、英文扫描码输入、窗口点击、Blender、存档及Git能力记录；先确认本会话入口，不重放旧测试命令。
-2. [主线工作包](docs/design/aemusa_main_story_implementation_work_packages_v1.0.md)：范围、依赖与逐包授权记录。
+2. [主线工作包](docs/design/aemusa_main_story_implementation_work_packages_v1.0.md)：范围、依赖与历史授权记录；测试频率按当前开发与验收工作流执行。
 3. [里程碑1实施方案](docs/design/aemusa_main_story_awp_06_mechanism_proposal.md)：新旗舰、新巨构与专属危机范围；首版可玩内容已完成，[最新验收与续接](reports/aemusa_main_story_milestone_1_2026-10-07.md)记录运行结果及受控边界。
 4. [里程碑2实施说明](docs/design/aemusa_main_story_milestone_2_implementation.md)：终章、独立决定、三结局、等级补足与尾声；[本轮续接](reports/aemusa_main_story_milestone_2_2026-10-07.md)区分工具检查和游戏内验收。
 5. [AWP-05 运行记录](reports/aemusa_main_story_awp_05_flow_2026-09-29.md)：第八至第十章正常流程及关键存读档证据。

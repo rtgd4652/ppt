@@ -1,6 +1,6 @@
 # R3d 中期军备与攻坚实施规格
 
-2026-10-21，基线46afcab，沿已批准公共路线D08／D09／D11／D18／D21接入；本轮不改旧三个总包、旧组件、个人转变／主线入口或R3c状态。目标版本4.5.1，本机原生参考4.5.2；尚无兼容或运行通过结论。
+2026-10-21制定，2026-10-31同步运行结果。实施基线46afcab，沿已批准公共路线D08／D09／D11／D18／D21接入；保留旧三个总包、旧组件、个人转变／主线入口和R3c状态。目标版本4.5.1，本机4.5.2（ac2e）代表运行已通过；不代表跨版本完整兼容。
 
 | 节点 | 新能力与代价 |
 | --- | --- |
@@ -18,10 +18,14 @@
 
 本机4.5.2的00_utilities_drives提供small／ftl_components、充能及脱离机会字段；00_utilities_aux提供原生恢复字段；16_static_modifiers_overlord使用星际速度字段。维修维护折扣按ship作用域修正，资源永不产生；原生恢复百分比字段不自行换算成未经确认的日恢复值。
 
-6项定向与静态检查通过；生成时漏写的武器type及错误AI字段在冷启动前被合同测试拦截并修复。运行仍待验：正常普通舰一套代表装配和改装，单支攻坚军训练，一次完成态实际读档；不展开全部尺寸、实际战斗或自然平衡。R3c证据直接复用。
+6项定向与静态检查通过；生成时漏写的武器type及错误AI字段在冷启动前被合同测试拦截并修复。10月31日，一套普通护卫舰代表装配与正常改装、单支攻坚军正常训练、一次完成态实际读档通过；结果档2293.10.11保留。研究与公共飞升受控补齐，未使用快速完工，见[运行结果](../../reports/artifact_civilization_r3d_runtime_2026-10-31.md)和[检查点](../../reports/artifact_civilization_r3d_checkpoint_2026-10-31.json)。
+
+实舰提示已显示维护−5%、每日船体恢复3%／装甲恢复6%；受伤后的实际恢复和维护结算差额未测，全部尺寸、实战、自然科研与整体平衡也未扩测。按[阶段验收规则](../DEVELOPMENT_WORKFLOW.md)保留这些边界并继续后续开发，不重做本包或R3c已过测试。
 
 新文件：artifact_midgame_military_technology.txt、artifact_midgame_military_components.txt、artifact_midgame_military_sets.txt、artifact_resonance_siege_armies.txt、artifact_midgame_military_l_simp_chinese.yml。完整字段见[结构化规格](artifact_civilization_r3d_implementation_spec_v0.1.json)。
 
-首次冷启动另报失效单数ship_upkeep_mult；已按本机原生00_scripted_action_components.txt的后勤光环改为ships_upkeep_mult，并补防回归合同。启动期同时发生图形模块访问异常，因果未定；不据源码修正宣称崩溃已解决。
+## 历史故障与修复记录
 
-10月21日收尾复查：修复后第二次冷启动进入4.5.2（ac2e）主菜单，该字段错误未复现；未载档或提交命令。代表装配、训练、本舰维护实际效果和完成态读档仍待验，见[运行记录](../../reports/artifact_civilization_r3d_runtime_2026-10-21.md)。
+首次冷启动另报失效单数ship_upkeep_mult；已按本机原生00_scripted_action_components.txt的后勤光环改为ships_upkeep_mult，并补防回归合同。启动期同时发生图形模块访问异常，因果未定；不据源码修正或后续单次流程成功宣称崩溃根因已解决。
+
+10月21日收尾复查：修复后第二次冷启动进入4.5.2（ac2e）主菜单，该字段错误未复现；当时未载档或提交命令，代表装配、训练、本舰维护实际效果和完成态读档仍待验，见[当日记录](../../reports/artifact_civilization_r3d_runtime_2026-10-21.md)。当前结果以上方10月31日记录为准，不将这段历史待验当作新任务。

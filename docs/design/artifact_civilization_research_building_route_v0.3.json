@@ -1,8 +1,8 @@
 {
   "schema_version": 2,
   "date": "2026-10-14",
-  "updated": "2026-10-21",
-  "status": "r3d_implemented_runtime_pending",
+  "updated": "2026-10-31",
+  "status": "r3d_representative_runtime_passed_r3e_not_implemented",
   "authorization": {
     "priority": "用户确认：先补完整科技与建筑路线，再继续大量画图标，减少返工。",
     "counts": "用户提醒陆军及舰船组件科技；补8个有独立用途的节点，公共目标80（旧19＋新增61），27类46阶段建筑和4项个人候选不变。数量是可审查草案，不是已实现或逐项定稿。",
@@ -127,9 +127,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "建设基准观测站，承担仪器标定与初级研究；后续升级到原黑门观测站，不另建标定所。",
-      "implementation_key": "tech_artifact_baseline_observation_calibration"
+      "implementation_key": "tech_artifact_baseline_observation_calibration",
+      "runtime_report": "reports/artifact_civilization_r1_runtime_2026-10-17.md",
+      "runtime_scope": "R1代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "A04",
@@ -141,9 +143,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "开放样本保管库与有限批次封存项目；样本记录不新增全局资源。",
-      "implementation_key": "tech_artifact_sample_containment"
+      "implementation_key": "tech_artifact_sample_containment",
+      "runtime_report": "reports/artifact_civilization_r1_runtime_2026-10-17.md",
+      "runtime_scope": "R1代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "A05",
@@ -337,9 +341,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "建设标准件工坊，为营建、舰载接口和后续神器锻造准备普通工程基础。",
-      "implementation_key": "tech_artifact_standard_parts"
+      "implementation_key": "tech_artifact_standard_parts",
+      "runtime_report": "reports/artifact_civilization_r1_runtime_2026-10-17.md",
+      "runtime_scope": "R1代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "B07",
@@ -352,9 +358,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "在标准件工坊或原神器工坊中开放材料试制，不另建材料试验场；与营建共用有限本地项目入口。",
-      "implementation_key": "tech_artifact_resonance_material_screening"
+      "implementation_key": "tech_artifact_resonance_material_screening",
+      "runtime_report": "reports/artifact_civilization_r1_runtime_2026-10-17.md",
+      "runtime_scope": "R1代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "B08",
@@ -396,9 +404,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "建设矿脉测绘站，开发目标矿区后才能升级为既有稳定站。",
-      "implementation_key": "tech_artifact_precision_vein_mapping"
+      "implementation_key": "tech_artifact_precision_vein_mapping",
+      "runtime_report": "reports/artifact_civilization_r2a_runtime_2026-10-17.md",
+      "runtime_scope": "R2a代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "B11",
@@ -425,9 +435,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "开放回收处理厂；以岗位、能源和维护换取副产物再利用。",
-      "implementation_key": "tech_artifact_byproduct_recycling"
+      "implementation_key": "tech_artifact_byproduct_recycling",
+      "runtime_report": "reports/artifact_civilization_r2a_runtime_2026-10-17.md",
+      "runtime_scope": "R2a代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "B13",
@@ -549,9 +561,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "建设社区服务中心与基础民生工场，支持早期殖民地日常供给。",
-      "implementation_key": "tech_artifact_colony_public_services"
+      "implementation_key": "tech_artifact_colony_public_services",
+      "runtime_report": "reports/artifact_civilization_r1_runtime_2026-10-17.md",
+      "runtime_scope": "R1代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "C08",
@@ -564,9 +578,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "建设记忆档案室；管理公共记录，与危险样本和旧日神器档案分别存放。",
-      "implementation_key": "tech_artifact_memory_cataloguing"
+      "implementation_key": "tech_artifact_memory_cataloguing",
+      "runtime_report": "reports/artifact_civilization_r1_runtime_2026-10-17.md",
+      "runtime_scope": "R1代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "C09",
@@ -721,14 +737,16 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "开放近距离武器族试制，保持射程和追踪取舍。",
       "implementation_key": "tech_artifact_close_resonance_weapons",
       "proposed_key": "tech_artifact_close_resonance_weapons",
       "category": "particles",
       "cost": 3600,
       "weight": 90,
-      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+      "runtime_scope": "R3b代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "D07",
@@ -741,14 +759,16 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "解锁公共偏折护盾变体，以能耗和恢复能力形成取舍；实体装甲入口另列D15。",
       "implementation_key": "tech_artifact_resonance_deflection",
       "proposed_key": "tech_artifact_resonance_deflection",
       "category": "field_manipulation",
       "cost": 3600,
       "weight": 90,
-      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+      "runtime_scope": "R3b代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "D08",
@@ -762,9 +782,11 @@
       ],
       "gate": null,
       "existing_key": "tech_artifact_long_range_phase_projection",
-      "status": "implemented_runtime_pending",
+      "status": "implemented_representative_runtime_passed",
       "capability": "开放长距离武器升级，牺牲近程表现或追踪，不替代全部武器。",
-      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+      "runtime_scope": "S型代表装配、正常改装与结果读档通过；研究受控，M/L与实战未验。"
     },
     {
       "id": "D09",
@@ -777,9 +799,11 @@
       ],
       "gate": null,
       "existing_key": "tech_artifact_layered_phase_defense",
-      "status": "implemented_runtime_pending",
+      "status": "implemented_representative_runtime_passed",
       "capability": "解锁分层护盾与硬化；复合装甲变体另要求已知D15，组件槽位、功耗和维护构成取舍。",
-      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+      "runtime_scope": "S型盾／甲代表装配、正常改装与结果读档通过；研究受控，M/L与实战未验。"
     },
     {
       "id": "D10",
@@ -807,9 +831,11 @@
       ],
       "gate": null,
       "existing_key": "tech_artifact_battle_damage_reclamation",
-      "status": "implemented_runtime_pending",
+      "status": "implemented_representative_runtime_passed",
       "capability": "开放战后维修和有上限的回收方案；不以舰船自毁循环产出资源。",
-      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+      "runtime_scope": "A槽正常改装、结果读档及实舰提示显示通过；受伤恢复与维护结算差额未测。"
     },
     {
       "id": "D12",
@@ -891,9 +917,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "source_implemented_static_checked_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "capability": "在当地标准件工坊或原神器工坊中组织付费模块化营建，不另建低级营建站或免费生成建筑。",
-      "implementation_key": "tech_artifact_modular_colony_construction"
+      "implementation_key": "tech_artifact_modular_colony_construction",
+      "runtime_report": "reports/artifact_civilization_r1_runtime_2026-10-17.md",
+      "runtime_scope": "R1代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "E04",
@@ -1182,9 +1210,11 @@
       "capability": "解锁适配正常公共舰体的反应堆族，以功率、造价和维护支持高耗能配置；不用命运之主专属核心填充公共路线。",
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "implementation_key": "tech_artifact_ship_phase_power",
-      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+      "runtime_scope": "R3b代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "D17",
@@ -1202,9 +1232,11 @@
       "capability": "解锁常规亚光速推进器变体，在速度、闪避、能耗间取舍；与超空间航行分开。",
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_package_representative_runtime_recorded",
       "implementation_key": "tech_artifact_phase_maneuvering",
-      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+      "runtime_scope": "R3b代表路径已有运行证据；本节点及其变体的覆盖范围以报告为准，不等于逐项自然科研、全部分支或平衡通过。"
     },
     {
       "id": "D18",
@@ -1223,8 +1255,10 @@
       "capability": "解锁公共FTL组件变体，以航道航行和充能性能分工；不自动提供战略跳跃或使用旧专属跃迁核心。",
       "gate": null,
       "existing_key": "tech_artifact_hyperspace_coordination",
-      "status": "implemented_runtime_pending",
-      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
+      "status": "implemented_representative_runtime_passed",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+      "runtime_scope": "普通舰FTL正常改装与结果读档通过；研究受控，航行性能未专项测。"
     },
     {
       "id": "D19",
@@ -1285,8 +1319,10 @@
       "capability": "解锁高耐久的共鸣攻坚军，承担高强度地面突破，以训练、合金维护和更高附带伤害区别定向登陆队。",
       "gate": null,
       "existing_key": "tech_artifact_resonance_siege_engineering",
-      "status": "implemented_runtime_pending",
-      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
+      "status": "implemented_representative_runtime_passed",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+      "runtime_scope": "单支正常训练、运输队及结果读档通过；研究受控，实战未验。"
     },
     {
       "id": "D22",
@@ -1949,8 +1985,8 @@
   "implementation": {
     "R1a": {
       "date": "2026-10-14",
-      "status": "source_implemented_static_checked_runtime_pending",
-      "runtime_status": "pending",
+      "status": "source_implemented_static_checked_package_runtime_recorded",
+      "runtime_status": "see_R1_runtime_representative_scope",
       "balance_status": "pending",
       "technology_keys": {
         "A03": "tech_artifact_baseline_observation_calibration",
@@ -1966,12 +2002,14 @@
         "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
         "mod/interface/artifact_public_foundation_icons.gfx"
       ],
-      "report": "reports/artifact_civilization_r1a_implementation_2026-10-14.md"
+      "report": "reports/artifact_civilization_r1a_implementation_2026-10-14.md",
+      "runtime_report": "reports/artifact_civilization_r1_runtime_2026-10-17.md",
+      "runtime_scope": "R1合并代表路径及一次关键读档通过；不是R1a／R1b每个项目模式分别运行通过。"
     },
     "R1b": {
       "date": "2026-10-14",
-      "status": "source_implemented_static_checked_runtime_pending",
-      "runtime_status": "pending",
+      "status": "source_implemented_static_checked_package_runtime_recorded",
+      "runtime_status": "see_R1_runtime_representative_scope",
       "balance_status": "pending",
       "technology_keys": {
         "A04": "tech_artifact_sample_containment",
@@ -1983,7 +2021,9 @@
       "new_jobs": 1,
       "project_entry_groups": 2,
       "project_modes": 4,
-      "report": "reports/artifact_civilization_r1b_implementation_2026-10-14.md"
+      "report": "reports/artifact_civilization_r1b_implementation_2026-10-14.md",
+      "runtime_report": "reports/artifact_civilization_r1_runtime_2026-10-17.md",
+      "runtime_scope": "R1合并代表路径及一次关键读档通过；不是R1a／R1b每个项目模式分别运行通过。"
     },
     "R1_runtime": {
       "date": "2026-10-17",
@@ -2184,9 +2224,15 @@
     },
     "R3d": {
       "date": "2026-10-21",
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "representative_fit_normal_refit_recruitment_and_one_result_reload_passed",
       "report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
-      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+      "updated": "2026-10-31",
+      "runtime_status": "representative_fit_normal_refit_recruitment_and_one_result_reload_passed",
+      "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+      "runtime_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-31.json",
+      "runtime_limits": "研究与公共飞升受控；M/L、实战、受伤恢复、维护结算差额及自然科研和平衡未扩测；旧崩溃根因未确定。",
+      "balance_status": "pending"
     }
   },
   "current_counts": {
@@ -2196,7 +2242,7 @@
     "component_definitions": 85,
     "building_definitions": 29,
     "starbase_building_definitions": 1,
-    "note": "R3d五科技／11组件／一攻坚军源码与定向／静态通过，运行待验；R3c代表证据保留。"
+    "note": "源码数量沿用10月21日盘点；10月31日R3d代表配装、正常改装、攻坚军训练与一次结果实际读档通过，边界见运行报告。"
   },
   "orbital_buildings": [
     {
@@ -2211,7 +2257,7 @@
   "supersedes": "docs/design/artifact_civilization_research_building_route_v0.2.json",
   "military_expansion": {
     "date": "2026-10-17",
-    "status": "route_refined_not_implemented",
+    "status": "r3a_through_r3d_representative_runtime_passed_later_batches_pending",
     "plan": "docs/design/artifact_civilization_military_research_plan_v0.1.json",
     "new_nodes": [
       "D15",
@@ -2402,9 +2448,12 @@
           "D18",
           "D21"
         ],
-        "status": "implemented_static_pass_runtime_pending",
+        "status": "representative_fit_normal_refit_recruitment_and_one_result_reload_passed",
         "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
-        "report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md"
+        "report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
+        "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+        "runtime_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-31.json",
+        "runtime_limits": "研究与公共飞升受控；M/L、实战、受伤恢复、维护结算差额及自然科研和平衡未扩测；旧崩溃根因未确定。"
       },
       {
         "id": "R3e",
@@ -2434,8 +2483,8 @@
         ]
       }
     ],
-    "current_army_definitions": 3,
-    "current_component_definitions": 54,
+    "current_army_definitions": 5,
+    "current_component_definitions": 85,
     "public_legacy_component_definitions": 43,
     "legacy_hull_locked_components": 7,
     "legacy_aura_prototypes": 4,
@@ -2456,7 +2505,11 @@
         "D13",
         "D18"
       ]
-    }
+    },
+    "updated": "2026-10-31",
+    "baseline_inventory_date": "2026-10-17",
+    "baseline_army_definitions": 3,
+    "baseline_component_definitions": 54
   },
   "remaining_r2_packages": [],
   "change_log": {
@@ -2475,5 +2528,7 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
-  "r3d_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-21.json"
+  "r3d_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-31.json",
+  "validation_policy": "docs/DEVELOPMENT_WORKFLOW.md",
+  "r3d_runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md"
 }

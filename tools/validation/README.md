@@ -2,6 +2,12 @@
 
 使用 Python 3.10 或更新版本的标准库；不需要安装第三方依赖。命令从仓库根目录执行。
 
+## 执行频率（2026-10-31）
+
+按[开发与验收工作流](../../docs/DEVELOPMENT_WORKFLOW.md)选择本次实际需要的检查。文档修改只核对链接、结构化数据和差异；源码修改优先静态与受影响的定向检查。低风险包可在检查通过后继续开发，游戏验证并入可玩阶段，不逐项重启或存读档。已有通过证据且源码未变时直接复用。
+
+普通阶段试玩约20分钟，同一自动操作问题排障最多10分钟；到预算后记录未完成内容，不把待验说成通过，也不让工具排障长期占用开发时间。下面列出可用命令，不是每次接手都要全部执行的清单。
+
 ## 只读静态检查
 
 ```powershell
@@ -29,7 +35,7 @@ python -B tools/validation/check_mod.py --game-dir '实际的 Stellaris 安装�
 
 未指定时，原版路径标记为未验证，不误报为项目资源缺失。原版脚本语义、作用域、效果合法性、参数化接口的实际写入语义、事件可达性、引擎隐式图标、UI 曝光、存档恢复和玩法平衡仍需原版文件核对与运行测试。静态通过不能将 `runtime_status` 改为通过；图标修复结果应以最新冷启动日志与游戏内显示为准。
 
-## 工具回归测试
+## 全套工具回归测试（按需）
 
 ```powershell
 python -B -m unittest discover -s tools/validation/tests -v
@@ -58,6 +64,8 @@ python -B -m unittest discover -s tools/validation/tests -p test_artifact_city_p
 2026-10-18正常城市规划与一次进行态读档证据见[运行记录](../../reports/artifact_civilization_r2d_runtime_2026-10-18.md)；C09真实轰炸及其他规划方向仍未作引擎验收。
 
 ## 保存工作区快照
+
+普通阶段优先中文Git提交与[HANDOFF](../../HANDOFF.md)。仅在需要保留未提交二进制／独立恢复点等具体场景时使用以下快照；其内置校验用于快照完整性，不要求日常再对项目、原存档和每个结果重复算哈希。
 
 ```powershell
 python -B tools/validation/snapshot_workspace.py --output temp/checkpoints/本次测试前.zip

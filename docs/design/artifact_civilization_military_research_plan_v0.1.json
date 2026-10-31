@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3d_implemented_runtime_pending",
+  "status": "r3d_representative_runtime_passed_r3e_not_implemented",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -52,9 +52,11 @@
       "capability": "解锁适配正常公共舰体的反应堆族，以功率、造价和维护支持高耗能配置；不用命运之主专属核心填充公共路线。",
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_representative_fit_normal_refit_and_reload_passed",
       "implementation_key": "tech_artifact_ship_phase_power",
-      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+      "runtime_scope": "代表护卫舰正常改装和一次结果实际载回；研究受控，其他舰型、战斗及自然平衡未扩测。"
     },
     {
       "id": "D17",
@@ -72,9 +74,11 @@
       "capability": "解锁常规亚光速推进器变体，在速度、闪避、能耗间取舍；与超空间航行分开。",
       "gate": null,
       "existing_key": null,
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "implemented_representative_fit_normal_refit_and_reload_passed",
       "implementation_key": "tech_artifact_phase_maneuvering",
-      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json"
+      "spec": "docs/design/artifact_civilization_r3b_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3b_runtime_2026-10-18.md",
+      "runtime_scope": "代表护卫舰正常改装和一次结果实际载回；研究受控，其他舰型、战斗及自然平衡未扩测。"
     },
     {
       "id": "D18",
@@ -93,8 +97,10 @@
       "capability": "解锁公共FTL组件变体，以航道航行和充能性能分工；不自动提供战略跳跃或使用旧专属跃迁核心。",
       "gate": null,
       "existing_key": "tech_artifact_hyperspace_coordination",
-      "status": "implemented_runtime_pending",
-      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
+      "status": "implemented_representative_runtime_passed",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+      "runtime_scope": "普通舰FTL正常改装与结果读档通过；研究受控，航行性能未专项测。"
     },
     {
       "id": "D19",
@@ -155,8 +161,10 @@
       "capability": "解锁高耐久的共鸣攻坚军，承担高强度地面突破，以训练、合金维护和更高附带伤害区别定向登陆队。",
       "gate": null,
       "existing_key": "tech_artifact_resonance_siege_engineering",
-      "status": "implemented_runtime_pending",
-      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json"
+      "status": "implemented_representative_runtime_passed",
+      "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
+      "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+      "runtime_scope": "单支正常训练、运输队及结果读档通过；研究受控，实战未验。"
     },
     {
       "id": "D22",
@@ -1687,9 +1695,12 @@
         "D18",
         "D21"
       ],
-      "status": "implemented_static_pass_runtime_pending",
+      "status": "representative_fit_normal_refit_recruitment_and_one_result_reload_passed",
       "spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md"
+      "report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
+      "runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
+      "runtime_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-31.json",
+      "runtime_limits": "研究与公共飞升受控；M/L、实战、受伤恢复、维护结算差额及自然科研和平衡未扩测；旧崩溃根因未确定。"
     },
     {
       "id": "R3e",
@@ -1753,7 +1764,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a、R3b、R3c代表范围通过；R3c停用、转让和实战未作引擎扩测，后续包待实施。",
+    "runtime": "R3a～R3d各自代表范围通过，沿用既有证据；R3d研究／公共飞升受控，实战、受伤恢复、维护结算差额、全部尺寸和自然平衡未验。R3e及后续包待实施。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1777,7 +1788,7 @@
       "D18"
     ]
   },
-  "updated": "2026-10-21",
+  "updated": "2026-10-31",
   "r3a_spec": "docs/design/artifact_civilization_r3a_implementation_spec_v0.1.json",
   "r3a_report": "reports/artifact_civilization_r3a_implementation_2026-10-18.md",
   "r3a_runtime_report": "reports/artifact_civilization_r3a_runtime_2026-10-18.md",
@@ -1795,9 +1806,11 @@
     "component_definitions": 85,
     "building_definitions": 29,
     "starbase_building_definitions": 1,
-    "note": "R3d五科技／11组件／一攻坚军源码与定向／静态通过，运行待验；R3c代表证据保留。"
+    "note": "源码数量沿用10月21日盘点；10月31日R3d代表配装、正常改装、攻坚军训练与一次结果实际读档通过，边界见运行报告。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
-  "r3d_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-21.json"
+  "r3d_checkpoint": "reports/artifact_civilization_r3d_checkpoint_2026-10-31.json",
+  "validation_policy": "docs/DEVELOPMENT_WORKFLOW.md",
+  "r3d_runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md"
 }

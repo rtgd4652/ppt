@@ -1,9 +1,12 @@
 # 项目文档索引
 
-更新：2026-10-10。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)。
+更新：2026-10-31。本文只负责导航，当前状态统一维护在 [PROJECT_STATUS](PROJECT_STATUS.md)；首次接手先读短交接，不必逐项打开下列历史资料。
 
 ## 进入项目
 
+- [跨AI短交接](../HANDOFF.md)：授权、保存点、当前下一步与本机材料边界。
+- [开发与验收工作流](DEVELOPMENT_WORKFLOW.md)：阶段验收、测试预算与额度将尽时的保存规则。
+- [AI交接模板](templates/AI_HANDOFF_TEMPLATE.md)：可供其他模型直接使用，不依赖聊天历史。
 - [架构与模块边界](ARCHITECTURE.md)
 - [当前进度](PROJECT_STATUS.md)
 - [智能体可用操作与接手说明](AGENT_OPERATIONS.md)：已验证能力、脚本入口、当前会话差异及失败处理；历史操作不自动重放。
@@ -13,6 +16,8 @@
 
 ## 设计与实施
 
+- [完整文明路线v0.3](design/artifact_civilization_research_building_route_v0.3.md)与[军备责任表](design/artifact_civilization_military_research_plan_v0.1.md)：当前52公共科技，后续从R3e细化。
+- [R3d规格](design/artifact_civilization_r3d_implementation_spec_v0.1.md)：代表配装／正常改装、攻坚军训练及一次结果载回通过，见[10月31日运行结果](../reports/artifact_civilization_r3d_runtime_2026-10-31.md)；未测尺寸、实战和自然平衡不混写为通过。
 - [R2f环境缓冲规格](design/artifact_civilization_r2f_implementation_spec_v0.1.md)：三类风险、原生维护及失效规则；[实施记录](../reports/artifact_civilization_r2f_implementation_2026-10-18.md)。
 - [R2e公共成果归档与研究园区规格](design/artifact_civilization_r2e_implementation_spec_v0.1.md)：真实成果、跨殖民地复现与本族升级；[源码保存](../reports/artifact_civilization_r2e_implementation_2026-10-18.md)、[代表运行](../reports/artifact_civilization_r2e_runtime_2026-10-18.md)及[检查点](../reports/artifact_civilization_r2e_checkpoint_2026-10-18.json)区分受控研究、样本正常流程和未扩测的材料分支。
 
@@ -26,7 +31,7 @@
 - [领袖成长与职责说明](mechanics/leader_growth_and_duty_v1.0.md)
 - [成长与自由组合提案](design/artifact_civilization_growth_and_combinations_v0.1.md)
 - [文明研究、传统与飞升实际路线](mechanics/artifact_civilization_route_v0.1.md)：19项文明科技、公共飞升、个人转变专属研究及2项遗留科技的边界；[C1记录](../reports/artifact_civilization_route_c1_2026-10-10.md)保存说明修正，[科技分离记录](../reports/artifact_technology_separation_2026-10-10.md)保存本次用户决定与文件拆分。
-- [C2殖民地应急预案](../reports/artifact_civilization_emergency_c2_2026-10-10.md)：当地中枢的付费准备、限时保护与重新整备；源码及定向检查已通过，游戏流程和真实读档待验。
+- [C2殖民地应急预案](../reports/artifact_civilization_emergency_c2_runtime_2026-10-12.md)：正常启动、真实轰炸保护和一次关键读档的限定范围已通过，其余场景不自动扩测。
 - [十人成长基准B1记录](../reports/artifact_growth_batch_b1_2026-10-09.md)：名册和公共计算已接入；各人的分级核心效果从B2继续，正式固定搭档按原著决定。
 - [成长核心B2首批记录](../reports/artifact_growth_batch_b2a_2026-10-09.md)：安的时序记录按取得时档位提供有限用途，丽按实际成长推进付费施工；加载和页面检查与完整运行边界见报告。
 - [B2首批10月10日运行与续接](../reports/artifact_growth_batch_b2a_runtime_2026-10-10.md)：安／丽档1正常流程、一次进行态读档和有限效果已通过，后续第二批复用；Computer Use与键盘限制已同步。
