@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-31",
+  "task": "R3f",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "source_base": "85445a8",
+  "spec": "docs/design/artifact_civilization_r3f_implementation_spec_v0.1.json",
+  "report": "reports/artifact_civilization_r3f_implementation_2026-10-31.md",
+  "counts": {
+    "date": "2026-10-31",
+    "public_technologies": 59,
+    "army_types": 5,
+    "component_definitions": 94,
+    "building_definitions": 35,
+    "starbase_building_definitions": 1,
+    "note": "R3f源码：新增2研究、9组件、2集合和1整补决议；运行待集中验证。R3e仅预留扣费及文件核对已通过，转运与实际读档待验。"
+  },
+  "validation": {
+    "new_tests": 6,
+    "affected_civil_supply_tests": 8,
+    "native_definitions": "7种行为、角色条件与9组件图标存在；不是运行通过",
+    "check_mod": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 0,
+      "script_files": 175,
+      "events": 254,
+      "localization_keys": 1869
+    }
+  },
+  "game_loaded_source": "8131d5b",
+  "latest_save": "2293.10.11-r3e-reserve.sav",
+  "latest_save_scope": "R3e正常预留一份；源端和接收端均未登记。存档文件核对成功，不等于引擎读档。",
+  "pending_input": null,
+  "next": "先细化R4公共高阶研究／工程；另行安排一次集中试玩补R3e转运与R3f代表装配／整补，复用旧证据。",
+  "preserve": [
+    "2293.10.11.sav",
+    "2292.06.22.sav",
+    "2291 baselines",
+    "tools/prototypes/aemusa_cross_system_megastructure/"
+  ],
+  "remote_push": "not performed"
+}

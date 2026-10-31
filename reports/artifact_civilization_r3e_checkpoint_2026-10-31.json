@@ -2,7 +2,7 @@
   "date": "2026-10-31",
   "task": "R3e",
   "status": "implemented_static_passed",
-  "runtime_status": "cold_start_and_baseline_load_passed_gameplay_pending",
+  "runtime_status": "reserve_paid_and_save_inspected_transfer_reload_pending",
   "source_base": "8bf495f",
   "source_checkpoint": "8131d5b",
   "report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
@@ -30,31 +30,54 @@
       "测试播放集只启用本Mod",
       "新进程冷启动进入主菜单",
       "载入保留的2293.10.11并确认暂停",
-      "控制台开关键尝试两次均未打开，未发送任何命令"
+      "控制台开关键尝试两次均未打开，未发送任何命令",
+      "后续新回合改用原生后端；控制台开关与3条前置命令成功提交",
+      "正常决议预留一份；矿物扣500、合金扣100",
+      "端点登记前被失焦和过期截图守卫拦截，未登记",
+      "用户另存2293.10.11-r3e-reserve，已读取文件核对；未实际载回"
     ],
     "latest_passed_source": "8b889fc",
     "latest_passed_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2293.10.11.sav",
     "version": "4.5.2 eb95",
-    "current_game_window": "2026-10-31约12:28，暂停于2293.10.11，系统视图，控制台关闭",
+    "current_game_window": "最后自动观察为2293.10.11暂停的保存菜单；用户随后确认另存完成，未再次读界面。",
     "pending_input": null,
     "loaded_source": "8131d5b",
-    "cheats_submitted": [],
-    "new_save_created": false,
-    "gui_backend": "Computer Use / @oai/sky",
-    "input_problem": "点击及载档成功；grave两次未被游戏接收，结束本轮输入尝试",
+    "cheats_submitted": [
+      "research_technology tech_artifact_distributed_supply_storage",
+      "research_technology tech_artifact_intercolony_transport",
+      "effect add_building=building_artifact_distribution_depot add_building=building_artifact_intercolony_terminal"
+    ],
+    "new_save_created": true,
+    "gui_backend": "本次原生守卫脚本；前次Computer Use各自独立回合",
+    "input_problem": "英文模式100ms/80ms输入、独立回车与控制台开关实际成功；前台焦点变化仍会拦截点击及存档名输入。",
     "source_patch_after_launch": "补mod_planet_jobs_minerals_upkeep_mult中文标签；此标签补丁尚未在新进程复核",
     "log_limits": [
       "缺少矿物维护费中文标签，已在源码补齐",
       "旧结果档读入提示两处Invalid ship class: none和一处舰队无星系转MIA；窗口未崩溃，尚未确定根因",
       "用户预设帝国依赖未启用Mod，存在旗帜／物种缺失提示"
+    ],
+    "new_save": "2293.10.11-r3e-reserve.sav",
+    "new_save_bytes": 2573589,
+    "passed_gameplay": [
+      "正常预留入口",
+      "实际支付500矿物和100合金",
+      "一份库存与原拥有者写入新档"
+    ],
+    "pending_gameplay": [
+      "登记与转运",
+      "当地使用与整补",
+      "引擎实际载回",
+      "精炼共治及自然平衡"
     ]
   },
-  "next": "集中验收时复用已有扫描码原生后端，先观察当前窗口和输入状态，再建立R3e前置；本轮没有待补交命令。后续源码R3f D10/D22。",
+  "next": "源码R3f已实现；下次集中试玩从新档接续未登记的两端，不重复预留与输入排障。R4依赖细化可先继续。",
   "preserve": [
     "2293.10.11.sav",
     "2292.06.22.sav",
     "2291 baselines",
     "tools/prototypes/aemusa_cross_system_megastructure/"
   ],
-  "remote_push": "not performed"
+  "remote_push": "not performed",
+  "runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md",
+  "save_inspection": "reports/artifact_civilization_r3e_reserve_save_2026-10-31.json"
 }

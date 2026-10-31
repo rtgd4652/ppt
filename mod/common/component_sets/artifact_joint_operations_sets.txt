@@ -1,0 +1,12 @@
+# 两个独立A槽集合；作战电脑继续使用原生必需槽combat_computers。
+component_set = {
+	key = "ARTIFACT_TACTICAL_COORDINATION_MODULE"
+	icon = "GFX_ship_part_artifact_combat_computer_2"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "ARTIFACT_SUPPORT_COORDINATION_MODULE"
+	icon = "GFX_ship_part_artifact_sensor_2"
+	icon_frame = 1
+}

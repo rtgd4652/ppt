@@ -26,6 +26,8 @@
 
 R3d详细证据见[运行结果](../reports/artifact_civilization_r3d_runtime_2026-10-31.md)。10月31日R3e阶段又通过Computer Use完成Steam启动、游戏库启动、Paradox启动器点击“开始游戏”、群星冷启动与旧档载入；启动器按钮当前可由可访问性树读取。群星`grave`开关键两次未接收，未提交命令，不将鼠标成功等同键盘成功。见[R3e记录](../reports/artifact_civilization_r3e_implementation_2026-10-31.md)。旧窗口ID、坐标和输入文件不作为执行依据。
 
+同日后续独立回合统一使用原生后端，扫描码控制台开关、两项研究与设施命令共3条实际提交成功。中文模式第一次输入未提交，清理本轮已知文本、在空行切换后成功；无需重复历史help排障。失焦与截图过期守卫仍会停止操作，自动另存名被拦截后由用户完成一次保存；不把控制台成功称为所有输入已解决。命令归档在本地`runtime-backups/r3e-reserve-2026-10-31/`，不是待执行队列；详见[R3e实际运行](../reports/artifact_civilization_r3e_runtime_2026-10-31.md)。
+
 ## Codex长上下文与新功能使用约定
 
 用户于2026-10-31要求开启长上下文，并在后续工作中使用适合任务的Codex新功能。已在本机 `C:\Users\Admin\.codex\config.toml` 写入：

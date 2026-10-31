@@ -210,6 +210,12 @@ building_artifact_intercolony_terminal = {
 	planet_limit = 1
 	prerequisites = { "tech_artifact_intercolony_transport" }
 	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	# 联运站是当地整补唯一供源；失去控制或停用后停止训练收益。
+	triggered_planet_modifier = {
+		potential = { planet = { artifact_civil_supply_expedition_active = yes } }
+		planet_army_build_speed_mult = 0.25
+		army_starting_experience_add = 50
+	}
 	resources = {
 		category = planet_buildings
 		cost = {

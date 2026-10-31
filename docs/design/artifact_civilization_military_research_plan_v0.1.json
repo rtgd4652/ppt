@@ -1,6 +1,6 @@
 {
   "date": "2026-10-17",
-  "status": "r3e_static_and_cold_load_passed_gameplay_pending",
+  "status": "r3f_static_passed_runtime_pending",
   "authorization": "用户提醒陆军和舰船组件科技，纳入完整公共路线；保留现有总包与已获能力。",
   "previous_target": 72,
   "new_target": 80,
@@ -182,8 +182,12 @@
       "proposed_key": "tech_artifact_expedition_reconstitution",
       "capability": "开放当地有成本的陆军整补方案，以训练／补充效率表达持续作战能力；不承诺战场治疗、传送补员或免费复活。",
       "gate": null,
-      "existing_key": null,
-      "status": "proposed_not_implemented"
+      "existing_key": "tech_artifact_expedition_reconstitution",
+      "status": "implemented_static_passed",
+      "implementation_key": "tech_artifact_expedition_reconstitution",
+      "runtime_status": "not_run",
+      "implementation_package": "R3f",
+      "spec": "docs/design/artifact_civilization_r3f_implementation_spec_v0.1.json"
     }
   ],
   "inventory": {
@@ -1588,7 +1592,10 @@
       "nodes": [
         "D10"
       ],
-      "role": "按交战距离和平台职责提供电脑变体，并分别核对实际行为；保留旧ARTIFACT_COMBAT_COMPUTER系列。"
+      "role": "按交战距离和平台职责提供电脑变体，并分别核对实际行为；保留旧ARTIFACT_COMBAT_COMPUTER系列。",
+      "status": "implemented_static_passed",
+      "spec": "docs/design/artifact_civilization_r3f_implementation_spec_v0.1.json",
+      "runtime_status": "not_run"
     },
     {
       "id": "field_hull",
@@ -1631,7 +1638,8 @@
       "nodes": [
         "D22"
       ],
-      "role": "依赖C11联运和B12回收；原生训练／补充机制，具体数值随军备包确定。"
+      "role": "消耗接收端一份物资、500能源、200消费品，360日当地训练速度+25%、新军经验+50；不治疗或复活现有军队。",
+      "status": "implemented_static_passed"
     },
     {
       "id": "late",
@@ -1714,12 +1722,13 @@
       ],
       "date": "2026-10-31",
       "status": "implemented_static_passed",
-      "runtime_status": "cold_start_and_baseline_load_passed_gameplay_pending",
+      "runtime_status": "reserve_paid_and_save_inspected_transfer_reload_pending",
       "spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",
       "dependency_note": "C11 requires B11; implement its approved storage node in the same batch",
-      "balance_status": "pending"
+      "balance_status": "pending",
+      "runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md"
     },
     {
       "id": "R3f",
@@ -1727,7 +1736,14 @@
       "nodes": [
         "D10",
         "D22"
-      ]
+      ],
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "spec": "docs/design/artifact_civilization_r3f_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r3f_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r3f_checkpoint_2026-10-31.json",
+      "balance_status": "pending"
     },
     {
       "id": "R4_military",
@@ -1810,12 +1826,12 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 57,
+    "public_technologies": 59,
     "army_types": 5,
-    "component_definitions": 85,
+    "component_definitions": 94,
     "building_definitions": 35,
     "starbase_building_definitions": 1,
-    "note": "R3e源码：新增5研究（含C11必要前置B11）、6行星建筑和1岗位；运行待阶段试玩。R3d代表证据复用。"
+    "note": "R3f源码：新增2研究、9组件、2集合和1整补决议；运行待集中验证。R3e仅预留扣费及文件核对已通过，转运与实际读档待验。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -1824,5 +1840,9 @@
   "r3d_runtime_report": "reports/artifact_civilization_r3d_runtime_2026-10-31.md",
   "r3e_spec": "docs/design/artifact_civilization_r3e_implementation_spec_v0.1.json",
   "r3e_report": "reports/artifact_civilization_r3e_implementation_2026-10-31.md",
-  "r3e_checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json"
+  "r3e_checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",
+  "r3f_spec": "docs/design/artifact_civilization_r3f_implementation_spec_v0.1.json",
+  "r3f_report": "reports/artifact_civilization_r3f_implementation_2026-10-31.md",
+  "r3f_checkpoint": "reports/artifact_civilization_r3f_checkpoint_2026-10-31.json",
+  "r3e_runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md"
 }

@@ -1,0 +1,34 @@
+{
+  "save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\_-258619271\\2293.10.11-r3e-reserve.sav",
+  "bytes": 2573589,
+  "date": "2293.10.11",
+  "player_country": 0,
+  "reserve_planet": 3,
+  "stock_count": 1,
+  "source_count": 0,
+  "receiver_count": 0,
+  "original_owner_target": "acs_owner3 -> country 0",
+  "resource_before": {
+    "energy": "83641.67515",
+    "minerals": "141356.52464",
+    "alloys": "145000",
+    "consumer_goods": "136572.92452"
+  },
+  "resource_after": {
+    "energy": "83641.67515",
+    "minerals": "140856.52464",
+    "alloys": "144900",
+    "consumer_goods": "136572.92452"
+  },
+  "resource_delta": {
+    "energy": "0.00000",
+    "minerals": "-500.00000",
+    "alloys": "-100",
+    "consumer_goods": "0.00000"
+  },
+  "buildings": {
+    "building_artifact_distribution_depot": 1,
+    "building_artifact_intercolony_terminal": 1
+  },
+  "readback_kind": "read save contents only; no engine reload"
+}

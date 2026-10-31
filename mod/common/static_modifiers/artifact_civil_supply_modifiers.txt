@@ -66,3 +66,9 @@ acs_megastructure_supply = {
 	megastructure_build_speed_mult = 0.10
 }
 
+# 标记记录已支付的360日支援期；训练收益由正常运作的联运站派生。
+acs_expedition_reconstitution = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+

@@ -39,3 +39,6 @@ art/reference_library/**
 # 爱缪莎旗舰隔离原型的本地组装与测试产物；源骨架仍纳入版本控制。
 tools/prototypes/aemusa_flagship/build/
 tools/prototypes/aemusa_flagship/test_output/
+
+# 本机隔离试玩存档和输入证据；结构化核对结果保存在reports，不提交二进制存档。
+/runtime-backups/

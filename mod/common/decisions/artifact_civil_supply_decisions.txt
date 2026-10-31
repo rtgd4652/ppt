@@ -66,6 +66,29 @@ decision_artifact_civil_construction = {
 	ai_weight = { weight = 0 }
 }
 
+# 远征整补只在已登记接收端开放；费用与库存由效果再次核对。
+decision_artifact_civil_expedition = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_modifier = acs_link_receiver
+		owner = { has_technology = "tech_artifact_expedition_reconstitution" }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = acs_require_can_expedition
+			artifact_civil_supply_can_expedition = yes
+		}
+	}
+	effect = {
+		custom_tooltip = acs_offer_expedition
+		hidden_effect = { artifact_civil_supply_expedition = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
 decision_artifact_civil_register_source = {
 	owned_planets_only = yes
 	sound = "event_administrative_work"

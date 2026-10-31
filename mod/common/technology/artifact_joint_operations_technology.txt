@@ -1,0 +1,22 @@
+# R3f公共协同与整补：继承已实现的联运前置，不读取个人转变或替换旧军备总包。
+tech_artifact_joint_combat_core = {
+	area = society
+	icon = "tech_artifact_central_court_protocols"
+	cost = 7200
+	tier = 4
+	category = { military_theory }
+	prerequisites = { "tech_artifact_user_resonance_armaments" "tech_artifact_phase_ranging_array" "tech_artifact_intercolony_transport" }
+	weight = 70
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}
+
+tech_artifact_expedition_reconstitution = {
+	area = society
+	icon = "tech_artifact_seven_day_logistics"
+	cost = 7200
+	tier = 4
+	category = { military_theory }
+	prerequisites = { "tech_artifact_resonance_siege_engineering" "tech_artifact_intercolony_transport" "tech_artifact_byproduct_recycling" }
+	weight = 70
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}

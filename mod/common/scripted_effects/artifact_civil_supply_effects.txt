@@ -13,6 +13,7 @@ artifact_civil_supply_clear = {
 	remove_modifier = acs_civic_services
 	remove_modifier = acs_civic_adjusting
 	remove_modifier = acs_construction_supply
+	remove_modifier = acs_expedition_reconstitution
 	remove_carrier_flag = acs_managed
 	if = { limit = { exists = event_target:acs_owner@this } clear_global_event_target = acs_owner@this }
 }
@@ -65,6 +66,19 @@ artifact_civil_supply_construction = {
 		}
 		remove_modifier = acs_supply_reserved
 		add_modifier = { modifier = acs_construction_supply days = 180 }
+	}
+}
+
+# 先消耗实存物资；强制重复调用或费用不足不扣资源、不刷新期限。
+artifact_civil_supply_expedition = {
+	if = {
+		limit = { artifact_civil_supply_can_expedition = yes }
+		remove_modifier = acs_supply_reserved
+		owner = {
+			add_resource = { energy = -500 }
+			add_resource = { consumer_goods = -200 }
+		}
+		add_modifier = { modifier = acs_expedition_reconstitution days = 360 }
 	}
 }
 

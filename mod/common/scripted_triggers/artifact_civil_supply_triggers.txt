@@ -133,3 +133,22 @@ artifact_civil_supply_can_cancel_civic = {
 	artifact_civil_supply_original_owner = yes
 	OR = { has_modifier = acs_civic_industry has_modifier = acs_civic_research has_modifier = acs_civic_services }
 }
+
+# R3f整补沿用联运接收端身份与既有物资，不增加第二套库存。
+artifact_civil_supply_can_expedition = {
+	artifact_civil_supply_receiver = yes
+	artifact_civil_supply_stock = yes
+	NOT = { has_modifier = acs_expedition_reconstitution }
+	owner = {
+		has_technology = "tech_artifact_expedition_reconstitution"
+		has_resource = { type = energy amount >= 500 }
+		has_resource = { type = consumer_goods amount >= 200 }
+	}
+}
+
+# 设施或控制失效时立即停供，定期标记继续计时；转让清理仍走既有回调。
+artifact_civil_supply_expedition_active = {
+	has_modifier = acs_expedition_reconstitution
+	artifact_civil_supply_receiver = yes
+	owner = { has_technology = "tech_artifact_expedition_reconstitution" }
+}

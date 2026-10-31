@@ -180,5 +180,7 @@
     "related_city_planning_tests": 5
   },
   "runtime_checkpoint": "reports/artifact_civilization_r3e_checkpoint_2026-10-31.json",
-  "localization_keys": 115
+  "localization_keys": 115,
+  "runtime_status": "reserve_paid_and_save_inspected_transfer_reload_pending",
+  "runtime_report": "reports/artifact_civilization_r3e_runtime_2026-10-31.md"
 }

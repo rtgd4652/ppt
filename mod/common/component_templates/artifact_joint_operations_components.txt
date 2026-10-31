@@ -1,0 +1,184 @@
+# R3f按本机4.5.2原生角色限制和行为定义提供选择；旧电脑键与旧升级链保持。
+# 数值是首版取舍，不把A槽模块写成全舰队光环；原版图标暂作占位。
+
+utility_component_template = {
+	key = "ARTIFACT_JOINT_COMPUTER_SWARM"
+	size = small
+	icon = "GFX_ship_part_computer_swarm_sapient"
+	icon_frame = 1
+	power = -25
+	component_set = "combat_computers"
+	ship_behavior = "swarm"
+	upgrade_path = swarm
+	potential = {
+		ship_uses_swarm_role = yes
+		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
+	}
+	prerequisites = { "tech_artifact_joint_combat_core" }
+	modifier = { ship_evasion_mult = 0.15 }
+	ship_modifier = { ship_fire_rate_mult = 0.15 }
+	resources = { category = ship_components cost = { alloys = 45 rare_crystals = 1 } upkeep = { energy = 0.25 alloys = 0.05 } }
+	ai_tags = { gunship gunship_stealth }
+	ai_tag_weight = 0
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_JOINT_COMPUTER_PICKET"
+	size = small
+	icon = "GFX_ship_part_computer_picket_sapient"
+	icon_frame = 1
+	power = -25
+	component_set = "combat_computers"
+	ship_behavior = "picket"
+	upgrade_path = picket
+	potential = {
+		ship_uses_picket_role = yes
+		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
+	}
+	prerequisites = { "tech_artifact_joint_combat_core" }
+	ship_modifier = { ship_fire_rate_mult = 0.15 ship_tracking_add = 25 }
+	resources = { category = ship_components cost = { alloys = 45 rare_crystals = 1 } upkeep = { energy = 0.25 alloys = 0.05 } }
+	ai_tags = { screen screen_stealth }
+	ai_tag_weight = 0
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_JOINT_COMPUTER_LINE"
+	size = small
+	icon = "GFX_ship_part_computer_line_sapient"
+	icon_frame = 1
+	power = -25
+	component_set = "combat_computers"
+	ship_behavior = "line"
+	upgrade_path = line
+	potential = {
+		ship_uses_line_role = yes
+		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
+	}
+	prerequisites = { "tech_artifact_joint_combat_core" }
+	ship_modifier = { ship_fire_rate_mult = 0.15 ship_accuracy_add = 15 }
+	resources = { category = ship_components cost = { alloys = 45 rare_crystals = 1 } upkeep = { energy = 0.25 alloys = 0.05 } }
+	ai_tags = { gunship gunship_stealth }
+	ai_tag_weight = 0
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_JOINT_COMPUTER_ARTILLERY"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+	power = -30
+	component_set = "combat_computers"
+	ship_behavior = "artillery"
+	upgrade_path = artillery
+	potential = {
+		ship_uses_artillery_role = yes
+		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
+	}
+	prerequisites = { "tech_artifact_joint_combat_core" }
+	ship_modifier = { ship_fire_rate_mult = 0.10 ship_weapon_range_mult = 0.30 }
+	resources = { category = ship_components cost = { alloys = 55 rare_crystals = 1 } upkeep = { energy = 0.30 alloys = 0.06 } }
+	ai_tags = { artillery artillery_stealth energy_torpedoes energy_torpedoes_stealth }
+	ai_tag_weight = 0
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_JOINT_COMPUTER_CARRIER"
+	size = small
+	icon = "GFX_ship_part_computer_carrier_sapient"
+	icon_frame = 1
+	power = -35
+	component_set = "combat_computers"
+	ship_behavior = "carrier"
+	upgrade_path = carrier
+	potential = {
+		ship_uses_carrier_role = yes
+		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
+	}
+	prerequisites = { "tech_artifact_joint_combat_core" }
+	# 交战启动距离不等于武器射程；护盾加成只作用于母舰。
+	modifier = { ship_shield_mult = 0.10 }
+	ship_modifier = { ship_engagement_range_mult = 1.0 }
+	resources = { category = ship_components cost = { alloys = 60 rare_crystals = 1 } upkeep = { energy = 0.35 alloys = 0.06 } }
+	ai_tags = { carrier }
+	ai_tag_weight = 0
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_JOINT_COMPUTER_TORPEDO"
+	size = small
+	icon = "GFX_ship_part_computer_swarm_sapient"
+	icon_frame = 1
+	power = -25
+	component_set = "combat_computers"
+	ship_behavior = "torpedo"
+	upgrade_path = torpedo
+	potential = {
+		ship_uses_torpedo_role = yes
+		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
+	}
+	prerequisites = { "tech_artifact_joint_combat_core" }
+	ship_modifier = { ship_fire_rate_mult = 0.10 weapon_type_explosive_weapon_damage_mult = 0.20 }
+	resources = { category = ship_components cost = { alloys = 45 rare_crystals = 1 } upkeep = { energy = 0.25 alloys = 0.05 } }
+	ai_tags = { explosive explosive_stealth }
+	ai_tag_weight = 0
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_JOINT_COMPUTER_PLATFORM"
+	size = small
+	icon = "GFX_ship_part_computer_platform_sapient"
+	icon_frame = 1
+	power = -30
+	component_set = "combat_computers"
+	ship_behavior = "platform"
+	potential = {
+		ship_uses_platform_computers = yes
+		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
+	}
+	prerequisites = { "tech_artifact_joint_combat_core" }
+	ship_modifier = { ship_fire_rate_mult = 0.20 ship_tracking_add = 25 ship_weapon_range_mult = 0.15 }
+	resources = { category = ship_components cost = { alloys = 55 rare_crystals = 1 } upkeep = { energy = 0.30 alloys = 0.06 } }
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_TACTICAL_COORDINATION_MODULE"
+	size = aux
+	icon = "GFX_ship_part_artifact_combat_computer_2"
+	icon_frame = 1
+	power = -15
+	component_set = "ARTIFACT_TACTICAL_COORDINATION_MODULE"
+	potential = {
+		is_ship_class = shipclass_military
+		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
+	}
+	prerequisites = { "tech_artifact_joint_combat_core" }
+	ship_modifier = { ship_tracking_add = 10 ship_fire_rate_mult = 0.05 }
+	resources = { category = ship_components cost = { alloys = 35 rare_crystals = 1 } upkeep = { energy = 0.20 alloys = 0.04 } }
+	ai_weight = { weight = 4 }
+}
+
+utility_component_template = {
+	key = "ARTIFACT_SUPPORT_COORDINATION_MODULE"
+	size = aux
+	icon = "GFX_ship_part_artifact_sensor_2"
+	icon_frame = 1
+	power = -10
+	component_set = "ARTIFACT_SUPPORT_COORDINATION_MODULE"
+	potential = {
+		is_ship_class = shipclass_military
+		from = { owner_main_species = { is_species_class = "ARTIFACT_USER" } country_uses_bio_ships = no }
+	}
+	prerequisites = { "tech_artifact_joint_combat_core" }
+	# 只改善本舰脱离与超空间充能，不治疗、支付资源或改写必需引擎。
+	ship_modifier = { ship_disengage_chance_mult = 0.15 ship_windup_mult = -0.10 }
+	resources = { category = ship_components cost = { alloys = 35 rare_crystals = 1 } upkeep = { energy = 0.20 alloys = 0.04 } }
+	ai_weight = { weight = 4 }
+}

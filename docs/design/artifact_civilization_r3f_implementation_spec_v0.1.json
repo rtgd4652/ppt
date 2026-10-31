@@ -1,0 +1,202 @@
+{
+  "date": "2026-10-31",
+  "package": "R3f",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "source_base": "85445a8",
+  "nodes": [
+    "D10",
+    "D22"
+  ],
+  "technologies": [
+    {
+      "id": "D10",
+      "key": "tech_artifact_joint_combat_core",
+      "area": "society",
+      "tier": 4,
+      "cost": 7200,
+      "prerequisites": [
+        "tech_artifact_user_resonance_armaments",
+        "tech_artifact_phase_ranging_array",
+        "tech_artifact_intercolony_transport"
+      ]
+    },
+    {
+      "id": "D22",
+      "key": "tech_artifact_expedition_reconstitution",
+      "area": "society",
+      "tier": 4,
+      "cost": 7200,
+      "prerequisites": [
+        "tech_artifact_resonance_siege_engineering",
+        "tech_artifact_intercolony_transport",
+        "tech_artifact_byproduct_recycling"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "key": "ARTIFACT_JOINT_COMPUTER_SWARM",
+      "slot": "combat_computers",
+      "size": "small",
+      "behavior": "swarm",
+      "power": -25,
+      "modifier": {
+        "ship_evasion_mult": "0.15"
+      },
+      "ship_modifier": {
+        "ship_fire_rate_mult": "0.15"
+      }
+    },
+    {
+      "key": "ARTIFACT_JOINT_COMPUTER_PICKET",
+      "slot": "combat_computers",
+      "size": "small",
+      "behavior": "picket",
+      "power": -25,
+      "modifier": {},
+      "ship_modifier": {
+        "ship_fire_rate_mult": "0.15",
+        "ship_tracking_add": "25"
+      }
+    },
+    {
+      "key": "ARTIFACT_JOINT_COMPUTER_LINE",
+      "slot": "combat_computers",
+      "size": "small",
+      "behavior": "line",
+      "power": -25,
+      "modifier": {},
+      "ship_modifier": {
+        "ship_fire_rate_mult": "0.15",
+        "ship_accuracy_add": "15"
+      }
+    },
+    {
+      "key": "ARTIFACT_JOINT_COMPUTER_ARTILLERY",
+      "slot": "combat_computers",
+      "size": "small",
+      "behavior": "artillery",
+      "power": -30,
+      "modifier": {},
+      "ship_modifier": {
+        "ship_fire_rate_mult": "0.10",
+        "ship_weapon_range_mult": "0.30"
+      }
+    },
+    {
+      "key": "ARTIFACT_JOINT_COMPUTER_CARRIER",
+      "slot": "combat_computers",
+      "size": "small",
+      "behavior": "carrier",
+      "power": -35,
+      "modifier": {
+        "ship_shield_mult": "0.10"
+      },
+      "ship_modifier": {
+        "ship_engagement_range_mult": "1.0"
+      }
+    },
+    {
+      "key": "ARTIFACT_JOINT_COMPUTER_TORPEDO",
+      "slot": "combat_computers",
+      "size": "small",
+      "behavior": "torpedo",
+      "power": -25,
+      "modifier": {},
+      "ship_modifier": {
+        "ship_fire_rate_mult": "0.10",
+        "weapon_type_explosive_weapon_damage_mult": "0.20"
+      }
+    },
+    {
+      "key": "ARTIFACT_JOINT_COMPUTER_PLATFORM",
+      "slot": "combat_computers",
+      "size": "small",
+      "behavior": "platform",
+      "power": -30,
+      "modifier": {},
+      "ship_modifier": {
+        "ship_fire_rate_mult": "0.20",
+        "ship_tracking_add": "25",
+        "ship_weapon_range_mult": "0.15"
+      }
+    },
+    {
+      "key": "ARTIFACT_TACTICAL_COORDINATION_MODULE",
+      "slot": "ARTIFACT_TACTICAL_COORDINATION_MODULE",
+      "size": "aux",
+      "behavior": null,
+      "power": -15,
+      "modifier": {},
+      "ship_modifier": {
+        "ship_tracking_add": "10",
+        "ship_fire_rate_mult": "0.05"
+      }
+    },
+    {
+      "key": "ARTIFACT_SUPPORT_COORDINATION_MODULE",
+      "slot": "ARTIFACT_SUPPORT_COORDINATION_MODULE",
+      "size": "aux",
+      "behavior": null,
+      "power": -10,
+      "modifier": {},
+      "ship_modifier": {
+        "ship_disengage_chance_mult": "0.15",
+        "ship_windup_mult": "-0.10"
+      }
+    }
+  ],
+  "reconstitution": {
+    "decision": "decision_artifact_civil_expedition",
+    "marker": "acs_expedition_reconstitution",
+    "requires": "本国正常运作的联运接收端、已有一份当地物资和D22",
+    "cost": {
+      "reserved_stock": 1,
+      "energy": 500,
+      "consumer_goods": 200
+    },
+    "days": 360,
+    "planet_army_build_speed_mult": 0.25,
+    "army_starting_experience_add": 50,
+    "provider": "building_artifact_intercolony_terminal",
+    "suspension": "失控、轰炸、设施失效、撤销接收端暂停收益，时钟继续",
+    "ownership": "复用R3e原拥有者和清理接口；正式转让清除，无退款",
+    "renewal": "仅到期后重新支付，不提前续期、不恢复现有军队"
+  },
+  "counts": {
+    "date": "2026-10-31",
+    "public_technologies": 59,
+    "army_types": 5,
+    "component_definitions": 94,
+    "building_definitions": 35,
+    "starbase_building_definitions": 1,
+    "note": "R3f源码：新增2研究、9组件、2集合和1整补决议；运行待集中验证。R3e仅预留扣费及文件核对已通过，转运与实际读档待验。"
+  },
+  "validation": {
+    "new_tests": 6,
+    "affected_civil_supply_tests": 8,
+    "native_definitions": "7种行为、角色条件与9组件图标存在；不是运行通过",
+    "check_mod": {
+      "status": "pass",
+      "errors": 0,
+      "warnings": 0,
+      "script_files": 175,
+      "events": 254,
+      "localization_keys": 1869
+    }
+  },
+  "runtime_limits": [
+    "未冷启动新源码",
+    "未装配新电脑或A槽",
+    "未验证真实训练、战斗行为和读档",
+    "不修改旧电脑、旧设计或个人转变前置"
+  ],
+  "references": [
+    "原版4.5.2 common/component_templates/00_utilities_roles.txt",
+    "原版4.5.2 common/scripted_triggers/07_scripted_triggers_ships.txt",
+    "原版4.5.2 common/ship_behaviors/01_standard_ship_behaviors.txt",
+    "Crisis Counter-Measure 2140357942 common/component_templates/crisis_countermeasure_utilities_roles.txt；声明3.14，只参考分流结构"
+  ],
+  "report": "reports/artifact_civilization_r3f_implementation_2026-10-31.md"
+}
