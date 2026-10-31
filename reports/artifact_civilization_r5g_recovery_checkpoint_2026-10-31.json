@@ -1,9 +1,9 @@
 {
   "date": "2026-10-31",
-  "recorded_at": "2026-10-31T20:32:16+08:00",
+  "recorded_at": "2026-10-31T21:16:57+08:00",
   "source_base": "620cd5a",
   "package": "R5g-recovery",
-  "status": "icon_source_fixed_static_passed",
+  "status": "load_and_icon_registration_passed_functional_pending",
   "runtime_status": "cold_load_passed_functional_pending",
   "user_request": "停电后继续；先保存源文件与准确断点，再按当前状态续测",
   "before_power_loss": {
@@ -29,8 +29,10 @@
     "save_bytes": 2573589,
     "zip_meta_and_gamestate_readable": true,
     "save_modified": false,
-    "engine_reload_after_outage": "pending",
-    "live_gui_state": "待宿主上下文核实"
+    "engine_reload_after_outage": "pass",
+    "live_gui_state": "2293.10.11暂停，控制台/Debug View均关闭，未提交前置、未新建存档",
+    "loaded_source": "335f408",
+    "engine_version": "Cygnus v4.5.2"
   },
   "icon_fix": {
     "file": "mod/interface/artifact_postcrisis_megastructure_icons.gfx",
@@ -39,7 +41,8 @@
     "native_texture": "gfx/interface/icons/megastructures/ring_world.dds",
     "texture_exists": true,
     "formal_asset": false,
-    "new_cold_start_verification": "pending"
+    "new_cold_start_verification": "sprite_registration_load_passed_render_pending",
+    "verification_note": "20:37新日志不再出现原缺失sprite报错；没有建造实体，图标实际列表/总览渲染仍未验。"
   },
   "validation": {
     "static": {
@@ -62,22 +65,65 @@
     "new_tests": 0,
     "reused": "R5g已有5项新增/6项相关源码检查；本轮只修补图标注册，不重复玩法夹具"
   },
-  "next_step": "先核实新进程/前台/播放集；本回合使用已验证原生扫描码与鼠标守卫。约20分钟内取F08正常两阶段施工/启用/可殖民性代表，自动操作问题最多10分钟。D12仍未验，不逐包重跑。",
+  "next_step": "本轮GUI排障已停止。当前无待提交文字或命令；不重放准备文件、不复测历史help。公共科技80项源码可继续衔接Boss深化/正式资产；F08与D12正常流程保留到一次后续代表试玩，不以自动输入反复中断开发。",
   "protected_untracked": "tools/prototypes/aemusa_cross_system_megastructure/",
   "paused": [
     "人物组合/固定搭档",
     "批量图标制作",
     "独立连续巨构原型"
   ],
-  "local_evidence": "runtime-backups/r5g-phase-2026-10-31/startup-error.log and startup-game.log; Git外本机材料",
+  "local_evidence": {
+    "before_power_loss": "runtime-backups/r5g-phase-2026-10-31/",
+    "after_recovery": "runtime-backups/r5g-recovery-2026-10-31/",
+    "note": "截图、日志、命令文件、输入收据不随Git克隆；原存档未覆盖。"
+  },
   "remote_pushed": false,
   "files": [
-    "mod/interface/artifact_postcrisis_megastructure_icons.gfx",
+    "tools/desktop/Send-StellarisText.ps1",
+    "tools/desktop/tests/Test-StellarisTextClearing.ps1",
     "reports/artifact_civilization_r5g_recovery_2026-10-31.md",
     "reports/artifact_civilization_r5g_recovery_checkpoint_2026-10-31.json",
     "HANDOFF.md",
-    "docs/TODO.md",
     "docs/PROJECT_STATUS.md",
+    "docs/TODO.md",
     "docs/AGENT_OPERATIONS.md"
-  ]
+  ],
+  "source_checkpoint": "335f408",
+  "post_recovery_attempt": {
+    "observed_at": "2026-10-31T21:14:18+08:00",
+    "gui_backend": "native_guarded_powershell",
+    "actual_loaded_source": "335f408",
+    "game_process_id": 22680,
+    "window_id": 526698,
+    "ids_are_historical_not_reusable": true,
+    "save": "2293.10.11-r3e-reserve.sav",
+    "game_date": "2293.10.11",
+    "paused": true,
+    "console_open": false,
+    "debug_view_open": false,
+    "original_save_modified": false,
+    "new_save": null,
+    "precondition_commands_submitted": 0,
+    "attempted_prefix": "  research_technology",
+    "attempted_characters": 21,
+    "interruption": "Modifier held; no new key sent.",
+    "cleanup": "Explicitly observed 21 owned characters cleared; screenshot blank, console then closed.",
+    "pending_command": null,
+    "prepared_files_are_evidence_not_queue": true,
+    "remaining_functional_tests": [
+      "F08正常两阶段建造/启用/可殖民性",
+      "D12实际费用与压制效果"
+    ]
+  },
+  "desktop_guard_update": {
+    "file": "tools/desktop/Send-StellarisText.ps1",
+    "activate_first": "显式同次调用先置前；语法检查和真实控制台开/关通过，逐键焦点/进程/物理按键检查保持",
+    "partial_clear": "默认仍拒绝部分输入；仅同PID/窗口、未提交、显式观察长度在Attempted到Attempted+1且不超原文时可清理",
+    "submit_unchanged": true,
+    "test_file": "tools/desktop/tests/Test-StellarisTextClearing.ps1",
+    "source_guard_cases_passed": 9,
+    "tests_send_real_input": false,
+    "full_text_submission_passed": false,
+    "prefix_rule": "本轮向执行器提议固定pwsh -NoProfile -File +该脚本路径的窄授权，是否持久取决于执行器实际规则；不声称权限审批完全消失"
+  }
 }

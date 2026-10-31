@@ -7,6 +7,10 @@ param(
     [ValidateRange(80,300)][int]$HoldMs = 100,
     [ValidateRange(40,300)][int]$GapMs = 80,
     [ValidateRange(0,30000)][int]$WaitForFocusMs = 0,
+    # 显式选择同次调用先置前，避免审批/查看截图后下一次调用已失焦；不放宽运行中的守卫。
+    [switch]$ActivateFirst,
+    # 仅在已观察到本轮部分输入时提供长度；默认仍不允许自动清理中断记录。
+    [ValidateRange(0,1400)][int]$ObservedPartialLength = 0,
     [ValidatePattern('^[a-zA-Z0-9_-]+$')][string]$Label = 'current'
 )
 $ErrorActionPreference = 'Stop'
@@ -146,15 +150,17 @@ function Send-OneKey([ushort]$Key,[bool]$Shift=$false) {
 }
 
 if ($Action -eq 'Inspect') {
-    [pscustomobject]@{Pid=$game.Id;Window=$gameWindow.ToInt64();Foreground=[StellarisTextInput]::GetForegroundWindow().ToInt64();GameLayout=('{0:X8}' -f ($originalLayout.ToInt64() -band 0xffffffffL));CapsLock=(([StellarisTextInput]::GetKeyState(0x14) -band 1) -ne 0)} | ConvertTo-Json -Compress
+    [uint32]$foregroundPid = 0
+    [void][StellarisTextInput]::GetWindowThreadProcessId([StellarisTextInput]::GetForegroundWindow(),[ref]$foregroundPid)
+    [pscustomobject]@{Pid=$game.Id;Window=$gameWindow.ToInt64();Foreground=[StellarisTextInput]::GetForegroundWindow().ToInt64();ForegroundPid=$foregroundPid;ForegroundProcess=(Get-Process -Id $foregroundPid -ErrorAction SilentlyContinue).ProcessName;GameLayout=('{0:X8}' -f ($originalLayout.ToInt64() -band 0xffffffffL));CapsLock=(([StellarisTextInput]::GetKeyState(0x14) -band 1) -ne 0)} | ConvertTo-Json -Compress
     exit
 }
-if ($Action -eq 'Activate') {
+if ($Action -eq 'Activate' -or $ActivateFirst) {
     if ([StellarisTextInput]::IsIconic($gameWindow)) { [void][StellarisTextInput]::ShowWindowAsync($gameWindow,9) }
     if ([StellarisTextInput]::GetForegroundWindow() -ne $gameWindow) {
         [void][StellarisTextInput]::SetForegroundWindow($gameWindow)
         if ([StellarisTextInput]::GetForegroundWindow() -ne $gameWindow) {
-            # 只在显式Activate动作中临时连接前台线程以恢复游戏焦点；不发送模拟按键。
+            # 只在显式Activate动作或ActivateFirst请求中临时连接前台线程以恢复游戏焦点；不发送模拟按键。
             # 无论成功或失败都解除连接，之后仍由截图守卫核实真实前台。
             $activationThread = [StellarisTextInput]::GetCurrentThreadId()
             [uint32]$foregroundOwner = 0
@@ -172,8 +178,8 @@ if ($Action -eq 'Activate') {
         }
     }
     Start-Sleep -Milliseconds 300
-    Save-GameCapture
-    exit
+    if ($Action -eq 'Activate') { Save-GameCapture; exit }
+    # 组合动作仍逐键检查焦点/进程/物理修饰键，置前失败时在发送前停止。
 }
 if ($WaitForFocusMs -gt 0) {
     $focusDeadline = [DateTime]::UtcNow.AddMilliseconds($WaitForFocusMs)
@@ -213,14 +219,23 @@ if ($Action -eq 'Text') {
 } elseif ($Action -eq 'ClearText') {
     if (-not (Test-Path -LiteralPath $pendingRecord)) { throw 'No pending text to clear.' }
     $pending = Get-Content -LiteralPath $pendingRecord -Raw | ConvertFrom-Json
-    if ($pending.Pid -ne $game.Id -or $pending.Window -ne $gameWindow.ToInt64() -or -not $pending.Complete -or $pending.Submitted) { throw 'Pending text not valid for clearing.' }
+    if ($pending.Pid -ne $game.Id -or $pending.Window -ne $gameWindow.ToInt64() -or $pending.Submitted) { throw 'Pending text not valid for clearing.' }
+    $clearCount = $pending.Text.Length
+    if (-not $pending.Complete) {
+        # 最后一键可能已发送但尚未来得及计数，最多允许一次显式观察到的差值。
+        if ($pending.Attempted -lt 1 -or $ObservedPartialLength -lt $pending.Attempted -or
+            $ObservedPartialLength -gt ($pending.Attempted + 1) -or $ObservedPartialLength -gt $pending.Text.Length) {
+            throw 'Observe the current owned partial text and provide its bounded length; no Backspace sent.'
+        }
+        $clearCount = $ObservedPartialLength
+    }
     # 先依据画面确认光标在自有文字末尾；游戏没有可靠接收 End 键。
-    for ($index=0; $index -lt $pending.Text.Length; $index++) { Send-OneKey 0x08 }
+    for ($index=0; $index -lt $clearCount; $index++) { Send-OneKey 0x08 }
     $pending.Complete = $false
     $pending.Attempted = 0
     $pending | ConvertTo-Json | Set-Content -LiteralPath $pendingRecord -Encoding utf8
 } elseif ($Action -eq 'ShiftMode') {
-    # 仅在已确认输入行空白时切换一次，随后用help实测当前英文模式。
+    # 仅在已确认输入行空白时切换一次，随后核对实际英文输入，不重复历史help排障。
     Send-OneKey 0xa0
 } elseif ($Action -eq 'ToggleConsole') {
     Send-OneKey 0xc0
