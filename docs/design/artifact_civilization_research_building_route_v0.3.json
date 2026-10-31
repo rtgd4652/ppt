@@ -259,8 +259,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "观测站最终升级；允许复核危机观测模型及失败记录。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "观测站最终升级，真实联校档案＋公共接口支持付费4有效月度模型复核；既有危机事实/锚点损失可非重复补录，国家档案用于A12。",
+      "implementation_key": "tech_artifact_high_dimensional_model_review",
+      "spec": "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md"
     },
     {
       "id": "A12",
@@ -1494,7 +1497,10 @@
           "name": "高维观测复核站",
           "technology": "A11",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "implemented_static_passed_runtime_pending",
+          "implementation_key": "building_artifact_high_dimensional_review_station",
+          "spec": "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.json",
+          "report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md"
         }
       ]
     },
@@ -2453,18 +2459,34 @@
       "report": "reports/artifact_civilization_r4h_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r4h_checkpoint_2026-10-31.json",
       "next_step": "推进A11高维模型复核（A09＋A10）：读取真实联校档案与公共接口，接BL02观测站最终升级和可复核记录；A12随后。集中试玩仍优先D12原生行动，D14/A09选择必要代表共用关键读档，余项保留；人物组合、连续巨构和批量图标仍暂停。"
+    },
+    "R4i": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "nodes": [
+        "A11"
+      ],
+      "new_buildings": 1,
+      "new_components": 0,
+      "new_events": 1,
+      "new_on_actions": 0,
+      "spec": "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r4i_checkpoint_2026-10-31.json",
+      "next_step": "推进A12公共神器理论（A11＋C10）：优先汇总既有模型复核与公共复现成果为公共工程/反制资格，复用已完成记录，避免再复制同类月度项目；E11/E12随后。集中试玩仍优先D12新行动，其余取必要代表共用关键读档；人物组合、连续巨构和批量图标继续暂停。"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 69,
+    "public_technologies": 70,
     "army_types": 5,
     "component_definitions": 111,
-    "building_definitions": 39,
+    "building_definitions": 40,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 11,
-    "note": "R4h新增A09：两端联校、档案与360日地方观测支持；6项新增、12项相关检查及静态通过，运行未验。"
+    "planned_technologies_remaining": 10,
+    "note": "R4i新增A11/BL02最终站与付费模型复核；A05/A09升级兼容，6项新增、16项相关检查及静态通过，运行未验。"
   },
   "orbital_buildings": [
     {
@@ -2804,5 +2826,8 @@
   "r4g_checkpoint": "reports/artifact_civilization_r4g_checkpoint_2026-10-31.json",
   "r4h_spec": "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.json",
   "r4h_report": "reports/artifact_civilization_r4h_implementation_2026-10-31.md",
-  "r4h_checkpoint": "reports/artifact_civilization_r4h_checkpoint_2026-10-31.json"
+  "r4h_checkpoint": "reports/artifact_civilization_r4h_checkpoint_2026-10-31.json",
+  "r4i_spec": "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.json",
+  "r4i_report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md",
+  "r4i_checkpoint": "reports/artifact_civilization_r4i_checkpoint_2026-10-31.json"
 }

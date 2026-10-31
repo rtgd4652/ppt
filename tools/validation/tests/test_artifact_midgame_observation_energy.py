@@ -100,8 +100,9 @@ class ObservationEnergyTests(unittest.TestCase):
         self.country['techs'].add(MULTI)
         self.assertTrue(self.enabled())
         applied = [b for b in self.bonuses if condition(block(b, 'potential'), self.site)]
-        self.assertEqual(sum(float(scalar(b, 'job_artifact_tarot_analyst_add') or 0)
-                             for b in applied), 2)
+        # A11为防遗留并存叠加，把原基础4容量改为条件供岗；实际总量仍为4＋2。
+        self.assertEqual(float(scalar(block(OLD[OBS], 'planet_modifier'), 'job_artifact_tarot_analyst_add') or 0)
+                         + sum(float(scalar(b, 'job_artifact_tarot_analyst_add') or 0) for b in applied), 6)
         self.assertEqual(sum(float(scalar(b, 'planet_jobs_physics_research_produces_mult') or 0)
                              for b in applied), 0.1)
         self.assertEqual(sum(float(scalar(b, 'planet_jobs_engineering_research_produces_mult') or 0)

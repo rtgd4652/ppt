@@ -22,6 +22,9 @@ artifact_civil_supply_clear = {
 	remove_modifier = acs_observation_source
 	remove_modifier = acs_observation_peer
 	remove_modifier = acs_observation_window
+	# A11复核过程随原拥有者清理；国家已完成模型与事实记录保留。
+	remove_modifier = acs_model_review_project
+	clear_variable = acs_model_review_work
 	remove_carrier_flag = acs_managed
 	if = { limit = { exists = event_target:acs_owner@this } clear_global_event_target = acs_owner@this }
 }
@@ -353,6 +356,10 @@ artifact_civil_supply_monthly = {
 	else = {
 		artifact_civil_supply_segmented_monthly = yes
 		artifact_civil_supply_hull_monthly = yes
+		if = {
+			limit = { has_modifier = acs_model_review_project }
+			artifact_observation_review_monthly = yes
+		}
 	}
 }
 

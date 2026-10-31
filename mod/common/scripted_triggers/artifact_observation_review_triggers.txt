@@ -1,0 +1,71 @@
+# 公共复核与个人主线权限独立；普通模型无需危机已经发生。
+artifact_observation_review_actor = {
+	artifact_civil_supply_actor = yes
+	owner = { has_technology = "tech_artifact_high_dimensional_model_review" }
+}
+
+artifact_observation_review_site = {
+	artifact_observation_review_actor = yes
+	artifact_civil_supply_safe = yes
+	has_active_building = "building_artifact_high_dimensional_review_station"
+	owner = {
+		artifact_observation_calibration_archived = yes
+		has_technology = "tech_artifact_stable_rule_interface"
+		has_country_flag = artifact_public_rule_interface_record
+	}
+}
+
+artifact_observation_review_can_start = {
+	artifact_observation_review_site = yes
+	NOT = { has_modifier = acs_model_review_project }
+	owner = {
+		NOT = { has_modifier = amr_model_reviewed }
+		NOT = { any_owned_colony = { carrier = { has_modifier = acs_model_review_project } } }
+	}
+}
+
+artifact_observation_review_work_ready = {
+	artifact_observation_review_site = yes
+	artifact_civil_supply_original_owner = yes
+	has_modifier = acs_model_review_project
+}
+
+# 国家只读来源：区分危机发生事实与取得现场基准，不把它写成反制/胜利已通过。
+artifact_observation_review_has_crisis_context = {
+	OR = {
+		has_country_flag = aemusa_ms_country_history_vanilla_crisis_started
+		has_country_flag = aemusa_ms_country_anchor_baseline_recorded
+	}
+}
+
+# 锚点损失计数由既有实际资源损失接口写入；必须先检查变量存在。
+artifact_observation_review_has_loss_record = {
+	has_country_flag = aemusa_ms_crisis_exclusive_initialized
+	is_variable_set = aemusa_ms_country_anchor_losses
+	check_variable = { which = aemusa_ms_country_anchor_losses value >= 1 }
+}
+
+artifact_observation_review_has_new_records = {
+	has_modifier = amr_model_reviewed
+	OR = {
+		AND = {
+			artifact_observation_review_has_crisis_context = yes
+			NOT = { has_modifier = amr_crisis_context_reviewed }
+		}
+		AND = {
+			artifact_observation_review_has_loss_record = yes
+			NOT = { has_modifier = amr_loss_reviewed }
+		}
+	}
+}
+
+artifact_observation_review_can_append = {
+	artifact_observation_review_site = yes
+	owner = { artifact_observation_review_has_new_records = yes }
+}
+
+# A12消费者读取国家知识接口，设施失效/转让不撤销已完成知识。
+artifact_observation_review_archived = {
+	has_technology = "tech_artifact_high_dimensional_model_review"
+	has_modifier = amr_model_reviewed
+}

@@ -1,0 +1,65 @@
+decision_artifact_model_review_start = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = { category = decisions cost = { energy = 600 consumer_goods = 300 rare_crystals = 100 } }
+	potential = {
+		artifact_observation_review_actor = yes
+		has_building = "building_artifact_high_dimensional_review_station"
+		owner = { NOT = { has_modifier = amr_model_reviewed } }
+	}
+	allow = {
+		custom_tooltip = { fail_text = amr.requires_start artifact_observation_review_can_start = yes }
+	}
+	effect = {
+		custom_tooltip = amr.offer_start
+		hidden_effect = { artifact_observation_review_start = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_model_review_append = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	resources = { category = decisions cost = { energy = 300 consumer_goods = 100 } }
+	potential = {
+		artifact_observation_review_actor = yes
+		has_building = "building_artifact_high_dimensional_review_station"
+		owner = { has_modifier = amr_model_reviewed }
+	}
+	allow = {
+		custom_tooltip = { fail_text = amr.requires_new_records artifact_observation_review_can_append = yes }
+	}
+	effect = {
+		custom_tooltip = amr.offer_append
+		hidden_effect = { artifact_observation_review_append = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_model_review_status = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		OR = { has_building = "building_artifact_high_dimensional_review_station" has_modifier = acs_model_review_project }
+	}
+	effect = { carrier_event = { id = artifact_observation_review.1 } }
+	ai_weight = { weight = 0 }
+}
+
+# 即便设施/研究失效仍可撤销未完成复核，保留库存和国家档案。
+decision_artifact_model_review_cancel = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = { artifact_civil_supply_actor = yes has_modifier = acs_model_review_project }
+	allow = { custom_tooltip = { fail_text = amr.requires_owner artifact_civil_supply_original_owner = yes } }
+	effect = {
+		custom_tooltip = amr.offer_cancel
+		hidden_effect = { artifact_observation_review_clear = yes }
+	}
+	ai_weight = { weight = 0 }
+}

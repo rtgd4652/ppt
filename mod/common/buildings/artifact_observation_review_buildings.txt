@@ -1,0 +1,44 @@
+# BL02最终阶段只沿原槽升级。首版保留原岗位/比对数值，新增价值是可付费复核能力。
+# 不提高唯一长基线阵列限额，不生成危机事实或个人转变资格。
+building_artifact_high_dimensional_review_station = {
+	can_build = no
+	base_buildtime = 600
+	icon = "building_artifact_black_gate_observatory"
+	category = research
+	building_sets = { research }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_high_dimensional_model_review" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	allow = { }
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 1800 alloys = 300 consumer_goods = 300 }
+		upkeep = { energy = 10 consumer_goods = 2 }
+	}
+	# 沿用旧站原始岗位容量，本包不另做4.5人口尺度的全线数值重平衡。
+	planet_modifier = {
+		job_artifact_tarot_analyst_add = 4
+		planet_stability_add = 2
+	}
+	triggered_planet_modifier = {
+		potential = { exists = owner owner = { has_technology = "tech_artifact_tarot_economy" } }
+		job_artifact_tarot_analyst_add = 2
+	}
+	# A05样本比对和升级前一致；低级设施并存时由本阶段供给唯一一份。
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				has_technology = "tech_artifact_multi_source_comparison"
+				owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			}
+			has_active_building = "building_artifact_high_dimensional_review_station"
+			OR = {
+				has_active_building = "building_artifact_sample_repository"
+				has_active_building = "building_artifact_controlled_boundary_lab"
+			}
+		}
+		planet_jobs_physics_research_produces_mult = 0.1
+		planet_jobs_engineering_research_produces_mult = 0.05
+	}
+}

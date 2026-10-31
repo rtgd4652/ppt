@@ -1,0 +1,218 @@
+{
+  "date": "2026-10-31",
+  "package": "R4i",
+  "source_base": "7afa05b",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "nodes": [
+    "A11"
+  ],
+  "technology": {
+    "id": "A11",
+    "key": "tech_artifact_high_dimensional_model_review",
+    "name": "高维模型复核",
+    "area": "physics",
+    "tier": 5,
+    "cost": 24000,
+    "weight": 50,
+    "category": "field_manipulation",
+    "prerequisites": [
+      "tech_artifact_cross_colony_calibration",
+      "tech_artifact_stable_rule_interface"
+    ]
+  },
+  "lore": "联校让分散记录具有了共同尺度，受控实验则为解释这些记录划定了边界。研究者将假说的适用条件写入可重复审查的档案，再把已经掌握的危机事实和实际损失逐项纳入比对。每一次修正都应说明证据来自哪里，还有哪些问题尚未得到回答。",
+  "application": "将黑门观测站升级为高维观测复核站。取得本国联校档案与真实公共接口后，可付费完成四次有效月度复核，保存模型档案；新出现的已知危机事实和锚点损失可付费补录。成果为后续公共理论保留依据，升级继续承接原样本比对与地方观测支持。",
+  "building": {
+    "id": "BL02",
+    "stage": 3,
+    "key": "building_artifact_high_dimensional_review_station",
+    "name": "高维观测复核站",
+    "can_build": false,
+    "upgrade_from": "building_artifact_black_gate_observatory",
+    "construction_days": 600,
+    "cost": {
+      "minerals": 1800,
+      "alloys": 300,
+      "consumer_goods": 300
+    },
+    "upkeep": {
+      "energy": 10,
+      "consumer_goods": 2
+    },
+    "original_raw_job_capacity": {
+      "job_artifact_tarot_analyst_add": 4,
+      "tarot_economy_conditional_add": 2
+    },
+    "retains": [
+      "planet_stability_add 2",
+      "A05 physics .10 + engineering .05 with active local sample source",
+      "A09 ordinary peer role and 360-day paid window source"
+    ],
+    "compatibility": "lower direct-build/queue guards; highest active stage supplies jobs/comparison if legacy buildings coexist",
+    "actual_4_5_population_units": "not rebalanced or runtime verified; raw legacy capacities retained",
+    "asset": "existing observation icon"
+  },
+  "project": {
+    "scope": "planet carrier",
+    "country_limit": 1,
+    "cost": {
+      "energy": 600,
+      "consumer_goods": 300,
+      "rare_crystals": 100
+    },
+    "payment": "native decision once; no second deduction",
+    "effective_months": 4,
+    "inputs": [
+      "A09 aoc_calibration_archive",
+      "A10 research + artifact_public_rule_interface_record",
+      "active final observation station",
+      "own controlled safe colony and original ACS owner"
+    ],
+    "progress": "acs_model_review_work",
+    "marker": "acs_model_review_project",
+    "pause": "control, bombardment, facility or required record loss: retain progress, no catch-up",
+    "cleanup": "existing ACS transfer/ownerless/destroyed clear removes local project/work; no refund",
+    "completion": "amr_model_reviewed stored permanently in original country; observed facts appended only if present"
+  },
+  "append": {
+    "cost": {
+      "energy": 300,
+      "consumer_goods": 100
+    },
+    "requires": "completed model + operational review site + at least one new eligible source",
+    "records": [
+      "amr_crisis_context_reviewed",
+      "amr_loss_reviewed"
+    ],
+    "repeat": "blocked when no new record",
+    "source_contract": {
+      "read_only": true,
+      "crisis_context": [
+        "aemusa_ms_country_history_vanilla_crisis_started",
+        "aemusa_ms_country_anchor_baseline_recorded"
+      ],
+      "loss_requires": [
+        "aemusa_ms_crisis_exclusive_initialized",
+        "is_variable_set: aemusa_ms_country_anchor_losses",
+        "aemusa_ms_country_anchor_losses >= 1"
+      ],
+      "source_files": [
+        "mod/common/scripted_effects/aemusa_ms_crisis_story_effects.txt",
+        "mod/common/scripted_effects/aemusa_ms_exclusive_effects.txt"
+      ],
+      "written_story_flags": [],
+      "written_story_variables": []
+    }
+  },
+  "interfaces": {
+    "exported_trigger": "artifact_observation_review_archived",
+    "future_consumer": "A12",
+    "normal_review_before_crisis": true,
+    "personal_transformation_required": false,
+    "new_monthly_subscription": false,
+    "new_daily_scan": false
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-BLACK-GATE-RESEARCH-SYSTEM",
+      "TERM-BLACK-GATE",
+      "TERM-CENTRAL-COURT"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false,
+    "constraint": "模型适用边界与证据来源可审查；危机发生/现场基准不等于反制成功，损失复核不恢复资源，不创造预知能力。"
+  },
+  "native_reference": {
+    "game_source_version": "本机4.5.2 / eb95源码，本轮未运行",
+    "target_4_5_1_compatibility": "pending",
+    "reference": "原生升级、条件岗位/行星修正和决议费用；沿既有ACS有效月度/原拥有者清理，读取已有主线事实。"
+  },
+  "validation": {
+    "new": {
+      "count": 6,
+      "status": "pass",
+      "module": "test_artifact_observation_review"
+    },
+    "affected": {
+      "count": 16,
+      "status": "pass",
+      "modules": [
+        "test_artifact_observation_calibration",
+        "test_artifact_midgame_observation_energy",
+        "test_artifact_boundary_engineering"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 215,
+        "events": 260,
+        "localization_keys": 2132,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "fixture_note": "旧岗位检查改为合计静态/条件容量，验证原4＋2容量不变；不把原始容量解释为本机真实就业人数。",
+    "limitations": [
+      "执行正式条件/效果和既有月度消费者；升级、费用、岗位/科研结算、通知与存读档仍为原生外部契约。",
+      "剧情事实为已有来源的输入夹具，不能记作本轮自然危机/锚点损失运行证据。"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "pending_command": null,
+    "save_created": null,
+    "next_stage": "约20分钟阶段试玩仍优先D12新行动；预算内取一条观测站升级/模型复核代表，与A09地方支持共用关键读档；余项保留。"
+  },
+  "files": [
+    "mod/common/buildings/artifact_observation_review_buildings.txt",
+    "mod/common/decisions/artifact_observation_review_decisions.txt",
+    "mod/common/scripted_effects/artifact_observation_review_effects.txt",
+    "mod/common/scripted_triggers/artifact_observation_review_triggers.txt",
+    "mod/common/static_modifiers/artifact_observation_review_modifiers.txt",
+    "mod/common/technology/artifact_observation_review_technology.txt",
+    "mod/events/artifact_observation_review_events.txt",
+    "mod/localisation/simp_chinese/artifact_observation_review_l_simp_chinese.yml",
+    "mod/common/buildings/aemusa_buildings.txt",
+    "mod/common/buildings/artifact_public_foundation_buildings.txt",
+    "mod/common/scripted_triggers/artifact_observation_calibration_triggers.txt",
+    "mod/common/decisions/artifact_observation_calibration_decisions.txt",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "mod/localisation/simp_chinese/artifact_observation_calibration_l_simp_chinese.yml",
+    "tools/validation/tests/test_artifact_midgame_observation_energy.py",
+    "tools/validation/tests/test_artifact_observation_review.py",
+    "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r4i_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r4i_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}

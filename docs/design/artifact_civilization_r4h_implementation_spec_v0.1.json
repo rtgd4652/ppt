@@ -197,5 +197,16 @@
     "HANDOFF.md",
     "docs/TODO.md",
     "docs/PROJECT_STATUS.md"
+  ],
+  "compatibility_updates": [
+    {
+      "date": "2026-10-31",
+      "package": "R4i",
+      "new_peer_stage": "building_artifact_high_dimensional_review_station",
+      "status": "source_tests_passed_runtime_pending",
+      "note": "最终站承接A09对照端与地方窗口；进行态升级/已付费窗口由源码执行检查验证，不代表原生升级/读档通过。",
+      "spec": "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md"
+    }
   ]
 }

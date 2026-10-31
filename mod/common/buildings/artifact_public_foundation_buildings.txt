@@ -28,6 +28,8 @@ building_artifact_baseline_observation_station = {
 		NOR = {
 			has_building = "building_artifact_black_gate_observatory"
 			has_building_construction = "building_artifact_black_gate_observatory"
+			has_building = "building_artifact_high_dimensional_review_station"
+			has_building_construction = "building_artifact_high_dimensional_review_station"
 		}
 	}
 	resources = {
@@ -39,7 +41,8 @@ building_artifact_baseline_observation_station = {
 			energy = 2
 		}
 	}
-	planet_modifier = {
+	triggered_planet_modifier = {
+		potential = { NOR = { has_active_building = "building_artifact_high_dimensional_review_station" } }
 		job_artifact_junior_observer_add = 2
 	}
 }

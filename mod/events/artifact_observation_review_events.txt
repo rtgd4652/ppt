@@ -1,0 +1,39 @@
+namespace = artifact_observation_review
+
+# 只读现场进度与本国档案，不支付物资或写入危机事实。
+carrier_event = {
+	id = artifact_observation_review.1
+	title = amr.title
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = { artifact_civil_supply_actor = yes }
+	desc = {
+		trigger = { NOT = { has_modifier = acs_model_review_project } owner = { NOT = { has_modifier = amr_model_reviewed } } }
+		text = amr.intro
+	}
+	desc = {
+		trigger = { has_modifier = acs_model_review_project artifact_observation_review_work_ready = yes owner = { NOT = { has_modifier = amr_model_reviewed } } }
+		text = amr.working
+	}
+	desc = {
+		trigger = { has_modifier = acs_model_review_project artifact_observation_review_work_ready = no owner = { NOT = { has_modifier = amr_model_reviewed } } }
+		text = amr.paused
+	}
+	desc = {
+		trigger = { owner = { has_modifier = amr_model_reviewed NOR = { has_modifier = amr_crisis_context_reviewed has_modifier = amr_loss_reviewed } } }
+		text = amr.reviewed_basic
+	}
+	desc = {
+		trigger = { owner = { has_modifier = amr_model_reviewed has_modifier = amr_crisis_context_reviewed NOT = { has_modifier = amr_loss_reviewed } } }
+		text = amr.reviewed_crisis
+	}
+	desc = {
+		trigger = { owner = { has_modifier = amr_model_reviewed has_modifier = amr_loss_reviewed NOT = { has_modifier = amr_crisis_context_reviewed } } }
+		text = amr.reviewed_loss
+	}
+	desc = {
+		trigger = { owner = { has_modifier = amr_model_reviewed has_modifier = amr_crisis_context_reviewed has_modifier = amr_loss_reviewed } }
+		text = amr.reviewed_both
+	}
+	option = { name = amr.close }
+}

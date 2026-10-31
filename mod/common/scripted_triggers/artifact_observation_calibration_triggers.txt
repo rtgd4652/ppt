@@ -13,13 +13,14 @@ artifact_observation_calibration_source_site = {
 	}
 }
 
-# A11升级BL02时须将新阶段接回本资格，保持对照端与已付费地方窗口继续可用。
+# A11最终阶段继续承接对照端与已付费地方窗口，不因正常升级丢失供源。
 artifact_observation_calibration_peer_site = {
 	artifact_observation_calibration_actor = yes
 	artifact_civil_supply_safe = yes
 	OR = {
 		has_active_building = "building_artifact_baseline_observation_station"
 		has_active_building = "building_artifact_black_gate_observatory"
+		has_active_building = "building_artifact_high_dimensional_review_station"
 	}
 }
 

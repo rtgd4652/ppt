@@ -1,0 +1,11 @@
+# A11研究保留A09＋A10；实际复核还要求两项真实公共成果，不以研究本身替代记录。
+tech_artifact_high_dimensional_model_review = {
+	area = physics
+	icon = "tech_artifact_black_gate_observation"
+	cost = 24000
+	tier = 5
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_cross_colony_calibration" "tech_artifact_stable_rule_interface" }
+	weight = 50
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}

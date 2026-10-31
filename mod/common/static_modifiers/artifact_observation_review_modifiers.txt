@@ -1,0 +1,17 @@
+# 记录只提供可读状态与后续消费者资格，不直接加全国产出或改变既有危机。
+acs_model_review_project = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+amr_model_reviewed = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+amr_crisis_context_reviewed = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+amr_loss_reviewed = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}

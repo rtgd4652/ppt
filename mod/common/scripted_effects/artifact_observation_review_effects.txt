@@ -1,0 +1,57 @@
+artifact_observation_review_clear = {
+	remove_modifier = acs_model_review_project
+	clear_variable = acs_model_review_work
+}
+
+# 完成与补录都只写本包档案；从不修改主线的事实旗标、损失计数或历史结果。
+artifact_observation_review_append_known = {
+	if = {
+		limit = { artifact_observation_review_has_crisis_context = yes NOT = { has_modifier = amr_crisis_context_reviewed } }
+		add_modifier = { modifier = amr_crisis_context_reviewed days = -1 }
+	}
+	if = {
+		limit = { artifact_observation_review_has_loss_record = yes NOT = { has_modifier = amr_loss_reviewed } }
+		add_modifier = { modifier = amr_loss_reviewed days = -1 }
+	}
+}
+
+# 费用由正常决议一次扣除，守卫不重查扣费前余额。
+artifact_observation_review_start = {
+	if = {
+		limit = { artifact_observation_review_can_start = yes }
+		artifact_civil_supply_ensure_owner = yes
+		add_modifier = { modifier = acs_model_review_project days = -1 }
+		set_variable = { which = acs_model_review_work value = 0 }
+	}
+}
+
+artifact_observation_review_append = {
+	if = {
+		limit = { artifact_observation_review_can_append = yes }
+		owner = { artifact_observation_review_append_known = yes }
+	}
+}
+
+# 沿用ACS行星月度和原拥有者清理；全国同一时间一个模型复核。
+artifact_observation_review_monthly = {
+	if = {
+		limit = { has_modifier = acs_model_review_project }
+		if = {
+			limit = { owner = { has_modifier = amr_model_reviewed } }
+			artifact_observation_review_clear = yes
+		}
+		else_if = {
+			limit = { artifact_observation_review_work_ready = yes }
+			change_variable = { which = acs_model_review_work value = 1 }
+			if = {
+				limit = { check_variable = { which = acs_model_review_work value >= 4 } }
+				owner = {
+					add_modifier = { modifier = amr_model_reviewed days = -1 }
+					artifact_observation_review_append_known = yes
+				}
+				artifact_observation_review_clear = yes
+				carrier_event = { id = artifact_observation_review.1 }
+			}
+		}
+	}
+}

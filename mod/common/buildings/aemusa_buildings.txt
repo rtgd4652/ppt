@@ -67,10 +67,11 @@ building_artifact_sanctum = {
 	}
 }
 
-# 黑门观测站：以塔罗演算预测灾厄，并为研究者提供交界都市的数据。
+# 黑门观测站：结合塔罗演算与异常记录，供研究者观测和比对；不把模型写成预知能力。
 building_artifact_black_gate_observatory = {
 	# 作为R1a升级目标后仍允许按原科技直接建造，不要求补建低级站。
 	can_build = yes
+	upgrades = { "building_artifact_high_dimensional_review_station" }
 	base_buildtime = 360
 	icon = building_artifact_black_gate_observatory
 	category = research
@@ -93,6 +94,10 @@ building_artifact_black_gate_observatory = {
 		owner = {
 			has_technology = tech_artifact_black_gate_observation
 		}
+		NOR = {
+			has_building = "building_artifact_high_dimensional_review_station"
+			has_building_construction = "building_artifact_high_dimensional_review_station"
+		}
 	}
 
 	planet_limit = 1
@@ -103,7 +108,9 @@ building_artifact_black_gate_observatory = {
 		upkeep = { energy = 6 }
 	}
 
-	planet_modifier = {
+	# 遗留并存时最高活动阶段承接原岗位，避免升级后又从低级入口重复供岗。
+	triggered_planet_modifier = {
+		potential = { NOR = { has_active_building = "building_artifact_high_dimensional_review_station" } }
 		job_artifact_tarot_analyst_add = 4
 		planet_stability_add = 2
 	}
@@ -114,6 +121,7 @@ building_artifact_black_gate_observatory = {
 			owner = {
 				has_technology = tech_artifact_tarot_economy
 			}
+			NOR = { has_active_building = "building_artifact_high_dimensional_review_station" }
 		}
 		job_artifact_tarot_analyst_add = 2
 	}
@@ -129,6 +137,7 @@ building_artifact_black_gate_observatory = {
 				}
 			}
 			has_active_building = "building_artifact_black_gate_observatory"
+			NOR = { has_active_building = "building_artifact_high_dimensional_review_station" }
 			# 样本库升级后继续作为A05实有样本来源，不重复供给收益。
 			OR = {
 				has_active_building = "building_artifact_sample_repository"

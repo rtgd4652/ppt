@@ -230,6 +230,40 @@
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
     },
     {
+      "id": "A11",
+      "key": "tech_artifact_high_dimensional_model_review",
+      "previous_name": "高维模型复核",
+      "name": "高维模型复核",
+      "lore": "联校让分散记录具有了共同尺度，受控实验则为解释这些记录划定了边界。研究者将假说的适用条件写入可重复审查的档案，再把已经掌握的危机事实和实际损失逐项纳入比对。每一次修正都应说明证据来自哪里，还有哪些问题尚未得到回答。",
+      "application": "将黑门观测站升级为高维观测复核站。取得本国联校档案与真实公共接口后，可付费完成四次有效月度复核，保存模型档案；新出现的已知危机事实和锚点损失可付费补录。成果为后续公共理论保留依据，升级继续承接原样本比对与地方观测支持。",
+      "implementation_note": "最终站原生升级，真实A09/A10资料后付费4有效月度；既有危机/损失只读补录，档案归本国。保留岗位原始容量和A05/A09能力，原生结算/升级未验。",
+      "technology_file": "mod/common/technology/artifact_observation_review_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_observation_review_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_observation_review_buildings.txt",
+        "mod/common/decisions/artifact_observation_review_decisions.txt",
+        "mod/common/scripted_effects/artifact_observation_review_effects.txt",
+        "mod/common/scripted_triggers/artifact_observation_review_triggers.txt",
+        "mod/common/static_modifiers/artifact_observation_review_modifiers.txt",
+        "mod/events/artifact_observation_review_events.txt",
+        "mod/common/buildings/aemusa_buildings.txt",
+        "mod/common/buildings/artifact_public_foundation_buildings.txt",
+        "mod/common/scripted_triggers/artifact_observation_calibration_triggers.txt",
+        "mod/common/decisions/artifact_observation_calibration_decisions.txt",
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/localisation/simp_chinese/artifact_observation_calibration_l_simp_chinese.yml"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "central_court_history",
+        "public_military"
+      ],
+      "source_note": "先查七都数据库并读神器/组织/术语来源；模型适用条件与证据可审查属Mod设计，来源审核状态不变；只读已有危机事实和实际锚点损失，不声称反制/胜利已验证。"
+    },
+    {
       "id": "B01",
       "key": "tech_artifact_relic_fabrication",
       "previous_name": "神器锻造",
@@ -1544,12 +1578,6 @@
   ],
   "unimplemented_nodes": [
     {
-      "id": "A11",
-      "working_name": "高维模型复核",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
-    {
       "id": "A12",
       "working_name": "公共神器理论",
       "status": "awaits_implementation_text",
@@ -2460,6 +2488,18 @@
       "remaining": 11,
       "spec": "docs/design/artifact_civilization_r4h_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4h_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R4i",
+      "nodes": [
+        "A11"
+      ],
+      "added": 1,
+      "implemented_total": 70,
+      "remaining": 10,
+      "spec": "docs/design/artifact_civilization_r4i_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4i_implementation_2026-10-31.md"
     }
   ]
 }
