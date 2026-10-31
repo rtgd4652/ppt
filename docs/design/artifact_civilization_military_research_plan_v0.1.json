@@ -1617,7 +1617,7 @@
         "D13",
         "D14"
       ],
-      "role": "少量指定公共平台的场域、承载与联合防务；光环原型及公共新件分开，范围作用与宿主限制仍待可行性验收。",
+      "role": "D12中庭级付费本星系限时脉冲与D13承载已接源码；D14联合防务后续。旧光环独立，实际按钮/范围和计时待集中试玩。",
       "status": "D13_implemented_D12_D14_pending",
       "spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
       "runtime_status": "not_run"
@@ -1767,6 +1767,11 @@
         "D12",
         "D13",
         "D14"
+      ],
+      "status": "D12_D13_static_passed_D14_pending",
+      "runtime_status": "not_run",
+      "remaining_nodes": [
+        "D14"
       ]
     }
   ],
@@ -1804,7 +1809,7 @@
   "validation": {
     "source_inventory": "checked_read_only",
     "route_graph": "passed_design_audit",
-    "runtime": "R3a～R3d代表范围通过，保留研究受控和未测边界。R3e正常预留与文件核对通过，转运及实际载回待验；R3f和R4a／R4b／R4c源码检查通过、未运行，合并阶段验收。",
+    "runtime": "R3a～R3d代表范围通过；R3e正常预留和文件核对通过。R3f及R4a～R4f源码检查通过，运行未验；D12新原生行动列入集中试玩优先项。",
     "balance": "pending",
     "military_scripts_changed": false
   },
@@ -1841,14 +1846,14 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 66,
+    "public_technologies": 67,
     "army_types": 5,
-    "component_definitions": 110,
+    "component_definitions": 111,
     "building_definitions": 39,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 14,
-    "note": "R4e公共战略舰及6核心源码通过，4个既有组件显式适配；D12/D14仍待实现。"
+    "planned_technologies_remaining": 13,
+    "note": "R4f新增D12、1中庭级A槽及付费限时行动；5项新增、5项宿主检查与静态通过，运行未验。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -1902,5 +1907,20 @@
     "report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md",
     "checkpoint": "reports/artifact_civilization_r4e_checkpoint_2026-10-31.json",
     "inherited_requirements": "E09运行工业 + D13持久定型；D16/D17/D18/D10分支不被替代"
+  },
+  "r4f_field_suppression": {
+    "date": "2026-10-31",
+    "status": "implemented_static_passed",
+    "runtime_status": "not_run",
+    "nodes": [
+      "D12"
+    ],
+    "new_components": 1,
+    "new_actions": 1,
+    "new_events": 1,
+    "spec": "docs/design/artifact_civilization_r4f_implementation_spec_v0.1.json",
+    "report": "reports/artifact_civilization_r4f_implementation_2026-10-31.md",
+    "checkpoint": "reports/artifact_civilization_r4f_checkpoint_2026-10-31.json",
+    "next_step": "推进D14文明联合防务（D10＋C12）：复用行星驻防与星港接口，接有成本的联合部署；D12原生按钮、实际扣费与限时效果列入下一次集中试玩优先项。连续巨构、人物组合和批量图标仍暂停。"
   }
 }

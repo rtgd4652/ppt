@@ -1,0 +1,32 @@
+# 普通舰队的即时自身行动；user_scope与scope必须依原生规范放在前两项。
+# 费用只由原生行动扣一次，回调不再扣费或检查扣费前余额。
+artifact_field_suppression = {
+	user_scope = fleet
+	scope = self
+	on_completed = on_artifact_field_suppression
+	tooltip = artifact_field_suppression_tooltip
+	icon = GFX_fleet_action_button_paladin_thunderclap
+	icon_selected = GFX_fleet_action_button_paladin_thunderclap
+	button_visible = {
+		any_owned_ship = { has_component = ARTIFACT_FIELD_SUPPRESSOR }
+	}
+	button_clickable = {
+		custom_tooltip = {
+			fail_text = artifact_field_suppression_requires_platform
+			artifact_field_suppression_platform_ready = yes
+		}
+		custom_tooltip = {
+			fail_text = artifact_field_suppression_requires_target
+			artifact_field_suppression_has_targets = yes
+		}
+	}
+	possible = { artifact_field_suppression_ready = yes }
+	context_menu_name = artifact_field_suppression
+	activity_key = artifact_field_suppression_activity
+	progress_activity_key = artifact_field_suppression_activity
+	cooldown = 180
+	wait = no
+	cost = { energy = 1500 rare_crystals = 25 }
+	slot = 0
+	ai = { weight = { base = 0 } ai_minister = none }
+}

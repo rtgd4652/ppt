@@ -1,0 +1,13 @@
+# 国家记录只提供可读冷却，不附带全国数值；计时由引擎保存。
+afs_recharging = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+# 舰船记录以短时射控/机动扰动体现压制；不直接削减生命、不改护盾上限。
+afs_suppressed = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+	ship_fire_rate_mult = -0.15
+	ship_speed_mult = -0.20
+}

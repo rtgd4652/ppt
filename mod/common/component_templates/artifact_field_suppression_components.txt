@@ -1,0 +1,24 @@
+# 中庭级专用A槽。重复装配不增加行动次数；帝国共享冷却由行动回调登记。
+# 复用旧图标仅作占位，不复用旧命运之主光环或任何个人资格。
+utility_component_template = {
+	key = "ARTIFACT_FIELD_SUPPRESSOR"
+	size = aux
+	icon = "GFX_ship_part_artifact_aura_black_gate_suppression"
+	icon_frame = 1
+	power = -150
+	component_set = "ARTIFACT_FIELD_SUPPRESSOR"
+	size_restriction = { artifact_strategic_cruiser }
+	potential = {
+		is_ship_size = artifact_strategic_cruiser
+		from = { artifact_strategic_hull_available = yes }
+	}
+	prerequisites = { "tech_artifact_limited_field_suppression" }
+	scripted_action = { artifact_field_suppression }
+	resources = {
+		category = ship_components
+		cost = { alloys = 250 rare_crystals = 20 }
+		upkeep = { energy = 2 alloys = 0.25 }
+	}
+	# 首版供玩家手动部署；不让自动设计为尚未启用的AI行动支付槽位和维护。
+	ai_weight = { weight = 0 }
+}

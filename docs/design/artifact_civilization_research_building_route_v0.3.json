@@ -874,8 +874,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "为少量指定平台提供付费、有限范围的压制行动；作用对象和持续方式待可行性核实。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "中庭级A槽解锁付费本星系脉冲：启动时敌方作战舰射速−15%、亚光速速度−20%，60日；国家180日冷却，旧光环与个人线独立。",
+      "implementation_key": "tech_artifact_limited_field_suppression",
+      "spec": "docs/design/artifact_civilization_r4f_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4f_implementation_2026-10-31.md"
     },
     {
       "id": "D13",
@@ -2397,18 +2400,33 @@
       "report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r4e_checkpoint_2026-10-31.json",
       "next_step": "推进D12有限场域压制：以已有公共战略舰为候选宿主，先核对付费限时能力的原生作用范围；D14及其余节点后续，连续巨构仍暂停。"
+    },
+    "R4f": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "nodes": [
+        "D12"
+      ],
+      "new_components": 1,
+      "new_actions": 1,
+      "new_events": 1,
+      "spec": "docs/design/artifact_civilization_r4f_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4f_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r4f_checkpoint_2026-10-31.json",
+      "next_step": "推进D14文明联合防务（D10＋C12）：复用行星驻防与星港接口，接有成本的联合部署；D12原生按钮、实际扣费与限时效果列入下一次集中试玩优先项。连续巨构、人物组合和批量图标仍暂停。"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 66,
+    "public_technologies": 67,
     "army_types": 5,
-    "component_definitions": 110,
+    "component_definitions": 111,
     "building_definitions": 39,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 14,
-    "note": "R4e新增E10、1公共舰种、4区段和6核心；5项新检查、12项相关检查及静态通过，运行待阶段试玩。"
+    "planned_technologies_remaining": 13,
+    "note": "R4f新增D12、1中庭级A槽及付费限时行动；5项新增、5项宿主检查与静态通过，运行未验。"
   },
   "orbital_buildings": [
     {
@@ -2524,7 +2542,7 @@
           "D13",
           "D14"
         ],
-        "role": "少量指定公共平台的场域、承载与联合防务；光环原型及公共新件分开，范围作用与宿主限制仍待可行性验收。"
+        "role": "D12中庭级付费本星系限时脉冲与D13承载已接源码；D14联合防务后续。旧光环独立，实际按钮/范围和计时待集中试玩。"
       }
     ],
     "army_tracks": [
@@ -2662,11 +2680,16 @@
           "D12",
           "D13",
           "D14"
+        ],
+        "status": "D12_D13_static_passed_D14_pending",
+        "runtime_status": "not_run",
+        "remaining_nodes": [
+          "D14"
         ]
       }
     ],
     "current_army_definitions": 5,
-    "current_component_definitions": 110,
+    "current_component_definitions": 111,
     "public_legacy_component_definitions": 43,
     "legacy_hull_locked_components": 7,
     "legacy_aura_prototypes": 4,
@@ -2736,5 +2759,8 @@
   "r4d_checkpoint": "reports/artifact_civilization_r4d_checkpoint_2026-10-31.json",
   "r4e_spec": "docs/design/artifact_civilization_r4e_implementation_spec_v0.1.json",
   "r4e_report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md",
-  "r4e_checkpoint": "reports/artifact_civilization_r4e_checkpoint_2026-10-31.json"
+  "r4e_checkpoint": "reports/artifact_civilization_r4e_checkpoint_2026-10-31.json",
+  "r4f_spec": "docs/design/artifact_civilization_r4f_implementation_spec_v0.1.json",
+  "r4f_report": "reports/artifact_civilization_r4f_implementation_2026-10-31.md",
+  "r4f_checkpoint": "reports/artifact_civilization_r4f_checkpoint_2026-10-31.json"
 }

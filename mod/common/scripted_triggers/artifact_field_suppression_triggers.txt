@@ -1,0 +1,58 @@
+# 舰船作用域：只选择作战舰，保留已命中的剩余时间，不反复叠加或刷新。
+artifact_field_suppression_target_ship = {
+	is_ship_class = shipclass_military
+	is_disabled = no
+	NOT = { has_modifier = afs_suppressed }
+}
+
+# 舰队作用域：运输/民用、隐形及失能舰队不作为目标；星港不含可命中作战舰。
+# 敌我关系由调用点相对发射舰队controller核对，不能用外交态度is_hostile_to代替。
+artifact_field_suppression_target_fleet = {
+	exists = controller
+	is_civilian = no
+	is_cloaked = no
+	is_disabled = no
+	any_owned_ship = { artifact_field_suppression_target_ship = yes }
+}
+
+# 发射舰队作用域：同一所有者与控制者才能支付费用并使用共享冷却。
+# 持久定型负责舰用资格；营建场失效只影响E10新订单，不停用已有舰的模块。
+artifact_field_suppression_platform_ready = {
+	exists = owner
+	exists = controller
+	is_owned_by = controller
+	exists = solar_system
+	is_civilian = no
+	is_cloaked = no
+	is_disabled = no
+	owner = {
+		artifact_strategic_hull_available = yes
+		has_technology = tech_artifact_limited_field_suppression
+		NOT = { has_modifier = afs_recharging }
+	}
+	any_owned_ship = {
+		is_ship_size = artifact_strategic_cruiser
+		has_component = ARTIFACT_FIELD_SUPPRESSOR
+		is_disabled = no
+	}
+}
+
+# 单列目标条件，让冷却中的按钮仍能正确显示“有敌舰”，不混淆两种失败原因。
+artifact_field_suppression_has_targets = {
+	exists = solar_system
+	solar_system = {
+		any_fleet_in_system = {
+			artifact_field_suppression_target_fleet = yes
+			controller = {
+				# 当前国家 <- 目标舰队 <- 星系 <- 发射舰队。
+				# 显式PREV链同时适用于按钮与完成回调，不假定按钮的ROOT。
+				is_hostile = prevprevprev.controller
+			}
+		}
+	}
+}
+
+artifact_field_suppression_ready = {
+	artifact_field_suppression_platform_ready = yes
+	artifact_field_suppression_has_targets = yes
+}

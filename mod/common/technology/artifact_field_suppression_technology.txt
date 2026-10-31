@@ -1,0 +1,15 @@
+# D12：由D03公共军备和A10边界稳定研究接入限时行动；个人转变不参与资格。
+# 科技本身不赠送舰船；实际宿主另需E10中庭级及D13已归档的承载定型。
+tech_artifact_limited_field_suppression = {
+	area = physics
+	icon = "tech_shield_rechargers_1"
+	cost = 24000
+	tier = 5
+	category = { field_manipulation }
+	prerequisites = { "tech_artifact_user_apotheosis_warfare" "tech_artifact_stable_rule_interface" }
+	weight = 50
+	potential = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+}

@@ -1003,6 +1003,35 @@
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
     },
     {
+      "id": "D12",
+      "key": "tech_artifact_limited_field_suppression",
+      "previous_name": "有限场域压制",
+      "name": "有限场域压制",
+      "lore": "从黑门研究的风险观测中，中央庭学会辨认边界扰动留下的可测征兆。舰用团队将这些记录与稳定场试验结合，把扰动限制在短暂的作战窗口：让敌舰难以维持射控和推进节奏，为常规舰队争取行动时间。",
+      "application": "开放中庭级专用场域压制模块。装入A槽后，可付费启动一次本星系压制，影响当时在场的敌方作战舰；效果有时限，全帝国共用冷却。中庭级与承载定型仍须分别取得，研究本身不发放舰船。",
+      "implementation_note": "中庭级专用A槽、原生付费self行动与隐藏舰队回调；命中时本星系、60日舰船修正、180日国家冷却。原生扣费/UI与读档未验。",
+      "technology_file": "mod/common/technology/artifact_field_suppression_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_field_suppression_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_sets/artifact_field_suppression_sets.txt",
+        "mod/common/component_templates/artifact_field_suppression_components.txt",
+        "mod/common/on_actions/artifact_field_suppression_on_actions.txt",
+        "mod/common/scripted_actions/artifact_field_suppression_actions.txt",
+        "mod/common/scripted_triggers/artifact_field_suppression_triggers.txt",
+        "mod/common/static_modifiers/artifact_field_suppression_modifiers.txt",
+        "mod/events/artifact_field_suppression_events.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "central_court_history",
+        "public_military"
+      ],
+      "source_note": "先查七都数据库和神器/组织/核心术语源；边界扰动压制是风险观测与安全应用的Mod工程转译，不补全黑门本质、量产神器或代替个人转变，来源审核状态不变。"
+    },
+    {
       "id": "D13",
       "key": "tech_artifact_terminal_hull_support",
       "previous_name": "终解舰体承载",
@@ -1468,12 +1497,6 @@
     {
       "id": "A12",
       "working_name": "公共神器理论",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
-    {
-      "id": "D12",
-      "working_name": "有限场域压制",
       "status": "awaits_implementation_text",
       "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
     },
@@ -2352,6 +2375,18 @@
       "remaining": 14,
       "spec": "docs/design/artifact_civilization_r4e_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4e_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R4f",
+      "nodes": [
+        "D12"
+      ],
+      "added": 1,
+      "implemented_total": 67,
+      "remaining": 13,
+      "spec": "docs/design/artifact_civilization_r4f_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4f_implementation_2026-10-31.md"
     }
   ]
 }

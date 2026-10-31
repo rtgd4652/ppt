@@ -1,0 +1,185 @@
+{
+  "date": "2026-10-31",
+  "package": "R4f",
+  "source_base": "f9975d5",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "nodes": [
+    "D12"
+  ],
+  "technology": {
+    "id": "D12",
+    "key": "tech_artifact_limited_field_suppression",
+    "name": "有限场域压制",
+    "area": "physics",
+    "tier": 5,
+    "cost": 24000,
+    "weight": 50,
+    "category": "field_manipulation",
+    "prerequisites": [
+      "tech_artifact_user_apotheosis_warfare",
+      "tech_artifact_stable_rule_interface"
+    ]
+  },
+  "lore": "从黑门研究的风险观测中，中央庭学会辨认边界扰动留下的可测征兆。舰用团队将这些记录与稳定场试验结合，把扰动限制在短暂的作战窗口：让敌舰难以维持射控和推进节奏，为常规舰队争取行动时间。",
+  "application": "开放中庭级专用场域压制模块。装入A槽后，可付费启动一次本星系压制，影响当时在场的敌方作战舰；效果有时限，全帝国共用冷却。中庭级与承载定型仍须分别取得，研究本身不发放舰船。",
+  "component": {
+    "key": "ARTIFACT_FIELD_SUPPRESSOR",
+    "name": "边界扰动压制器",
+    "size": "aux",
+    "host": "artifact_strategic_cruiser",
+    "power": -150,
+    "cost": {
+      "alloys": 250,
+      "rare_crystals": 20
+    },
+    "upkeep": {
+      "energy": 2,
+      "alloys": 0.25
+    },
+    "country_qualification": "E10 + acs_hull_qualified + ARTIFACT_USER + non-bioship; D12 research required",
+    "passive_bonus": null,
+    "ai_auto_fit": false,
+    "duplicate_installation": "no extra uses; country cooldown shared"
+  },
+  "action": {
+    "key": "artifact_field_suppression",
+    "user_scope": "fleet",
+    "scope": "self",
+    "slot": 0,
+    "instant": true,
+    "cost": {
+      "energy": 1500,
+      "rare_crystals": 25
+    },
+    "cost_owner": "native scripted action controller cost; no event deduction",
+    "duration_days": 60,
+    "cooldown_days": 180,
+    "cooldown_scope": "country + native fleet UI",
+    "effects": {
+      "ship_fire_rate_mult": -0.15,
+      "ship_speed_mult": -0.2
+    },
+    "targets": "hostile-controller military ships in current system at activation, noncivilian/noncloaked/nondisabled fleets; shipclass_military and enabled ships only",
+    "exclusions": [
+      "friendly/neutral",
+      "other systems",
+      "civilian/transport",
+      "cloaked",
+      "disabled",
+      "starbases/platforms",
+      "already suppressed"
+    ],
+    "persistence": "existing hit timer remains after leaving system, fleet split/merge or source loss; later arrivals not hit; no refresh/stack",
+    "automatic_ai_use": false,
+    "galaxy_monthly_scan": false
+  },
+  "states": [
+    {
+      "key": "afs_recharging",
+      "scope": "country",
+      "days": 180
+    },
+    {
+      "key": "afs_suppressed",
+      "scope": "ship",
+      "days": 60
+    }
+  ],
+  "interfaces": {
+    "reuses": "artifact_strategic_hull_available",
+    "callback": "on_artifact_field_suppression -> artifact_field_suppression.1",
+    "legacy_aura_changed": false,
+    "personal_transformation_required": false,
+    "industrial_outage": "does not stop existing equipped ships"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-BLACK-GATE",
+      "TERM-BLACK-GATE-RESEARCH-SYSTEM",
+      "TERM-CENTRAL-COURT"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/artifacts/artifact_bible_v0.1.md",
+      "knowledge/organizations/organization_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false
+  },
+  "native_reference": {
+    "game_source_version": "4.5.2 / eb95 (installed source, not a new runtime check)",
+    "target_4_5_1_compatibility": "pending",
+    "files": [
+      "common/scripted_actions/99_README_SCRIPTED_ACTIONS.txt",
+      "common/scripted_actions/02_paladins.txt",
+      "common/on_actions/02_component_on_actions.txt",
+      "events/ambition_events.txt:ambition.250",
+      "common/component_templates/000_documentation.txt"
+    ],
+    "additional": "本机script_documentation/effects.log与triggers.log核对add_modifier、枚举及敌意判断；引用本机原生范例，不引用搜索返回的非官方猜测。",
+    "contract": "fleet/self在原舰队立即执行，原生cost由controller支付；on_completed指向on_action，再调用fleet_event。slot=0使用普通舰队命令栏。",
+    "range_decision": "原生hostile_aura始终覆盖星系，未找到可靠的动态船用组件添加接口；选用显式本星系一次脉冲，不承诺局部半径或持续场边界。"
+  },
+  "validation": {
+    "new": {
+      "count": 5,
+      "status": "pass",
+      "module": "test_artifact_field_suppression"
+    },
+    "affected": {
+      "count": 5,
+      "status": "pass",
+      "module": "test_artifact_strategic_hull"
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 197,
+        "events": 258,
+        "localization_keys": 2043,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "limitations": [
+      "夹具执行正式条件与回调；原生按钮、资源扣除和日期由外部契约代表。",
+      "未启动游戏，不把费用契约、计时夹具或普通深拷贝当作原生扣费/读档证据。"
+    ]
+  },
+  "files": [
+    "mod/common/component_sets/artifact_field_suppression_sets.txt",
+    "mod/common/component_templates/artifact_field_suppression_components.txt",
+    "mod/common/on_actions/artifact_field_suppression_on_actions.txt",
+    "mod/common/scripted_actions/artifact_field_suppression_actions.txt",
+    "mod/common/scripted_triggers/artifact_field_suppression_triggers.txt",
+    "mod/common/static_modifiers/artifact_field_suppression_modifiers.txt",
+    "mod/common/technology/artifact_field_suppression_technology.txt",
+    "mod/events/artifact_field_suppression_events.txt",
+    "mod/localisation/simp_chinese/artifact_field_suppression_l_simp_chinese.yml",
+    "tools/validation/tests/test_artifact_field_suppression.py",
+    "docs/design/artifact_civilization_r4f_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r4f_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r4f_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r4f_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}

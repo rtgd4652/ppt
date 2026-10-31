@@ -1,0 +1,4 @@
+# 原生scripted_action完成回调；self使ROOT与FROM均为发射舰队。
+on_artifact_field_suppression = {
+	events = { artifact_field_suppression.1 }
+}

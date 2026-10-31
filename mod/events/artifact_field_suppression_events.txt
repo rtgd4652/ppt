@@ -1,0 +1,29 @@
+namespace = artifact_field_suppression
+
+# 即时脉冲只枚举发射时所在星系，不注册月度或战斗命中扫描。
+# 原生行动负责成本与舰队冷却；国家计时防止分合舰队或多舰轮流绕过间隔。
+fleet_event = {
+	id = artifact_field_suppression.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { artifact_field_suppression_ready = yes }
+			owner = { add_modifier = { modifier = afs_recharging days = 180 } }
+			solar_system = {
+				every_fleet_in_system = {
+					limit = {
+						artifact_field_suppression_target_fleet = yes
+						controller = { is_hostile = root.controller }
+					}
+					every_owned_ship = {
+						limit = { artifact_field_suppression_target_ship = yes }
+						# 修正绑定具体舰船；离开星系、拆分舰队或发射舰损失均不提前清除。
+						# 后到的舰船不补算；已受压制舰船不续期，统一等自身60日计时结束。
+						add_modifier = { modifier = afs_suppressed days = 60 }
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,5 @@
+component_set = {
+	key = "ARTIFACT_FIELD_SUPPRESSOR"
+	icon = "GFX_ship_part_artifact_aura_black_gate_suppression"
+	icon_frame = 1
+}
