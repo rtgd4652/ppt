@@ -1,0 +1,13 @@
+# D13 终解舰体承载。普通工程为神器研究提供安全载体；终解沿用Mod军备阶段用语。
+# 实现：研究开放一次实付承载试验，定型后开放新组件；能源/推进/FTL再分别核对D16/D17/D18。
+# 不授予个人转变、免费舰船或全国减伤；E10战略舰体另行实现。
+tech_artifact_terminal_hull_support = {
+	area = engineering
+	icon = "tech_artifact_user_apotheosis_warfare"
+	cost = 24000
+	tier = 5
+	category = { voidcraft }
+	prerequisites = { "tech_artifact_user_apotheosis_warfare" "tech_artifact_strategic_engineering_supply" }
+	weight = 60
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}

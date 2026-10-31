@@ -279,3 +279,33 @@ artifact_civil_supply_segmented_operational = {
 	has_active_building = "building_artifact_large_engineering_yard"
 	owner = { has_technology = "tech_artifact_segmented_large_engineering" }
 }
+
+# R4d承载试验复用集成场与有效接收端；原拥有者标记与营建/普通库存共用。
+artifact_civil_supply_hull_site = {
+	artifact_civil_supply_strategic_site = yes
+	owner = { has_technology = "tech_artifact_terminal_hull_support" }
+}
+
+artifact_civil_supply_hull_project = {
+	has_modifier = acs_hull_project
+	artifact_civil_supply_original_owner = yes
+}
+
+artifact_civil_supply_can_hull_start = {
+	artifact_civil_supply_hull_site = yes
+	artifact_civil_supply_strategic_ready = yes
+	owner = {
+		NOT = { has_modifier = acs_hull_qualified }
+		NOT = {
+			any_owned_colony = {
+				carrier = { artifact_civil_supply_hull_project = yes }
+			}
+		}
+	}
+}
+
+# 设施拆除后仍可撤销在建试验；不退材料，不清除其他库存或完成后的公共知识。
+artifact_civil_supply_can_hull_cancel = {
+	artifact_civil_supply_safe = yes
+	artifact_civil_supply_hull_project = yes
+}

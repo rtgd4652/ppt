@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-31",
+  "package": "R4d",
+  "source_base": "262b8be",
+  "status": "implemented_static_passed",
+  "spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+  "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md",
+  "completed": [
+    "D13研究与一份B14实付备料的承载试验",
+    "六次有效月度、暂停继续、全国占位与原拥有者清理",
+    "永久国家定型记录与三分支装配资格",
+    "四型反应堆、四型推进器、航道引擎与A槽缓冲器",
+    "中文卡面、只读记录页、七都来源和当前计划同步"
+  ],
+  "tests": {
+    "new": {
+      "count": 6,
+      "status": "pass",
+      "command": "python -B -m unittest discover -s tools/validation/tests -p test_artifact_hull_support.py -v"
+    },
+    "affected": {
+      "count": 21,
+      "status": "pass",
+      "modules": [
+        "test_artifact_civil_supply",
+        "test_artifact_strategic_supply",
+        "test_artifact_segmented_engineering"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 184,
+        "events": 257,
+        "localization_keys": 2005,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "command": "python -B tools/validation/check_mod.py --game-dir F:/steam/steamapps/common/Stellaris"
+    },
+    "limitations": [
+      "真实设计器许可、船厂改装、减伤结算、自动设计与关键读档待阶段试玩",
+      "源脚本执行器仅检查支付、进度、清理和国家资格，不模拟引擎行为"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "pending_command": null,
+    "save_created": null,
+    "required_stage_check": "一条真实承载到正常改装代表路径，观察原生减伤和一次关键读档；不穷举各尺寸，不重测旧章节"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-ARTIFACT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-CENTRAL-COURT"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/artifacts/artifact_bible_v0.1.md",
+      "knowledge/organizations/organization_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false
+  },
+  "current_counts": {
+    "date": "2026-10-31",
+    "public_technologies": 65,
+    "army_types": 5,
+    "component_definitions": 104,
+    "building_definitions": 39,
+    "starbase_building_definitions": 1,
+    "planned_technologies_remaining": 15
+  },
+  "consistency": {
+    "status": "pass",
+    "catalog_matches_source": true,
+    "new_localisation_keys": 42,
+    "new_icons_exist": true,
+    "utf8_and_localisation_bom": "pass",
+    "B14_has_D13_consumer": true
+  },
+  "remaining": [
+    "设计器、船厂改装、原生减伤结算、自动设计与关键读档待阶段试玩",
+    "首版数值未自然平衡验证",
+    "E10战略舰体、D12场域及D14联合防务仍待实现"
+  ],
+  "next": "实现E10公共战略舰体工程：实际公共舰型、正常船厂入口及适配部件；E09与D13基础已接，个人唯一舰独立",
+  "preserve": [
+    "tools/prototypes/aemusa_cross_system_megastructure/",
+    "2293.10.11-r3e-reserve及此前基线存档",
+    "暂停人物组合和批量图标"
+  ],
+  "files": [
+    "mod/common/technology/artifact_hull_support_technology.txt",
+    "mod/common/component_templates/artifact_hull_support_components.txt",
+    "mod/common/component_sets/artifact_hull_support_component_sets.txt",
+    "mod/localisation/simp_chinese/artifact_hull_support_l_simp_chinese.yml",
+    "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "mod/common/decisions/artifact_civil_supply_decisions.txt",
+    "mod/common/static_modifiers/artifact_civil_supply_modifiers.txt",
+    "mod/events/artifact_civil_supply_events.txt",
+    "tools/validation/tests/test_artifact_hull_support.py"
+  ]
+}

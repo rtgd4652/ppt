@@ -1566,7 +1566,11 @@
         "D16",
         "D13"
       ],
-      "role": "正常公共舰体功率和维护预算；后期承载另依D13及舰型规格，不复用50000功率的旧专属核心。"
+      "role": "正常公共舰体功率和维护预算；后期承载另依D13及舰型规格，不复用50000功率的旧专属核心。",
+      "r4d_status": "implemented_static_passed",
+      "r4d_spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+      "r4d_runtime_status": "not_run",
+      "r4d_gate": "D13与对应分支研究均已完成，且本国拥有acs_hull_qualified；只适配明确列出的常规舰型"
     },
     {
       "id": "thruster",
@@ -1575,7 +1579,11 @@
         "D17",
         "D13"
       ],
-      "role": "速度、闪避与能耗取舍；各舰体可装尺寸及自动设计须在对应组件包核对。"
+      "role": "速度、闪避与能耗取舍；各舰体可装尺寸及自动设计须在对应组件包核对。",
+      "r4d_status": "implemented_static_passed",
+      "r4d_spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+      "r4d_runtime_status": "not_run",
+      "r4d_gate": "D13与对应分支研究均已完成，且本国拥有acs_hull_qualified；只适配明确列出的常规舰型"
     },
     {
       "id": "ftl",
@@ -1584,7 +1592,11 @@
         "D18",
         "D13"
       ],
-      "role": "航道航行／充能分工，战略跳跃资格另随高阶舰体责任卡验证；与亚光速推进分开。"
+      "role": "航道航行／充能分工，战略跳跃资格另随高阶舰体责任卡验证；与亚光速推进分开。",
+      "r4d_status": "implemented_static_passed",
+      "r4d_spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+      "r4d_runtime_status": "not_run",
+      "r4d_gate": "D13与对应分支研究均已完成，且本国拥有acs_hull_qualified；只适配明确列出的常规舰型"
     },
     {
       "id": "computer",
@@ -1605,7 +1617,10 @@
         "D13",
         "D14"
       ],
-      "role": "少量指定公共平台的场域、承载与联合防务；光环原型及公共新件分开，范围作用与宿主限制仍待可行性验收。"
+      "role": "少量指定公共平台的场域、承载与联合防务；光环原型及公共新件分开，范围作用与宿主限制仍待可行性验收。",
+      "status": "D13_implemented_D12_D14_pending",
+      "spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+      "runtime_status": "not_run"
     }
   ],
   "army_tracks": [
@@ -1826,12 +1841,12 @@
   "r3c_checkpoint": "reports/artifact_civilization_r3c_checkpoint_2026-10-21.json",
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 64,
+    "public_technologies": 65,
     "army_types": 5,
-    "component_definitions": 94,
+    "component_definitions": 104,
     "building_definitions": 39,
     "starbase_building_definitions": 1,
-    "note": "R4c新增E09及BL30，B14已有真实工程消费者；分段扣款、停复工、条件容量和清理检查通过，实际运行待阶段验收。D13尚未实现。"
+    "note": "R4d新增D13和10个公共组件定义；一份B14备料完成承载试验后开放装配资格，源码和必要检查通过，运行待阶段试玩。E10战略舰体仍待实现。"
   },
   "r3d_spec": "docs/design/artifact_civilization_r3d_implementation_spec_v0.1.json",
   "r3d_report": "reports/artifact_civilization_r3d_implementation_2026-10-21.md",
@@ -1863,5 +1878,19 @@
     "spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
     "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md",
     "scope": "公共营建场的分段预算消费者已接；无新增舰船组件或陆军，不解锁D13或个人舰体。"
+  },
+  "r4d_hull_support": {
+    "date": "2026-10-31",
+    "status": "implemented_static_passed",
+    "runtime_status": "pending_stage_validation",
+    "technologies": [
+      "D13"
+    ],
+    "new_buildings": 0,
+    "new_components": 10,
+    "spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+    "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md",
+    "checkpoint": "reports/artifact_civilization_r4d_checkpoint_2026-10-31.json",
+    "balance_status": "pending"
   }
 }

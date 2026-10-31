@@ -1,0 +1,6 @@
+# 公共A槽承载组件独立于旧专属核心。
+component_set = {
+	key = "ARTIFACT_TERMINAL_LOAD_FRAME"
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+}

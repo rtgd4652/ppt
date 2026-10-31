@@ -64,6 +64,72 @@ decision_artifact_rule_anchor = {
 	ai_weight = { weight = 0 }
 }
 
+# R4d承载决议与既有工程入口共用物资管理接口。
+
+# R4d一次承载试验，正常行星决议进入；只消耗已支付的工程备料。
+decision_artifact_civil_hull_start = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_building = "building_artifact_engineering_supply_yard"
+		owner = {
+			has_technology = "tech_artifact_terminal_hull_support"
+			NOT = { has_modifier = acs_hull_qualified }
+		}
+		NOT = { has_modifier = acs_hull_project }
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_hull.require_start
+			artifact_civil_supply_can_hull_start = yes
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_hull.offer_start
+		hidden_effect = { artifact_civil_supply_hull_start = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_civil_hull_cancel = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_modifier = acs_hull_project
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = artifact_hull.require_cancel
+			artifact_civil_supply_can_hull_cancel = yes
+		}
+	}
+	effect = {
+		custom_tooltip = artifact_hull.offer_cancel
+		hidden_effect = { artifact_civil_supply_hull_cancel = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_civil_hull_status = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		owner = { has_technology = "tech_artifact_terminal_hull_support" }
+		OR = {
+			has_building = "building_artifact_engineering_supply_yard"
+			has_modifier = acs_hull_project
+		}
+	}
+	effect = { carrier_event = { id = artifact_civil_supply.11 } }
+	ai_weight = { weight = 0 }
+}
+
 decision_artifact_civil_reserve = {
 	owned_planets_only = yes
 	sound = "event_administrative_work"

@@ -1003,6 +1003,34 @@
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
     },
     {
+      "id": "D13",
+      "key": "tech_artifact_terminal_hull_support",
+      "previous_name": "终解舰体承载",
+      "name": "终解舰体承载",
+      "lore": "神器研究需要普通工业提供仪器、材料与安全环境。中央庭将共鸣设备的负荷记录交给造舰团队，让供能、推进与防护在同一套承载结构上协同运行；能够复制的是经过试验的构件和工艺。",
+      "application": "在工程物资集成场投入一份大型工程备料，完成6次有效月度的舰体承载试验，永久取得本国承载定型记录。开放承载缓冲器；结合舰载相位供能、相位机动推进和超空间航行协调，分别开放对应高阶组件。仍须正常付费造舰或改装。",
+      "implementation_note": "研究开放一次实付承载试验，定型后开放10个新组件；能源／推进／FTL再分别核对D16／D17／D18。不发舰、不授予个人转变或全国战斗修正。",
+      "technology_file": "mod/common/technology/artifact_hull_support_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_hull_support_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/component_templates/artifact_hull_support_components.txt",
+        "mod/common/component_sets/artifact_hull_support_component_sets.txt",
+        "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/common/decisions/artifact_civil_supply_decisions.txt",
+        "mod/common/static_modifiers/artifact_civil_supply_modifiers.txt",
+        "mod/events/artifact_civil_supply_events.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "central_court_history",
+        "public_military"
+      ],
+      "source_note": "只读查询七都数据库并阅读对应术语、神器与组织资料；普通工业提供安全载体，承载试验与公共组件是Mod设计，终解沿用Mod军备阶段用语，来源审核状态不变。"
+    },
+    {
       "id": "D15",
       "key": "tech_artifact_runic_hull_armor",
       "previous_name": "符文舰体装甲",
@@ -1419,12 +1447,6 @@
     {
       "id": "D12",
       "working_name": "有限场域压制",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
-    {
-      "id": "D13",
-      "working_name": "终解舰体承载",
       "status": "awaits_implementation_text",
       "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
     },
@@ -2289,6 +2311,14 @@
       "source_base": "d35ac20",
       "spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md"
+    },
+    {
+      "package": "R4d",
+      "date": "2026-10-31",
+      "node": "D13",
+      "source_base": "262b8be",
+      "spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md"
     }
   ]
 }

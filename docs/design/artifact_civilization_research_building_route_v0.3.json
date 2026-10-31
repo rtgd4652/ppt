@@ -483,7 +483,7 @@
       "gate": null,
       "existing_key": null,
       "status": "implemented_static_passed_runtime_pending",
-      "capability": "建设集成场并实付一份全国备料，可撤回或交付E09营建项目；D13舰体消费者待接。",
+      "capability": "建设集成场并实付一份全国备料，可撤回或交付E09营建／D13承载试验；两种消费者均已接，运行待阶段试玩。",
       "implementation_key": "tech_artifact_strategic_engineering_supply",
       "spec": "docs/design/artifact_civilization_r4b_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r4b_implementation_2026-10-31.md"
@@ -888,8 +888,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "提供高阶部件承载和公共特殊舰体的技术基础；正常舰用能源、推进、FTL分别从D16／D17／D18接续，个人唯一舰与旧专属件保持独立。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "一份真实工程备料完成6次有效月度承载试验，归档永久国家定型记录；开放承载缓冲器及分别依赖D16／D17／D18的公共高阶反应堆、推进器、航道引擎。E10舰体与个人唯一舰独立。",
+      "implementation_key": "tech_artifact_terminal_hull_support",
+      "spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md"
     },
     {
       "id": "D14",
@@ -2362,16 +2365,30 @@
       "report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r4c_checkpoint_2026-10-31.json",
       "balance_status": "pending"
+    },
+    "R4d": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "pending_stage_validation",
+      "technologies": [
+        "D13"
+      ],
+      "new_buildings": 0,
+      "new_components": 10,
+      "spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r4d_checkpoint_2026-10-31.json",
+      "balance_status": "pending"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 64,
+    "public_technologies": 65,
     "army_types": 5,
-    "component_definitions": 94,
+    "component_definitions": 104,
     "building_definitions": 39,
     "starbase_building_definitions": 1,
-    "note": "R4c新增E09及BL30，B14已有真实工程消费者；分段扣款、停复工、条件容量和清理检查通过，实际运行待阶段验收。D13尚未实现。"
+    "note": "R4d新增D13和10个公共组件定义；一份B14备料完成承载试验后开放装配资格，源码和必要检查通过，运行待阶段试玩。E10战略舰体仍待实现。"
   },
   "orbital_buildings": [
     {
@@ -2693,5 +2710,8 @@
   "r4b_checkpoint": "reports/artifact_civilization_r4b_checkpoint_2026-10-31.json",
   "r4c_spec": "docs/design/artifact_civilization_r4c_implementation_spec_v0.1.json",
   "r4c_report": "reports/artifact_civilization_r4c_implementation_2026-10-31.md",
-  "r4c_checkpoint": "reports/artifact_civilization_r4c_checkpoint_2026-10-31.json"
+  "r4c_checkpoint": "reports/artifact_civilization_r4c_checkpoint_2026-10-31.json",
+  "r4d_spec": "docs/design/artifact_civilization_r4d_implementation_spec_v0.1.json",
+  "r4d_report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md",
+  "r4d_checkpoint": "reports/artifact_civilization_r4d_checkpoint_2026-10-31.json"
 }

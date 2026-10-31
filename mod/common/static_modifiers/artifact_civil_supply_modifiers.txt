@@ -85,6 +85,17 @@ acs_expedition_reconstitution = {
 }
 
 
+# R4d定型记录无战斗收益；新组件读取国家资格，旧组件完全不读此标记。
+acs_hull_project = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
+acs_hull_qualified = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+
 # R4c阶段及占位标记均无数值收益；有效营建场提供国家并行容量。
 acs_segmented_project = {
 	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"

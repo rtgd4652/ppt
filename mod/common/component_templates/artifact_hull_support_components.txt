@@ -1,0 +1,341 @@
+# D13公共承载组件：工程定型记录与分支研究同时成立后开放，沿用原生槽位。
+# 当前仅适配五种常规舰体；E10战略舰体以后显式扩展，个人唯一舰不继承这些资格。
+# 原生减伤参考晨曦及本机原版；不订阅逐次受击、失能或摧毁事件。
+
+# 轻型终解承载反应堆：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "CORVETTE_ARTIFACT_TERMINAL_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 300
+	component_set = "power_core"
+	size_restriction = { corvette frigate }
+	potential = {
+		ship_uses_corvette_reactors = yes
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" "tech_artifact_ship_phase_power" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 60 }
+		upkeep = { energy = 0.5 alloys = 0.06 }
+	}
+	ai_weight = { weight = 6 }
+}
+
+# 轻型终解承载推进器：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "CORVETTE_ARTIFACT_TERMINAL_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -45
+	component_set = "thruster_components"
+	size_restriction = { corvette frigate }
+	modifier = {
+		ship_base_speed_mult = 0.85
+		ship_evasion_add = 16
+	}
+	potential = {
+		ship_uses_corvette_components = yes
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" "tech_artifact_phase_maneuvering" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 24 }
+		upkeep = { energy = 0.16 alloys = 0.02 }
+	}
+	ai_weight = { weight = 6 }
+}
+
+# 驱逐型终解承载反应堆：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "DESTROYER_ARTIFACT_TERMINAL_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 600
+	component_set = "power_core"
+	size_restriction = { destroyer }
+	potential = {
+		ship_uses_destroyer_reactors = yes
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" "tech_artifact_ship_phase_power" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 120 }
+		upkeep = { energy = 1 alloys = 0.12 }
+	}
+	ai_weight = { weight = 6 }
+}
+
+# 驱逐型终解承载推进器：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "DESTROYER_ARTIFACT_TERMINAL_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -90
+	component_set = "thruster_components"
+	size_restriction = { destroyer }
+	modifier = {
+		ship_base_speed_mult = 0.85
+		ship_evasion_add = 12
+	}
+	potential = {
+		ship_uses_destroyer_components = yes
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" "tech_artifact_phase_maneuvering" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 48 }
+		upkeep = { energy = 0.32 alloys = 0.04 }
+	}
+	ai_weight = { weight = 6 }
+}
+
+# 巡洋型终解承载反应堆：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "CRUISER_ARTIFACT_TERMINAL_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 1200
+	component_set = "power_core"
+	size_restriction = { cruiser }
+	potential = {
+		ship_uses_cruiser_reactors = yes
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" "tech_artifact_ship_phase_power" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 240 }
+		upkeep = { energy = 2 alloys = 0.24 }
+	}
+	ai_weight = { weight = 6 }
+}
+
+# 巡洋型终解承载推进器：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "CRUISER_ARTIFACT_TERMINAL_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -180
+	component_set = "thruster_components"
+	size_restriction = { cruiser }
+	modifier = {
+		ship_base_speed_mult = 0.85
+		ship_evasion_add = 8
+	}
+	potential = {
+		ship_uses_cruiser_components = yes
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" "tech_artifact_phase_maneuvering" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 96 }
+		upkeep = { energy = 0.64 alloys = 0.08 }
+	}
+	ai_weight = { weight = 6 }
+}
+
+# 战列型终解承载反应堆：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "BATTLESHIP_ARTIFACT_TERMINAL_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 2400
+	component_set = "power_core"
+	size_restriction = { battleship }
+	potential = {
+		ship_uses_battleship_reactors = yes
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" "tech_artifact_ship_phase_power" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 480 }
+		upkeep = { energy = 4 alloys = 0.48 }
+	}
+	ai_weight = { weight = 6 }
+}
+
+# 战列型终解承载推进器：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "BATTLESHIP_ARTIFACT_TERMINAL_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -360
+	component_set = "thruster_components"
+	size_restriction = { battleship }
+	modifier = {
+		ship_base_speed_mult = 0.85
+		ship_evasion_add = 4
+	}
+	potential = {
+		ship_uses_battleship_components = yes
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" "tech_artifact_phase_maneuvering" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 192 }
+		upkeep = { energy = 1.28 alloys = 0.16 }
+	}
+	ai_weight = { weight = 6 }
+}
+
+# 终解承载航道引擎：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "ARTIFACT_TERMINAL_HYPER_DRIVE"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_3"
+	icon_frame = 1
+	power = -30
+	component_set = "ftl_components"
+	size_restriction = { corvette frigate destroyer cruiser battleship }
+	ftl = yes
+	jumpdrive = no
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+		ship_windup_mult = -0.6
+		ship_interstellar_speed_mult = 0.35
+	}
+	potential = {
+		is_eager_explorer_ship = no
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" "tech_artifact_hyperspace_coordination" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 60 }
+		upkeep = { energy = 0.4 alloys = 0.06 }
+	}
+	ai_weight = { weight = 6 }
+}
+
+# 终解承载缓冲器：首版参数；正常配装、引擎减伤和自动设计行为待阶段试玩。
+utility_component_template = {
+	key = "ARTIFACT_TERMINAL_LOAD_FRAME"
+	size = aux
+	icon = "GFX_ship_part_auto_repair"
+	icon_frame = 1
+	power = -30
+	component_set = "ARTIFACT_TERMINAL_LOAD_FRAME"
+	size_restriction = { corvette frigate destroyer cruiser battleship }
+	modifier = {
+		ship_hull_mult = 0.15
+	}
+	ship_modifier = {
+		ship_damage_reduction_mult = 0.1
+	}
+	potential = {
+		from = {
+			owner_main_species = { is_species_class = "ARTIFACT_USER" }
+			country_uses_bio_ships = no
+			has_modifier = acs_hull_qualified
+		}
+	}
+	# 卡面显示研究用途，实际可装配仍由potential中的定型记录守卫。
+	show_tech_unlock_if = {
+		owner_main_species = { is_species_class = "ARTIFACT_USER" }
+		country_uses_bio_ships = no
+	}
+	prerequisites = { "tech_artifact_terminal_hull_support" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 70 }
+		upkeep = { energy = 0.5 alloys = 0.08 }
+	}
+	ai_weight = { weight = 6 }
+}

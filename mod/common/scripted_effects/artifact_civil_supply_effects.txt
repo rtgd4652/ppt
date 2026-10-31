@@ -2,6 +2,7 @@
 # 决议不另收原生费用，避免折扣后按固定面额退款的套利。
 artifact_civil_supply_clear = {
 	artifact_civil_supply_segmented_clear = yes
+	artifact_civil_supply_hull_clear = yes
 	remove_modifier = acs_supply_reserved
 	remove_modifier = acs_strategic_supply_reserved
 	remove_modifier = acs_link_source
@@ -345,7 +346,10 @@ artifact_civil_supply_monthly = {
 		}
 		artifact_civil_supply_clear = yes
 	}
-	else = { artifact_civil_supply_segmented_monthly = yes }
+	else = {
+		artifact_civil_supply_segmented_monthly = yes
+		artifact_civil_supply_hull_monthly = yes
+	}
 }
 
 # 付费部署复用原物资管理身份；有效期内不能重入扣费或续期。
@@ -393,6 +397,50 @@ artifact_civil_supply_strategic_consume = {
 	if = {
 		limit = { artifact_civil_supply_strategic_ready = yes }
 		remove_modifier = acs_strategic_supply_reserved
+	}
+}
+
+# R4d已完成定型属于原国家知识，清理殖民地时只删除在建试验。
+artifact_civil_supply_hull_clear = {
+	remove_modifier = acs_hull_project
+	clear_variable = acs_hull_work
+}
+
+# 同一守卫块同时验证场所/全国名额/真实备料，消费后才启动；无成功返回值依赖。
+artifact_civil_supply_hull_start = {
+	if = {
+		limit = { artifact_civil_supply_can_hull_start = yes }
+		artifact_civil_supply_strategic_consume = yes
+		add_modifier = { modifier = acs_hull_project days = -1 }
+		set_variable = { which = acs_hull_work value = 0 }
+	}
+}
+
+artifact_civil_supply_hull_cancel = {
+	if = {
+		limit = { artifact_civil_supply_can_hull_cancel = yes }
+		artifact_civil_supply_hull_clear = yes
+	}
+}
+
+# 沿用国家月度入口，不新增全银河扫描。停工不增加工作量，也不追补月份。
+artifact_civil_supply_hull_monthly = {
+	if = {
+		limit = { artifact_civil_supply_hull_project = yes }
+		if = {
+			limit = { owner = { has_modifier = acs_hull_qualified } }
+			artifact_civil_supply_hull_clear = yes
+		}
+		else_if = {
+			limit = { artifact_civil_supply_hull_site = yes }
+			change_variable = { which = acs_hull_work value = 1 }
+			if = {
+				limit = { check_variable = { which = acs_hull_work value >= 6 } }
+				# 结果不含战斗数值，只作为新组件可装配的国家资格；不会授予其他研究。
+				owner = { add_modifier = { modifier = acs_hull_qualified days = -1 } }
+				artifact_civil_supply_hull_clear = yes
+			}
+		}
 	}
 }
 

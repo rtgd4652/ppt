@@ -1,5 +1,42 @@
 namespace = artifact_civil_supply
 
+# R4d只读承载记录；完成知识独立于设施，查看不会付款、赠送研究或生成舰船。
+carrier_event = {
+	id = artifact_civil_supply.11
+	title = artifact_hull.title
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = { artifact_civil_supply_actor = yes }
+	desc = {
+		trigger = {
+			NOT = { has_modifier = acs_hull_project }
+			owner = { NOT = { has_modifier = acs_hull_qualified } }
+		}
+		text = artifact_hull.intro
+	}
+	desc = {
+		trigger = {
+			has_modifier = acs_hull_project
+			artifact_civil_supply_hull_site = yes
+			owner = { NOT = { has_modifier = acs_hull_qualified } }
+		}
+		text = artifact_hull.working
+	}
+	desc = {
+		trigger = {
+			has_modifier = acs_hull_project
+			artifact_civil_supply_hull_site = no
+			owner = { NOT = { has_modifier = acs_hull_qualified } }
+		}
+		text = artifact_hull.paused
+	}
+	desc = {
+		trigger = { owner = { has_modifier = acs_hull_qualified } }
+		text = artifact_hull.qualified
+	}
+	option = { name = artifact_hull.close }
+}
+
 # 只扫描已登记本包状态的殖民地；回到载体，避免动态目标索引错位。
 country_event = {
     id = artifact_civil_supply.1

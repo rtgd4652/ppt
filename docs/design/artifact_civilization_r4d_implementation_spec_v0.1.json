@@ -1,0 +1,337 @@
+{
+  "date": "2026-10-31",
+  "package": "R4d",
+  "source_base": "262b8be",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "nodes": [
+    "D13"
+  ],
+  "technology": {
+    "id": "D13",
+    "key": "tech_artifact_terminal_hull_support",
+    "name": "终解舰体承载",
+    "area": "engineering",
+    "tier": 5,
+    "cost": 24000,
+    "weight": 60,
+    "category": "voidcraft",
+    "prerequisites": [
+      "tech_artifact_user_apotheosis_warfare",
+      "tech_artifact_strategic_engineering_supply"
+    ]
+  },
+  "lore": "神器研究需要普通工业提供仪器、材料与安全环境。中央庭将共鸣设备的负荷记录交给造舰团队，让供能、推进与防护在同一套承载结构上协同运行；能够复制的是经过试验的构件和工艺。",
+  "application": "在工程物资集成场投入一份大型工程备料，完成6次有效月度的舰体承载试验，永久取得本国承载定型记录。开放承载缓冲器；结合舰载相位供能、相位机动推进和超空间航行协调，分别开放对应高阶组件。仍须正常付费造舰或改装。",
+  "project": {
+    "site": "building_artifact_engineering_supply_yard",
+    "input": "one acs_strategic_supply_reserved",
+    "months": 6,
+    "project_modifier": "acs_hull_project",
+    "work_variable": "acs_hull_work",
+    "result": "acs_hull_qualified",
+    "national_project_limit": 1,
+    "completion": "permanent original-country knowledge; no ship granted",
+    "cancel": "no refund; leaves other stocks untouched"
+  },
+  "components": [
+    {
+      "key": "CORVETTE_ARTIFACT_TERMINAL_REACTOR",
+      "name": "轻型终解承载反应堆",
+      "family": "reactor",
+      "sizes": [
+        "corvette",
+        "frigate"
+      ],
+      "power": 300,
+      "cost": 60,
+      "upkeep": {
+        "energy": 0.5,
+        "alloys": 0.06
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support",
+        "tech_artifact_ship_phase_power"
+      ],
+      "set": "power_core",
+      "icon": "GFX_ship_part_reactor_5",
+      "helper": "ship_uses_corvette_reactors",
+      "description": "经承载试验定型的高负荷供能组件。提高可用功率，并承担更高的合金造价和维护；需要本国承载定型记录。"
+    },
+    {
+      "key": "CORVETTE_ARTIFACT_TERMINAL_THRUSTER",
+      "name": "轻型终解承载推进器",
+      "family": "thruster",
+      "sizes": [
+        "corvette",
+        "frigate"
+      ],
+      "power": -45,
+      "cost": 24,
+      "upkeep": {
+        "energy": 0.16,
+        "alloys": 0.02
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support",
+        "tech_artifact_phase_maneuvering"
+      ],
+      "set": "thruster_components",
+      "icon": "GFX_ship_part_thruster_4",
+      "helper": "ship_uses_corvette_components",
+      "modifier": {
+        "ship_base_speed_mult": 0.85,
+        "ship_evasion_add": 16
+      },
+      "description": "承载框架在机动过程中分散共鸣设备的负荷，提高亚光速机动能力；消耗更多功率，需要本国承载定型记录。"
+    },
+    {
+      "key": "DESTROYER_ARTIFACT_TERMINAL_REACTOR",
+      "name": "驱逐型终解承载反应堆",
+      "family": "reactor",
+      "sizes": [
+        "destroyer"
+      ],
+      "power": 600,
+      "cost": 120,
+      "upkeep": {
+        "energy": 1,
+        "alloys": 0.12
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support",
+        "tech_artifact_ship_phase_power"
+      ],
+      "set": "power_core",
+      "icon": "GFX_ship_part_reactor_5",
+      "helper": "ship_uses_destroyer_reactors",
+      "description": "经承载试验定型的高负荷供能组件。提高可用功率，并承担更高的合金造价和维护；需要本国承载定型记录。"
+    },
+    {
+      "key": "DESTROYER_ARTIFACT_TERMINAL_THRUSTER",
+      "name": "驱逐型终解承载推进器",
+      "family": "thruster",
+      "sizes": [
+        "destroyer"
+      ],
+      "power": -90,
+      "cost": 48,
+      "upkeep": {
+        "energy": 0.32,
+        "alloys": 0.04
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support",
+        "tech_artifact_phase_maneuvering"
+      ],
+      "set": "thruster_components",
+      "icon": "GFX_ship_part_thruster_4",
+      "helper": "ship_uses_destroyer_components",
+      "modifier": {
+        "ship_base_speed_mult": 0.85,
+        "ship_evasion_add": 12
+      },
+      "description": "承载框架在机动过程中分散共鸣设备的负荷，提高亚光速机动能力；消耗更多功率，需要本国承载定型记录。"
+    },
+    {
+      "key": "CRUISER_ARTIFACT_TERMINAL_REACTOR",
+      "name": "巡洋型终解承载反应堆",
+      "family": "reactor",
+      "sizes": [
+        "cruiser"
+      ],
+      "power": 1200,
+      "cost": 240,
+      "upkeep": {
+        "energy": 2,
+        "alloys": 0.24
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support",
+        "tech_artifact_ship_phase_power"
+      ],
+      "set": "power_core",
+      "icon": "GFX_ship_part_reactor_5",
+      "helper": "ship_uses_cruiser_reactors",
+      "description": "经承载试验定型的高负荷供能组件。提高可用功率，并承担更高的合金造价和维护；需要本国承载定型记录。"
+    },
+    {
+      "key": "CRUISER_ARTIFACT_TERMINAL_THRUSTER",
+      "name": "巡洋型终解承载推进器",
+      "family": "thruster",
+      "sizes": [
+        "cruiser"
+      ],
+      "power": -180,
+      "cost": 96,
+      "upkeep": {
+        "energy": 0.64,
+        "alloys": 0.08
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support",
+        "tech_artifact_phase_maneuvering"
+      ],
+      "set": "thruster_components",
+      "icon": "GFX_ship_part_thruster_4",
+      "helper": "ship_uses_cruiser_components",
+      "modifier": {
+        "ship_base_speed_mult": 0.85,
+        "ship_evasion_add": 8
+      },
+      "description": "承载框架在机动过程中分散共鸣设备的负荷，提高亚光速机动能力；消耗更多功率，需要本国承载定型记录。"
+    },
+    {
+      "key": "BATTLESHIP_ARTIFACT_TERMINAL_REACTOR",
+      "name": "战列型终解承载反应堆",
+      "family": "reactor",
+      "sizes": [
+        "battleship"
+      ],
+      "power": 2400,
+      "cost": 480,
+      "upkeep": {
+        "energy": 4,
+        "alloys": 0.48
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support",
+        "tech_artifact_ship_phase_power"
+      ],
+      "set": "power_core",
+      "icon": "GFX_ship_part_reactor_5",
+      "helper": "ship_uses_battleship_reactors",
+      "description": "经承载试验定型的高负荷供能组件。提高可用功率，并承担更高的合金造价和维护；需要本国承载定型记录。"
+    },
+    {
+      "key": "BATTLESHIP_ARTIFACT_TERMINAL_THRUSTER",
+      "name": "战列型终解承载推进器",
+      "family": "thruster",
+      "sizes": [
+        "battleship"
+      ],
+      "power": -360,
+      "cost": 192,
+      "upkeep": {
+        "energy": 1.28,
+        "alloys": 0.16
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support",
+        "tech_artifact_phase_maneuvering"
+      ],
+      "set": "thruster_components",
+      "icon": "GFX_ship_part_thruster_4",
+      "helper": "ship_uses_battleship_components",
+      "modifier": {
+        "ship_base_speed_mult": 0.85,
+        "ship_evasion_add": 4
+      },
+      "description": "承载框架在机动过程中分散共鸣设备的负荷，提高亚光速机动能力；消耗更多功率，需要本国承载定型记录。"
+    },
+    {
+      "key": "ARTIFACT_TERMINAL_HYPER_DRIVE",
+      "name": "终解承载航道引擎",
+      "family": "ftl",
+      "sizes": [
+        "corvette",
+        "frigate",
+        "destroyer",
+        "cruiser",
+        "battleship"
+      ],
+      "power": -30,
+      "cost": 60,
+      "upkeep": {
+        "energy": 0.4,
+        "alloys": 0.06
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support",
+        "tech_artifact_hyperspace_coordination"
+      ],
+      "set": "ftl_components",
+      "icon": "GFX_ship_part_hyper_drive_3",
+      "ship_modifier": {
+        "ship_disengage_opportunities_add": 1,
+        "ship_windup_mult": -0.6,
+        "ship_interstellar_speed_mult": 0.35
+      },
+      "description": "经过承载联试的航道引擎，改善充能和超空间航行。需要本国承载定型记录，保留普通航道航行方式。"
+    },
+    {
+      "key": "ARTIFACT_TERMINAL_LOAD_FRAME",
+      "name": "终解承载缓冲器",
+      "family": "aux",
+      "sizes": [
+        "corvette",
+        "frigate",
+        "destroyer",
+        "cruiser",
+        "battleship"
+      ],
+      "power": -30,
+      "cost": 70,
+      "upkeep": {
+        "energy": 0.5,
+        "alloys": 0.08
+      },
+      "prerequisites": [
+        "tech_artifact_terminal_hull_support"
+      ],
+      "set": "ARTIFACT_TERMINAL_LOAD_FRAME",
+      "icon": "GFX_ship_part_auto_repair",
+      "modifier": {
+        "ship_hull_mult": 0.15
+      },
+      "ship_modifier": {
+        "ship_damage_reduction_mult": 0.1
+      },
+      "description": "辅助槽中的承载框架与缓冲结构提高舰体耐久并提供比例减伤。需要本国承载定型记录，代价为功率、合金和维护投入。"
+    }
+  ],
+  "native_evidence": [
+    "F:/steam/steamapps/common/Stellaris/common/component_templates/00_utilities_reactors.txt",
+    "F:/steam/steamapps/common/Stellaris/common/component_templates/00_utilities_thrusters.txt",
+    "F:/steam/steamapps/common/Stellaris/common/component_templates/00_utilities_drives.txt",
+    "F:/steam/steamapps/common/Stellaris/common/component_templates/00_utilities.txt",
+    "F:/steam/steamapps/common/Stellaris/common/static_modifiers/30_static_modifiers_defense_platforms.txt"
+  ],
+  "source_terms": [
+    "TERM-ARTIFACT",
+    "TERM-ARTIFACT-SCIENCE",
+    "TERM-CENTRAL-COURT"
+  ],
+  "source_documents": [
+    "tools/knowledge/data/core_terms_v0.1.json",
+    "knowledge/artifacts/artifact_bible_v0.1.md",
+    "knowledge/organizations/organization_bible_v0.1.md"
+  ],
+  "knowledge_layer": "mod_design_decision",
+  "review_status_changed": false,
+  "new_runtime_files": [
+    "mod/common/technology/artifact_hull_support_technology.txt",
+    "mod/common/component_templates/artifact_hull_support_components.txt",
+    "mod/common/component_sets/artifact_hull_support_component_sets.txt",
+    "mod/localisation/simp_chinese/artifact_hull_support_l_simp_chinese.yml"
+  ],
+  "changed_runtime_files": [
+    "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "mod/common/decisions/artifact_civil_supply_decisions.txt",
+    "mod/common/static_modifiers/artifact_civil_supply_modifiers.txt",
+    "mod/events/artifact_civil_supply_events.txt"
+  ],
+  "validation": {
+    "new_tests": 6,
+    "affected_tests": 21,
+    "static": "pass",
+    "runtime": "not_run",
+    "engine_limitations": [
+      "真实设计器许可、船厂改装、减伤结算、自动设计与关键读档待阶段试玩",
+      "源脚本执行器仅检查支付、进度、清理和国家资格，不模拟引擎行为"
+    ]
+  },
+  "report": "reports/artifact_civilization_r4d_implementation_2026-10-31.md",
+  "checkpoint": "reports/artifact_civilization_r4d_checkpoint_2026-10-31.json"
+}
