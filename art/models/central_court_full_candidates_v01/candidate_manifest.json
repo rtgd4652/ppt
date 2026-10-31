@@ -1,0 +1,523 @@
+{
+  "date": "2026-10-31",
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "blender": "5.1.2",
+  "targets": [
+    "AP-ST-11 中庭级战略舰/传承舰首",
+    "AP-ST-10 F08传承造境平台两阶段"
+  ],
+  "meshes": [
+    {
+      "part": "cc_candidate_cruiser_bow",
+      "triangles": 328,
+      "locators": [
+        "xl_gun_01"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_cruiser_bow.mesh",
+      "shape_names": [
+        "cc_candidate_cruiser_bow"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "cc_candidate_cruiser_mid",
+      "triangles": 2360,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_cruiser_mid.mesh",
+      "shape_names": [
+        "cc_candidate_cruiser_mid"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "cc_candidate_cruiser_stern",
+      "triangles": 1444,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_cruiser_stern.mesh",
+      "shape_names": [
+        "cc_candidate_cruiser_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "cc_candidate_worldformer_base",
+      "triangles": 3532,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_worldformer_base.mesh",
+      "shape_names": [
+        "cc_candidate_worldformer_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "cc_candidate_worldformer_active",
+      "triangles": 6996,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_worldformer_active.mesh",
+      "shape_names": [
+        "cc_candidate_worldformer_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    }
+  ],
+  "kit_reuse": [
+    {
+      "collection": "cc_candidate_cruiser_stern",
+      "part": "cck_03_noncontact",
+      "position": [
+        -5.5,
+        -15,
+        0
+      ],
+      "scale": 1.35,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_cruiser_mid",
+      "part": "cck_06_service",
+      "position": [
+        -5.2,
+        -3,
+        1.45
+      ],
+      "scale": 1.1,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_cruiser_stern",
+      "part": "cck_03_noncontact",
+      "position": [
+        5.5,
+        -15,
+        0
+      ],
+      "scale": 1.35,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_cruiser_mid",
+      "part": "cck_06_service",
+      "position": [
+        5.2,
+        -3,
+        1.45
+      ],
+      "scale": 1.1,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_cruiser_mid",
+      "part": "cck_01_spine",
+      "position": [
+        0,
+        -3,
+        -0.3
+      ],
+      "scale": 1.35,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_cruiser_mid",
+      "part": "cck_05_calibration",
+      "position": [
+        0,
+        1.3,
+        1.25
+      ],
+      "scale": 0.7,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_base",
+      "part": "cck_02_junction",
+      "position": [
+        0,
+        -8,
+        0.1
+      ],
+      "scale": 1.7,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_base",
+      "part": "cck_01_spine",
+      "position": [
+        0,
+        -12.4,
+        0
+      ],
+      "scale": 1.25,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_base",
+      "part": "cck_06_service",
+      "position": [
+        -9,
+        -5,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_base",
+      "part": "cck_06_service",
+      "position": [
+        -9,
+        0,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_base",
+      "part": "cck_06_service",
+      "position": [
+        -9,
+        5,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_base",
+      "part": "cck_06_service",
+      "position": [
+        9,
+        -5,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_base",
+      "part": "cck_06_service",
+      "position": [
+        9,
+        0,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_base",
+      "part": "cck_06_service",
+      "position": [
+        9,
+        5,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_02_junction",
+      "position": [
+        0,
+        -8,
+        0.1
+      ],
+      "scale": 1.7,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_01_spine",
+      "position": [
+        0,
+        -12.4,
+        0
+      ],
+      "scale": 1.25,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_06_service",
+      "position": [
+        -9,
+        -5,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_06_service",
+      "position": [
+        -9,
+        0,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_06_service",
+      "position": [
+        -9,
+        5,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_03_noncontact",
+      "position": [
+        -9,
+        1,
+        6.3
+      ],
+      "scale": 0.85,
+      "rotation": [
+        1.5707963267948966,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_05_calibration",
+      "position": [
+        -7.2,
+        1,
+        9.1
+      ],
+      "scale": 0.7,
+      "rotation": [
+        0,
+        0,
+        -1.5707963267948966
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_04_core_frame",
+      "position": [
+        -6.5,
+        -8,
+        1.9
+      ],
+      "scale": 0.65,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_06_service",
+      "position": [
+        9,
+        -5,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_06_service",
+      "position": [
+        9,
+        0,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_06_service",
+      "position": [
+        9,
+        5,
+        0.8
+      ],
+      "scale": 0.85,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_03_noncontact",
+      "position": [
+        9,
+        1,
+        6.3
+      ],
+      "scale": 0.85,
+      "rotation": [
+        1.5707963267948966,
+        0,
+        0
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_05_calibration",
+      "position": [
+        7.2,
+        1,
+        9.1
+      ],
+      "scale": 0.7,
+      "rotation": [
+        0,
+        0,
+        1.5707963267948966
+      ]
+    },
+    {
+      "collection": "cc_candidate_worldformer_active",
+      "part": "cck_04_core_frame",
+      "position": [
+        6.5,
+        -8,
+        1.9
+      ],
+      "scale": 0.65,
+      "rotation": [
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "source_blend": "art/models/central_court_full_candidates_v01/central_court_full_candidates_v01.blend",
+  "previews": [
+    "art/models/central_court_full_candidates_v01/previews/cruiser_three_quarter.png",
+    "art/models/central_court_full_candidates_v01/previews/cruiser_top.png",
+    "art/models/central_court_full_candidates_v01/previews/worldformer_foundation.png",
+    "art/models/central_court_full_candidates_v01/previews/worldformer_operational.png"
+  ],
+  "ship_sections_common_origin": true,
+  "planet_reference": "仅预览比例参照，不导出；实际天体大小/轨道偏移需游戏匹配",
+  "unchanged": [
+    "ship_size/武器槽/数值",
+    "F08造境脚本/资格/费用",
+    "角色/个人旗舰/结局"
+  ],
+  "formal_assets_approved": false,
+  "native_geometry_in_source": false,
+  "engine_scale_locators_effects": "not_run",
+  "game_operated": false
+}

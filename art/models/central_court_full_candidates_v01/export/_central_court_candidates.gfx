@@ -1,0 +1,68 @@
+# 完整灰模候选的注册样品，尚未安装。
+objectTypes = {
+    pdxmesh = {
+        name = "cc_candidate_cruiser_bow_mesh"
+        file = "gfx/models/central_court_full_candidates_v01/cc_candidate_cruiser_bow.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cc_candidate_cruiser_bow"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "cc_candidate_cruiser_mid_mesh"
+        file = "gfx/models/central_court_full_candidates_v01/cc_candidate_cruiser_mid.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cc_candidate_cruiser_mid"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "cc_candidate_cruiser_stern_mesh"
+        file = "gfx/models/central_court_full_candidates_v01/cc_candidate_cruiser_stern.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cc_candidate_cruiser_stern"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "cc_candidate_worldformer_base_mesh"
+        file = "gfx/models/central_court_full_candidates_v01/cc_candidate_worldformer_base.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cc_candidate_worldformer_base"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "cc_candidate_worldformer_active_mesh"
+        file = "gfx/models/central_court_full_candidates_v01/cc_candidate_worldformer_active.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "cc_candidate_worldformer_active"
+            index = 0
+            texture_diffuse = "gray_plate.dds"
+            texture_normal = "gray_normal.dds"
+            texture_specular = "gray_spec.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+}

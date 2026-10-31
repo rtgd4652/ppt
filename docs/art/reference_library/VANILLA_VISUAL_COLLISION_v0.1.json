@@ -1,7 +1,7 @@
 {
   "date": "2026-10-31",
   "game_reference": "local Stellaris 4.5.2 definitions",
-  "status": "candidate_references_pending_visual_comparison",
+  "status": "partial_static_mesh_comparison_recorded",
   "references": [
     {
       "id": "VV-01",
@@ -37,10 +37,18 @@
         "thinktank_phase_02_entity",
         "thinktank_phase_03_entity"
       ],
-      "status": "source_indexed_visual_inspection_pending",
+      "status": "partial_static_mesh_comparison_recorded",
       "comparison_question": "核心/支臂/科研平台的主次关系",
-      "observed_shape": null,
-      "media_in_repository": false
+      "observed_shape": "静态网格显示中心聚合与多向放射的细长附属结构；未应用动画时存在重叠与暗面，不代表游戏完整外观。",
+      "media_in_repository": false,
+      "source_meshes": [
+        "gfx/models/ships/megastructures/think_tank/thinktank_part1.mesh",
+        "gfx/models/ships/megastructures/think_tank/thinktank_part2.mesh",
+        "gfx/models/ships/megastructures/think_tank/thinktank_part3.mesh"
+      ],
+      "local_preview": "art/reference_library/central_court_collision_20261031/science_nexus.png",
+      "candidate_difference": "造境平台候选为围绕单一天体的开放底架/双侧作业端，仍需在游戏尺度与上下文中进一步比较。",
+      "scope": "灰材质静态网格及静止姿态；无原版纹理/粒子/动画/最终曝光"
     },
     {
       "id": "VV-03",
@@ -118,8 +126,28 @@
       "comparison_question": "高级空间工程的边界表达",
       "observed_shape": null,
       "media_in_repository": false
+    },
+    {
+      "id": "VV-07",
+      "game_relative_source": "gfx/models/ships/mammalian_01/mammalian_01_battleship_frame.mesh",
+      "types": [],
+      "entities": [],
+      "source_meshes": [
+        "gfx/models/ships/mammalian_01/mammalian_01_battleship_frame.mesh",
+        "gfx/models/ships/mammalian_01/mammalian_01_battleship_bow_XL1.mesh",
+        "gfx/models/ships/mammalian_01/mammalian_01_battleship_mid_L3.mesh",
+        "gfx/models/ships/mammalian_01/mammalian_01_battleship_stern_L1.mesh"
+      ],
+      "status": "partial_static_mesh_comparison_recorded",
+      "local_preview": "art/reference_library/central_court_collision_20261031/mammalian_battleship.png",
+      "collision_meshes_excluded": 3,
+      "observed_shape": "哺乳战列舰有沿主轴连续的舰体、分区炮位和前伸结构。",
+      "candidate_difference": "候选拉长开放脊炮通道并将两侧推进舱分离；双叉/中轴等语汇仍与原版共享，不能据此宣称完全避撞。",
+      "scope": "灰材质静态网格及静止姿态；无原版纹理/粒子/动画/最终曝光",
+      "media_in_repository": false
     }
   ],
   "rights": "Native files are local analysis references; no vanilla geometry/textures copied into this package.",
-  "criterion": "移除配色、发光和徽记后比较轮廓、接口组织与异常结构用途；没有完成目视对照就不标为通过。"
+  "criterion": "移除配色、发光和徽记后比较轮廓、接口组织与异常结构用途；没有完成目视对照就不标为通过。",
+  "comparison_limits": "本轮仅对照哺乳战列舰/科学枢纽静止灰网格；其他五组保持待做，未覆盖纹理、动画、粒子或所有原版/第三方造型。"
 }

@@ -1,0 +1,156 @@
+{
+  "date": "2026-10-31",
+  "package": "full-visual-candidates-v0.1",
+  "source_base": "f362606",
+  "status": "draft_pending_human_review",
+  "completed": [
+    "中庭级F07炮击代表三段",
+    "F08平台两阶段与比例参照",
+    "五PDX回读/四预览/源文件重开",
+    "两例有边界原版灰网格对照"
+  ],
+  "meshes": [
+    {
+      "part": "cc_candidate_cruiser_bow",
+      "triangles": 328,
+      "locators": [
+        "xl_gun_01"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_cruiser_bow.mesh",
+      "shape_names": [
+        "cc_candidate_cruiser_bow"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "cc_candidate_cruiser_mid",
+      "triangles": 2360,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_cruiser_mid.mesh",
+      "shape_names": [
+        "cc_candidate_cruiser_mid"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "cc_candidate_cruiser_stern",
+      "triangles": 1444,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_cruiser_stern.mesh",
+      "shape_names": [
+        "cc_candidate_cruiser_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "cc_candidate_worldformer_base",
+      "triangles": 3532,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_worldformer_base.mesh",
+      "shape_names": [
+        "cc_candidate_worldformer_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    },
+    {
+      "part": "cc_candidate_worldformer_active",
+      "triangles": 6996,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_full_candidates_v01/export/cc_candidate_worldformer_active.mesh",
+      "shape_names": [
+        "cc_candidate_worldformer_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass"
+    }
+  ],
+  "kit_reuse_instances": 28,
+  "validation": {
+    "status": "pass",
+    "meshes": 5,
+    "source_reopened": true,
+    "external_blend_libraries": 0,
+    "game_test": false
+  },
+  "runtime_installed": false,
+  "formal_assets_approved": false,
+  "game_operated": false,
+  "save_modified": false,
+  "live_blender_scene_modified": false,
+  "native_geometry_committed": false,
+  "sources": {
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-ARTIFACT"
+    ],
+    "database_read_only": true,
+    "review_status_changed": false,
+    "upstream": [
+      "docs/art/ARTIFACT_CIVILIZATION_3D_VISUAL_LANGUAGE_v0.1.md",
+      "docs/design/artifact_civilization_1_0_scope_confirmation_2026-10-08.md"
+    ]
+  },
+  "comparison": {
+    "reviewed": [
+      "VV-02 static meshes only",
+      "VV-07 mammalian battleship static meshes"
+    ],
+    "remaining": 5,
+    "full_collision_review": "pending"
+  },
+  "limitations": [
+    "仅F07炮击代表，其他舰首/中段未覆盖",
+    "球体不导出，游戏天体尺度/偏移尚未匹配",
+    "材质/LOD/效果/游戏显示与F08/D12玩法未验"
+  ],
+  "next_step": "按整体轮廓反馈调整舰体比例、功能分区与平台作业端，再收口正式外观并进入材质/LOD；不自动安装，不恢复键盘排障/批量图标/人物组合/连续巨构。",
+  "remote_pushed": false,
+  "files": [
+    "HANDOFF.md",
+    "art/models/central_court_full_candidates_v01/README.md",
+    "art/models/central_court_full_candidates_v01/candidate_manifest.json",
+    "art/models/central_court_full_candidates_v01/central_court_full_candidates_v01.blend",
+    "art/models/central_court_full_candidates_v01/export/_central_court_candidates.gfx",
+    "art/models/central_court_full_candidates_v01/export/cc_candidate_cruiser_bow.mesh",
+    "art/models/central_court_full_candidates_v01/export/cc_candidate_cruiser_mid.mesh",
+    "art/models/central_court_full_candidates_v01/export/cc_candidate_cruiser_stern.mesh",
+    "art/models/central_court_full_candidates_v01/export/cc_candidate_worldformer_active.mesh",
+    "art/models/central_court_full_candidates_v01/export/cc_candidate_worldformer_base.mesh",
+    "art/models/central_court_full_candidates_v01/export/gray_normal.dds",
+    "art/models/central_court_full_candidates_v01/export/gray_plate.dds",
+    "art/models/central_court_full_candidates_v01/export/gray_spec.dds",
+    "art/models/central_court_full_candidates_v01/previews/cruiser_three_quarter.png",
+    "art/models/central_court_full_candidates_v01/previews/cruiser_top.png",
+    "art/models/central_court_full_candidates_v01/previews/worldformer_foundation.png",
+    "art/models/central_court_full_candidates_v01/previews/worldformer_operational.png",
+    "art/models/central_court_full_candidates_v01/saved_blend_check.json",
+    "docs/PROJECT_STATUS.md",
+    "docs/TODO.md",
+    "docs/art/ARTIFACT_CIVILIZATION_3D_VISUAL_LANGUAGE_v0.1.md",
+    "docs/art/ASSET_PRODUCTION_PLAN.md",
+    "docs/art/reference_library/VANILLA_VISUAL_COLLISION_v0.1.json",
+    "docs/art/reference_library/VANILLA_VISUAL_COLLISION_v0.1.md",
+    "reports/central_court_full_candidates_2026-10-31.md",
+    "reports/central_court_full_candidates_checkpoint_2026-10-31.json",
+    "tools/art/build_central_court_candidates.py"
+  ]
+}

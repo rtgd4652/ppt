@@ -4,12 +4,14 @@
 
 ## 当前授权与工作状态
 
+- 最新完成一舰一构整体候选：中庭级F07炮击代表3段＋F08造境平台2阶段，5网格PDX回读/源文件重开通过，4张预览；具体外观待评审，未安装。见[整体候选](art/models/central_court_full_candidates_v01/README.md)和[检查点](reports/central_court_full_candidates_checkpoint_2026-10-31.json)。本轮局部对照2例原版静态网格，其他5组仍待做；未操作游戏。
+
 - 最新完成公共3D Kit候选：6新部件、2组合、4预览、6个可回读PDX网格及Blender源文件；7接口位置/朝向和源文件重开通过。具体外观待评审，未安装游戏。见[部件库](art/models/central_court_kit_v01/README.md)、[视觉规范](docs/art/ARTIFACT_CIVILIZATION_3D_VISUAL_LANGUAGE_v0.1.md)和[检查点](reports/central_court_kit_v01_checkpoint_2026-10-31.json)。本轮未操作游戏或继续键盘排障。
 
 - 停电续接完成：335f408已冷启动并载回原档，两阶段缺失sprite报错消失。守卫新增同次置前/动作及有界部分清理，9项源码检查、实际控制台开/关与残留清理通过；完整命令没有提交，F08/D12玩法仍未验。看[恢复检查点](reports/artifact_civilization_r5g_recovery_checkpoint_2026-10-31.json)；本轮GUI已收尾，无待补交命令，不再重放历史输入排障。
 
 - 最新完成R5g F08“传承造境工程”及图标注册补齐；公共80项科技源码已接齐。5项新增/6项相关源码检查复用，本轮图标与总静态通过；正常建造/造境/殖民仍待阶段代表试玩。
-- 当前看[公共Kit检查点](reports/central_court_kit_v01_checkpoint_2026-10-31.json)；下一步原版目视对照与舰用/巨构各一套外观候选，再收口正式资产和Boss深化。F08/D12完整正常流程仍留后续一次代表试玩，沿用授权；人物组合、批量图标和连续原型仍暂停。
+- 当前看[完整外观候选检查点](reports/central_court_full_candidates_checkpoint_2026-10-31.json)；下一步根据整体轮廓反馈改比例/功能区，收口外观后再做材质/LOD/必要效果与接入。不是把“继续”记为具体造型批准。F08/D12玩法仍未验；组合/批量图标/连续原型暂停。
 - 用户强调参考大型Mod、避免繁琐测试。已读Gigas与ACOT的[大型工程写法](docs/design/artifact_large_engineering_mod_reference_2026-10-31.md)，并补读舰R／久远之旅／群星争霸的[物种文明组织方式](docs/design/artifact_species_pack_mod_reference_2026-10-31.md)：复用原生建造，分别管理文明、剧情与个人资格，让研究连接实际能力。E09首版保留；D13承载与E10战略舰体沿用原分工。两轮只补参考文档，未操作游戏，已有检查直接复用。
 - 又按用户要求查看晨曦的[减伤与复活源码](docs/design/artifact_dawn_ship_survival_mod_reference_2026-10-31.md)：原生比例／固定减伤、失能修复原舰、舰毁后按旧设计补造；区分已接线与注释所称功能。我们的新旗舰仍用国家记录、唯一实例、90／75／60日冷却后首都重建；失能方案保留为备用。该参考轮只补文档；随后R4d已采用原生减伤字段，旗舰恢复方案未改。
 - 写科技、设施及相关文案前，先查七都数据库并读其指向来源，再核对脚本；不只沿用现有本地化。遵守[文案规范](docs/design/artifact_technology_writing_guide_v0.1.md)，[逐项目录](docs/design/artifact_technology_text_catalog_v0.1.json)提供来源与实现对照。源审核状态保留，工程转译不冒充原作事实。
@@ -24,7 +26,7 @@
 | --- | --- |
 | 仓库根目录 | `C:\Users\Admin\Desktop\ppt\simple_leader_edict`；父目录 `ppt` 不是本仓库的 Git 根目录 |
 | 分支 | `knowledge/source-rebuild-v0.1`；接手时用 Git 复核 |
-| 上次开发保存点 | `dfd5273`为本批Kit源码基线，最新中文保存点通过`git log -1`获取 |
+| 上次开发保存点 | `f362606`为本批完整候选基线；最新中文提交通过`git log -1`获取 |
 | 最近实际运行的 Mod 源码 | 最近已观察为`335f408`于20:37加载、4.5.2，仅本Mod；后续更改在桌面工具/离线美术和记录中。当前轮未再查看游戏，新玩法仍未验 |
 | 唯一游戏加载目录 | 仓库内 `mod/` |
 | 游戏可执行文件 | `F:\steam\steamapps\common\Stellaris\stellaris.exe` |
@@ -118,4 +120,4 @@ Git 中有源码、正式文档、检查工具和桌面守卫脚本。`tools/des
 
 给下一位 AI 的简短提示词：
 
-> 项目在 `C:\Users\Admin\Desktop\ppt\simple_leader_edict`。先读AGENTS/HANDOFF/TODO。公共80项源码齐备；已新增中央庭Kit候选6部件/2组合/4预览，六PDX回读、七接口和源文件重开通过，具体造型待评审/未安装游戏。看Kit检查点；下一步原版目视对照及舰用/巨构各一套候选。F08/D12玩法仍未验，不重做键盘排障或重放旧输入；已有操作授权沿用。组合/批量图标/连续原型暂停，另一屏幕与用户Blender场景不动。额度不足前保存，22:30收尾、23:00结束。
+> 项目在 `C:\Users\Admin\Desktop\ppt\simple_leader_edict`。先读AGENTS/HANDOFF/TODO。公共80项源码齐备；已交付Kit六部件及中庭级三段/F08两阶段整体候选，5网格回读和源文件重开通过，待外观评审/未安装。局部对照2例原版灰网格，余5组未做，不能声称全面避撞。看完整候选检查点；按整体反馈收敛比例功能，再做材质/LOD和必要接入。F08/D12玩法未验，无待补交命令，不重做键盘排障。人物组合/批量图标/连续原型暂停，另一屏幕/用户Blender场景不动。22:30收尾、23:00结束，额度不足前保存。
