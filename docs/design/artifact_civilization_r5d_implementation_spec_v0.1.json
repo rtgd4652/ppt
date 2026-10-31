@@ -1,0 +1,197 @@
+{
+  "date": "2026-10-31",
+  "package": "R5d",
+  "source_base": "f93cd7b",
+  "status": "implemented_static_passed",
+  "runtime_status": "not_run",
+  "nodes": [
+    "F05"
+  ],
+  "technology": {
+    "id": "F05",
+    "key": "tech_artifact_civilization_joint_recovery",
+    "name": "文明联合恢复",
+    "area": "society",
+    "tier": 5,
+    "cost": 30000,
+    "weight": 45,
+    "category": "statecraft",
+    "prerequisites": [
+      "tech_artifact_public_countermeasure_plan",
+      "tech_artifact_emergency_engineering_redundancy"
+    ],
+    "requires_boss_victory": false,
+    "requires_personal_transformation": false
+  },
+  "lore": "中央庭曾把疏散、救治、配给与城市重建接续成一项长期责任。进入星海后，这种经验成为各殖民地能够共同调用的恢复方法：防卫仍在继续时，工场也可以开始修复生活与生产所依赖的环境。",
+  "application": "建设灾后重建工场。殖民地荒废度至少10时，投入一份已备物资、500能源和200消费品，开展全国同时一处的重建项目。每个有效月度降低5点荒废度，最多6次；低于5时提前收尾，余量按原生机制恢复。失控、轰炸或工场停用时暂停，保留进度；危机期间可用。",
+  "building": {
+    "id": "BL28",
+    "stage": 1,
+    "key": "building_artifact_post_disaster_reconstruction_workshop",
+    "name": "灾后重建工场",
+    "can_build": true,
+    "base_buildtime": 600,
+    "planet_limit": 1,
+    "cost": {
+      "minerals": 1500,
+      "alloys": 500
+    },
+    "upkeep": {
+      "energy": 12,
+      "consumer_goods": 3
+    },
+    "icon": "building_artifact_relic_workshop",
+    "formal_asset": false,
+    "permanent_numeric_bonus": false
+  },
+  "project": {
+    "start": "decision_artifact_civil_reconstruction_start",
+    "minimum_real_devastation": 10,
+    "stock": "one local acs_supply_reserved of original owner; existing pack = 500 minerals/100 alloys",
+    "additional_cost": {
+      "energy": 500,
+      "consumer_goods": 200
+    },
+    "payment": "script guard/debit once; no native decision cost/discount refund loophole",
+    "guard": "safe controlled active workshop, F05 research, real stock/damage/balance; nation no ongoing or paused reconstruction",
+    "marker": "acr_rebuild_project",
+    "work_variable": "acr_rebuild_work",
+    "maximum_valid_months": 6,
+    "monthly": "only at valid own safe workshop, subtract 5 devastation if >=5 and increment work once",
+    "finish": "work >=6 or current devastation <5; preserve actual work, release national slot, add empty local acr_rebuild_done",
+    "natural_recovery": "not overwritten; if already healed before monthly, finish with no invented work or reward",
+    "remaining_damage": "may remain after six months; <5 left to natural recovery; another paid round needs >=10",
+    "ordinary_stock_after_start": "independent; new stock neither consumed monthly nor cleared by cancel",
+    "pause": "occupation/bombardment/workshop or research loss: keep payment/work/nation slot; no catch-up",
+    "cancel": "original owner can cancel even occupied or facility/research absent, no refund/rollback of real healing",
+    "transfer_or_destroy": "existing ACS clear removes project/receipt/work, no resource refund, prior real healing remains",
+    "no_auto_repeat": true
+  },
+  "interface": {
+    "status": "decision_artifact_civil_reconstruction_status -> artifact_civil_reconstruction.1",
+    "views": [
+      "intro",
+      "active",
+      "paused",
+      "last completed record"
+    ],
+    "read_only": true,
+    "receipt": "local original-owner record, not victory or permanent country benefit"
+  },
+  "preserved": [
+    "C2 city/protection/cooldowns",
+    "flagship unique instance and 90/75/60 recovery",
+    "F03 combat cooldown",
+    "F04 stock/window",
+    "other inventory/projects",
+    "character roles and recovery tasks",
+    "crisis/anchor losses/deposits/population/history/victory"
+  ],
+  "performance": {
+    "new_events": 1,
+    "new_events_role": "triggered-only read-only carrier progress page",
+    "new_on_actions": 0,
+    "new_monthly_subscriptions": 0,
+    "new_variables": 1,
+    "new_global_targets": 0,
+    "monthly": "guard within existing ACS carrier iteration, no new galaxy scan"
+  },
+  "sources": {
+    "database": "knowledge/database/seven_days_knowledge.sqlite",
+    "read_only": true,
+    "terms": [
+      "TERM-CENTRAL-COURT",
+      "TERM-ARTIFACT-SCIENCE",
+      "TERM-ARTIFACT",
+      "TERM-BLACK-GATE-RESEARCH-SYSTEM"
+    ],
+    "documents": [
+      "tools/knowledge/data/core_terms_v0.1.json",
+      "knowledge/organizations/organization_bible_v0.1.md",
+      "knowledge/artifacts/artifact_bible_v0.1.md"
+    ],
+    "knowledge_layer": "mod_design_decision",
+    "review_status_changed": false,
+    "constraint": "中央庭灾后公共协调、救援与普通工业支撑为背景；具体跨星际重建/费用/荒废度效果属于Mod设计，不量产神器或复原已死亡人口。"
+  },
+  "native_reference": {
+    "reference": "本机4.5.2 script_documentation：planet_devastation、add_planet_devastation；既有格蕾莎入口也以真实荒废度筛选，但人物源码未改",
+    "target_4_5_1_compatibility": "pending",
+    "devastation_effect": "apply -5 only when current >=5; finish at <5; no dependence on negative clamp",
+    "repair": "building ruins use normal native queues; no repair_building/repair_all_buildings",
+    "scope": "planet/carrier local damage and progress; owner resources"
+  },
+  "validation": {
+    "new": {
+      "count": 6,
+      "status": "pass",
+      "module": "test_artifact_civil_reconstruction"
+    },
+    "affected": {
+      "count": 27,
+      "status": "pass",
+      "modules": [
+        "test_artifact_engineering_redundancy",
+        "test_artifact_civil_supply",
+        "test_artifact_segmented_engineering",
+        "test_artifact_public_countermeasure"
+      ]
+    },
+    "static": {
+      "status": "pass",
+      "errors": [],
+      "warnings": [],
+      "counts": {
+        "script_files": 251,
+        "events": 261,
+        "localization_keys": 2238,
+        "registered_states": 791,
+        "referenced_states": 734
+      },
+      "limitations": [
+        "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+        "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+        "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+      ]
+    },
+    "fixture_note": "执行正式普通物资支付/库存消费、项目决议及ACS月度；荒废度为现场输入，原生自然恢复不模拟。比较与作用域严格求值。",
+    "limitations": [
+      "原生建造、荒废度变化/自然恢复并行、界面和实际存读档未验。",
+      "33项为源码检查，日期/损伤夹具不是自然事件或游戏内验证。"
+    ]
+  },
+  "runtime": {
+    "status": "not_run",
+    "game_inspected": false,
+    "game_inputs_sent": false,
+    "save_created": null,
+    "pending_command": null,
+    "priority": "集中试玩仍优先D12，F05只取一个真实受损殖民地的付费/暂停恢复片段，共用关键读档，不逐包重测。"
+  },
+  "files": [
+    "mod/common/buildings/artifact_civil_reconstruction_buildings.txt",
+    "mod/common/decisions/artifact_civil_reconstruction_decisions.txt",
+    "mod/common/scripted_effects/artifact_civil_reconstruction_effects.txt",
+    "mod/common/scripted_triggers/artifact_civil_reconstruction_triggers.txt",
+    "mod/common/static_modifiers/artifact_civil_reconstruction_modifiers.txt",
+    "mod/common/technology/artifact_civil_reconstruction_technology.txt",
+    "mod/events/artifact_civil_reconstruction_events.txt",
+    "mod/localisation/simp_chinese/artifact_civil_reconstruction_l_simp_chinese.yml",
+    "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+    "tools/validation/tests/test_artifact_civil_reconstruction.py",
+    "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
+    "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.md",
+    "reports/artifact_civilization_r5d_implementation_2026-10-31.md",
+    "reports/artifact_civilization_r5d_checkpoint_2026-10-31.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.json",
+    "docs/design/artifact_civilization_research_building_route_v0.3.md",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.json",
+    "docs/design/artifact_civilization_military_research_plan_v0.1.md",
+    "docs/design/artifact_technology_text_catalog_v0.1.json",
+    "docs/design/artifact_technology_writing_guide_v0.1.md",
+    "HANDOFF.md",
+    "docs/TODO.md",
+    "docs/PROJECT_STATUS.md"
+  ]
+}

@@ -1,0 +1,51 @@
+artifact_civil_reconstruction_clear = {
+	remove_modifier = acr_rebuild_project
+	remove_modifier = acr_rebuild_done
+	clear_variable = acr_rebuild_work
+}
+
+# 正常决议不另收原生费用；同一守卫核对真实库存、损伤、名额与余额后支付一次。
+artifact_civil_reconstruction_start = {
+	if = {
+		limit = { artifact_civil_reconstruction_can_start = yes }
+		remove_modifier = acs_supply_reserved
+		owner = {
+			add_resource = { energy = -500 }
+			add_resource = { consumer_goods = -200 }
+		}
+		artifact_civil_reconstruction_clear = yes
+		add_modifier = { modifier = acr_rebuild_project days = -1 }
+		set_variable = { which = acr_rebuild_work value = 0 }
+	}
+}
+
+artifact_civil_reconstruction_cancel = {
+	if = {
+		limit = { artifact_civil_reconstruction_can_cancel = yes }
+		artifact_civil_reconstruction_clear = yes
+	}
+}
+
+# 复用ACS月度。每次最多实际降低5点荒废度，不增加免费施工或补跑暂停月份。
+# 低于5时直接收尾，余量按原生恢复；因此不依赖负数被引擎截断的假设。
+artifact_civil_reconstruction_monthly = {
+	if = {
+		limit = { artifact_civil_reconstruction_active = yes }
+		if = {
+			limit = { planet_devastation >= 5 }
+			add_planet_devastation = -5
+			change_variable = { which = acr_rebuild_work value = 1 }
+		}
+		if = {
+			limit = {
+				OR = {
+					check_variable = { which = acr_rebuild_work value >= 6 }
+					planet_devastation < 5
+				}
+			}
+			remove_modifier = acr_rebuild_project
+			# 保留这轮实际施工次数作为本地记录；不宣称全部损失已恢复。
+			add_modifier = { modifier = acr_rebuild_done days = -1 }
+		}
+	}
+}

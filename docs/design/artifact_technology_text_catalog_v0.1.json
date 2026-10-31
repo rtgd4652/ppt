@@ -1710,7 +1710,7 @@
       "name": "公共反制预案",
       "lore": "中央庭把信号识别资料、可复核的工程方法与联防队伍的现场经验写入同一份预案。研究者说明反制能够干预的部分，物资部门准备器材，常规舰队在接触中把有限的机会转化为实际战果。",
       "application": "建设全国一处危机联合防务中心。在有效联防和公共档案支持下，投入800能源／500合金／100稀有水晶准备一份反制物资。作战舰队抵达投影所在星系后，由中心下达部署，使当时敌方投影作战舰的武器伤害修正−20%、射速修正−10%，持续90日；全帝国冷却180日。战斗仍由正常舰队完成。",
-      "implementation_note": "正常中心实付备料，现场舰队存在后部署；原危机投影舰船90日武器伤害−20%/射速−10%，国家180日冷却。研究不是直接胜利，个人资格分离。",
+      "implementation_note": "正常中心实付备料，现场舰队存在后部署；原危机投影舰船90日武器伤害−20%/射速−10%，国家180日冷却。研究不是直接胜利，个人资格分离。R5d作为F05研究前置，既有状态不消费/重置；地方恢复不是危机胜利。",
       "technology_file": "mod/common/technology/artifact_public_countermeasure_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_public_countermeasure_l_simp_chinese.yml",
       "consumer_files": [
@@ -1719,7 +1719,8 @@
         "mod/common/scripted_effects/artifact_public_countermeasure_effects.txt",
         "mod/common/scripted_triggers/artifact_public_countermeasure_triggers.txt",
         "mod/common/static_modifiers/artifact_public_countermeasure_modifiers.txt",
-        "mod/common/scripted_effects/artifact_civil_supply_effects.txt"
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt",
+        "mod/common/technology/artifact_civil_reconstruction_technology.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1738,7 +1739,7 @@
       "name": "应急工程冗余",
       "lore": "灾难中的重建经验让中央庭明白，关键工程不能把全部余地都留给一条供给线。锚定设施开始保存可替换构件和应急调度预算，在常规物流中断时，让已经投入的工作仍有条件继续。",
       "application": "把规则锚定试验场升级为冗余规则锚定站，保留原防护、监听和公共方法用途。将当地一份已实付的大型工程备料预存为备件，按需启用360日应急支援：当地建筑建造速度修正+25%，并为已付款的营建阶段提供备用物流。核心营建场和本国安全控制仍必需，新阶段投入保留原条件。",
-      "implementation_note": "实存B14备件投入360日当地支援，施工+25%并支持已付E09阶段备用物流；核心场地和安全仍必需，新阶段原价/工期保持，不瞬间修复。",
+      "implementation_note": "实存B14备件投入360日当地支援，施工+25%并支持已付E09阶段备用物流；核心场地和安全仍必需，新阶段原价/工期保持，不瞬间修复。R5d作为F05研究前置，既有状态不消费/重置；地方恢复不是危机胜利。",
       "technology_file": "mod/common/technology/artifact_engineering_redundancy_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_engineering_redundancy_l_simp_chinese.yml",
       "consumer_files": [
@@ -1754,7 +1755,8 @@
         "mod/common/scripted_triggers/artifact_civil_supply_triggers.txt",
         "mod/common/scripted_triggers/artifact_crisis_intelligence_triggers.txt",
         "mod/common/scripted_triggers/artifact_public_theory_triggers.txt",
-        "mod/events/artifact_civil_supply_events.txt"
+        "mod/events/artifact_civil_supply_events.txt",
+        "mod/common/technology/artifact_civil_reconstruction_technology.txt"
       ],
       "knowledge_layer": "mod_design_decision",
       "source_groups": [
@@ -1764,15 +1766,37 @@
         "central_court_history"
       ],
       "source_note": "写前查中央庭/神器科学/黑门研究/神器术语及组织、普通工业来源；备件与备用物流为Mod工程设计，审核状态和未知边界保持。"
+    },
+    {
+      "id": "F05",
+      "key": "tech_artifact_civilization_joint_recovery",
+      "previous_name": "文明联合恢复",
+      "name": "文明联合恢复",
+      "lore": "中央庭曾把疏散、救治、配给与城市重建接续成一项长期责任。进入星海后，这种经验成为各殖民地能够共同调用的恢复方法：防卫仍在继续时，工场也可以开始修复生活与生产所依赖的环境。",
+      "application": "建设灾后重建工场。殖民地荒废度至少10时，投入一份已备物资、500能源和200消费品，开展全国同时一处的重建项目。每个有效月度降低5点荒废度，最多6次；低于5时提前收尾，余量按原生机制恢复。失控、轰炸或工场停用时暂停，保留进度；危机期间可用。",
+      "implementation_note": "真实荒废度≥10，普通库存+500能源/200消费品，最多6次有效月度各减5；低于5提前收尾。原生建筑维修独立，不返还历史损失或授予危机胜利。",
+      "technology_file": "mod/common/technology/artifact_civil_reconstruction_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/artifact_civil_reconstruction_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/buildings/artifact_civil_reconstruction_buildings.txt",
+        "mod/common/decisions/artifact_civil_reconstruction_decisions.txt",
+        "mod/common/scripted_effects/artifact_civil_reconstruction_effects.txt",
+        "mod/common/scripted_triggers/artifact_civil_reconstruction_triggers.txt",
+        "mod/common/static_modifiers/artifact_civil_reconstruction_modifiers.txt",
+        "mod/events/artifact_civil_reconstruction_events.txt",
+        "mod/common/scripted_effects/artifact_civil_supply_effects.txt"
+      ],
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": [
+        "terms",
+        "artifact_science",
+        "unknown_boundaries",
+        "central_court_history"
+      ],
+      "source_note": "写前查七都中央庭/神器科学/黑门研究/神器并读组织重建和普通工业来源；公共恢复项目与数值属Mod设计，原审核状态保留。"
     }
   ],
   "unimplemented_nodes": [
-    {
-      "id": "F05",
-      "working_name": "文明联合恢复",
-      "status": "awaits_implementation_text",
-      "note": "能力实现时再写正式卡面与对应注释，当前不写入游戏本地化。"
-    },
     {
       "id": "F06",
       "working_name": "灾后记录解译",
@@ -2726,6 +2750,18 @@
       "remaining": 4,
       "spec": "docs/design/artifact_civilization_r5c_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r5c_implementation_2026-10-31.md"
+    },
+    {
+      "date": "2026-10-31",
+      "package": "R5d",
+      "nodes": [
+        "F05"
+      ],
+      "added": 1,
+      "implemented_total": 77,
+      "remaining": 3,
+      "spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md"
     }
   ]
 }

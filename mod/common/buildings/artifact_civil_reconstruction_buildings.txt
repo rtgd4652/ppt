@@ -1,0 +1,16 @@
+# BL28是正常建设的本地恢复场地；实际减轻损伤必须投入物资并完成有效施工。
+building_artifact_post_disaster_reconstruction_workshop = {
+	can_build = yes
+	base_buildtime = 600
+	icon = "building_artifact_relic_workshop"
+	category = manufacturing
+	building_sets = { manufacturing }
+	planet_limit = 1
+	prerequisites = { "tech_artifact_civilization_joint_recovery" }
+	potential = { exists = owner owner = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+	resources = {
+		category = planet_buildings
+		cost = { minerals = 1500 alloys = 500 }
+		upkeep = { energy = 12 consumer_goods = 3 }
+	}
+}

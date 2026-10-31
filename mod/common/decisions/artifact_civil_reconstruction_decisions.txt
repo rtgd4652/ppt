@@ -1,0 +1,46 @@
+decision_artifact_civil_reconstruction_start = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		has_building = "building_artifact_post_disaster_reconstruction_workshop"
+		owner = { has_technology = "tech_artifact_civilization_joint_recovery" }
+	}
+	allow = { custom_tooltip = { fail_text = acr.require_start artifact_civil_reconstruction_can_start = yes } }
+	effect = {
+		custom_tooltip = acr.offer_start
+		hidden_effect = { artifact_civil_reconstruction_start = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+decision_artifact_civil_reconstruction_cancel = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = { artifact_civil_supply_actor = yes has_modifier = acr_rebuild_project }
+	allow = { custom_tooltip = { fail_text = acr.require_cancel artifact_civil_reconstruction_can_cancel = yes } }
+	effect = {
+		custom_tooltip = acr.offer_cancel
+		hidden_effect = { artifact_civil_reconstruction_cancel = yes }
+	}
+	ai_weight = { weight = 0 }
+}
+
+# 进度页只读，查看不会收费、推进或重发完成奖励。
+decision_artifact_civil_reconstruction_status = {
+	owned_planets_only = yes
+	sound = "event_administrative_work"
+	icon = "decision_artifact_destiny_city_project"
+	potential = {
+		artifact_civil_supply_actor = yes
+		OR = {
+			has_building = "building_artifact_post_disaster_reconstruction_workshop"
+			has_modifier = acr_rebuild_project
+			has_modifier = acr_rebuild_done
+		}
+	}
+	effect = { carrier_event = { id = artifact_civil_reconstruction.1 } }
+	ai_weight = { weight = 0 }
+}

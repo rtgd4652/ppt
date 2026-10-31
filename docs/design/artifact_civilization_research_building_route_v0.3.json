@@ -1268,7 +1268,14 @@
       "capability": "实际F02鉴别/A12方法/D14联防支撑全国一处中心；实付备料，舰队到场后限时削弱原危机投影，真实战斗和个人资格独立。",
       "implementation_key": "tech_artifact_public_countermeasure_plan",
       "spec": "docs/design/artifact_civilization_r5b_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r5b_implementation_2026-10-31.md"
+      "report": "reports/artifact_civilization_r5b_implementation_2026-10-31.md",
+      "compatibility_updates": [
+        {
+          "package": "R5d",
+          "spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
+          "note": "作为F05研究前置；F05独立消费普通物资并恢复地方荒废度，原反制/备件/窗口不消费、不重置，新路径运行未验。"
+        }
+      ]
     },
     {
       "id": "F04",
@@ -1286,7 +1293,14 @@
       "capability": "锚定站沿槽升级；实存备件投入360日当地支援，建筑施工+25%，已付营建阶段断供续工；新阶段/冷却/个人恢复规则保留。",
       "implementation_key": "tech_artifact_emergency_engineering_redundancy",
       "spec": "docs/design/artifact_civilization_r5c_implementation_spec_v0.1.json",
-      "report": "reports/artifact_civilization_r5c_implementation_2026-10-31.md"
+      "report": "reports/artifact_civilization_r5c_implementation_2026-10-31.md",
+      "compatibility_updates": [
+        {
+          "package": "R5d",
+          "spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
+          "note": "作为F05研究前置；F05独立消费普通物资并恢复地方荒废度，原反制/备件/窗口不消费、不重置，新路径运行未验。"
+        }
+      ]
     },
     {
       "id": "F05",
@@ -1299,8 +1313,11 @@
       ],
       "gate": null,
       "existing_key": null,
-      "status": "proposed_not_implemented",
-      "capability": "建设灾后重建工场，在危机期间也能恢复受损殖民地；不要求先赢最终Boss。"
+      "status": "implemented_static_passed_runtime_pending",
+      "capability": "工场以真实地方荒废度启动实付重建，每有效月度减5，最多6次；暂停保留进度，危机期间可用，收尾不等于胜利。",
+      "implementation_key": "tech_artifact_civilization_joint_recovery",
+      "spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md"
     },
     {
       "id": "F06",
@@ -2129,7 +2146,11 @@
           "name": "灾后重建工场",
           "technology": "F05",
           "existing_key": null,
-          "status": "proposed_not_implemented"
+          "status": "implemented_static_passed",
+          "implementation_key": "building_artifact_post_disaster_reconstruction_workshop",
+          "runtime_status": "not_run",
+          "implementation_package": "R5d",
+          "spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json"
         }
       ]
     },
@@ -2701,18 +2722,34 @@
       "report": "reports/artifact_civilization_r5c_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r5c_checkpoint_2026-10-31.json",
       "next_step": "推进F05文明联合恢复（F03＋F04）：先核对殖民地损伤、现有恢复工程和原生维修接口，再接BL28灾后重建工场与实际投入。危机期间可用，不要求先赢最终Boss，不返还已结算锚点损失，不重置C2或唯一旗舰恢复。随后F06～F08、最终Boss深化及共有胜利奖励/结尾。阶段试玩继续约20分钟、优先D12；F04只取一次断供续工/升级继承的必要片段，共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
+    },
+    "R5d": {
+      "date": "2026-10-31",
+      "status": "implemented_static_passed",
+      "runtime_status": "not_run",
+      "nodes": [
+        "F05"
+      ],
+      "new_buildings": 1,
+      "new_components": 0,
+      "new_events": 1,
+      "new_on_actions": 0,
+      "spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
+      "report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md",
+      "checkpoint": "reports/artifact_civilization_r5d_checkpoint_2026-10-31.json",
+      "next_step": "推进F06灾后记录解译（F01＋F05）：先把final_boss_common_victory映射到实际共同胜利记录，确认三种合法结局共享、与个人转变分离，再接BL15文明传承档案馆升级及真实解译。F05收尾记录不是Boss胜利；不靠额外回写剧情伪造资格。随后F07/F08共有舰船/巨构奖励、最终Boss深化和结尾整合。阶段试玩仍约20分钟、优先D12，其余必要代表共用关键读档，不逐包重测；人物组合、连续巨构和批量图标继续暂停。"
     }
   },
   "current_counts": {
     "date": "2026-10-31",
-    "public_technologies": 76,
+    "public_technologies": 77,
     "army_types": 5,
     "component_definitions": 111,
-    "building_definitions": 42,
+    "building_definitions": 43,
     "starbase_building_definitions": 1,
     "public_strategic_ship_sizes": 1,
-    "planned_technologies_remaining": 4,
-    "note": "R5c新增F04/BL26升级，实存备件支持360日当地施工及已付营建备用物流；保留旧用途。6项新增、37项相关及静态通过，运行未验。"
+    "planned_technologies_remaining": 3,
+    "note": "R5d新增F05/BL28，真实物资与费用换取最多6次地方月度恢复；6项新增、27项相关及静态通过，运行未验。"
   },
   "orbital_buildings": [
     {
@@ -3104,5 +3141,8 @@
   "r5b_checkpoint": "reports/artifact_civilization_r5b_checkpoint_2026-10-31.json",
   "r5c_spec": "docs/design/artifact_civilization_r5c_implementation_spec_v0.1.json",
   "r5c_report": "reports/artifact_civilization_r5c_implementation_2026-10-31.md",
-  "r5c_checkpoint": "reports/artifact_civilization_r5c_checkpoint_2026-10-31.json"
+  "r5c_checkpoint": "reports/artifact_civilization_r5c_checkpoint_2026-10-31.json",
+  "r5d_spec": "docs/design/artifact_civilization_r5d_implementation_spec_v0.1.json",
+  "r5d_report": "reports/artifact_civilization_r5d_implementation_2026-10-31.md",
+  "r5d_checkpoint": "reports/artifact_civilization_r5d_checkpoint_2026-10-31.json"
 }

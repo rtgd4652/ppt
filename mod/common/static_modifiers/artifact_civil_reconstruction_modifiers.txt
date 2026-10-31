@@ -1,0 +1,9 @@
+# 过程/收尾记录不附数值收益；实际恢复只由月度效果写入本地荒废度。
+acr_rebuild_project = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}
+acr_rebuild_done = {
+	icon = "gfx/interface/icons/planet_modifiers/pm_planet_surface.dds"
+	icon_frame = 1
+}

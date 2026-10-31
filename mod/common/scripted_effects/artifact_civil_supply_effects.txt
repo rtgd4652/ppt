@@ -31,6 +31,10 @@ artifact_civil_supply_clear = {
 	# F04地方备件与支援随原拥有者清理；不重置公共知识、C2或旗舰恢复。
 	remove_modifier = aer_spares_reserved
 	remove_modifier = aer_support_window
+	# F05只清本地施工与收尾记录，实际已降低的荒废度及原国家知识不回滚。
+	remove_modifier = acr_rebuild_project
+	remove_modifier = acr_rebuild_done
+	clear_variable = acr_rebuild_work
 	# A11复核过程随原拥有者清理；国家已完成模型与事实记录保留。
 	remove_modifier = acs_model_review_project
 	clear_variable = acs_model_review_work
@@ -368,6 +372,10 @@ artifact_civil_supply_monthly = {
 		if = {
 			limit = { has_modifier = acs_model_review_project }
 			artifact_observation_review_monthly = yes
+		}
+		if = {
+			limit = { has_modifier = acr_rebuild_project }
+			artifact_civil_reconstruction_monthly = yes
 		}
 	}
 }

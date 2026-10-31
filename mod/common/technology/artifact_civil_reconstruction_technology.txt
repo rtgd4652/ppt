@@ -1,0 +1,11 @@
+# F05承接F03+F04的公共恢复，不要求危机胜利或个人转变。
+tech_artifact_civilization_joint_recovery = {
+	area = society
+	icon = "tech_artifact_central_court_protocols"
+	cost = 30000
+	tier = 5
+	category = { statecraft }
+	prerequisites = { "tech_artifact_public_countermeasure_plan" "tech_artifact_emergency_engineering_redundancy" }
+	weight = 45
+	potential = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+}

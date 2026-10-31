@@ -1,0 +1,27 @@
+namespace = artifact_civil_reconstruction
+
+# 仅供行星决议查看，不订阅新的周期回调。
+carrier_event = {
+	id = artifact_civil_reconstruction.1
+	title = acr.title
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = { artifact_civil_supply_actor = yes }
+	desc = {
+		trigger = { NOR = { has_modifier = acr_rebuild_project has_modifier = acr_rebuild_done } }
+		text = acr.intro
+	}
+	desc = {
+		trigger = { artifact_civil_reconstruction_active = yes }
+		text = acr.working
+	}
+	desc = {
+		trigger = { has_modifier = acr_rebuild_project artifact_civil_reconstruction_active = no }
+		text = acr.paused
+	}
+	desc = {
+		trigger = { has_modifier = acr_rebuild_done NOT = { has_modifier = acr_rebuild_project } }
+		text = acr.done
+	}
+	option = { name = acr.close }
+}
