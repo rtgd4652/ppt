@@ -1,0 +1,132 @@
+{
+  "date": "2026-11-01",
+  "source_base": "4d4eeb3",
+  "status": "draft_pending_human_review",
+  "direction_confirmed_by_user": true,
+  "formal_asset_approved": false,
+  "runtime_installed": false,
+  "design": "one spinal emitter, four short wide field-shaping stages and one shallow forward emission plane",
+  "removed_old_components": 27,
+  "stages": [
+    {
+      "index": 1,
+      "author_y": 12.8,
+      "visual_locator": "cc_field_stage_01",
+      "nominal_opening_width": 1.808,
+      "module_length": 1.32
+    },
+    {
+      "index": 2,
+      "author_y": 16.6,
+      "visual_locator": "cc_field_stage_02",
+      "nominal_opening_width": 2.036,
+      "module_length": 1.32
+    },
+    {
+      "index": 3,
+      "author_y": 20.4,
+      "visual_locator": "cc_field_stage_03",
+      "nominal_opening_width": 2.264,
+      "module_length": 1.32
+    },
+    {
+      "index": 4,
+      "author_y": 24.2,
+      "visual_locator": "cc_field_stage_04",
+      "nominal_opening_width": 2.492,
+      "module_length": 1.32
+    }
+  ],
+  "meshes": [
+    {
+      "part": "ccv04_bow_field",
+      "triangles": 2720,
+      "locators": [
+        "cc_field_stage_01",
+        "cc_field_stage_02",
+        "cc_field_stage_03",
+        "cc_field_stage_04",
+        "xl_gun_01"
+      ],
+      "mesh": "art/models/central_court_spinal_emitter_v04/export/ccv04_bow_field.mesh",
+      "shape_names": [
+        "ccv04_bow_field"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true
+    },
+    {
+      "part": "ccv04_bow_field_lod1",
+      "triangles": 1360,
+      "locators": [
+        "cc_field_stage_01",
+        "cc_field_stage_02",
+        "cc_field_stage_03",
+        "cc_field_stage_04",
+        "xl_gun_01"
+      ],
+      "mesh": "art/models/central_court_spinal_emitter_v04/export/ccv04_bow_field_lod1.mesh",
+      "shape_names": [
+        "ccv04_bow_field_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "automatic_lod_switching": false,
+      "uv_in_bounds": true
+    },
+    {
+      "part": "ccv04_bow_field_lod2",
+      "triangles": 624,
+      "locators": [
+        "cc_field_stage_01",
+        "cc_field_stage_02",
+        "cc_field_stage_03",
+        "cc_field_stage_04",
+        "xl_gun_01"
+      ],
+      "mesh": "art/models/central_court_spinal_emitter_v04/export/ccv04_bow_field_lod2.mesh",
+      "shape_names": [
+        "ccv04_bow_field_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "automatic_lod_switching": false,
+      "uv_in_bounds": true
+    }
+  ],
+  "muzzle_locator": "xl_gun_01",
+  "muzzle_transform_unchanged": true,
+  "actual_weapon_slots_changed": false,
+  "reserved_visual_locators": [
+    "cc_field_stage_01",
+    "cc_field_stage_02",
+    "cc_field_stage_03",
+    "cc_field_stage_04"
+  ],
+  "charging_animation_implemented": false,
+  "central_axis_geometry_clear": true,
+  "muzzle_forward_geometry_clear": true,
+  "clearance_scope": "two centreline rays only; not full beam-volume or runtime collision proof",
+  "source_blend": "art/models/central_court_spinal_emitter_v04/central_court_spinal_emitter_v04.blend",
+  "previews": [
+    "art/models/central_court_spinal_emitter_v04/previews/ship_field_array.png",
+    "art/models/central_court_spinal_emitter_v04/previews/field_array_closeup.png"
+  ],
+  "reference_preview": "art/models/central_court_spinal_emitter_v04/previews/v03_reference.png",
+  "full_ship_context": [
+    "v03 mid artillery",
+    "v03 stern"
+  ],
+  "full_ship_context_exported": false,
+  "textures": "v03 shared DDS reused unchanged",
+  "saved_file_reopened": true,
+  "packed_dds": 3,
+  "external_blend_libraries": 0,
+  "authoring_axes": "+Y forward/+Z up; native conversion required",
+  "game_or_user_live_blender_operated": false,
+  "gameplay_and_mod_resources_changed": false,
+  "automatic_lod_switching": false
+}

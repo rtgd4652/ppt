@@ -1,0 +1,42 @@
+# v04作者空间舰首候选；沿v03材质，安装前须原生方向转换。
+objectTypes = {
+    pdxmesh = {
+        name = "ccv04_bow_field_mesh"
+        file = "gfx/models/central_court_spinal_emitter_v04/ccv04_bow_field.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_bow_field"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv04_bow_field_lod1_mesh"
+        file = "gfx/models/central_court_spinal_emitter_v04/ccv04_bow_field_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_bow_field_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv04_bow_field_lod2_mesh"
+        file = "gfx/models/central_court_spinal_emitter_v04/ccv04_bow_field_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_bow_field_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+}

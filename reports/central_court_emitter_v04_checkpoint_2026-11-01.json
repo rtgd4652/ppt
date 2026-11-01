@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-01",
+  "source_base": "4d4eeb3",
+  "kind": "offline_spinal_bow_visual_revision",
+  "status": "offline_checks_passed",
+  "user_confirmed_direction": true,
+  "formal_appearance": "draft_pending_human_review",
+  "runtime_installed": false,
+  "mesh_manifest": "art/models/central_court_spinal_emitter_v04/emitter_manifest.json",
+  "pdx_readback": "3 meshes passed",
+  "triangles": [
+    2720,
+    1360,
+    624
+  ],
+  "shared_material_per_mesh": 1,
+  "uv_all_three_in_bounds": true,
+  "muzzle": "one xl_gun_01, unchanged position and rotation by PDX readback",
+  "reserved_visual_locators": [
+    "cc_field_stage_01",
+    "cc_field_stage_02",
+    "cc_field_stage_03",
+    "cc_field_stage_04"
+  ],
+  "charging_animation_implemented": false,
+  "automatic_lod_switching": false,
+  "clearance": "two centreline rays passed on base mesh only; no full beam-volume or runtime proof",
+  "source_reopened": true,
+  "packed_dds": 3,
+  "external_blend_libraries": 0,
+  "texture_details": [
+    {
+      "file": "cc_surface_v03_diffuse.dds",
+      "size": [
+        2048,
+        1024
+      ],
+      "mips": 12,
+      "format": "BC3/DXT5"
+    },
+    {
+      "file": "cc_surface_v03_normal.dds",
+      "size": [
+        2048,
+        1024
+      ],
+      "mips": 12,
+      "format": "BC3/DXT5"
+    },
+    {
+      "file": "cc_surface_v03_properties.dds",
+      "size": [
+        2048,
+        1024
+      ],
+      "mips": 12,
+      "format": "BC3/DXT5"
+    }
+  ],
+  "textures_identical_to_v03": true,
+  "python_syntax": "pass",
+  "gfx_sample_syntax_and_local_resources": "pass",
+  "previews": [
+    "art/models/central_court_spinal_emitter_v04/previews/field_array_closeup.png",
+    "art/models/central_court_spinal_emitter_v04/previews/ship_field_array.png",
+    "art/models/central_court_spinal_emitter_v04/previews/v03_reference.png"
+  ],
+  "preview_dimensions": [
+    1600,
+    1000
+  ],
+  "visual_review": "whole ship and closeup inspected; long twin rails replaced with four paired short stages and shallow emitter",
+  "full_ship_context": "v03 artillery mid and stern, not re-exported",
+  "authoring_axes": "+Y forward/+Z up, native conversion required before installation",
+  "current_mod_graphics_base": "9da6b5f (v02), unchanged",
+  "game_or_user_live_blender_operated": false,
+  "game_commands_pending": false,
+  "ongoing_build_processes": false,
+  "new_runtime_validation": "not_run",
+  "normal_construction_and_combat": "prior_pending_state_unchanged",
+  "next_step": "refine using v04 preview feedback, then combine native conversion/entity integration and one representative display check; charging effects separate",
+  "protected_untracked_prototype": "not read, modified, or staged",
+  "git_push_performed": false
+}
