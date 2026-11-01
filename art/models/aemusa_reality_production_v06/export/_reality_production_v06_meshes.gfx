@@ -1,0 +1,198 @@
+# v06私人旗舰/基线枢纽离线候选；原生方向，未安装。
+objectTypes = {
+    pdxmesh = {
+        name = "arfv06_flagship_bow_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_flagship_bow.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_flagship_bow"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_flagship_bow_lod1_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_flagship_bow_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_flagship_bow_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_flagship_bow_lod2_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_flagship_bow_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_flagship_bow_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_flagship_mid_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_flagship_mid.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_flagship_mid"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_flagship_mid_lod1_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_flagship_mid_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_flagship_mid_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_flagship_mid_lod2_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_flagship_mid_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_flagship_mid_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_flagship_stern_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_flagship_stern.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_flagship_stern"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_flagship_stern_lod1_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_flagship_stern_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_flagship_stern_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_flagship_stern_lod2_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_flagship_stern_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_flagship_stern_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_baseline_base_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_baseline_base.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_baseline_base"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_baseline_base_lod1_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_baseline_base_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_baseline_base_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_baseline_base_lod2_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_baseline_base_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_baseline_base_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_baseline_active_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_baseline_active.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_baseline_active"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_baseline_active_lod1_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_baseline_active_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_baseline_active_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv06_baseline_active_lod2_mesh"
+        file = "gfx/models/aemusa_reality_production_v06/arfv06_baseline_active_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv06_baseline_active_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+}

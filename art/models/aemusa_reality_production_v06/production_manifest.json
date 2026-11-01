@@ -1,0 +1,328 @@
+{
+  "date": "2026-11-01",
+  "source_base": "88071a1",
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "formal_appearance_approved": false,
+  "game_operated": false,
+  "source": "art/models/milestone4_surface_v02/reality_assets_surface_v02.blend",
+  "source_blend": "art/models/aemusa_reality_production_v06/reality_production_v06.blend",
+  "source_reopened": true,
+  "packed_dds": 3,
+  "source_geometry_and_uv_preserved": true,
+  "authoring_axes": "+Y forward, +Z up",
+  "export_axes": "native PDX -Z forward; ship geometry/positions turned, guns and engines match native",
+  "meshes": [
+    {
+      "part": "arfv06_flagship_bow",
+      "triangles": 368,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_flagship_bow.mesh",
+      "shape_names": [
+        "arfv06_flagship_bow"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "source_geometry_and_uv_preserved": true,
+      "native_orientation_checked": true,
+      "comparison_max_error": {
+        "position": 1.7881393432617188e-06,
+        "normal": 7.331371307373047e-06,
+        "uv": 0.0
+      },
+      "normal_tolerance": 5e-05,
+      "position_uv_tolerance": 1e-05
+    },
+    {
+      "part": "arfv06_flagship_bow_lod1",
+      "triangles": 184,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_flagship_bow_lod1.mesh",
+      "shape_names": [
+        "arfv06_flagship_bow_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_flagship_bow"
+    },
+    {
+      "part": "arfv06_flagship_bow_lod2",
+      "triangles": 84,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_flagship_bow_lod2.mesh",
+      "shape_names": [
+        "arfv06_flagship_bow_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_flagship_bow"
+    },
+    {
+      "part": "arfv06_flagship_mid",
+      "triangles": 496,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_flagship_mid.mesh",
+      "shape_names": [
+        "arfv06_flagship_mid"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "source_geometry_and_uv_preserved": true,
+      "native_orientation_checked": true,
+      "comparison_max_error": {
+        "position": 7.152557373046875e-07,
+        "normal": 7.331371307373047e-06,
+        "uv": 0.0
+      },
+      "normal_tolerance": 5e-05,
+      "position_uv_tolerance": 1e-05
+    },
+    {
+      "part": "arfv06_flagship_mid_lod1",
+      "triangles": 248,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_flagship_mid_lod1.mesh",
+      "shape_names": [
+        "arfv06_flagship_mid_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_flagship_mid"
+    },
+    {
+      "part": "arfv06_flagship_mid_lod2",
+      "triangles": 114,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_flagship_mid_lod2.mesh",
+      "shape_names": [
+        "arfv06_flagship_mid_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_flagship_mid"
+    },
+    {
+      "part": "arfv06_flagship_stern",
+      "triangles": 504,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_flagship_stern.mesh",
+      "shape_names": [
+        "arfv06_flagship_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "source_geometry_and_uv_preserved": true,
+      "native_orientation_checked": true,
+      "comparison_max_error": {
+        "position": 1.7285346984863281e-06,
+        "normal": 2.0325183868408203e-05,
+        "uv": 0.0
+      },
+      "normal_tolerance": 5e-05,
+      "position_uv_tolerance": 1e-05
+    },
+    {
+      "part": "arfv06_flagship_stern_lod1",
+      "triangles": 252,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_flagship_stern_lod1.mesh",
+      "shape_names": [
+        "arfv06_flagship_stern_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_flagship_stern"
+    },
+    {
+      "part": "arfv06_flagship_stern_lod2",
+      "triangles": 114,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_flagship_stern_lod2.mesh",
+      "shape_names": [
+        "arfv06_flagship_stern_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_flagship_stern"
+    },
+    {
+      "part": "arfv06_baseline_base",
+      "triangles": 364,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_baseline_base.mesh",
+      "shape_names": [
+        "arfv06_baseline_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "source_geometry_and_uv_preserved": true,
+      "native_orientation_checked": false,
+      "comparison_max_error": {
+        "position": 0.0,
+        "normal": 0.0,
+        "uv": 0.0
+      },
+      "normal_tolerance": 5e-05,
+      "position_uv_tolerance": 1e-05
+    },
+    {
+      "part": "arfv06_baseline_base_lod1",
+      "triangles": 182,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_baseline_base_lod1.mesh",
+      "shape_names": [
+        "arfv06_baseline_base_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_baseline_base"
+    },
+    {
+      "part": "arfv06_baseline_base_lod2",
+      "triangles": 82,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_baseline_base_lod2.mesh",
+      "shape_names": [
+        "arfv06_baseline_base_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_baseline_base"
+    },
+    {
+      "part": "arfv06_baseline_active",
+      "triangles": 528,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_baseline_active.mesh",
+      "shape_names": [
+        "arfv06_baseline_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "source_geometry_and_uv_preserved": true,
+      "native_orientation_checked": false,
+      "comparison_max_error": {
+        "position": 0.0,
+        "normal": 0.0,
+        "uv": 0.0
+      },
+      "normal_tolerance": 5e-05,
+      "position_uv_tolerance": 1e-05
+    },
+    {
+      "part": "arfv06_baseline_active_lod1",
+      "triangles": 264,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_baseline_active_lod1.mesh",
+      "shape_names": [
+        "arfv06_baseline_active_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_baseline_active"
+    },
+    {
+      "part": "arfv06_baseline_active_lod2",
+      "triangles": 120,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_production_v06/export/arfv06_baseline_active_lod2.mesh",
+      "shape_names": [
+        "arfv06_baseline_active_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "automatic_lod_switching": false,
+      "source_part": "arfv06_baseline_active"
+    }
+  ],
+  "previews": [
+    "art/models/aemusa_reality_production_v06/previews/flagship_oblique.png",
+    "art/models/aemusa_reality_production_v06/previews/flagship_side.png",
+    "art/models/aemusa_reality_production_v06/previews/baseline_base.png",
+    "art/models/aemusa_reality_production_v06/previews/baseline_active.png"
+  ],
+  "hub_stage_locator_transforms_identical": true,
+  "material_source": "art/models/central_court_readability_v05/export; 3 shared 2048x1024 BC3 files, 12 mips",
+  "root_assembly": "zero part1/2/3, four native-name targets, six original L weapon locators",
+  "particles": "native names referenced only; engine/death appearance not runtime verified",
+  "automatic_lod_switching": false,
+  "old_stage9_or_tower_assets_used": false,
+  "personal_identity": "one private reality flagship and two-stage crisis baseline hub; separate from public cruiser/worldformer",
+  "user_live_blender_scene_modified": false,
+  "gameplay_changed": false
+}

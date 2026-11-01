@@ -4,6 +4,8 @@
 
 ## 当前任务与交付层级
 
+- AP-ST-05/06私人旗舰与基线枢纽已补[v06离线生产候选](../art/models/aemusa_reality_production_v06/README.md)：5主网格/10简化替代、完整mip、原生朝向/接口、7实体样品、4图与源重开通过。保留既有造型/UV及玩法，未安装/未游戏验收，具体外观及轮廓细节仍待收敛；本轮未操作游戏/用户Blender场景，22:26进入收尾。[检查点](../reports/reality_production_v06_checkpoint_2026-11-01.json)。
+
 - v05受控实机显示已补齐并确认局部改善：检修盖、板块分界和边缘反光更清楚，深色主体仍暗，正式曝光/外观未通过。见[原始实机图与确认记录](../reports/central_court_readability_v05_confirmation_2026-11-01.md)。后续工具调用中断，恢复时游戏进程已不在，无新增崩溃报告，原因未知；已提交的显示命令不重放，源码/原档保留，不重新启动游戏。
 
 - v05材质候选完成并更新既有v04运行资源：原RGB/Normal及发光保持，校准涂层Properties，完整上层检修盖移用雾银格，七网格逐三角形位置/法线及全部挂点保持；源/DDS/UV/总静态通过。新进程4.5.2(50ba)冷启动/载回reserve通过；显示命令输入10字符被修饰键守卫停止，未提交，已清理并关闭调试窗口。新外观复查未完成，不能声称实机暗部已修复；本轮GUI收尾，后续观察并入正常场景。见[实施记录](../reports/central_court_readability_v05_2026-11-01.md)和[检查点](../reports/central_court_readability_v05_checkpoint_2026-11-01.json)。无日期推进/新档/剧情改变，英文模式未切换。
