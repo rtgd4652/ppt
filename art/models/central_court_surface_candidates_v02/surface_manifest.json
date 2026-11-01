@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-01",
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "pillow_version": "12.3.0",
+  "origin": "project_generated_procedural_surface_no_legacy_or_concept_image_sampling",
+  "palette": [
+    "armor",
+    "plate",
+    "silver",
+    "warm",
+    "glass",
+    "vent",
+    "cyan",
+    "amber"
+  ],
+  "textures": [
+    {
+      "file": "art/models/central_court_surface_candidates_v02/export/cc_surface_v02_diffuse.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        2048,
+        1024
+      ],
+      "mip_levels": 12,
+      "bytes": 2796368
+    },
+    {
+      "file": "art/models/central_court_surface_candidates_v02/export/cc_surface_v02_properties.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        2048,
+        1024
+      ],
+      "mip_levels": 12,
+      "bytes": 2796368
+    },
+    {
+      "file": "art/models/central_court_surface_candidates_v02/export/cc_surface_v02_normal.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        2048,
+        1024
+      ],
+      "mip_levels": 12,
+      "bytes": 2796368
+    }
+  ],
+  "normal_channels": "R=G; G=normal X; A=-normal Y; B=functional emission",
+  "properties_channels": "R=recolor mask zero; G=specular; B=metalness; A=glossiness",
+  "reference": "docs/art/calibration/CENTRAL_COURT_MATERIAL_CALIBRATION.md",
+  "uv_method": "8 shared material tiles, per-face axis projection with 5 percent inset",
+  "unique_uv_bake": false,
+  "engine_mips_exposure_verified": false
+}

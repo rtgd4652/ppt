@@ -4,6 +4,8 @@
 
 ## 当前接手点
 
+- [x] 中庭级/造境材质候选v02：5个舰用区段、2个巨构阶段、14份远景替代、3张完整mip共享DDS与4张真实模型预览完成，PDX回读/源文件重开通过。见[候选](../art/models/central_court_surface_candidates_v02/README.md)。外观未定稿、资源未安装，游戏尺度/定位器/效果与自动LOD切换留待接入；本轮未操作游戏或用户Blender场景。
+
 - [x] 按[夜间决定](design/artifact_megascale_engineering_direction_2026-10-31.md)补写11项公共科技、5项设施/巨构说明及维护注释；写前只读查七都来源并核对实际消费者，应用段和玩法保持。见[实施记录](../reports/artifact_megascale_text_revision_2026-11-01.md)。天体级战舰仍归1.0之后，不替换中庭级；纯文案未启动游戏。
 
 

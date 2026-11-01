@@ -4,6 +4,8 @@
 
 ## 当前授权与工作状态
 
+- 11月1日模型制作续接：完成[整舰/造境材质候选v02](art/models/central_court_surface_candidates_v02/README.md)。补齐5个舰用区段/2个巨构阶段，21份PDX网格（含14份独立远景替代）、3张带完整mip链共享DDS、独立实体样品及4张真实Blender预览；导出回读与源文件重开通过。见[检查点](reports/central_court_surface_v02_checkpoint_2026-11-01.json)。具体外观仍待评审，未安装；LOD自动切换、尺度/定位器方向/效果/引擎曝光未验。游戏和用户当前Blender场景均未操作，不恢复旧GUI排障。
+
 - 11月1日已落实夜间文案决定：先只读查询七都索引、阅读对应来源并核对消费者，再补写11项公共科技、5项设施/巨构说明及维护注释，表达物质处理、可扩展施工、跨星系工业协作与行星造境。应用段、名称、数值和可执行逻辑保持；见[实施记录](reports/artifact_megascale_text_revision_2026-11-01.md)及[检查结果](reports/artifact_megascale_text_validation_2026-11-01.json)。本轮未操作游戏或Blender，纯文字不另做运行验收。天体级战舰仍归1.0之后，中庭级/个人旗舰身份保持；无旧命令待补交。
 
 - 晚间概念预览收尾：用户明确当天具体开发结束，仅要求完成观感概念图；已用内置image_gen生成[双栏概念板](art/concepts/central_court_completion_preview_20261031/README.md)，含原图副本与完整提示词。仅概念探索、未批准外观/未制作对应成品模型/未安装；不将图中细节自动变更武器槽或玩法。今晚只保存，后续根据具体反馈续接。
@@ -18,7 +20,7 @@
 - 停电续接完成：335f408已冷启动并载回原档，两阶段缺失sprite报错消失。守卫新增同次置前/动作及有界部分清理，9项源码检查、实际控制台开/关与残留清理通过；完整命令没有提交，F08/D12玩法仍未验。看[恢复检查点](reports/artifact_civilization_r5g_recovery_checkpoint_2026-10-31.json)；本轮GUI已收尾，无待补交命令，不再重放历史输入排障。
 
 - 最新完成R5g F08“传承造境工程”及图标注册补齐；公共80项科技源码已接齐。5项新增/6项相关源码检查复用，本轮图标与总静态通过；正常建造/造境/殖民仍待阶段代表试玩。
-- 当前看[配色研究检查点](reports/central_court_material_study_checkpoint_2026-10-31.json)；整体候选和配色均待评审，未安装。晚间已进入收尾，下次按具体轮廓/配色反馈收敛，再制作正式图集、LOD与必要接入。
+- 当前资产看[材质候选v02检查点](reports/central_court_surface_v02_checkpoint_2026-11-01.json)；旧灰模、配色研究和概念图保留。已有共享UV图集/远景替代文件，具体外观待评审；下一步按实际模型预览收敛，再做游戏尺度、组件挂接与必要效果接入，不重复历史排障。
 - 用户强调参考大型Mod、避免繁琐测试。已读Gigas与ACOT的[大型工程写法](docs/design/artifact_large_engineering_mod_reference_2026-10-31.md)，并补读舰R／久远之旅／群星争霸的[物种文明组织方式](docs/design/artifact_species_pack_mod_reference_2026-10-31.md)：复用原生建造，分别管理文明、剧情与个人资格，让研究连接实际能力。E09首版保留；D13承载与E10战略舰体沿用原分工。两轮只补参考文档，未操作游戏，已有检查直接复用。
 - 又按用户要求查看晨曦的[减伤与复活源码](docs/design/artifact_dawn_ship_survival_mod_reference_2026-10-31.md)：原生比例／固定减伤、失能修复原舰、舰毁后按旧设计补造；区分已接线与注释所称功能。我们的新旗舰仍用国家记录、唯一实例、90／75／60日冷却后首都重建；失能方案保留为备用。该参考轮只补文档；随后R4d已采用原生减伤字段，旗舰恢复方案未改。
 - 写科技、设施及相关文案前，先查七都数据库并读其指向来源，再核对脚本；不只沿用现有本地化。遵守[文案规范](docs/design/artifact_technology_writing_guide_v0.1.md)，[逐项目录](docs/design/artifact_technology_text_catalog_v0.1.json)提供来源与实现对照。源审核状态保留，工程转译不冒充原作事实。
@@ -33,7 +35,7 @@
 | --- | --- |
 | 仓库根目录 | `C:\Users\Admin\Desktop\ppt\simple_leader_edict`；父目录 `ppt` 不是本仓库的 Git 根目录 |
 | 分支 | `knowledge/source-rebuild-v0.1`；接手时用 Git 复核 |
-| 上次开发保存点 | `bdf2e95`为11月1日文案修改基线；最新中文提交通过`git log -1`获取 |
+| 上次开发保存点 | `27c4b6a`为11月1日模型v02制作基线；最新中文提交通过`git log -1`获取 |
 | 最近实际运行的 Mod 源码 | 最近已观察为`335f408`于20:37加载、4.5.2，仅本Mod；后续更改涉及桌面工具、离线美术、文案和记录。当前轮未再查看游戏，新玩法仍未验 |
 | 唯一游戏加载目录 | 仓库内 `mod/` |
 | 游戏可执行文件 | `F:\steam\steamapps\common\Stellaris\stellaris.exe` |

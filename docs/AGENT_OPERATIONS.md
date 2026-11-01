@@ -148,3 +148,5 @@ R5g停电恢复中，分开调用/审批后多次失焦，均未发送输入。�
 开发分支 `knowledge/source-rebuild-v0.1`，远程历史为 `https://github.com/rtgd4652/ppt.git`，执行前以 `git remote -v` 为准。10月9日获批的251个积累提交已上传，是历史完成事实；后续本地提交不等于已推送，也不自动授权合并、发布或上传其他仓库。
 
 Blender／DDS使用对应README和现有构建脚本；离线任务后台运行，用户打开的场景不自动授权修改。保留独立巨构原型和用户改动；当前暂停范围与最新保存点统一读取[HANDOFF](../HANDOFF.md)。
+
+11月1日公共候选v02的[重建入口](../art/models/central_court_surface_candidates_v02/README.md)已跑通。Pillow12.3.0隔离在`temp/cc_surface_v02_deps`，本轮普通沙盒只看得到包目录、读不到`PIL.Image`；获准环境可正常导入和生成DDS。先核实同一执行环境的可读性，不因空目录视图反复安装。后台Blender5.1.2沿已安装io_pdx_mesh导出21网格、实际重开文件，未触及用户交互场景。平台参照球材质/构图已修正；不把离线LOD文件视为引擎自动切换已经接通。

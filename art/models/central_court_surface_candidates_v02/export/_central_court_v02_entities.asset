@@ -1,0 +1,43 @@
+# 独立预接入样品，不覆盖原版/当前玩法实体。
+entity = {
+    name = "ccv02_bow_standard_entity"
+    pdxmesh = "ccv02_bow_standard_mesh"
+    default_state = "idle"
+    state = { name = "idle" }
+}
+entity = {
+    name = "ccv02_bow_spinal_entity"
+    pdxmesh = "ccv02_bow_spinal_mesh"
+    default_state = "idle"
+    state = { name = "idle" }
+}
+entity = {
+    name = "ccv02_mid_artillery_entity"
+    pdxmesh = "ccv02_mid_artillery_mesh"
+    default_state = "idle"
+    state = { name = "idle" }
+}
+entity = {
+    name = "ccv02_mid_carrier_entity"
+    pdxmesh = "ccv02_mid_carrier_mesh"
+    default_state = "idle"
+    state = { name = "idle" }
+}
+entity = {
+    name = "ccv02_stern_entity"
+    pdxmesh = "ccv02_stern_mesh"
+    default_state = "idle"
+    state = { name = "idle" }
+}
+entity = {
+    name = "ccv02_worldformer_base_entity"
+    pdxmesh = "ccv02_worldformer_base_mesh"
+    default_state = "idle"
+    state = { name = "idle" }
+}
+entity = {
+    name = "ccv02_worldformer_active_entity"
+    pdxmesh = "ccv02_worldformer_active_mesh"
+    default_state = "idle"
+    state = { name = "idle" }
+}

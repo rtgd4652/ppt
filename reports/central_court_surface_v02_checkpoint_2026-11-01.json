@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-01",
+  "source_base": "27c4b6a",
+  "status": "offline_asset_checks_passed",
+  "mesh_count": 21,
+  "base_parts": 7,
+  "lod_alternatives": 14,
+  "pdx_readback": "passed_by_build",
+  "locators_cover_native_section_definitions": true,
+  "shared_dds": 3,
+  "dds_mip_chains": "12 levels each, header and byte layout valid",
+  "source_reopened": true,
+  "packed_dds": 3,
+  "external_blend_libraries": 0,
+  "previews": [
+    {
+      "file": "art/models/central_court_surface_candidates_v02/previews/cruiser_spinal_artillery.png",
+      "size": [
+        1600,
+        1000
+      ]
+    },
+    {
+      "file": "art/models/central_court_surface_candidates_v02/previews/cruiser_standard_carrier.png",
+      "size": [
+        1600,
+        1000
+      ]
+    },
+    {
+      "file": "art/models/central_court_surface_candidates_v02/previews/worldformer_foundation.png",
+      "size": [
+        1600,
+        1000
+      ]
+    },
+    {
+      "file": "art/models/central_court_surface_candidates_v02/previews/worldformer_operational.png",
+      "size": [
+        1600,
+        1000
+      ]
+    }
+  ],
+  "uv_method": "8 material tiles / shared atlas / axis-projected faces / 5 percent inset",
+  "automatic_lod_switching": false,
+  "runtime_installed": false,
+  "game_test": "not_run",
+  "formal_appearance": "pending_human_review",
+  "user_live_blender_scene_modified": false,
+  "known_limitations": [
+    "共享材质格并非独占UV烘焙",
+    "未接入引擎LOD距离切换",
+    "游戏尺度/定位器方向/效果/曝光未验",
+    "不含可见炮塔，保留原生挂接"
+  ],
+  "model_manifest": "art\\models\\central_court_surface_candidates_v02\\model_manifest.json",
+  "surface_manifest": "art\\models\\central_court_surface_candidates_v02\\surface_manifest.json"
+}
