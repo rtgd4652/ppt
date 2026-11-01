@@ -5,7 +5,7 @@ ship_section_template = {
 	ship_size = artifact_strategic_cruiser
 	fits_on_slot = bow
 	should_draw_components = yes
-	entity = "ccv02_runtime_bow_standard_entity"
+	entity = "ccv04_runtime_bow_standard_entity"
 	icon = "GFX_ship_part_core_bow"
 	ai_tags = { artillery carrier }
 	ai_weight = { weight = 10 }
@@ -28,7 +28,7 @@ ship_section_template = {
 	ship_size = artifact_strategic_cruiser
 	fits_on_slot = mid
 	should_draw_components = yes
-	entity = "ccv02_runtime_mid_artillery_entity"
+	entity = "ccv04_runtime_mid_artillery_entity"
 	icon = "GFX_ship_part_core_mid"
 	ai_tags = { artillery }
 	ai_weight = { weight = 10 }
@@ -56,7 +56,7 @@ ship_section_template = {
 	ship_size = artifact_strategic_cruiser
 	fits_on_slot = mid
 	should_draw_components = yes
-	entity = "ccv02_runtime_mid_carrier_entity"
+	entity = "ccv04_runtime_mid_carrier_entity"
 	icon = "GFX_ship_part_core_mid"
 	ai_tags = { carrier }
 	ai_weight = { weight = 10 }
@@ -103,7 +103,7 @@ ship_section_template = {
 	ship_size = artifact_strategic_cruiser
 	fits_on_slot = stern
 	should_draw_components = yes
-	entity = "ccv02_runtime_stern_entity"
+	entity = "ccv04_runtime_stern_entity"
 	icon = "GFX_ship_part_core_stern"
 	ai_tags = { artillery carrier }
 	ai_weight = { weight = 10 }

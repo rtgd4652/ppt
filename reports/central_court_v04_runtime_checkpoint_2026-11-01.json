@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-01",
+  "source_base": "ea9b5f6",
+  "kind": "candidate_integration_and_one_controlled_ship_display",
+  "status": "ship_display_observed_other_runtime_pending",
+  "game_version": "4.5.2",
+  "checksum": "50ba",
+  "process": {
+    "id": 21724,
+    "window": 134464,
+    "started_beijing": "2026-11-01 12:19:25"
+  },
+  "mod_config": {
+    "only_this_mod": true,
+    "disabled_dlcs": []
+  },
+  "loaded_save": "save games/_-258619271/2293.10.11-r3e-reserve.sav",
+  "save_size": 2573589,
+  "save_mtime_beijing": "2026-10-31 13:12:14",
+  "save_unchanged_by_this_run": true,
+  "cold_start_observed": true,
+  "actual_save_loaded": true,
+  "date_last_observed": "2293.10.11",
+  "paused_last_observed": true,
+  "new_resource_pack": "mod/gfx/models/central_court_v04",
+  "related_checks_passed": 14,
+  "full_static": "pass, 272 scripts, 261 events, 2271 localization keys, 0 errors/0 warnings",
+  "consumer_non_graphical_ast": "unchanged",
+  "spinal_muzzle": "one, same position/rotation as v02",
+  "native_windup": "8 compatible particle locators installed for existing four-stage tachyon sequence; combat not observed",
+  "commands_executed": [
+    "spawnentity ccv04_preview_spinal_artillery_entity"
+  ],
+  "commands_not_executed": [
+    "spawnentity ccv04_runtime_worldformer_active_entity"
+  ],
+  "command_boundary": "display-only debugging entity, not ship construction, rewards, or story state",
+  "input": {
+    "backend": "native guarded PowerShell only",
+    "hold_ms": 100,
+    "gap_ms": 80,
+    "leading_spaces": 2,
+    "first_attempt": "Chinese IME composed text; not submitted",
+    "clear_interruption": "physical modifier guard stopped one clear; modifiers subsequently observed released and owned text cleared",
+    "automatic_ime_toggle": "did not establish English input; no repeated diagnosis",
+    "user_steering": "user manually switched English and explicitly requested no further switching; honored",
+    "final_result": "51 ASCII characters visually verified, independent Enter, Spawned Entity reply observed",
+    "pending_record_submitted": true,
+    "pending_input": false,
+    "console_closed": true,
+    "debug_view_closed": true
+  },
+  "images": [
+    "reports/images/central_court_v04_bow_runtime_2026-11-01.png",
+    "reports/images/central_court_v04_ship_runtime_2026-11-01.png"
+  ],
+  "visual_observation": "four paired short modules, shallow emitter, armor detail and three-part ship visible; armor too dark under observed system lighting",
+  "appearance_tuning": "pending: adjust material light/dark readability using this evidence, no extra restart in this run",
+  "error_log": {
+    "size_bytes": 28603,
+    "new_v04_named_errors": 0,
+    "not_globally_clean": true,
+    "existing_warnings": "third-party preset/flag references and two Invalid ship class: none records from reserve load"
+  },
+  "game_time_advanced": false,
+  "save_created_or_overwritten": false,
+  "actual_combat_or_construction_tested": false,
+  "worldformer_runtime_v04_display": "not_run",
+  "automatic_lod_switching": false,
+  "formal_appearance": "pending_human_review",
+  "ongoing_commands": false,
+  "game_left_running": true,
+  "user_live_blender_scene_modified": false,
+  "protected_untracked_prototype": "not read, modified or staged",
+  "git_push_performed": false,
+  "next_step": "refine runtime material readability; observe native charging with actual combat in a later representative check, no old input replay"
+}

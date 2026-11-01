@@ -1,0 +1,187 @@
+{
+  "date": "2026-11-01",
+  "source_base": "ea9b5f6",
+  "status": "draft_integrated_runtime_pending",
+  "formal_asset_approved": false,
+  "source_authoring_files_unchanged": true,
+  "meshes": [
+    {
+      "part": "ccv04_runtime_bow_standard",
+      "triangles": 1356,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/central_court_runtime_v04/export/ccv04_runtime_bow_standard.mesh",
+      "shape_names": [
+        "ccv04_runtime_bow_standard"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v03",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_bow_standard.mesh"
+    },
+    {
+      "part": "ccv04_runtime_bow_spinal",
+      "triangles": 2720,
+      "locators": [
+        "cc_field_stage_01",
+        "cc_field_stage_02",
+        "cc_field_stage_03",
+        "cc_field_stage_04",
+        "xl_gun_01",
+        "xl_windup_1",
+        "xl_windup_2",
+        "xl_windup_3",
+        "xl_windup_4",
+        "xl_windup_5",
+        "xl_windup_6",
+        "xl_windup_7",
+        "xl_windup_8"
+      ],
+      "mesh": "art/models/central_court_runtime_v04/export/ccv04_runtime_bow_spinal.mesh",
+      "shape_names": [
+        "ccv04_runtime_bow_spinal"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v04",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_bow_spinal.mesh"
+    },
+    {
+      "part": "ccv04_runtime_mid_artillery",
+      "triangles": 1576,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/central_court_runtime_v04/export/ccv04_runtime_mid_artillery.mesh",
+      "shape_names": [
+        "ccv04_runtime_mid_artillery"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v03",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_mid_artillery.mesh"
+    },
+    {
+      "part": "ccv04_runtime_mid_carrier",
+      "triangles": 2064,
+      "locators": [
+        "small_gun_01",
+        "small_gun_02",
+        "small_gun_03",
+        "small_gun_04",
+        "strike_craft_locator_01",
+        "strike_craft_locator_02"
+      ],
+      "mesh": "art/models/central_court_runtime_v04/export/ccv04_runtime_mid_carrier.mesh",
+      "shape_names": [
+        "ccv04_runtime_mid_carrier"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v03",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_mid_carrier.mesh"
+    },
+    {
+      "part": "ccv04_runtime_stern",
+      "triangles": 2812,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/central_court_runtime_v04/export/ccv04_runtime_stern.mesh",
+      "shape_names": [
+        "ccv04_runtime_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v03",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_stern.mesh"
+    },
+    {
+      "part": "ccv04_runtime_worldformer_base",
+      "triangles": 2444,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_runtime_v04/export/ccv04_runtime_worldformer_base.mesh",
+      "shape_names": [
+        "ccv04_runtime_worldformer_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": false,
+      "source_generation": "v03",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_worldformer_base.mesh"
+    },
+    {
+      "part": "ccv04_runtime_worldformer_active",
+      "triangles": 5164,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_runtime_v04/export/ccv04_runtime_worldformer_active.mesh",
+      "shape_names": [
+        "ccv04_runtime_worldformer_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": false,
+      "source_generation": "v03",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_worldformer_active.mesh"
+    }
+  ],
+  "ship_root_entity": "ccv04_strategic_cruiser_entity",
+  "preview_entities": [
+    "ccv04_preview_spinal_artillery_entity",
+    "ccv04_preview_standard_carrier_entity"
+  ],
+  "ship_root_scale": 0.75,
+  "native_forward_axis": "PDX negative Z",
+  "native_transform": "same as validated v02: ship author Z180, gun identity, native engines, outward hangars",
+  "root_assembly": "same as v02; zero part1/2/3 and four native target locators",
+  "spinal_muzzle_identical_to_installed_v02": true,
+  "custom_charging_animation_implemented": false,
+  "automatic_lod_switching": false,
+  "native_windup_locators_installed": [
+    "xl_windup_1",
+    "xl_windup_2",
+    "xl_windup_3",
+    "xl_windup_4",
+    "xl_windup_5",
+    "xl_windup_6",
+    "xl_windup_7",
+    "xl_windup_8"
+  ],
+  "native_windup_sequence": "existing tachyon_lance: 8/7 at 0s, 6/5 at 0.2s, 4/3 at 0.4s, 2/1 at 0.6s",
+  "native_windup_runtime_observed": false,
+  "game_display_verified": false,
+  "user_live_blender_scene_modified": false,
+  "megastructure_entity_offset": {
+    "x": 0,
+    "y": -25
+  },
+  "old_v02_resources_preserved": true,
+  "source_files": [
+    "art/models/central_court_surface_candidates_v03/central_court_surface_candidates_v03.blend",
+    "art/models/central_court_spinal_emitter_v04/central_court_spinal_emitter_v04.blend"
+  ]
+}

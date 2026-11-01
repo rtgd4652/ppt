@@ -1,5 +1,7 @@
 # 中庭级与造境平台：结构/材质精修候选v03
 
+后续接入：本批六个部件已与v04新舰首合并为[v04开发运行包](../central_court_runtime_v04/README.md)，代表整舰已受控显示，见[运行检查点](../../../reports/central_court_v04_runtime_checkpoint_2026-11-01.json)。本目录仍保存作者空间批次及当时未安装的元数据；传承舰首改用后续v04，实际战斗、正常建造、平台显示与正式外观仍分别待验/待评审。
+
 2026-11-01，`draft_pending_human_review`，`runtime_installed=false`。第一轮精修沿用现有公共配色、主轮廓与炮位/接口，不新增舰型、个人符号或玩法。本目录是离线候选，游戏内仍为已取得受控显示证据的[v02](../central_court_runtime_v02/README.md)。
 
 ![精修后的中庭级](previews/ship_refined.png)

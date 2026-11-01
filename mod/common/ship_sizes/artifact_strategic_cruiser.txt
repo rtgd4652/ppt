@@ -1,7 +1,7 @@
 # 中庭级战略舰：可正常配装、造舰和改装的公共承载平台，不是英雄舰或复活舰。
 # v02独立模型接入开发候选；外观/运行显示待验，原舰体机制与个人舰保持独立。
 artifact_strategic_cruiser = {
-	entity = "ccv02_strategic_cruiser_entity"
+	entity = "ccv04_strategic_cruiser_entity"
 	use_shipnames_from = battleship
 	use_ai_design_role_from = battleship
 	formation_priority = 45

@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-01",
+  "source_base": "ea9b5f6",
+  "status": "static_pass_runtime_pending",
+  "meshes": 7,
+  "texture_files": 3,
+  "entity_definitions": 10,
+  "consumer_entity_references": 8,
+  "consumer_non_graphical_ast": "unchanged_vs_HEAD",
+  "spinal_muzzle": "single and identical to v02 by build PDX readback",
+  "native_windup_locators": 8,
+  "export_mod_bytes": "identical",
+  "related_existing_tests": {
+    "strategic_hull": 5,
+    "postcrisis_fleet": 4,
+    "postcrisis_megastructure": 5,
+    "passed": 14
+  },
+  "static_check": {
+    "status": "pass",
+    "script_files": 272,
+    "events": 261,
+    "localization_keys": 2271,
+    "errors": 0,
+    "warnings": 0
+  },
+  "runtime": "cold start, reserve load and one controlled spinal ship display observed; other usage pending",
+  "formal_appearance": "pending_human_review",
+  "native_charging_visual": "not yet observed",
+  "pdx_readback_uv_and_axes": "passed in background build",
+  "runtime_evidence": "reports/central_court_v04_runtime_checkpoint_2026-11-01.json"
+}

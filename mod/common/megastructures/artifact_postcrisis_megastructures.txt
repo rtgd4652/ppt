@@ -2,7 +2,7 @@
 # F08公共开发型巨构：原生两阶段付费建设，启用后形成普通可殖民世界。
 # 基址/运行态接入同一原点的v02独立候选，沿用原生施工占位；不改独立原型/旧塔/私有枢纽。
 artifact_postcrisis_world_former_0 = {
-	entity = "ccv02_runtime_worldformer_base_entity"
+	entity = "ccv04_runtime_worldformer_base_entity"
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
@@ -52,7 +52,7 @@ artifact_postcrisis_world_former_0 = {
 }
 
 artifact_postcrisis_world_former_1 = {
-	entity = "ccv02_runtime_worldformer_active_entity"
+	entity = "ccv04_runtime_worldformer_active_entity"
 	construction_entity = "construction_platform_entity"
 	portrait = "GFX_megastructure_habitat_background"
 	place_entity_on_planet_plane = no

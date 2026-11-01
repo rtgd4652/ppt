@@ -1,0 +1,94 @@
+# 中央庭v04开发候选；本文件接入不代表正式外观/发布许可批准。
+objectTypes = {
+    pdxmesh = {
+        name = "ccv04_runtime_bow_standard_mesh"
+        file = "gfx/models/central_court_v04/ccv04_runtime_bow_standard.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_runtime_bow_standard"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv04_runtime_bow_spinal_mesh"
+        file = "gfx/models/central_court_v04/ccv04_runtime_bow_spinal.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_runtime_bow_spinal"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv04_runtime_mid_artillery_mesh"
+        file = "gfx/models/central_court_v04/ccv04_runtime_mid_artillery.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_runtime_mid_artillery"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv04_runtime_mid_carrier_mesh"
+        file = "gfx/models/central_court_v04/ccv04_runtime_mid_carrier.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_runtime_mid_carrier"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv04_runtime_stern_mesh"
+        file = "gfx/models/central_court_v04/ccv04_runtime_stern.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_runtime_stern"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv04_runtime_worldformer_base_mesh"
+        file = "gfx/models/central_court_v04/ccv04_runtime_worldformer_base.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_runtime_worldformer_base"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv04_runtime_worldformer_active_mesh"
+        file = "gfx/models/central_court_v04/ccv04_runtime_worldformer_active.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv04_runtime_worldformer_active"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+}
