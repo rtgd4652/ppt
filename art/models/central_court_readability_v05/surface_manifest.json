@@ -1,0 +1,206 @@
+{
+  "date": "2026-11-01",
+  "source_base": "2125b28",
+  "status": "draft_pending_human_review",
+  "rgb_diffuse_bytes_unchanged": true,
+  "normal_and_emission_bytes_unchanged": true,
+  "properties_texture": {
+    "file": "art/models/central_court_readability_v05/export/cc_surface_v05_properties.dds",
+    "format": "DXT5/BC3",
+    "size": [
+      2048,
+      1024
+    ],
+    "mip_levels": 12,
+    "bytes": 2796368
+  },
+  "palette": [
+    {
+      "role": "armor",
+      "rgb": [
+        24,
+        38,
+        48
+      ],
+      "old_properties": [
+        0,
+        40,
+        20,
+        70
+      ],
+      "properties": [
+        0,
+        80,
+        6,
+        92
+      ],
+      "normal_emission_unchanged": 0,
+      "dielectric_spec_remapped": 0.03937,
+      "metalness_remapped": 0.04651
+    },
+    {
+      "role": "plate",
+      "rgb": [
+        48,
+        70,
+        81
+      ],
+      "old_properties": [
+        0,
+        58,
+        55,
+        82
+      ],
+      "properties": [
+        0,
+        84,
+        14,
+        106
+      ],
+      "normal_emission_unchanged": 0,
+      "dielectric_spec_remapped": 0.0434,
+      "metalness_remapped": 0.10679
+    },
+    {
+      "role": "silver",
+      "rgb": [
+        155,
+        168,
+        174
+      ],
+      "old_properties": [
+        0,
+        85,
+        145,
+        112
+      ],
+      "properties": [
+        0,
+        95,
+        85,
+        104
+      ],
+      "normal_emission_unchanged": 0,
+      "dielectric_spec_remapped": 0.05552,
+      "metalness_remapped": 0.55556
+    },
+    {
+      "role": "warm",
+      "rgb": [
+        214,
+        217,
+        213
+      ],
+      "old_properties": [
+        0,
+        26,
+        10,
+        45
+      ],
+      "properties": [
+        0,
+        78,
+        4,
+        86
+      ],
+      "normal_emission_unchanged": 0,
+      "dielectric_spec_remapped": 0.03743,
+      "metalness_remapped": 0.03113
+    },
+    {
+      "role": "glass",
+      "rgb": [
+        26,
+        65,
+        79
+      ],
+      "old_properties": [
+        0,
+        105,
+        12,
+        155
+      ],
+      "properties": [
+        0,
+        110,
+        2,
+        148
+      ],
+      "normal_emission_unchanged": 0,
+      "dielectric_spec_remapped": 0.07443,
+      "metalness_remapped": 0.01562
+    },
+    {
+      "role": "vent",
+      "rgb": [
+        18,
+        27,
+        32
+      ],
+      "old_properties": [
+        0,
+        35,
+        90,
+        65
+      ],
+      "properties": [
+        0,
+        65,
+        12,
+        70
+      ],
+      "normal_emission_unchanged": 0,
+      "dielectric_spec_remapped": 0.02599,
+      "metalness_remapped": 0.0919
+    },
+    {
+      "role": "cyan",
+      "rgb": [
+        105,
+        193,
+        204
+      ],
+      "old_properties": [
+        0,
+        62,
+        35,
+        85
+      ],
+      "properties": [
+        0,
+        65,
+        18,
+        94
+      ],
+      "normal_emission_unchanged": 42,
+      "dielectric_spec_remapped": 0.02599,
+      "metalness_remapped": 0.13619
+    },
+    {
+      "role": "amber",
+      "rgb": [
+        211,
+        154,
+        85
+      ],
+      "old_properties": [
+        0,
+        52,
+        25,
+        72
+      ],
+      "properties": [
+        0,
+        60,
+        12,
+        88
+      ],
+      "normal_emission_unchanged": 20,
+      "dielectric_spec_remapped": 0.02215,
+      "metalness_remapped": 0.0919
+    }
+  ],
+  "runtime_installed": false,
+  "reference": "docs/art/calibration/CENTRAL_COURT_MATERIAL_CALIBRATION.md",
+  "shader_basis": "local 4.5.2 gfx/FX/pdxmesh_ship.fxh; no native media copied"
+}

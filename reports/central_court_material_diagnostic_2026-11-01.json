@@ -1,0 +1,132 @@
+{
+  "date": "2026-11-01",
+  "source_base": "2125b28",
+  "status": "read_only_diagnostic",
+  "own": [
+    {
+      "file": "mod\\gfx\\models\\central_court_v04\\ccv04_runtime_bow_spinal.mesh",
+      "meshes": [
+        {
+          "keys": [
+            "p",
+            "n",
+            "ta",
+            "u0",
+            "tri",
+            "boundingsphere"
+          ],
+          "triangles": 2720,
+          "surface_area_model_units": 1371.5082291608148,
+          "mean_winding_normal_alignment": 1.0000000163959404,
+          "normal_positive_y_triangles": 350,
+          "role_surface_fraction": {
+            "armor": 0.6707,
+            "plate": 0.2433,
+            "silver": 0.0691,
+            "warm": 0.0,
+            "glass": 0.0,
+            "vent": 0.0046,
+            "cyan": 0.0123,
+            "amber": 0.0
+          }
+        }
+      ]
+    },
+    {
+      "file": "mod\\gfx\\models\\central_court_v04\\ccv04_runtime_mid_artillery.mesh",
+      "meshes": [
+        {
+          "keys": [
+            "p",
+            "n",
+            "ta",
+            "u0",
+            "tri",
+            "boundingsphere"
+          ],
+          "triangles": 1576,
+          "surface_area_model_units": 1315.7289120484786,
+          "mean_winding_normal_alignment": 1.0000000089704237,
+          "normal_positive_y_triangles": 306,
+          "role_surface_fraction": {
+            "armor": 0.6928,
+            "plate": 0.2629,
+            "silver": 0.0274,
+            "warm": 0.0004,
+            "glass": 0.0012,
+            "vent": 0.0106,
+            "cyan": 0.0,
+            "amber": 0.0047
+          }
+        }
+      ]
+    },
+    {
+      "file": "mod\\gfx\\models\\central_court_v04\\ccv04_runtime_stern.mesh",
+      "meshes": [
+        {
+          "keys": [
+            "p",
+            "n",
+            "ta",
+            "u0",
+            "tri",
+            "boundingsphere"
+          ],
+          "triangles": 2812,
+          "surface_area_model_units": 1155.6371436673176,
+          "mean_winding_normal_alignment": 1.000000010194048,
+          "normal_positive_y_triangles": 420,
+          "role_surface_fraction": {
+            "armor": 0.659,
+            "plate": 0.2182,
+            "silver": 0.0481,
+            "warm": 0.0,
+            "glass": 0.0,
+            "vent": 0.057,
+            "cyan": 0.0177,
+            "amber": 0.0
+          }
+        }
+      ]
+    }
+  ],
+  "native": {
+    "file": "F:\\steam\\steamapps\\common\\Stellaris\\gfx\\models\\ships\\mammalian_01\\mammalian_01_battleship_bow_XL1.mesh",
+    "meshes": [
+      {
+        "keys": [
+          "p",
+          "tri"
+        ],
+        "skipped": "non-render collision mesh without normals"
+      },
+      {
+        "keys": [
+          "p",
+          "n",
+          "ta",
+          "u0",
+          "tri"
+        ],
+        "triangles": 1550,
+        "surface_area_model_units": 697.1492697436504,
+        "mean_winding_normal_alignment": 0.9956090337350385,
+        "normal_positive_y_triangles": 264,
+        "role_surface_fraction": null
+      }
+    ]
+  },
+  "shader_references": [
+    "gfx/FX/pdxmesh_ship.fxh",
+    "gfx/FX/standardfuncsgfx.fxh"
+  ],
+  "shader_equations": {
+    "dielectric_F0": "G*G*0.4",
+    "metalness": "1-(1-B)*(1-B)",
+    "normal": "x=G*2-1, y=-(A*2-1), z=sqrt(saturate(1-x*x-y*y))",
+    "emissive": "normal.B"
+  },
+  "native_media_copied": false,
+  "runtime_lighting_not_measured": true
+}

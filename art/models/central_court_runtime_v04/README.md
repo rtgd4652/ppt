@@ -1,5 +1,7 @@
 # 中庭级与造境平台：v04精修开发接入
 
+后续材质更新：[v05可读性候选](../central_court_readability_v05/README.md)已更新运行目录中的七网格UV、三张新材质及GFX，实体/消费者名字仍为v04，几何/法线/全部定位器保持。本目录导出文件仍是旧v04不可变对照基线；下面的显示证据只对应当时版本。v05冷启动/载档通过，新实机外观未观察，详见[当前检查点](../../../reports/central_court_readability_v05_checkpoint_2026-11-01.json)。
+
 2026-11-01，基线`ea9b5f6`。合并[v03整体精修](../central_court_surface_candidates_v03/README.md)的六个部件与[v04场约束舰首](../central_court_spinal_emitter_v04/README.md)，接入独立的`mod/gfx/models/central_court_v04/`。具体外观与再分发仍待确认，开发接入不代表1.0正式美术批准。最终运行结果见[本轮记录](../../../reports/central_court_v04_integration_2026-11-01.md)。
 
 随后4.5.2(50ba)冷启动、reserve实际载入与代表整舰受控显示通过，[舰首近景](../../../reports/images/central_court_v04_bow_runtime_2026-11-01.png)和[完整视图](../../../reports/images/central_court_v04_ship_runtime_2026-11-01.png)已保存。当前光照下装甲偏暗，受光与材质暗部可读性待收敛；造境平台本轮未单独显示。运行状态以[检查点](../../../reports/central_court_v04_runtime_checkpoint_2026-11-01.json)为准，生成清单中的`game_display_verified=false`保留构建时事实。

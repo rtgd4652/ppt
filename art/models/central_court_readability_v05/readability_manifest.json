@@ -1,0 +1,358 @@
+{
+  "date": "2026-11-01",
+  "source_base": "2125b28",
+  "status": "draft_integrated_runtime_pending",
+  "formal_asset_approved": false,
+  "meshes": [
+    {
+      "part": "ccv04_runtime_bow_standard",
+      "triangles": 1356,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/central_court_readability_v05/export/ccv04_runtime_bow_standard.mesh",
+      "shape_names": [
+        "ccv04_runtime_bow_standard"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v05_materials_v04_geometry",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_bow_standard.mesh",
+      "geometry_normals_and_all_locators_unchanged": true
+    },
+    {
+      "part": "ccv04_runtime_bow_spinal",
+      "triangles": 2720,
+      "locators": [
+        "cc_field_stage_01",
+        "cc_field_stage_02",
+        "cc_field_stage_03",
+        "cc_field_stage_04",
+        "xl_gun_01",
+        "xl_windup_1",
+        "xl_windup_2",
+        "xl_windup_3",
+        "xl_windup_4",
+        "xl_windup_5",
+        "xl_windup_6",
+        "xl_windup_7",
+        "xl_windup_8"
+      ],
+      "mesh": "art/models/central_court_readability_v05/export/ccv04_runtime_bow_spinal.mesh",
+      "shape_names": [
+        "ccv04_runtime_bow_spinal"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v05_materials_v04_geometry",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_bow_spinal.mesh",
+      "geometry_normals_and_all_locators_unchanged": true
+    },
+    {
+      "part": "ccv04_runtime_mid_artillery",
+      "triangles": 1576,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/central_court_readability_v05/export/ccv04_runtime_mid_artillery.mesh",
+      "shape_names": [
+        "ccv04_runtime_mid_artillery"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v05_materials_v04_geometry",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_mid_artillery.mesh",
+      "geometry_normals_and_all_locators_unchanged": true
+    },
+    {
+      "part": "ccv04_runtime_mid_carrier",
+      "triangles": 2064,
+      "locators": [
+        "small_gun_01",
+        "small_gun_02",
+        "small_gun_03",
+        "small_gun_04",
+        "strike_craft_locator_01",
+        "strike_craft_locator_02"
+      ],
+      "mesh": "art/models/central_court_readability_v05/export/ccv04_runtime_mid_carrier.mesh",
+      "shape_names": [
+        "ccv04_runtime_mid_carrier"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v05_materials_v04_geometry",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_mid_carrier.mesh",
+      "geometry_normals_and_all_locators_unchanged": true
+    },
+    {
+      "part": "ccv04_runtime_stern",
+      "triangles": 2812,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/central_court_readability_v05/export/ccv04_runtime_stern.mesh",
+      "shape_names": [
+        "ccv04_runtime_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": true,
+      "source_generation": "v05_materials_v04_geometry",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_stern.mesh",
+      "geometry_normals_and_all_locators_unchanged": true
+    },
+    {
+      "part": "ccv04_runtime_worldformer_base",
+      "triangles": 2444,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_readability_v05/export/ccv04_runtime_worldformer_base.mesh",
+      "shape_names": [
+        "ccv04_runtime_worldformer_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": false,
+      "source_generation": "v05_materials_v04_geometry",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_worldformer_base.mesh",
+      "geometry_normals_and_all_locators_unchanged": true
+    },
+    {
+      "part": "ccv04_runtime_worldformer_active",
+      "triangles": 5164,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_readability_v05/export/ccv04_runtime_worldformer_active.mesh",
+      "shape_names": [
+        "ccv04_runtime_worldformer_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "uv_in_bounds": true,
+      "orientation_checked_against_native": false,
+      "source_generation": "v05_materials_v04_geometry",
+      "mod_path": "mod/gfx/models/central_court_v04/ccv04_runtime_worldformer_active.mesh",
+      "geometry_normals_and_all_locators_unchanged": true
+    }
+  ],
+  "surface_reassignment": [
+    {
+      "author_collection": "ccv03_bow_standard",
+      "reassigned_faces": 424,
+      "reassigned_whole_components": 14,
+      "area_basis": "full 3D surface area, not screen projected percentage",
+      "role_fraction_before": {
+        "armor": 0.6739,
+        "plate": 0.2274,
+        "silver": 0.0911,
+        "warm": 0.0,
+        "glass": 0.0,
+        "vent": 0.0055,
+        "cyan": 0.002,
+        "amber": 0.0
+      },
+      "role_fraction_after": {
+        "armor": 0.6739,
+        "plate": 0.0246,
+        "silver": 0.2939,
+        "warm": 0.0,
+        "glass": 0.0,
+        "vent": 0.0055,
+        "cyan": 0.002,
+        "amber": 0.0
+      }
+    },
+    {
+      "author_collection": "ccv04_bow_field",
+      "reassigned_faces": 336,
+      "reassigned_whole_components": 12,
+      "area_basis": "full 3D surface area, not screen projected percentage",
+      "role_fraction_before": {
+        "armor": 0.6707,
+        "plate": 0.2433,
+        "silver": 0.0691,
+        "warm": 0.0,
+        "glass": 0.0,
+        "vent": 0.0046,
+        "cyan": 0.0123,
+        "amber": 0.0
+      },
+      "role_fraction_after": {
+        "armor": 0.6707,
+        "plate": 0.0867,
+        "silver": 0.2257,
+        "warm": 0.0,
+        "glass": 0.0,
+        "vent": 0.0046,
+        "cyan": 0.0123,
+        "amber": 0.0
+      }
+    },
+    {
+      "author_collection": "ccv03_mid_artillery",
+      "reassigned_faces": 592,
+      "reassigned_whole_components": 20,
+      "area_basis": "full 3D surface area, not screen projected percentage",
+      "role_fraction_before": {
+        "armor": 0.6928,
+        "plate": 0.2629,
+        "silver": 0.0274,
+        "warm": 0.0004,
+        "glass": 0.0012,
+        "vent": 0.0106,
+        "cyan": 0.0,
+        "amber": 0.0047
+      },
+      "role_fraction_after": {
+        "armor": 0.6928,
+        "plate": 0.0817,
+        "silver": 0.2086,
+        "warm": 0.0004,
+        "glass": 0.0012,
+        "vent": 0.0106,
+        "cyan": 0.0,
+        "amber": 0.0047
+      }
+    },
+    {
+      "author_collection": "ccv03_mid_carrier",
+      "reassigned_faces": 680,
+      "reassigned_whole_components": 22,
+      "area_basis": "full 3D surface area, not screen projected percentage",
+      "role_fraction_before": {
+        "armor": 0.6186,
+        "plate": 0.244,
+        "silver": 0.0857,
+        "warm": 0.0003,
+        "glass": 0.001,
+        "vent": 0.0426,
+        "cyan": 0.0034,
+        "amber": 0.0042
+      },
+      "role_fraction_after": {
+        "armor": 0.6186,
+        "plate": 0.0871,
+        "silver": 0.2427,
+        "warm": 0.0003,
+        "glass": 0.001,
+        "vent": 0.0426,
+        "cyan": 0.0034,
+        "amber": 0.0042
+      }
+    },
+    {
+      "author_collection": "ccv03_stern",
+      "reassigned_faces": 336,
+      "reassigned_whole_components": 12,
+      "area_basis": "full 3D surface area, not screen projected percentage",
+      "role_fraction_before": {
+        "armor": 0.659,
+        "plate": 0.2182,
+        "silver": 0.0481,
+        "warm": 0.0,
+        "glass": 0.0,
+        "vent": 0.057,
+        "cyan": 0.0177,
+        "amber": 0.0
+      },
+      "role_fraction_after": {
+        "armor": 0.659,
+        "plate": 0.0978,
+        "silver": 0.1685,
+        "warm": 0.0,
+        "glass": 0.0,
+        "vent": 0.057,
+        "cyan": 0.0177,
+        "amber": 0.0
+      }
+    },
+    {
+      "author_collection": "ccv03_worldformer_base",
+      "reassigned_faces": 504,
+      "reassigned_whole_components": 18,
+      "area_basis": "full 3D surface area, not screen projected percentage",
+      "role_fraction_before": {
+        "armor": 0.6196,
+        "plate": 0.2047,
+        "silver": 0.0816,
+        "warm": 0.0,
+        "glass": 0.001,
+        "vent": 0.0915,
+        "cyan": 0.0,
+        "amber": 0.0016
+      },
+      "role_fraction_after": {
+        "armor": 0.6196,
+        "plate": 0.0286,
+        "silver": 0.2576,
+        "warm": 0.0,
+        "glass": 0.001,
+        "vent": 0.0915,
+        "cyan": 0.0,
+        "amber": 0.0016
+      }
+    },
+    {
+      "author_collection": "ccv03_worldformer_active",
+      "reassigned_faces": 1192,
+      "reassigned_whole_components": 38,
+      "area_basis": "full 3D surface area, not screen projected percentage",
+      "role_fraction_before": {
+        "armor": 0.5613,
+        "plate": 0.2405,
+        "silver": 0.1141,
+        "warm": 0.0,
+        "glass": 0.0008,
+        "vent": 0.063,
+        "cyan": 0.019,
+        "amber": 0.0013
+      },
+      "role_fraction_after": {
+        "armor": 0.5613,
+        "plate": 0.0424,
+        "silver": 0.3122,
+        "warm": 0.0,
+        "glass": 0.0008,
+        "vent": 0.063,
+        "cyan": 0.019,
+        "amber": 0.0013
+      }
+    }
+  ],
+  "source_blend": "art/models/central_court_readability_v05/central_court_readability_v05.blend",
+  "source_reopened": true,
+  "packed_dds": 3,
+  "geometry_normals_all_locators_unchanged": true,
+  "diffuse_and_emission_bytes_unchanged": true,
+  "new_self_illumination_on_armor": false,
+  "previews": [
+    "art/models/central_court_readability_v05/previews/ship_readability.png",
+    "art/models/central_court_readability_v05/previews/bow_readability.png"
+  ],
+  "new_entities_or_gameplay_changes": false,
+  "user_live_blender_scene_modified": false,
+  "native_windup_retained": true,
+  "runtime_display_verified": false,
+  "preview_lighting": "same v04 offline camera/lights, shader remains Blender proxy",
+  "installation": "in-place v04 runtime mesh/material update; old authoring and v04 export baseline preserved"
+}
