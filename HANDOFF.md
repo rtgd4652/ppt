@@ -1,10 +1,10 @@
 # 跨 AI 接手入口
 
-更新：2026-10-31。适用于 Codex、其他本地 AI 和没有本会话历史的助手。只读本页、[AGENTS](AGENTS.md)和[TODO](docs/TODO.md)的当前事项即可开始判断任务；详细能力按需读[操作说明](docs/AGENT_OPERATIONS.md)。不要求先通读聊天、历史报告或整个项目。
+更新：2026-11-01。适用于 Codex、其他本地 AI 和没有本会话历史的助手。只读本页、[AGENTS](AGENTS.md)和[TODO](docs/TODO.md)的当前事项即可开始判断任务；详细能力按需读[操作说明](docs/AGENT_OPERATIONS.md)。不要求先通读聊天、历史报告或整个项目。
 
 ## 当前授权与工作状态
 
-- 夜间新增决定（仅保存、正文未改）：将巨构级物质处理、自律工业、制造/装配及文明动员能力加入相关科技与巨构文本；天体级战舰明确放在1.0之后，不计入1.0完成标准。见[决定记录](docs/design/artifact_megascale_engineering_direction_2026-10-31.md)。现有中庭级/个人旗舰身份保持，未来功能不写成已实现按钮；下次按七都来源与实际机制补写，今晚不恢复开发。
+- 11月1日已落实夜间文案决定：先只读查询七都索引、阅读对应来源并核对消费者，再补写11项公共科技、5项设施/巨构说明及维护注释，表达物质处理、可扩展施工、跨星系工业协作与行星造境。应用段、名称、数值和可执行逻辑保持；见[实施记录](reports/artifact_megascale_text_revision_2026-11-01.md)及[检查结果](reports/artifact_megascale_text_validation_2026-11-01.json)。本轮未操作游戏或Blender，纯文字不另做运行验收。天体级战舰仍归1.0之后，中庭级/个人旗舰身份保持；无旧命令待补交。
 
 - 晚间概念预览收尾：用户明确当天具体开发结束，仅要求完成观感概念图；已用内置image_gen生成[双栏概念板](art/concepts/central_court_completion_preview_20261031/README.md)，含原图副本与完整提示词。仅概念探索、未批准外观/未制作对应成品模型/未安装；不将图中细节自动变更武器槽或玩法。今晚只保存，后续根据具体反馈续接。
 
@@ -33,8 +33,8 @@
 | --- | --- |
 | 仓库根目录 | `C:\Users\Admin\Desktop\ppt\simple_leader_edict`；父目录 `ppt` 不是本仓库的 Git 根目录 |
 | 分支 | `knowledge/source-rebuild-v0.1`；接手时用 Git 复核 |
-| 上次开发保存点 | `af11982`为本轮配色研究基线；最新中文提交通过`git log -1`获取 |
-| 最近实际运行的 Mod 源码 | 最近已观察为`335f408`于20:37加载、4.5.2，仅本Mod；后续更改在桌面工具/离线美术和记录中。当前轮未再查看游戏，新玩法仍未验 |
+| 上次开发保存点 | `bdf2e95`为11月1日文案修改基线；最新中文提交通过`git log -1`获取 |
+| 最近实际运行的 Mod 源码 | 最近已观察为`335f408`于20:37加载、4.5.2，仅本Mod；后续更改涉及桌面工具、离线美术、文案和记录。当前轮未再查看游戏，新玩法仍未验 |
 | 唯一游戏加载目录 | 仓库内 `mod/` |
 | 游戏可执行文件 | `F:\steam\steamapps\common\Stellaris\stellaris.exe` |
 | 存档、日志与用户配置 | `C:\Users\Admin\Documents\Paradox Interactive\Stellaris` |

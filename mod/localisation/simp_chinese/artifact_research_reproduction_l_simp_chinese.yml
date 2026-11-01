@@ -2,7 +2,7 @@
  tech_artifact_public_reproduction_protocol:0 "实验复现体系"
  tech_artifact_public_reproduction_protocol_desc:0 "研究方法与结果一起保存，其他研究者才能重新建立相同的实验条件。一次试验的价值因此能够延伸到更多殖民地。\n\n§H应用§!：通过当地项目页归档仍有效的样本或材料成果；配合科研园区，在其他殖民地付费复现对应成果。完成公共神器理论汇编后，也可在合格工程现场复现。"
  tech_artifact_research_campus_integration:0 "科研平台工程"
- tech_artifact_research_campus_integration_desc:0 "稳定的实验条件、人员支持与演算设备被建成长期科研平台。已有方法可以在这里重新实施，新的研究也有了可持续的场地。\n\n§H应用§!：解锁公共研究园区，可升级为命运研究尖塔。掌握$tech_artifact_public_reproduction_protocol$并归档方法后，可付费复现样本或材料成果。"
+ tech_artifact_research_campus_integration_desc:0 "黑门研究曾依赖少数难以重建的现场条件。长期科研平台把隔离、标定、演算和人员支持纳入可维护的设施，使已经归档的方法能在其他殖民地重新实施。中央庭因此能够围绕共同的实验条件接续研究，而无需每次从危险的首次接触开始。\n\n§H应用§!：解锁公共研究园区，可升级为命运研究尖塔。掌握$tech_artifact_public_reproduction_protocol$并归档方法后，可付费复现样本或材料成果。"
  building_artifact_public_research_campus:0 "公共研究园区"
  building_artifact_public_research_campus_desc:0 "园区将已经归档的方法变成可重复使用的实验条件，无需把原始危险样本搬到每一颗殖民地。\n\n提供§Y400单位研究主管容量§!；研究及本国档案满足后，可复现样本或材料成果。与其他公共工程共用当地项目名额，现场失效时保留进度并暂停。"
  artifact_research.archive_sample:0 "提交并归档这份样本分析成果"

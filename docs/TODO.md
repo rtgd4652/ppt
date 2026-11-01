@@ -1,10 +1,10 @@
 # 当前执行清单
 
-更新：2026-10-31。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。本页只列当前事项与仍有效的后续范围；旧已完成清单保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)，不作为执行队列。
+更新：2026-11-01。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。本页只列当前事项与仍有效的后续范围；旧已完成清单保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)，不作为执行队列。
 
 ## 当前接手点
 
-- [ ] 下次工作：按[夜间决定](design/artifact_megascale_engineering_direction_2026-10-31.md)，补写相关高级科技/巨构的工程能力与文明用途文本；先查七都来源并核对实现。天体级战舰归1.0之后，未添加到当前1.0交付或替换现有中庭级。本次仅保存决定，正文尚未修改。
+- [x] 按[夜间决定](design/artifact_megascale_engineering_direction_2026-10-31.md)补写11项公共科技、5项设施/巨构说明及维护注释；写前只读查七都来源并核对实际消费者，应用段和玩法保持。见[实施记录](../reports/artifact_megascale_text_revision_2026-11-01.md)。天体级战舰仍归1.0之后，不替换中庭级；纯文案未启动游戏。
 
 
 - [x] 新增公共配色离线研究：两图/独立源文件，沿已批准的深蓝灰/雾银/冷青/琥珀职责，五网格几何保持、重开通过。具体轮廓与材质待评审，未做正式游戏贴图/未安装。见[研究记录](../reports/central_court_material_study_2026-10-31.md)；本轮进入晚间收尾，下一步按整体/配色反馈收敛，不恢复旧排障或暂停任务。
@@ -53,7 +53,7 @@
 - [x] R4b B14及BL29集成场、实付备料、全国占位、撤回及消费接口源码完成；6项新增、21项相关旧检查及总静态通过。见[实施记录](../reports/artifact_civilization_r4b_implementation_2026-10-31.md)。E09营建与D13承载试验消费者均已接。
 
 - [x] 62项公共科技名称、卡面与实现注释整理，其中13项更名、36条关联文案同步；已补查七都来源并保留审核边界，程序语句与本地化键未改，静态通过。见[整理记录](../reports/artifact_technology_text_revision_2026-10-31.md)。
-- 后续文字先按[文案规范](design/artifact_technology_writing_guide_v0.1.md)查七都来源；6项终局未实现节点随能力落地再写，纯文案不另起游戏验收。
+- 公共80项目前均已有源码和卡面文字；后续文字仍先按[文案规范](design/artifact_technology_writing_guide_v0.1.md)查七都来源，纯文案不另起游戏验收。上述62项是首次整理的历史范围。
 
 - [x] R3d五类新件普通护卫舰正常改装、单支共鸣攻坚军正常训练及一次完成态实际载回通过，见[运行结果](../reports/artifact_civilization_r3d_runtime_2026-10-31.md)。研究／公共飞升受控，实战、受伤恢复、维护结算差额、全部尺寸及自然平衡未扩测。
 - [x] 结果档`2293.10.11.sav`已保存；原`2292.06.22.sav`及2291基线保留。10月31日02:28左右最后观察为读档后暂停，接手时重新确认窗口状态，不重放前置命令。

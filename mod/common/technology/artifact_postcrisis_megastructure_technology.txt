@@ -1,4 +1,5 @@
 # F08：解译共同胜利资料后研发公共造境工程，个人转变与神器复制不参与资格。
+# 工程语义：设定呈现行星级工程能力；机制仍为两阶段付费巨构及一次启用，将安全荒芜目标改为普通大陆，不拆解天体、不自动殖民或新增连续改造阶段。
 tech_artifact_postcrisis_megastructure_engineering = {
 	area = engineering
 	icon = "tech_artifact_resonance_manufacturing" # 复用已注册DDS；E11科技键本身没有独立图标。

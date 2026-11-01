@@ -1,4 +1,5 @@
 # F07胜利后的有限收尾研究；共享已解译资料与E10，不再组织第二轮试验/Boss。
+# 工程语义：胜利成果只衔接原中庭级舰首与三组件；原生再生不等于补造，天体级战争机器保留至1.0之后另案设计。
 tech_artifact_postcrisis_ship_engineering = {
 	area = engineering
 	icon = "tech_artifact_resonance_manufacturing"

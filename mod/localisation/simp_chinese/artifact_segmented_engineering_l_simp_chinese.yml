@@ -1,8 +1,8 @@
 ﻿l_simp_chinese:
  tech_artifact_segmented_large_engineering:0 "分段大型工程"
- tech_artifact_segmented_large_engineering_desc:0 "交界都市重建时，中央庭学会让不同队伍接续同一项工程。进入星海后，营建被拆分为可以独立验收的区段，物资、装配与试运行各有责任和交接条件。\n\n§H应用§!：解锁大型工程营建场。投入工程备料，逐段完成准备、装配与试运行；有效营建场提供§G+1§!巨型结构同时建造名额，全国一处。具体巨构仍需各自的研究与建造条件。"
+ tech_artifact_segmented_large_engineering_desc:0 "巨型结构需要把物质处理、构件制造、供能散热和现场装配组织成持续运行的体系。中央庭将交界都市的重建协作延伸到星际施工：自律作业单元沿标准区段扩充，人员逐段校准与验收，让建造能力随着已交付的工程体系增长。\n\n§H应用§!：解锁大型工程营建场。投入工程备料，逐段完成准备、装配与试运行；有效营建场提供§G+1§!巨型结构同时建造名额，全国一处。具体巨构仍需各自的研究与建造条件。"
  building_artifact_large_engineering_yard:0 "大型工程营建场"
- building_artifact_large_engineering_yard_desc:0 "营建场将构件、装配队伍与施工调度汇集到长期运行的平台。建成场地后，仍需通过行星决议完成准备、装配与试运行，才能承担另一项并行的大型建设。研究和施工期间维持设施的供给，也属于工程成本。"
+ building_artifact_large_engineering_yard_desc:0 "营建场将构件加工、装配、供能与检修接入长期施工体系，支持各支队伍接续承担巨型结构的建设。建成场地后，仍需通过行星决议完成准备、装配与试运行，才能增加一项并行的大型建设；持续供给和设施维护同样属于工程成本。"
  decision_artifact_civil_segmented_start:0 "大型营建：场地准备"
  decision_artifact_civil_segmented_start_desc:0 "将当地一份工程备料交给营建项目，开始准备承载结构与施工安排。完成本阶段后等待下一次投入。"
  decision_artifact_civil_segmented_assemble:0 "大型营建：结构装配"

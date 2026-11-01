@@ -1,8 +1,8 @@
 ﻿l_simp_chinese:
  tech_artifact_strategic_engineering_supply:0 "战略工程供应"
- tech_artifact_strategic_engineering_supply_desc:0 "中央庭曾在黑门危机中协调救援、城防与重建物资。面向星海的大型建设，这份经验成为长期备料制度：材料有明确去向，下一项工程也知道还有多少余量。\n\n§H应用§!：解锁工程物资集成场，在联运接收端把实存物资集成为一份大型工程备料。全国同时保留一份，交付前可撤回并回收部分材料。"
+ tech_artifact_strategic_engineering_supply_desc:0 "中央庭将灾难应对中的物资统筹发展为大型工程的备料制度。原料、结构件与施工耗材按用途集成，检验记录跟随实物交付，让设计中的结构能够成为现场可以装配的构件。文明动员的规模，由它能持续送达多少合格物资来支撑。\n\n§H应用§!：解锁工程物资集成场，在联运接收端把实存物资集成为一份大型工程备料。全国同时保留一份，交付前可撤回并回收部分材料。"
  building_artifact_engineering_supply_yard:0 "工程物资集成场"
- building_artifact_engineering_supply_yard_desc:0 "配给仓、联运调度与构件检验在此衔接，让大型建设所需的材料提前集结。需要当地配给仓和联运站；登记为接收端后，可通过行星决议投入实存物资，建立专用工程备料。"
+ building_artifact_engineering_supply_yard_desc:0 "材料清单在这里成为可以交付的工程备料：构件经过检验，与施工耗材一同集结，运往实际需要它们的现场。需要当地配给仓和联运站；登记为接收端后，可通过行星决议投入实存物资，建立专用工程备料。"
  decision_artifact_civil_strategic_reserve:0 "集成大型工程备料"
  decision_artifact_civil_strategic_reserve_desc:0 "将当地实存的普通物资与追加材料一起编组，留作大型工程使用。全国同时保留一份专用备料，已投入的材料不再用于普通施工或联运。"
  decision_artifact_civil_strategic_release:0 "撤回大型工程备料"

@@ -1,5 +1,6 @@
 # E09 分段大型工程。中央庭的重建协作经验转译为分段验收，不把工程制度写成原作神器能力。
 # 实现：解锁营建场与三阶段工程，逐段消费真实物资；运行收益由有效建筑提供，不永久写入国家。
+# 工程语义：巨构级工业与可扩展自律施工属于Mod设定；真实消费者仍为三阶段营建与条件性并行名额，不新增产能自增或天体拆解。
 tech_artifact_segmented_large_engineering = {
 	area = engineering
 	icon = "tech_artifact_resonance_manufacturing"

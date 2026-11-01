@@ -1,6 +1,7 @@
 # B14 战略工程供应。材料、仪器和供给可以标准化，神器本身仍保留个体共鸣边界。
 # 来源与卡面见 docs/design/artifact_technology_text_catalog_v0.1.json。
 # 实现：只解锁集成场和备料资格；civil_supply消费实存普通物资并逐项扣费，全国至多一份备料。
+# 工程语义：工业动员表达对应既有实物集成与交付；全国唯一备料、原材料面额及撤回损耗保持，不自动补给或复制库存。
 tech_artifact_strategic_engineering_supply = {
 	area = engineering
 	icon = "tech_artifact_resonance_manufacturing"

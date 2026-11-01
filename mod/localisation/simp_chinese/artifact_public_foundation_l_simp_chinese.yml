@@ -2,7 +2,7 @@
  tech_artifact_baseline_observation_calibration:0 "基准观测标定"
  tech_artifact_baseline_observation_calibration_desc:0 "从交界都市的旧观测点到远方殖民地，记录只有采用共同尺度，才能彼此比较。基准站持续校正仪器，让研究者分辨测量误差与真正的异常。\n\n§H应用§!：解锁基准观测站；取得黑门观测体系后可升级为黑门观测站。"
  tech_artifact_standard_parts:0 "标准构件工程"
- tech_artifact_standard_parts_desc:0 "统一的尺寸、公差与接头，让损坏的构件能够在遥远殖民地得到替换。可维护性从设计之初就成为工程标准。\n\n§H应用§!：解锁标准件工坊，为材料试制和模块化营建提供场地；取得神器锻造后可升级为中央庭神器工坊。"
+ tech_artifact_standard_parts_desc:0 "交界都市的重建让人们认识到，远方送来的零件必须真正能够装上当地的设备。统一的尺寸、公差与接头，使构件能够跨工坊交付、在不同现场接续装配。大型工程的能力从这些可以制造、运输和替换的小部件开始积累。\n\n§H应用§!：解锁标准件工坊，为材料试制和模块化营建提供场地；取得神器锻造后可升级为中央庭神器工坊。"
  tech_artifact_colony_public_services:0 "殖民地公共服务"
  tech_artifact_colony_public_services_desc:0 "交界都市的重建经验首先关乎人的生活：有水、有食物、有能够求助的地方。殖民规划把供给、维护与社区服务一同带入新的家园。\n\n§H应用§!：解锁社区公共服务中心和基础民生工场，为后续灾害应对与驻防提供场地。"
  building_artifact_baseline_observation_station:0 "基准观测站"

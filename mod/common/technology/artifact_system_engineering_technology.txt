@@ -1,5 +1,6 @@
 # E11 星系协同基础设施：中央庭的资源统筹转译为异星系施工地的实物交付。
 # 保留E09+C12前置；只扩展已有备料/工程入口，不授予个人舰或连续巨构。
+# 工程语义：跨星系分工对应原单一工程接收点和实付交付；不新增超光速网络、无限端点或全银河供给模拟。
 tech_artifact_interstellar_engineering_coordination = {
 	area = engineering
 	icon = "tech_artifact_resonance_manufacturing"

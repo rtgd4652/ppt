@@ -24,6 +24,7 @@ tech_artifact_baseline_observation_calibration = {
 
 # B06 标准构件工程
 # 实现：场地供artifact_foundation读取；材料试制与营建仍需各自研究及实际投入，科技不产生舰船维修效果。
+# 工程语义：标准构件为后续装配与维护提供设定基础；本节点仍只解锁工坊，不新增舰船维修或自动施工。
 tech_artifact_standard_parts = {
 	area = engineering
 	icon = "tech_artifact_relic_fabrication"
@@ -131,6 +132,7 @@ tech_artifact_memory_cataloguing = {
 
 # E03 模块化营建
 # 实现：基础和精密营建使用artifact_foundation公共项目槽；4次有效月度后提供720日收益，不直接生成建筑。
+# 工程语义：自律设备与扩充单元仅说明模块化施工方式；玩法仍是原付费项目与有限期当地支援，不生成设备或额外建筑。
 tech_artifact_modular_colony_construction = {
 	area = engineering
 	icon = "tech_artifact_central_court_protocols"

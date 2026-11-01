@@ -1,7 +1,7 @@
 {
-  "date": "2026-10-31",
+  "date": "2026-11-01",
   "source_base": "c6c27fe",
-  "scope": "64项已实现公共科技的显示名称、两层卡面文案与技术注释；16项未实现节点另列。",
+  "scope": "80项已实现公共科技的显示名称、两层卡面文案与技术注释；本次增强11项工程相关科技及5项关联说明，玩法运行状态独立记录。",
   "status": "source_grounded_static_passed",
   "entries": [
     {
@@ -321,9 +321,9 @@
       "key": "tech_artifact_resonance_manufacturing",
       "previous_name": "共鸣制造体系",
       "name": "共鸣制造体系",
-      "lore": "从原料处理到最终检验，适合工程应用的共鸣条件被纳入制造工序。工坊之间能够交付相同标准的材料与构件，神器使的个体经验也有了可供比较的记录。",
+      "lore": "原料分离、精炼、成形与检验被接入同一套共鸣制造流程，材料的去向可以一直追溯到成品构件。制造设备自身也采用可替换的模块，使产线能够随工程需求扩充。中央庭由此把个别工坊的经验积累为能够持续供给大型建设的工业基础。",
       "application": "解锁共鸣合金圣炉，增加神器工坊岗位并提高合金产出；同时提高首都工坊试验的月度工作量。",
-      "implementation_note": "合金修正来自科技modifier；工坊岗位和首都试验工作量分别由建筑与artifact_engineering模块读取，勿合并为免费工程完成。",
+      "implementation_note": "合金修正来自科技modifier；工坊岗位和首都试验工作量分别由建筑与artifact_engineering模块读取，勿合并为免费工程完成。 工程语义：标准化对象是普通材料、构件与制造设备；可扩展产线属于工程设定，不增加自动扩厂、资源复制或神器量产机制。",
       "technology_file": "mod/common/technology/aemusa_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
       "consumer_files": [
@@ -335,7 +335,8 @@
       "source_groups": [
         "terms",
         "artifact_science",
-        "unknown_boundaries"
+        "unknown_boundaries",
+        "megastructure_engineering_direction"
       ],
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
     },
@@ -409,9 +410,9 @@
       "key": "tech_artifact_standard_parts",
       "previous_name": "前线维修与标准件",
       "name": "标准构件工程",
-      "lore": "统一的尺寸、公差与接头，让损坏的构件能够在遥远殖民地得到替换。可维护性从设计之初就成为工程标准。",
+      "lore": "交界都市的重建让人们认识到，远方送来的零件必须真正能够装上当地的设备。统一的尺寸、公差与接头，使构件能够跨工坊交付、在不同现场接续装配。大型工程的能力从这些可以制造、运输和替换的小部件开始积累。",
       "application": "解锁标准件工坊，为材料试制和模块化营建提供场地；取得神器锻造后可升级为中央庭神器工坊。",
-      "implementation_note": "场地供artifact_foundation读取；材料试制与营建仍需各自研究及实际投入，科技不产生舰船维修效果。",
+      "implementation_note": "场地供artifact_foundation读取；材料试制与营建仍需各自研究及实际投入，科技不产生舰船维修效果。 工程语义：标准构件为后续装配与维护提供设定基础；本节点仍只解锁工坊，不新增舰船维修或自动施工。",
       "technology_file": "mod/common/technology/artifact_public_foundation_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
       "consumer_files": [
@@ -421,7 +422,8 @@
       "source_groups": [
         "terms",
         "artifact_science",
-        "unknown_boundaries"
+        "unknown_boundaries",
+        "megastructure_engineering_direction"
       ],
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
     },
@@ -582,9 +584,9 @@
       "key": "tech_artifact_strategic_engineering_supply",
       "previous_name": "战略工程供应",
       "name": "战略工程供应",
-      "lore": "中央庭曾在黑门危机中协调救援、城防与重建物资。面向星海的大型建设，这份经验成为长期备料制度：材料有明确去向，下一项工程也知道还有多少余量。",
+      "lore": "中央庭将灾难应对中的物资统筹发展为大型工程的备料制度。原料、结构件与施工耗材按用途集成，检验记录跟随实物交付，让设计中的结构能够成为现场可以装配的构件。文明动员的规模，由它能持续送达多少合格物资来支撑。",
       "application": "解锁工程物资集成场，在联运接收端把实存物资集成为一份大型工程备料。全国同时保留一份，交付前可撤回并回收部分材料。",
-      "implementation_note": "只解锁集成场和备料资格；civil_supply消费实存普通物资并逐项扣费，全国至多一份备料。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。R5c：F04消费一份真实ready备料转存备件，无复制/额外收费或退款。运行未验。",
+      "implementation_note": "只解锁集成场和备料资格；civil_supply消费实存普通物资并逐项扣费，全国至多一份备料。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。R5c：F04消费一份真实ready备料转存备件，无复制/额外收费或退款。运行未验。 工程语义：工业动员表达对应既有实物集成与交付；全国唯一备料、原材料面额及撤回损耗保持，不自动补给或复制库存。",
       "technology_file": "mod/common/technology/artifact_strategic_supply_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_strategic_supply_l_simp_chinese.yml",
       "consumer_files": [
@@ -599,7 +601,8 @@
       "source_groups": [
         "terms",
         "artifact_science",
-        "central_court_history"
+        "central_court_history",
+        "megastructure_engineering_direction"
       ],
       "source_note": "中央庭的资源统筹和普通工程支持神器研究用于文案背景；具体备料机制属于Mod设计，来源审核状态不变。"
     },
@@ -1411,9 +1414,9 @@
       "key": "tech_artifact_modular_colony_construction",
       "previous_name": "殖民地模块化营建",
       "name": "模块化营建",
-      "lore": "建筑构件在工坊中预先准备，现场施工围绕标准模块展开。物资与工序的提前协调减少了复杂工程中的等待。",
+      "lore": "供能、支撑和居住设施在工坊预制为标准模块，现场队伍依照接口接续施工。自律设备承担重复搬运与装配，人员负责校准、检验和异常处置；新增施工单元沿同一套工序扩充，使一次建造的经验能够在更多殖民地复用。",
       "application": "在标准件工坊或中央庭神器工坊付费组织营建，为当地建筑施工提供有期限的支援。",
-      "implementation_note": "基础和精密营建使用artifact_foundation公共项目槽；4次有效月度后提供720日收益，不直接生成建筑。",
+      "implementation_note": "基础和精密营建使用artifact_foundation公共项目槽；4次有效月度后提供720日收益，不直接生成建筑。 工程语义：自律设备与扩充单元仅说明模块化施工方式；玩法仍是原付费项目与有限期当地支援，不生成设备或额外建筑。",
       "technology_file": "mod/common/technology/artifact_public_foundation_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
       "consumer_files": [
@@ -1424,7 +1427,8 @@
       "source_groups": [
         "terms",
         "artifact_science",
-        "central_court_history"
+        "central_court_history",
+        "megastructure_engineering_direction"
       ],
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
     },
@@ -1456,9 +1460,9 @@
       "key": "tech_artifact_research_campus_integration",
       "previous_name": "研究园区整合",
       "name": "科研平台工程",
-      "lore": "稳定的实验条件、人员支持与演算设备被建成长期科研平台。已有方法可以在这里重新实施，新的研究也有了可持续的场地。",
+      "lore": "黑门研究曾依赖少数难以重建的现场条件。长期科研平台把隔离、标定、演算和人员支持纳入可维护的设施，使已经归档的方法能在其他殖民地重新实施。中央庭因此能够围绕共同的实验条件接续研究，而无需每次从危险的首次接触开始。",
       "application": "解锁公共研究园区，可升级为命运研究尖塔。掌握$tech_artifact_public_reproduction_protocol$并归档方法后，可付费复现样本或材料成果。",
-      "implementation_note": "园区与尖塔是E05复现场地的替代项；研究主管容量400和800，复现复用R1付费与原拥有者账本。",
+      "implementation_note": "园区与尖塔是E05复现场地的替代项；研究主管容量400和800，复现复用R1付费与原拥有者账本。 工程语义：平台能力对应既有样本/材料方法复现；不新增研究领域或免费成果，不将科研园区称为量产神器设施。",
       "technology_file": "mod/common/technology/artifact_research_reproduction_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
       "consumer_files": [
@@ -1469,7 +1473,8 @@
       "source_groups": [
         "terms",
         "artifact_science",
-        "central_court_history"
+        "central_court_history",
+        "megastructure_engineering_direction"
       ],
       "source_note": "来源支撑术语与文明背景；具体科技、工程能力及游戏效果属于Mod设计，来源审核状态不随本次润色改变。"
     },
@@ -1547,9 +1552,9 @@
       "key": "tech_artifact_segmented_large_engineering",
       "previous_name": "分段大型工程",
       "name": "分段大型工程",
-      "lore": "交界都市重建时，中央庭学会让不同队伍接续同一项工程。进入星海后，营建被拆分为可以独立验收的区段，物资、装配与试运行各有责任和交接条件。",
+      "lore": "巨型结构需要把物质处理、构件制造、供能散热和现场装配组织成持续运行的体系。中央庭将交界都市的重建协作延伸到星际施工：自律作业单元沿标准区段扩充，人员逐段校准与验收，让建造能力随着已交付的工程体系增长。",
       "application": "解锁大型工程营建场。投入工程备料，逐段完成准备、装配与试运行；有效营建场提供§G+1§!巨型结构同时建造名额，全国一处。具体巨构仍需各自的研究与建造条件。",
-      "implementation_note": "解锁营建场与三阶段工程，逐段消费真实物资；运行收益由有效建筑提供，不永久写入国家。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。R5c：已付阶段可用当地应急支援维持物流；新开工/阶段付款及完成容量条件和工期保持。运行未验。",
+      "implementation_note": "解锁营建场与三阶段工程，逐段消费真实物资；运行收益由有效建筑提供，不永久写入国家。R4k补充E11跨星系交付与替代施工身份，原费用、名额和有效月度保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。R5c：已付阶段可用当地应急支援维持物流；新开工/阶段付款及完成容量条件和工期保持。运行未验。 工程语义：巨构级工业与可扩展自律施工属于Mod设定；真实消费者仍为三阶段营建与条件性并行名额，不新增产能自增或天体拆解。",
       "technology_file": "mod/common/technology/artifact_segmented_engineering_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_segmented_engineering_l_simp_chinese.yml",
       "consumer_files": [
@@ -1567,7 +1572,8 @@
       "source_groups": [
         "terms",
         "artifact_science",
-        "central_court_history"
+        "central_court_history",
+        "megastructure_engineering_direction"
       ],
       "source_note": "中央庭灾后重建和科研统筹用于文明背景；分段验收、工程支付和并行容量属于Mod设计，来源审核状态不变。"
     },
@@ -1576,9 +1582,9 @@
       "key": "tech_artifact_strategic_hull_engineering",
       "previous_name": "公共战略舰体工程",
       "name": "公共战略舰体工程",
-      "lore": "中央庭将营建场的分段装配经验与承载试验的负荷记录交给造舰团队。中庭级保留可识别的舰体骨架、武备和维护空间，把经验证的共鸣工程集中到一个可以正常建造、维修和改装的公共平台上。",
+      "lore": "中庭级把分段装配和承载试验积累的能力用于公共造舰。结构、供能、武备与维护通道围绕共同的作战任务组织，分散工业交付的构件在船厂汇成能够持续服役的舰体。面对未知威胁，中央庭所展示的力量也包括支撑这类舰船建造、补充与整备的文明基础。",
       "application": "开放中庭级战略舰及配套基础核心，可选择炮击或航母中段。建造需要本国承载定型记录、正在运营的大型工程营建场，以及擎天堡船厂或完工的巨型船坞。每艘正常支付合金、建造时间和维护；高阶供能、推进、航道与联合电脑仍需对应研究。",
-      "implementation_note": "1公共舰种、4区段、6核心；国家定型与运营工业分层，原生船厂付费建造。较高阶组件保留分支研究，个人舰和复活不变。R5f成为F07真实依赖：已解译和原中庭级/定型衔接，旧源码不改，运行未验。",
+      "implementation_note": "1公共舰种、4区段、6核心；国家定型与运营工业分层，原生船厂付费建造。较高阶组件保留分支研究，个人舰和复活不变。R5f成为F07真实依赖：已解译和原中庭级/定型衔接，旧源码不改，运行未验。 工程语义：公共造舰是既有正常订单、维护与改装的工程表达；中庭级不改为天体级，不新增威慑、免费补舰或个人旗舰恢复。",
       "technology_file": "mod/common/technology/artifact_strategic_hull_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_strategic_hull_l_simp_chinese.yml",
       "consumer_files": [
@@ -1596,7 +1602,8 @@
         "terms",
         "artifact_science",
         "central_court_history",
-        "public_military"
+        "public_military",
+        "megastructure_engineering_direction"
       ],
       "source_note": "先查七都数据库和术语/神器/组织源；中庭级与公共军工属Mod延展，不作为原作已发生的星际历史，来源审核状态不变。"
     },
@@ -1605,9 +1612,9 @@
       "key": "tech_artifact_interstellar_engineering_coordination",
       "previous_name": "星系协同基础设施",
       "name": "星系协同基础设施",
-      "lore": "中央庭的资源协调不再局限于一座城市或一颗行星。分散在不同星系的仓储、换装站与施工队采用共同的清单和交接标准，让已经集成的工程备料能够送到真正需要它的现场。",
+      "lore": "巨构级建设的材料、设备与施工队伍不必来自同一颗行星。共同的检验、运输与交接标准把分散工业接入远方工地，让一地完成的备料能够支撑另一星系的装配。中央庭由此开始以星系之间的分工组织工程，同时承担跨越距离的运力与供给成本。",
       "application": "登记一处异星系工程接收点，从常规联运接收端支付500能源，将一份已备妥的大型工程备料运抵当地。施工点可接续分段营建或舰体承载试验，无需搬动原常规接收端；原工程的研究、设施、费用和工期仍须满足。命运都市的文明工程统筹生效时，运输费降为300能源。",
-      "implementation_note": "E11登记全国唯一异星系工程点，始发普通接收端实际移除一份B14备料并扣500能源后交付；E09/D13读取替代现场，原费用/月度/清理保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。R5g成为F08公共造境巨构的真实依赖，旧源码不改，运行未验。",
+      "implementation_note": "E11登记全国唯一异星系工程点，始发普通接收端实际移除一份B14备料并扣500能源后交付；E09/D13读取替代现场，原费用/月度/清理保持。R4l以有效都市工业协调在付款时统筹指定费用，标准价和原状态规则保留。R5g成为F08公共造境巨构的真实依赖，旧源码不改，运行未验。 工程语义：跨星系分工对应原单一工程接收点和实付交付；不新增超光速网络、无限端点或全银河供给模拟。",
       "technology_file": "mod/common/technology/artifact_system_engineering_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_system_engineering_l_simp_chinese.yml",
       "consumer_files": [
@@ -1625,7 +1632,8 @@
       "source_groups": [
         "terms",
         "artifact_science",
-        "central_court_history"
+        "central_court_history",
+        "megastructure_engineering_direction"
       ],
       "source_note": "写前查七都索引及术语/神器/中央庭来源；公共设施、资源统筹与交接制度是Mod工程转译，来源审核状态保留。"
     },
@@ -1634,9 +1642,9 @@
       "key": "tech_artifact_civil_engineering_coordination",
       "previous_name": "文明工程统筹",
       "name": "文明工程统筹",
-      "lore": "一座命运都市既要维持市民的生活，也要承担面向整个文明的建设责任。中央庭让城市工业、物资联运与施工队共同安排采购和交接，把分散支出纳入可以核对的工程预算。",
+      "lore": "当城市工业开始支撑星际大型工程，建设计划也必须给居民服务、物资储备和运输调度留出位置。中央庭以命运都市统筹分散的采购与施工安排，使公共生活和远方工地能够共享一套可持续的工业计划。文明规模的动员，需要长期承担这些彼此相连的责任。",
       "application": "命运都市采用已付费的“工业协调”公共方案、完成180日调整并保持治理设施正常后，可统筹指定工程支出：跨星系备料交付300能源，营建装配750矿物／1200合金，试运行750能源／225消费品。费用按付款时条件核定；都市运行调整沿原费用，原有唯一都市限制保持。",
-      "implementation_note": "读取真实都市与已付C12工业协调；付款时降低E09装配/试运行与E11运输费用，不变都市唯一性和原物资/工期，不加新状态。",
+      "implementation_note": "读取真实都市与已付C12工业协调；付款时降低E09装配/试运行与E11运输费用，不变都市唯一性和原物资/工期，不加新状态。 工程语义：文明动员在本节点只落实为既有都市方案与指定费用统筹；不新增普遍折扣、社会模拟或第二座命运都市。",
       "technology_file": "mod/common/technology/artifact_civil_engineering_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_civil_engineering_l_simp_chinese.yml",
       "consumer_files": [
@@ -1651,7 +1659,8 @@
       "source_groups": [
         "terms",
         "artifact_science",
-        "central_court_history"
+        "central_court_history",
+        "megastructure_engineering_direction"
       ],
       "source_note": "先查七都索引并读术语、中央庭和神器来源；治理/资源统筹为设计背景，具体预算与游戏费用属Mod设计，保留来源审核状态。"
     },
@@ -1839,9 +1848,9 @@
       "key": "tech_artifact_postcrisis_ship_engineering",
       "previous_name": "终局舰船工程",
       "name": "终局舰船工程",
-      "lore": "危机中共同完成的观测、制造与作战记录，终于能够进入同一套舰装设计。中央庭将这些经验转化为可检验的供能、武器与整备部件，让取得胜利的普通舰队也能承接下一阶段的工程成果。",
+      "lore": "危机中共同完成的观测、制造与作战记录，经过解译成为可以继续交付的舰装标准。汇流供能、重型武器与舰内整备被纳入同一套设计，使建造和维持这些装备的工业经验随胜利一起留下。普通舰队得以承接文明付出代价后取得的成果。",
       "application": "共同胜利资料解译后，为中庭级战略舰开放传承改型：将舰首2L武器改为1X，同时少一格大型防护，配套汇流脊炮、4000功率反应堆与整备骨架。沿用正常设计、付费建造和改装，不另开长期试验；原舰体、工业和承载定型条件保持。",
-      "implementation_note": "沿原中庭级新增1X/3L防护舰首和3组件；共享解译与原定型决定装配，原工业管新订单。未赠船、不改旧设计/个人恢复，原生再生及正常改装待验。",
+      "implementation_note": "沿原中庭级新增1X/3L防护舰首和3组件；共享解译与原定型决定装配，原工业管新订单。未赠船、不改旧设计/个人恢复，原生再生及正常改装待验。 工程语义：胜利成果只衔接原中庭级舰首与三组件；原生再生不等于补造，天体级战争机器保留至1.0之后另案设计。",
       "technology_file": "mod/common/technology/artifact_postcrisis_fleet_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_postcrisis_fleet_l_simp_chinese.yml",
       "consumer_files": [
@@ -1855,7 +1864,8 @@
         "terms",
         "artifact_science",
         "central_court_history",
-        "public_military"
+        "public_military",
+        "megastructure_engineering_direction"
       ],
       "source_note": "写前查七都中央庭/神器科学/神器及普通工业来源；公共舰装为Mod设计，不复制个人神器/指挥使能力，来源审核状态保留。"
     },
@@ -1864,9 +1874,9 @@
       "key": "tech_artifact_postcrisis_megastructure_engineering",
       "previous_name": "终局巨构工程",
       "name": "传承造境工程",
-      "lore": "胜利留下的观测资料，经由中央庭的共同编目与工程验证，逐渐成为可以重复应用的建造条件。传承造境平台把这些条件与星际施工体系结合，在荒芜天体上建立大气、水循环和能够延续的生态基础，为后来的居民留出新的家园。",
+      "lore": "造境工程把物质处理、行星尺度的能量分配与环境建设纳入同一项长期施工。中央庭将胜利后解译的观测资料交给工程团队，使荒芜天体的地表、水循环和大气成为能够共同设计的对象。文明由此获得将一颗不宜居世界建设为新家园的能力，殖民者仍需亲自完成此后的定居与发展。",
       "application": "解译共同胜利资料后，开放传承造境平台。建造船在本国受控星系的已调查、10～30规模空置荒芜星球旁建设基址，再升级为运行态；启用法令将该星球改为普通大陆世界，随后正常殖民。矿藏、异常、遗址、正在改造或殖民的天体及旧危机锚点均不纳入；正常建设要求本国尚无平台，每处启用一次。",
-      "implementation_note": "新增两阶段付费巨构，1天法令入口点击启用；真实安全荒芜目标改为大陆并添加适用地貌，正常殖民。实效重验公共知识/实体/控制，每处一次，不回填旧锚点、变更C2或复制私人神器。",
+      "implementation_note": "新增两阶段付费巨构，1天法令入口点击启用；真实安全荒芜目标改为大陆并添加适用地貌，正常殖民。实效重验公共知识/实体/控制，每处一次，不回填旧锚点、变更C2或复制私人神器。 工程语义：设定呈现行星级工程能力；机制仍为两阶段付费巨构及一次启用，将安全荒芜目标改为普通大陆，不拆解天体、不自动殖民或新增连续改造阶段。",
       "technology_file": "mod/common/technology/artifact_postcrisis_megastructure_technology.txt",
       "localisation_file": "mod/localisation/simp_chinese/artifact_postcrisis_megastructure_l_simp_chinese.yml",
       "consumer_files": [
@@ -1880,7 +1890,8 @@
         "terms",
         "artifact_science",
         "unknown_boundaries",
-        "central_court_history"
+        "central_court_history",
+        "megastructure_engineering_direction"
       ],
       "source_note": "先查七都中央庭/神器科学/神器并读对应来源；造境为Mod公共工程设计，不作为新增原作事实；审核状态保持。"
     }
@@ -2604,6 +2615,19 @@
         }
       ],
       "use": "保留既有公共军备阶段；共鸣设备、符文装甲与终解军备是本Mod工程层，终解未在本次数据库查询中获得独立原作定义，不新增原作断言。"
+    },
+    "megastructure_engineering_direction": {
+      "references": [
+        {
+          "path": "docs/design/artifact_megascale_engineering_direction_2026-10-31.md",
+          "sections": [
+            "已确定的范围",
+            "保留的概念",
+            "下次文案工作"
+          ]
+        }
+      ],
+      "use": "用户讨论决定提供巨构级工程表达方向，属于Mod设计而非七都原作事实；1.0之后的天体级战争机器不写成当前功能。"
     }
   },
   "queried_term_states": [
@@ -2868,6 +2892,116 @@
       "remaining": 0,
       "spec": "docs/design/artifact_civilization_r5g_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r5g_implementation_2026-10-31.md"
+    }
+  ],
+  "text_revisions": [
+    {
+      "date": "2026-11-01",
+      "source_base": "bdf2e95",
+      "kind": "megastructure_engineering_lore_and_comments",
+      "nodes": [
+        "B02",
+        "B06",
+        "B14",
+        "E03",
+        "E05",
+        "E09",
+        "E10",
+        "E11",
+        "E12",
+        "F07",
+        "F08"
+      ],
+      "technology_count": 11,
+      "related_text_count": 5,
+      "changed_localisation_keys": [
+        {
+          "key": "tech_artifact_resonance_manufacturing_desc",
+          "file": "mod/localisation/simp_chinese/simple_leader_edict_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_standard_parts_desc",
+          "file": "mod/localisation/simp_chinese/artifact_public_foundation_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_strategic_engineering_supply_desc",
+          "file": "mod/localisation/simp_chinese/artifact_strategic_supply_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_modular_colony_construction_desc",
+          "file": "mod/localisation/simp_chinese/artifact_foundation_projects_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_research_campus_integration_desc",
+          "file": "mod/localisation/simp_chinese/artifact_research_reproduction_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_segmented_large_engineering_desc",
+          "file": "mod/localisation/simp_chinese/artifact_segmented_engineering_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_strategic_hull_engineering_desc",
+          "file": "mod/localisation/simp_chinese/artifact_strategic_hull_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_interstellar_engineering_coordination_desc",
+          "file": "mod/localisation/simp_chinese/artifact_system_engineering_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_civil_engineering_coordination_desc",
+          "file": "mod/localisation/simp_chinese/artifact_civil_engineering_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_postcrisis_ship_engineering_desc",
+          "file": "mod/localisation/simp_chinese/artifact_postcrisis_fleet_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "tech_artifact_postcrisis_megastructure_engineering_desc",
+          "file": "mod/localisation/simp_chinese/artifact_postcrisis_megastructure_l_simp_chinese.yml",
+          "kind": "technology"
+        },
+        {
+          "key": "building_artifact_engineering_supply_yard_desc",
+          "file": "mod/localisation/simp_chinese/artifact_strategic_supply_l_simp_chinese.yml",
+          "kind": "related_text"
+        },
+        {
+          "key": "building_artifact_large_engineering_yard_desc",
+          "file": "mod/localisation/simp_chinese/artifact_segmented_engineering_l_simp_chinese.yml",
+          "kind": "related_text"
+        },
+        {
+          "key": "artifact_postcrisis_world_former_0_DESC",
+          "file": "mod/localisation/simp_chinese/artifact_postcrisis_megastructure_l_simp_chinese.yml",
+          "kind": "related_text"
+        },
+        {
+          "key": "artifact_postcrisis_world_former_0_MEGASTRUCTURE_DETAILS",
+          "file": "mod/localisation/simp_chinese/artifact_postcrisis_megastructure_l_simp_chinese.yml",
+          "kind": "related_text"
+        },
+        {
+          "key": "artifact_postcrisis_world_former_1_DESC",
+          "file": "mod/localisation/simp_chinese/artifact_postcrisis_megastructure_l_simp_chinese.yml",
+          "kind": "related_text"
+        }
+      ],
+      "applications_unchanged": true,
+      "gameplay_changed": false,
+      "source_review_status_changed": false,
+      "celestial_warship_release": "post_1_0_unscheduled",
+      "report": "reports/artifact_megascale_text_revision_2026-11-01.md",
+      "validation_report": "reports/artifact_megascale_text_validation_2026-11-01.json"
     }
   ]
 }

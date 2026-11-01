@@ -1,8 +1,10 @@
 # PROJECT_STATUS
 
-更新：2026-10-31。当前进度维护入口；跨AI首先读[HANDOFF](../HANDOFF.md)，执行节奏见[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。详细历史已保留在[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)，旧“下一步／待验”不自动恢复。
+更新：2026-11-01。当前进度维护入口；跨AI首先读[HANDOFF](../HANDOFF.md)，执行节奏见[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。详细历史已保留在[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)，旧“下一步／待验”不自动恢复。
 
 ## 当前任务与交付层级
+
+- 11月1日完成巨构级工程文案：11项公共科技与5项关联说明表达材料处理、可扩展施工、星际协作、舰装与造境能力；注释、逐项目录和来源边界同步。应用段与可执行逻辑保持，未改变80项公共科技数量或任何运行状态。见[实施记录](../reports/artifact_megascale_text_revision_2026-11-01.md)。天体级战舰明确属于1.0之后，未新增当前交付项。
 
 
 - 新增公共配色离线研究：两图/独立源文件，沿已批准的深蓝灰/雾银/冷青/琥珀职责，五网格几何保持、重开通过。具体轮廓与材质待评审，未做正式游戏贴图/未安装。见[研究记录](../reports/central_court_material_study_2026-10-31.md)；本轮进入晚间收尾，下一步按整体/配色反馈收敛，不恢复旧排障或暂停任务。

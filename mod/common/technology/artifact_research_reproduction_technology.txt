@@ -21,6 +21,7 @@ tech_artifact_public_reproduction_protocol = {
 
 # E05 科研平台工程
 # 实现：园区与尖塔是E05复现场地的替代项；研究主管容量400和800，复现复用R1付费与原拥有者账本。
+# 工程语义：平台能力对应既有样本/材料方法复现；不新增研究领域或免费成果，不将科研园区称为量产神器设施。
 tech_artifact_research_campus_integration = {
 	area = physics
 	icon = "tech_artifact_tarot_calculation"

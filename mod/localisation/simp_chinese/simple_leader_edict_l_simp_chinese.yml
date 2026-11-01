@@ -405,7 +405,7 @@
  tech_artifact_tarot_economy:0 "塔罗经济演算"
  tech_artifact_tarot_economy_desc:0 "塔罗演算启发了比较不同选择的研究方法。中央庭将它用于物资与建设方案，在实际试验中检验收益、代价和风险，让下一步投入有据可循。\n\n§H应用§!：从白夜馆进入首都工坊试验，投入物资为一个后续研究方向建立试验条件；取得候选后仍需完成研究。"
  tech_artifact_resonance_manufacturing:0 "共鸣制造体系"
- tech_artifact_resonance_manufacturing_desc:0 "从原料处理到最终检验，适合工程应用的共鸣条件被纳入制造工序。工坊之间能够交付相同标准的材料与构件，神器使的个体经验也有了可供比较的记录。\n\n§H应用§!：解锁共鸣合金圣炉，增加神器工坊岗位并提高合金产出；同时提高首都工坊试验的月度工作量。"
+ tech_artifact_resonance_manufacturing_desc:0 "原料分离、精炼、成形与检验被接入同一套共鸣制造流程，材料的去向可以一直追溯到成品构件。制造设备自身也采用可替换的模块，使产线能够随工程需求扩充。中央庭由此把个别工坊的经验积累为能够持续供给大型建设的工业基础。\n\n§H应用§!：解锁共鸣合金圣炉，增加神器工坊岗位并提高合金产出；同时提高首都工坊试验的月度工作量。"
  tech_artifact_seven_day_logistics:0 "七日后勤网络"
  tech_artifact_seven_day_logistics_desc:0 "七日危机中的疏散、补给与守望经验，被整理为能够长期运作的后勤制度。它连接日常供给与应急储备，让城市在下一次危机到来时仍有余地。\n\n§H应用§!：解锁七日调度中枢与中央庭记忆宫，并提高凝聚力产出；需要完成中央庭守望传统树。"
  tech_artifact_destiny_economy:0 "行星经济矩阵"

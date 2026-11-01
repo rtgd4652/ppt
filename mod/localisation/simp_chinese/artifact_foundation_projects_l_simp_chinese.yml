@@ -6,7 +6,7 @@
  tech_artifact_memory_cataloguing:0 "记忆档案编目"
  tech_artifact_memory_cataloguing_desc:0 "七日轮回结束后，保存下来的档案与幸存者的记述终于能够持续积累。编目工作标明来源、分歧和缺页，让后来者知道哪些经验可以依循，哪些仍待查证。\n\n§H应用§!：解锁记忆档案室；取得七日后勤网络后可升级为中央庭记忆宫。"
  tech_artifact_modular_colony_construction:0 "模块化营建"
- tech_artifact_modular_colony_construction_desc:0 "建筑构件在工坊中预先准备，现场施工围绕标准模块展开。物资与工序的提前协调减少了复杂工程中的等待。\n\n§H应用§!：在标准件工坊或中央庭神器工坊付费组织营建，为当地建筑施工提供有期限的支援。"
+ tech_artifact_modular_colony_construction_desc:0 "供能、支撑和居住设施在工坊预制为标准模块，现场队伍依照接口接续施工。自律设备承担重复搬运与装配，人员负责校准、检验和异常处置；新增施工单元沿同一套工序扩充，使一次建造的经验能够在更多殖民地复用。\n\n§H应用§!：在标准件工坊或中央庭神器工坊付费组织营建，为当地建筑施工提供有期限的支援。"
  building_artifact_sample_repository:0 "异常样本保管库"
  building_artifact_sample_repository_desc:0 "以分区封存和受控分析处理异常样本。研究后可从行星决议开启样本分析；付费方案在选择时扣除物资。"
  building_artifact_memory_archive_room:0 "记忆档案室"

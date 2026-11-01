@@ -91,6 +91,7 @@ tech_artifact_tarot_economy = {
 
 # B02 共鸣制造体系
 # 实现：合金修正来自科技modifier；工坊岗位和首都试验工作量分别由建筑与artifact_engineering模块读取，勿合并为免费工程完成。
+# 工程语义：标准化对象是普通材料、构件与制造设备；可扩展产线属于工程设定，不增加自动扩厂、资源复制或神器量产机制。
 tech_artifact_resonance_manufacturing = {
 	area = engineering
 	icon = tech_artifact_resonance_manufacturing

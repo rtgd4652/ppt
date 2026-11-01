@@ -1,6 +1,6 @@
 ﻿l_simp_chinese:
  tech_artifact_interstellar_engineering_coordination:0 "星系协同基础设施"
- tech_artifact_interstellar_engineering_coordination_desc:0 "中央庭的资源协调不再局限于一座城市或一颗行星。分散在不同星系的仓储、换装站与施工队采用共同的清单和交接标准，让已经集成的工程备料能够送到真正需要它的现场。\n\n§H应用§!：登记一处异星系工程接收点，从常规联运接收端支付500能源，将一份已备妥的大型工程备料运抵当地。施工点可接续分段营建或舰体承载试验，无需搬动原常规接收端；原工程的研究、设施、费用和工期仍须满足。命运都市的文明工程统筹生效时，运输费降为300能源。"
+ tech_artifact_interstellar_engineering_coordination_desc:0 "巨构级建设的材料、设备与施工队伍不必来自同一颗行星。共同的检验、运输与交接标准把分散工业接入远方工地，让一地完成的备料能够支撑另一星系的装配。中央庭由此开始以星系之间的分工组织工程，同时承担跨越距离的运力与供给成本。\n\n§H应用§!：登记一处异星系工程接收点，从常规联运接收端支付500能源，将一份已备妥的大型工程备料运抵当地。施工点可接续分段营建或舰体承载试验，无需搬动原常规接收端；原工程的研究、设施、费用和工期仍须满足。命运都市的文明工程统筹生效时，运输费降为300能源。"
  decision_artifact_system_engineering_register:0 "登记跨星系工程接收点"
  decision_artifact_system_engineering_register_desc:0 "让当地工程物资集成场承接其他星系送来的备料。全国同时一处，不占用原常规联运接收端。"
  decision_artifact_system_engineering_unregister:0 "撤销跨星系工程接收点"
