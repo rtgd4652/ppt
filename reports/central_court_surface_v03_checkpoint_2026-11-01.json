@@ -1,0 +1,38 @@
+{
+  "date": "2026-11-01",
+  "source_base": "dfcc660",
+  "kind": "offline_model_refinement",
+  "status": "offline_checks_passed",
+  "base_parts": 7,
+  "pdx_meshes": 21,
+  "dds": 3,
+  "dds_format": "BC3/DXT5, 2048x1024, full 12 mips",
+  "locator_transforms_vs_v02": "all_seven_identical_by_pdx_readback",
+  "uv_base_parts": "all_in_bounds",
+  "shared_material_per_mesh": 1,
+  "source_reopened": true,
+  "external_blend_libraries": 0,
+  "packed_dds": 3,
+  "same_lighting_images": 6,
+  "nominal_rgb_preserved": true,
+  "refinement_counts": {
+    "layered_cut_plates": 67,
+    "real_plate_gaps": 41,
+    "deck_access_banks": 8,
+    "matte_control_shells": 4,
+    "engine_cooling_banks": 9,
+    "platform_access_banks": 12
+  },
+  "spinal_artillery_triangles": 6372,
+  "runtime_installed": false,
+  "game_or_user_live_blender_operated": false,
+  "new_runtime_validation": "not_run",
+  "formal_appearance": "pending_human_review",
+  "normal_construction_and_combat": "prior_pending_state_unchanged",
+  "limits": [
+    "材质/法线为预览代理，未验证实际游戏曝光",
+    "共享UV尺寸映射封顶，不是全模型统一纹素密度或独占UV烘焙",
+    "远景替代未接引擎自动切换",
+    "作者坐标+Y舰首，安装前必须原生方向转换"
+  ]
+}

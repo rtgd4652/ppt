@@ -270,7 +270,7 @@ def platform(active):
     return c
 
 
-def texture_material():
+def texture_material(texture_prefix='cc_surface_v02'):
     mat = bpy.data.materials.new('中央庭共享图集v02')
     mat['shader'] = 'PdxMeshShip'
     mat.use_nodes = True
@@ -279,7 +279,7 @@ def texture_material():
     tex = {}
     for suffix in ('diffuse', 'properties', 'normal'):
         node = nodes.new('ShaderNodeTexImage')
-        node.image = bpy.data.images.load(str(EXP / ('cc_surface_v02_' + suffix + '.dds')), check_existing=True)
+        node.image = bpy.data.images.load(str(EXP / (texture_prefix + '_' + suffix + '.dds')), check_existing=True)
         if suffix != 'diffuse':
             node.image.colorspace_settings.name = 'Non-Color'
         tex[suffix] = node

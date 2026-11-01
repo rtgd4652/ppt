@@ -1,0 +1,276 @@
+# v03作者空间精修候选；需原生方向转换，未安装游戏。
+objectTypes = {
+    pdxmesh = {
+        name = "ccv03_bow_standard_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_bow_standard.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_bow_standard"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_bow_standard_lod1_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_bow_standard_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_bow_standard_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_bow_standard_lod2_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_bow_standard_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_bow_standard_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_bow_spinal_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_bow_spinal.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_bow_spinal"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_bow_spinal_lod1_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_bow_spinal_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_bow_spinal_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_bow_spinal_lod2_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_bow_spinal_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_bow_spinal_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_mid_artillery_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_mid_artillery.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_mid_artillery"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_mid_artillery_lod1_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_mid_artillery_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_mid_artillery_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_mid_artillery_lod2_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_mid_artillery_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_mid_artillery_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_mid_carrier_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_mid_carrier.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_mid_carrier"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_mid_carrier_lod1_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_mid_carrier_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_mid_carrier_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_mid_carrier_lod2_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_mid_carrier_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_mid_carrier_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_stern_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_stern.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_stern"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_stern_lod1_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_stern_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_stern_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_stern_lod2_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_stern_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_stern_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_worldformer_base_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_worldformer_base.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_worldformer_base"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_worldformer_base_lod1_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_worldformer_base_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_worldformer_base_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_worldformer_base_lod2_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_worldformer_base_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_worldformer_base_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_worldformer_active_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_worldformer_active.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_worldformer_active"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_worldformer_active_lod1_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_worldformer_active_lod1.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_worldformer_active_lod1"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "ccv03_worldformer_active_lod2_mesh"
+        file = "gfx/models/central_court_surface_candidates_v03/ccv03_worldformer_active_lod2.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "ccv03_worldformer_active_lod2"
+            index = 0
+            texture_diffuse = "cc_surface_v03_diffuse.dds"
+            texture_normal = "cc_surface_v03_normal.dds"
+            texture_specular = "cc_surface_v03_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+}

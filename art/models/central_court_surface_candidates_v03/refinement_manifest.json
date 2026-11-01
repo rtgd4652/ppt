@@ -1,0 +1,426 @@
+{
+  "date": "2026-11-01",
+  "source_base": "dfcc660",
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "formal_asset_approved": false,
+  "game_operated": false,
+  "source_blend": "art/models/central_court_surface_candidates_v03/central_court_surface_candidates_v03.blend",
+  "blender": "5.1.2",
+  "meshes": [
+    {
+      "part": "ccv03_bow_standard",
+      "triangles": 1356,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_bow_standard.mesh",
+      "shape_names": [
+        "ccv03_bow_standard"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "gameplay_target": "ARTIFACT_STRATEGIC_BOW",
+      "locator_transforms_unchanged": true,
+      "uv_in_bounds": true
+    },
+    {
+      "part": "ccv03_bow_standard_lod1",
+      "triangles": 678,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_bow_standard_lod1.mesh",
+      "shape_names": [
+        "ccv03_bow_standard_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "ccv03_bow_standard",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_bow_standard_lod2",
+      "triangles": 310,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_bow_standard_lod2.mesh",
+      "shape_names": [
+        "ccv03_bow_standard_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "ccv03_bow_standard",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_bow_spinal",
+      "triangles": 1984,
+      "locators": [
+        "xl_gun_01"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_bow_spinal.mesh",
+      "shape_names": [
+        "ccv03_bow_spinal"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "gameplay_target": "ARTIFACT_POSTCRISIS_SPINAL_BOW",
+      "locator_transforms_unchanged": true,
+      "uv_in_bounds": true
+    },
+    {
+      "part": "ccv03_bow_spinal_lod1",
+      "triangles": 992,
+      "locators": [
+        "xl_gun_01"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_bow_spinal_lod1.mesh",
+      "shape_names": [
+        "ccv03_bow_spinal_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "ccv03_bow_spinal",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_bow_spinal_lod2",
+      "triangles": 456,
+      "locators": [
+        "xl_gun_01"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_bow_spinal_lod2.mesh",
+      "shape_names": [
+        "ccv03_bow_spinal_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "ccv03_bow_spinal",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_mid_artillery",
+      "triangles": 1576,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_mid_artillery.mesh",
+      "shape_names": [
+        "ccv03_mid_artillery"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "gameplay_target": "ARTIFACT_STRATEGIC_MID_ARTILLERY",
+      "locator_transforms_unchanged": true,
+      "uv_in_bounds": true
+    },
+    {
+      "part": "ccv03_mid_artillery_lod1",
+      "triangles": 788,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_mid_artillery_lod1.mesh",
+      "shape_names": [
+        "ccv03_mid_artillery_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "ccv03_mid_artillery",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_mid_artillery_lod2",
+      "triangles": 362,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_mid_artillery_lod2.mesh",
+      "shape_names": [
+        "ccv03_mid_artillery_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "ccv03_mid_artillery",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_mid_carrier",
+      "triangles": 2064,
+      "locators": [
+        "small_gun_01",
+        "small_gun_02",
+        "small_gun_03",
+        "small_gun_04",
+        "strike_craft_locator_01",
+        "strike_craft_locator_02"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_mid_carrier.mesh",
+      "shape_names": [
+        "ccv03_mid_carrier"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "gameplay_target": "ARTIFACT_STRATEGIC_MID_CARRIER",
+      "locator_transforms_unchanged": true,
+      "uv_in_bounds": true
+    },
+    {
+      "part": "ccv03_mid_carrier_lod1",
+      "triangles": 1032,
+      "locators": [
+        "small_gun_01",
+        "small_gun_02",
+        "small_gun_03",
+        "small_gun_04",
+        "strike_craft_locator_01",
+        "strike_craft_locator_02"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_mid_carrier_lod1.mesh",
+      "shape_names": [
+        "ccv03_mid_carrier_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "ccv03_mid_carrier",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_mid_carrier_lod2",
+      "triangles": 474,
+      "locators": [
+        "small_gun_01",
+        "small_gun_02",
+        "small_gun_03",
+        "small_gun_04",
+        "strike_craft_locator_01",
+        "strike_craft_locator_02"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_mid_carrier_lod2.mesh",
+      "shape_names": [
+        "ccv03_mid_carrier_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "ccv03_mid_carrier",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_stern",
+      "triangles": 2812,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_stern.mesh",
+      "shape_names": [
+        "ccv03_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "gameplay_target": "ARTIFACT_STRATEGIC_STERN",
+      "locator_transforms_unchanged": true,
+      "uv_in_bounds": true
+    },
+    {
+      "part": "ccv03_stern_lod1",
+      "triangles": 1406,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_stern_lod1.mesh",
+      "shape_names": [
+        "ccv03_stern_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "ccv03_stern",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_stern_lod2",
+      "triangles": 646,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_stern_lod2.mesh",
+      "shape_names": [
+        "ccv03_stern_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "ccv03_stern",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_worldformer_base",
+      "triangles": 2444,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_worldformer_base.mesh",
+      "shape_names": [
+        "ccv03_worldformer_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "gameplay_target": "artifact_postcrisis_world_former_0",
+      "locator_transforms_unchanged": true,
+      "uv_in_bounds": true
+    },
+    {
+      "part": "ccv03_worldformer_base_lod1",
+      "triangles": 1222,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_worldformer_base_lod1.mesh",
+      "shape_names": [
+        "ccv03_worldformer_base_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "ccv03_worldformer_base",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_worldformer_base_lod2",
+      "triangles": 562,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_worldformer_base_lod2.mesh",
+      "shape_names": [
+        "ccv03_worldformer_base_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "ccv03_worldformer_base",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_worldformer_active",
+      "triangles": 5164,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_worldformer_active.mesh",
+      "shape_names": [
+        "ccv03_worldformer_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "gameplay_target": "artifact_postcrisis_world_former_1",
+      "locator_transforms_unchanged": true,
+      "uv_in_bounds": true
+    },
+    {
+      "part": "ccv03_worldformer_active_lod1",
+      "triangles": 2582,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_worldformer_active_lod1.mesh",
+      "shape_names": [
+        "ccv03_worldformer_active_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "ccv03_worldformer_active",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "ccv03_worldformer_active_lod2",
+      "triangles": 1186,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_surface_candidates_v03/export/ccv03_worldformer_active_lod2.mesh",
+      "shape_names": [
+        "ccv03_worldformer_active_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "ccv03_worldformer_active",
+      "automatic_lod_switching": false
+    }
+  ],
+  "base_parts": 7,
+  "mesh_count": 21,
+  "refinement_counts": {
+    "layered_cut_plates": 67,
+    "real_plate_gaps": 41,
+    "deck_access_banks": 8,
+    "matte_control_shells": 4,
+    "engine_cooling_banks": 9,
+    "platform_access_banks": 12
+  },
+  "previews": [
+    "art/models/central_court_surface_candidates_v03/previews/ship_refined.png",
+    "art/models/central_court_surface_candidates_v03/previews/carrier_refined.png",
+    "art/models/central_court_surface_candidates_v03/previews/platform_foundation_refined.png",
+    "art/models/central_court_surface_candidates_v03/previews/platform_operational_refined.png"
+  ],
+  "same_lighting_baselines": [
+    "previews/v02_ship_same_lighting.png",
+    "previews/v02_platform_same_lighting.png"
+  ],
+  "comparison": "same CYCLES rig/camera/exposure, 16 samples, same Green specular proxy on both versions",
+  "uv_method": "8 material tiles, face dimensions scaled to 4 author units and capped, 5 percent inset; not globally uniform density or unique bake",
+  "locator_transforms_unchanged": true,
+  "saved_file_reopened": true,
+  "packed_project_dds": 3,
+  "external_blend_libraries": 0,
+  "authoring_axes": "+Y forward/+Z up, needs native conversion before installation",
+  "automatic_lod_switching": false,
+  "game_exposure_and_performance": "not_run",
+  "unchanged": [
+    "v02 authoring/output files",
+    "all mod runtime resources",
+    "all gameplay/weapon slots/identity and acquisition",
+    "user live Blender scene"
+  ]
+}

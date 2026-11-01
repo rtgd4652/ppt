@@ -157,4 +157,6 @@ Blender／DDS使用对应README和现有构建脚本；离线任务后台运行�
 
 11月1日公共候选v02的[重建入口](../art/models/central_court_surface_candidates_v02/README.md)已跑通。Pillow12.3.0隔离在`temp/cc_surface_v02_deps`，本轮普通沙盒只看得到包目录、读不到`PIL.Image`；获准环境可正常导入和生成DDS。先核实同一执行环境的可读性，不因空目录视图反复安装。后台Blender5.1.2沿已安装io_pdx_mesh导出21网格、实际重开文件，未触及用户交互场景。平台参照球材质/构图已修正；不把离线LOD文件视为引擎自动切换已经接通。
 
+同日[v03重建入口](../art/models/central_court_surface_candidates_v03/README.md)复用上述隔离依赖和独立后台流程，未新增安装。旧v02只在内存中用于同灯光对照，随后factory重置再生成新候选；旧源/当前Mod资源不改。v03仍是+Y舰首作者空间，不能跳过既有原生方向转换直接覆盖运行模型。
+
 同日Computer Use再次真实完成Steam游戏库→群星→Paradox启动器“开始游戏”→关闭更新说明→选择reserve并载入。首次Steam截图曾显示被遮挡的其他画面，未据此点击；重新识别并激活目标后才继续。游戏画布点击有效，但两次`grave`控制台开关键未接收，未输入或提交命令。当前可复用暂停游戏，不应因键盘失败重新要求用户启动/载档；新回合若需采用原生扫描码，重新核对窗口并保持该回合单一GUI后端，不恢复旧help/审计命令队列。

@@ -59,6 +59,8 @@
 | AP-ST-11 | 中庭级战略舰与F07传承XL舰首 | [v02开发接入](../../art/models/central_court_runtime_v02/README.md)独立根/5区段已接；传承炮击三段组合已受控显示，保存[清晰游戏画面](../../reports/central_court_v02_ship_display_2026-11-01.md)。具体外观待评审，正常配装/造舰、相对尺度/组件/效果及自动LOD切换未验；不扩测全部构型 |
 | AP-ST-10 | F08造境平台基址→运行态 | 2阶段新实体已接，同原点偏移/共享贴图/远景替代完成；运行态已在受控spawnentity中实际显示并保存[游戏证据](../../reports/central_court_v02_display_2026-11-01.md)。天体参照不导出；具体外观待评审，正常建造/轨道尺度/效果与玩法未验 |
 
+11月1日后续：[v03结构/材质候选](../../art/models/central_court_surface_candidates_v03/README.md)已完成第一轮切角分层、用途分化、亮部/尺寸UV调整和同灯光对照。7部件定位器变换保持，21网格回读/源文件重开通过；尚未转换/安装，当前运行仍为v02。正式外观、实际游戏曝光/尺度/效果与自动LOD分别待确认，不逐小包重启。
+
 新规范见[神器文明3D Visual Language](ARTIFACT_CIVILIZATION_3D_VISUAL_LANGUAGE_v0.1.md)。本轮Kit只承接共同工程语言，原版造型对照入口已建立但尚未完成目视比较。下面15项旧图标批次名保留历史对照，恢复制作时以最新科技文案目录和定义键为准。
 
 ## 新旗舰与基线枢纽

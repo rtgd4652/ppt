@@ -1,0 +1,231 @@
+{
+  "date": "2026-11-01",
+  "source_base": "dfcc660",
+  "status": "draft_pending_human_review",
+  "runtime_installed": false,
+  "pillow_version": "12.3.0",
+  "textures": [
+    {
+      "file": "art/models/central_court_surface_candidates_v03/export/cc_surface_v03_diffuse.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        2048,
+        1024
+      ],
+      "mip_levels": 12,
+      "bytes": 2796368
+    },
+    {
+      "file": "art/models/central_court_surface_candidates_v03/export/cc_surface_v03_properties.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        2048,
+        1024
+      ],
+      "mip_levels": 12,
+      "bytes": 2796368
+    },
+    {
+      "file": "art/models/central_court_surface_candidates_v03/export/cc_surface_v03_normal.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        2048,
+        1024
+      ],
+      "mip_levels": 12,
+      "bytes": 2796368
+    }
+  ],
+  "palette": [
+    {
+      "role": "armor",
+      "rgb": [
+        24,
+        38,
+        48
+      ],
+      "rgb_unchanged": true,
+      "properties": [
+        0,
+        40,
+        20,
+        70
+      ],
+      "emission": 0,
+      "previous_properties": [
+        0,
+        68,
+        28,
+        95
+      ],
+      "previous_emission": 0
+    },
+    {
+      "role": "plate",
+      "rgb": [
+        48,
+        70,
+        81
+      ],
+      "rgb_unchanged": true,
+      "properties": [
+        0,
+        58,
+        55,
+        82
+      ],
+      "emission": 0,
+      "previous_properties": [
+        0,
+        90,
+        65,
+        120
+      ],
+      "previous_emission": 0
+    },
+    {
+      "role": "silver",
+      "rgb": [
+        155,
+        168,
+        174
+      ],
+      "rgb_unchanged": true,
+      "properties": [
+        0,
+        85,
+        145,
+        112
+      ],
+      "emission": 0,
+      "previous_properties": [
+        0,
+        130,
+        155,
+        155
+      ],
+      "previous_emission": 0
+    },
+    {
+      "role": "warm",
+      "rgb": [
+        214,
+        217,
+        213
+      ],
+      "rgb_unchanged": true,
+      "properties": [
+        0,
+        26,
+        10,
+        45
+      ],
+      "emission": 0,
+      "previous_properties": [
+        0,
+        72,
+        20,
+        110
+      ],
+      "previous_emission": 0
+    },
+    {
+      "role": "glass",
+      "rgb": [
+        26,
+        65,
+        79
+      ],
+      "rgb_unchanged": true,
+      "properties": [
+        0,
+        105,
+        12,
+        155
+      ],
+      "emission": 0,
+      "previous_properties": [
+        0,
+        165,
+        35,
+        200
+      ],
+      "previous_emission": 0
+    },
+    {
+      "role": "vent",
+      "rgb": [
+        18,
+        27,
+        32
+      ],
+      "rgb_unchanged": true,
+      "properties": [
+        0,
+        35,
+        90,
+        65
+      ],
+      "emission": 0,
+      "previous_properties": [
+        0,
+        70,
+        125,
+        90
+      ],
+      "previous_emission": 0
+    },
+    {
+      "role": "cyan",
+      "rgb": [
+        105,
+        193,
+        204
+      ],
+      "rgb_unchanged": true,
+      "properties": [
+        0,
+        62,
+        35,
+        85
+      ],
+      "emission": 42,
+      "previous_properties": [
+        0,
+        95,
+        40,
+        125
+      ],
+      "previous_emission": 58
+    },
+    {
+      "role": "amber",
+      "rgb": [
+        211,
+        154,
+        85
+      ],
+      "rgb_unchanged": true,
+      "properties": [
+        0,
+        52,
+        25,
+        72
+      ],
+      "emission": 20,
+      "previous_properties": [
+        0,
+        85,
+        30,
+        110
+      ],
+      "previous_emission": 30
+    }
+  ],
+  "nominal_rgb_preserved": true,
+  "method": "new procedural low contrast panels and directional grain, no image sampling",
+  "reference": "docs/art/calibration/CENTRAL_COURT_MATERIAL_CALIBRATION.md",
+  "normal_channels": "R=G; G=normal X; A=-normal Y; B=functional emission",
+  "properties_channels": "R=zero recolor; G=specular; B=metalness; A=glossiness",
+  "game_exposure_verified": false
+}
