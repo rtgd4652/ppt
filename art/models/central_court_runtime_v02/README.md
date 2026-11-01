@@ -2,7 +2,7 @@
 
 2026-11-01，基线`8e743e1`。`draft_integrated_runtime_pending`。本批把[作者空间候选](../central_court_surface_candidates_v02/README.md)转换并接入独立的Mod路径，正式外观与发布许可保持待确认。游戏显示结果见[本轮记录](../../../reports/central_court_v02_integration_2026-11-01.md)。
 
-后续受控显示：运行态平台已在4.5.2(04ef)的spawnentity场景中显示网格/材质，[游戏截图](../../../reports/images/central_court_v02_platform_runtime_2026-11-01.png)及[显示结果](../../../reports/central_court_v02_display_2026-11-01.md)保留。整舰组合有生成回显但尚无清晰画面，正常建造/轨道尺度、组件与效果仍待验；本段不改变具体外观与发布审核状态。
+后续受控显示：运行态平台与传承炮击整舰已在4.5.2(04ef)的spawnentity场景中显示网格/材质；[平台画面](../../../reports/images/central_court_v02_platform_runtime_2026-11-01.png)、[整舰画面](../../../reports/images/central_court_v02_cruiser_runtime_2026-11-01.png)及[整舰结果](../../../reports/central_court_v02_ship_display_2026-11-01.md)保留。组合实体可以渲染；正常配装/造舰、轨道尺度、组件与效果仍待验。本段不改变具体外观与发布审核状态，也不把调试显示写成游戏船只/巨构获取。
 
 ## 已接入
 

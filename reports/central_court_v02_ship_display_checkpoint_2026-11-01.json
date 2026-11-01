@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-01",
+  "source_base": "12198c4",
+  "mod_asset_source": "9da6b5f",
+  "kind": "controlled_spinal_assembly_display",
+  "backend": "guarded_native_scan_codes",
+  "game_version": "4.5.2",
+  "checksum": "04ef",
+  "process_id_historical_only": 14144,
+  "window_id_historical_only": 199536,
+  "restarted_game": false,
+  "reloaded_save": false,
+  "input_issue_reopened": false,
+  "command": "spawnentity ccv02_preview_spinal_artillery_entity",
+  "typed_characters_including_leading_spaces": 51,
+  "ascii_verified_before_submit": true,
+  "cursor_placement_after_typing": {
+    "normalized_x": 0.62,
+    "normalized_y": 0.5
+  },
+  "console_response": "Spawned Entity!",
+  "observed": [
+    "传承舰首/炮击中段/舰尾同原点组合可见",
+    "双叉舰首/中轴导轨/肩甲/舰桥/分离推进舱可见",
+    "基础材质与推进工作端亮部可见"
+  ],
+  "evidence": {
+    "image": "reports/images/central_court_v02_cruiser_runtime_2026-11-01.png",
+    "image_size": [
+      2904,
+      1679
+    ],
+    "close_view_zoom_steps": 3
+  },
+  "normal_fitting_construction_movement_combat_verified": false,
+  "particle_effects_separately_verified": false,
+  "appearance_approved": false,
+  "cause_of_prior_unclear_view": "未定因；正确定位后组合实体可见，无需据先前画面重写组合架构",
+  "related_error_log_lines": [],
+  "mod_source_changed": false,
+  "game_time_advanced": false,
+  "new_game_save": false,
+  "original_save": {
+    "bytes": 2573589,
+    "mtime_beijing": "2026-10-31T13:12:14.479658+08:00"
+  },
+  "end_state": "2293.10.11暂停；控制台/Debug View关闭；新增调试整舰显示留场；无待提交输入",
+  "next": "结束基础显示复查；按实际画面收敛轮廓/材质/细节，正常配装与效果并入阶段代表试玩"
+}
