@@ -2,6 +2,8 @@
 
 2026-11-01，源基线`8e743e1`。本批完成可逆的开发候选接入；不是正式外观定稿或发布验收。[资源与重建](../art/models/central_court_runtime_v02/README.md)、[接入清单](../art/models/central_court_runtime_v02/integration_manifest.json)、[检查结果](central_court_v02_integration_validation_2026-11-01.json)。
 
+本页保留首次接入/插件输入尝试的历史结果。后续原生扫描码已完整输入并提交，运行态平台获得受控显示证据，整舰清晰画面仍待核对；当前结果看[显示续接](central_court_v02_display_2026-11-01.md)，不要据下文再次要求用户启动/载档或重放旧命令。
+
 ## 完成的接线
 
 7个主网格和3张共享DDS进入独立`mod/gfx/models/central_court_v02/`。新根实体以同原点part1/2/3挂接现有5区段，4个target_locator采用原生名字；两套整舰组合只用于开发显示。舰尾接原生idle/moving尾焰，根实体接原生death爆炸。两阶段造境实体共用视觉偏移0/-25，原生施工支架保留。

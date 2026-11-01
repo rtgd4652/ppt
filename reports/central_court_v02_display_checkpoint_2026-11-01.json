@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-01",
+  "source_base": "9da6b5f",
+  "kind": "controlled_entity_display_and_native_input",
+  "backend": "guarded_native_scan_codes",
+  "restarted_game": false,
+  "reloaded_game": false,
+  "game_version": "4.5.2",
+  "checksum": "04ef",
+  "paused_date": "2293.10.11",
+  "user_assistance": "用户准备英文模式并短暂保持前台后完整输入/自动回车成功",
+  "input_result": {
+    "hold_ms": 100,
+    "gap_ms": 80,
+    "full_ascii_verified_then_separate_submit": true,
+    "submitted_commands": [
+      "help spawnentity",
+      "spawnentity ccv02_preview_spinal_artillery_entity",
+      "spawnentity ccv02_runtime_worldformer_active_entity"
+    ],
+    "new_toggle_ime_option": "仅片段实测，未用于随后三条成功命令",
+    "clearing_guard_source_checks": 9
+  },
+  "display_result": {
+    "spinal_combination": "控制台回显Spawned Entity，未取得清晰整舰画面；不标显示通过",
+    "worldformer_active": "controlled_spawnentity_visible",
+    "normal_construction_or_placement_verified": false,
+    "normal_ship_components_movement_or_combat_verified": false,
+    "appearance_approved": false
+  },
+  "evidence": {
+    "platform_image": "reports/images/central_court_v02_platform_runtime_2026-11-01.png",
+    "image_size": [
+      2904,
+      1679
+    ],
+    "local_input_captures": "tools/desktop/ccv02_*.png (gitignored)"
+  },
+  "related_error_log_lines": [],
+  "new_game_save": false,
+  "original_save": {
+    "bytes": 2573589,
+    "mtime_beijing": "2026-10-31T13:12:14.479658+08:00"
+  },
+  "end_state": "2293.10.11暂停；控制台/Debug View关闭；两个受控显示实体留在当前场景；无待提交输入",
+  "unused_prepared_commands": [
+    "spawn_carrier",
+    "spawn_platform_base"
+  ]
+}

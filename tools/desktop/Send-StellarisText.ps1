@@ -9,6 +9,8 @@ param(
     [ValidateRange(0,30000)][int]$WaitForFocusMs = 0,
     # 显式选择同次调用先置前，避免审批/查看截图后下一次调用已失焦；不放宽运行中的守卫。
     [switch]$ActivateFirst,
+    # 仅在看图确认拼音模式且输入行清空后显式启用；同次切换并输入，避免两次调用间焦点变化。
+    [switch]$ToggleImeBeforeText,
     # 仅在已观察到本轮部分输入时提供长度；默认仍不允许自动清理中断记录。
     [ValidateRange(0,1400)][int]$ObservedPartialLength = 0,
     [ValidatePattern('^[a-zA-Z0-9_-]+$')][string]$Label = 'current'
@@ -196,6 +198,11 @@ if ($Action -eq 'Text') {
         if (-not $previousInput.Submitted -and $previousInput.Attempted -gt 0) {
             throw 'Unsubmitted text remains; inspect and submit or clear it before typing.'
         }
+    }
+    if ($ToggleImeBeforeText) {
+        # 不把Shift当作英文已成立；文字仍不提交，必须从最终截图核对完整ASCII后另行Submit。
+        Send-OneKey 0xa0
+        Start-Sleep -Milliseconds 100
     }
     [pscustomobject]@{Pid=$game.Id;Window=$gameWindow.ToInt64();Text=$inputText;Attempted=0;Complete=$false;Submitted=$false} | ConvertTo-Json | Set-Content -LiteralPath $pendingRecord -Encoding utf8
     $attempted = 0
