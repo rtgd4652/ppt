@@ -1,0 +1,64 @@
+{
+  "date": "2026-11-01",
+  "source_base": "8e743e1",
+  "status": "source_static_passed",
+  "graphics_only_script_changes": [
+    "mod/common/ship_sizes/artifact_strategic_cruiser.txt",
+    "mod/common/section_templates/artifact_strategic_cruiser_sections.txt",
+    "mod/common/section_templates/artifact_postcrisis_fleet_sections.txt",
+    "mod/common/megastructures/artifact_postcrisis_megastructures.txt"
+  ],
+  "non_graphical_executable_ast_unchanged": true,
+  "asset_registry_candidates": 11,
+  "registry_approval_unchanged": true,
+  "static_check": {
+    "status": "pass",
+    "errors": [],
+    "warnings": [],
+    "counts": {
+      "script_files": 270,
+      "events": 261,
+      "localization_keys": 2271,
+      "registered_states": 791,
+      "referenced_states": 734
+    },
+    "limitations": [
+      "仅验证结构和项目内显式引用，不验证原版触发器、效果、作用域、数值平衡或事件可达性。",
+      "未校验引擎隐式岗位、修正、trait、outliner 图标；须以最新冷启动日志和游戏内显示验收。",
+      "未运行游戏；静态 pass 不能变更 runtime_status，也不能代替存档及日志证据。"
+    ]
+  },
+  "game_display": "pending_console_key_not_received_no_command_submitted",
+  "source_integration_manifest": "art/models/central_court_runtime_v02/integration_manifest.json",
+  "related_checks": {
+    "tests": 14,
+    "status": "passed",
+    "kind": "existing_source_fixtures"
+  },
+  "git_diff_check": "passed",
+  "runtime_observation": {
+    "date": "2026-11-01",
+    "game_version": "4.5.2",
+    "checksum": "04ef",
+    "enabled_mods": [
+      "mod/aemusa_artifact_user.mod"
+    ],
+    "disabled_dlcs": [],
+    "started_beijing": "2026-11-01T09:28:38+08:00",
+    "process_id_historical_only": 14144,
+    "window_id_historical_only": 199536,
+    "steam_and_launcher_started": true,
+    "main_menu_observed": true,
+    "loaded_save": "2293.10.11-r3e-reserve",
+    "loaded_date": "2293.10.11",
+    "paused": true,
+    "new_asset_related_log_lines": [],
+    "console_open_key_attempts": 2,
+    "command_submitted": false,
+    "game_save_created": false,
+    "original_save_overwritten": false,
+    "new_model_instances_observed": false,
+    "effects_or_gameplay_verified": false,
+    "end_state": "paused, console and Debug View closed, no pending input"
+  }
+}

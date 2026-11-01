@@ -2,6 +2,8 @@
 
 2026-11-01，`draft_pending_human_review`，`runtime_installed=false`。在原灰模/配色研究和[概念方向](../../concepts/central_court_completion_preview_20261031/README.md)上推进实际模型制作；不是概念板的完成细节复刻，也未视为正式外观批准。
 
+后续接入：本页记录作者空间批次；原文件保持。另由[独立转换批次](../central_court_runtime_v02/README.md)修正原生朝向并将7主网格接入Mod。其显示结果与当前接入状态另记，不能用本页历史`runtime_installed=false`替代后续批次状态。
+
 ![中庭级传承炮击构型](previews/cruiser_spinal_artillery.png)
 
 ![造境平台运行态](previews/worldformer_operational.png)

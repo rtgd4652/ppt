@@ -1,0 +1,107 @@
+# 公共中庭级独立开发根实体；旧个人舰/旧塔完全独立。
+entity = {
+    name = "ccv02_strategic_cruiser_entity"
+    scale = 0.75
+    locator = { name = "part1" position = { 0 0 0 } }
+    locator = { name = "part2" position = { 0 0 0 } }
+    locator = { name = "part3" position = { 0 0 0 } }
+    locator = { name = "target_locator_1" position = { 0 0 -24 } }
+    locator = { name = "target_locator_2" position = { 0 0 -4 } }
+    locator = { name = "target_locator_3" position = { 0 0 8 } }
+    locator = { name = "target_locator_4" position = { 0 0 24 } }
+    default_state = "idle"
+    state = { name = "idle" state_time = 5 }
+    state = { name = "moving" state_time = 5 }
+    state = { name = "death" state_time = 5 looping = no
+        event = { time = 0 node = "part2" particle = "large_player_ship_explosion_particle" trigger_once = yes }
+    }
+    game_data = { size = 16 emissive_recolor_crunch = 5.0 }
+}
+entity = {
+    name = "ccv02_runtime_bow_standard_entity"
+    pdxmesh = "ccv02_runtime_bow_standard_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+    }
+    state = { name = "moving" state_time = 5
+    }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "ccv02_runtime_bow_spinal_entity"
+    pdxmesh = "ccv02_runtime_bow_spinal_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+    }
+    state = { name = "moving" state_time = 5
+    }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "ccv02_runtime_mid_artillery_entity"
+    pdxmesh = "ccv02_runtime_mid_artillery_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+    }
+    state = { name = "moving" state_time = 5
+    }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "ccv02_runtime_mid_carrier_entity"
+    pdxmesh = "ccv02_runtime_mid_carrier_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+    }
+    state = { name = "moving" state_time = 5
+    }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "ccv02_runtime_stern_entity"
+    pdxmesh = "ccv02_runtime_stern_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+        event = { time = 0 node = "engine_large_01" particle = "generic_big_2_5_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "engine_large_02" particle = "generic_big_2_5_exhaust_circle_idle" keep_particle = yes trigger_once = yes }
+    }
+    state = { name = "moving" state_time = 5
+        event = { time = 0 node = "engine_large_01" particle = "generic_big_3_exhaust_circle_moving" keep_particle = yes trigger_once = yes }
+        event = { time = 0 node = "engine_large_02" particle = "generic_big_3_exhaust_circle_moving" keep_particle = yes trigger_once = yes }
+    }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "ccv02_runtime_worldformer_base_entity"
+    pdxmesh = "ccv02_runtime_worldformer_base_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+    }
+    state = { name = "moving" state_time = 5
+    }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "ccv02_runtime_worldformer_active_entity"
+    pdxmesh = "ccv02_runtime_worldformer_active_mesh"
+    default_state = "idle"
+    state = { name = "idle" state_time = 5
+    }
+    state = { name = "moving" state_time = 5
+    }
+    state = { name = "death" state_time = 5 looping = no }
+}
+entity = {
+    name = "ccv02_preview_spinal_artillery_entity"
+    clone = "ccv02_strategic_cruiser_entity"
+    attach = { part1 = "ccv02_runtime_bow_spinal_entity" }
+    attach = { part2 = "ccv02_runtime_mid_artillery_entity" }
+    attach = { part3 = "ccv02_runtime_stern_entity" }
+}
+entity = {
+    name = "ccv02_preview_standard_carrier_entity"
+    clone = "ccv02_strategic_cruiser_entity"
+    attach = { part1 = "ccv02_runtime_bow_standard_entity" }
+    attach = { part2 = "ccv02_runtime_mid_carrier_entity" }
+    attach = { part3 = "ccv02_runtime_stern_entity" }
+}

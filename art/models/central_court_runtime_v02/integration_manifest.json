@@ -1,0 +1,144 @@
+{
+  "date": "2026-11-01",
+  "source_base": "8e743e1",
+  "status": "draft_integrated_runtime_pending",
+  "formal_asset_approved": false,
+  "source_authoring_file_unchanged": true,
+  "meshes": [
+    {
+      "part": "ccv02_runtime_bow_standard",
+      "triangles": 1068,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/central_court_runtime_v02/export/ccv02_runtime_bow_standard.mesh",
+      "shape_names": [
+        "ccv02_runtime_bow_standard"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "mod_path": "mod/gfx/models/central_court_v02/ccv02_runtime_bow_standard.mesh",
+      "orientation_checked_against_native": true
+    },
+    {
+      "part": "ccv02_runtime_bow_spinal",
+      "triangles": 1696,
+      "locators": [
+        "xl_gun_01"
+      ],
+      "mesh": "art/models/central_court_runtime_v02/export/ccv02_runtime_bow_spinal.mesh",
+      "shape_names": [
+        "ccv02_runtime_bow_spinal"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "mod_path": "mod/gfx/models/central_court_v02/ccv02_runtime_bow_spinal.mesh",
+      "orientation_checked_against_native": true
+    },
+    {
+      "part": "ccv02_runtime_mid_artillery",
+      "triangles": 1196,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/central_court_runtime_v02/export/ccv02_runtime_mid_artillery.mesh",
+      "shape_names": [
+        "ccv02_runtime_mid_artillery"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "mod_path": "mod/gfx/models/central_court_v02/ccv02_runtime_mid_artillery.mesh",
+      "orientation_checked_against_native": true
+    },
+    {
+      "part": "ccv02_runtime_mid_carrier",
+      "triangles": 1684,
+      "locators": [
+        "small_gun_01",
+        "small_gun_02",
+        "small_gun_03",
+        "small_gun_04",
+        "strike_craft_locator_01",
+        "strike_craft_locator_02"
+      ],
+      "mesh": "art/models/central_court_runtime_v02/export/ccv02_runtime_mid_carrier.mesh",
+      "shape_names": [
+        "ccv02_runtime_mid_carrier"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "mod_path": "mod/gfx/models/central_court_v02/ccv02_runtime_mid_carrier.mesh",
+      "orientation_checked_against_native": true
+    },
+    {
+      "part": "ccv02_runtime_stern",
+      "triangles": 2008,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/central_court_runtime_v02/export/ccv02_runtime_stern.mesh",
+      "shape_names": [
+        "ccv02_runtime_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "mod_path": "mod/gfx/models/central_court_v02/ccv02_runtime_stern.mesh",
+      "orientation_checked_against_native": true
+    },
+    {
+      "part": "ccv02_runtime_worldformer_base",
+      "triangles": 2120,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_runtime_v02/export/ccv02_runtime_worldformer_base.mesh",
+      "shape_names": [
+        "ccv02_runtime_worldformer_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "mod_path": "mod/gfx/models/central_court_v02/ccv02_runtime_worldformer_base.mesh",
+      "orientation_checked_against_native": false
+    },
+    {
+      "part": "ccv02_runtime_worldformer_active",
+      "triangles": 4720,
+      "locators": [
+        "build_point",
+        "planet_focus"
+      ],
+      "mesh": "art/models/central_court_runtime_v02/export/ccv02_runtime_worldformer_active.mesh",
+      "shape_names": [
+        "ccv02_runtime_worldformer_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "mod_path": "mod/gfx/models/central_court_v02/ccv02_runtime_worldformer_active.mesh",
+      "orientation_checked_against_native": false
+    }
+  ],
+  "ship_root_entity": "ccv02_strategic_cruiser_entity",
+  "preview_entities": [
+    "ccv02_preview_spinal_artillery_entity",
+    "ccv02_preview_standard_carrier_entity"
+  ],
+  "native_forward_axis": "PDX negative Z",
+  "ship_coordinate_conversion": "Blender mesh/position rotate Z 180; gun identity; engines match native; hangars outward",
+  "ship_root_scale": 0.75,
+  "megastructure_common_entity_offset": {
+    "x": 0,
+    "y": -25
+  },
+  "lod_installed": "LOD0 only; 14 authoring alternatives preserved offline",
+  "automatic_lod_switching": false,
+  "root_assembly": "part1/part2/part3 all zero, 4 native-name target locators",
+  "game_display_verified": false,
+  "user_live_blender_scene_modified": false,
+  "native_reference": "reports/central_court_engine_space_2026-11-01.json"
+}
