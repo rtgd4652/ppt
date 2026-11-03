@@ -1,0 +1,68 @@
+# v08开发接入：只注册五主网格，独立LOD替代暂不安装。
+objectTypes = {
+    pdxmesh = {
+        name = "arfv08_flagship_bow_mesh"
+        file = "gfx/models/aemusa_reality_identity_v08/arfv08_flagship_bow.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv08_flagship_bow"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv08_flagship_mid_mesh"
+        file = "gfx/models/aemusa_reality_identity_v08/arfv08_flagship_mid.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv08_flagship_mid"
+            index = 0
+            texture_diffuse = "reality_identity_v08_diffuse.dds"
+            texture_normal = "reality_identity_v08_normal.dds"
+            texture_specular = "reality_identity_v08_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv08_flagship_stern_mesh"
+        file = "gfx/models/aemusa_reality_identity_v08/arfv08_flagship_stern.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv08_flagship_stern"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv08_baseline_base_mesh"
+        file = "gfx/models/aemusa_reality_identity_v08/arfv08_baseline_base.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv08_baseline_base"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "arfv08_baseline_active_mesh"
+        file = "gfx/models/aemusa_reality_identity_v08/arfv08_baseline_active.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "arfv08_baseline_active"
+            index = 0
+            texture_diffuse = "cc_surface_v05_diffuse.dds"
+            texture_normal = "cc_surface_v05_normal.dds"
+            texture_specular = "cc_surface_v05_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+}

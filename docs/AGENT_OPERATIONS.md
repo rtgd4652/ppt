@@ -159,6 +159,8 @@ R5g停电恢复中，分开调用/审批后多次失焦，均未发送输入。�
 
 Blender／DDS使用对应README和现有构建脚本；离线任务后台运行，用户打开的场景不自动授权修改。保留独立巨构原型和用户改动；当前暂停范围与最新保存点统一读取[HANDOFF](../HANDOFF.md)。
 
+11月3日[v08续接](../reports/reality_identity_v08_2026-11-03.md)：Blender的`//export/file.dds`必须先经`bpy.path.abspath`解析，再交给Windows `Path`；直接取`Path(...).name`会把它当成UNC共享根并丢失文件名。打包数据可仍在，先只读检查而非重新生成。已保存源支持`--resume-export`，本轮修复完成后禁止重放。局部修改隐藏集合时，先显示集合并更新依赖图，再读取或组合`matrix_world`；否则会用过期旋转。只刷新受影响预览，保持其他成果。上述均在独立后台完成，不连接用户交互场景。
+
 11月1日公共候选v02的[重建入口](../art/models/central_court_surface_candidates_v02/README.md)已跑通。Pillow12.3.0隔离在`temp/cc_surface_v02_deps`，本轮普通沙盒只看得到包目录、读不到`PIL.Image`；获准环境可正常导入和生成DDS。先核实同一执行环境的可读性，不因空目录视图反复安装。后台Blender5.1.2沿已安装io_pdx_mesh导出21网格、实际重开文件，未触及用户交互场景。平台参照球材质/构图已修正；不把离线LOD文件视为引擎自动切换已经接通。
 
 同日[v03重建入口](../art/models/central_court_surface_candidates_v03/README.md)复用上述隔离依赖和独立后台流程，未新增安装。旧v02只在内存中用于同灯光对照，随后factory重置再生成新候选；旧源/当前Mod资源不改。v03仍是+Y舰首作者空间，不能跳过既有原生方向转换直接覆盖运行模型。

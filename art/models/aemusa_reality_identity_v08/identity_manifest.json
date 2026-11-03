@@ -1,0 +1,501 @@
+{
+  "date": "2026-11-03",
+  "base_commit": "bc8274a",
+  "status": "offline_identity_checks_passed",
+  "formal_appearance": "draft_pending_human_review",
+  "runtime_installed": false,
+  "source_binding": "docs/art/REALITY_ASSET_LORE_STYLE_BINDING.md",
+  "source_blend": "art/models/aemusa_reality_identity_v08/reality_identity_v08.blend",
+  "source_reopened": true,
+  "packed_dds": 6,
+  "private_interface_plates": 3,
+  "private_palette_scope": "flagship_mid only",
+  "old_central_objects_replaced": [
+    "arfv07_flagship_mid__分歧仪轨",
+    "arfv07_flagship_mid__汇合仪轨",
+    "arfv07_flagship_mid__路径读数",
+    "arfv07_flagship_mid__分歧仪轨.001",
+    "arfv07_flagship_mid__汇合仪轨.001",
+    "arfv07_flagship_mid__路径读数.001",
+    "arfv07_flagship_mid__受控恒定模块",
+    "arfv07_flagship_mid__仪器标定面",
+    "arfv07_flagship_mid__局部状态读数"
+  ],
+  "original_locator_transforms_preserved": true,
+  "six_weapon_collars_coated_not_removed": 6,
+  "shared_hub_objects_identical": 216,
+  "material_count_per_mesh": 1,
+  "meshes": [
+    {
+      "part": "arfv08_flagship_bow",
+      "triangles": 1644,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_flagship_bow.mesh",
+      "shape_names": [
+        "arfv08_flagship_bow"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "original_locators_preserved": true
+    },
+    {
+      "part": "arfv08_flagship_bow_lod1",
+      "triangles": 822,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_flagship_bow_lod1.mesh",
+      "shape_names": [
+        "arfv08_flagship_bow_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv08_flagship_bow_lod2",
+      "triangles": 378,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_flagship_bow_lod2.mesh",
+      "shape_names": [
+        "arfv08_flagship_bow_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv08_flagship_mid",
+      "triangles": 2896,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_flagship_mid.mesh",
+      "shape_names": [
+        "arfv08_flagship_mid"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "reality_identity_v08_diffuse.dds"
+        ],
+        "n": [
+          "reality_identity_v08_normal.dds"
+        ],
+        "spec": [
+          "reality_identity_v08_properties.dds"
+        ]
+      },
+      "original_locators_preserved": true
+    },
+    {
+      "part": "arfv08_flagship_mid_lod1",
+      "triangles": 1448,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_flagship_mid_lod1.mesh",
+      "shape_names": [
+        "arfv08_flagship_mid_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "reality_identity_v08_diffuse.dds"
+        ],
+        "n": [
+          "reality_identity_v08_normal.dds"
+        ],
+        "spec": [
+          "reality_identity_v08_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv08_flagship_mid_lod2",
+      "triangles": 666,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_flagship_mid_lod2.mesh",
+      "shape_names": [
+        "arfv08_flagship_mid_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "reality_identity_v08_diffuse.dds"
+        ],
+        "n": [
+          "reality_identity_v08_normal.dds"
+        ],
+        "spec": [
+          "reality_identity_v08_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv08_flagship_stern",
+      "triangles": 2348,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_flagship_stern.mesh",
+      "shape_names": [
+        "arfv08_flagship_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "original_locators_preserved": true
+    },
+    {
+      "part": "arfv08_flagship_stern_lod1",
+      "triangles": 1174,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_flagship_stern_lod1.mesh",
+      "shape_names": [
+        "arfv08_flagship_stern_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv08_flagship_stern_lod2",
+      "triangles": 540,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_flagship_stern_lod2.mesh",
+      "shape_names": [
+        "arfv08_flagship_stern_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv08_baseline_base",
+      "triangles": 4364,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_baseline_base.mesh",
+      "shape_names": [
+        "arfv08_baseline_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "original_locators_preserved": true
+    },
+    {
+      "part": "arfv08_baseline_base_lod1",
+      "triangles": 2182,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_baseline_base_lod1.mesh",
+      "shape_names": [
+        "arfv08_baseline_base_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv08_baseline_base_lod2",
+      "triangles": 1002,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_baseline_base_lod2.mesh",
+      "shape_names": [
+        "arfv08_baseline_base_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv08_baseline_active",
+      "triangles": 7228,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_baseline_active.mesh",
+      "shape_names": [
+        "arfv08_baseline_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "original_locators_preserved": true
+    },
+    {
+      "part": "arfv08_baseline_active_lod1",
+      "triangles": 3614,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_baseline_active_lod1.mesh",
+      "shape_names": [
+        "arfv08_baseline_active_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv08_baseline_active_lod2",
+      "triangles": 1662,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_identity_v08/export/arfv08_baseline_active_lod2.mesh",
+      "shape_names": [
+        "arfv08_baseline_active_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "textures": {
+        "shader": [
+          "PdxMeshShip"
+        ],
+        "diff": [
+          "cc_surface_v05_diffuse.dds"
+        ],
+        "n": [
+          "cc_surface_v05_normal.dds"
+        ],
+        "spec": [
+          "cc_surface_v05_properties.dds"
+        ]
+      },
+      "automatic_lod_switching": false
+    }
+  ],
+  "previews": [
+    "art/models/aemusa_reality_identity_v08/previews/flagship_oblique.png",
+    "art/models/aemusa_reality_identity_v08/previews/flagship_side.png",
+    "art/models/aemusa_reality_identity_v08/previews/baseline_base.png",
+    "art/models/aemusa_reality_identity_v08/previews/baseline_active.png",
+    "art/models/aemusa_reality_identity_v08/previews/flagship_interface.png",
+    "art/models/aemusa_reality_identity_v08/previews/flagship_geometry.png"
+  ],
+  "resumed_export_without_rebuilding_or_rendering": true,
+  "animation": "static resting pose only; no card flipping or moving tracks implemented",
+  "automatic_lod_switching": false,
+  "gameplay_changed": false,
+  "game_operated": false,
+  "user_live_blender_scene_modified": false,
+  "original_game_reference_images_copied": false
+}

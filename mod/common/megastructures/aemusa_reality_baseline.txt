@@ -1,8 +1,9 @@
 # 现实基线枢纽：新危机设施；与旧命运观测塔保持独立身份。
-# 两阶段均由玩家实际建造。当前借用原版实体，正式新模型在 1.0 交付前替换。
+# 两阶段均由玩家实际建造；v08公共工程候选共用基址骨架，升级只加装运行设备。
+# 只替换显示资源；建设、控制关系、资料保留与解析条件保持，外观／实际尺度待评审。
 aemusa_reality_baseline_0 = {
-	entity = "construction_platform_entity"
-	construction_entity = "construction_platform_entity"
+	entity = "arfv08_baseline_base_entity"
+	construction_entity = "arfv08_baseline_base_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	entity_offset = {
@@ -124,8 +125,8 @@ aemusa_reality_baseline_0 = {
 }
 
 aemusa_reality_baseline_1 = {
-	entity = "strategic_coordination_center_stage_1_entity"
-	construction_entity = "strategic_coordination_center_stage_1_entity"
+	entity = "arfv08_baseline_active_entity"
+	construction_entity = "arfv08_baseline_active_entity"
 	portrait = "GFX_megastructure_construction_background"
 	place_entity_on_planet_plane = no
 	entity_offset = {

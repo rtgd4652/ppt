@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-03",
+  "status": "pass",
+  "pdx_meshes": 15,
+  "gfx_definitions": 15,
+  "entity_definitions": 7,
+  "single_material_per_mesh": true,
+  "private_atlas_referenced_only_by_mid_and_its_lods": true,
+  "original_interfaces_preserved": true,
+  "shared_hub_objects_identical": 216,
+  "textures": [
+    {
+      "file": "cc_surface_v05_diffuse.dds",
+      "size": [
+        2048,
+        1024
+      ],
+      "mips": 12,
+      "scope": "public"
+    },
+    {
+      "file": "cc_surface_v05_normal.dds",
+      "size": [
+        2048,
+        1024
+      ],
+      "mips": 12,
+      "scope": "public"
+    },
+    {
+      "file": "cc_surface_v05_properties.dds",
+      "size": [
+        2048,
+        1024
+      ],
+      "mips": 12,
+      "scope": "public"
+    },
+    {
+      "file": "reality_identity_v08_diffuse.dds",
+      "size": [
+        2048,
+        2048
+      ],
+      "mips": 12,
+      "scope": "flagship_mid"
+    },
+    {
+      "file": "reality_identity_v08_normal.dds",
+      "size": [
+        2048,
+        2048
+      ],
+      "mips": 12,
+      "scope": "flagship_mid"
+    },
+    {
+      "file": "reality_identity_v08_properties.dds",
+      "size": [
+        2048,
+        2048
+      ],
+      "mips": 12,
+      "scope": "flagship_mid"
+    }
+  ],
+  "source_reopened": true,
+  "packed_dds": 6,
+  "preview_pngs": 6,
+  "texture_path_issue": "fixed with Blender path resolution; existing source resumed, no rerender",
+  "runtime_installed": false,
+  "formal_appearance_approved": false,
+  "animation_implemented": false,
+  "observation_mount_supports": "four horizontal supports shared by both stages; axis checked; affected previews refreshed"
+}

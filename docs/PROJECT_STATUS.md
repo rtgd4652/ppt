@@ -4,6 +4,8 @@
 
 ## 当前任务与交付层级
 
+- v08[私人旗舰／公共枢纽风格落实](../art/models/aemusa_reality_identity_v08/README.md)已开发接入：先查七都来源并按[世界观与美术约束](art/REALITY_ASSET_LORE_STYLE_BINDING.md)制作局部个人观测接口、公共观测／资料结构。安装5主网格／6DDS／7实体，更新8处显示引用；非图形AST保持，源重开／PDX回读／接口和12条登记检查通过，总静态0错误／0警告。未操作游戏，具体外观／实际尺度／炮塔／尾焰／轨道位置仍待代表观察，未接自动LOD或翻牌动画。[本轮记录](../reports/reality_identity_v08_2026-11-03.md)。
+
 - AP-ST-05/06[结构精修v07](../art/models/aemusa_reality_refinement_v07/README.md)已完成首轮：旗舰有分层楔首、开放恒定作业井和独立推进舱，枢纽有共用桁架基础与封装运行设备。5主网格／10简化替代／5图、源文件重开和PDX回读通过，全部原接口保留，184个枢纽共用基础对象一致；未安装、未操作游戏，具体外观与实际尺度／效果仍待后续。[本轮恢复与实施记录](../reports/reality_refinement_v07_2026-11-03.md)。旧v06及已验证运行产物保留，没有重放旧输入或剧情测试。
 
 - AP-ST-05/06私人旗舰与基线枢纽已补[v06离线生产候选](../art/models/aemusa_reality_production_v06/README.md)：5主网格/10简化替代、完整mip、原生朝向/接口、7实体样品、4图与源重开通过。保留既有造型/UV及玩法，未安装/未游戏验收，具体外观及轮廓细节仍待收敛；本轮未操作游戏/用户Blender场景，22:26进入收尾。[检查点](../reports/reality_production_v06_checkpoint_2026-11-01.json)。

@@ -1,7 +1,8 @@
-# 现实恒定旗舰：独立的新舰种，原版战列舰仅作开发期外观占位。
+# 现实恒定旗舰：独立舰种，接入v08私人接口／中央庭工程外观开发候选。
+# 模型方向和接口已做离线检查；实际尺度、炮塔／效果与具体外观仍待游戏评审。
 # 固定事件设计与英雄舰限制维持单舰身份，不继承旧命运之主的舰体或数值。
 aemusa_reality_flagship = {
-	entity = "battleship_entity"
+	entity = "arfv08_flagship_root_entity"
 	use_shipnames_from = battleship
 	formation_priority = 100
 	max_speed = 100

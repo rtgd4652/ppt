@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-03",
+  "base_commit": "bc8274a",
+  "status": "development_source_integrated",
+  "runtime_observed": false,
+  "formal_appearance": "draft_pending_human_review",
+  "consumer_files": [
+    "mod/common/ship_sizes/aemusa_reality_flagship.txt",
+    "mod/common/section_templates/aemusa_reality_flagship_sections.txt",
+    "mod/common/megastructures/aemusa_reality_baseline.txt"
+  ],
+  "visual_references_replaced": 8,
+  "non_graphical_ast_unchanged": true,
+  "runtime_meshes": 5,
+  "dds": 6,
+  "entity_definitions": 7,
+  "all_entity_mesh_and_texture_references_resolved": true,
+  "root_part_and_target_locators": "pass",
+  "asset_registry_records": 12,
+  "main_triangles": {
+    "arfv08_flagship_bow": 1644,
+    "arfv08_flagship_mid": 2896,
+    "arfv08_flagship_stern": 2348,
+    "arfv08_baseline_base": 4364,
+    "arfv08_baseline_active": 7228
+  },
+  "original_interfaces_preserved": true,
+  "shared_hub_objects_identical": 216,
+  "automatic_lod_installed": false,
+  "game_operated": false,
+  "save_modified": false
+}

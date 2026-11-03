@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-03",
+  "status": "draft_pending_human_review",
+  "source": "art/models/aemusa_reality_refinement_v07/export/cc_surface_v05_*.dds",
+  "style": "docs/art/characters/AEMUSA_STYLE.md, sections 4-9",
+  "public_tiles_preserved_before_compression": true,
+  "dds_note": "重新BC3编码，不能声称原公共DDS逐字节一致；其他四个部件仍直接使用旧DDS",
+  "private_tiles": [
+    {
+      "index": 8,
+      "role": "personal_dark",
+      "rgb": [
+        39,
+        24,
+        40
+      ],
+      "properties": [
+        0,
+        78,
+        8,
+        92
+      ],
+      "emission": 0
+    },
+    {
+      "index": 9,
+      "role": "personal_wine",
+      "rgb": [
+        79,
+        30,
+        53
+      ],
+      "properties": [
+        0,
+        82,
+        10,
+        99
+      ],
+      "emission": 0
+    },
+    {
+      "index": 10,
+      "role": "personal_gold",
+      "rgb": [
+        158,
+        127,
+        78
+      ],
+      "properties": [
+        0,
+        92,
+        76,
+        100
+      ],
+      "emission": 0
+    },
+    {
+      "index": 11,
+      "role": "personal_signal",
+      "rgb": [
+        158,
+        67,
+        108
+      ],
+      "properties": [
+        0,
+        70,
+        8,
+        92
+      ],
+      "emission": 16
+    }
+  ],
+  "scope": "only flagship_mid; common hull/pods/hub have no personal colors",
+  "original_game_reference_images_copied": false,
+  "outputs": [
+    {
+      "file": "art/models/aemusa_reality_identity_v08/export/reality_identity_v08_diffuse.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        2048,
+        2048
+      ],
+      "mip_levels": 12,
+      "bytes": 5592560
+    },
+    {
+      "file": "art/models/aemusa_reality_identity_v08/export/reality_identity_v08_properties.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        2048,
+        2048
+      ],
+      "mip_levels": 12,
+      "bytes": 5592560
+    },
+    {
+      "file": "art/models/aemusa_reality_identity_v08/export/reality_identity_v08_normal.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        2048,
+        2048
+      ],
+      "mip_levels": 12,
+      "bytes": 5592560
+    }
+  ]
+}
