@@ -1,8 +1,10 @@
 # PROJECT_STATUS
 
-更新：2026-11-01。当前进度维护入口；跨AI首先读[HANDOFF](../HANDOFF.md)，执行节奏见[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。详细历史已保留在[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)，旧“下一步／待验”不自动恢复。
+更新：2026-11-03。当前进度维护入口；跨AI首先读[HANDOFF](../HANDOFF.md)，执行节奏见[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。详细历史已保留在[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)，旧“下一步／待验”不自动恢复。
 
 ## 当前任务与交付层级
+
+- AP-ST-05/06[结构精修v07](../art/models/aemusa_reality_refinement_v07/README.md)已完成首轮：旗舰有分层楔首、开放恒定作业井和独立推进舱，枢纽有共用桁架基础与封装运行设备。5主网格／10简化替代／5图、源文件重开和PDX回读通过，全部原接口保留，184个枢纽共用基础对象一致；未安装、未操作游戏，具体外观与实际尺度／效果仍待后续。[本轮恢复与实施记录](../reports/reality_refinement_v07_2026-11-03.md)。旧v06及已验证运行产物保留，没有重放旧输入或剧情测试。
 
 - AP-ST-05/06私人旗舰与基线枢纽已补[v06离线生产候选](../art/models/aemusa_reality_production_v06/README.md)：5主网格/10简化替代、完整mip、原生朝向/接口、7实体样品、4图与源重开通过。保留既有造型/UV及玩法，未安装/未游戏验收，具体外观及轮廓细节仍待收敛；本轮未操作游戏/用户Blender场景，22:26进入收尾。[检查点](../reports/reality_production_v06_checkpoint_2026-11-01.json)。
 

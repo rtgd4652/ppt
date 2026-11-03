@@ -1,0 +1,290 @@
+{
+  "date": "2026-11-03",
+  "base_commit": "1853b00",
+  "status": "offline_refinement_checks_passed",
+  "formal_appearance": "draft_pending_human_review",
+  "runtime_installed": false,
+  "mod_files_changed": false,
+  "game_operated": false,
+  "user_live_blender_scene_modified": false,
+  "source_reopened": true,
+  "packed_dds": 3,
+  "source_blend": "art/models/aemusa_reality_refinement_v07/reality_refinement_v07.blend",
+  "authoring_axes": "+Y forward / +Z up",
+  "export_axes": "native PDX -Z forward",
+  "geometry_changed": true,
+  "six_L_slots_preserved": true,
+  "all_original_locator_transforms_preserved": true,
+  "hub_shared_foundation_objects": 184,
+  "hub_foundation_geometry_uv_transforms_identical": true,
+  "material": "v05 shared DDS copied unchanged, no new emission or palette",
+  "previews": [
+    "art/models/aemusa_reality_refinement_v07/previews/flagship_oblique.png",
+    "art/models/aemusa_reality_refinement_v07/previews/flagship_side.png",
+    "art/models/aemusa_reality_refinement_v07/previews/baseline_base.png",
+    "art/models/aemusa_reality_refinement_v07/previews/baseline_active.png",
+    "art/models/aemusa_reality_refinement_v07/previews/flagship_device.png"
+  ],
+  "comparison": "same light/camera settings as v06 for first four views",
+  "meshes": [
+    {
+      "part": "arfv07_flagship_bow",
+      "triangles": 1644,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_flagship_bow.mesh",
+      "shape_names": [
+        "arfv07_flagship_bow"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "original_locator_transforms_preserved": true
+    },
+    {
+      "part": "arfv07_flagship_bow_lod1",
+      "triangles": 822,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_flagship_bow_lod1.mesh",
+      "shape_names": [
+        "arfv07_flagship_bow_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "arfv07_flagship_bow",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv07_flagship_bow_lod2",
+      "triangles": 378,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_flagship_bow_lod2.mesh",
+      "shape_names": [
+        "arfv07_flagship_bow_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "arfv07_flagship_bow",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv07_flagship_mid",
+      "triangles": 2100,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_flagship_mid.mesh",
+      "shape_names": [
+        "arfv07_flagship_mid"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "original_locator_transforms_preserved": true
+    },
+    {
+      "part": "arfv07_flagship_mid_lod1",
+      "triangles": 1050,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_flagship_mid_lod1.mesh",
+      "shape_names": [
+        "arfv07_flagship_mid_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "arfv07_flagship_mid",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv07_flagship_mid_lod2",
+      "triangles": 482,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_flagship_mid_lod2.mesh",
+      "shape_names": [
+        "arfv07_flagship_mid_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "arfv07_flagship_mid",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv07_flagship_stern",
+      "triangles": 2348,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_flagship_stern.mesh",
+      "shape_names": [
+        "arfv07_flagship_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "original_locator_transforms_preserved": true
+    },
+    {
+      "part": "arfv07_flagship_stern_lod1",
+      "triangles": 1174,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_flagship_stern_lod1.mesh",
+      "shape_names": [
+        "arfv07_flagship_stern_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "arfv07_flagship_stern",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv07_flagship_stern_lod2",
+      "triangles": 540,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_flagship_stern_lod2.mesh",
+      "shape_names": [
+        "arfv07_flagship_stern_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "arfv07_flagship_stern",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv07_baseline_base",
+      "triangles": 3532,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_baseline_base.mesh",
+      "shape_names": [
+        "arfv07_baseline_base"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "original_locator_transforms_preserved": true
+    },
+    {
+      "part": "arfv07_baseline_base_lod1",
+      "triangles": 1766,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_baseline_base_lod1.mesh",
+      "shape_names": [
+        "arfv07_baseline_base_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "arfv07_baseline_base",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv07_baseline_base_lod2",
+      "triangles": 812,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_baseline_base_lod2.mesh",
+      "shape_names": [
+        "arfv07_baseline_base_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "arfv07_baseline_base",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv07_baseline_active",
+      "triangles": 5340,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_baseline_active.mesh",
+      "shape_names": [
+        "arfv07_baseline_active"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 0,
+      "original_locator_transforms_preserved": true
+    },
+    {
+      "part": "arfv07_baseline_active_lod1",
+      "triangles": 2670,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_baseline_active_lod1.mesh",
+      "shape_names": [
+        "arfv07_baseline_active_lod1"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 1,
+      "source_part": "arfv07_baseline_active",
+      "automatic_lod_switching": false
+    },
+    {
+      "part": "arfv07_baseline_active_lod2",
+      "triangles": 1228,
+      "locators": [
+        "build_point",
+        "hub_center"
+      ],
+      "mesh": "art/models/aemusa_reality_refinement_v07/export/arfv07_baseline_active_lod2.mesh",
+      "shape_names": [
+        "arfv07_baseline_active_lod2"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "lod": 2,
+      "source_part": "arfv07_baseline_active",
+      "automatic_lod_switching": false
+    }
+  ],
+  "automatic_lod_switching": false,
+  "runtime_scale_particles_and_gameplay": "not retested; candidate not installed",
+  "next_step": "review candidate silhouette and refine if needed, then one merged asset integration"
+}

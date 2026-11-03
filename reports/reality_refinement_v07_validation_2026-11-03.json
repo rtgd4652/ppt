@@ -1,0 +1,49 @@
+{
+  "date": "2026-11-03",
+  "status": "pass",
+  "pdx_readback": "15 meshes passed by builder",
+  "main_meshes": 5,
+  "independent_lod_alternatives": 10,
+  "gfx_definitions": 15,
+  "entity_definitions": 7,
+  "definitions_and_local_references": "pass",
+  "textures": [
+    {
+      "name": "cc_surface_v05_diffuse.dds",
+      "format": "DXT5",
+      "size": [
+        2048,
+        1024
+      ],
+      "mips": 12,
+      "unchanged_from_v06": true
+    },
+    {
+      "name": "cc_surface_v05_normal.dds",
+      "format": "DXT5",
+      "size": [
+        2048,
+        1024
+      ],
+      "mips": 12,
+      "unchanged_from_v06": true
+    },
+    {
+      "name": "cc_surface_v05_properties.dds",
+      "format": "DXT5",
+      "size": [
+        2048,
+        1024
+      ],
+      "mips": 12,
+      "unchanged_from_v06": true
+    }
+  ],
+  "preview_pngs": 5,
+  "source_reopened": true,
+  "original_locator_transforms_preserved": true,
+  "shared_hub_objects_identical": 184,
+  "automatic_lod_switching": false,
+  "runtime_installed": false,
+  "formal_appearance_approved": false
+}
