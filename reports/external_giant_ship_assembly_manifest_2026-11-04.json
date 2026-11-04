@@ -1,0 +1,48 @@
+{
+  "addon": "C:/Users/Admin/AppData/Roaming/Blender Foundation/Blender/5.1/extensions/user_default/io_pdx_mesh",
+  "game": "F:/steam/steamapps/common/Stellaris",
+  "mods": [
+    {
+      "name": "Gigas",
+      "root": "F:\\steam\\steamapps\\workshop\\content\\281990\\1121692237",
+      "entities": [
+        "war_system_complete_entity",
+        "blokkat_mothership_frame_entity",
+        "war_system_locators_entity",
+        "blokkat_vester_frame_entity",
+        "blokkat_ringworld_triple_entity"
+      ]
+    },
+    {
+      "name": "WSG",
+      "root": "F:\\steam\\steamapps\\workshop\\content\\281990\\1747099270",
+      "entities": [
+        "SRA_SOGZ_UF_hull_entity",
+        "Seal_flagship_hull_section_entity",
+        "uf_glory_02_supermacy_entity",
+        "Seal_flagship_frame_entity",
+        "SRA_SOGZ_UF_shipsize_entity"
+      ]
+    },
+    {
+      "name": "Dawn",
+      "root": "F:\\steam\\steamapps\\workshop\\content\\281990\\2955341502",
+      "entities": [
+        "DSC_blackhole_war_ship_frame_entity",
+        "Magnetic_star_ship_entity",
+        "Magnetic_star_ship_section_templates_A",
+        "Magnetic_star_ship_section_templates_B",
+        "Magnetic_star_ship_section_templates_C"
+      ]
+    },
+    {
+      "name": "ACOT",
+      "root": "F:/steam/steamapps/workshop/content/281990/1419304439",
+      "entities": [
+        "precursor_colossus_entity",
+        "precursor_colossus_ship_entity",
+        "precursor_colossus_core_entity"
+      ]
+    }
+  ]
+}

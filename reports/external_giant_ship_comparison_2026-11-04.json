@@ -1,0 +1,176 @@
+{
+  "date": "2026-11-04",
+  "source": "本机Steam Workshop已安装副本及本机原版；未查询线上最新版",
+  "unit": "导出PDX三角面",
+  "method": "有材质mesh节点tri索引数/3，按静态attach与选定舰体区段的引用次数累加；全部指定实体成功解析",
+  "scope": [
+    "含固定网格视觉效果；不含动态粒子、配装追加炮塔、舰载机或死亡态生成对象",
+    "这是静态资源与名义装配统计；不是某一帧实际渲染量，也不是性能通过证据",
+    "单份网格与多次引用区分；旧整合网格与新拆分网格不重复计数",
+    "本轮仅保存数值、路径和核对脚本，没有复制或修改外部媒体，没有操作游戏或用户Blender"
+  ],
+  "comparisons": [
+    {
+      "mod": "巨构",
+      "workshop_id": "1121692237",
+      "name": "猫块赋权者",
+      "ship_size": "giga_blokkat_mothership",
+      "static_assembled_triangles": 86162,
+      "terms": [
+        {
+          "entity": "blokkat_vester_frame_entity",
+          "instances": 1,
+          "triangles_each": 0
+        },
+        {
+          "entity": "blokkat_ringworld_triple_entity",
+          "instances": 1,
+          "triangles_each": 86162
+        }
+      ],
+      "note": "四层环体、核心及固定黑洞网格；一个mid区段"
+    },
+    {
+      "mod": "巨构",
+      "workshop_id": "1121692237",
+      "name": "恒星系飞船",
+      "ship_size": "giga_systemcraft",
+      "static_assembled_triangles": 255469,
+      "terms": [
+        {
+          "entity": "war_system_complete_entity",
+          "instances": 1,
+          "triangles_each": 246757
+        },
+        {
+          "entity": "war_system_locators_entity",
+          "instances": 6,
+          "triangles_each": 1452
+        }
+      ],
+      "note": "主体242265＋恒星4492＋六份定位区段网格各1452"
+    },
+    {
+      "mod": "舰R",
+      "workshop_id": "1747099270",
+      "name": "联合终焉之枪",
+      "ship_size": "SRA_SOGZ_UF",
+      "static_assembled_triangles": 70618,
+      "terms": [
+        {
+          "entity": "SRA_SOGZ_UF_shipsize_entity",
+          "instances": 1,
+          "triangles_each": 0
+        },
+        {
+          "entity": "SRA_SOGZ_UF_hull_entity",
+          "instances": 1,
+          "triangles_each": 70618
+        }
+      ],
+      "note": "主体29338＋17个固定挂接部件41280；不重复计目录中的旧整合网格SRA_SOGZ.mesh"
+    },
+    {
+      "mod": "舰R",
+      "workshop_id": "1747099270",
+      "name": "焚灭旗舰",
+      "ship_size": "wg_fm_flagship",
+      "static_assembled_triangles": 281856,
+      "terms": [
+        {
+          "entity": "Seal_flagship_frame_entity",
+          "instances": 1,
+          "triangles_each": 0
+        },
+        {
+          "entity": "Seal_flagship_hull_section_entity",
+          "instances": 3,
+          "triangles_each": 93952
+        }
+      ],
+      "note": "单份舰体93952；bow/mid/stern三处各引用一次，名义装配合计281856；未测游戏实际剔除"
+    },
+    {
+      "mod": "ACOT",
+      "workshop_id": "1419304439",
+      "name": "先驱者大力神（Delta外观）",
+      "ship_size": "precursor_colossus",
+      "static_assembled_triangles": 135016,
+      "terms": [
+        {
+          "entity": "precursor_colossus_entity",
+          "instances": 1,
+          "triangles_each": 0
+        },
+        {
+          "entity": "precursor_colossus_ship_entity",
+          "instances": 1,
+          "triangles_each": 135016
+        },
+        {
+          "entity": "precursor_colossus_core_entity",
+          "instances": 5,
+          "triangles_each": 0
+        }
+      ],
+      "note": "主体与固定挂接135016；框架及五个武器区段仅定位，无三角面"
+    },
+    {
+      "mod": "晨曦",
+      "workshop_id": "2955341502",
+      "name": "磁力恒星（常规版）",
+      "ship_size": "Magnetic_star_ship",
+      "static_assembled_triangles": 2021528,
+      "terms": [
+        {
+          "entity": "Magnetic_star_ship_entity",
+          "instances": 1,
+          "triangles_each": 1962672
+        },
+        {
+          "entity": "Magnetic_star_ship_section_templates_A",
+          "instances": 2,
+          "triangles_each": 8408
+        },
+        {
+          "entity": "Magnetic_star_ship_section_templates_B",
+          "instances": 2,
+          "triangles_each": 8408
+        },
+        {
+          "entity": "Magnetic_star_ship_section_templates_C",
+          "instances": 3,
+          "triangles_each": 8408
+        }
+      ],
+      "note": "主体挂接1962672＋七个区段各8408；含大量风暴、恒星和护盾网格，不是纯硬表面舰壳"
+    }
+  ],
+  "validation": {
+    "known_v08_parts": [
+      1644,
+      2896,
+      2348
+    ],
+    "known_v08_total": 6888,
+    "matched_previous_model_manifest": true,
+    "index_divisibility_and_bounds_checked": true,
+    "base_parse_errors_outside_selected_references": [
+      {
+        "file": "F:\\steam\\steamapps\\common\\Stellaris\\gfx\\models\\effects\\nomads.gfx",
+        "error": "块缺少右括号"
+      },
+      {
+        "file": "F:\\steam\\steamapps\\common\\Stellaris\\gfx\\models\\ui\\nomads_frontend.gfx",
+        "error": "块缺少右括号"
+      }
+    ]
+  },
+  "excluded_sample": {
+    "entity": "DSC_blackhole_war_ship_frame_entity",
+    "triangles": 170780,
+    "reason": "仅在战争巨兽资产文件发现定义，未找到舰种或区段的调用，不列为本次已接入舰船对照"
+  },
+  "raw_data": "reports/external_giant_ship_assemblies_2026-11-04.json",
+  "recommendation_status": "此前约10万面是设计预算建议，不是引擎上限；本轮没有修改旗舰预算或批准外观"
+}
