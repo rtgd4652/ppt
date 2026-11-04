@@ -1,8 +1,10 @@
 # PROJECT_STATUS
 
-更新：2026-11-03。当前进度维护入口；跨AI首先读[HANDOFF](../HANDOFF.md)，执行节奏见[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。详细历史已保留在[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)，旧“下一步／待验”不自动恢复。
+更新：2026-11-04。当前进度维护入口；跨AI首先读[HANDOFF](../HANDOFF.md)，执行节奏见[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。详细历史已保留在[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)，旧“下一步／待验”不自动恢复。
 
 ## 当前任务与交付层级
+
+- 私人旗舰正式外观已按用户要求进入整舰重设，至少16T为硬性下限。11月4日交付[完整概念与16T布局](../art/concepts/aemusa_flagship_redesign_20261104/README.md)，属于待评审方案；旧v08仍是退回的六L技术样品，游戏16T／新船模尚未实现。本机T接口和原生武器舰种限制已核对，下一步收敛整体形象并做新灰模／独立T组件。见[本轮记录](../reports/flagship_redesign_concept_2026-11-04.md)。本轮未操作游戏或恢复旧测试。
 
 - v08部分实机证据已取得：原`2293.10.11`存档现有旗舰正常详情可见新舰体和原生炮塔、六L列表，见[运行记录](../reports/reality_identity_v08_runtime_2026-11-03.md)。尚未核对整舰星系尺度／完整炮位／效果及枢纽；日志新增3张共享DDS重名，待修复。没有控制台造舰、推进日期或新存档，具体外观与全套运行未通过。六L属于原型固定配置，正式武装待讨论。
 

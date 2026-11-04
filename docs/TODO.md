@@ -1,8 +1,11 @@
 # 当前执行清单
 
-更新：2026-11-03。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。本页只列当前事项与仍有效的后续范围；旧已完成清单保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)，不作为执行队列。
+更新：2026-11-04。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。本页只列当前事项与仍有效的后续范围；旧已完成清单保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)，不作为执行队列。
 
 ## 当前接手点
+
+- [x] 新私人旗舰首轮完整概念＋16T布局：四条错层分岔／汇合主脊，四组各四个独立T位；内置image_gen原图、SVG／PNG／JSON与[方案](art/ships/AEMUSA_FLAGSHIP_REDESIGN_v0.1.md)已保存。已查七都来源／风格及本机T接口，当前未定稿、未实现游戏16T。
+- [ ] 按[整舰首稿](../art/concepts/aemusa_flagship_redesign_20261104/README.md)的整体反馈收敛，制作新灰模与16个发射位置；实际T组件必须显式支持本独立舰种，原生泰坦白名单不会自动接纳。不要重跑旧六L样品验收。
 
 - [ ] **优先：私人旗舰整舰重新设计，正式配置至少16个T槽。** 用户已退回v08外观并明确武装下限；下一次先围绕火力、供能、散热、命运主题做整体轮廓／概念方案，再建模与实现。详见[决定](art/FLAGSHIP_REDESIGN_DECISION_2026-11-03.md)。旧v08仅作六L技术样品，16T尚未实现；其他槽位、具体数值和布局待方案。以下旧舰实机任务不再是重设的前置。
 

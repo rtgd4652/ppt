@@ -1,8 +1,10 @@
 # 跨 AI 接手入口
 
-更新：2026-11-03。适用于 Codex、其他本地 AI 和没有本会话历史的助手。只读本页、[AGENTS](AGENTS.md)和[TODO](docs/TODO.md)的当前事项即可开始判断任务；详细能力按需读[操作说明](docs/AGENT_OPERATIONS.md)。不要求先通读聊天、历史报告或整个项目。
+更新：2026-11-04。适用于 Codex、其他本地 AI 和没有本会话历史的助手。只读本页、[AGENTS](AGENTS.md)和[TODO](docs/TODO.md)的当前事项即可开始判断任务；详细能力按需读[操作说明](docs/AGENT_OPERATIONS.md)。不要求先通读聊天、历史报告或整个项目。
 
 ## 当前授权与工作状态
+
+- 11月4日整舰重设首轮方案已交付：[完整概念／16T布局／提示词](art/concepts/aemusa_flagship_redesign_20261104/README.md)，[方案](docs/art/ships/AEMUSA_FLAGSHIP_REDESIGN_v0.1.md)与[检查点](reports/flagship_redesign_concept_checkpoint_2026-11-04.json)。先查七都来源和风格，再生成全新“分岔主脊”概念；16个唯一T位分四组各四个，独立布局图已检查。本机原生T模板已核对，原版泰坦武器的舰种白名单不包含本舰，后续要接入本舰可用的真正T组件。当前只是可评审方案，16T／新船模未实现，具体外观未批准；旧v08仍为退回的六L样品。下一步按整舰反馈收敛，再做新灰模与实际接口，不重新生成本首稿或恢复旧舰测试。本轮未操作游戏／用户Blender／暂停原型，当前无后台构建和待输入命令。
 
 - 用户随后明确正式私人旗舰**至少16个T槽**，这是新设计硬性下限，替代原型六L和此前未决定的槽位下限。详见[重设决定](docs/art/FLAGSHIP_REDESIGN_DECISION_2026-11-03.md)。下一次从超级旗舰整体轮廓、至少16T的火力／供能／散热与命运结构共同设计；不把原版战列舰炮击区段继续当正式方案。当前代码仍为六L样品，16T尚未实现；其他槽位、数值、具体布局与外观未定。今晚仅保存要求，不改模型或运行脚本。
 
@@ -63,7 +65,7 @@
 | --- | --- |
 | 仓库根目录 | `C:\Users\Admin\Desktop\ppt\simple_leader_edict`；父目录 `ppt` 不是本仓库的 Git 根目录 |
 | 分支 | `knowledge/source-rebuild-v0.1`；接手时用 Git 复核 |
-| 上次开发保存点 | `bc8274a`为v08世界观／风格落实与接入基线；最新中文提交通过`git log -1`获取 |
+| 上次开发保存点 | `21ddc6d`为新整舰概念／16T布局的制作基线；最新中文提交通过`git log -1`获取 |
 | 最近实际运行的 Mod 源码 | 公共v05材质（v04实体名）已有局部改善实机证据；私人v08现已源码接入但没有启动游戏。当前进程状态未确认，不能把旧PID或输入记录当作待执行队列 |
 | 唯一游戏加载目录 | 仓库内 `mod/` |
 | 游戏可执行文件 | `F:\steam\steamapps\common\Stellaris\stellaris.exe` |

@@ -1,0 +1,323 @@
+{
+  "date": "2026-11-04",
+  "status": "draft_pending_human_review",
+  "requirement": "at least 16 true T slots",
+  "proposed_count": 16,
+  "implemented_in_mod": false,
+  "coordinates": "relative schematic only; +Y forward; not authoring or PDX units",
+  "native_evidence": [
+    "common/section_templates/titan.txt: TITANIC_01 -> invisible_titanic_fixed -> xl_gun_01",
+    "common/component_slot_templates/00_component_slots_fixed.txt: size=titanic; component=weapon; is_fixed=yes",
+    "common/component_templates/00_weapons_extra_large.txt: PERDITION_BEAM_TITAN; size=titanic; ship_uses_titan_components=yes",
+    "common/scripted_triggers/07_scripted_triggers_ships.txt: native allow-list excludes aemusa_reality_flagship"
+  ],
+  "implementation_followup": "use a mod-owned true titanic weapon allowed for the independent flagship; do not globally override vanilla ship eligibility",
+  "visual_banks": "four structural groups; each contains four independent component slots and emission locators",
+  "fire_control": "bank grouping does not promise separate command UI or synchronized volleys",
+  "slots": [
+    {
+      "id": "T01",
+      "bank": "A",
+      "bank_label": "上层左舷",
+      "slot_name_proposal": "TITANIC_01",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_01",
+      "schematic_position": [
+        -50,
+        22,
+        12
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T02",
+      "bank": "A",
+      "bank_label": "上层左舷",
+      "slot_name_proposal": "TITANIC_02",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_02",
+      "schematic_position": [
+        -42,
+        22,
+        12
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T03",
+      "bank": "A",
+      "bank_label": "上层左舷",
+      "slot_name_proposal": "TITANIC_03",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_03",
+      "schematic_position": [
+        -34,
+        22,
+        12
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T04",
+      "bank": "A",
+      "bank_label": "上层左舷",
+      "slot_name_proposal": "TITANIC_04",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_04",
+      "schematic_position": [
+        -26,
+        22,
+        12
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T05",
+      "bank": "B",
+      "bank_label": "上层右舷",
+      "slot_name_proposal": "TITANIC_05",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_05",
+      "schematic_position": [
+        26,
+        22,
+        12
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T06",
+      "bank": "B",
+      "bank_label": "上层右舷",
+      "slot_name_proposal": "TITANIC_06",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_06",
+      "schematic_position": [
+        34,
+        22,
+        12
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T07",
+      "bank": "B",
+      "bank_label": "上层右舷",
+      "slot_name_proposal": "TITANIC_07",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_07",
+      "schematic_position": [
+        42,
+        22,
+        12
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T08",
+      "bank": "B",
+      "bank_label": "上层右舷",
+      "slot_name_proposal": "TITANIC_08",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_08",
+      "schematic_position": [
+        50,
+        22,
+        12
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T09",
+      "bank": "C",
+      "bank_label": "下层左舷",
+      "slot_name_proposal": "TITANIC_09",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_09",
+      "schematic_position": [
+        -66,
+        54,
+        -8
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T10",
+      "bank": "C",
+      "bank_label": "下层左舷",
+      "slot_name_proposal": "TITANIC_10",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_10",
+      "schematic_position": [
+        -58,
+        54,
+        -8
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T11",
+      "bank": "C",
+      "bank_label": "下层左舷",
+      "slot_name_proposal": "TITANIC_11",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_11",
+      "schematic_position": [
+        -50,
+        54,
+        -8
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T12",
+      "bank": "C",
+      "bank_label": "下层左舷",
+      "slot_name_proposal": "TITANIC_12",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_12",
+      "schematic_position": [
+        -42,
+        54,
+        -8
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T13",
+      "bank": "D",
+      "bank_label": "下层右舷",
+      "slot_name_proposal": "TITANIC_13",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_13",
+      "schematic_position": [
+        42,
+        54,
+        -8
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T14",
+      "bank": "D",
+      "bank_label": "下层右舷",
+      "slot_name_proposal": "TITANIC_14",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_14",
+      "schematic_position": [
+        50,
+        54,
+        -8
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T15",
+      "bank": "D",
+      "bank_label": "下层右舷",
+      "slot_name_proposal": "TITANIC_15",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_15",
+      "schematic_position": [
+        58,
+        54,
+        -8
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    },
+    {
+      "id": "T16",
+      "bank": "D",
+      "bank_label": "下层右舷",
+      "slot_name_proposal": "TITANIC_16",
+      "template_reference": "invisible_titanic_fixed",
+      "size": "titanic",
+      "locator_name_proposal": "xl_gun_16",
+      "schematic_position": [
+        66,
+        54,
+        -8
+      ],
+      "schematic_forward": [
+        0,
+        1,
+        0
+      ]
+    }
+  ]
+}

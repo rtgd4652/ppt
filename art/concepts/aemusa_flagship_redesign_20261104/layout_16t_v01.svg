@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000">
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="#69c1cc"/></marker></defs>
+<rect width="1600" height="1000" fill="#111b23"/>
+<g font-family="Microsoft YaHei, Noto Sans CJK SC, sans-serif">
+<text x="60" y="57" font-size="32" fill="#e0e6e9">私人旗舰重设｜16T布置草案</text>
+<text x="60" y="91" font-size="17" fill="#a8b5c0">4组 × 4个独立T槽 · 平面结构示意 · 非模型尺寸／非游戏实现</text>
+<line x1="1095" y1="130" x2="1095" y2="917" stroke="#304651" stroke-width="2"/>
+<polygon points="458.8,193.8 367.6,251.2 151.0,263.5 116.8,345.5 122.5,603.8 247.9,821.1 852.1,821.1 977.5,603.8 983.2,345.5 949.0,263.5 732.4,251.2 641.2,193.8" fill="#182630" stroke="#738995" stroke-width="3"/>
+<polyline points="504.4,796.5 430.3,681.7 373.3,558.7 418.9,333.2 550.0,210.2" fill="none" stroke="#38505e" stroke-width="30" stroke-linejoin="round"/>
+<polyline points="504.4,796.5 430.3,681.7 373.3,558.7 418.9,333.2 550.0,210.2" fill="none" stroke="#8b5771" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="447.4,796.5 225.1,653.0 190.9,443.9 322.0,292.2 550.0,210.2" fill="none" stroke="#38505e" stroke-width="30" stroke-linejoin="round"/>
+<polyline points="447.4,796.5 225.1,653.0 190.9,443.9 322.0,292.2 550.0,210.2" fill="none" stroke="#8b5771" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="595.6,796.5 669.7,681.7 726.7,558.7 681.1,333.2 550.0,210.2" fill="none" stroke="#38505e" stroke-width="30" stroke-linejoin="round"/>
+<polyline points="595.6,796.5 669.7,681.7 726.7,558.7 681.1,333.2 550.0,210.2" fill="none" stroke="#8b5771" stroke-width="3" stroke-linejoin="round"/>
+<polyline points="652.6,796.5 874.9,653.0 909.1,443.9 778.0,292.2 550.0,210.2" fill="none" stroke="#38505e" stroke-width="30" stroke-linejoin="round"/>
+<polyline points="652.6,796.5 874.9,653.0 909.1,443.9 778.0,292.2 550.0,210.2" fill="none" stroke="#8b5771" stroke-width="3" stroke-linejoin="round"/>
+<polygon points="481.6,710.4 607.0,702.2 618.4,669.4 493.0,677.6" fill="#443448" stroke="#a87891" stroke-width="1.5"/>
+<polygon points="481.6,612.0 607.0,603.8 618.4,571.0 493.0,579.2" fill="#443448" stroke="#a87891" stroke-width="1.5"/>
+<polygon points="481.6,513.6 607.0,505.4 618.4,472.6 493.0,480.8" fill="#443448" stroke="#a87891" stroke-width="1.5"/>
+<polygon points="481.6,415.2 607.0,407.0 618.4,374.2 493.0,382.4" fill="#443448" stroke="#a87891" stroke-width="1.5"/>
+<rect x="333.4" y="755.5" width="433.2" height="65.6" rx="7" fill="#304651" stroke="#9ba8ae"/>
+<text x="550" y="795.3" text-anchor="middle" fill="#d6d9d5" font-size="21">推进／供能／散热区</text>
+<text x="550" y="158" fill="#d6d9d5" font-size="21" text-anchor="middle">舰首 · 统一前向</text>
+<path d="M550 197 L550 173" stroke="#69c1cc" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="232.0" y="400.8" width="202.8" height="75" rx="7" fill="#14232d" stroke="#69c1cc" stroke-width="2"/>
+<text x="333.4" y="500.8" font-size="17" fill="#69c1cc" text-anchor="middle">A · 上层左舷 · 4T</text>
+<g id="slot-T01" data-size="titanic" data-bank="A">
+<rect x="245.0" y="419.8" width="40" height="40" rx="4" fill="#2d444f" stroke="#69c1cc" stroke-width="2"/>
+<text x="265.0" y="445.8" font-size="16" fill="#f2f5f6" text-anchor="middle">T01</text>
+<path d="M265.0 394.8 L265.0 371.8" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T02" data-size="titanic" data-bank="A">
+<rect x="290.6" y="419.8" width="40" height="40" rx="4" fill="#2d444f" stroke="#69c1cc" stroke-width="2"/>
+<text x="310.6" y="445.8" font-size="16" fill="#f2f5f6" text-anchor="middle">T02</text>
+<path d="M310.6 394.8 L310.6 371.8" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T03" data-size="titanic" data-bank="A">
+<rect x="336.2" y="419.8" width="40" height="40" rx="4" fill="#2d444f" stroke="#69c1cc" stroke-width="2"/>
+<text x="356.2" y="445.8" font-size="16" fill="#f2f5f6" text-anchor="middle">T03</text>
+<path d="M356.2 394.8 L356.2 371.8" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T04" data-size="titanic" data-bank="A">
+<rect x="381.79999999999995" y="419.8" width="40" height="40" rx="4" fill="#2d444f" stroke="#69c1cc" stroke-width="2"/>
+<text x="401.79999999999995" y="445.8" font-size="16" fill="#f2f5f6" text-anchor="middle">T04</text>
+<path d="M401.79999999999995 394.8 L401.79999999999995 371.8" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<rect x="665.2" y="400.8" width="202.8" height="75" rx="7" fill="#14232d" stroke="#69c1cc" stroke-width="2"/>
+<text x="766.6" y="500.8" font-size="17" fill="#69c1cc" text-anchor="middle">B · 上层右舷 · 4T</text>
+<g id="slot-T05" data-size="titanic" data-bank="B">
+<rect x="678.2" y="419.8" width="40" height="40" rx="4" fill="#2d444f" stroke="#69c1cc" stroke-width="2"/>
+<text x="698.2" y="445.8" font-size="16" fill="#f2f5f6" text-anchor="middle">T05</text>
+<path d="M698.2 394.8 L698.2 371.8" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T06" data-size="titanic" data-bank="B">
+<rect x="723.8" y="419.8" width="40" height="40" rx="4" fill="#2d444f" stroke="#69c1cc" stroke-width="2"/>
+<text x="743.8" y="445.8" font-size="16" fill="#f2f5f6" text-anchor="middle">T06</text>
+<path d="M743.8 394.8 L743.8 371.8" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T07" data-size="titanic" data-bank="B">
+<rect x="769.4" y="419.8" width="40" height="40" rx="4" fill="#2d444f" stroke="#69c1cc" stroke-width="2"/>
+<text x="789.4" y="445.8" font-size="16" fill="#f2f5f6" text-anchor="middle">T07</text>
+<path d="M789.4 394.8 L789.4 371.8" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T08" data-size="titanic" data-bank="B">
+<rect x="815.0" y="419.8" width="40" height="40" rx="4" fill="#2d444f" stroke="#69c1cc" stroke-width="2"/>
+<text x="835.0" y="445.8" font-size="16" fill="#f2f5f6" text-anchor="middle">T08</text>
+<path d="M835.0 394.8 L835.0 371.8" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<rect x="140.8" y="269.6" width="202.8" height="75" rx="7" fill="#14232d" stroke="#d39a55" stroke-width="2"/>
+<text x="242.20000000000002" y="217.60000000000002" font-size="17" fill="#d39a55" text-anchor="middle">C · 下层左舷 · 4T</text>
+<g id="slot-T09" data-size="titanic" data-bank="C">
+<rect x="153.8" y="288.6" width="40" height="40" rx="4" fill="#2d444f" stroke="#d39a55" stroke-width="2"/>
+<text x="173.8" y="314.6" font-size="16" fill="#f2f5f6" text-anchor="middle">T09</text>
+<path d="M173.8 263.6 L173.8 240.60000000000002" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T10" data-size="titanic" data-bank="C">
+<rect x="199.39999999999998" y="288.6" width="40" height="40" rx="4" fill="#2d444f" stroke="#d39a55" stroke-width="2"/>
+<text x="219.39999999999998" y="314.6" font-size="16" fill="#f2f5f6" text-anchor="middle">T10</text>
+<path d="M219.39999999999998 263.6 L219.39999999999998 240.60000000000002" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T11" data-size="titanic" data-bank="C">
+<rect x="245.0" y="288.6" width="40" height="40" rx="4" fill="#2d444f" stroke="#d39a55" stroke-width="2"/>
+<text x="265.0" y="314.6" font-size="16" fill="#f2f5f6" text-anchor="middle">T11</text>
+<path d="M265.0 263.6 L265.0 240.60000000000002" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T12" data-size="titanic" data-bank="C">
+<rect x="290.6" y="288.6" width="40" height="40" rx="4" fill="#2d444f" stroke="#d39a55" stroke-width="2"/>
+<text x="310.6" y="314.6" font-size="16" fill="#f2f5f6" text-anchor="middle">T12</text>
+<path d="M310.6 263.6 L310.6 240.60000000000002" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<rect x="756.4" y="269.6" width="202.8" height="75" rx="7" fill="#14232d" stroke="#d39a55" stroke-width="2"/>
+<text x="857.8" y="217.60000000000002" font-size="17" fill="#d39a55" text-anchor="middle">D · 下层右舷 · 4T</text>
+<g id="slot-T13" data-size="titanic" data-bank="D">
+<rect x="769.4" y="288.6" width="40" height="40" rx="4" fill="#2d444f" stroke="#d39a55" stroke-width="2"/>
+<text x="789.4" y="314.6" font-size="16" fill="#f2f5f6" text-anchor="middle">T13</text>
+<path d="M789.4 263.6 L789.4 240.60000000000002" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T14" data-size="titanic" data-bank="D">
+<rect x="815.0" y="288.6" width="40" height="40" rx="4" fill="#2d444f" stroke="#d39a55" stroke-width="2"/>
+<text x="835.0" y="314.6" font-size="16" fill="#f2f5f6" text-anchor="middle">T14</text>
+<path d="M835.0 263.6 L835.0 240.60000000000002" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T15" data-size="titanic" data-bank="D">
+<rect x="860.6" y="288.6" width="40" height="40" rx="4" fill="#2d444f" stroke="#d39a55" stroke-width="2"/>
+<text x="880.6" y="314.6" font-size="16" fill="#f2f5f6" text-anchor="middle">T15</text>
+<path d="M880.6 263.6 L880.6 240.60000000000002" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<g id="slot-T16" data-size="titanic" data-bank="D">
+<rect x="906.2" y="288.6" width="40" height="40" rx="4" fill="#2d444f" stroke="#d39a55" stroke-width="2"/>
+<text x="926.2" y="314.6" font-size="16" fill="#f2f5f6" text-anchor="middle">T16</text>
+<path d="M926.2 263.6 L926.2 240.60000000000002" stroke="#69c1cc" stroke-width="2" marker-end="url(#arrow)"/>
+</g>
+<text x="1130" y="177" fill="#69c1cc" font-size="22">硬性要求</text>
+<text x="1130" y="211" fill="#e0e6e9" font-size="18">至少16个真正的T槽</text>
+<text x="1130" y="245" fill="#a8b5c0" font-size="18">图中T01—T16均为独立位置。</text>
+<text x="1130" y="304" fill="#69c1cc" font-size="22">当前草案</text>
+<text x="1130" y="338" fill="#e0e6e9" font-size="18">A／B：上层火力组</text>
+<text x="1130" y="372" fill="#e0e6e9" font-size="18">C／D：前置下层火力组</text>
+<text x="1130" y="406" fill="#a8b5c0" font-size="18">上下错层，为前向发射留空间。</text>
+<text x="1130" y="465" fill="#69c1cc" font-size="22">整舰组织</text>
+<text x="1130" y="499" fill="#e0e6e9" font-size="18">主脊分岔 → 保留空腔 → 汇合</text>
+<text x="1130" y="533" fill="#a8b5c0" font-size="18">命运接口进入舰体主结构。</text>
+<text x="1130" y="567" fill="#a8b5c0" font-size="18">每组后方配供能、火控和维护体量。</text>
+<text x="1130" y="626" fill="#d39a55" font-size="22">实际实现待做</text>
+<text x="1130" y="660" fill="#e0e6e9" font-size="18">原生规格：size = titanic</text>
+<text x="1130" y="694" fill="#a8b5c0" font-size="18">独立舰种还需可用的T级武器组件。</text>
+<text x="1130" y="728" fill="#a8b5c0" font-size="18">当前游戏仍使用旧六L技术样品。</text>
+<text x="60" y="944" fill="#a8b5c0" font-size="17">正式外观、分段数量、武器种类与数值待收敛；当前坐标仅供方案讨论。2D投影不证明3D射界或无遮挡。</text>
+<text x="60" y="973" fill="#70828f" font-size="15">2026-11-04 · 方案v01 · 世界观与美术依据见同目录README与docs/art/ships/AEMUSA_FLAGSHIP_REDESIGN_v0.1.md</text>
+</g></svg>
