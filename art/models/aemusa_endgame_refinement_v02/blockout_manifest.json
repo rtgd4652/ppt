@@ -1,0 +1,410 @@
+{
+  "status": "sculpted_refinement_pending_visual_review",
+  "coordinates": "+Y bow, +Z up; author units, not metres",
+  "source_reference": "art/concepts/aemusa_flagship_redesign_20261105/endgame_transcendent_v01.png",
+  "blend": "art/models/aemusa_endgame_refinement_v02/endgame_refinement_v02.blend",
+  "locators": [
+    {
+      "id": "t_gun_01",
+      "bank": "A",
+      "position": [
+        -10.74999713897705,
+        29.0,
+        4.800000190734863
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0.8
+    },
+    {
+      "id": "t_gun_02",
+      "bank": "A",
+      "position": [
+        -12.749998092651367,
+        20.0,
+        5.5
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_03",
+      "bank": "A",
+      "position": [
+        -14.0,
+        10.0,
+        5.699999809265137
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_04",
+      "bank": "A",
+      "position": [
+        -14.199999809265137,
+        -22.0,
+        5.0
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_05",
+      "bank": "B",
+      "position": [
+        10.74999713897705,
+        29.0,
+        4.800000190734863
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0.8
+    },
+    {
+      "id": "t_gun_06",
+      "bank": "B",
+      "position": [
+        12.749998092651367,
+        20.0,
+        5.5
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_07",
+      "bank": "B",
+      "position": [
+        14.0,
+        10.0,
+        5.699999809265137
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_08",
+      "bank": "B",
+      "position": [
+        14.199999809265137,
+        -22.0,
+        5.0
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_09",
+      "bank": "C",
+      "position": [
+        -10.74999713897705,
+        29.0,
+        -4.800000190734863
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0.8
+    },
+    {
+      "id": "t_gun_10",
+      "bank": "C",
+      "position": [
+        -12.749998092651367,
+        20.0,
+        -5.5
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_11",
+      "bank": "C",
+      "position": [
+        -14.0,
+        10.0,
+        -5.699999809265137
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_12",
+      "bank": "C",
+      "position": [
+        -14.199999809265137,
+        -22.0,
+        -5.0
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_13",
+      "bank": "D",
+      "position": [
+        10.74999713897705,
+        29.0,
+        -4.800000190734863
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0.8
+    },
+    {
+      "id": "t_gun_14",
+      "bank": "D",
+      "position": [
+        12.749998092651367,
+        20.0,
+        -5.5
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_15",
+      "bank": "D",
+      "position": [
+        14.0,
+        10.0,
+        -5.699999809265137
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    },
+    {
+      "id": "t_gun_16",
+      "bank": "D",
+      "position": [
+        14.199999809265137,
+        -22.0,
+        -5.0
+      ],
+      "rotation_radians": [
+        0,
+        0,
+        0
+      ],
+      "forward_axis": [
+        0,
+        1,
+        0
+      ],
+      "outboard_adjustment": 0
+    }
+  ],
+  "slot_count": 16,
+  "banks": {
+    "A": 4,
+    "B": 4,
+    "C": 4,
+    "D": 4
+  },
+  "forward_static_ray_clearance": "16 of 16 against blockout solid meshes; not engine weapon validation",
+  "starfield": "procedural cloud/star/spiral demonstration, not game-ready material",
+  "runtime_16T_implemented": false,
+  "game_operated": false,
+  "user_live_scene_modified": false,
+  "automatic_lod": false,
+  "appearance_approved": false,
+  "parent_source": "art/models/aemusa_endgame_blockout_v01/endgame_blockout_v01.blend",
+  "locator_adjustments": [
+    {
+      "id": "t_gun_01",
+      "delta": [
+        -0.7499980926513672,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "t_gun_02",
+      "delta": [
+        -0.7499980926513672,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "t_gun_05",
+      "delta": [
+        0.7499980926513672,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "t_gun_06",
+      "delta": [
+        0.7499980926513672,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "t_gun_09",
+      "delta": [
+        -0.7499980926513672,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "t_gun_10",
+      "delta": [
+        -0.7499980926513672,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "t_gun_13",
+      "delta": [
+        0.7499980926513672,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "id": "t_gun_14",
+      "delta": [
+        0.7499980926513672,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "shading": "EEVEE painted-value material prototype; final game shader not implemented"
+}

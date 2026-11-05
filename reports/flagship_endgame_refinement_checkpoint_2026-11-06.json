@@ -1,0 +1,130 @@
+{
+  "date": "2026-11-06",
+  "base_commit": "cd63408",
+  "status": "v02_refinement_saved_and_reopened_pending_visual_review",
+  "user_instruction": "继续",
+  "work_session": "延续11月5日已取消时间截止的连续工作，用户未要求停止",
+  "source": "art/models/aemusa_endgame_refinement_v02/endgame_refinement_v02.blend",
+  "build_script": "tools/art/refine_endgame_flagship_v02.py",
+  "parent_source": "art/models/aemusa_endgame_blockout_v01/endgame_blockout_v01.blend",
+  "verification": "art/models/aemusa_endgame_refinement_v02/verification.json",
+  "manifest": "art/models/aemusa_endgame_refinement_v02/blockout_manifest.json",
+  "previews": [
+    "art/models/aemusa_endgame_refinement_v02/previews/oblique.png",
+    "art/models/aemusa_endgame_refinement_v02/previews/three_view.png",
+    "art/models/aemusa_endgame_refinement_v02/previews/geometry.png",
+    "art/models/aemusa_endgame_refinement_v02/previews/core_detail.png"
+  ],
+  "actual_changes": [
+    "舰体与外壳改为明确的转折面及纵向连续截面",
+    "增加独立深色内衬，修复首轮内衬交叠",
+    "绘画式明暗材质样品改善主次色块",
+    "星空以程序化云层、星点和局部旋臂替代线圈占位",
+    "主轴金线沿真实屋脊走向修正，预览中不再间歇被舰体遮断"
+  ],
+  "geometry": {
+    "hull_triangles": 10512,
+    "dimensions_xyz": [
+      29.639999389648438,
+      97.0,
+      12.774999618530273
+    ],
+    "unit": "作者单位，不代表米制或最终游戏尺度",
+    "unique_T_locators": 16,
+    "banks": {
+      "A": 4,
+      "B": 4,
+      "C": 4,
+      "D": 4
+    },
+    "locator_changes": [
+      {
+        "id": "t_gun_01",
+        "delta": [
+          -0.7499980926513672,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "t_gun_02",
+        "delta": [
+          -0.7499980926513672,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "t_gun_05",
+        "delta": [
+          0.7499980926513672,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "t_gun_06",
+        "delta": [
+          0.7499980926513672,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "t_gun_09",
+        "delta": [
+          -0.7499980926513672,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "t_gun_10",
+        "delta": [
+          -0.7499980926513672,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "t_gun_13",
+        "delta": [
+          0.7499980926513672,
+          0.0,
+          0.0
+        ]
+      },
+      {
+        "id": "t_gun_14",
+        "delta": [
+          0.7499980926513672,
+          0.0,
+          0.0
+        ]
+      }
+    ],
+    "static_forward_rays": "16/16当前实体前方无遮挡；不是引擎射击通过"
+  },
+  "verification_summary": [
+    "源文件重开通过",
+    "三视同源、单位缩放和正交相机检查通过",
+    "无外部库或未打包字体依赖",
+    "最终斜视和核心近景已目视核对"
+  ],
+  "limitations": [
+    "外壳和器物细节仍简化，未完整还原终局概念图",
+    "绘画式ShaderToRGB和程序化星空为Blender/EEVEE预览材质，尚无游戏迁移方案",
+    "真实游戏T槽、T组件、发射动画、LOD与游戏曝光均未实现或验收"
+  ],
+  "approval_review_recovery": {
+    "first_attempt": "修正运行前自动审批因额度限制未完成，命令未执行",
+    "after_user_resume": "用户说继续后重试同一受控后台命令，执行成功并完成核对"
+  },
+  "appearance_approved": false,
+  "runtime_16T_implemented": false,
+  "mod_files_changed": false,
+  "game_operated": false,
+  "user_live_blender_modified": false,
+  "running_commands": [],
+  "next_action": "继续收敛外壳的开合层次和发射接口造型，保持中央星空意象；正式游戏材质与16T接线另作为后续阶段。"
+}

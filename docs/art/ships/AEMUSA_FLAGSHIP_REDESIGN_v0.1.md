@@ -2,7 +2,17 @@
 
 2026-11-04，状态`draft_pending_human_review`。承接用户明确的[整舰重设与至少16T要求](../FLAGSHIP_REDESIGN_DECISION_2026-11-03.md)。本方案交付完整概念与可计数布局，当前游戏仍是已退回的六L技术样品。
 
-## 11月5日最新：真实结构灰模与同尺度三视
+## 11月6日最新：舰壳与星空样品v02
+
+延续用户要求继续的同一轮工作，已另存[v02 Blender源](../../../art/models/aemusa_endgame_refinement_v02/endgame_refinement_v02.blend)、[斜视](../../../art/models/aemusa_endgame_refinement_v02/previews/oblique.png)、[真实三视](../../../art/models/aemusa_endgame_refinement_v02/previews/three_view.png)、[核心近景](../../../art/models/aemusa_endgame_refinement_v02/previews/core_detail.png)及纯几何图。v01保留供对照。
+
+本轮将泡状截面改为明确转折面，加入退让的深色内衬；采用绘画式明暗样品及程序化星点／云层／旋臂。主轴线已跟随真实屋脊高度，内衬交叠修正。16个标识和分组保持，8个点为避开新壳形沿左右舷各自向外移0.75作者单位，其余位置和前向不变。最终16条前向静态射线通过；这不证明引擎射击或16T槽已实现。
+
+实体10,512三角面，作者单位长97／宽29.64／高12.775；源重开、同尺度正交实例、无外部库／字体依赖通过，见[检查点](../../../reports/flagship_endgame_refinement_checkpoint_2026-11-06.json)及[核对](../../../art/models/aemusa_endgame_refinement_v02/verification.json)。此前一次后台修正被自动审批额度问题中断，命令未执行；用户继续后重试成功，当前没有待执行命令。
+
+外壳和发射接口仍简化，程序化星空与ShaderToRGB是Blender/EEVEE预览样品，不是正式群星材质；游戏T组件、动画、LOD与实际曝光未接入。后续先继续收敛外壳开合和接口造型，保留已得到用户喜爱的中央星空。复现脚本：[refine_endgame_flagship_v02.py](../../../tools/art/refine_endgame_flagship_v02.py)，仍须独立后台factory-startup执行。
+
+## 11月5日：真实结构灰模与同尺度三视
 
 用户继续工作后，已制作独立[Blender结构源](../../../art/models/aemusa_endgame_blockout_v01/endgame_blockout_v01.blend)，并从同一几何输出[斜视](../../../art/models/aemusa_endgame_blockout_v01/previews/oblique.png)、[同尺度正交三视](../../../art/models/aemusa_endgame_blockout_v01/previews/three_view.png)和[纯几何三视](../../../art/models/aemusa_endgame_blockout_v01/previews/geometry.png)。这三视图来自真实集合实例和同一正交相机，不再由生成图分别推定。
 

@@ -1,8 +1,10 @@
 # 跨 AI 接手入口
 
-更新：2026-11-05。适用于 Codex、其他本地 AI 和没有本会话历史的助手。只读本页、[AGENTS](AGENTS.md)和[TODO](docs/TODO.md)的当前事项即可开始判断任务；详细能力按需读[操作说明](docs/AGENT_OPERATIONS.md)。不要求先通读聊天、历史报告或整个项目。
+更新：2026-11-06。适用于 Codex、其他本地 AI 和没有本会话历史的助手。只读本页、[AGENTS](AGENTS.md)和[TODO](docs/TODO.md)的当前事项即可开始判断任务；详细能力按需读[操作说明](docs/AGENT_OPERATIONS.md)。不要求先通读聊天、历史报告或整个项目。
 
 ## 当前授权与工作状态
+
+- **11月6日连续工作已保存v02舰壳／星空样稿。** [源文件](art/models/aemusa_endgame_refinement_v02/endgame_refinement_v02.blend)、[四图及检查点](reports/flagship_endgame_refinement_checkpoint_2026-11-06.json)齐全：转折面与深色内衬、绘画式明暗、星点／云层／旋臂；主轴线遮断和内衬交叠已修正。实体10,512三角面；16标识／四组保持，8点各向外移0.75作者单位后16条静态前向通过。源重开、同尺度正交实例、无外部库／字体依赖通过，v01保留。一次修正此前因自动审批额度问题未执行；用户说继续后同一后台命令重试成功，无待执行／后台命令。当前仍是简化外观样稿，EEVEE明暗与程序化星空未移植游戏；T组件、实际16T、动画和LOD未接。下一步收敛外壳开合层次和发射接口；本轮时间例外延续，用户未说停。
 
 - **11月5日本轮已进入独立结构灰模。** 用户“继续吧”后制作[Blender源](art/models/aemusa_endgame_blockout_v01/endgame_blockout_v01.blend)、[同源同尺度三视](art/models/aemusa_endgame_blockout_v01/previews/three_view.png)、斜视与纯几何图；[检查点](reports/flagship_endgame_blockout_checkpoint_2026-11-05.json)及[核对](art/models/aemusa_endgame_blockout_v01/verification.json)保存。实体11,584三角面，作者单位97×29.64×12.9；四组16个唯一T定位器和静态前向射线通过，未实现游戏T槽。中央星空用程序化空间带占位，修正了首轮球状／过散问题，当前轮廓与材质仍简化，原终局概念仍为外观目标。真实正视会遮住部分星空，后续精修其可见范围与外壳层次。Blender直连未连上；本机5.1.2独立后台完成，源重开／无外部库与字体依赖通过；未操作用户场景、游戏或暂停原型，无运行命令。今日时间例外仍有效，不因默认截止收工。
 

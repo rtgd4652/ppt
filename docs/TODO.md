@@ -1,9 +1,11 @@
 # 当前执行清单
 
-更新：2026-11-05。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。本页只列当前事项与仍有效的后续范围；旧已完成清单保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)，不作为执行队列。
+更新：2026-11-06。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。本页只列当前事项与仍有效的后续范围；旧已完成清单保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)，不作为执行队列。
 
 ## 当前接手点
 
+- [x] 保存[v02舰壳／星空样稿](../art/models/aemusa_endgame_refinement_v02/endgame_refinement_v02.blend)、同源三视与核心近景；主轴遮断／内衬交叠修正，源重开及16条静态前向核对通过。详情见[检查点](../reports/flagship_endgame_refinement_checkpoint_2026-11-06.json)。
+- [ ] 继续收敛外壳开合和发射接口造型；程序化星空及绘画明暗目前为EEVEE演示，正式游戏材质／16T组件／动画／LOD仍待实现。不可将定位器或离线核对写成运行通过。
 - [x] 建立[终局旗舰真实结构灰模](../art/models/aemusa_endgame_blockout_v01/endgame_blockout_v01.blend)、[同尺度三视](../art/models/aemusa_endgame_blockout_v01/previews/three_view.png)与16个唯一T定位器。源重开、静态前向遮挡／实例尺度与依赖核对通过，实体11,584三角面。
 - [ ] 基于真实灰模精修外壳与中央星空可见范围，继续向终局概念靠拢；当前程序化星空是占位，未完成正式材质、16T游戏接口、动画或LOD。
 - **本轮取消时间限制。** 用户明确“今天去除时间，我说停才停”，撤销自动收尾；继续当前旗舰设计，按工作段保存，等用户明确说停。例外见AGENTS，不永久更改其他工作日规则。
