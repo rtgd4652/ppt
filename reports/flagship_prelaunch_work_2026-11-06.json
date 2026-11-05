@@ -1,0 +1,89 @@
+{
+  "date": "2026-11-06",
+  "base_commit": "5733a16",
+  "user_request": "继续吧，今天到实际登录游戏查看效果之前结束",
+  "status": "ready_for_game_observation_not_launched",
+  "stop_boundary": "模型与资源接入、16T装备链及静态检查完成后停止；不启动游戏或进行实机观察",
+  "plan": [
+    "将v02复制为v03生产候选，烘焙星空、制作独立DDS图集并导出PDX三段",
+    "新增本舰专用T组件及能源核心；基础武器数值以本机原版Perdition Beam为开发参照，不称终局平衡完成",
+    "保留旧六L区段键兼容存档；新增16T区段并接到后续生成的固定事件设计",
+    "接入新图形实体与原唯一舰身份，保留获取／恢复／剧情逻辑",
+    "核对导出回读、贴图和定位器、组件合法性、设计供能、引用、本地化与原有相关检查",
+    "保存明确的待实机事项和下一次观察步骤，停在进入游戏之前"
+  ],
+  "planned_script_files": [
+    "mod/common/component_templates/aemusa_endgame_flagship_components.txt",
+    "mod/common/component_sets/aemusa_endgame_flagship_sets.txt",
+    "mod/localisation/simp_chinese/aemusa_flagship_l_simp_chinese.yml",
+    "mod/common/section_templates/aemusa_reality_flagship_sections.txt",
+    "mod/common/global_ship_designs/aemusa_reality_flagship_designs.txt",
+    "mod/common/ship_sizes/aemusa_reality_flagship.txt"
+  ],
+  "planned_asset_directory": "mod/gfx/models/aemusa_endgame_v03",
+  "known_save_boundary": "旧存档里的设计实例可能保持六L；保留旧模板，不预先声称自动迁移成功",
+  "appearance_approved": false,
+  "runtime_status": "not_started",
+  "game_operated": false,
+  "work_state": "stopped_at_user_requested_pre_game_boundary",
+  "completed": [
+    "三段PDX与6张独立BC3 DDS已导出并安装；含烘焙星空和完整mip",
+    "新固定设计16T，主炮与10000供能核心限定本舰；余量1470",
+    "原六L模板和定位器别名保留，旧船显示指向新实体；不承诺自动迁移旧设计",
+    "旧v08三张同名公共DDS独立改名，图像字节保持",
+    "10条资产登记，原获取／恢复效果未修改",
+    "专项预检与总静态通过，相关AWP06脚本8项通过"
+  ],
+  "source": "art/models/aemusa_endgame_runtime_v03/endgame_runtime_v03.blend",
+  "production_manifest": "art/models/aemusa_endgame_runtime_v03/production_manifest.json",
+  "installation_report": "reports/flagship_v03_installation_2026-11-06.json",
+  "checks": {
+    "preflight": "reports/flagship_v03_preflight_2026-11-06.json",
+    "full_static": "reports/flagship_v03_full_static_2026-11-06.json",
+    "full_static_counts": {
+      "script_files": 278,
+      "events": 261,
+      "localization_keys": 2280,
+      "registered_states": 791,
+      "referenced_states": 734
+    },
+    "errors": 0,
+    "warnings": 0,
+    "related_tests": {
+      "command": "python -m unittest test_awp06_crisis_state -v",
+      "tests": 8,
+      "result": "pass",
+      "elapsed_seconds": 0.056
+    }
+  },
+  "model_summary": {
+    "triangles": 15328,
+    "parts": 3,
+    "DDS": 6,
+    "installed_files": 11,
+    "asset_registry_records": 10
+  },
+  "balancing_status": "开发参照：新T武器采用本机原生Perdition Beam基础数值；旧舰体／防护／速度仍保留，终局整体平衡未完成",
+  "script_changes": {
+    "ship_size": "新实体；collision_radius 4.5→16以适应当前显示尺寸；唯一舰限制、舰体值与恢复逻辑保持",
+    "sections": "新增12T/0T/4T三段；旧2L/3L/1L段保留",
+    "global_design": "后续生成采用新16T段和专用反应堆；舰种、设计名和剧情入口不变"
+  },
+  "launcher_opened": false,
+  "save_files_modified": false,
+  "running_commands": [],
+  "remaining_runtime_checks": [
+    "正常显示与近远景星空材质、颜色和曝光",
+    "新生成固定设计的16T与供能",
+    "真实开火方向／效果／射界",
+    "旧存档的设计保留或更新行为",
+    "本轮资源加载日志"
+  ],
+  "nonblocking_deferred": [
+    "外观仍待用户评审",
+    "未接自动LOD及专属动画",
+    "终局数值与经济平衡未定",
+    "仓库descriptor仍是既有4.4.*声明，未在本轮扩大为完整版本兼容通过"
+  ],
+  "next_action": "本轮到此结束。用户下次明确继续实机验收后，先核对真实播放集／版本／窗口，再用隔离档观察；不得把静态通过写成运行通过。"
+}

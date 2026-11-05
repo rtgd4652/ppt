@@ -2,6 +2,8 @@
 
 ## 后续真实结构样稿
 
+11月6日已准备到用户指定的“登录游戏查看效果之前”：v03三段网格、烘焙星空与独立DDS、16T固定设计已接入开发版。可查看[实际DDS整舰预览](../../models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)、[星空近景](../../models/aemusa_endgame_runtime_v03/previews/runtime_star_detail.png)、[生产源](../../models/aemusa_endgame_runtime_v03/endgame_runtime_v03.blend)与[预检／停止边界](../../../reports/flagship_prelaunch_work_2026-11-06.json)。未启动游戏，未改存档，运行仍未验；旧六L模板保留兼容，旧实例不保证自动升级。
+
 11月6日已继续到[v02真实样稿](../../models/aemusa_endgame_refinement_v02/endgame_refinement_v02.blend)，可看[斜视](../../models/aemusa_endgame_refinement_v02/previews/oblique.png)、[同源三视](../../models/aemusa_endgame_refinement_v02/previews/three_view.png)、[星空近景](../../models/aemusa_endgame_refinement_v02/previews/core_detail.png)。新增转折面、深色内衬和绘画式明暗样品，程序化星空加入旋臂；修复主轴线遮断和内衬交叠。16标识保留，8点各外移0.75作者单位后静态前向通过。仍为离线外观样稿，详见[检查点](../../../reports/flagship_endgame_refinement_checkpoint_2026-11-06.json)。
 
 已从终局方向制作[Blender灰模源](../../models/aemusa_endgame_blockout_v01/endgame_blockout_v01.blend)，可查看[真实同尺度三视](../../models/aemusa_endgame_blockout_v01/previews/three_view.png)、[斜视](../../models/aemusa_endgame_blockout_v01/previews/oblique.png)与[纯几何](../../models/aemusa_endgame_blockout_v01/previews/geometry.png)。16个T级发射定位器已建立，静态前向遮挡核对通过，尚非游戏T槽实现；源文件重开通过。详见[检查点](../../../reports/flagship_endgame_blockout_checkpoint_2026-11-05.json)。

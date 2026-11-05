@@ -1,10 +1,125 @@
-# v08三段外观开发候选保留原六L槽与全部组件；个人观测界面只位于中段。
+# 新固定设计采用16个真实T槽，前列12／后列4；原六L模板键保留兼容旧设计实例。
+# 旧实例仅更新显示，不冒称旧存档组件已自动迁移到16T。
+ship_section_template = {
+	key = "AEMUSA_ENDGAME_FLAGSHIP_BOW"
+	ship_size = aemusa_reality_flagship
+	fits_on_slot = bow
+	should_draw_components = no
+	entity = "aef03_bow_entity"
+	icon = "GFX_ship_part_core_bow"
+	ai_tags = { artillery }
+	component_slot = {
+		name = "TITANIC_GUN_01"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_01"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_02"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_02"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_03"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_03"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_05"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_05"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_06"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_06"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_07"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_07"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_09"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_09"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_10"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_10"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_11"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_11"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_13"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_13"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_14"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_14"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_15"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_15"
+	}
+	large_utility_slots = 3
+}
+
+ship_section_template = {
+	key = "AEMUSA_ENDGAME_FLAGSHIP_MID"
+	ship_size = aemusa_reality_flagship
+	fits_on_slot = mid
+	should_draw_components = no
+	entity = "aef03_mid_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { artillery }
+	large_utility_slots = 3
+}
+
+ship_section_template = {
+	key = "AEMUSA_ENDGAME_FLAGSHIP_STERN"
+	ship_size = aemusa_reality_flagship
+	fits_on_slot = stern
+	should_draw_components = no
+	entity = "aef03_stern_entity"
+	icon = "GFX_ship_part_core_stern"
+	ai_tags = { artillery }
+	component_slot = {
+		name = "TITANIC_GUN_04"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_04"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_08"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_08"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_12"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_12"
+	}
+	component_slot = {
+		name = "TITANIC_GUN_16"
+		template = "invisible_titanic_fixed"
+		locatorname = "t_gun_16"
+	}
+	aux_utility_slots = 2
+}
+
+# 以下为旧六L兼容模板；保留全部原槽名和效用槽，隐藏原生炮塔外壳。
 ship_section_template = {
 	key = "AEMUSA_REALITY_FLAGSHIP_BOW"
 	ship_size = aemusa_reality_flagship
 	fits_on_slot = bow
-	should_draw_components = yes
-	entity = "arfv08_flagship_bow_entity"
+	should_draw_components = no
+	entity = "aef03_bow_entity"
 	icon = "GFX_ship_part_core_bow"
 	ai_tags = { artillery }
 	component_slot = {
@@ -24,8 +139,8 @@ ship_section_template = {
 	key = "AEMUSA_REALITY_FLAGSHIP_MID"
 	ship_size = aemusa_reality_flagship
 	fits_on_slot = mid
-	should_draw_components = yes
-	entity = "arfv08_flagship_mid_entity"
+	should_draw_components = no
+	entity = "aef03_mid_entity"
 	icon = "GFX_ship_part_core_mid"
 	ai_tags = { artillery }
 	component_slot = {
@@ -50,8 +165,8 @@ ship_section_template = {
 	key = "AEMUSA_REALITY_FLAGSHIP_STERN"
 	ship_size = aemusa_reality_flagship
 	fits_on_slot = stern
-	should_draw_components = yes
-	entity = "arfv08_flagship_stern_entity"
+	should_draw_components = no
+	entity = "aef03_stern_entity"
 	icon = "GFX_ship_part_core_stern"
 	ai_tags = { artillery }
 	component_slot = {

@@ -1,5 +1,5 @@
-# 固定作战设计仅负责现场支援，锚点解除还需普通舰队、巨构解析和现场作业。
-# 原版事件设计同样直接指定核心组件；无需覆写原版组件的舰种触发器。
+# 新生成的固定设计采用16T；原名称、舰种与获取／恢复入口保持。
+# 已存档的旧设计可能仍持有旧六L区段，兼容定义另行保留，不自动改写实例。
 ship_design = {
 	name = "NAME_Aemusa_Reality_Flagship"
 	ship_size = aemusa_reality_flagship
@@ -8,32 +8,42 @@ ship_design = {
 	is_event_design = yes
 	graphical_culture = "humanoid_01"
 	section = {
-		template = "AEMUSA_REALITY_FLAGSHIP_BOW"
+		template = "AEMUSA_ENDGAME_FLAGSHIP_BOW"
 		slot = "bow"
-		component = { slot = "LARGE_GUN_01" template = "LARGE_GAMMA_LASER" }
-		component = { slot = "LARGE_GUN_02" template = "LARGE_MASS_DRIVER_5" }
+		component = { slot = "TITANIC_GUN_01" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_02" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_03" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_05" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_06" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_07" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_09" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_10" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_11" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_13" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_14" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_15" template = "AEMUSA_ENDGAME_T_BEAM" }
 		component = { slot = "LARGE_UTILITY_1" template = "LARGE_ARMOR_4" }
 		component = { slot = "LARGE_UTILITY_2" template = "LARGE_SHIELD_4" }
 		component = { slot = "LARGE_UTILITY_3" template = "LARGE_ARMOR_4" }
 	}
 	section = {
-		template = "AEMUSA_REALITY_FLAGSHIP_MID"
+		template = "AEMUSA_ENDGAME_FLAGSHIP_MID"
 		slot = "mid"
-		component = { slot = "LARGE_GUN_01" template = "LARGE_MASS_DRIVER_5" }
-		component = { slot = "LARGE_GUN_02" template = "LARGE_GAMMA_LASER" }
-		component = { slot = "LARGE_GUN_03" template = "LARGE_MASS_DRIVER_5" }
 		component = { slot = "LARGE_UTILITY_1" template = "LARGE_SHIELD_4" }
 		component = { slot = "LARGE_UTILITY_2" template = "LARGE_ARMOR_4" }
 		component = { slot = "LARGE_UTILITY_3" template = "LARGE_SHIELD_4" }
 	}
 	section = {
-		template = "AEMUSA_REALITY_FLAGSHIP_STERN"
+		template = "AEMUSA_ENDGAME_FLAGSHIP_STERN"
 		slot = "stern"
-		component = { slot = "LARGE_GUN_01" template = "LARGE_GAMMA_LASER" }
+		component = { slot = "TITANIC_GUN_04" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_08" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_12" template = "AEMUSA_ENDGAME_T_BEAM" }
+		component = { slot = "TITANIC_GUN_16" template = "AEMUSA_ENDGAME_T_BEAM" }
 		component = { slot = "AUX_UTILITY_1" template = "SHIELD_BOOSTER" }
 		component = { slot = "AUX_UTILITY_2" template = "SHIELD_BOOSTER" }
 	}
-	required_component = "BATTLESHIP_ZERO_POINT_REACTOR"
+	required_component = "AEMUSA_ENDGAME_REACTOR"
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SHIP_THRUSTER_4"
 	required_component = "SENSOR_4"

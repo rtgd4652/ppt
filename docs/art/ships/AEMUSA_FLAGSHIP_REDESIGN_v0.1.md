@@ -2,7 +2,21 @@
 
 2026-11-04，状态`draft_pending_human_review`。承接用户明确的[整舰重设与至少16T要求](../FLAGSHIP_REDESIGN_DECISION_2026-11-03.md)。本方案交付完整概念与可计数布局，当前游戏仍是已退回的六L技术样品。
 
-## 11月6日最新：舰壳与星空样品v02
+## 11月6日最新：已准备到游戏观察之前
+
+用户要求“继续吧，今天到实际登录游戏查看效果之前结束”。已完成v03开发候选接入，当前停在进入游戏之前；没有启动器／游戏操作、控制台待输入或存档修改。
+
+- 资源：[生产源](../../../art/models/aemusa_endgame_runtime_v03/endgame_runtime_v03.blend)及[导出清单](../../../art/models/aemusa_endgame_runtime_v03/production_manifest.json)；三段PDX合计15,328三角面，六张独立BC3 DDS均有11级mip。星空由原创程序材质烘焙，当前已使用实际DDS；[整舰预览](../../../art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)与[星空近景](../../../art/models/aemusa_endgame_runtime_v03/previews/runtime_star_detail.png)仍为离线图。
+- 装备：新增本舰专用恒定主炮和10000供能核心，固定设计前列12T／后列4T；真实`titanic`模板和16个PDX定位器逐项对应。主炮以本机原生Perdition Beam基础数值为开发参照，整舰供能余量1470。舰体、防护、速度等旧参数保留，终局整体平衡未完成。
+- 兼容：旧六L模板键、效用槽和挂点别名保留，显示引用更新为新实体；后续新生成使用16T固定设计。旧存档设计是否自动更新尚未运行验证，不因此改写原获取、恢复或剧情规则。
+- 清理：旧v08三张公共DDS与公共v04重名的问题通过独立改名解决，文件字节保持；10条新资产登记均为开发候选，未标记外观或运行通过。
+- 验证：[专项预检](../../../reports/flagship_v03_preflight_2026-11-06.json)通过；[总静态](../../../reports/flagship_v03_full_static_2026-11-06.json)278脚本／261事件／2280本地化，0错误／0警告；相关AWP06脚本8项通过。具体边界见[完整交接检查点](../../../reports/flagship_prelaunch_work_2026-11-06.json)。
+
+下次用户明确开始实机后，先核对实际版本、播放集和窗口，进入隔离档；观察新舰体与中央星空，再检查新生成固定设计的16T与开火方向。已有旧船可能仍使用六L设计，须单独辨认，不能把显示更新等同于装备迁移。自动LOD、专属动画和最终平衡另行处理。仓库descriptor仍保留既有版本声明，不把本轮资产预检扩展成整个Mod的新版本兼容认证。
+
+复现顺序：独立后台运行`build_endgame_runtime_v03.py --mode bake`，用项目隔离Pillow运行`prepare_endgame_runtime_textures_v03.py`，再后台`build_endgame_runtime_v03.py --mode export`；导出回读成功后`install_endgame_runtime_v03.py`安装，`check_endgame_flagship_v03.py`预检。中间烘焙源在忽略目录runtime-backups中，可由第一步重新生成。不要重跑旧v08构建去覆盖本轮资源。
+
+## 11月6日：舰壳与星空样品v02
 
 延续用户要求继续的同一轮工作，已另存[v02 Blender源](../../../art/models/aemusa_endgame_refinement_v02/endgame_refinement_v02.blend)、[斜视](../../../art/models/aemusa_endgame_refinement_v02/previews/oblique.png)、[真实三视](../../../art/models/aemusa_endgame_refinement_v02/previews/three_view.png)、[核心近景](../../../art/models/aemusa_endgame_refinement_v02/previews/core_detail.png)及纯几何图。v01保留供对照。
 

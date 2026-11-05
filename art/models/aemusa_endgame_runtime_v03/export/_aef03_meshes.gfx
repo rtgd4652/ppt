@@ -1,0 +1,50 @@
+# 原创终局旗舰v03运行候选，所有贴图使用独立名称。
+objectTypes = {
+    pdxmesh = {
+        name = "aef03_bow_mesh"
+        file = "gfx/models/aemusa_endgame_v03/aef03_bow.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "aef03_bow"
+            index = 0
+            texture_diffuse = "aef03_hull_diffuse.dds"
+            texture_normal = "aef03_hull_normal.dds"
+            texture_specular = "aef03_hull_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "aef03_mid_mesh"
+        file = "gfx/models/aemusa_endgame_v03/aef03_mid.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "aef03_mid"
+            index = 0
+            texture_diffuse = "aef03_star_diffuse.dds"
+            texture_normal = "aef03_star_normal.dds"
+            texture_specular = "aef03_star_properties.dds"
+            shader = "PdxMeshShip"
+        }
+        meshsettings = {
+            name = "aef03_mid"
+            index = 1
+            texture_diffuse = "aef03_hull_diffuse.dds"
+            texture_normal = "aef03_hull_normal.dds"
+            texture_specular = "aef03_hull_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+    pdxmesh = {
+        name = "aef03_stern_mesh"
+        file = "gfx/models/aemusa_endgame_v03/aef03_stern.mesh"
+        scale = 1.0
+        meshsettings = {
+            name = "aef03_stern"
+            index = 0
+            texture_diffuse = "aef03_hull_diffuse.dds"
+            texture_normal = "aef03_hull_normal.dds"
+            texture_specular = "aef03_hull_properties.dds"
+            shader = "PdxMeshShip"
+        }
+    }
+}

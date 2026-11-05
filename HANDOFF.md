@@ -4,6 +4,8 @@
 
 ## 当前授权与工作状态
 
+- **11月6日已达到用户指定停止边界：进入游戏查看效果之前。** v03三段PDX／六DDS与烘焙星空、16T固定设计及本舰专用主炮／供能核心已接入开发版；[完整检查点](reports/flagship_prelaunch_work_2026-11-06.json)、[专项预检](reports/flagship_v03_preflight_2026-11-06.json)、[生产源及预览](art/models/aemusa_endgame_runtime_v03/production_manifest.json)保存。合计15,328三角面，供能余量1470；总静态0错误／0警告，相关AWP06脚本8项通过。旧六L区段和定位器别名保留，原获取／恢复效果未改；新生成设计为16T，旧档是否自动更新须实测。旧v08三张重复DDS独立改名，字节保持，10条新资产登记。未启动游戏／启动器、未改存档，没有后台或待输入命令。**当前停止，不自动进入实机；下次用户明确继续游戏观察后再核对实际版本／播放集／窗口。** 外观、真实开火、旧档行为仍待验；自动LOD／专属动画／终局平衡未完成。本地提交看git log -1，未推送远端。
+
 - **11月6日连续工作已保存v02舰壳／星空样稿。** [源文件](art/models/aemusa_endgame_refinement_v02/endgame_refinement_v02.blend)、[四图及检查点](reports/flagship_endgame_refinement_checkpoint_2026-11-06.json)齐全：转折面与深色内衬、绘画式明暗、星点／云层／旋臂；主轴线遮断和内衬交叠已修正。实体10,512三角面；16标识／四组保持，8点各向外移0.75作者单位后16条静态前向通过。源重开、同尺度正交实例、无外部库／字体依赖通过，v01保留。一次修正此前因自动审批额度问题未执行；用户说继续后同一后台命令重试成功，无待执行／后台命令。当前仍是简化外观样稿，EEVEE明暗与程序化星空未移植游戏；T组件、实际16T、动画和LOD未接。下一步收敛外壳开合层次和发射接口；本轮时间例外延续，用户未说停。
 
 - **11月5日本轮已进入独立结构灰模。** 用户“继续吧”后制作[Blender源](art/models/aemusa_endgame_blockout_v01/endgame_blockout_v01.blend)、[同源同尺度三视](art/models/aemusa_endgame_blockout_v01/previews/three_view.png)、斜视与纯几何图；[检查点](reports/flagship_endgame_blockout_checkpoint_2026-11-05.json)及[核对](art/models/aemusa_endgame_blockout_v01/verification.json)保存。实体11,584三角面，作者单位97×29.64×12.9；四组16个唯一T定位器和静态前向射线通过，未实现游戏T槽。中央星空用程序化空间带占位，修正了首轮球状／过散问题，当前轮廓与材质仍简化，原终局概念仍为外观目标。真实正视会遮住部分星空，后续精修其可见范围与外壳层次。Blender直连未连上；本机5.1.2独立后台完成，源重开／无外部库与字体依赖通过；未操作用户场景、游戏或暂停原型，无运行命令。今日时间例外仍有效，不因默认截止收工。

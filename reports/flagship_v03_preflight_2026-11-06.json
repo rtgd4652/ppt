@@ -1,0 +1,236 @@
+{
+  "date": "2026-11-06",
+  "status": "pass",
+  "real_T_slots": 16,
+  "binding": [
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_01",
+      "locator": "t_gun_01"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_02",
+      "locator": "t_gun_02"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_03",
+      "locator": "t_gun_03"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_05",
+      "locator": "t_gun_05"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_06",
+      "locator": "t_gun_06"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_07",
+      "locator": "t_gun_07"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_09",
+      "locator": "t_gun_09"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_10",
+      "locator": "t_gun_10"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_11",
+      "locator": "t_gun_11"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_13",
+      "locator": "t_gun_13"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_14",
+      "locator": "t_gun_14"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "slot": "TITANIC_GUN_15",
+      "locator": "t_gun_15"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_STERN",
+      "entity": "aef03_stern_entity",
+      "slot": "TITANIC_GUN_04",
+      "locator": "t_gun_04"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_STERN",
+      "entity": "aef03_stern_entity",
+      "slot": "TITANIC_GUN_08",
+      "locator": "t_gun_08"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_STERN",
+      "entity": "aef03_stern_entity",
+      "slot": "TITANIC_GUN_12",
+      "locator": "t_gun_12"
+    },
+    {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_STERN",
+      "entity": "aef03_stern_entity",
+      "slot": "TITANIC_GUN_16",
+      "locator": "t_gun_16"
+    }
+  ],
+  "legacy_six_L_templates_retained": true,
+  "legacy_locators_resolved": true,
+  "power_breakdown": [
+    {
+      "component": "AEMUSA_ENDGAME_T_BEAM",
+      "count": 16,
+      "power_each": -500.0,
+      "power_total": -8000.0
+    },
+    {
+      "component": "LARGE_ARMOR_4",
+      "count": 3,
+      "power_each": 0.0,
+      "power_total": 0.0
+    },
+    {
+      "component": "LARGE_SHIELD_4",
+      "count": 3,
+      "power_each": -140.0,
+      "power_total": -420.0
+    },
+    {
+      "component": "SHIELD_BOOSTER",
+      "count": 2,
+      "power_each": -20.0,
+      "power_total": -40.0
+    },
+    {
+      "component": "AEMUSA_ENDGAME_REACTOR",
+      "count": 1,
+      "power_each": 10000.0,
+      "power_total": 10000.0
+    },
+    {
+      "component": "HYPER_DRIVE_3",
+      "count": 1,
+      "power_each": -15.0,
+      "power_total": -15.0
+    },
+    {
+      "component": "SHIP_THRUSTER_4",
+      "count": 1,
+      "power_each": -25.0,
+      "power_total": -25.0
+    },
+    {
+      "component": "SENSOR_4",
+      "count": 1,
+      "power_each": -20.0,
+      "power_total": -20.0
+    },
+    {
+      "component": "COMBAT_COMPUTER_ARTILLERY_ADVANCED",
+      "count": 1,
+      "power_each": -10.0,
+      "power_total": -10.0
+    }
+  ],
+  "power_surplus": 1470.0,
+  "native_components_resolved": true,
+  "pdx_parts": {
+    "bow": {
+      "triangles": 7180,
+      "material_count": 1,
+      "locator_count": 14
+    },
+    "mid": {
+      "triangles": 2684,
+      "material_count": 2,
+      "locator_count": 3
+    },
+    "stern": {
+      "triangles": 5464,
+      "material_count": 1,
+      "locator_count": 7
+    }
+  },
+  "total_triangles": 15328,
+  "uv_and_normals_present_and_finite": true,
+  "textures": [
+    {
+      "file": "aef03_hull_diffuse.dds",
+      "dimensions": [
+        1024,
+        512
+      ],
+      "mips": 11
+    },
+    {
+      "file": "aef03_hull_normal.dds",
+      "dimensions": [
+        1024,
+        512
+      ],
+      "mips": 11
+    },
+    {
+      "file": "aef03_hull_properties.dds",
+      "dimensions": [
+        1024,
+        512
+      ],
+      "mips": 11
+    },
+    {
+      "file": "aef03_star_diffuse.dds",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mips": 11
+    },
+    {
+      "file": "aef03_star_normal.dds",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mips": 11
+    },
+    {
+      "file": "aef03_star_properties.dds",
+      "dimensions": [
+        1024,
+        1024
+      ],
+      "mips": 11
+    }
+  ],
+  "emission_recolor_disabled": true,
+  "known_legacy_DDS_duplicates_resolved": true,
+  "runtime_status": "not_started",
+  "game_operated": false
+}

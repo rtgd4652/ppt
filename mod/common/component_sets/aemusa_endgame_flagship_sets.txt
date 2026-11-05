@@ -1,0 +1,6 @@
+# 唯一旗舰的T级主炮集合；图标复用本机已存在的原生泰坦主炮图标。
+component_set = {
+	key = "AEMUSA_ENDGAME_T_BEAM_SET"
+	icon = "GFX_ship_part_perdition_beam"
+	icon_frame = 1
+}

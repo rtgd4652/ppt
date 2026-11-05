@@ -7,9 +7,9 @@ objectTypes = {
         meshsettings = {
             name = "arfv08_flagship_bow"
             index = 0
-            texture_diffuse = "cc_surface_v05_diffuse.dds"
-            texture_normal = "cc_surface_v05_normal.dds"
-            texture_specular = "cc_surface_v05_properties.dds"
+            texture_diffuse = "arfv08_public_diffuse.dds"
+            texture_normal = "arfv08_public_normal.dds"
+            texture_specular = "arfv08_public_properties.dds"
             shader = "PdxMeshShip"
         }
     }
@@ -33,9 +33,9 @@ objectTypes = {
         meshsettings = {
             name = "arfv08_flagship_stern"
             index = 0
-            texture_diffuse = "cc_surface_v05_diffuse.dds"
-            texture_normal = "cc_surface_v05_normal.dds"
-            texture_specular = "cc_surface_v05_properties.dds"
+            texture_diffuse = "arfv08_public_diffuse.dds"
+            texture_normal = "arfv08_public_normal.dds"
+            texture_specular = "arfv08_public_properties.dds"
             shader = "PdxMeshShip"
         }
     }
@@ -46,9 +46,9 @@ objectTypes = {
         meshsettings = {
             name = "arfv08_baseline_base"
             index = 0
-            texture_diffuse = "cc_surface_v05_diffuse.dds"
-            texture_normal = "cc_surface_v05_normal.dds"
-            texture_specular = "cc_surface_v05_properties.dds"
+            texture_diffuse = "arfv08_public_diffuse.dds"
+            texture_normal = "arfv08_public_normal.dds"
+            texture_specular = "arfv08_public_properties.dds"
             shader = "PdxMeshShip"
         }
     }
@@ -59,9 +59,9 @@ objectTypes = {
         meshsettings = {
             name = "arfv08_baseline_active"
             index = 0
-            texture_diffuse = "cc_surface_v05_diffuse.dds"
-            texture_normal = "cc_surface_v05_normal.dds"
-            texture_specular = "cc_surface_v05_properties.dds"
+            texture_diffuse = "arfv08_public_diffuse.dds"
+            texture_normal = "arfv08_public_normal.dds"
+            texture_specular = "arfv08_public_properties.dds"
             shader = "PdxMeshShip"
         }
     }

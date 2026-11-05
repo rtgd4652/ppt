@@ -1,0 +1,155 @@
+{
+  "status": "exported_readback_pass_runtime_not_started",
+  "source": "art/models/aemusa_endgame_runtime_v03/endgame_runtime_v03.blend",
+  "parts": [
+    {
+      "part": "aef03_bow",
+      "triangles": 7180,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "t_gun_01",
+        "t_gun_02",
+        "t_gun_03",
+        "t_gun_05",
+        "t_gun_06",
+        "t_gun_07",
+        "t_gun_09",
+        "t_gun_10",
+        "t_gun_11",
+        "t_gun_13",
+        "t_gun_14",
+        "t_gun_15"
+      ],
+      "mesh": "art/models/aemusa_endgame_runtime_v03/export/aef03_bow.mesh",
+      "shape_names": [
+        "aef03_bow"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "submeshes": [
+        {
+          "shape": "aef03_bow",
+          "index": 0,
+          "material": {
+            "shader": [
+              "PdxMeshShip"
+            ],
+            "diff": [
+              "aef03_hull_diffuse.dds"
+            ],
+            "n": [
+              "aef03_hull_normal.dds"
+            ],
+            "spec": [
+              "aef03_hull_properties.dds"
+            ]
+          }
+        }
+      ],
+      "native_orientation_verified": true
+    },
+    {
+      "part": "aef03_mid",
+      "triangles": 2684,
+      "locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ],
+      "mesh": "art/models/aemusa_endgame_runtime_v03/export/aef03_mid.mesh",
+      "shape_names": [
+        "aef03_mid"
+      ],
+      "material_count": 2,
+      "pdx_readback": "pass",
+      "submeshes": [
+        {
+          "shape": "aef03_mid",
+          "index": 0,
+          "material": {
+            "shader": [
+              "PdxMeshShip"
+            ],
+            "diff": [
+              "aef03_star_diffuse.dds"
+            ],
+            "n": [
+              "aef03_star_normal.dds"
+            ],
+            "spec": [
+              "aef03_star_properties.dds"
+            ]
+          }
+        },
+        {
+          "shape": "aef03_mid",
+          "index": 1,
+          "material": {
+            "shader": [
+              "PdxMeshShip"
+            ],
+            "diff": [
+              "aef03_hull_diffuse.dds"
+            ],
+            "n": [
+              "aef03_hull_normal.dds"
+            ],
+            "spec": [
+              "aef03_hull_properties.dds"
+            ]
+          }
+        }
+      ],
+      "native_orientation_verified": true
+    },
+    {
+      "part": "aef03_stern",
+      "triangles": 5464,
+      "locators": [
+        "engine_large_01",
+        "engine_large_02",
+        "large_gun_01",
+        "t_gun_04",
+        "t_gun_08",
+        "t_gun_12",
+        "t_gun_16"
+      ],
+      "mesh": "art/models/aemusa_endgame_runtime_v03/export/aef03_stern.mesh",
+      "shape_names": [
+        "aef03_stern"
+      ],
+      "material_count": 1,
+      "pdx_readback": "pass",
+      "submeshes": [
+        {
+          "shape": "aef03_stern",
+          "index": 0,
+          "material": {
+            "shader": [
+              "PdxMeshShip"
+            ],
+            "diff": [
+              "aef03_hull_diffuse.dds"
+            ],
+            "n": [
+              "aef03_hull_normal.dds"
+            ],
+            "spec": [
+              "aef03_hull_properties.dds"
+            ]
+          }
+        }
+      ],
+      "native_orientation_verified": true
+    }
+  ],
+  "textures_manifest": "art/models/aemusa_endgame_runtime_v03/textures_manifest.json",
+  "source_reopened": true,
+  "T_locator_count": 16,
+  "native_materials_baked": true,
+  "emission_recolor_crunch": 0,
+  "automatic_lod": false,
+  "runtime_status": "not_started",
+  "game_operated": false
+}

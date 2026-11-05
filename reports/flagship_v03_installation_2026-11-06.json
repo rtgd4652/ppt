@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-06",
+  "installed_files": [
+    "mod/gfx/models/aemusa_endgame_v03/aef03_bow.mesh",
+    "mod/gfx/models/aemusa_endgame_v03/aef03_hull_diffuse.dds",
+    "mod/gfx/models/aemusa_endgame_v03/aef03_hull_normal.dds",
+    "mod/gfx/models/aemusa_endgame_v03/aef03_hull_properties.dds",
+    "mod/gfx/models/aemusa_endgame_v03/aef03_mid.mesh",
+    "mod/gfx/models/aemusa_endgame_v03/aef03_star_diffuse.dds",
+    "mod/gfx/models/aemusa_endgame_v03/aef03_star_normal.dds",
+    "mod/gfx/models/aemusa_endgame_v03/aef03_star_properties.dds",
+    "mod/gfx/models/aemusa_endgame_v03/aef03_stern.mesh",
+    "mod/gfx/models/aemusa_endgame_v03/_aef03_entities.asset",
+    "mod/gfx/models/aemusa_endgame_v03/_aef03_meshes.gfx"
+  ],
+  "legacy_dds_renames": [
+    {
+      "old": "cc_surface_v05_diffuse.dds",
+      "new": "arfv08_public_diffuse.dds",
+      "content_preserved": true
+    },
+    {
+      "old": "cc_surface_v05_normal.dds",
+      "new": "arfv08_public_normal.dds",
+      "content_preserved": true
+    },
+    {
+      "old": "cc_surface_v05_properties.dds",
+      "new": "arfv08_public_properties.dds",
+      "content_preserved": true
+    }
+  ],
+  "registry_records_added": 10,
+  "game_operated": false,
+  "runtime_status": "not_started"
+}

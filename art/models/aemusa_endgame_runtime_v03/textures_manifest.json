@@ -1,0 +1,77 @@
+{
+  "status": "dds_ready_runtime_unobserved",
+  "origin": "原创材质分区及v02程序化星空的Blender EMIT烘焙",
+  "textures": [
+    {
+      "file": "art/models/aemusa_endgame_runtime_v03/export/aef03_hull_diffuse.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        1024,
+        512
+      ],
+      "mip_levels": 11,
+      "bytes": 699216
+    },
+    {
+      "file": "art/models/aemusa_endgame_runtime_v03/export/aef03_hull_normal.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        1024,
+        512
+      ],
+      "mip_levels": 11,
+      "bytes": 699216
+    },
+    {
+      "file": "art/models/aemusa_endgame_runtime_v03/export/aef03_hull_properties.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        1024,
+        512
+      ],
+      "mip_levels": 11,
+      "bytes": 699216
+    },
+    {
+      "file": "art/models/aemusa_endgame_runtime_v03/export/aef03_star_diffuse.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        1024,
+        1024
+      ],
+      "mip_levels": 11,
+      "bytes": 1398256
+    },
+    {
+      "file": "art/models/aemusa_endgame_runtime_v03/export/aef03_star_normal.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        1024,
+        1024
+      ],
+      "mip_levels": 11,
+      "bytes": 1398256
+    },
+    {
+      "file": "art/models/aemusa_endgame_runtime_v03/export/aef03_star_properties.dds",
+      "format": "DXT5/BC3",
+      "size": [
+        1024,
+        1024
+      ],
+      "mip_levels": 11,
+      "bytes": 1398256
+    }
+  ],
+  "palette_roles": [
+    "navy",
+    "navy_light",
+    "silver",
+    "silver_shadow",
+    "inner",
+    "gold",
+    "cyan",
+    "socket"
+  ],
+  "emission_recolor_crunch_required": 0
+}
