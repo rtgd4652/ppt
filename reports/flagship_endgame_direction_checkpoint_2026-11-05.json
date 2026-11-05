@@ -34,9 +34,14 @@
   "mod_files_changed": false,
   "game_operated": false,
   "running_commands": [],
-  "next_action": "保留中央星空缺口作为核心视觉，围绕它收敛修长舰体、悬隔层次与16T实际位置；整体细节仍待评审。今晚进入保存收尾，不启动新生成或建模。",
+  "next_action": "继续当前旗舰设计，保留中央星空核心意象，补终局形态三视概念并按用户反馈收敛；不因默认晚间截止自行收工。",
   "user_visual_feedback_exact": "中间这个星空我征服了我，你赢了",
   "central_starfield_user_endorsed": true,
   "retained_visual_anchor": "中央含异层星空的空间缺口；后续舰体和光效围绕这一核心意象收敛",
-  "feedback_scope": "用户明确喜爱中央星空意象；不扩展为全舰细节或新剧情能力全部批准"
+  "feedback_scope": "用户明确喜爱中央星空意象；不扩展为全舰细节或新剧情能力全部批准",
+  "time_override": {
+    "date": "2026-11-05",
+    "user_instruction_exact": "今天去除时间，我说停才停",
+    "scope": "本轮工作；取消22:30收尾与23:00截止，直到用户明确停止；其他工作日默认规则不永久变更"
+  }
 }
