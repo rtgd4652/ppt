@@ -2,7 +2,15 @@
 
 2026-11-04，状态`draft_pending_human_review`。承接用户明确的[整舰重设与至少16T要求](../FLAGSHIP_REDESIGN_DECISION_2026-11-03.md)。本方案交付完整概念与可计数布局，当前游戏仍是已退回的六L技术样品。
 
-## 11月5日最新：配色修订
+## 11月5日最新：明确终局阶段，放开常规工程限制
+
+用户明确这艘舰位于战胜古老先驱帝国和恐怖天灾、到达命运顶点、几乎超出星空的最后阶段，允许不必拘泥科幻严谨度。当前视觉目标因此按终局强度理解；不能继续用早期／普通舰船的机械连接、维护结构或固定工程占比限制其一级轮廓。七都绘画表达、修长感和至少16T要求继续有效。
+
+新[整舰候选](../../../art/concepts/aemusa_flagship_redesign_20261105/endgame_transcendent_v01.png)采用中央异层星空缺口、同轴但悬隔的前后实体及独立银白外壳层次，尝试让超常秩序决定舰体存在方式。具体结构属于助手设计候选，尚未外观批准。用户的终局语境不等于本机运行剧情已完成，也未修改实际战斗能力、武器或存档。[提示词](../../../art/concepts/aemusa_flagship_redesign_20261105/prompt_endgame_transcendent_v01.md)及[检查点](../../../reports/flagship_endgame_direction_checkpoint_2026-11-05.json)已保存。
+
+下面记录历次探索；旧普通机械比例和“异常仅作局部设备”的约束不覆盖这次明确的终局私人旗舰。
+
+## 11月5日：配色修订
 
 用户要求按配色建议修改，已基于修长三视图交付[深靛蓝／银白配色候选](../../../art/concepts/aemusa_flagship_redesign_20261105/three_view_palette_v03.png)。主体加深、银白去紫染、紫色收回局部阴影、暖金集中到中央接口和细主轴线、推进青光降低。总体轮廓与布局保持，不增加新结构或装备。具体配色仍待评审，不将修改授权写成结果批准；详见[提示词](../../../art/concepts/aemusa_flagship_redesign_20261105/prompt_three_view_palette_v03.md)与[检查点](../../../reports/flagship_palette_checkpoint_2026-11-05.json)。
 
