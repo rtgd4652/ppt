@@ -4,6 +4,8 @@
 
 ## 当前接手点
 
+- [x] 按用户要求完成[深靛蓝／银白配色修订三视图](../art/concepts/aemusa_flagship_redesign_20261105/three_view_palette_v03.png)，保留修长比例，暖金及推进光收敛，提示词／检查点已存。
+- [ ] 根据新配色与整体外观反馈收敛；仍待评审，非正式贴图、灰模或16T实现。
 - [x] 按“有点臃肿，应该修长一点”交付[修长比例三视概念](../art/concepts/aemusa_flagship_redesign_20261105/three_view_slender_v02.png)，保留风格与主层级，原厚版保留供对照。
 - [ ] 根据修长版反馈调整体量平衡；比例未定稿，三维结构／16T尚未实现，不按生成图直接量尺寸。
 - [x] 按用户要求完成[正视／侧视／俯视概念](../art/concepts/aemusa_flagship_redesign_20261105/three_view_concept_v01.png)，已标舰首舰尾并作一次投影校正。仅为单图推定，局部结构／比例尚未通过三维核对，不能直接量尺寸。

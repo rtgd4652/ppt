@@ -2,7 +2,11 @@
 
 2026-11-04，状态`draft_pending_human_review`。承接用户明确的[整舰重设与至少16T要求](../FLAGSHIP_REDESIGN_DECISION_2026-11-03.md)。本方案交付完整概念与可计数布局，当前游戏仍是已退回的六L技术样品。
 
-## 11月5日最新比例反馈：修长一些
+## 11月5日最新：配色修订
+
+用户要求按配色建议修改，已基于修长三视图交付[深靛蓝／银白配色候选](../../../art/concepts/aemusa_flagship_redesign_20261105/three_view_palette_v03.png)。主体加深、银白去紫染、紫色收回局部阴影、暖金集中到中央接口和细主轴线、推进青光降低。总体轮廓与布局保持，不增加新结构或装备。具体配色仍待评审，不将修改授权写成结果批准；详见[提示词](../../../art/concepts/aemusa_flagship_redesign_20261105/prompt_three_view_palette_v03.md)与[检查点](../../../reports/flagship_palette_checkpoint_2026-11-05.json)。
+
+## 11月5日比例反馈：修长一些
 
 用户看三视图后认为“有点臃肿，应该修长一点”。已在同一设计和绘画语言下生成[修长版三视概念](../../../art/concepts/aemusa_flagship_redesign_20261105/three_view_slender_v02.png)，侧舷收窄、顶部／腹部隆起降低，长轮廓增强；首轮偏薄后作一次中段厚度调整。具体比例及与巨舰体量的平衡仍待评审，不将提示词百分比当作模型尺寸。至少16T保持，尚未新建灰模。
 

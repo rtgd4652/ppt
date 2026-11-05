@@ -4,6 +4,8 @@
 
 ## 当前授权与工作状态
 
+- **11月5日最新完成配色修订。** 用户询问颜色设计后要求按建议修改；已保存[深靛蓝／银白三视概念及提示词](art/concepts/aemusa_flagship_redesign_20261105/README.md)，[检查点](reports/flagship_palette_checkpoint_2026-11-05.json)。以修长版为唯一编辑参考，主体加深、银白去大范围紫染、暖金聚焦中央接口和细主轴、青色推进光收敛，总体修长轮廓及三视布局保留。修改授权不等于配色或外观批准；当前待反馈，未建模／实现16T／操作游戏，无后台命令。旧淡紫版和厚版均保留。
+
 - **11月5日最新反馈：“有点臃肿，应该修长一点”。** 已保存[修长三视概念及完整提示词](art/concepts/aemusa_flagship_redesign_20261105/README.md)，[检查点](reports/flagship_slender_three_view_checkpoint_2026-11-05.json)。同一造型与绘画语言下收窄侧舷、降低顶部／腹部隆起、拉长比例；首轮偏薄后作一次中段厚度调整。原厚版保留。当前等待修长与巨型体量平衡的反馈；无外观批准或实际尺寸确定，16T未实现。生成三视仍有跨图结构／比例局限，后续灰模统一；未操作游戏或用户Blender，无后台命令。
 
 - 11月5日按用户“来个三视图”交付[体量修订稿的正视／侧视／俯视概念](art/concepts/aemusa_flagship_redesign_20261105/three_view_concept_v01.png)，[提示词／校正记录](art/concepts/aemusa_flagship_redesign_20261105/prompt_three_view_v01.md)及[检查点](reports/flagship_three_view_checkpoint_2026-11-05.json)保存。一次投影校正后俯视斜感减轻，三个视角和舰首方向可读；仍有局部结构／跨图比例偏差，非真实模型的严格同尺度投影。不可直接量尺寸，不代表外观批准或16T实现。下一步按三视概念讨论形体，灰模阶段再统一结构；当前未建模／操作游戏，无后台命令。
