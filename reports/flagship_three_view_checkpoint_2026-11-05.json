@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-05",
+  "status": "concept_three_view_delivered_pending_review",
+  "user_request_exact": "来个三视图",
+  "source_design": "art/concepts/aemusa_flagship_redesign_20261105/mass_authority_v01.png",
+  "image": "art/concepts/aemusa_flagship_redesign_20261105/three_view_concept_v01.png",
+  "prompt": "art/concepts/aemusa_flagship_redesign_20261105/prompt_three_view_v01.md",
+  "dimensions": [
+    1672,
+    941
+  ],
+  "generation_tool": "built-in image_gen; initial three-view conversion plus one targeted projection correction",
+  "views": [
+    "俯视图：左上，舰首左／舰尾右",
+    "侧视图：左下，舰首左／舰尾右",
+    "正视图：右侧，面向舰首"
+  ],
+  "visual_review": "三种视角、舰首舰尾标注、整体色彩与主要层级均可辨；定向校正后俯视斜感减轻。生成视图仍存在局部结构和跨图比例偏差，不宣称严格同尺度或正交工程精度。",
+  "unseen_surfaces": "inferred_from_single_concept_not_verified_3d_geometry",
+  "exact_cross_view_scale_verified": false,
+  "model_created": false,
+  "appearance_approved": false,
+  "required_minimum_T_slots": 16,
+  "slot_count_verified": false,
+  "runtime_16T_implemented": false,
+  "game_operated": false,
+  "mod_files_changed": false,
+  "running_commands": [],
+  "generated_source": "C:/Users/Admin/.codex/generated_images/01a1a698-2daa-7032-a7ad-e2711313ad3d/exec-759868d0-d7f1-4ac9-b43d-201e462ff68b.png",
+  "initial_sheet_source": "C:/Users/Admin/.codex/generated_images/01a1a698-2daa-7032-a7ad-e2711313ad3d/exec-bdcd4b3b-85f4-46a5-8c63-13f6dec586cf.png",
+  "next_action": "根据三视概念讨论形体；后续灰模阶段再统一三维结构、比例与挂点，不将生成图当作可直接量尺寸的蓝图。"
+}

@@ -2,6 +2,10 @@
 
 2026-11-04，状态`draft_pending_human_review`。承接用户明确的[整舰重设与至少16T要求](../FLAGSHIP_REDESIGN_DECISION_2026-11-03.md)。本方案交付完整概念与可计数布局，当前游戏仍是已退回的六L技术样品。
 
+## 11月5日：三视概念图
+
+按用户要求，以体量修订稿为依据生成[正视／侧视／俯视概念](../../../art/concepts/aemusa_flagship_redesign_20261105/three_view_concept_v01.png)，并作一次定向投影校正。舰首向左、舰尾向右，正视面向舰首。属于单图推定的概念表达，仍存在局部结构／跨图比例偏差，不是严格同尺度工程投影，也不表示外观批准。后续真实灰模再统一形体、尺寸和16T位置。
+
 ## 11月5日：风格接近后的体量修订
 
 用户反馈“巨型旗舰的体量与‘命运主宰’的权威感还没解决，但是风格接近了”。因此保留新校准稿的大色块、绘画式明暗与整体曲面，针对主体厚度、层级和中央主从关系生成[体量／权威感修订候选](../../../art/concepts/aemusa_flagship_redesign_20261105/mass_authority_v01.png)。[提示词](../../../art/concepts/aemusa_flagship_redesign_20261105/prompt_mass_authority_v01.md)与[检查点](../../../reports/flagship_mass_authority_checkpoint_2026-11-05.json)已存。
