@@ -2,7 +2,17 @@
 
 2026-11-04，状态`draft_pending_human_review`。承接用户明确的[整舰重设与至少16T要求](../FLAGSHIP_REDESIGN_DECISION_2026-11-03.md)。本方案交付完整概念与可计数布局，当前游戏仍是已退回的六L技术样品。
 
-## 11月5日最新：明确终局阶段，放开常规工程限制
+## 11月5日最新：真实结构灰模与同尺度三视
+
+用户继续工作后，已制作独立[Blender结构源](../../../art/models/aemusa_endgame_blockout_v01/endgame_blockout_v01.blend)，并从同一几何输出[斜视](../../../art/models/aemusa_endgame_blockout_v01/previews/oblique.png)、[同尺度正交三视](../../../art/models/aemusa_endgame_blockout_v01/previews/three_view.png)和[纯几何三视](../../../art/models/aemusa_endgame_blockout_v01/previews/geometry.png)。这三视图来自真实集合实例和同一正交相机，不再由生成图分别推定。
+
+当前实体舰体11,584三角面，作者单位长97／宽29.64／高12.9；这些数值不是公里数或最终游戏比例。四组各四个`t_gun_01`～`t_gun_16`定位器已保存，+Y为舰首／前向方向；对当前实体灰模的16条前向射线均无自身遮挡，但未验证引擎瞄准或实际T组件。源重开、唯一定位器、实例单位缩放、无外部库／字体依赖通过。见[清单](../../../art/models/aemusa_endgame_blockout_v01/blockout_manifest.json)、[核对结果](../../../art/models/aemusa_endgame_blockout_v01/verification.json)和[检查点](../../../reports/flagship_endgame_blockout_checkpoint_2026-11-05.json)。
+
+首轮过散外壳与球状星空已调整，星空现在沿舰体断面展开为程序化占位空间带。正对舰首会有实体遮挡，斜视／俯视更能展示核心。外壳形态、材质与星空纵深仍明显简化，不冒称概念图已完整还原；后续继续精修。未导出／安装运行资源，16个定位器不等于16T已在游戏实现。
+
+构建脚本为[build_endgame_flagship_blockout.py](../../../tools/art/build_endgame_flagship_blockout.py)，仅在独立后台factory-startup运行；`--mode resume --views oblique three_view geometry`从保存源重开并渲染，确需改结构时再用`--mode build`。本轮Blender MCP连接失败；本机5.1.2后台成功。用户Blender场景、游戏与暂停原型均未操作。
+
+## 11月5日：明确终局阶段，放开常规工程限制
 
 用户随后取消本轮时间限制，继续工作。已补[终局三视概念](../../../art/concepts/aemusa_flagship_redesign_20261105/endgame_three_view_v01.png)，保留星空缺口与悬隔层次；三个视角的真实比例和结构尚待灰模核对，非精确建模蓝图。旧常规连接版三视保留历史对照，不覆盖终局整舰候选。
 

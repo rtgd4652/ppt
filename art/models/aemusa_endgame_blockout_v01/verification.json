@@ -1,0 +1,85 @@
+{
+  "source_reopened": true,
+  "unique_T_locators": 16,
+  "evaluated_hull_triangles": 11584,
+  "bounds_xyz": [
+    [
+      -14.819999694824219,
+      14.819999694824219
+    ],
+    [
+      -47.0,
+      50.0
+    ],
+    [
+      -6.449999809265137,
+      6.449999809265137
+    ]
+  ],
+  "dimensions_xyz": [
+    29.639999389648438,
+    97.0,
+    12.899999618530273
+  ],
+  "orthographic_views": "collection instances of identical geometry, unit transforms, shared sheet camera",
+  "runtime_validation": false,
+  "appearance_approved": false,
+  "orthographic_instance_scales": [
+    {
+      "scene": "同尺度正交三视",
+      "instance": "TOP_同源实例",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "scene": "同尺度正交三视",
+      "instance": "SIDE_同源实例",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "scene": "同尺度正交三视",
+      "instance": "FRONT_同源实例",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "scene": "纯几何正交三视",
+      "instance": "TOP_同源实例.001",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "scene": "纯几何正交三视",
+      "instance": "SIDE_同源实例.001",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    },
+    {
+      "scene": "纯几何正交三视",
+      "instance": "FRONT_同源实例.001",
+      "scale": [
+        1.0,
+        1.0,
+        1.0
+      ]
+    }
+  ],
+  "external_libraries": [],
+  "unpacked_external_fonts": []
+}

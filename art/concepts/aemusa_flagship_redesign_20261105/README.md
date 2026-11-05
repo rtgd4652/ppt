@@ -1,5 +1,11 @@
 # 命运旗舰：七都风格校准与结构探索
 
+## 后续真实结构样稿
+
+已从终局方向制作[Blender灰模源](../../models/aemusa_endgame_blockout_v01/endgame_blockout_v01.blend)，可查看[真实同尺度三视](../../models/aemusa_endgame_blockout_v01/previews/three_view.png)、[斜视](../../models/aemusa_endgame_blockout_v01/previews/oblique.png)与[纯几何](../../models/aemusa_endgame_blockout_v01/previews/geometry.png)。16个T级发射定位器已建立，静态前向遮挡核对通过，尚非游戏T槽实现；源文件重开通过。详见[检查点](../../../reports/flagship_endgame_blockout_checkpoint_2026-11-05.json)。
+
+灰模用于统一结构和比例，外壳与程序化星空目前仍简化，原概念图继续作为外观目标。下面生成的三视图保留为设计探索，不冒称其所有几何都已经还原。
+
 ## 最新：命运顶点的终局超常舰体
 
 ### 终局形态三视概念
