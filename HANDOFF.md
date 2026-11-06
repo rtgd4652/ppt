@@ -4,6 +4,9 @@
 
 ## 当前授权与工作状态
 
+- **11月6日晚收工。下次从「未闭合的航路」的外围轮廓继续。** 用户希望外围更有超出星海的感觉，明确喜爱的中央星空缺口继续作为视觉核心。对照两艘参考舰的原包图，盖亚方舟在主舰体与悬浮构件之间留出大块空隙，星穹之矛用宽后翼、镂空中段与细长矛尖构成剪影。当前 v03 斜上方预览里，几片平行银壳先于星空进入视线，舰腰的星空容易看成一块紫色面板。[盖亚方舟所属的 ACOT 扩展](https://steamcommunity.com/sharedfiles/filedetails/?id=1481972266) · [星规阵列](https://steamcommunity.com/sharedfiles/filedetails/?id=2293827000) · [当前模型斜视](art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)
+- 下次可先试一版轮廓草图，把前段银壳拉长、压低，后段两瓣略抬、向细金主轴回收，给中央星空的一侧留出完整视线。用同一斜上方视角和[终局概念](art/concepts/aemusa_flagship_redesign_20261105/endgame_transcendent_v01.png)对照，看能否一眼读出前后舰身之间的另一片星空。这是待讨论的造型建议。悬浮外壳绕舰身纵轴转动只讨论了可行性，尚未制作。本次仅保存设计讨论，模型基线为 `cc445c5`。
+
 - 11月6日晚按用户的造型反馈，已从开发版舰体移除16个独立炮座及各自的短亮条。导出网格共减少960个三角面，现为14,368面。逐面比较定位到16个发射位置各减少60面，16T槽位和全部挂点变换通过离线核对。中央星空保留为视觉重心。下次实机观察使用这次修订的网格，先前详情截图对应修订前模型。[新版整舰预览](art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png) · [装备核对](reports/flagship_v03_preflight_2026-11-06.json)
 
 - 11月6日晚已在用户开启的 Cygnus 4.5.3（a9fc）载入 `2293.10.11.sav`。暂停状态下打开「未闭合的航路」的舰船详情，实机可见v03舰壳及中央暗色区域，装备列表为3门激光与3门动能的旧六L。小窗中星点及旋臂较难辨认。关闭详情时输入守卫拦截，刷新后画面落到聊天窗口。本轮按简化流程保存一次实机证据和本次加载日志定向检索结果。星系近景、新设计16T和开火待验。[实机截图](reports/images/flagship_v03_runtime_details_2026-11-06.jpg) · [结果](reports/flagship_v03_runtime_observation_2026-11-06.json)
