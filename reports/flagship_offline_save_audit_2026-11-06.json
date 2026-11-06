@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-06",
+  "reviewed_commit": "e9b0d11",
+  "mode": "offline_read_only",
+  "user_scope": "这次只做离线核对",
+  "later_runtime_authorization": "之后也可以实机测试",
+  "launcher_registration_resolves_to_worktree_mod": true,
+  "enabled_mods": [
+    "mod/aemusa_artifact_user.mod"
+  ],
+  "method": "以只读ZIP打开两份隔离存档，解析gamestate中带专属旗标的舰船、所属舰队、舰船引用的设计和全局事件设计名绑定。逐项比较实例武器、存档设计装备、当前区段模板、实体和安装的PDX定位器。",
+  "saves": [
+    {
+      "save": "2293.10.11.sav",
+      "version": "Cygnus v4.5.2",
+      "date": "2293.10.11",
+      "player_country": 0,
+      "fleet_id": 16777259,
+      "ship_id": 16777294,
+      "saved_design_id": 67108880,
+      "global_design_key": "NAME_Aemusa_Reality_Flagship",
+      "saved_global_design_id": 67108880,
+      "saved_upgradable": "no",
+      "installed_reactor_keys": [
+        "BATTLESHIP_ZERO_POINT_REACTOR"
+      ],
+      "saved_weapons": {
+        "LARGE_GAMMA_LASER": 3,
+        "LARGE_MASS_DRIVER_5": 3
+      },
+      "archive_size_and_mtime_stable": true
+    },
+    {
+      "save": "2293.10.11-r3e-reserve.sav",
+      "version": "Cygnus v4.5.2",
+      "date": "2293.10.11",
+      "player_country": 0,
+      "fleet_id": 16777259,
+      "ship_id": 16777294,
+      "saved_design_id": 67108880,
+      "global_design_key": "NAME_Aemusa_Reality_Flagship",
+      "saved_global_design_id": 67108880,
+      "saved_upgradable": "no",
+      "installed_reactor_keys": [
+        "BATTLESHIP_ZERO_POINT_REACTOR"
+      ],
+      "saved_weapons": {
+        "LARGE_GAMMA_LASER": 3,
+        "LARGE_MASS_DRIVER_5": 3
+      },
+      "archive_size_and_mtime_stable": true
+    }
+  ],
+  "saved_section_bindings": {
+    "bow": {
+      "section": "AEMUSA_REALITY_FLAGSHIP_BOW",
+      "fitted": {
+        "LARGE_GUN_01": "LARGE_GAMMA_LASER",
+        "LARGE_GUN_02": "LARGE_MASS_DRIVER_5"
+      },
+      "saved_l_weapons": 2,
+      "current_entity": "aef03_bow_entity",
+      "current_mesh": "aef03_bow.mesh",
+      "bound_locators": [
+        "large_gun_01",
+        "large_gun_02"
+      ]
+    },
+    "mid": {
+      "section": "AEMUSA_REALITY_FLAGSHIP_MID",
+      "fitted": {
+        "LARGE_GUN_01": "LARGE_MASS_DRIVER_5",
+        "LARGE_GUN_02": "LARGE_GAMMA_LASER",
+        "LARGE_GUN_03": "LARGE_MASS_DRIVER_5"
+      },
+      "saved_l_weapons": 3,
+      "current_entity": "aef03_mid_entity",
+      "current_mesh": "aef03_mid.mesh",
+      "bound_locators": [
+        "large_gun_01",
+        "large_gun_02",
+        "large_gun_03"
+      ]
+    },
+    "stern": {
+      "section": "AEMUSA_REALITY_FLAGSHIP_STERN",
+      "fitted": {
+        "LARGE_GUN_01": "LARGE_GAMMA_LASER"
+      },
+      "saved_l_weapons": 1,
+      "current_entity": "aef03_stern_entity",
+      "current_mesh": "aef03_stern.mesh",
+      "bound_locators": [
+        "large_gun_01"
+      ]
+    }
+  },
+  "v03_source_sections": {
+    "bow": {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_BOW",
+      "entity": "aef03_bow_entity",
+      "t_weapons": 12,
+      "mesh": "aef03_bow.mesh",
+      "t_locators": [
+        "t_gun_01",
+        "t_gun_02",
+        "t_gun_03",
+        "t_gun_05",
+        "t_gun_06",
+        "t_gun_07",
+        "t_gun_09",
+        "t_gun_10",
+        "t_gun_11",
+        "t_gun_13",
+        "t_gun_14",
+        "t_gun_15"
+      ]
+    },
+    "mid": {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_MID",
+      "entity": "aef03_mid_entity",
+      "t_weapons": 0,
+      "mesh": "aef03_mid.mesh",
+      "t_locators": []
+    },
+    "stern": {
+      "section": "AEMUSA_ENDGAME_FLAGSHIP_STERN",
+      "entity": "aef03_stern_entity",
+      "t_weapons": 4,
+      "mesh": "aef03_stern.mesh",
+      "t_locators": [
+        "t_gun_04",
+        "t_gun_08",
+        "t_gun_12",
+        "t_gun_16"
+      ]
+    }
+  },
+  "matching_legacy_v03_visual_entities": 3,
+  "scope_of_evidence": {
+    "on_disk": "两份存档的既有旗舰、已存设计和同名事件设计索引均关联到六L配置。当前注册Mod的固定设计装配16T，三段旧模板和新模板分别引用同一套v03显示实体。",
+    "runtime_pending": "加载存档时引擎如何处理持久化的全局设计绑定，以及在同一旧档中重建旗舰时采用哪个设计，均须实机观察。",
+    "later_runtime": "旧档适合观察舰体及中央星空。可用独立新测试局验证16T设计与真实开火，并把旧档行为单列。"
+  },
+  "game_or_launcher_started": false,
+  "save_files_modified": false,
+  "mod_files_modified": false
+}
