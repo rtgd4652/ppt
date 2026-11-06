@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-06",
+  "reviewed_commit": "88e54be",
+  "mod_revision": "e9b0d11",
+  "scope": "旧隔离档一次旗舰详情代表观察",
+  "backend": "Computer Use, existing Stellaris window",
+  "game_version": "Cygnus v4.5.3 (a9fc)",
+  "save": "2293.10.11.sav",
+  "loaded_game_date": "2293.10.11",
+  "paused_when_observed": true,
+  "enabled_mods": [
+    "mod/aemusa_artifact_user.mod"
+  ],
+  "fleet": "中央庭恒定支援舰队",
+  "ship": "未闭合的航路",
+  "evidence": "reports/images/flagship_v03_runtime_details_2026-11-06.jpg",
+  "observations": {
+    "normal_ship_details": "v03前后舰体和悬隔外壳实际可见。详情预览窗裁切了部分整舰。",
+    "central_starfield": "中央区域可辨，当前小窗曝光偏暗，星点和旋臂的可读性待星系近景核验。",
+    "legacy_weapons": "六个L标记，激光三门、动能三门",
+    "hp": 4000,
+    "armor": 5535,
+    "shield": 6642
+  },
+  "pending": [
+    "正常星系镜头下的中央星空近景",
+    "新设计16T实机装配",
+    "新设计实际开火"
+  ],
+  "log_check": {
+    "file": "error.log",
+    "modified_beijing": "2026-11-06 20:04:44",
+    "bytes": 28579,
+    "lines": 268,
+    "matched_lines": 0,
+    "search": "aemusa|aef03|arfv08|artifact_user|cc_surface_v05|simple_leader_edict",
+    "scope": "仅本次日志定向检索"
+  },
+  "session_end": {
+    "last_verified_game_view": "2293.10.11暂停，舰船详情开启",
+    "close_details_attempt": "user input was detected in this window; call get_window_state before continuing",
+    "fresh_capture": "Stellaris窗口元数据返回聊天画面，结束本轮窗口操作",
+    "save_writes_by_agent": 0,
+    "console_commands_sent": 0,
+    "original_save_mtime_beijing": "2026-10-31 21:55:56",
+    "running_commands": []
+  }
+}
