@@ -162,7 +162,7 @@
   "native_components_resolved": true,
   "pdx_parts": {
     "bow": {
-      "triangles": 7180,
+      "triangles": 6460,
       "material_count": 1,
       "locator_count": 14
     },
@@ -172,12 +172,12 @@
       "locator_count": 3
     },
     "stern": {
-      "triangles": 5464,
+      "triangles": 5224,
       "material_count": 1,
       "locator_count": 7
     }
   },
-  "total_triangles": 15328,
+  "total_triangles": 14368,
   "uv_and_normals_present_and_finite": true,
   "textures": [
     {

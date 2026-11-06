@@ -4,6 +4,7 @@
 
 ## 当前接手点
 
+- [x] 依用户反馈移除16个外露炮座及配套亮条。开发版使用隐形发射定位点，16T装备链离线核对通过。后续近景观察以此版为准。[整舰预览](../art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)
 - [x] 4.5.3实机载入旧隔离档并打开旗舰详情。新舰壳可见，面板实装六L。中央星空细节待一次星系近景，16T与开火留给新设计样本。[实机结果](../reports/flagship_v03_runtime_observation_2026-11-06.json)
 - **本次按用户选择完成离线核对，后续实机测试已获授权。** 两份隔离档的旗舰实例、已存设计和同名全局设计索引均落在六L配置，当前开发版固定设计为16T。[核对记录](../reports/flagship_offline_save_audit_2026-11-06.json)
 - [x] v03三段网格／独立DDS／烘焙星空与16T固定设计接入；专用组件合法、余量1470，旧六L兼容定义保留，重复DDS改名，资产登记完成。见[交接与验证](../reports/flagship_prelaunch_work_2026-11-06.json)。

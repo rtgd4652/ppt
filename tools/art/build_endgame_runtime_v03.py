@@ -71,21 +71,17 @@ def runtime_material(prefix):
     return mat
 
 
-def part_for(name, locators):
+def part_for(name):
     if name.startswith('星空') or name.startswith('主轴'):
         return 'mid'
-    if 't_gun_' in name:
-        key='t_gun_'+name.rsplit('t_gun_',1)[1]
-        return 'bow' if locators[key]['position'][1]>0 else 'stern'
     return 'stern' if '_后' in name or name.startswith('推进') else 'bow'
 
 
 def style_for(name):
     if '指示' in name and name.startswith('推进'):return 'cyan'
-    if name.startswith(('主轴','星空边界','内缘刻度','接口指示')):return 'gold'
+    if name.startswith(('主轴','星空边界','内缘刻度')):return 'gold'
     if name.startswith('悬隔内衬'):return 'inner'
     if name.startswith('悬隔外壳'):return 'silver'
-    if name.startswith('发射接口'):return 'socket'
     return 'navy'
 
 
@@ -104,13 +100,18 @@ def export():
     state=json.loads((ROOT/'art/models/aemusa_endgame_refinement_v02/blockout_manifest.json').read_text(encoding='utf-8'))
     locators={r['id']:r for r in state['locators']}
     rotation=Matrix.Rotation(math.pi,4,'Z')
-    copied=[]
+    # 灰模曾用小炮座和短亮条标出每个T位。成品只导出各站的发射定位器。
+    mount_guides = {f'{prefix}_{key}' for key in locators for prefix in ('发射接口', '接口指示')}
+    omitted_guides = []
     for c in ('实体舰体','中央星空_视觉占位'):
         for obj in list(bpy.data.collections[c].objects):
             if obj.type not in ('MESH','CURVE'):continue
+            if obj.name in mount_guides:
+                omitted_guides.append(obj.name)
+                continue
             mesh=bpy.data.meshes.new_from_object(obj.evaluated_get(deps));mesh.transform(obj.matrix_world)
             new=bpy.data.objects.new('prod_'+obj.name,mesh)
-            part=part_for(obj.name,locators);groups[part].objects.link(new)
+            part=part_for(obj.name);groups[part].objects.link(new)
             if obj.name=='星空缺口_空间带占位':
                 assert mesh.uv_layers.active
                 mesh.materials.clear();mesh.materials.append(stars)
@@ -119,7 +120,7 @@ def export():
                 role=style_for(obj.name)
                 pipeline.map_style(new,role,atlas)
                 # 大转折面保留少量本色明暗，不烘焙固定场景灯光。
-            mesh.transform(rotation);mesh.update();copied.append(new)
+            mesh.transform(rotation);mesh.update()
     for key,row in locators.items():
         p=row['position'];part='bow' if p[1]>0 else 'stern'
         geometry.locator(groups[part],key,(-p[0],-p[1],p[2]),(0,0,0))
@@ -205,6 +206,7 @@ def export():
     result={'status':'exported_readback_pass_runtime_not_started','source':blend.relative_to(ROOT).as_posix(),
             'parts':records,'textures_manifest':(OUT/'textures_manifest.json').relative_to(ROOT).as_posix(),
             'source_reopened':True,'T_locator_count':sum(len([n for n in r['locators'] if n.startswith('t_gun_')]) for r in records),
+            'omitted_authoring_mount_guides':sorted(omitted_guides),
             'native_materials_baked':True,'emission_recolor_crunch':0,'automatic_lod':False,'runtime_status':'not_started','game_operated':False}
     assert result['T_locator_count']==16
     (OUT/'production_manifest.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
