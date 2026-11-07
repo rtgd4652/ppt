@@ -4,6 +4,8 @@
 
 ## 当前授权与工作状态
 
+- **11月7日已交付第二稿的银壳旋转概念 GIF。** 四片悬浮银壳绕舰身纵轴同向旋转一周，镜头和中央星空固定。960 × 540，每圈8秒，已回读160帧与无限循环标志。壳体背面依原画推定。游戏内专属动画仍属后续事项。[播放 GIF](art/concepts/aemusa_flagship_redesign_20261107/outer_shell_axial_rotation.gif) · [制作记录与源文件](art/concepts/aemusa_flagship_redesign_20261107/README.md#银壳绕主轴旋转)
+
 - **11月7日用户更偏向外围银壳第二稿，后续以该稿为设计基准。** 前壳拉长压低，尾壳抬起并错开，中央深蓝星空向近侧敞开。另存了近侧前壳的窄缝试画，整舰缩图中那道缝读作反光，设计建议是沿用第二稿干净的弧线。后续可据第二稿对照现有模型的前后壳高差与中央开口。当前游戏模型基线为 `cc445c5`。[第二稿原图](art/concepts/aemusa_flagship_redesign_20261107/outer_shell_oblique_v02.png) · [局部试画、参考与提示词](art/concepts/aemusa_flagship_redesign_20261107/README.md)
 
 - **11月6日晚收工。下次从「未闭合的航路」的外围轮廓继续。** 用户希望外围更有超出星海的感觉，明确喜爱的中央星空缺口继续作为视觉核心。对照两艘参考舰的原包图，盖亚方舟在主舰体与悬浮构件之间留出大块空隙，星穹之矛用宽后翼、镂空中段与细长矛尖构成剪影。当前 v03 斜上方预览里，几片平行银壳先于星空进入视线，舰腰的星空容易看成一块紫色面板。[盖亚方舟所属的 ACOT 扩展](https://steamcommunity.com/sharedfiles/filedetails/?id=1481972266) · [星规阵列](https://steamcommunity.com/sharedfiles/filedetails/?id=2293827000) · [当前模型斜视](art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)

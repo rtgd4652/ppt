@@ -5,6 +5,7 @@
 ## 当前接手点
 
 - [x] 用户更偏向[外围银壳第二稿](../art/concepts/aemusa_flagship_redesign_20261107/outer_shell_oblique_v02.png)，已登记为设计基准。[近侧前壳窄缝试画与对照结论](../art/concepts/aemusa_flagship_redesign_20261107/README.md)已保存。
+- [x] 交付第二稿的[银壳轴向旋转概念 GIF](../art/concepts/aemusa_flagship_redesign_20261107/outer_shell_axial_rotation.gif)，按深度呈现外壳从中央舰身前后经过的效果。
 - [ ] 参照第二稿核对现有模型的前后壳高差、舰艏体量以及斜上方看入中央星空的开口。
 - [x] 依用户反馈移除16个外露炮座及配套亮条。开发版使用隐形发射定位点，16T装备链离线核对通过。后续近景观察以此版为准。[整舰预览](../art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)
 - [x] 4.5.3实机载入旧隔离档并打开旗舰详情。新舰壳可见，面板实装六L。中央星空细节待一次星系近景，16T与开火留给新设计样本。[实机结果](../reports/flagship_v03_runtime_observation_2026-11-06.json)
