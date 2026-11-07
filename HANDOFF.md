@@ -4,6 +4,8 @@
 
 ## 当前授权与工作状态
 
+- **11月7日晚按用户要求收工，断点在安装 v04 到开发版之前。** 已保存第二稿的真实三维舰模、三段 PDX、错相骨骼动画和[模型动图](art/models/aemusa_endgame_runtime_v04/previews/model_orbit.gif)。离线回读共 192 个姿态，固定斜视下每个姿态至少各有一片前壳和尾壳可辨，星系亮心全程可见，16 个发射挂点已核对。[核对结果](art/models/aemusa_endgame_runtime_v04/verification.json) 安装脚本和开发版预检修改已保存，实际安装、安装后核对和游戏观察留待下次恢复。当前游戏使用 v03。
+
 - **11月7日修正银壳转至侧面时同时消隐的问题。** 前后两组同轴同向、错开过侧时刻，银壳侧壁补足可见厚度。第二稿仍为初始轮廓。修订 GIF 的160帧中，斜上方镜头始终能辨认至少一片前壳和一片尾壳。当前正将相同的运动与截面用于真实舰模。[修订 GIF](art/concepts/aemusa_flagship_redesign_20261107/outer_shell_staggered.gif)
 
 - **11月7日已交付第二稿的银壳旋转概念 GIF。** 四片悬浮银壳绕舰身纵轴同向旋转一周，镜头和中央星空固定。960 × 540，每圈8秒，已回读160帧与无限循环标志。壳体背面依原画推定。游戏内专属动画仍属后续事项。[播放 GIF](art/concepts/aemusa_flagship_redesign_20261107/outer_shell_axial_rotation.gif) · [制作记录与源文件](art/concepts/aemusa_flagship_redesign_20261107/README.md#银壳绕主轴旋转)

@@ -45,10 +45,10 @@ def fixed_dither(size):
     return Image.frombytes("L", size, data).convert("RGB")
 
 
-def encode(directory, target):
+def encode(directory, target, expected_frames=160):
     paths = sorted(directory.glob("*.png"))
-    if len(paths) != 160:
-        raise ValueError(f"需要160帧，实际为{len(paths)}")
+    if len(paths) != expected_frames:
+        raise ValueError(f"需要{expected_frames}帧，实际为{len(paths)}")
     palette = shared_palette(paths)
     with Image.open(paths[0]) as first:
         noise = fixed_dither(first.size)
@@ -61,11 +61,14 @@ def encode(directory, target):
 
     frames = render_indices()
     first = next(frames)
+    # GIF 以厘秒计时。24 fps 的三维源也可精确落在同一个八秒周期。
+    ends = [round(800*i/len(paths)) for i in range(len(paths)+1)]
+    durations = [(b-a)*10 for a,b in zip(ends,ends[1:])]
     first.save(target, format="GIF", save_all=True, append_images=frames,
                palette=bytes(palette.getpalette()), transparency=255,
-               optimize=True, disposal=1, loop=0, duration=50)
+               optimize=True, disposal=1, loop=0, duration=durations)
     print(f"{target.name}: {target.stat().st_size:,} bytes")
 
 
 if __name__ == "__main__":
-    encode(Path(sys.argv[1]), Path(sys.argv[2]))
+    encode(Path(sys.argv[1]), Path(sys.argv[2]), int(sys.argv[3]) if len(sys.argv)>3 else 160)

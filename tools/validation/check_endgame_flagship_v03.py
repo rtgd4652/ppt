@@ -84,11 +84,28 @@ def main():
     total=sum(x['power_total'] for x in power);assert total>=0,total
     # 逐实体连接到真实已安装PDX，而不是只读构建脚本的预期列表。
     dest=ROOT/'mod/gfx/models/aemusa_endgame_v03'
-    entities={scalar(b,'name'):b for b in blocks(dest/'_aef03_entities.asset','entity')}
+    entity_file=dest/'_aef03_entities.asset'
+    entities={scalar(b,'name'):b for b in blocks(entity_file,'entity')}
+    mesh_types=blocks(dest/'_aef03_meshes.gfx','objectTypes')[0]
+    mesh_defs={scalar(m,'name'):m for m in children(mesh_types,'pdxmesh')}
+    middle_states={scalar(s,'name'):s for s in children(entities['aef03_mid_entity'],'state')}
+    motion=scalar(middle_states['idle'],'animation')=='idle'
+    revision='v04' if motion else 'v03'
+    date='2026-11-07' if motion else '2026-11-06'
+    approved_export=ROOT/f'art/models/aemusa_endgame_runtime_{revision}/export'
+    if motion:
+        clip=children(mesh_defs['aef03_mid_mesh'],'animation')[0]
+        assert scalar(clip,'id')=='idle'
+        animation={scalar(a,'name'):a for a in blocks(entity_file,'animation')}[scalar(clip,'type')]
+        animated_file=scalar(animation,'file')
+        assert (dest/animated_file).read_bytes()==(approved_export/animated_file).read_bytes()
+        assert all(scalar(middle_states[s],'animation')=='idle' and scalar(middle_states[s],'looping')=='yes'
+                   for s in ('idle','moving'))
     reader=load_reader(Path('C:/Users/Admin/AppData/Roaming/Blender Foundation/Blender/5.1/extensions/user_default/io_pdx_mesh'))
     parts={};total_tri=0
     for part in ('bow','mid','stern'):
-        path=dest/('aef03_'+part+'.mesh');tree=reader(str(path))
+        registered_mesh=scalar(entities['aef03_'+part+'_entity'],'pdxmesh')
+        path=ROOT/'mod'/scalar(mesh_defs[registered_mesh],'file');tree=reader(str(path))
         locs={n.tag:n.attrib for n in tree.findall('./locator/*')}
         mats=[];tris=0
         for node in tree.findall('./object/*/mesh'):
@@ -107,7 +124,7 @@ def main():
             tris+=len(indices)//3
         assert scalar(entities['aef03_'+part+'_entity'],'pdxmesh')=='aef03_'+part+'_mesh'
         assert scalar(children(entities['aef03_'+part+'_entity'],'game_data')[0],'emissive_recolor_crunch')=='0'
-        assert path.read_bytes()==(ROOT/'art/models/aemusa_endgame_runtime_v03/export'/path.name).read_bytes()
+        assert path.read_bytes()==(approved_export/path.name).read_bytes()
         parts[part]={'locators':locs,'triangles':tris,'material_count':len(mats)};total_tri+=tris
     for b in binding:
         part=b['entity'].removeprefix('aef03_').removesuffix('_entity')
@@ -123,19 +140,22 @@ def main():
         assert mips==int(math.log2(max(width,height)))+1
         assert len(list((ROOT/'mod').rglob(f.name)))==1,f.name
         textures.append({'file':f.name,'dimensions':[width,height],'mips':mips})
-    assert len(textures)==6
+    expected={f'aef03_{family}_{suffix}.dds' for family in ('star','hull') for suffix in ('diffuse','normal','properties')}
+    if motion:
+        expected.update('aef04_shell_'+s+'.dds' for s in ('diffuse','normal','properties'))
+    assert expected <= {t['file'] for t in textures}
     for name in ('cc_surface_v05_diffuse.dds','cc_surface_v05_normal.dds','cc_surface_v05_properties.dds'):
         assert len(list((ROOT/'mod').rglob(name)))==1,name
     for f in [ROOT/'mod/common/component_templates/aemusa_endgame_flagship_components.txt',ROOT/'mod/common/component_sets/aemusa_endgame_flagship_sets.txt',ROOT/'mod/common/section_templates/aemusa_reality_flagship_sections.txt']:
         assert not f.read_bytes().startswith(b'\xef\xbb\xbf')
-    result={'date':'2026-11-06','status':'pass','real_T_slots':len(binding),'binding':binding,
+    result={'date':date,'status':'pass','real_T_slots':len(binding),'binding':binding,
             'legacy_six_L_templates_retained':True,'legacy_locators_resolved':True,
             'power_breakdown':power,'power_surplus':total,'native_components_resolved':True,
             'pdx_parts':{k:{'triangles':v['triangles'],'material_count':v['material_count'],'locator_count':len(v['locators'])} for k,v in parts.items()},
             'total_triangles':total_tri,'uv_and_normals_present_and_finite':True,'textures':textures,'emission_recolor_disabled':True,
             'known_legacy_DDS_duplicates_resolved':True,'runtime_status':'not_started','game_operated':False}
-    (ROOT/'reports/flagship_v03_preflight_2026-11-06.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-    print('ENDGAME_PREFLIGHT_PASS '+json.dumps({'T_slots':16,'power_surplus':total,'triangles':total_tri,'DDS':6,'legacy_compatibility':'static_pass'},ensure_ascii=False))
+    (ROOT/f'reports/flagship_{revision}_preflight_{date}.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+    print('ENDGAME_PREFLIGHT_PASS '+json.dumps({'T_slots':16,'power_surplus':total,'triangles':total_tri,'DDS':len(textures),'legacy_compatibility':'static_pass'},ensure_ascii=False))
 
 
 if __name__=='__main__':main()

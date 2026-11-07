@@ -1,0 +1,43 @@
+{
+  "input": "art/models/aemusa_endgame_runtime_v04/export",
+  "triangles": {
+    "bow": 860,
+    "mid": 7212,
+    "stern": 776
+  },
+  "total_triangles": 8848,
+  "fixed_locators_identical_to_v03": true,
+  "T_locators": 16,
+  "sample_rate": 24,
+  "loop_seconds": 8.0,
+  "bone_travel_degrees": {
+    "fore": 359.98,
+    "aft": 359.96
+  },
+  "camera_check": {
+    "camera": "第二稿固定斜视",
+    "poses": 192,
+    "visible_surface_measure": "按正面投影面积累计、由实际导出三角形中心向相机检测遮挡",
+    "visible_threshold_per_shell": 0.12,
+    "minimum_substantial_shells": 2,
+    "minimum_visible_banks": 2,
+    "minimum_projected_fraction_vs_rest": {
+      "fore": 0.1266,
+      "aft": 0.292,
+      "total": 0.5639
+    },
+    "weakest_frame": 87,
+    "star_patch_minimum_samples_visible": 6,
+    "star_patch_samples": 8,
+    "star_center_visible_poses": 192,
+    "star_landmark_native_xyz": [
+      -3.509,
+      11.031,
+      2.296
+    ],
+    "beam_hits": [],
+    "collision_sample_poses": 32,
+    "triangle_overlaps": []
+  },
+  "engine_observation": "pending"
+}

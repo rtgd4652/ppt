@@ -7,7 +7,8 @@
 - [x] 用户更偏向[外围银壳第二稿](../art/concepts/aemusa_flagship_redesign_20261107/outer_shell_oblique_v02.png)，已登记为设计基准。[近侧前壳窄缝试画与对照结论](../art/concepts/aemusa_flagship_redesign_20261107/README.md)已保存。
 - [x] 交付第二稿的[银壳轴向旋转概念 GIF](../art/concepts/aemusa_flagship_redesign_20261107/outer_shell_axial_rotation.gif)，按深度呈现外壳从中央舰身前后经过的效果。
 - [x] 依据四瓣银壳同时消隐的反馈完成[错相修订 GIF](../art/concepts/aemusa_flagship_redesign_20261107/outer_shell_staggered.gif)，已核对整圈前后两组的可见性。
-- [ ] 参照第二稿核对现有模型的前后壳高差、舰艏体量以及斜上方看入中央星空的开口。
+- [x] 参照第二稿完成 v04 真实舰模与错相动画，固定斜视的 192 个姿态均能看见前后银壳和星系亮心。[模型动图](../art/models/aemusa_endgame_runtime_v04/previews/model_orbit.gif)
+- [ ] 下次用户恢复后，从将 v04 候选安装到开发版开始，随后核对安装结果和实机外观。
 - [x] 依用户反馈移除16个外露炮座及配套亮条。开发版使用隐形发射定位点，16T装备链离线核对通过。后续近景观察以此版为准。[整舰预览](../art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)
 - [x] 4.5.3实机载入旧隔离档并打开旗舰详情。新舰壳可见，面板实装六L。中央星空细节待一次星系近景，16T与开火留给新设计样本。[实机结果](../reports/flagship_v03_runtime_observation_2026-11-06.json)
 - **本次按用户选择完成离线核对，后续实机测试已获授权。** 两份隔离档的旗舰实例、已存设计和同名全局设计索引均落在六L配置，当前开发版固定设计为16T。[核对记录](../reports/flagship_offline_save_audit_2026-11-06.json)

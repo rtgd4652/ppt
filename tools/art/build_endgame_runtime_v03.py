@@ -47,14 +47,14 @@ def bake():
     print('ENDGAME_STAR_BAKED '+str(img.filepath_raw),flush=True)
 
 
-def runtime_material(prefix):
+def runtime_material(prefix, texture_dir=None):
     """导出器沿节点连接读取三张DDS；解包预览与既有已验证流程一致。"""
     mat=bpy.data.materials.new(prefix+'_pdx');mat['shader']='PdxMeshShip';mat.use_nodes=True
     nodes=mat.node_tree.nodes;links=mat.node_tree.links
     bsdf=next(n for n in nodes if n.type=='BSDF_PRINCIPLED')
     diff,prop,normal=[nodes.new('ShaderNodeTexImage') for _ in range(3)]
     for n,suffix in ((diff,'diffuse'),(prop,'properties'),(normal,'normal')):
-        n.image=bpy.data.images.load(str(EXPORT/(prefix+'_'+suffix+'.dds')),check_existing=True)
+        n.image=bpy.data.images.load(str((texture_dir or EXPORT)/(prefix+'_'+suffix+'.dds')),check_existing=True)
         if suffix!='diffuse':n.image.colorspace_settings.name='Non-Color'
     links.new(diff.outputs['Color'],bsdf.inputs['Base Color'])
     split=nodes.new('ShaderNodeSeparateColor');links.new(prop.outputs['Color'],split.inputs[0])
