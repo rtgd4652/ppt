@@ -4,6 +4,8 @@
 
 ## 当前授权与工作状态
 
+- **11月7日修正银壳转至侧面时同时消隐的问题。** 前后两组同轴同向、错开过侧时刻，银壳侧壁补足可见厚度。第二稿仍为初始轮廓。修订 GIF 的160帧中，斜上方镜头始终能辨认至少一片前壳和一片尾壳。当前正将相同的运动与截面用于真实舰模。[修订 GIF](art/concepts/aemusa_flagship_redesign_20261107/outer_shell_staggered.gif)
+
 - **11月7日已交付第二稿的银壳旋转概念 GIF。** 四片悬浮银壳绕舰身纵轴同向旋转一周，镜头和中央星空固定。960 × 540，每圈8秒，已回读160帧与无限循环标志。壳体背面依原画推定。游戏内专属动画仍属后续事项。[播放 GIF](art/concepts/aemusa_flagship_redesign_20261107/outer_shell_axial_rotation.gif) · [制作记录与源文件](art/concepts/aemusa_flagship_redesign_20261107/README.md#银壳绕主轴旋转)
 
 - **11月7日用户更偏向外围银壳第二稿，后续以该稿为设计基准。** 前壳拉长压低，尾壳抬起并错开，中央深蓝星空向近侧敞开。另存了近侧前壳的窄缝试画，整舰缩图中那道缝读作反光，设计建议是沿用第二稿干净的弧线。后续可据第二稿对照现有模型的前后壳高差与中央开口。当前游戏模型基线为 `cc445c5`。[第二稿原图](art/concepts/aemusa_flagship_redesign_20261107/outer_shell_oblique_v02.png) · [局部试画、参考与提示词](art/concepts/aemusa_flagship_redesign_20261107/README.md)

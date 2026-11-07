@@ -112,14 +112,40 @@ class MotionRenderer
     {
         public double X,Y,Depth;
     }
+    class Orbit
+    {
+        public double Offset, EndFraction, Tilt, Thickness = 1, SinAngle, VersineAngle;
+
+        public static Dictionary<string, Orbit> Load(string folder)
+        {
+            var profiles = new Dictionary<string, Orbit>();
+            string[] lines = File.ReadAllLines(Path.Combine(folder, "orbit_motion.csv"));
+            for (int i = 1; i < lines.Length; i++)
+            {
+                string[] v = lines[i].Split(',');
+                double[] p = new double[6];
+                for (int column = 0; column < p.Length; column++)
+                    p[column] = double.Parse(v[column + 1], CultureInfo.InvariantCulture);
+                profiles.Add(v[0], new Orbit { Offset=p[0], EndFraction=p[1], Tilt=p[2], Thickness=p[3],
+                                              SinAngle=p[4]*Math.PI/180, VersineAngle=p[5]*Math.PI/180 });
+            }
+            return profiles;
+        }
+        public double Angle(double t)
+        {
+            return t + SinAngle * Math.Sin(t) + VersineAngle * (1 - Math.Cos(t));
+        }
+    }
     class Shell
     {
         public Profile Outline;
+        public Orbit Motion;
         public Vertex[] Vertices;
         public Projected[] Projected;
         public Face[] Faces;
-        public Shell(double[,] stations, double depthStart, double depthEnd, double depthArc)
+        public Shell(double[,] stations, double depthStart, double depthEnd, double depthArc, Orbit motion)
         {
+            Motion = motion;
             Outline = new Profile(stations);
             List<Vertex> vs = new List<Vertex>();
             List<Face> fs = new List<Face>();
@@ -138,6 +164,7 @@ class MotionRenderer
                 double ridge=Limit(Outline.At(x,1),top,bottom);
                 double w=bottom-top;
                 double c0=depthStart+(depthEnd-depthStart)*t+depthArc*Math.Sin(Math.PI*t);
+                c0 += motion.Offset * (motion.EndFraction + (1-motion.EndFraction)*Math.Sin(Math.PI*t));
                 double[] ys={top, top+.48*(ridge-top), ridge, ridge+.53*(bottom-ridge), bottom,
                              bottom-.28*w, top+.44*w, top+.12*w};
                 double[] cc={0,.13,.21,.13,0,-.17,-.254,-.145};
@@ -145,7 +172,8 @@ class MotionRenderer
                 double[] backFinish={.90,.90,.90,.90,.29,.55,.93,.99};
                 for(int row=0;row<ys.Length;row++)
                 {
-                    double y=ys[row], c=c0+w*cc[row];
+                    double y=ys[row];
+                    double c=c0 + w*cc[row]*motion.Thickness + motion.Tilt*AxisX*(y-(top+bottom)*.5);
                     double u=(x-OriginX)*AxisX+(y-OriginY)*AxisY;
                     double b=-(x-OriginX)*AxisY+(y-OriginY)*AxisX;
                     double inset=Math.Min(1.15,w*.12);
@@ -169,36 +197,33 @@ class MotionRenderer
         }
     }
 
-    static Shell[] BuildShells()
+    static Shell[] BuildShells(string artwork, bool legacy)
     {
-        // 每截记录左图坐标 x、银面上缘、折线和厚侧壁下缘。
-        return new Shell[] {
-            new Shell(new double[,] {
-                {96,660,660,660},{125,641.5,648.4,651},{150,625.5,640,644},{175,611,626.5,632},
-                {250,565,584,597},{350,503,534.6,551},{450,444,490,502},{500,418,471.3,484},
-                {650,350.1,415.7,432.7},{750,317.5,384,403},{800,307.8,369.7,389},
-                {850,304.0,357.6,376},{900,306.2,346.2,364},{930,312.6,339.4,357.5},
-                {950,317.7,335.9,353.7},{970,325,332.8,345.9},{982.5,330.0,330.0,330.0}}, 16,74,18),
-            new Shell(new double[,] {
-                {170,699.3,699.3,699.3},{220,685.7,693.3,697.0},{250,678.8,689.1,695.8},
-                {350,653.3,676.2,690.9},{500,610.5,652.2,680},{650,566.6,625.0,663.4},
-                {750,538.7,603.1,649.5},{800,524.1,591,641.0},{850,509.9,577.4,630.3},
-                {900,495.9,561.2,617.2},{950,482.6,541.8,596.7},{990,471.6,523.0,576},
-                {1020,463.8,508.8,554},{1050,456.6,492.5,527},{1080,449.6,474.3,497},
-                {1100,444.6,460.5,473.5},{1128,438.1,438.1,438.1}}, 28,93,37),
-            new Shell(new double[,] {
-                {982.7,288.1,288.1,288.1},{990,275.6,282.5,286.8},{1020,235.2,260.1,283.8},
-                {1050,210.1,245.7,280.8},{1100,184.3,224.2,275.5},{1149,165.9,205.0,271.0},
-                {1175,157,196.7,258},{1200,150.7,189.4,245.2},{1250,140.4,174.6,223.7},
-                {1300,132.3,162.8,210.3},{1350,128.3,154.3,197.2},{1380,127.2,150.8,190.3},
-                {1400,127.1,149.1,185.8},{1450,130.6,147.9,177.5},{1490,135.5,148.6,172.4},
-                {1550,147.2,154.6,165.3},{1578,155.7,160.2,165.6},{1613.2,169.6,169.6,169.6}}, 50,25,14),
-            new Shell(new double[,] {
-                {1145.8,429.5,429.5,429.5},{1160,419.5,424.4,427.6},{1200,402.3,415.1,423.5},
-                {1250,385.5,405.6,421.5},{1300,368.7,397.9,419.5},{1350,351.6,390.1,415.5},
-                {1380,340.6,382.8,408.9},{1400,333.8,375.4,400.8},{1450,316.7,343.3,371.0},
-                {1470,310.0,324.9,342.7},{1487.8,304.0,304.0,304.0}}, 109,76,19)
-        };
+        // 动图和正式舰模共用第二稿的四条截面，不需各自描一次轮廓。
+        string folder = Path.Combine(Path.GetDirectoryName(Path.GetFullPath(artwork)), "motion_source");
+        string[] lines = File.ReadAllLines(Path.Combine(folder, "shell_contours.csv"));
+        Dictionary<string, Orbit> motions = Orbit.Load(folder);
+        List<Shell> shells = new List<Shell>();
+        int start = 1;
+        while (start < lines.Length)
+        {
+            string[] first = lines[start].Split(',');
+            int end = start + 1;
+            while (end < lines.Length && lines[end].StartsWith(first[0] + ",", StringComparison.Ordinal)) end++;
+            double[,] stations = new double[end - start, 4];
+            for (int i = start; i < end; i++)
+            {
+                string[] values = lines[i].Split(',');
+                for (int j = 0; j < 4; j++)
+                    stations[i-start,j] = double.Parse(values[j+4], CultureInfo.InvariantCulture);
+            }
+            shells.Add(new Shell(stations, double.Parse(first[1], CultureInfo.InvariantCulture),
+                                 double.Parse(first[2], CultureInfo.InvariantCulture),
+                                 double.Parse(first[3], CultureInfo.InvariantCulture),
+                                 legacy ? new Orbit() : motions[first[0]]));
+            start = end;
+        }
+        return shells.ToArray();
     }
 
     static double Fade(double t)
@@ -332,8 +357,10 @@ class MotionRenderer
         if(args.Length<3) return 2;
         art=new Texture(args[0]); plate=new Texture(args[1]);
         if(art.W!=1672||art.H!=941||art.W!=plate.W||art.H!=plate.H) throw new InvalidDataException("图层尺寸不匹配");
-        string folder=args[2]; Directory.CreateDirectory(folder); bool proof=args.Length>3 && args[3]=="proof";
-        Shell[] shells=BuildShells(); PrepareBackdrop();
+        string folder=args[2]; Directory.CreateDirectory(folder);
+        bool proof=Array.IndexOf(args,"proof",3)>=0;
+        bool legacy=Array.IndexOf(args,"legacy",3)>=0;
+        Shell[] shells=BuildShells(args[0],legacy); PrepareBackdrop();
         using(fullFrame=new Bitmap(art.W,art.H,PixelFormat.Format24bppRgb))
         using(outputFrame=new Bitmap(OutputWidth,OutputHeight,PixelFormat.Format24bppRgb))
         using(resizer=Graphics.FromImage(outputFrame))
@@ -347,7 +374,11 @@ class MotionRenderer
                 Buffer.BlockCopy(background,0,pixels,0,pixels.Length);
                 Buffer.BlockCopy(coreDepth,0,depth,0,depth.Length*sizeof(float));
                 double theta=i*2*Math.PI/FrameCount;
-                foreach(Shell s in shells) DrawShell(s,Math.Cos(theta),Math.Sin(theta));
+                foreach(Shell s in shells)
+                {
+                    double phase = s.Motion.Angle(theta);
+                    DrawShell(s,Math.Cos(phase),Math.Sin(phase));
+                }
                 SaveFrame(Path.Combine(folder,i.ToString("D3",CultureInfo.InvariantCulture)+".png"));
             }
         }

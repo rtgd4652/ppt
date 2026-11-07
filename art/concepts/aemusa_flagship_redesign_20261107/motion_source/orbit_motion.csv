@@ -1,0 +1,5 @@
+shell,depth_offset,end_fraction,transverse_slope,relief_scale,sine_degrees,versine_degrees
+fore_far,-25,0.16,1.35,1.55,-25,-35
+fore_near,45,0.30,-1.35,1.55,-25,-35
+aft_far,-70,0.16,1.35,1.55,25,35
+aft_near,45,0.30,-1.35,1.55,25,35
