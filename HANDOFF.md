@@ -1,8 +1,10 @@
 # 跨 AI 接手入口
 
-更新：2026-11-06。适用于 Codex、其他本地 AI 和没有本会话历史的助手。只读本页、[AGENTS](AGENTS.md)和[TODO](docs/TODO.md)的当前事项即可开始判断任务；详细能力按需读[操作说明](docs/AGENT_OPERATIONS.md)。不要求先通读聊天、历史报告或整个项目。
+更新：2026-11-07。适用于 Codex、其他本地 AI 和没有本会话历史的助手。只读本页、[AGENTS](AGENTS.md)和[TODO](docs/TODO.md)的当前事项即可开始判断任务；详细能力按需读[操作说明](docs/AGENT_OPERATIONS.md)。不要求先通读聊天、历史报告或整个项目。
 
 ## 当前授权与工作状态
+
+- **11月7日已绘制终局旗舰外围银壳斜视候选。** 前壳拉长压低，中央星空向近侧敞开。首稿的两片尾壳在末端连成 U 形，第二稿将它们错开，露出壳下的空隙。360 像素宽缩图里能辨认小星系亮心与尾壳高差。下次讨论可从近侧前壳的悬浮间距和舰艏体量接着看。此次交付为二维设定稿，当前游戏模型基线为 `cc445c5`。[外围修订稿](art/concepts/aemusa_flagship_redesign_20261107/outer_shell_oblique_v02.png) · [首稿、参考与提示词](art/concepts/aemusa_flagship_redesign_20261107/README.md)
 
 - **11月6日晚收工。下次从「未闭合的航路」的外围轮廓继续。** 用户希望外围更有超出星海的感觉，明确喜爱的中央星空缺口继续作为视觉核心。对照两艘参考舰的原包图，盖亚方舟在主舰体与悬浮构件之间留出大块空隙，星穹之矛用宽后翼、镂空中段与细长矛尖构成剪影。当前 v03 斜上方预览里，几片平行银壳先于星空进入视线，舰腰的星空容易看成一块紫色面板。[盖亚方舟所属的 ACOT 扩展](https://steamcommunity.com/sharedfiles/filedetails/?id=1481972266) · [星规阵列](https://steamcommunity.com/sharedfiles/filedetails/?id=2293827000) · [当前模型斜视](art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)
 - 下次可先试一版轮廓草图，把前段银壳拉长、压低，后段两瓣略抬、向细金主轴回收，给中央星空的一侧留出完整视线。用同一斜上方视角和[终局概念](art/concepts/aemusa_flagship_redesign_20261105/endgame_transcendent_v01.png)对照，看能否一眼读出前后舰身之间的另一片星空。这是待讨论的造型建议。悬浮外壳绕舰身纵轴转动只讨论了可行性，尚未制作。本次仅保存设计讨论，模型基线为 `cc445c5`。
