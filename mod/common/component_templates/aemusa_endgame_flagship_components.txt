@@ -23,7 +23,7 @@ weapon_component_template = {
 	range = 250
 	accuracy = 0.85
 	tracking = 0
-	firing_arc = 25
+	# 沿用原版泰坦光束的默认射界，炮击电脑拉开距离时仍能从固定挂点发射。
 	use_ship_main_target = no
 	tags = { weapon_type_energy weapon_role_artillery t_slot }
 	ai_tags = { weapon_role_artillery artillery }
