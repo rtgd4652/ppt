@@ -1,0 +1,6 @@
+# 只挂在独立测试资料目录，读取引擎原生开局及战斗回调。
+on_game_start_country = { events = { aef16.1 } }
+on_entering_battle = { events = { aef16.5 } }
+on_ship_destroyed_perp = { events = { aef16.6 } }
+on_space_battle_won = { events = { aef16.7 } }
+on_space_battle_lost = { events = { aef16.8 } }

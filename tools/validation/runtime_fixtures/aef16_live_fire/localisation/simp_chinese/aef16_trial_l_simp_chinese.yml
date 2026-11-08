@@ -1,0 +1,5 @@
+﻿l_simp_chinese:
+ aef16.ready.title:0 "旗舰实弹演练"
+ aef16.ready.desc:0 "中央庭恒定支援舰队和一艘中立靶舰已在[aef16_range.GetName]就位。可先暂停并查看「未闭合的航路」的配装。放行后，靶舰将在五个游戏日后转为敌对。"
+ aef16.ready.wait:0 "暂缓，五日后再提醒"
+ aef16.ready.arm:0 "就绪，五日后交战"

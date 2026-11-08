@@ -1,0 +1,231 @@
+# 独立新局的一舰对一舰实弹测试。旗舰和主炮来自开发版。
+namespace = aef16
+
+country_event = {
+	id = aef16.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		is_country_type = default
+		NOT = { has_country_flag = aef16_initialized }
+	}
+	immediate = {
+		if = {
+			limit = { aemusa_ms_flagship_has_safe_capital = yes }
+			set_country_flag = aef16_initialized
+			save_global_event_target_as = aef16_player
+			random_system = {
+				limit = {
+					is_star_class = sc_g
+					has_presence = no
+				}
+				save_global_event_target_as = aef16_range
+			}
+			if = {
+				limit = { NOT = { exists = event_target:aef16_range } }
+				random_system = {
+					limit = { is_star_class = sc_f has_presence = no }
+					save_global_event_target_as = aef16_range
+				}
+			}
+			# 只补领取资格。正式 ensure_present 自己解析全局设计、创建舰队和实际配装。
+			set_country_flag = aemusa_ms_country_flagship_commissioned
+			aemusa_ms_flagship_ensure_present = yes
+			if = {
+				limit = {
+					exists = event_target:aef16_range
+					any_owned_ship = {
+						has_ship_flag = aemusa_reality_flagship
+						has_component = "AEMUSA_ENDGAME_REACTOR"
+						has_component = "AEMUSA_ENDGAME_T_BEAM"
+					}
+				}
+				event_target:aef16_range = {
+					set_surveyed = { surveyed = yes surveyor = event_target:aef16_player }
+				}
+				random_owned_fleet = {
+					limit = { has_fleet_flag = aemusa_reality_flagship }
+					save_global_event_target_as = aef16_fleet
+					set_location = { target = event_target:aef16_range distance = 260 angle = 90 }
+					set_fleet_stance = aggressive
+				}
+				create_country = {
+					name = "NAME_Black_Earl"
+					type = neutral_faction
+					effect = {
+						save_global_event_target_as = aef16_target_country
+						set_country_flag = aef16_dummy_country
+						establish_communications_no_message = event_target:aef16_player
+						create_fleet = {
+							name = "NAME_Black_Earl"
+							effect = {
+								set_owner = prev
+								set_fleet_flag = aef16_target_fleet
+								create_ship = {
+									name = "NAME_Black_Earl"
+									design = "NAME_Black_Earl"
+									graphical_culture = "pirate_01"
+									effect = {
+										set_ship_flag = aef16_target_ship
+										save_global_event_target_as = aef16_target
+										# 原版 talon_power 单层提供5000船体／5000装甲／2000护盾，只增强靶舰防御。
+										add_modifier = { modifier = talon_power multiplier = 8 days = -1 }
+									}
+								}
+								set_location = { target = event_target:aef16_fleet distance = 95 angle = 90 }
+								set_fleet_stance = passive
+							}
+						}
+					}
+				}
+				if = {
+					limit = { exists = event_target:aef16_target }
+					set_country_flag = aef16_staged
+					log = "AEF16|STAGED|system=[aef16_range.GetName]|own_fleet=[aef16_fleet.GetName]|target=[aef16_target.GetName]"
+					country_event = { id = aef16.2 }
+				}
+				else = { log = "AEF16|BLOCK|target_not_created" }
+			}
+			else = { log = "AEF16|BLOCK|range_or_runtime_t_design_missing" }
+		}
+		else_if = {
+			limit = { NOT = { has_country_flag = aef16_capital_retry } }
+			set_country_flag = aef16_capital_retry
+			country_event = { id = aef16.1 days = 1 }
+		}
+		else = { log = "AEF16|BLOCK|capital_not_ready" }
+	}
+}
+
+# 由玩家显式选择。即使程序初始化时在后台运行，目标也会保持中立直到这里放行。
+country_event = {
+	id = aef16.2
+	title = aef16.ready.title
+	desc = aef16.ready.desc
+	picture = GFX_evt_federation_fleet
+	is_triggered_only = yes
+	location = event_target:aef16_fleet
+	trigger = {
+		has_country_flag = aef16_staged
+		NOT = { has_country_flag = aef16_armed }
+	}
+	option = {
+		name = aef16.ready.wait
+		hidden_effect = { country_event = { id = aef16.2 days = 5 } }
+	}
+	option = {
+		name = aef16.ready.arm
+		hidden_effect = {
+			set_country_flag = aef16_armed
+			log = "AEF16|ARMED|hostility_after_five_days"
+			country_event = { id = aef16.3 days = 5 }
+		}
+	}
+}
+
+country_event = {
+	id = aef16.3
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = aef16_armed
+		NOT = { has_country_flag = aef16_live }
+		exists = event_target:aef16_target
+		exists = event_target:aef16_fleet
+	}
+	immediate = {
+		if = {
+			limit = {
+				event_target:aef16_range = {
+					count_ship_in_system = { count = 2 limit = { always = yes } }
+				}
+			}
+			set_country_flag = aef16_live
+			event_target:aef16_target = {
+				repair_ship = yes
+				repair_armor_percentage = 1
+				repair_shield_percentage = 1
+				export_trigger_value_to_variable = { trigger = has_hp variable = aef16_hp rounded = yes }
+				export_trigger_value_to_variable = { trigger = has_shield_hp variable = aef16_shield rounded = yes }
+				log = "AEF16|LIVE|target_hull=[This.aef16_hp]|shield=[This.aef16_shield]"
+			}
+			event_target:aef16_target_country = {
+				set_faction_hostility = { target = event_target:aef16_player set_hostile = yes set_friendly = no set_neutral = no }
+			}
+			set_variable = { which = aef16_days value = 0 }
+			country_event = { id = aef16.4 days = 1 }
+		}
+		else = { log = "AEF16|BLOCK|range_is_not_one_versus_one" }
+	}
+}
+
+# 运行时读数，不修改战斗结果；最多观察45个游戏日。
+country_event = {
+	id = aef16.4
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_country_flag = aef16_live exists = event_target:aef16_target }
+	immediate = {
+		event_target:aef16_target = {
+			export_trigger_value_to_variable = { trigger = has_hp variable = aef16_hp rounded = yes }
+			export_trigger_value_to_variable = { trigger = has_shield_hp variable = aef16_shield rounded = yes }
+			export_trigger_value_to_variable = { trigger = has_armor_percentage variable = aef16_armor }
+			log = "AEF16|READ|hull=[This.aef16_hp]|shield=[This.aef16_shield]|armor_fraction=[This.aef16_armor]"
+		}
+		change_variable = { which = aef16_days value = 1 }
+		if = {
+			limit = {
+				check_variable = { which = aef16_days value < 45 }
+				NOT = { has_country_flag = aef16_finished }
+			}
+			country_event = { id = aef16.4 days = 1 }
+		}
+	}
+}
+
+country_event = {
+	id = aef16.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = aef16_live
+		from = { has_country_flag = aef16_dummy_country }
+	}
+	immediate = { log = "AEF16|COMBAT|engine_entering_battle" }
+}
+
+country_event = {
+	id = aef16.6
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		has_country_flag = aef16_live
+		from = { has_country_flag = aef16_dummy_country }
+		fromfrom = { has_ship_flag = aemusa_reality_flagship }
+		fromfromfrom = { has_ship_flag = aef16_target_ship }
+	}
+	immediate = { log = "AEF16|KILL|native_callback|flagship_killed_target" }
+}
+
+country_event = {
+	id = aef16.7
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_country_flag = aef16_live from = { has_country_flag = aef16_dummy_country } }
+	immediate = {
+		set_country_flag = aef16_finished
+		log = "AEF16|WIN|native_space_battle_won"
+	}
+}
+
+country_event = {
+	id = aef16.8
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = { has_country_flag = aef16_live from = { has_country_flag = aef16_dummy_country } }
+	immediate = {
+		set_country_flag = aef16_finished
+		log = "AEF16|LOSS|native_space_battle_lost"
+	}
+}
