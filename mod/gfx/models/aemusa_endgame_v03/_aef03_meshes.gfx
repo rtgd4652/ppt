@@ -1,4 +1,4 @@
-# 原创终局旗舰v03运行候选，所有贴图使用独立名称。
+# 终局旗舰，三段沿用原实体接口。
 objectTypes = {
     pdxmesh = {
         name = "aef03_bow_mesh"
@@ -17,6 +17,7 @@ objectTypes = {
         name = "aef03_mid_mesh"
         file = "gfx/models/aemusa_endgame_v03/aef03_mid.mesh"
         scale = 1.0
+        animation = { id = "idle" type = "aef04_shell_orbit_animation" }
         meshsettings = {
             name = "aef03_mid"
             index = 0
@@ -31,6 +32,14 @@ objectTypes = {
             texture_diffuse = "aef03_hull_diffuse.dds"
             texture_normal = "aef03_hull_normal.dds"
             texture_specular = "aef03_hull_properties.dds"
+            shader = "PdxMeshShip"
+        }
+        meshsettings = {
+            name = "aef03_mid"
+            index = 2
+            texture_diffuse = "aef04_shell_diffuse.dds"
+            texture_normal = "aef04_shell_normal.dds"
+            texture_specular = "aef04_shell_properties.dds"
             shader = "PdxMeshShip"
         }
     }

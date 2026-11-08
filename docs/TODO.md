@@ -1,6 +1,6 @@
 # 当前执行清单
 
-更新：2026-11-07。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。本页只列当前事项与仍有效的后续范围；旧已完成清单保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)，不作为执行队列。
+更新：2026-11-08。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。本页只列当前事项与仍有效的后续范围；旧已完成清单保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)，不作为执行队列。
 
 ## 当前接手点
 
@@ -8,14 +8,15 @@
 - [x] 交付第二稿的[银壳轴向旋转概念 GIF](../art/concepts/aemusa_flagship_redesign_20261107/outer_shell_axial_rotation.gif)，按深度呈现外壳从中央舰身前后经过的效果。
 - [x] 依据四瓣银壳同时消隐的反馈完成[错相修订 GIF](../art/concepts/aemusa_flagship_redesign_20261107/outer_shell_staggered.gif)，已核对整圈前后两组的可见性。
 - [x] 参照第二稿完成 v04 真实舰模与错相动画，固定斜视的 192 个姿态均能看见前后银壳和星系亮心。[模型动图](../art/models/aemusa_endgame_runtime_v04/previews/model_orbit.gif)
-- [ ] 下次用户恢复后，从将 v04 候选安装到开发版开始，随后核对安装结果和实机外观。
+- [x] v04 已安装，开发版文件已回读。已在阿沃思星系看到三个实机姿态和中央星系亮心。[实机对照](../reports/images/flagship_v04_runtime_poses_2026-11-08.jpg)
+- [ ] 下次正常启动后复核中段死亡状态日志。连续实机动图待取景就绪后再放行游戏。[当前断点](../reports/flagship_v04_runtime_observation_2026-11-08.json)
 - [x] 依用户反馈移除16个外露炮座及配套亮条。开发版使用隐形发射定位点，16T装备链离线核对通过。后续近景观察以此版为准。[整舰预览](../art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)
 - [x] 4.5.3实机载入旧隔离档并打开旗舰详情。新舰壳可见，面板实装六L。中央星空细节待一次星系近景，16T与开火留给新设计样本。[实机结果](../reports/flagship_v03_runtime_observation_2026-11-06.json)
 - **本次按用户选择完成离线核对，后续实机测试已获授权。** 两份隔离档的旗舰实例、已存设计和同名全局设计索引均落在六L配置，当前开发版固定设计为16T。[核对记录](../reports/flagship_offline_save_audit_2026-11-06.json)
 - [x] v03三段网格／独立DDS／烘焙星空与16T固定设计接入；专用组件合法、余量1470，旧六L兼容定义保留，重复DDS改名，资产登记完成。见[交接与验证](../reports/flagship_prelaunch_work_2026-11-06.json)。
 - [x] PDX回读、原生定位器方向、贴图mip／引用、整舰供能及总静态通过（0错误／0警告），相关AWP06脚本8项通过。
-- [ ] 后续实机阶段先在旧隔离档观察舰体与中央星空，再用独立新测试局核对16T设计与开火。旧档中同名设计绑定在加载或舰船恢复时的处理单列核验。
-- 后续独立事项：自动LOD、专属动画、终局数值与经济平衡、正式外观审核。
+- [ ] 用独立新测试局核对16T设计与开火。旧档恢复舰船时的同名设计绑定单列核验。
+- 后续独立事项包括自动LOD、终局数值与经济平衡、正式外观审核。
 
 ## 前期工作记录
 

@@ -1,6 +1,7 @@
 """跨文件核对16T设计、供能、真实PDX定位器与运行贴图；不替代游戏验收。"""
 
 import json
+from datetime import datetime, timedelta, timezone
 import math
 from pathlib import Path
 import re
@@ -91,7 +92,7 @@ def main():
     middle_states={scalar(s,'name'):s for s in children(entities['aef03_mid_entity'],'state')}
     motion=scalar(middle_states['idle'],'animation')=='idle'
     revision='v04' if motion else 'v03'
-    date='2026-11-07' if motion else '2026-11-06'
+    date=datetime.now(timezone(timedelta(hours=8))).date().isoformat() if motion else '2026-11-06'
     approved_export=ROOT/f'art/models/aemusa_endgame_runtime_{revision}/export'
     if motion:
         clip=children(mesh_defs['aef03_mid_mesh'],'animation')[0]
@@ -101,6 +102,8 @@ def main():
         assert (dest/animated_file).read_bytes()==(approved_export/animated_file).read_bytes()
         assert all(scalar(middle_states[s],'animation')=='idle' and scalar(middle_states[s],'looping')=='yes'
                    for s in ('idle','moving'))
+        assert all(scalar(state,'animation')==scalar(clip,'id') for state in middle_states.values())
+        assert scalar(middle_states['death'],'looping')=='no' and scalar(middle_states['death'],'state_time')=='5'
     reader=load_reader(Path('C:/Users/Admin/AppData/Roaming/Blender Foundation/Blender/5.1/extensions/user_default/io_pdx_mesh'))
     parts={};total_tri=0
     for part in ('bow','mid','stern'):
@@ -153,7 +156,8 @@ def main():
             'power_breakdown':power,'power_surplus':total,'native_components_resolved':True,
             'pdx_parts':{k:{'triangles':v['triangles'],'material_count':v['material_count'],'locator_count':len(v['locators'])} for k,v in parts.items()},
             'total_triangles':total_tri,'uv_and_normals_present_and_finite':True,'textures':textures,'emission_recolor_disabled':True,
-            'known_legacy_DDS_duplicates_resolved':True,'runtime_status':'not_started','game_operated':False}
+            'known_legacy_DDS_duplicates_resolved':True,
+            'runtime_status':'not_evaluated_by_preflight' if motion else 'not_started','game_operated':False}
     (ROOT/f'reports/flagship_{revision}_preflight_{date}.json').write_text(json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print('ENDGAME_PREFLIGHT_PASS '+json.dumps({'T_slots':16,'power_surplus':total,'triangles':total_tri,'DDS':len(textures),'legacy_compatibility':'static_pass'},ensure_ascii=False))
 

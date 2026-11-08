@@ -1,5 +1,5 @@
 {
-  "input": "art/models/aemusa_endgame_runtime_v04/export",
+  "input": "mod/gfx/models/aemusa_endgame_v03",
   "triangles": {
     "bow": 860,
     "mid": 7212,
@@ -39,5 +39,5 @@
     "collision_sample_poses": 32,
     "triangle_overlaps": []
   },
-  "engine_observation": "pending"
+  "engine_observation": "not_measured_by_this_check"
 }

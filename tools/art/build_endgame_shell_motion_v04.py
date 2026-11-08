@@ -399,10 +399,12 @@ def definitions():
     start = old.index('    name = "aef03_mid_entity"')
     end = old.index('\n}',start)
     middle = old[start:end]
-    for state in ("idle","moving"):
+    # 游戏会检查带骨骼实体的每个状态。死亡期间沿用旋转，保留原有的五秒非循环状态。
+    for state in ("idle", "moving", "death"):
         needle = f'name = "{state}" state_time = 5'
         assert middle.count(needle)==1
-        middle = middle.replace(needle,f'name = "{state}" animation = "idle" looping = yes animation_blend_time = 0.25')
+        timing = 'state_time = 5' if state == "death" else 'looping = yes animation_blend_time = 0.25'
+        middle = middle.replace(needle, f'name = "{state}" animation = "idle" {timing}')
     text = old[:start]+middle+old[end:]
     text = text.replace(text.splitlines()[0],"# 终局旗舰的固定舰身、武器挂点与前后两组旋转银壳。",1)
     text += '\nanimation = {\n    name = "aef04_shell_orbit_animation"\n    file = "aef04_shell_orbit.anim"\n}\n'

@@ -243,7 +243,7 @@ def run():
     evidence = check_views(groups,samples,guns,phases,folder)
     result = {"input":folder.relative_to(ROOT).as_posix(),"triangles":tris,"total_triangles":sum(tris.values()),
               "fixed_locators_identical_to_v03":True,"T_locators":len(guns),"sample_rate":FPS,"loop_seconds":PERIOD/FPS,
-              "bone_travel_degrees":revolutions,"camera_check":evidence,"engine_observation":"pending"}
+              "bone_travel_degrees":revolutions,"camera_check":evidence,"engine_observation":"not_measured_by_this_check"}
     print("AEF04_CHECK",json.dumps(result,ensure_ascii=False),flush=True)
     assert evidence["minimum_visible_banks"]==2 and evidence["minimum_substantial_shells"]>=2
     assert evidence["star_patch_minimum_samples_visible"]>=1

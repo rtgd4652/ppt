@@ -1,0 +1,55 @@
+{
+  "date": "2026-11-08",
+  "status": "installed_system_view_sampled",
+  "source_checkpoint": "1340381",
+  "game_version": "Cygnus v4.5.3",
+  "mod": "mod/aemusa_artifact_user.mod",
+  "save": "2293.10.11.sav",
+  "system": "阿沃思（M型红巨星）",
+  "fleet": "中央庭恒定支援舰队",
+  "ship": "未闭合的航路",
+  "observed": [
+    {
+      "date": "2293.10.11",
+      "image": "reports/images/flagship_v04_runtime_2293-10-11.jpg"
+    },
+    {
+      "date": "2293.10.14",
+      "image": "reports/images/flagship_v04_runtime_2293-10-14.jpg"
+    },
+    {
+      "date": "2293.11.01",
+      "image": "reports/images/flagship_v04_runtime_named_2026-11-08.jpg"
+    }
+  ],
+  "comparison": "reports/images/flagship_v04_runtime_poses_2026-11-08.jpg",
+  "observations": [
+    "三个暂停时点的前、后壳相对舰身呈现不同姿态。三个画面的缩放和光照有所不同。",
+    "10月14日近景能辨认中央小星系的亮心。红巨星光照下旋臂对比度较低。",
+    "隔离档沿用旧六L区段，舰身旁的小炮塔来自这些区段的 large_turret。新16T设计使用 invisible_titanic_fixed。"
+  ],
+  "capture": {
+    "user_advanced_game": true,
+    "last_confirmed_game_date": "2293.11.01",
+    "last_confirmed_game_state": "暂停",
+    "sample_frames": 45,
+    "sample_span_seconds": 21.062,
+    "continuous_runtime_cycle": "待录，连续取景开始时游戏已经重新暂停。"
+  },
+  "installed_pdx_check": {
+    "source": "art/models/aemusa_endgame_runtime_v04/verification.json",
+    "poses": 192,
+    "seconds_per_cycle": 8,
+    "minimum_visible_fore_and_aft_banks": 2,
+    "visible_nucleus_poses": 192,
+    "fixed_T_locators": 16
+  },
+  "engine_log": {
+    "observed": "[09:33:44][graphics/pdx_entity.cpp:2637]: State 'death' in animated entity 'aef03_mid_entity' is missing an animation!",
+    "fix": "中段死亡状态绑定现有 idle 动作，保留5秒非循环。生成源和开发版定义已更新，静态预检通过。",
+    "cold_start_after_fix": "待下次正常启动核对"
+  },
+  "preflight": "reports/flagship_v04_preflight_2026-11-08.json",
+  "agent_save_writes": 0,
+  "agent_console_commands": 0
+}

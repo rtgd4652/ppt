@@ -1,4 +1,4 @@
-# 终局旗舰显示实体；先做静态显示候选，游戏观察尚未执行。
+# 终局旗舰的固定舰身、武器挂点与前后两组旋转银壳。
 entity = {
     name = "aef03_root_entity"
     scale = 1.0
@@ -32,11 +32,11 @@ entity = {
     name = "aef03_mid_entity"
     pdxmesh = "aef03_mid_mesh"
     default_state = "idle"
-    state = { name = "idle" state_time = 5
+    state = { name = "idle" animation = "idle" looping = yes animation_blend_time = 0.25
     }
-    state = { name = "moving" state_time = 5
+    state = { name = "moving" animation = "idle" looping = yes animation_blend_time = 0.25
     }
-    state = { name = "death" state_time = 5 looping = no }
+    state = { name = "death" animation = "idle" state_time = 5 looping = no }
     game_data = { emissive_recolor_crunch = 0 }
 }
 entity = {
@@ -60,4 +60,9 @@ entity = {
     attach = { part1 = "aef03_bow_entity" }
     attach = { part2 = "aef03_mid_entity" }
     attach = { part3 = "aef03_stern_entity" }
+}
+
+animation = {
+    name = "aef04_shell_orbit_animation"
+    file = "aef04_shell_orbit.anim"
 }

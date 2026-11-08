@@ -23,7 +23,7 @@ def relative(path):
     return path.relative_to(ROOT).as_posix()
 
 
-def registry_payload():
+def registry_payload(same_assets):
     original = REGISTRY.read_bytes()
     text = original.decode("utf-8-sig")
     reader = csv.DictReader(io.StringIO(text))
@@ -32,6 +32,7 @@ def registry_payload():
     assert fields and len({r["asset_id"] for r in rows})==len(rows)
     records = {r["asset_id"]:r for r in rows}
     source = relative(AUTHOR/"endgame_shell_motion_v04.blend")
+    keep_review = same_assets and records["ASSET-AEF03-MESH-MID"]["source_path"] == source
     note = "2026-11-07。依据第二稿重做四瓣银壳，前后分组绕轴，固定星空与武器挂点。实际 PDX 已离线核对。"
     for part in ("BOW","MID","STERN","ENTITY-PACK"):
         key = "ASSET-AEF03-"+("MESH-"+part if part!="ENTITY-PACK" else part)
@@ -39,17 +40,27 @@ def registry_payload():
         row["source_path"] = source if part!="ENTITY-PACK" else relative(AUTHOR/"export"/ENTITIES)
         row["origin_method"] = "项目原创第二稿控制截面与 v03 舰体，刚性蒙皮及 PDX 导出"
         row["authorization_review"] = "user_selected_second_concept_and_requested_motion"
-        row["notes"] = note
+        if not keep_review:
+            row.update(notes=note, game_spec_status="static_checked_runtime_pending")
     base = records["ASSET-AEF03-MESH-MID"]
     for filename in [*TEXTURES,CLIP]:
         is_clip = filename==CLIP
         role = filename.removeprefix("aef04_shell_").removesuffix(".dds")
         key = "ASSET-AEF04-ORBIT" if is_clip else "ASSET-AEF04-TEX-SHELL-"+role.upper()
-        row = dict(base)
+        row = dict(records.get(key,base))
         origin = AUTHOR/"shell_albedo.png" if role=="diffuse" else ROOT/"tools/art/endgame_shell_profiles.py"
+        if is_clip:
+            method = "项目原创前后两组刚性骨骼，24 fps 采样导出 PDX 循环动作"
+        elif role=="diffuse":
+            method = "项目原创第二稿银壳表面采色，按各壳截面展开并编码 BC3 mip"
+        else:
+            method = "按 PdxMeshShip 通道定义生成常量数据贴图并编码 BC3 mip"
         row.update(asset_id=key, title="终局旗舰银壳错相旋转" if is_clip else "终局旗舰银壳 "+role+" 贴图",
                    asset_type="ship_animation" if is_clip else "model_texture",
-                   source_path=source if is_clip else relative(origin), mod_path=relative(DEST/filename))
+                   source_path=source if is_clip else relative(origin), mod_path=relative(DEST/filename),
+                   origin_method=method)
+        if not keep_review or key not in records:
+            row.update(notes=note, game_spec_status="static_checked_runtime_pending")
         if key in records:
             records[key].update(row)
         else:
@@ -76,7 +87,9 @@ def install():
             if not baseline and (tracked.returncode or existing!=tracked.stdout):
                 raise RuntimeError(f"已有不同的开发版文件需要保留：{target}")
         payloads[target] = content
-    payloads[REGISTRY] = registry_payload()
+    # 原样重装保留已记录的实机观察，资源有变化时另行核对。
+    same_assets = all(path.is_file() and path.read_bytes()==data for path,data in payloads.items())
+    payloads[REGISTRY] = registry_payload(same_assets)
     # 先在同盘备齐文件，再依次替换。若中途遇到写锁，按原样恢复前面已经替换的文件。
     (ROOT/"temp").mkdir(exist_ok=True)
     with TemporaryDirectory(dir=ROOT/"temp", prefix="aef04_install_") as scratch:
