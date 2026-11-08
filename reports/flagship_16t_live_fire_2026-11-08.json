@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-08",
+  "game": "Cygnus v4.5.3",
+  "status": "loadout_verified_baseline_zero_damage",
+  "production_baseline": "e13a08e",
+  "fixture": "tools/validation/runtime_fixtures/aef16_live_fire",
+  "isolation": {
+    "new_galaxy": true,
+    "system": "常陈四",
+    "user_profile": "temp/flagship_16t_20261108/profile",
+    "prebattle_save": "save games/_987386394/2200.01.01.sav",
+    "local_backup": "runtime-backups/flagship-16t-20261108/2200.01.01-prebattle.sav",
+    "previous_campaign_saved_separately": "2293.12.03.sav"
+  },
+  "setup": {
+    "source": "正式 aemusa_ms_flagship_ensure_present，夹具只补领取资格和对照战条件。",
+    "target": "原版 NAME_Black_Earl，8层原版 talon_power 仅加在靶舰。",
+    "participants": 2
+  },
+  "loadout": {
+    "player_ship_id": 1641,
+    "fleet_id": 215,
+    "ship_design_id": 1505,
+    "target_ship_id": 1642,
+    "target_fleet_id": 216,
+    "system_id": 534,
+    "star_class": "sc_g",
+    "sections": {
+      "bow": [
+        "TITANIC_GUN_01",
+        "TITANIC_GUN_02",
+        "TITANIC_GUN_03",
+        "TITANIC_GUN_05",
+        "TITANIC_GUN_06",
+        "TITANIC_GUN_07",
+        "TITANIC_GUN_09",
+        "TITANIC_GUN_10",
+        "TITANIC_GUN_11",
+        "TITANIC_GUN_13",
+        "TITANIC_GUN_14",
+        "TITANIC_GUN_15"
+      ],
+      "mid": [],
+      "stern": [
+        "TITANIC_GUN_04",
+        "TITANIC_GUN_08",
+        "TITANIC_GUN_12",
+        "TITANIC_GUN_16"
+      ]
+    },
+    "required_components": [
+      "AEMUSA_ENDGAME_REACTOR",
+      "HYPER_DRIVE_3",
+      "SHIP_THRUSTER_4",
+      "SENSOR_4",
+      "COMBAT_COMPUTER_ARTILLERY_ADVANCED"
+    ],
+    "initial_target": {
+      "hitpoints": 42400,
+      "armor_hitpoints": 41534,
+      "shield_hitpoints": 16600
+    },
+    "sample_days": 45,
+    "sample_first_date": "2200.1.7",
+    "sample_last_date": "2200.2.21",
+    "unique_readings": [
+      [
+        "42400",
+        "16600",
+        "1"
+      ]
+    ],
+    "native_enter_and_live": [
+      "LIVE|target_hull=42400|shield=16600",
+      "COMBAT|engine_entering_battle"
+    ],
+    "unique_weapon": "AEMUSA_ENDGAME_T_BEAM",
+    "component_label": "恒定主炮",
+    "screenshot_slots": "武器配备上排10个T、下排6个T；舰体区段按真实存档分组。",
+    "visual": "中性光近景可辨银壳与中央紫色星空，截图中可见侧舷轮廓。",
+    "loadout_image": "reports/images/flagship_16t_live_loadout_2026-11-08.jpg",
+    "neutral_view": "reports/images/flagship_16t_gstar_hull_2026-11-08.jpg"
+  },
+  "baseline_battle": {
+    "firing_arc_degrees": 25,
+    "combat_joined": "2200.01.06",
+    "last_observed_game_date": "2200.05.05",
+    "damage_by_flagship_in_panel": {
+      "hull": 0,
+      "armor": 0,
+      "shield": 0
+    },
+    "damage_by_target_in_panel": {
+      "hull": 0,
+      "armor": 497,
+      "shield": 2287
+    },
+    "battle_panel": "reports/images/flagship_16t_first_battle_2026-11-08.jpg",
+    "conclusion": "引擎已进入一对一战斗，45次靶舰读数一致，随后战斗面板仍显示旗舰累计伤害为0。尚待取得旗舰有效命中以及光束从挂点发出的画面。"
+  }
+}
