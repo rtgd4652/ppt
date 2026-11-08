@@ -9,7 +9,7 @@
 - [x] 依据四瓣银壳同时消隐的反馈完成[错相修订 GIF](../art/concepts/aemusa_flagship_redesign_20261107/outer_shell_staggered.gif)，已核对整圈前后两组的可见性。
 - [x] 参照第二稿完成 v04 真实舰模与错相动画，固定斜视的 192 个姿态均能看见前后银壳和星系亮心。[模型动图](../art/models/aemusa_endgame_runtime_v04/previews/model_orbit.gif)
 - [x] v04 已安装，开发版文件已回读。已在阿沃思星系看到三个实机姿态和中央星系亮心。[实机对照](../reports/images/flagship_v04_runtime_poses_2026-11-08.jpg)
-- [ ] 下次正常启动后复核中段死亡状态日志。连续实机动图待取景就绪后再放行游戏。[当前断点](../reports/flagship_v04_runtime_observation_2026-11-08.json)
+- [x] 正常冷启动已复核中段死亡状态的动画引用。阿沃思固定镜头的完整一圈已实录，并确认恢复暂停。[实机动图](../reports/images/flagship_v04_live_orbit_2026-11-08.gif) · [核对记录](../reports/flagship_v04_runtime_observation_2026-11-08.json)
 - [x] 依用户反馈移除16个外露炮座及配套亮条。开发版使用隐形发射定位点，16T装备链离线核对通过。后续近景观察以此版为准。[整舰预览](../art/models/aemusa_endgame_runtime_v03/previews/runtime_material_oblique.png)
 - [x] 4.5.3实机载入旧隔离档并打开旗舰详情。新舰壳可见，面板实装六L。中央星空细节待一次星系近景，16T与开火留给新设计样本。[实机结果](../reports/flagship_v03_runtime_observation_2026-11-06.json)
 - **本次按用户选择完成离线核对，后续实机测试已获授权。** 两份隔离档的旗舰实例、已存设计和同名全局设计索引均落在六L配置，当前开发版固定设计为16T。[核对记录](../reports/flagship_offline_save_audit_2026-11-06.json)

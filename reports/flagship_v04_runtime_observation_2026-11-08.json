@@ -1,6 +1,6 @@
 {
   "date": "2026-11-08",
-  "status": "installed_system_view_sampled",
+  "status": "installed_system_view_full_cycle_observed",
   "source_checkpoint": "1340381",
   "game_version": "Cygnus v4.5.3",
   "mod": "mod/aemusa_artifact_user.mod",
@@ -29,12 +29,13 @@
     "隔离档沿用旧六L区段，舰身旁的小炮塔来自这些区段的 large_turret。新16T设计使用 invisible_titanic_fixed。"
   ],
   "capture": {
+    "session": "上午三个暂停时点",
     "user_advanced_game": true,
     "last_confirmed_game_date": "2293.11.01",
     "last_confirmed_game_state": "暂停",
     "sample_frames": 45,
     "sample_span_seconds": 21.062,
-    "continuous_runtime_cycle": "待录，连续取景开始时游戏已经重新暂停。"
+    "continuous_runtime_cycle": "上午录制开始时游戏已再次暂停。下午补录的连续实机画面见 fixed_camera_follow_up。"
   },
   "installed_pdx_check": {
     "source": "art/models/aemusa_endgame_runtime_v04/verification.json",
@@ -47,7 +48,53 @@
   "engine_log": {
     "observed": "[09:33:44][graphics/pdx_entity.cpp:2637]: State 'death' in animated entity 'aef03_mid_entity' is missing an animation!",
     "fix": "中段死亡状态绑定现有 idle 动作，保留5秒非循环。生成源和开发版定义已更新，静态预检通过。",
-    "cold_start_after_fix": "待下次正常启动核对"
+    "cold_start_after_fix": "11月8日16:03:43的新进程已载入隔离档，启动日志中原来的死亡状态缺动画警告为0条。"
+  },
+  "fixed_camera_follow_up": {
+    "source_checkpoint": "07c2350",
+    "system": "阿沃思",
+    "ship": "未闭合的航路",
+    "launch_checks": {
+      "direct_executable_probe": "15:25启动的主菜单识别出 Mod，隔离档提示缺少 DLC，选择存档后正常退出。后续游戏观察取自 Steam 启动器载入的进程。",
+      "game_log": "[16:03:43][game_application.cpp:250]: Game Version: Cygnus v4.5.3",
+      "mod_loaded": "[16:03:55][planet_class.cpp:599]: Planet Class #69 tag = pc_artifact_crossing_city name = 交界都市",
+      "error_log_last_write_beijing": "2026-11-08 16:04:01",
+      "error_log_bytes": 15469,
+      "flagship_error_matches": 0
+    },
+    "running_capture": {
+      "camera": "阿沃思固定星系近景，录制中未移动镜头。仅采集已核实的群星窗口内舰体区域。",
+      "initial_game_date": "2293.10.11",
+      "end_game_date": "2293.11.10",
+      "end_state": "暂停，已读取游戏暂停图标并保存画面。",
+      "first_frames_before_unpause": 2,
+      "total_frames": 236,
+      "running_frames": 216,
+      "running_first_to_last_seconds": 12.027,
+      "raw_crop_pixels": [
+        944,
+        1066
+      ],
+      "estimated_pose_return_seconds": 8,
+      "period_method": "在舰艏与舰艉分别比较亮壳色差的重复位置，避开舰队标签及红色恒星背景。",
+      "loop_start_frame": 60,
+      "loop_end_frame_exclusive": 202,
+      "source_interval_seconds": 7.982,
+      "preview_frames": 96,
+      "preview_pixels": [
+        408,
+        528
+      ],
+      "gif_duration_seconds": 7.98,
+      "preview": "reports/images/flagship_v04_live_orbit_2026-11-08.gif",
+      "full_take": "reports/images/flagship_v04_live_take_2026-11-08.mp4",
+      "paused_evidence": "reports/images/flagship_v04_live_paused_2026-11-08.jpg"
+    },
+    "observations": [
+      "前壳与尾壳的亮面依次转窄、展开，再回到相近姿态。本镜头的完整一圈中仍能辨认外围轮廓。",
+      "中央小星系的亮心可见。红巨星的光照使银壳偏红，侧转的尾壳与背景对比偏低。",
+      "修正后的中段死亡状态引用通过正常冷启动日志复核；本轮实机观察的是停驻旗舰的待机动画。"
+    ]
   },
   "preflight": "reports/flagship_v04_preflight_2026-11-08.json",
   "agent_save_writes": 0,
