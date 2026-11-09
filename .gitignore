@@ -36,6 +36,30 @@ knowledge/database/*.sqlite-wal
 art/reference_library/**
 !art/reference_library/README.md
 
+# 概念图、模型预览和实机影像默认保存在本地。制作输入、模型与游戏贴图继续入库。
+/art/concepts/**/*.png
+/art/concepts/**/*.jpg
+/art/concepts/**/*.jpeg
+/art/concepts/**/*.webp
+/art/concepts/**/*.gif
+/art/concepts/**/*.mp4
+/art/concepts/**/*.webm
+!/art/concepts/**/motion_source/**
+/art/models/**/previews/**/*.png
+/art/models/**/previews/**/*.jpg
+/art/models/**/previews/**/*.jpeg
+/art/models/**/previews/**/*.webp
+/art/models/**/previews/**/*.gif
+/art/models/**/previews/**/*.mp4
+/art/models/**/previews/**/*.webm
+/reports/images/**/*.png
+/reports/images/**/*.jpg
+/reports/images/**/*.jpeg
+/reports/images/**/*.webp
+/reports/images/**/*.gif
+/reports/images/**/*.mp4
+/reports/images/**/*.webm
+
 # 爱缪莎旗舰隔离原型的本地组装与测试产物；源骨架仍纳入版本控制。
 tools/prototypes/aemusa_flagship/build/
 tools/prototypes/aemusa_flagship/test_output/
