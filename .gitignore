@@ -52,6 +52,7 @@ art/reference_library/**
 /art/models/**/previews/**/*.gif
 /art/models/**/previews/**/*.mp4
 /art/models/**/previews/**/*.webm
+/art/models/**/material_study*/**/*_material_study.png
 /reports/images/**/*.png
 /reports/images/**/*.jpg
 /reports/images/**/*.jpeg
