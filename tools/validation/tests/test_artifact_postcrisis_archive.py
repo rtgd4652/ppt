@@ -120,7 +120,17 @@ class PostcrisisArchiveTests(unittest.TestCase):
                 for n in [120,130,140,150,160,170,180]:finale.step(ledger,n)
                 expected=crisis.PREFIX+'ending_fate_sovereign_settled'
             self.assertIn(expected,ledger.flags)
-            w=World();w.a['flags']=set(ledger.flags);self.assertTrue(w.candidate());self.assertTrue(w.use());self.assertTrue(w.decoded())
+            self.assertEqual(finale.route(ledger), 'aemusa_finale.200')
+            link = next(e.value for e in ledger.events['aemusa_finale.200']
+                        if e.key == 'option' and scalar(e.value, 'name') == 'aemusa_finale.handover')
+            w = World()
+            w.a['flags'] = set(ledger.flags)
+            self.assertTrue(w.condition(child(link, 'trigger'), [w.a]))
+            ledger.execute(child(link, 'hidden_effect'))
+            report, delay = ledger.queue.pop()
+            self.assertEqual((report, delay), ('aemusa_finale.210', 0))
+            self.assertTrue(w.condition(child(ledger.events[report], 'trigger'), [w.a]))
+            self.assertTrue(w.candidate());self.assertTrue(w.use());self.assertTrue(w.decoded())
 
     def test_exact_payment_and_single_country_record_without_history_writes(self):
         w=World();w.a['resources'].update(energy=500,consumer_goods=200,minor_artifacts=20)

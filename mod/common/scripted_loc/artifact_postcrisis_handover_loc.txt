@@ -1,0 +1,117 @@
+# 国家作用域。4.5.3 的 random = no 让同权文本取首条符合者，优先展示已取得的成果。
+defined_text = {
+	name = GetArtifactPostcrisisLedger
+	random = no
+	text = {
+		trigger = {
+			is_variable_set = aemusa_ms_country_projections_defeated
+			is_variable_set = aemusa_ms_country_anchors_archived
+			is_variable_set = aemusa_ms_country_anchors_liberated
+			is_variable_set = aemusa_ms_country_anchor_losses
+		}
+		localization_key = aph.handover.ledger
+	}
+	# 较早的完整结算可能没有明细，保留胜利，不用零填齐缺页。
+	default = aph.handover.ledger_summary
+}
+
+defined_text = {
+	name = GetArtifactPostcrisisArchive
+	random = no
+	text = {
+		trigger = { artifact_postcrisis_records_decoded = yes }
+		localization_key = aph.handover.archive_decoded
+	}
+	text = {
+		trigger = { any_owned_colony = { carrier = { artifact_postcrisis_archive_can_decode = yes } } }
+		localization_key = aph.handover.archive_ready
+	}
+	text = {
+		trigger = { artifact_postcrisis_has_archive_site = yes }
+		localization_key = aph.handover.archive_funding
+	}
+	text = {
+		trigger = { has_technology = tech_artifact_post_disaster_record_decoding }
+		localization_key = aph.handover.archive_site
+	}
+	text = {
+		trigger = {
+			has_technology = tech_artifact_relic_archive_restoration
+			has_technology = tech_artifact_civilization_joint_recovery
+		}
+		localization_key = aph.handover.archive_research
+	}
+	default = aph.handover.archive_prerequisites
+}
+
+defined_text = {
+	name = GetArtifactPostcrisisFleet
+	random = no
+	text = {
+		trigger = { country_uses_bio_ships = yes }
+		localization_key = aph.handover.fleet_bio
+	}
+	text = {
+		trigger = { artifact_postcrisis_fleet_available = yes }
+		localization_key = aph.handover.fleet_design
+	}
+	text = {
+		trigger = { artifact_postcrisis_records_decoded = no }
+		localization_key = aph.handover.fleet_wait
+	}
+	text = {
+		trigger = { NOT = { has_technology = tech_artifact_strategic_hull_engineering } }
+		localization_key = aph.handover.fleet_hull
+	}
+	text = {
+		trigger = { has_technology = tech_artifact_postcrisis_ship_engineering }
+		localization_key = aph.handover.fleet_qualification
+	}
+	default = aph.handover.fleet_research
+}
+
+defined_text = {
+	name = GetArtifactPostcrisisWorldFormer
+	random = no
+	text = {
+		trigger = { artifact_postcrisis_records_decoded = no }
+		localization_key = aph.handover.platform_wait
+	}
+	text = {
+		trigger = {
+			artifact_postcrisis_megastructure_available = no
+			NOT = { has_technology = tech_artifact_interstellar_engineering_coordination }
+		}
+		localization_key = aph.handover.platform_infrastructure
+	}
+	text = {
+		trigger = { artifact_postcrisis_megastructure_available = no }
+		localization_key = aph.handover.platform_research
+	}
+	text = {
+		trigger = { artifact_postcrisis_world_former_can_activate = yes }
+		localization_key = aph.handover.platform_ready
+	}
+	text = {
+		trigger = {
+			any_owned_megastructure = {
+				is_megastructure_type = artifact_postcrisis_world_former_0
+			}
+		}
+		localization_key = aph.handover.platform_upgrade
+	}
+	text = {
+		trigger = {
+			any_owned_megastructure = {
+				is_megastructure_type = artifact_postcrisis_world_former_1
+				NOT = { has_megastructure_flag = apm_world_formed }
+			}
+		}
+		localization_key = aph.handover.platform_control
+	}
+	text = {
+		trigger = { artifact_postcrisis_world_former_owned = yes }
+		localization_key = aph.handover.platform_formed
+	}
+	default = aph.handover.platform_build
+}

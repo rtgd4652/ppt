@@ -6,6 +6,12 @@ artifact_postcrisis_common_victory = {
 	has_country_flag = aemusa_ms_country_settlement_exclusive_crisis_victory_done
 }
 
+# 国家作用域。战后交接只核对现有战果，爱缪莎离场或终章尚未作决定也可回看。
+artifact_postcrisis_handover_visible = {
+	is_ai = no
+	artifact_postcrisis_common_victory = yes
+}
+
 # 国家知识不依赖继续保有原档案馆；F07/F08后续资格读取本接口。
 artifact_postcrisis_records_decoded = {
 	has_technology = "tech_artifact_post_disaster_record_decoding"
@@ -23,6 +29,11 @@ artifact_postcrisis_archive_site = {
 		has_technology = "tech_artifact_post_disaster_record_decoding"
 		artifact_postcrisis_common_victory = yes
 	}
+}
+
+# 国家作用域。打开定位交接单时也用同一行星条件重新选择本国馆址。
+artifact_postcrisis_has_archive_site = {
+	any_owned_colony = { carrier = { artifact_postcrisis_archive_site = yes } }
 }
 
 artifact_postcrisis_archive_can_decode = {

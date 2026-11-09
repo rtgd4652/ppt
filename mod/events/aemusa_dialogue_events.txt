@@ -254,6 +254,23 @@ country_event = {
     is_triggered_only = yes # 仅由白夜馆主菜单调用。
     picture = GFX_evt_aemusa_white_night_pavilion # 回忆页沿用白夜馆背景。
 
+    # 国家战果归档独立于通讯领袖及个人结局，旧档也从这里查阅。
+    option = {
+        name = aemusa_finale.handover
+        trigger = { artifact_postcrisis_handover_visible = yes }
+        hidden_effect = { country_event = { id = aemusa_finale.210 } }
+    }
+
+    # 旧档若只有可复核的个人结论，单独展示该页，公共战果仍按自己的三旗读取。
+    option = {
+        name = aemusa_finale.210.result
+        trigger = {
+            artifact_postcrisis_handover_visible = no
+            aemusa_ms_finale_result_recorded = yes
+        }
+        hidden_effect = { country_event = { id = aemusa_finale.200 } }
+    }
+
     option = {
         name = aemusa_dialogue.4.seth_memory # 查看赛斯回忆占位。
         trigger = {
@@ -293,6 +310,8 @@ country_event = {
     option = {
         name = aemusa_dialogue.4.empty # 暂无回忆时显示占位。
         trigger = {
+            artifact_postcrisis_handover_visible = no
+            aemusa_ms_finale_result_recorded = no
             ac_seth_recruit_available = yes
             ac_yutong_recruit_available = yes
             ac_rabi_recruit_available = yes

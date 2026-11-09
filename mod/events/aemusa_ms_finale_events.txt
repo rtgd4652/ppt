@@ -54,20 +54,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				has_country_flag = aemusa_ms_country_story_v1_complete
-				has_country_flag = aemusa_ms_country_epilogue_settled
-			}
-			country_event = {
-				id = aemusa_finale.200
-			}
-		}
-		else_if = {
-			limit = {
-				has_country_flag = aemusa_ms_country_story_v1_complete
-				OR = {
-					has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
-					has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
-				}
+				aemusa_ms_finale_result_recorded = yes
 			}
 			country_event = {
 				id = aemusa_finale.200
@@ -305,6 +292,11 @@ country_event = {
 	option = {
 		name = aemusa_finale.10.later
 		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.handover
+		trigger = { artifact_postcrisis_handover_visible = yes }
+		hidden_effect = { country_event = { id = aemusa_finale.210 } }
 	}
 	option = {
 		name = aemusa_finale.10.review
@@ -1618,7 +1610,7 @@ country_event = {
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
-		aemusa_ms_finale_context = yes
+		aemusa_ms_finale_result_recorded = yes
 	}
 	desc = {
 		trigger = {
@@ -1640,6 +1632,73 @@ country_event = {
 	}
 	option = {
 		name = aemusa_finale.200.close
+		default_hide_option = yes
+	}
+	option = {
+		name = aemusa_finale.handover
+		trigger = { artifact_postcrisis_handover_visible = yes }
+		hidden_effect = { country_event = { id = aemusa_finale.210 } }
+	}
+}
+
+# 公共交接单每次打开都读取本国现状。原生研究、行星决议、船厂和平台仍各自结算。
+country_event = {
+	id = aemusa_finale.210
+	title = aemusa_finale.210.title
+	picture = GFX_evt_aemusa_white_night_pavilion
+	is_triggered_only = yes
+	trigger = { artifact_postcrisis_handover_visible = yes }
+	desc = {
+		trigger = { owner_main_species = { is_species_class = "ARTIFACT_USER" } }
+		text = aemusa_finale.210.desc
+	}
+	desc = {
+		trigger = { NOT = { owner_main_species = { is_species_class = "ARTIFACT_USER" } } }
+		text = aemusa_finale.210.history
+	}
+	option = {
+		name = aemusa_finale.210.locate
+		trigger = {
+			artifact_postcrisis_records_decoded = no
+			artifact_postcrisis_has_archive_site = yes
+		}
+		hidden_effect = {
+			random_owned_colony = {
+				limit = { carrier = { artifact_postcrisis_archive_site = yes } }
+				carrier = { planet_event = { id = aemusa_finale.211 } }
+			}
+		}
+	}
+	option = {
+		name = aemusa_finale.210.result
+		trigger = { aemusa_ms_finale_result_recorded = yes }
+		hidden_effect = { country_event = { id = aemusa_finale.200 } }
+	}
+	option = {
+		name = aemusa_finale.210.story
+		trigger = { aemusa_ms_finale_active = yes }
+		hidden_effect = { country_event = { id = aemusa_finale.1 } }
+	}
+	option = {
+		name = aemusa_finale.210.close
+		default_hide_option = yes
+	}
+}
+
+# 原生定位按钮指向实际承办馆；只有玩家执行当地决议才会扣费和解译。
+planet_event = {
+	id = aemusa_finale.211
+	title = aemusa_finale.211.title
+	desc = aemusa_finale.211.desc
+	picture = GFX_evt_aemusa_white_night_pavilion
+	is_triggered_only = yes
+	trigger = {
+		artifact_postcrisis_archive_site = yes
+		owner = { artifact_postcrisis_records_decoded = no }
+	}
+	location = root
+	option = {
+		name = aemusa_finale.211.close
 		default_hide_option = yes
 	}
 }

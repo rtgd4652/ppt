@@ -1,14 +1,17 @@
 # 里程碑2终章入口：只读现有真实历史、基础等级、责任与分立决定。
-aemusa_ms_finale_context = {
+aemusa_ms_finale_country_context = {
 	is_ai = no
 	has_country_flag = aemusa_ms_country_route_initialized
 	check_variable = {
 		which = aemusa_ms_country_route_version_index
 		value = 1
 	}
-	exists = event_target:aemusa_leader
 	has_country_flag = aemusa_ms_country_chapter_13_completed
 	has_country_flag = aemusa_ms_country_settlement_chapter_13_done
+}
+aemusa_ms_finale_context = {
+	aemusa_ms_finale_country_context = yes
+	exists = event_target:aemusa_leader
 	event_target:aemusa_leader = {
 		has_leader_flag = aemusa_unique_leader
 		owner = {
@@ -26,6 +29,23 @@ aemusa_ms_finale_records_consistent = {
 		has_country_flag = aemusa_ms_crisis_exclusive_irreversible_failure
 	}
 }
+
+# 已归档的个人结论以本国真实决定为准，重读无需当事人仍在场。
+# 命运主宰路线需走完尾声，两种拒绝在原来的结算点就可以回顾。
+aemusa_ms_finale_result_recorded = {
+	aemusa_ms_finale_country_context = yes
+	has_country_flag = aemusa_ms_country_story_v1_complete
+	aemusa_ms_finale_records_consistent = yes
+	OR = {
+		has_country_flag = aemusa_ms_country_ending_non_transform_player_refusal_settled
+		has_country_flag = aemusa_ms_country_ending_non_transform_aemusa_refusal_settled
+		AND = {
+			has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+			has_country_flag = aemusa_ms_country_epilogue_settled
+		}
+	}
+}
+
 aemusa_ms_finale_active = {
 	aemusa_ms_finale_context = yes
 	aemusa_ms_finale_records_consistent = yes
