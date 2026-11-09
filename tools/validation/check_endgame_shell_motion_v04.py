@@ -1,9 +1,11 @@
 """回读 PDX 蒙皮与动作，检查一圈的实体可见性、星空视线及十六个固定发射点。"""
 
 import json
+import hashlib
 import math
 from pathlib import Path
 import sys
+from tempfile import TemporaryDirectory
 
 import bpy
 import numpy as np
@@ -13,10 +15,34 @@ from mathutils.geometry import barycentric_transform
 
 ROOT = Path(__file__).resolve().parents[2]
 sys.path.insert(0, str(ROOT / "tools/art"))
-from build_endgame_shell_motion_v04 import AX, AY, BONES, COS_CAM, CROSS, EXPORT, FIXED_BONE, FPS, LENGTH, NEAR, OLD, OUT, PARTS, PERIOD, SIN_CAM, VIEW, WAIST
+from build_endgame_shell_motion_v04 import AX, AY, BONES, COS_CAM, CROSS, EXPORT, FIXED_BONE, FPS, LENGTH, LOD_DISTANCES, NEAR, OLD, OUT, PARTS, PERIOD, SIN_CAM, UNIT, VIEW, WAIST
 from endgame_shell_profiles import STYLES, load_shells
+from install_endgame_shell_motion_v04 import resource_digest
 from io_pdx_mesh import pdx_data
 from io_pdx_mesh.pdx_blender.blender_import_export import swap_coord_space
+
+# 2026-11-08 实机记录所用的三份 v04 PDX，含网格、法线、UV、材质、骨骼与挂点。
+OBSERVED_NEAR_SHA256 = {
+    "bow": "9ad62bf3aa858646ac6bf45eeb1be20b286b199d466d598365263dd466572bb3",
+    "mid": "2048e1e738e8bbbaf5f04b68bda3215cf7cd38a35cf7ec745466f4cfe6776b50",
+    "stern": "811dd095b2c21ee613101e0cee46bd0ba2b5ad01ae304e240caa3b8cf8321240",
+}
+
+
+def check_near_baseline(folder):
+    with TemporaryDirectory() as temp:
+        path = Path(temp)/"near.mesh"
+        for part, digest in OBSERVED_NEAR_SHA256.items():
+            doc = pdx_data.read_meshfile(str(folder/f"aef03_{part}.mesh"))
+            obj = doc.find("object")
+            assert obj.attrib=={"loddist": list(LOD_DISTANCES)}
+            assert [s.get("lod") for s in obj]==[[0],[1],[2]]
+            for shape in list(obj)[1:]:
+                obj.remove(shape)
+            del obj[0].attrib["lod"]
+            del obj.attrib["loddist"]
+            pdx_data.write_meshfile(str(path), doc)
+            assert hashlib.sha256(path.read_bytes()).hexdigest()==digest, part
 
 
 class Surface:
@@ -69,7 +95,7 @@ def read_clip(folder):
     return phases, {k:round(sum(s),2) for k,s in steps.items()}
 
 
-def read_meshes(folder):
+def read_meshes(folder, level):
     groups = {k: Surface() for k in ("fixed","fore","aft","star")}
     samples = {s: [] for s in STYLES}
     guns, totals = [], {}
@@ -82,7 +108,7 @@ def read_meshes(folder):
         for tag,l in locs.items():
             if tag.startswith("t_gun_"):
                 guns.append((tag,swap_coord_space(Vector(l["p"]))))
-        shape = doc.find("./object/*")
+        shape, = [s for s in doc.find("object") if s.get("lod")==[level]]
         skeleton = shape.find("skeleton")
         ids = {}
         if part=="mid":
@@ -97,6 +123,12 @@ def read_meshes(folder):
             diffuse = mesh.find("material").get("diff")[0]
             active = diffuse == "aef04_shell_diffuse.dds"
             points = [swap_coord_space(Vector(v)) for v in zip(*[iter(mesh.get("p"))]*3)]
+            assert len(mesh.get("n"))==3*len(points) and all(math.isfinite(x) for x in mesh.get("n"))
+            if active:
+                coords = list(zip(*[iter(mesh.get("p"))]*3))
+                radius = max(math.hypot(x,y) for x,y,z in coords)
+                assert all(v<=-radius+1e-5 for v in mesh.find("aabb").get("min")[:2])
+                assert all(v>=radius-1e-5 for v in mesh.find("aabb").get("max")[:2])
             uv = mesh.get("u0")
             assert len(uv)==2*len(points) and all(0 <= u <= 1 for u in uv)
             assert all(math.isfinite(x) for x in mesh.get("p"))
@@ -233,21 +265,60 @@ def check_views(groups, samples, guns, phases, folder):
             "triangle_overlaps":collisions}
 
 
+def silhouettes(groups, phases):
+    # 按源相机在四个相位采样屏幕像素，检查换档后的尖端及负空间。
+    u = LENGTH*COS_CAM + NEAR*SIN_CAM
+    right, up = u*AX-CROSS*AY, -u*AY-CROSS*AX
+    center = Vector((0,-50,0)) + UNIT*((836-37)*right-(470.5-693)*up)
+    width, height = 192,108
+    step = 1672*UNIT*1.055/width
+    rays = [center + 100*VIEW + step*((x+.5-width/2)*right+(y+.5-height/2)*up)
+            for y in range(height) for x in range(width)]
+    fixed = groups["fixed"].tree()
+    images = []
+    for phase in phases[:-1:PERIOD//4]:
+        trees = [fixed, *(groups[bank].tree(phase[bank]) for bank in BONES)]
+        images.append({i for i,p in enumerate(rays) if any(t.ray_cast(p,-VIEW,200)[0] is not None for t in trees)})
+    return images
+
+
 def run():
     installed = "--installed" in sys.argv
     folder = ROOT/"mod/gfx/models/aemusa_endgame_v03" if installed else EXPORT
     if installed:
         assert all((folder/f.name).read_bytes()==f.read_bytes() for f in EXPORT.iterdir() if f.is_file())
     phases, revolutions = read_clip(folder)
-    groups,samples,guns,tris = read_meshes(folder)
-    evidence = check_views(groups,samples,guns,phases,folder)
+    check_near_baseline(folder)
+    levels = []
+    near_silhouettes = []
+    for level, distance in enumerate(LOD_DISTANCES):
+        groups,samples,guns,tris = read_meshes(folder, level)
+        evidence = check_views(groups,samples,guns,phases,folder)
+        images = silhouettes(groups,phases)
+        if level==0:
+            near_silhouettes = images
+        overlap = [len(near & low)/len(near | low) for near,low in zip(near_silhouettes,images)]
+        assert min(overlap)>.95, (level, overlap)
+        entry = {"level":level,"distance":distance,"triangles":tris,"total_triangles":sum(tris.values()),
+                 "silhouette_iou_vs_near_at_quarter_turns":[round(i,4) for i in overlap],"camera_check":evidence}
+        assert evidence["minimum_visible_banks"]==2 and evidence["minimum_substantial_shells"]>=2
+        assert evidence["star_patch_minimum_samples_visible"]>=1
+        assert evidence["star_center_visible_poses"]==PERIOD
+        assert not evidence["beam_hits"] and not evidence["triangle_overlaps"]
+        if levels:
+            assert all(tris[part]<levels[-1]["triangles"][part] for part in PARTS)
+        levels.append(entry)
+    tris = levels[0]["triangles"]
     result = {"input":folder.relative_to(ROOT).as_posix(),"triangles":tris,"total_triangles":sum(tris.values()),
               "fixed_locators_identical_to_v03":True,"T_locators":len(guns),"sample_rate":FPS,"loop_seconds":PERIOD/FPS,
-              "bone_travel_degrees":revolutions,"camera_check":evidence,"engine_observation":"not_measured_by_this_check"}
+              "bone_travel_degrees":revolutions,"camera_check":levels[0]["camera_check"],
+              "near_mesh_sha256_before_lod":OBSERVED_NEAR_SHA256,
+              "lod_format_reference":"gfx/models/planets/meteor.mesh (object.loddist, per-shape lod)",
+              "lod":levels,
+              "resource_sha256":{f.name:resource_digest(f.name,(folder/f.name).read_bytes())
+                                 for f in sorted(EXPORT.iterdir()) if f.is_file()},
+              "engine_observation":"not_measured_by_this_check"}
     print("AEF04_CHECK",json.dumps(result,ensure_ascii=False),flush=True)
-    assert evidence["minimum_visible_banks"]==2 and evidence["minimum_substantial_shells"]>=2
-    assert evidence["star_patch_minimum_samples_visible"]>=1
-    assert not evidence["beam_hits"] and not evidence["triangle_overlaps"]
     (OUT/"verification.json").write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
 
 

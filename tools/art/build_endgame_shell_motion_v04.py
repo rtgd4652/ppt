@@ -1,10 +1,10 @@
-"""由开发版 v03 舰模与第二稿截面生成带骨骼的三段 PDX、循环动作和作者源。"""
+"""生成三段动画舰模。build 从 v03 源重建；lod 从已保存的 v04 作者源更新中、远景。"""
 
 import argparse
-import json
 import math
 from pathlib import Path
 import sys
+from tempfile import TemporaryDirectory
 
 import bmesh
 import bpy
@@ -13,7 +13,7 @@ from mathutils.bvhtree import BVHTree
 
 sys.dont_write_bytecode = True
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from endgame_shell_profiles import ROOT, OUT, EXPORT, Spline, clamp, load_shells, uv
+from endgame_shell_profiles import ROOT, OUT, EXPORT, STYLES, Spline, clamp, load_shells, uv
 import build_endgame_runtime_v03 as baseline
 
 sys.path.insert(0, str(baseline.ADDON))
@@ -28,6 +28,9 @@ FIXED_BONE = "aef_keel"
 BONES = {"fore": "aef_forward_shells", "aft": "aef_aft_shells"}
 FPS, SECONDS = 24, 8
 PERIOD = FPS * SECONDS
+# 三个实体共用切换距离。近景相机在 150，舰体全长约 95 个模型单位。
+LOD_DISTANCES = (0.0, 220.0, 560.0)
+LOD_RATIOS = (.46, .19)
 # 第二稿的固定斜视投影。生成的顶点使用原版舰首为 -Y 的 Blender 坐标。
 UNIT = .056
 AX = 1 / math.sqrt(1 + .281**2)
@@ -337,10 +340,12 @@ def export_parts(sections, pieces, rig, locators):
     # 银壳是中段的第三个材质子网格。用整圈扫过的径向外缘填写可见性包围盒。
     path = EXPORT / "aef03_mid.mesh"
     tree = pdx_data.read_meshfile(str(path))
-    moving = [m for m in tree.findall("./object/*/mesh")
-              if m.find("material").get("diff")==["aef04_shell_diffuse.dds"]]
-    assert len(moving)==1
-    mesh = moving[0]
+    expand_orbit_bounds(tree.find("./object/*"))
+    pdx_data.write_meshfile(str(path), tree)
+
+
+def expand_orbit_bounds(shape):
+    mesh, = [m for m in shape.findall("mesh") if m.find("material").get("diff")==["aef04_shell_diffuse.dds"]]
     coords = list(zip(*[iter(mesh.attrib["p"])]*3))
     radius = max(math.hypot(x,y) for x,y,z in coords)
     low, high = min(v[2] for v in coords), max(v[2] for v in coords)
@@ -348,7 +353,120 @@ def export_parts(sections, pieces, rig, locators):
     mesh.find("aabb").set("min", [-radius,-radius,low])
     mesh.find("aabb").set("max", [radius,radius,high])
     mesh.set("boundingsphere",[0.0,0.0,mid_z,max(math.sqrt(x*x+y*y+(z-mid_z)**2) for x,y,z in coords)])
+
+
+def mark_atlas_tiles(mesh):
+    # 减面器会沿边外推 UV。面上的整数属性随简化传递，用原作图集各格的边距限制外推。
+    attr = mesh.attributes.new("aef_atlas_tile", "INT", "FACE")
+    layer = mesh.uv_layers.active.data
+    bounds = {}
+    for face in mesh.polygons:
+        material = mesh.materials[face.material_index].name
+        points = [layer[i].uv for i in face.loop_indices]
+        u, v = points[0]
+        if material.startswith("aef03_hull"):
+            tile = int(u*4) + 4*int(v*2)
+        elif material.startswith("aef04_shell"):
+            tile = 8 + int(v*4)
+        elif material.startswith("aef03_star"):
+            tile = 12  # 单独的星空材质
+        else:
+            raise ValueError(f"未定义图集分区的材质：{material}")
+        attr.data[face.index].value = tile
+        limits = bounds.setdefault(tile, [1.0, 0.0, 1.0, 0.0])
+        for u,v in points:
+            limits[:] = min(u,limits[0]), max(u,limits[1]), min(v,limits[2]), max(v,limits[3])
+    return bounds
+
+
+def simplified_shape(obj, level, ratio, part, scratch):
+    # 仅改写导出副本。减面先于骨架变形，以绑定姿态导出刚性顶点权重。
+    copy = obj.copy()
+    copy.data = obj.data.copy()
+    name = obj.data.name + "_lod" + str(level)
+    copy.data.name = name
+    bpy.context.scene.collection.objects.link(copy)
+    try:
+        select_only([copy], copy)
+        bounds = mark_atlas_tiles(copy.data)
+        decimate = copy.modifiers.new("远景减面", "DECIMATE")
+        decimate.ratio = ratio
+        decimate.use_collapse_triangulate = True
+        bpy.ops.object.modifier_move_to_index(modifier=decimate.name, index=0)
+        bpy.ops.object.modifier_apply(modifier=decimate.name)
+        attr = copy.data.attributes["aef_atlas_tile"]
+        layer = copy.data.uv_layers.active.data
+        for face in copy.data.polygons:
+            u0,u1,v0,v1 = bounds[attr.data[face.index].value]
+            for index in face.loop_indices:
+                u,v = layer[index].uv
+                layer[index].uv = clamp(u,u0,u1), clamp(v,v0,v1)
+        path = scratch / (name+".mesh")
+        export_meshfile(str(path), exp_mesh=True, exp_skel=part=="mid", exp_locs=False, exp_selected=True)
+        shape, = pdx_data.read_meshfile(str(path)).find("object")
+        assert shape.tag==name and shape.get("lod")==[level]
+        return shape
+    finally:
+        mesh = copy.data
+        bpy.data.objects.remove(copy, do_unlink=True)
+        bpy.data.meshes.remove(mesh)
+
+
+def write_lod_mesh(path, tree):
+    # 原版 meteor.mesh 在 object 节点先写 loddist，再写带整数 lod 的形状。
+    # 插件写形状的 lod，但当前发布版的 writer 跳过 object 上的属性。
+    obj = tree.find("object")
+    distances = list(LOD_DISTANCES)
+    obj.set("loddist", distances)
     pdx_data.write_meshfile(str(path), tree)
+    if pdx_data.read_meshfile(str(path)).find("object").get("loddist") is None:
+        prefix = b"@@b@" + pdx_data.writeProperty("pdxasset", tree.get("pdxasset")) + pdx_data.writeObject(obj, 1)
+        data = path.read_bytes()
+        assert data.startswith(prefix)
+        path.write_bytes(prefix + pdx_data.writeProperty("loddist", distances) + data[len(prefix):])
+    actual = pdx_data.read_meshfile(str(path)).find("object")
+    assert actual.get("loddist")==distances and [s.get("lod") for s in actual]==[[0],[1],[2]]
+
+
+def export_lods(sections):
+    with TemporaryDirectory(dir=EXPORT) as directory:
+        scratch = Path(directory)
+        for part, obj in sections.items():
+            path = EXPORT / (obj.data.name+".mesh")
+            tree = pdx_data.read_meshfile(str(path))
+            objects = tree.find("object")
+            high, = [s for s in objects if s.get("lod", [0])==[0]]
+            for shape in list(objects):
+                if shape is not high:
+                    objects.remove(shape)
+            high.set("lod", [0])
+            for level, ratio in enumerate(LOD_RATIOS, 1):
+                shape = simplified_shape(obj, level, ratio, part, scratch)
+                if part=="mid":
+                    # 星空仅 76 三角面。保留亮心的 UV 与轮廓，避免在换档时跳动。
+                    original = next(m for m in high.findall("mesh") if m.find("material").get("diff")==["aef03_star_diffuse.dds"])
+                    star = next(m for m in shape.findall("mesh") if m.find("material").get("diff")==["aef03_star_diffuse.dds"])
+                    index = list(shape).index(star)
+                    shape.remove(star)
+                    shape.insert(index, original)
+                    expand_orbit_bounds(shape)
+                objects.append(shape)
+            write_lod_mesh(scratch/path.name, tree)
+        for obj in sections.values():
+            name = obj.data.name+".mesh"
+            (scratch/name).replace(EXPORT/name)
+
+
+def rebuild_lods():
+    if not bpy.app.background or bpy.data.filepath:
+        raise RuntimeError("请在独立 --background --factory-startup 进程中构建。")
+    bpy.ops.wm.open_mainfile(filepath=str(BLEND))
+    sections = {part:bpy.data.objects["aef03_"+part] for part in PARTS}
+    mid = sections["mid"]
+    select_only([mid, *(bpy.data.objects["aef04_"+name] for name in STYLES)], mid)
+    bpy.ops.object.join()
+    export_lods(sections)
+    definitions()
 
 
 def normalize_clip(path):
@@ -431,6 +549,7 @@ def build():
     bpy.context.preferences.filepaths.save_version = 0
     bpy.ops.wm.save_as_mainfile(filepath=str(BLEND))
     export_parts(sections,pieces,rig,locators)
+    export_lods(sections)
     definitions()
     render("still")
     print("AEF04_EXPORT", str(BLEND), flush=True)
@@ -454,6 +573,11 @@ def render(mode):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("mode", choices=("build","still","frames"))
+    parser.add_argument("mode", choices=("build","lod","still","frames"))
     args = parser.parse_args(sys.argv[sys.argv.index("--")+1:])
-    build() if args.mode=="build" else render(args.mode)
+    if args.mode=="build":
+        build()
+    elif args.mode=="lod":
+        rebuild_lods()
+    else:
+        render(args.mode)

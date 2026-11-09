@@ -110,8 +110,14 @@ def main():
         registered_mesh=scalar(entities['aef03_'+part+'_entity'],'pdxmesh')
         path=ROOT/'mod'/scalar(mesh_defs[registered_mesh],'file');tree=reader(str(path))
         locs={n.tag:n.attrib for n in tree.findall('./locator/*')}
+        shapes=tree.findall('./object/*')
+        near_nodes={m for shape in shapes if shape.get('lod',[0])==[0] for m in shape.findall('mesh')}
+        settings=children(mesh_defs[registered_mesh],'meshsettings')
+        by_slot={(scalar(s,'name'),int(scalar(s,'index'))):s for s in settings}
+        submeshes={(shape.tag,i):m for shape in shapes for i,m in enumerate(shape.findall('mesh'))}
+        assert len(by_slot)==len(settings) and submeshes.keys()==by_slot.keys()
         mats=[];tris=0
-        for node in tree.findall('./object/*/mesh'):
+        for slot,node in submeshes.items():
             positions=node.attrib.get('p',[]);indices=node.attrib.get('tri',[])
             assert len(indices)%3==0 and len(positions)%3==0
             assert all(math.isfinite(v) for v in positions)
@@ -122,9 +128,12 @@ def main():
             assert all(math.isfinite(v) for v in node.attrib['n'])
             material=node.find('material')
             if material is not None:
-                mats.append(material.attrib)
-                for channel in ('diff','spec','n'):assert (dest/material.attrib[channel][0]).is_file()
-            tris+=len(indices)//3
+                if node in near_nodes:mats.append(material.attrib)
+                assert scalar(by_slot[slot],'shader')==material.get('shader')[0]=='PdxMeshShip'
+                for field,channel in [('texture_diffuse','diff'),('texture_specular','spec'),('texture_normal','n')]:
+                    texture=material.get(channel)[0]
+                    assert scalar(by_slot[slot],field)==texture and (dest/texture).is_file()
+            if node in near_nodes:tris+=len(indices)//3
         assert scalar(entities['aef03_'+part+'_entity'],'pdxmesh')=='aef03_'+part+'_mesh'
         assert scalar(children(entities['aef03_'+part+'_entity'],'game_data')[0],'emissive_recolor_crunch')=='0'
         assert path.read_bytes()==(approved_export/path.name).read_bytes()

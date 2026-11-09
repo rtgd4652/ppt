@@ -1,6 +1,7 @@
 """将已回读核对的银壳模型装入开发版，沿用旧存档解析的三个实体名。"""
 
 import csv
+import hashlib
 import io
 import json
 import os
@@ -23,7 +24,14 @@ def relative(path):
     return path.relative_to(ROOT).as_posix()
 
 
-def registry_payload(same_assets):
+def resource_digest(name, content):
+    # 同一份 GFX 文本在 Windows / Unix 检出时可使用不同换行。
+    if name in (GFX, ENTITIES):
+        content = content.replace(b"\r\n", b"\n")
+    return hashlib.sha256(content).hexdigest()
+
+
+def registry_payload(changed_names):
     original = REGISTRY.read_bytes()
     text = original.decode("utf-8-sig")
     reader = csv.DictReader(io.StringIO(text))
@@ -32,16 +40,28 @@ def registry_payload(same_assets):
     assert fields and len({r["asset_id"] for r in rows})==len(rows)
     records = {r["asset_id"]:r for r in rows}
     source = relative(AUTHOR/"endgame_shell_motion_v04.blend")
-    keep_review = same_assets and records["ASSET-AEF03-MESH-MID"]["source_path"] == source
     note = "2026-11-07。依据第二稿重做四瓣银壳，前后分组绕轴，固定星空与武器挂点。实际 PDX 已离线核对。"
+    lod_note = " 三档原生 LOD 已离线核对，游戏内缩放切换待观察。"
     for part in ("BOW","MID","STERN","ENTITY-PACK"):
         key = "ASSET-AEF03-"+("MESH-"+part if part!="ENTITY-PACK" else part)
         row = records[key]
-        row["source_path"] = source if part!="ENTITY-PACK" else relative(AUTHOR/"export"/ENTITIES)
+        filename = f"aef03_{part.lower()}.mesh" if part!="ENTITY-PACK" else ENTITIES
+        origin = source if part!="ENTITY-PACK" else relative(AUTHOR/"export"/ENTITIES)
+        same_source = row["source_path"]==origin
+        row["source_path"] = origin
         row["origin_method"] = "项目原创第二稿控制截面与 v03 舰体，刚性蒙皮及 PDX 导出"
-        row["authorization_review"] = "user_selected_second_concept_and_requested_motion"
-        if not keep_review:
-            row.update(notes=note, game_spec_status="static_checked_runtime_pending")
+        if not same_source:
+            row["authorization_review"] = "user_selected_second_concept_and_requested_motion"
+        if filename in changed_names or not same_source:
+            if same_source and filename in MESHES and row["game_spec_status"] in (
+                "normal_system_view_sampled", "near_observed_lod_switch_pending"
+            ):
+                # 只有哈希核对过的近景可以继承此前的实机记录。新加的两层仍待观察。
+                row["game_spec_status"] = "near_observed_lod_switch_pending"
+            else:
+                row.update(notes=note, game_spec_status="static_checked_runtime_pending")
+            if filename in MESHES and lod_note not in row["notes"]:
+                row["notes"] += lod_note
     base = records["ASSET-AEF03-MESH-MID"]
     for filename in [*TEXTURES,CLIP]:
         is_clip = filename==CLIP
@@ -59,7 +79,7 @@ def registry_payload(same_assets):
                    asset_type="ship_animation" if is_clip else "model_texture",
                    source_path=source if is_clip else relative(origin), mod_path=relative(DEST/filename),
                    origin_method=method)
-        if not keep_review or key not in records:
+        if filename in changed_names or key not in records:
             row.update(notes=note, game_spec_status="static_checked_runtime_pending")
         if key in records:
             records[key].update(row)
@@ -75,21 +95,25 @@ def registry_payload(same_assets):
 def install():
     evidence = json.loads((AUTHOR/"verification.json").read_text(encoding="utf-8"))
     assert evidence["T_locators"]==16 and evidence["camera_check"]["minimum_visible_banks"]==2
+    assert [entry["level"] for entry in evidence["lod"]]==[0,1,2]
     names = [*TEXTURES,CLIP,*MESHES,GFX,ENTITIES]
     payloads = {}
     for name in names:
         content = (AUTHOR/"export"/name).read_bytes()
+        if resource_digest(name, content)!=evidence["resource_sha256"][name]:
+            raise ValueError(f"离线核对后文件发生变化，请重新核对：{name}")
         target = DEST/name
         if target.is_file() and target.read_bytes()!=content:
             existing = target.read_bytes()
             baseline = (OLD/name).is_file() and existing==(OLD/name).read_bytes()
-            tracked = subprocess.run(["git","show","HEAD:"+relative(target)],cwd=ROOT,capture_output=True)
+            # 使用与工作树相同的检出过滤器，避免把 Git 的 LF 与 Windows 的 CRLF 当成本地编辑。
+            tracked = subprocess.run(["git","cat-file","--filters","HEAD:"+relative(target)],cwd=ROOT,capture_output=True)
             if not baseline and (tracked.returncode or existing!=tracked.stdout):
                 raise RuntimeError(f"已有不同的开发版文件需要保留：{target}")
         payloads[target] = content
     # 原样重装保留已记录的实机观察，资源有变化时另行核对。
-    same_assets = all(path.is_file() and path.read_bytes()==data for path,data in payloads.items())
-    payloads[REGISTRY] = registry_payload(same_assets)
+    changed_names = {path.name for path,data in payloads.items() if not path.is_file() or path.read_bytes()!=data}
+    payloads[REGISTRY] = registry_payload(changed_names)
     # 先在同盘备齐文件，再依次替换。若中途遇到写锁，按原样恢复前面已经替换的文件。
     (ROOT/"temp").mkdir(exist_ok=True)
     with TemporaryDirectory(dir=ROOT/"temp", prefix="aef04_install_") as scratch:

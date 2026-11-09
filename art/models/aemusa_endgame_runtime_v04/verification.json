@@ -39,5 +39,147 @@
     "collision_sample_poses": 32,
     "triangle_overlaps": []
   },
+  "near_mesh_sha256_before_lod": {
+    "bow": "9ad62bf3aa858646ac6bf45eeb1be20b286b199d466d598365263dd466572bb3",
+    "mid": "2048e1e738e8bbbaf5f04b68bda3215cf7cd38a35cf7ec745466f4cfe6776b50",
+    "stern": "811dd095b2c21ee613101e0cee46bd0ba2b5ad01ae304e240caa3b8cf8321240"
+  },
+  "lod_format_reference": "gfx/models/planets/meteor.mesh (object.loddist, per-shape lod)",
+  "lod": [
+    {
+      "level": 0,
+      "distance": 0.0,
+      "triangles": {
+        "bow": 860,
+        "mid": 7212,
+        "stern": 776
+      },
+      "total_triangles": 8848,
+      "silhouette_iou_vs_near_at_quarter_turns": [
+        1.0,
+        1.0,
+        1.0,
+        1.0
+      ],
+      "camera_check": {
+        "camera": "第二稿固定斜视",
+        "poses": 192,
+        "visible_surface_measure": "按正面投影面积累计、由实际导出三角形中心向相机检测遮挡",
+        "visible_threshold_per_shell": 0.12,
+        "minimum_substantial_shells": 2,
+        "minimum_visible_banks": 2,
+        "minimum_projected_fraction_vs_rest": {
+          "fore": 0.1266,
+          "aft": 0.292,
+          "total": 0.5639
+        },
+        "weakest_frame": 87,
+        "star_patch_minimum_samples_visible": 6,
+        "star_patch_samples": 8,
+        "star_center_visible_poses": 192,
+        "star_landmark_native_xyz": [
+          -3.509,
+          11.031,
+          2.296
+        ],
+        "beam_hits": [],
+        "collision_sample_poses": 32,
+        "triangle_overlaps": []
+      }
+    },
+    {
+      "level": 1,
+      "distance": 220.0,
+      "triangles": {
+        "bow": 394,
+        "mid": 3316,
+        "stern": 356
+      },
+      "total_triangles": 4066,
+      "silhouette_iou_vs_near_at_quarter_turns": [
+        0.9992,
+        0.9988,
+        0.9993,
+        1.0
+      ],
+      "camera_check": {
+        "camera": "第二稿固定斜视",
+        "poses": 192,
+        "visible_surface_measure": "按正面投影面积累计、由实际导出三角形中心向相机检测遮挡",
+        "visible_threshold_per_shell": 0.12,
+        "minimum_substantial_shells": 2,
+        "minimum_visible_banks": 2,
+        "minimum_projected_fraction_vs_rest": {
+          "fore": 0.1258,
+          "aft": 0.2917,
+          "total": 0.5646
+        },
+        "weakest_frame": 87,
+        "star_patch_minimum_samples_visible": 7,
+        "star_patch_samples": 9,
+        "star_center_visible_poses": 192,
+        "star_landmark_native_xyz": [
+          -3.509,
+          11.031,
+          2.296
+        ],
+        "beam_hits": [],
+        "collision_sample_poses": 32,
+        "triangle_overlaps": []
+      }
+    },
+    {
+      "level": 2,
+      "distance": 560.0,
+      "triangles": {
+        "bow": 162,
+        "mid": 1377,
+        "stern": 146
+      },
+      "total_triangles": 1685,
+      "silhouette_iou_vs_near_at_quarter_turns": [
+        0.9952,
+        0.9943,
+        0.9942,
+        0.9962
+      ],
+      "camera_check": {
+        "camera": "第二稿固定斜视",
+        "poses": 192,
+        "visible_surface_measure": "按正面投影面积累计、由实际导出三角形中心向相机检测遮挡",
+        "visible_threshold_per_shell": 0.12,
+        "minimum_substantial_shells": 2,
+        "minimum_visible_banks": 2,
+        "minimum_projected_fraction_vs_rest": {
+          "fore": 0.1253,
+          "aft": 0.2948,
+          "total": 0.5652
+        },
+        "weakest_frame": 87,
+        "star_patch_minimum_samples_visible": 6,
+        "star_patch_samples": 8,
+        "star_center_visible_poses": 192,
+        "star_landmark_native_xyz": [
+          -3.509,
+          11.031,
+          2.296
+        ],
+        "beam_hits": [],
+        "collision_sample_poses": 32,
+        "triangle_overlaps": []
+      }
+    }
+  ],
+  "resource_sha256": {
+    "_aef03_entities.asset": "bb106c229aed2f3c0d99fe6b90bd90a5ee3eab6c8d75e2bacd01f7f633eeb44e",
+    "_aef03_meshes.gfx": "bfc987b893058a245dee0126e8fb84e8d4727e61eb464cbea1223385b93033d7",
+    "aef03_bow.mesh": "fe90a75cee2eeb4f136effd1cbcd87671fbc394d5031ae4ea916f63ef8a7ed4f",
+    "aef03_mid.mesh": "fb2e5b0c65dbb3c4f3ed00f57c7e160ff4c7d90e117d5529d527e649d5665ec3",
+    "aef03_stern.mesh": "590a2b11a67fd9592438fdaa6625a4ea276383cd985d2dd3ecdfd3103bda65a8",
+    "aef04_shell_diffuse.dds": "8cb6139ebd9b79c76ac9116ac201aa4f4a9be93d5736ecb52caff8ae84f4ca32",
+    "aef04_shell_normal.dds": "bb8daae2fcf0a2ca485d9afd8e7b6652217d83e27dfd90c3c3a7af641b779071",
+    "aef04_shell_orbit.anim": "66b24823a96c7815e8163d84ab7f513d0bd1a102bee8c938cea8d70f86b4c282",
+    "aef04_shell_properties.dds": "dd0137f8d94942fd8e35a1ed709bb08306f0b4c91be8005a794e0b886db81d2d"
+  },
   "engine_observation": "not_measured_by_this_check"
 }
