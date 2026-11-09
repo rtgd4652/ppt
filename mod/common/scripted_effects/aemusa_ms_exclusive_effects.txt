@@ -179,6 +179,9 @@ aemusa_ms_anchor_select = {
 			remove_country_flag = aemusa_ms_country_anchor_battle_won
 			remove_country_flag = aemusa_ms_country_anchor_field_evidence
 			remove_country_flag = aemusa_ms_country_anchor_engineering_completed
+			remove_country_flag = aemusa_ms_country_anchor_linked
+			remove_country_flag = aemusa_ms_country_anchor_isolation_ordered
+			remove_country_flag = aemusa_ms_country_anchor_pressure_warning_sent
 			if = {
 				limit = {
 					check_variable = {
@@ -233,6 +236,15 @@ aemusa_ms_anchor_confirm = {
 		set_timed_country_flag = {
 			flag = aemusa_ms_country_anchor_warning_active
 			days = 90
+		}
+		# 只在玩家确认本次预警时启用关联；更新前已预警或成锚的存档履行原有时限。
+		if = {
+			limit = {
+				check_variable = { which = aemusa_ms_country_anchors_archived value >= 1 }
+			}
+			set_country_flag = aemusa_ms_country_anchor_linked
+			change_variable = { which = aemusa_ms_country_anchor_pressure value = aemusa_ms_country_anchor_losses }
+			set_variable = { which = aemusa_ms_country_anchor_isolation_ticks value = 0 }
 		}
 		if = {
 			limit = {
@@ -482,6 +494,20 @@ aemusa_ms_anchor_record_battle = {
 		}
 		set_country_flag = aemusa_ms_country_civilization_reality_contribution_recorded
 		log = "AEMUSA-MS|AWP-06|projection_defeated_in_combat"
+	}
+}
+# 启动后由本路线在运行的基线枢纽逐月完成。事先辨认过危机信号可沿用第一份比对结果。
+aemusa_ms_anchor_order_isolation = {
+	if = {
+		limit = { aemusa_ms_anchor_can_order_isolation = yes }
+		set_country_flag = aemusa_ms_country_anchor_isolation_ordered
+		add_resource = { energy = -300 minerals = -150 }
+		if = {
+			limit = { artifact_crisis_intelligence_identified = yes }
+			change_variable = { which = aemusa_ms_country_anchor_isolation_ticks value = 1 }
+		}
+		log = "AEMUSA-MS|BOSS|core_isolation_ordered"
+		country_event = { id = aemusa_exclusive.1 }
 	}
 }
 # 超时失去的是预先锁定的真实普通资源节点；不碰后来殖民的人口，也不清空其他矿藏。
@@ -793,6 +819,18 @@ aemusa_ms_exclusive_monthly_update = {
 		aemusa_ms_anchor_form = yes
 		if = {
 			limit = {
+				has_country_flag = aemusa_ms_country_anchor_isolation_ordered
+				aemusa_ms_anchor_link_open = yes
+				aemusa_ms_baseline_operational = yes
+			}
+			change_variable = { which = aemusa_ms_country_anchor_isolation_ticks value = 1 }
+			if = {
+				limit = { check_variable = { which = aemusa_ms_country_anchor_isolation_ticks value = 2 } }
+				log = "AEMUSA-MS|BOSS|core_link_isolated"
+			}
+		}
+		if = {
+			limit = {
 				check_variable = {
 					which = aemusa_ms_country_anchor_stage
 					value = 30
@@ -847,6 +885,24 @@ aemusa_ms_exclusive_monthly_update = {
 				change_variable = {
 					which = aemusa_ms_country_anchor_pressure
 					value = 1
+				}
+				# 未截断的关联投影再加一点；12是已公开的永久损失上限。
+				if = {
+					limit = {
+						aemusa_ms_anchor_link_open = yes
+						check_variable = { which = aemusa_ms_country_anchor_pressure value < 12 }
+					}
+					change_variable = { which = aemusa_ms_country_anchor_pressure value = 1 }
+				}
+				if = {
+					limit = {
+						has_country_flag = aemusa_ms_country_anchor_linked
+						NOT = { has_country_flag = aemusa_ms_country_anchor_pressure_warning_sent }
+						check_variable = { which = aemusa_ms_country_anchor_pressure value >= 8 }
+						check_variable = { which = aemusa_ms_country_anchor_pressure value < 12 }
+					}
+					set_country_flag = aemusa_ms_country_anchor_pressure_warning_sent
+					country_event = { id = aemusa_exclusive.32 }
 				}
 				aemusa_ms_anchor_destroy_host = yes
 			}

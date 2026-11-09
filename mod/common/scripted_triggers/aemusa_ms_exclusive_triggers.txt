@@ -184,6 +184,35 @@ aemusa_ms_anchor_window_valid = {
 	aemusa_ms_flagship_at_current_anchor = yes
 	aemusa_ms_anchor_controlled = yes
 }
+# 后续节点已公开关联、投影尚未击破且枢纽尚未完成隔离。预警阶段也可提前组织隔离。
+aemusa_ms_anchor_link_open = {
+	has_country_flag = aemusa_ms_country_anchor_linked
+	OR = {
+		check_variable = { which = aemusa_ms_country_anchor_stage value = 20 }
+		check_variable = { which = aemusa_ms_country_anchor_stage value = 30 }
+	}
+	check_variable = { which = aemusa_ms_country_anchor_result value = 0 }
+	NOT = { has_country_flag = aemusa_ms_country_anchor_battle_won }
+	check_variable = { which = aemusa_ms_country_anchor_isolation_ticks value < 2 }
+}
+
+aemusa_ms_anchor_isolation_available = {
+	aemusa_ms_exclusive_active = yes
+	aemusa_ms_anchor_link_open = yes
+	NOT = { has_country_flag = aemusa_ms_country_anchor_isolation_ordered }
+	# 通讯页保留打开当时的行星，旧窗口不能花费预算处理另一处节点。
+	exists = event_target:aemusa_ms_linked_briefing_target
+	event_target:aemusa_ms_linked_briefing_target = { is_same_value = event_target:aemusa_ms_current_anchor_target }
+}
+
+aemusa_ms_anchor_can_order_isolation = {
+	aemusa_ms_exclusive_context = yes
+	aemusa_ms_anchor_isolation_available = yes
+	aemusa_ms_baseline_operational = yes
+	has_resource = { type = energy amount >= 300 }
+	has_resource = { type = minerals amount >= 150 }
+}
+
 aemusa_ms_anchor_analysis_ready = {
 	# 失败节点也能勘查残余资料，不复原资源；否则失败会卡住后续危机。
 	check_variable = {

@@ -17,6 +17,7 @@ from check_mod import parse
 CRISIS = "aemusa_ms_crisis_"
 HOST = "event_target:aemusa_ms_current_anchor_target"
 OWNER = "event_target:aemusa_ms_crisis_route_owner"
+BRIEFING = "event_target:aemusa_ms_linked_briefing_target"
 
 
 def read_crisis_script(relative):
@@ -46,10 +47,11 @@ class ExclusiveLedger(CrisisLedger):
         "aemusa_ms_anchor_controlled", "aemusa_ms_flagship_at_current_anchor",
         "aemusa_ms_baseline_operational", "aemusa_ms_has_anchor_candidate",
         "aemusa_ms_anchor_reachable", "aemusa_ms_has_operational_flagship",
+        "artifact_crisis_intelligence_identified",
     }
     EXTERNAL_EFFECTS = {
         "aemusa_ms_flagship_ensure_present", "aemusa_ms_flagship_monthly_update",
-        "aemusa_ms_baseline_monthly_update",
+        "aemusa_ms_baseline_monthly_update", "random_system_within_border",
     }
 
     def __init__(self):
@@ -62,22 +64,26 @@ class ExclusiveLedger(CrisisLedger):
         ))
         self.scope = "country"
         self.targets = {HOST, OWNER}
+        self.host_number = 1
+        self.briefing_host = None
         self.planet_flags = {"aemusa_ms_anchor_active", "aemusa_ms_anchor_minerals_2"}
         self.deposits = {"d_minerals_2", "d_energy_5"}
         self.removed_deposits = []
         self.external_conditions = {name: True for name in self.EXTERNAL_CONDITIONS}
+        self.external_conditions["artifact_crisis_intelligence_identified"] = False
         self.external_requests = []
         self.projects = set()
 
     def snapshot(self):
         return deepcopy((super().snapshot(), self.targets, self.planet_flags,
-                         self.deposits, self.removed_deposits, self.external_requests, self.projects))
+                         self.deposits, self.removed_deposits, self.external_requests, self.projects,
+                         self.host_number, self.briefing_host))
 
     def in_scope(self, target, operation, entries):
         if target not in self.targets:
             raise AssertionError(f"夹具中不存在目标：{target}")
         previous = self.scope
-        self.scope = "planet" if target == HOST else "country"
+        self.scope = {HOST: "planet", OWNER: "country", BRIEFING: "briefing_planet"}[target]
         try:
             return operation(entries)
         finally:
@@ -90,10 +96,13 @@ class ExclusiveLedger(CrisisLedger):
             return result if value == "yes" else not result
         if key in TRIGGERS:
             return self.condition(TRIGGERS[key]) == (value == "yes")
-        if key in (HOST, OWNER):
+        if key in (HOST, OWNER, BRIEFING):
             return self.in_scope(key, self.condition, value)
-        if key == "exists" and value in (HOST, OWNER):
+        if key == "exists" and value in (HOST, OWNER, BRIEFING):
             return value in self.targets
+        if key == "is_same_value" and value == HOST:
+            assert self.scope == "briefing_planet"
+            return HOST in self.targets and self.briefing_host == self.host_number
         if key == "is_colony":
             assert self.scope == "planet"
             return value == "no"
@@ -132,7 +141,13 @@ class ExclusiveLedger(CrisisLedger):
             self.external_requests.append(key)
         elif key == "change_variable":
             name = scalar(value, "which")
-            self.variables[name] = self.variables.get(name, 0) + float(scalar(value, "value"))
+            delta = scalar(value, "value")
+            amount = self.variables[delta] if delta in self.variables else float(delta)
+            self.variables[name] = self.variables.get(name, 0) + amount
+        elif key == "save_event_target_as" and "event_target:" + value == BRIEFING:
+            assert self.scope == "planet"
+            self.briefing_host = self.host_number
+            self.targets.add(BRIEFING)
         elif key == "save_global_event_target_as":
             self.targets.add("event_target:" + value)
         elif key == "clear_global_event_target":
@@ -380,6 +395,201 @@ class Awp06CrisisStateTests(unittest.TestCase):
         self.assertNotIn("aemusa_ms_decision_player_authorized", ledger.flags)
         self.assertNotIn("aemusa_ms_decision_aemusa_accepted", ledger.flags)
         self.assertNotIn(PREFIX + "final_gate_level_30_met", ledger.flags)
+
+
+class LinkedCoreAnchorTests(unittest.TestCase):
+    @staticmethod
+    def confirmed(archived=1, losses=0):
+        ledger = ExclusiveLedger()
+        ledger.effect("aemusa_ms_exclusive_initialize")
+        ledger.variables.update({PREFIX + "anchor_stage": 10, PREFIX + "anchor_result": 0,
+                                 PREFIX + "anchor_pressure": 0, PREFIX + "anchors_archived": archived,
+                                 PREFIX + "anchor_losses": losses})
+        ledger.flags.update(PREFIX + name for name in (
+            "anchor_baseline_recorded", "exclusive_laboratory_verified", "exclusive_public_response_ready",
+        ))
+        ledger.choose("aemusa_exclusive.20", "confirm")
+        ledger.execute(child(EVENTS["aemusa_exclusive.1"], "immediate"))
+        return ledger
+
+    @staticmethod
+    def combat(ledger):
+        # 成锚生成舰队由引擎负责。夹具提供已生成事实，随后执行实际月检及战果接口。
+        ledger.variables[PREFIX + "anchor_stage"] = 30
+        ledger.flags.add(PREFIX + "anchor_projection_spawned")
+        ledger.execute(child(EVENTS["aemusa_exclusive.1"], "immediate"))
+
+    def test_confirmation_binds_only_future_core_nodes_and_copies_real_losses_once(self):
+        for archived, losses in ((0, 0), (1, 0), (1, 1), (2, 2)):
+            with self.subTest(archived=archived, losses=losses):
+                ledger = self.confirmed(archived, losses)
+                self.assertEqual(PREFIX + "anchor_linked" in ledger.flags, archived > 0)
+                self.assertEqual(ledger.variables[PREFIX + "anchor_pressure"], losses)
+                self.assertEqual(BRIEFING in ledger.targets, archived > 0)
+                self.assertEqual(ledger.timers[PREFIX + "anchor_warning_active"], 90)
+                ledger.elapse(20)
+                again = deepcopy(ledger)
+                before = again.snapshot()
+                again.choose("aemusa_exclusive.20", "confirm")
+                self.assertEqual(again.snapshot(), before)
+                self.assertEqual(again.timers[PREFIX + "anchor_warning_active"], 70)
+
+        old = active_anchor()
+        old.variables.update({PREFIX + "anchors_archived": 2, PREFIX + "anchor_losses": 1,
+                              PREFIX + "anchor_pressure": 5})
+        old.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(old.variables[PREFIX + "anchor_pressure"], 6)
+        self.assertNotIn(PREFIX + "anchor_linked", old.flags)
+        self.assertNotIn(("aemusa_exclusive.32", 0), old.queue)
+
+    def test_stale_briefing_missing_resources_and_hub_shutdown_cannot_consume(self):
+        for event in ("aemusa_exclusive.25", "aemusa_exclusive.30"):
+            initial = self.confirmed()
+            if event.endswith(".30"):
+                self.combat(initial)
+            for block in ("old_host", "missing_target", "energy", "minerals", "hub", "battle", "settled"):
+                with self.subTest(event=event, block=block):
+                    ledger = deepcopy(initial)
+                    if block == "old_host":
+                        ledger.host_number += 1
+                    elif block == "missing_target":
+                        ledger.targets.remove(BRIEFING)
+                    elif block in ("energy", "minerals"):
+                        ledger.resources[block] = 299 if block == "energy" else 149
+                    elif block == "hub":
+                        ledger.external_conditions["aemusa_ms_baseline_operational"] = False
+                    elif block == "battle":
+                        ledger.flags.add(PREFIX + "anchor_battle_won")
+                    else:
+                        ledger.variables[PREFIX + "anchor_result"] = 2
+                    self.assertFalse(ledger.condition(child(ledger.option(event, "isolate"), "allow")))
+                    before = ledger.snapshot()
+                    ledger.choose(event, "isolate")
+                    self.assertEqual(ledger.snapshot(), before)
+
+    def test_next_node_resets_local_response_and_preserves_costs_and_actual_losses(self):
+        ledger = self.confirmed(archived=1, losses=1)
+        ledger.choose("aemusa_exclusive.25", "isolate")
+        ledger.flags.add(PREFIX + "anchor_pressure_warning_sent")
+        ledger.variables.update({PREFIX + "anchor_pressure": 9, PREFIX + "anchor_stage": 0,
+                                 PREFIX + "anchors_archived": 2, PREFIX + "anchor_isolation_ticks": 2})
+        # 提供星系搜索已找到下一个真实宿主的结果，执行选中后与预警确认的源码。
+        ledger.host_number += 1
+        ledger.effect("aemusa_ms_anchor_select")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_stage"], 10)
+        for flag in ("anchor_linked", "anchor_isolation_ordered", "anchor_pressure_warning_sent"):
+            self.assertNotIn(PREFIX + flag, ledger.flags)
+        self.assertEqual(ledger.variables[PREFIX + "anchor_pressure"], 0)
+        ledger.flags.add(PREFIX + "anchor_baseline_recorded")
+        ledger.choose("aemusa_exclusive.20", "confirm")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_pressure"], 1)
+        self.assertEqual(ledger.variables[PREFIX + "anchor_isolation_ticks"], 0)
+        before = ledger.snapshot()
+        ledger.choose("aemusa_exclusive.25", "isolate")
+        self.assertEqual(ledger.snapshot(), before)
+        ledger.execute(child(EVENTS["aemusa_exclusive.1"], "immediate"))
+        ledger.choose("aemusa_exclusive.25", "isolate")
+        self.assertEqual(ledger.resources, {"energy": 400, "minerals": 700})
+        self.assertEqual(ledger.variables[PREFIX + "anchor_losses"], 1)
+
+    def test_warning_isolation_charges_once_and_uses_only_operating_months(self):
+        for identified in (False, True):
+            with self.subTest(identified=identified):
+                ledger = self.confirmed()
+                ledger.external_conditions["artifact_crisis_intelligence_identified"] = identified
+                ledger.choose("aemusa_exclusive.25", "isolate")
+                self.assertEqual(ledger.resources, {"energy": 700, "minerals": 850})
+                self.assertEqual(ledger.variables[PREFIX + "anchor_isolation_ticks"], int(identified))
+                interrupted = deepcopy(ledger)
+                interrupted.external_conditions["aemusa_ms_baseline_operational"] = False
+                interrupted.effect("aemusa_ms_exclusive_monthly_update")
+                self.assertEqual(interrupted.variables[PREFIX + "anchor_isolation_ticks"], int(identified))
+                before = interrupted.snapshot()
+                interrupted.choose("aemusa_exclusive.25", "isolate")
+                self.assertEqual(interrupted.snapshot(), before)
+                interrupted.external_conditions["aemusa_ms_baseline_operational"] = True
+                for _ in range(2 - int(identified)):
+                    interrupted.effect("aemusa_ms_exclusive_monthly_update")
+                self.assertEqual(interrupted.variables[PREFIX + "anchor_isolation_ticks"], 2)
+                self.combat(interrupted)
+                interrupted.effect("aemusa_ms_exclusive_monthly_update")
+                self.assertEqual(interrupted.variables[PREFIX + "anchor_pressure"], 1)
+                self.assertEqual(interrupted.variables[PREFIX + "anchor_isolation_ticks"], 2)
+                self.assertNotIn(PREFIX + "anchor_battle_won", interrupted.flags)
+                self.assertEqual(interrupted.variables[PREFIX + "projections_defeated"], 0)
+
+    def test_briefing_reports_current_isolation_state_and_settled_result(self):
+        definition = read_crisis_script("mod/common/scripted_loc/aemusa_exclusive_anchor_loc.txt")[0].value
+        self.assertEqual(scalar(definition, "random"), "no")
+        ledger = self.confirmed()
+
+        def status():
+            for entry in definition:
+                if entry.key == "text" and ledger.condition(child(entry.value, "trigger")):
+                    return scalar(entry.value, "localization_key")
+            return scalar(definition, "default")
+
+        self.assertEqual(status(), "aemusa_exclusive_link_open")
+        ledger.choose("aemusa_exclusive.25", "isolate")
+        self.assertEqual(status(), "aemusa_exclusive_link_working")
+        ledger.external_conditions["aemusa_ms_baseline_operational"] = False
+        self.assertEqual(status(), "aemusa_exclusive_link_paused")
+        ledger.external_conditions["aemusa_ms_baseline_operational"] = True
+        for _ in range(2):
+            ledger.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(status(), "aemusa_exclusive_link_isolated")
+        self.combat(ledger)
+        ledger.effect("aemusa_ms_anchor_record_battle")
+        self.assertEqual(status(), "aemusa_exclusive_link_defeated")
+        for result, label in enumerate(("linked", "liberated", "lost")):
+            ledger.variables[PREFIX + "anchor_result"] = result
+            descriptions = [scalar(item.value, "text") for item in EVENTS["aemusa_exclusive.30"]
+                            if item.key == "desc" and ledger.condition(child(item.value, "trigger"))]
+            self.assertEqual(descriptions, ["aemusa_exclusive.30." + label + "_desc"])
+
+    def test_local_window_fleet_victory_and_wartime_isolation_change_different_pressure(self):
+        ledger = self.confirmed()
+        self.combat(ledger)
+        ledger.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_pressure"], 2)
+        ledger.effect("aemusa_ms_anchor_stabilize")
+        ledger.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_pressure"], 2)
+        ledger.external_conditions["aemusa_ms_flagship_at_current_anchor"] = False
+        ledger.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_pressure"], 4)
+        ledger.choose("aemusa_exclusive.30", "isolate")
+        ledger.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_pressure"], 6)
+        ledger.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_pressure"], 7)
+        self.assertFalse(ledger.condition(TRIGGERS["aemusa_ms_anchor_can_engineer"]))
+
+        battle = self.confirmed()
+        self.combat(battle)
+        battle.effect("aemusa_ms_anchor_record_battle")
+        battle.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(battle.variables[PREFIX + "anchor_pressure"], 1)
+        self.assertEqual(battle.variables[PREFIX + "projections_defeated"], 1)
+        self.assertNotIn(PREFIX + "anchor_field_evidence", battle.flags)
+
+    def test_pressure_warning_and_actual_loss_remain_single_through_reload(self):
+        ledger = self.confirmed(archived=1, losses=1)
+        self.combat(ledger)
+        for _ in range(4):
+            ledger.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(ledger.variables[PREFIX + "anchor_pressure"], 9)
+        self.assertEqual(ledger.queue.count(("aemusa_exclusive.32", 0)), 1)
+        self.assertEqual(ledger.removed_deposits, [])
+        restored = deepcopy(ledger)
+        for _ in range(5):
+            restored.effect("aemusa_ms_exclusive_monthly_update")
+        self.assertEqual(restored.queue.count(("aemusa_exclusive.32", 0)), 1)
+        self.assertEqual(restored.queue.count(("aemusa_exclusive.35", 0)), 1)
+        self.assertEqual(restored.variables[PREFIX + "anchor_pressure"], 12)
+        self.assertEqual(restored.removed_deposits, ["d_minerals_2"])
+        self.assertEqual(restored.variables[PREFIX + "anchor_losses"], 2)
+        self.assertEqual(restored.variables[PREFIX + "projections_defeated"], 0)
 
 
 if __name__ == "__main__":

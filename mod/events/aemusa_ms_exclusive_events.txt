@@ -10,6 +10,13 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
+				has_country_flag = aemusa_ms_country_anchor_linked
+				aemusa_ms_anchor_located = yes
+			}
+			event_target:aemusa_ms_current_anchor_target = { save_event_target_as = aemusa_ms_linked_briefing_target }
+		}
+		if = {
+			limit = {
 				has_country_flag = aemusa_ms_country_chapter_13_completed
 			}
 			country_event = {
@@ -439,7 +446,14 @@ country_event = {
 country_event = {
 	id = aemusa_exclusive.25
 	title = aemusa_exclusive.25.title
-	desc = aemusa_exclusive.25.desc
+	desc = {
+		trigger = { NOT = { has_country_flag = aemusa_ms_country_anchor_linked } }
+		text = aemusa_exclusive.25.desc
+	}
+	desc = {
+		trigger = { has_country_flag = aemusa_ms_country_anchor_linked }
+		text = aemusa_exclusive.25.linked_desc
+	}
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
@@ -447,6 +461,13 @@ country_event = {
 	}
 	option = {
 		name = aemusa_exclusive.25.close
+	}
+	option = {
+		name = aemusa_exclusive.25.isolate
+		trigger = { aemusa_ms_anchor_isolation_available = yes }
+		allow = { aemusa_ms_anchor_can_order_isolation = yes }
+		custom_tooltip = aemusa_exclusive_isolate_hint
+		hidden_effect = { aemusa_ms_anchor_order_isolation = yes }
 	}
 }
 # 预警到期与月度互作后备，只能形成一次。
@@ -501,7 +522,31 @@ country_event = {
 country_event = {
 	id = aemusa_exclusive.30
 	title = aemusa_exclusive.30.title
-	desc = aemusa_exclusive.30.desc
+	desc = {
+		trigger = { NOT = { has_country_flag = aemusa_ms_country_anchor_linked } }
+		text = aemusa_exclusive.30.desc
+	}
+	desc = {
+		trigger = {
+			has_country_flag = aemusa_ms_country_anchor_linked
+			check_variable = { which = aemusa_ms_country_anchor_result value = 0 }
+		}
+		text = aemusa_exclusive.30.linked_desc
+	}
+	desc = {
+		trigger = {
+			has_country_flag = aemusa_ms_country_anchor_linked
+			check_variable = { which = aemusa_ms_country_anchor_result value = 1 }
+		}
+		text = aemusa_exclusive.30.liberated_desc
+	}
+	desc = {
+		trigger = {
+			has_country_flag = aemusa_ms_country_anchor_linked
+			check_variable = { which = aemusa_ms_country_anchor_result value = 2 }
+		}
+		text = aemusa_exclusive.30.lost_desc
+	}
 	is_triggered_only = yes
 	picture = GFX_evt_aemusa_white_night_pavilion
 	trigger = {
@@ -509,6 +554,13 @@ country_event = {
 	}
 	option = {
 		name = aemusa_exclusive.30.close
+	}
+	option = {
+		name = aemusa_exclusive.30.isolate
+		trigger = { aemusa_ms_anchor_isolation_available = yes }
+		allow = { aemusa_ms_anchor_can_order_isolation = yes }
+		custom_tooltip = aemusa_exclusive_isolate_hint
+		hidden_effect = { aemusa_ms_anchor_order_isolation = yes }
 	}
 	option = {
 		name = aemusa_exclusive.30.stabilize
@@ -663,6 +715,27 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+country_event = {
+	id = aemusa_exclusive.32
+	title = aemusa_exclusive.32.title
+	desc = aemusa_exclusive.32.desc
+	is_triggered_only = yes
+	picture = GFX_evt_aemusa_white_night_pavilion
+	location = event_target:aemusa_ms_current_anchor_target
+	trigger = {
+		aemusa_ms_exclusive_context = yes
+		aemusa_ms_exclusive_active = yes
+		aemusa_ms_anchor_located = yes
+		has_country_flag = aemusa_ms_country_anchor_linked
+		check_variable = { which = aemusa_ms_country_anchor_stage value = 30 }
+		check_variable = { which = aemusa_ms_country_anchor_result value = 0 }
+	}
+	option = { name = aemusa_exclusive.32.close }
+	option = {
+		name = aemusa_exclusive.32.review
+		hidden_effect = { country_event = { id = aemusa_exclusive.1 } }
 	}
 }
 country_event = {

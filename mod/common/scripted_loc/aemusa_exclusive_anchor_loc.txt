@@ -1,0 +1,25 @@
+# 在预警、作战与压力告警中显示同一条隔离记录。
+defined_text = {
+	name = GetAemusaCoreLinkState
+	random = no
+	text = {
+		trigger = { has_country_flag = aemusa_ms_country_anchor_battle_won }
+		localization_key = aemusa_exclusive_link_defeated
+	}
+	text = {
+		trigger = { check_variable = { which = aemusa_ms_country_anchor_isolation_ticks value >= 2 } }
+		localization_key = aemusa_exclusive_link_isolated
+	}
+	text = {
+		trigger = {
+			has_country_flag = aemusa_ms_country_anchor_isolation_ordered
+			aemusa_ms_baseline_operational = no
+		}
+		localization_key = aemusa_exclusive_link_paused
+	}
+	text = {
+		trigger = { has_country_flag = aemusa_ms_country_anchor_isolation_ordered }
+		localization_key = aemusa_exclusive_link_working
+	}
+	default = aemusa_exclusive_link_open
+}
