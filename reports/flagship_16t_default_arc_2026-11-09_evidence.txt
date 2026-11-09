@@ -1,0 +1,11 @@
+[22:26:55][effect_impl.cpp:22232]: [2200.1.6] Log effect, file: events/aef16_trial_events.txt line: 151. AEF16|LIVE|target_hull=42400|shield=16600
+[22:26:55][effect_impl.cpp:22232]: [2200.1.6] Log effect, file: events/aef16_trial_events.txt line: 195. AEF16|COMBAT|engine_entering_battle
+[22:26:56][effect_impl.cpp:22232]: [2200.1.7] Log effect, file: events/aef16_trial_events.txt line: 174. AEF16|READ|hull=42400|shield=16600|armor_fraction=1
+[22:26:56][effect_impl.cpp:22232]: [2200.1.8] Log effect, file: events/aef16_trial_events.txt line: 174. AEF16|READ|hull=42400|shield=16600|armor_fraction=1
+[22:26:56][effect_impl.cpp:22232]: [2200.1.9] Log effect, file: events/aef16_trial_events.txt line: 174. AEF16|READ|hull=42400|shield=0|armor_fraction=0.89192
+[22:26:57][effect_impl.cpp:22232]: [2200.1.10] Log effect, file: events/aef16_trial_events.txt line: 174. AEF16|READ|hull=42400|shield=0|armor_fraction=0.23354
+[22:26:57][effect_impl.cpp:22232]: [2200.1.11] Log effect, file: events/aef16_trial_events.txt line: 174. AEF16|READ|hull=33938|shield=0|armor_fraction=0
+[22:26:58][effect_impl.cpp:22232]: [2200.1.12] Log effect, file: events/aef16_trial_events.txt line: 174. AEF16|READ|hull=12769|shield=0|armor_fraction=0
+[22:26:58][effect_impl.cpp:22232]: [2200.1.12] Log effect, file: events/aef16_trial_events.txt line: 208. AEF16|KILL|native_callback|flagship_killed_target
+[22:26:58][effect_impl.cpp:22232]: [2200.1.12] Log effect, file: events/aef16_trial_events.txt line: 218. AEF16|WIN|native_space_battle_won
+[22:26:58][effect_impl.cpp:22232]: [2200.1.13] Log effect, file: events/aef16_trial_events.txt line: 174. AEF16|READ|hull=-5275|shield=0|armor_fraction=0
