@@ -1,0 +1,26 @@
+# 国家作用域。第16章收束时写入主线完结，尾声只回顾；三项身份收据由正式转变同次写入。
+aemusa_personal_research_eligible = {
+	aemusa_ms_finale_country_context = yes
+	aemusa_ms_finale_records_consistent = yes
+	has_country_flag = aemusa_ms_country_chapter_16_completed
+	has_country_flag = aemusa_ms_country_settlement_chapter_16_done
+	has_country_flag = aemusa_ms_country_story_v1_complete
+	has_country_flag = aemusa_ms_decision_player_authorized
+	has_country_flag = aemusa_ms_decision_aemusa_accepted
+	has_country_flag = aemusa_ms_country_settlement_fate_sovereign_done
+	has_country_flag = aemusa_ms_country_ending_fate_sovereign_settled
+	has_country_flag = aemusa_ms_country_fate_sovereign_authority_active
+}
+
+aemusa_personal_branch_model_available = {
+	has_technology = "tech_aemusa_possibility_branch_modeling"
+	aemusa_personal_research_eligible = yes
+}
+
+# 允许实际持有个人知识的旧档查阅本国殖民地；能否开工仍由各个 R1 入口核定。
+aemusa_personal_branch_model_colony = {
+	carrier_is_type = planet
+	is_colony = yes
+	exists = owner
+	owner = { aemusa_personal_branch_model_available = yes }
+}

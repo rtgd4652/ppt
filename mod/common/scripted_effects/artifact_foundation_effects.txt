@@ -70,10 +70,10 @@ artifact_foundation_start_basic_construction = {
 		}
 		owner = {
 			add_resource = {
-				minerals = -300
+				minerals = @[-arf_workshop_basic_minerals]
 			}
 			add_resource = {
-				energy = -150
+				energy = @[-arf_workshop_basic_energy]
 			}
 		}
 		artifact_foundation_begin = yes
@@ -93,13 +93,13 @@ artifact_foundation_start_precision_construction = {
 		}
 		owner = {
 			add_resource = {
-				minerals = -450
+				minerals = @[-arf_workshop_precision_minerals]
 			}
 			add_resource = {
-				energy = -200
+				energy = @[-arf_workshop_precision_energy]
 			}
 			add_resource = {
-				alloys = -50
+				alloys = @[-arf_workshop_precision_alloys]
 			}
 		}
 		artifact_foundation_begin = yes
@@ -119,13 +119,13 @@ artifact_foundation_start_materials_study = {
 		}
 		owner = {
 			add_resource = {
-				minerals = -100
+				minerals = @[-arf_workshop_materials_minerals]
 			}
 			add_resource = {
-				energy = -200
+				energy = @[-arf_workshop_materials_energy]
 			}
 			add_resource = {
-				consumer_goods = -50
+				consumer_goods = @[-arf_workshop_materials_consumer_goods]
 			}
 		}
 		artifact_foundation_begin = yes

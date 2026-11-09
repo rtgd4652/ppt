@@ -58,19 +58,29 @@ decision_artifact_foundation_workshop = {
 	sound = "event_administrative_work"
 	icon = "decision_artifact_destiny_city_project"
 	potential = {
-		artifact_foundation_actor = yes
-		owner = {
-			OR = {
-				has_technology = "tech_artifact_resonance_material_screening"
-				has_technology = "tech_artifact_modular_colony_construction"
+		OR = {
+			AND = {
+				artifact_foundation_actor = yes
+				owner = {
+					OR = {
+						has_technology = "tech_artifact_resonance_material_screening"
+						has_technology = "tech_artifact_modular_colony_construction"
+					}
+				}
 			}
+			aemusa_personal_branch_model_colony = yes
 		}
 	}
 	effect = {
 		owner = {
 			save_event_target_as = arf_r1_ui_owner
 		}
+		# 主物种变化后仍可重读已有个人知识，原公共工程维持原有开工资格。
 		if = {
+			limit = { artifact_foundation_actor = no }
+			carrier_event = { id = artifact_foundation.21 }
+		}
+		else_if = {
 			limit = {
 				artifact_foundation_idle = yes
 			}

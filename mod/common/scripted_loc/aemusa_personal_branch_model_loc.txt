@@ -1,0 +1,28 @@
+# 行星载体作用域。每项可行性均调用实际开工按钮的同一守卫，包含当下库存和原窗口所有者。
+defined_text = {
+	name = GetAemusaBasicConstructionAvailability
+	random = no
+	text = {
+		trigger = { artifact_foundation_can_start_basic_construction = yes }
+		localization_key = aemusa_p01.ready
+	}
+	default = aemusa_p01.unavailable
+}
+defined_text = {
+	name = GetAemusaPrecisionConstructionAvailability
+	random = no
+	text = {
+		trigger = { artifact_foundation_can_start_precision_construction = yes }
+		localization_key = aemusa_p01.ready
+	}
+	default = aemusa_p01.unavailable
+}
+defined_text = {
+	name = GetAemusaMaterialsStudyAvailability
+	random = no
+	text = {
+		trigger = { artifact_foundation_can_start_materials_study = yes }
+		localization_key = aemusa_p01.ready
+	}
+	default = aemusa_p01.unavailable
+}

@@ -1587,7 +1587,8 @@
     }
   ],
   "personal_route": {
-    "status": "separate_draft_not_implemented",
+    "status": "p01_source_implemented_p02_p04_separate_draft",
+    "updated": "2026-11-09",
     "entry": "仅主线第五阶段全部结束、玩家最终授权、爱缪莎自主接受并合法完成正式转变结算后；沿用aemusa_ms_country_ending_fate_sovereign_settled及既有身份与授权检查。",
     "pacing": "结尾后的可选短程奖励研究；入口与配方可随合法结算开放，不新增强制长任务链或第二轮危机。",
     "exclusions": "不以30级、旧个人飞升或两项遗留科技代替入口；公共80项及共同胜利奖励不反向依赖P线。",
@@ -1598,7 +1599,14 @@
         "area": "physics",
         "tier": 5,
         "prerequisites": [],
-        "capability": "查看本Mod当前合法工程的候选方案与明确代价；不改写已结算历史。"
+        "capability": "查看本Mod当前合法工程的候选方案与明确代价；不改写已结算历史。",
+        "implementation_key": "tech_aemusa_possibility_branch_modeling",
+        "research_cost": 18000,
+        "weight": 100,
+        "consumer": "现有公共工程：工坊方案（模块化营建、精密构件营建与构件材料试制）",
+        "status": "implemented_static_passed",
+        "runtime_status": "not_run",
+        "report": "reports/aemusa_personal_branch_model_2026-11-09.md"
       },
       {
         "id": "P02",

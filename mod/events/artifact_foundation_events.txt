@@ -109,6 +109,11 @@ carrier_event = {
 		artifact_foundation_ui_actor = yes
 	}
 	option = {
+		name = aemusa_p01.open
+		trigger = { owner = { aemusa_personal_branch_model_available = yes } }
+		hidden_effect = { carrier_event = { id = artifact_foundation.21 } }
+	}
+	option = {
 		name = artifact_foundation.start_materials_study
 		allow = {
 			custom_tooltip = {
@@ -174,6 +179,38 @@ carrier_event = {
 	option = {
 		name = artifact_foundation.close
 	}
+}
+
+# P01 比较同一现场三种原有工程。打开、重读和返回均不扣费、不改变进行态。
+carrier_event = {
+	id = artifact_foundation.21
+	title = tech_aemusa_possibility_branch_modeling
+	desc = {
+		trigger = { artifact_foundation_actor = yes }
+		text = aemusa_p01.compare
+	}
+	desc = {
+		trigger = { artifact_foundation_actor = no }
+		text = aemusa_p01.compare_after_species_change
+	}
+	picture = GFX_evt_alien_city
+	is_triggered_only = yes
+	trigger = {
+		artifact_foundation_ui_owner = yes
+		aemusa_personal_branch_model_colony = yes
+	}
+	option = {
+		name = aemusa_p01.back
+		trigger = { artifact_foundation_ui_actor = yes }
+		hidden_effect = {
+			if = {
+				limit = { artifact_foundation_idle = yes }
+				carrier_event = { id = artifact_foundation.20 }
+			}
+			else = { carrier_event = { id = artifact_foundation.30 } }
+		}
+	}
+	option = { name = artifact_foundation.close default_hide_option = yes }
 }
 
 carrier_event = {
@@ -343,6 +380,11 @@ carrier_event = {
 	is_triggered_only = yes
 	trigger = {
 		artifact_foundation_ui_actor = yes
+	}
+	option = {
+		name = aemusa_p01.open
+		trigger = { owner = { aemusa_personal_branch_model_available = yes } }
+		hidden_effect = { carrier_event = { id = artifact_foundation.21 } }
 	}
 	# A10提交只消费三阶段完成的真实记录，不收费或改写其他国家知识。
 	option = {

@@ -18,7 +18,7 @@ R3a三项研究、六个组件及两个新集合已接，定向与静态通过�
 | 行星建筑 | 44个定义 | 27类、46阶段，旧15键保留 |
 | 星港建筑 | 1个 | 单列，轨道接口不混入行星阶段 |
 | 陆军／舰船组件 | 5个陆军、114组件定义 | 按用途扩展，尺寸不重复算科技 |
-| 个人研究 | 新P线未实现 | P01～P04独立候选，公共80项不依赖P线 |
+| 个人研究 | P01 已接工坊，运行待验 | P02～P04 为独立候选，公共80项照常开放 |
 
 组件54个定义中，43个读取三个公共军备总包，7个由命运之主旧舰型限定，另4个为无显式科技／potential的旧光环原型，宿主与可用范围在军备包核对。武器CSV另有5行数值，已经对应组件，不重复加进定义或科技数。[军备明细](artifact_civilization_military_research_plan_v0.1.md)。
 
@@ -228,6 +228,8 @@ R3e中的C11联运必须先于D10／D22。D12依赖A10，D13依赖B14，故高�
 ## 个人研究与危机边界
 
 P01可能性分支建模、P02选定方案重组、P03命运舰体接口、P04可能性工程接口继续单列。入口仍为第五阶段全部结束、最终授权、自主接受及合法正式转变结算，不能用30级、旧飞升或两项遗留科技代替。公共80项与三种合法结局的共通奖励不反向依赖P线。胜利后奖励研发保持短程，不新增第二轮Boss或长期危机循环。
+
+2026-11-09，P01「可能性分支建模」已接入正常物理研究及原工坊公共工程。第十六章主线收束后即可研究，尾声可照常进行。研究后可以在殖民地工坊比较三种现有方案的开工条件、报价和成果，再回到原界面下单。详情见[P01实施记录](../../reports/aemusa_personal_branch_model_2026-11-09.md)。
 
 [结构化路线](artifact_civilization_research_building_route_v0.3.json) · [军备责任表](artifact_civilization_military_research_plan_v0.1.md) · [R2d规格](artifact_civilization_r2d_implementation_spec_v0.1.md) · [1.0范围](artifact_civilization_1_0_scope_confirmation_2026-10-08.md) · [v0.2历史路线](artifact_civilization_research_building_route_v0.2.md)
 

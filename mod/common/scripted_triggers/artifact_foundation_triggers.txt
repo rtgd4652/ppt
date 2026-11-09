@@ -14,6 +14,10 @@ artifact_foundation_actor = {
 # 窗口保留打开时的国家；转让后旧窗口不能从新国家扣费。
 artifact_foundation_ui_actor = {
 	artifact_foundation_actor = yes
+	artifact_foundation_ui_owner = yes
+}
+
+artifact_foundation_ui_owner = {
 	exists = event_target:arf_r1_ui_owner
 	is_owned_by = event_target:arf_r1_ui_owner
 }
@@ -158,11 +162,11 @@ artifact_foundation_can_start_basic_construction = {
 		has_technology = "tech_artifact_modular_colony_construction"
 		has_resource = {
 			type = minerals
-			amount >= 300
+			amount >= @arf_workshop_basic_minerals
 		}
 		has_resource = {
 			type = energy
-			amount >= 150
+			amount >= @arf_workshop_basic_energy
 		}
 	}
 	OR = {
@@ -180,15 +184,15 @@ artifact_foundation_can_start_precision_construction = {
 		has_technology = "tech_artifact_resonance_material_screening"
 		has_resource = {
 			type = minerals
-			amount >= 450
+			amount >= @arf_workshop_precision_minerals
 		}
 		has_resource = {
 			type = energy
-			amount >= 200
+			amount >= @arf_workshop_precision_energy
 		}
 		has_resource = {
 			type = alloys
-			amount >= 50
+			amount >= @arf_workshop_precision_alloys
 		}
 	}
 	OR = {
@@ -205,15 +209,15 @@ artifact_foundation_can_start_materials_study = {
 		has_technology = "tech_artifact_resonance_material_screening"
 		has_resource = {
 			type = minerals
-			amount >= 100
+			amount >= @arf_workshop_materials_minerals
 		}
 		has_resource = {
 			type = energy
-			amount >= 200
+			amount >= @arf_workshop_materials_energy
 		}
 		has_resource = {
 			type = consumer_goods
-			amount >= 50
+			amount >= @arf_workshop_materials_consumer_goods
 		}
 	}
 	OR = {

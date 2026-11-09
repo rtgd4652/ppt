@@ -1,0 +1,10 @@
+# P01 属于爱缪莎个人路线。公众科技不读取本节点；尾声期间已可正常抽取。
+tech_aemusa_possibility_branch_modeling = {
+	area = physics
+	tier = 5
+	category = { computing }
+	cost = 18000
+	weight = 100
+	icon = "tech_artifact_tarot_calculation"
+	potential = { aemusa_personal_research_eligible = yes }
+}

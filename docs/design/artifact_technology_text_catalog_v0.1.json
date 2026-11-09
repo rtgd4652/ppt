@@ -2497,6 +2497,29 @@
     "related_text_keys": 36,
     "historical_scope_note": "本段仅记录首次62项文字整理；随后研发包新增条目见implementation_updates，不重计旧改名数。"
   },
+  "personal_entries": [
+    {
+      "id": "P01",
+      "name": "可能性分支建模",
+      "key": "tech_aemusa_possibility_branch_modeling",
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": ["aemusa_tarot", "unknown_boundaries"],
+      "source_note": "命运规则与命运主宰沿用项目叙事及授权边界，工坊备选方案和现实成本来自 R1 现有脚本。",
+      "references": [
+        "knowledge/world/cosmology_bible_v0.1.md",
+        "knowledge/curated/decisions/project_editorial_decisions_v0.1.md",
+        "knowledge/curated/reviews/aemusa_main_story_outline_review_v1.0.md"
+      ],
+      "technology_file": "mod/common/technology/aemusa_personal_research_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/aemusa_personal_research_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/events/artifact_foundation_events.txt",
+        "mod/common/scripted_triggers/artifact_foundation_triggers.txt",
+        "mod/common/scripted_effects/artifact_foundation_effects.txt",
+        "mod/common/scripted_variables/artifact_foundation_workshop_costs.txt"
+      ]
+    }
+  ],
   "source_policy": {
     "index": "knowledge/database/seven_days_knowledge.sqlite",
     "query_mode": "read_only",

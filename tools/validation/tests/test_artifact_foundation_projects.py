@@ -13,13 +13,22 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from check_mod import parse, scalar
 
 ROOT=Path(__file__).resolve().parents[3]
+WORKSHOP_COSTS = {
+    entry.key[1:]: int(entry.value) for entry in parse(
+        (ROOT/'mod/common/scripted_variables/artifact_foundation_workshop_costs.txt').read_text(encoding='utf-8'))
+}
+
 def load(path):
     text=(ROOT/path).read_text(encoding='utf-8-sig')
+    # 原生全局费用及其相反数同时用于余额守卫与实扣，在解析比较符前展开。
+    text = re.sub(r'@\[-(arf_workshop_\w+)\]', lambda m: str(-WORKSHOP_COSTS[m[1]]), text)
+    text = re.sub(r'@(arf_workshop_\w+)', lambda m: str(WORKSHOP_COSTS[m[1]]), text)
     # 检查器解析器不保留比较符；夹具显式保留这两个实际用到的比较。
     text=re.sub(r'\b(value|amount)\s*>=\s*([\w.-]+)',r'\1_ge = \2',text)
     return {e.key:e.value for e in parse(text) if e.key}
 # C10场地条件已接A12工程分支；保留严格条件解析，不把未知接口默认为通过。
 TRIGGERS={**load('mod/common/scripted_triggers/artifact_foundation_triggers.txt'),
+          **load('mod/common/scripted_triggers/aemusa_personal_research_triggers.txt'),
           **load('mod/common/scripted_triggers/artifact_public_theory_triggers.txt')}
 EFFECTS=load('mod/common/scripted_effects/artifact_foundation_effects.txt')
 DECISIONS=load('mod/common/decisions/artifact_foundation_decisions.txt')

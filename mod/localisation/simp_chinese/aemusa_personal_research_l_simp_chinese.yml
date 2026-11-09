@@ -1,0 +1,9 @@
+﻿l_simp_chinese:
+ tech_aemusa_possibility_branch_modeling:0 "可能性分支建模"
+ tech_aemusa_possibility_branch_modeling_desc:0 "爱缪莎把同一座工坊能走的几条路摆在一起。若把构件交给施工队，建筑可以更快完工。若留下做材料试验，研究人员就有机会弄清它们怎样承受负荷。两种未来依赖同一批物资，决定仍由承担后果的人来做。\n\n§H应用§!　在殖民地的「$decision_artifact_foundation_workshop$」中选择「比较工程分支」，可看到当下三种方案的开工资格、投入、工期与成果。"
+ aemusa_p01.open:0 "比较工程分支"
+ aemusa_p01.back:0 "返回工坊"
+ aemusa_p01.ready:0 "§G可开工§!"
+ aemusa_p01.unavailable:0 "§Y当前不可开工§!"
+ aemusa_p01.compare_after_species_change:0 "本国保存着爱缪莎的工程模型。三项公共工坊工程目前均要求神器使主物种。\n\n$aemusa_p01.compare$"
+ aemusa_p01.compare:0 "§Y[Root.GetName]§!的工坊一次承接一项工程。以下按本地项目名额、控制状况、设施、研究和库存核对。\n\n§H$artifact_foundation.start_basic_construction$§!　[Root.GetAemusaBasicConstructionAvailability]\n$artifact_foundation.offer_basic_construction$\n\n§H$artifact_foundation.start_precision_construction$§!　[Root.GetAemusaPrecisionConstructionAvailability]\n$artifact_foundation.offer_precision_construction$\n\n§H$artifact_foundation.start_materials_study$§!　[Root.GetAemusaMaterialsStudyAvailability]\n$artifact_foundation.offer_materials_study$"

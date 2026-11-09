@@ -1,0 +1,9 @@
+# R1 三种工坊方案的实际费用。余额检查、单次扣款及 $@变量$ 价格显示共用一份面额。
+@arf_workshop_basic_minerals = 300
+@arf_workshop_basic_energy = 150
+@arf_workshop_precision_minerals = 450
+@arf_workshop_precision_energy = 200
+@arf_workshop_precision_alloys = 50
+@arf_workshop_materials_minerals = 100
+@arf_workshop_materials_energy = 200
+@arf_workshop_materials_consumer_goods = 50
