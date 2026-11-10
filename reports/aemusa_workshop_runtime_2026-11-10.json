@@ -46,6 +46,15 @@
         "[22:07:08][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 172. AEF-P02|PASS|p01_three_real_workshop_guards",
         "[22:07:08][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 173. AEF-P02|P01_TEXT|basic=\u0011Y当前不可开工\u0011!|precision=\u0011Y当前不可开工\u0011!|materials=\u0011Y当前不可开工\u0011!"
       ]
+    },
+    {
+      "p01_implementation": "1ae67eb",
+      "scope": "受控精密成果清理后，空闲原工坊的三个原生按钮及选择精密后的下单页",
+      "log_lines": [
+        "[22:16:31][effect_impl.cpp:22232]: [2293.12.15] Log effect, file: events/aef_late_driver.txt line: 94. AEF-P02|UI_OPTIONS|all_three_ready|clear_controlled_reward|site=交界都市",
+        "[22:16:31][effect_impl.cpp:22232]: [2293.12.15] Log effect, file: events/aef_late_driver.txt line: 97. AE2293|UI|opening_native_workshop_compare",
+        "[22:21:17][eventcommands.cpp:88]: Event artifact_foundation.21 added info about event selection. selectedOption 1, human 1, playerEventId 969"
+      ]
     }
   ]
 }
