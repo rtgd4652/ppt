@@ -219,8 +219,7 @@ carrier_event = {
 	title = tech_aemusa_selected_plan_reconfiguration
 	is_triggered_only = yes
 	picture = GFX_evt_alien_city
-	trigger = { aemusa_p02_can_open_quote = yes }
-	immediate = { set_carrier_flag = arf_p02_quote_open }
+	trigger = { has_carrier_flag = arf_p02_quote_open aemusa_p02_can_open_quote = yes }
 	desc = {
 		trigger = { aemusa_p02_current_quote = yes has_carrier_flag = arf_r1_mode_basic_construction }
 		text = aemusa_p02.quote_upgrade
@@ -440,7 +439,10 @@ carrier_event = {
 		allow = {
 			custom_tooltip = { fail_text = aemusa_p02.finish_open_quote aemusa_p02_can_open_quote = yes }
 		}
-		hidden_effect = { carrier_event = { id = artifact_foundation.22 } }
+		hidden_effect = {
+			aemusa_p02_issue_quote = yes
+			carrier_event = { id = artifact_foundation.22 }
+		}
 	}
 	# A10提交只消费三阶段完成的真实记录，不收费或改写其他国家知识。
 	option = {

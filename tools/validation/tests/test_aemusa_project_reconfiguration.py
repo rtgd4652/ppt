@@ -132,6 +132,8 @@ class ReconfigurationTests(unittest.TestCase):
         w.monthly()
         w.monthly()
         w.a['techs'].add(TECH)
+        unissued = w.open('workshop')
+        self.assertFalse(w.dispatch(QUOTE, w.p, unissued))
         before = deepcopy((w.a['resources'], w.p['vars'], w.targets))
         ctx = w.review()
         self.assertEqual(before, (w.a['resources'], w.p['vars'], w.targets))

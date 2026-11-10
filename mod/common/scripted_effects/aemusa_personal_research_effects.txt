@@ -1,3 +1,11 @@
+# 签发与扣费分开。原工坊按钮先核对原项目和活动窗口，再签发这份可确认工单。
+aemusa_p02_issue_quote = {
+	if = {
+		limit = { aemusa_p02_can_open_quote = yes }
+		set_carrier_flag = arf_p02_quote_open
+	}
+}
+
 # 原项目的付费收据、启动国家和已做工时留在原处。只有本地月度完工入口可以发放收益。
 aemusa_p02_upgrade_construction = {
 	if = {
