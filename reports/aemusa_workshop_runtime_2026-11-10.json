@@ -1,0 +1,43 @@
+{
+  "game": "Cygnus v4.5.3",
+  "input_save": "2293.12.03.sav",
+  "runs": [
+    {
+      "scope": "原工坊收费、改选与修订前三条状态文案",
+      "log_lines": [
+        "[21:57:15][effect_impl.cpp:22232]: [2293.12.4] Log effect, file: events/aef_late_driver.txt line: 40. AE2293|P01|legal_research_eligible",
+        "[21:57:15][effect_impl.cpp:22232]: [2293.12.4] Log effect, file: events/aef_late_driver.txt line: 47. AE2293|P01|physics_tier_5_closed",
+        "[21:57:15][effect_impl.cpp:22232]: [2293.12.4] Log effect, file: events/aef_late_driver.txt line: 52. AE2293|P01|not_a_current_option",
+        "[21:57:15][effect_impl.cpp:22232]: [2293.12.4] Log effect, file: events/aef_late_driver.txt line: 57. AE2293|P01|not_yet_researched",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 11. AEF-P02|BEGIN|country=交界都市中央庭",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 14. AEF-P02|PASS|original_sovereign_gate",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 19. AEF-P02|ENTRY|physics_tier5_closed",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 24. AEF-P02|ENTRY|p01_not_current_option",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 29. AEF-P02|GRANTED|tech_artifact_standard_parts",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 35. AEF-P02|GRANTED|tech_artifact_modular_colony_construction",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 43. AEF-P02|PREEXISTING|tech_artifact_resonance_material_screening",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 47. AEF-P02|GRANTED|tech_aemusa_possibility_branch_modeling",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 53. AEF-P02|GRANTED|tech_aemusa_selected_plan_reconfiguration",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 70. AEF-P02|ENTRY|existing_wallet_sufficient",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 133. AEF-P02|SITE_GRANTED|交界都市",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 160. AEF-P02|SITE|交界都市",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 172. AEF-P02|PASS|p01_three_real_workshop_guards",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 173. AEF-P02|P01_TEXT|basic=\u0011Y当前不可开工\u0011!|precision=\u0011Y当前不可开工\u0011!|materials=\u0011Y当前不可开工\u0011!",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 179. AEF-P02|WALLET|before|minerals=140789.12518|energy=81287.4049|alloys=144982.14395|unity=5995471.87382",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 187. AEF-P02|WALLET|basic|minerals=140489.12518|energy=81137.4049|alloys=144982.14395|unity=5995471.87382",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 195. AEF-P02|PASS|paid_original_basic",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 211. AEF-P02|PASS|original_basic_two_of_four|accelerated_native_work",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 215. AEF-P02|QUOTE|upgrade_minerals=150|energy=50|alloys=50|unity=50|work=2/4",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 222. AEF-P02|WALLET|changed|minerals=140339.12518|energy=81087.4049|alloys=144932.14395|unity=5995421.87382",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 230. AEF-P02|PASS|paid_reconfiguration_difference_and_fee",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 245. AEF-P02|PASS|kept_2_of_4_and_repeat_guarded",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 253. AEF-P02|WALLET|retry|minerals=140339.12518|energy=81087.4049|alloys=144932.14395|unity=5995421.87382",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 261. AEF-P02|PASS|retry_zero_cost",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 271. AEF-P02|PASS|third_work_month_no_reward",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 286. AEF-P02|PASS|original_fourth_work_month_final_precision_only|UI_SITE=交界都市",
+        "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 297. AEF-P02|END|site=交界都市"
+      ],
+      "p02_implementation": "8bad332"
+    }
+  ]
+}
