@@ -1,6 +1,6 @@
 namespace = aef16
 
-# 仅手动用于六 L 隔离存档副本。先验证 ensure 保留同一艘船，再模拟损失。
+# 旧档独立副本。只绑定原舰，并通过引擎尝试把它设为瘫痪；夹具本身不调用复活事件。
 country_event = {
 	id = aef16.20
 	hide_window = yes
@@ -10,40 +10,22 @@ country_event = {
 			limit = {
 				is_ai = no
 				has_country_flag = aemusa_ms_country_flagship_commissioned
-				NOT = { has_country_flag = aemusa_ms_country_flagship_recovering }
-				aemusa_ms_flagship_has_safe_capital = yes
-				count_owned_ship = { count < 2 limit = { is_ship_size = aemusa_reality_flagship } }
-				any_owned_ship = {
-					is_ship_size = aemusa_reality_flagship
-					has_ship_flag = aemusa_reality_flagship
-					has_component = "LARGE_GAMMA_LASER"
-					has_component = "LARGE_MASS_DRIVER_5"
-					NOT = { has_component = "AEMUSA_ENDGAME_T_BEAM" }
-				}
+				count_owned_ship = { count = 1 limit = { is_ship_size = aemusa_reality_flagship } }
 			}
 			random_owned_ship = {
 				limit = { is_ship_size = aemusa_reality_flagship }
 				save_event_target_as = aef16_original_flagship
+				fleet = { save_event_target_as = aef16_original_fleet }
+				solar_system = { save_event_target_as = aef16_original_system }
 			}
 			aemusa_ms_flagship_ensure_present = yes
-			aemusa_ms_flagship_ensure_present = yes
-			if = {
-				limit = {
-					count_owned_ship = { count < 2 limit = { is_ship_size = aemusa_reality_flagship } }
-					any_owned_ship = {
-						is_same_value = event_target:aef16_original_flagship
-						has_component = "LARGE_GAMMA_LASER"
-						has_component = "LARGE_MASS_DRIVER_5"
-						NOT = { has_component = "AEMUSA_ENDGAME_T_BEAM" }
-					}
-				}
-				log = "AEF16|LEGACY|original_preserved"
-				event_target:aef16_original_flagship = { destroy_ship = this }
-				country_event = { id = aef16.21 days = 1 }
+			event_target:aef16_original_flagship = {
+				log = "AEF16|DISABLE|begin_scripted_disable"
+				set_disabled = yes
 			}
-			else = { log = "AEF16|LEGACY_FAIL|original_changed" }
+			country_event = { id = aef16.21 }
 		}
-		else = { log = "AEF16|LEGACY_BLOCK|requires_one_old_flagship_and_safe_capital" }
+		else = { log = "AEF16|DISABLE_BLOCK|requires_one_commissioned_ship" }
 	}
 }
 
@@ -53,56 +35,66 @@ country_event = {
 	is_triggered_only = yes
 	immediate = {
 		if = {
-			limit = { NOT = { aemusa_ms_has_flagship_instance = yes } }
-			# 脚本损失有时没有战斗回调。让正式补检进入冷却，再只加速已生效的计时。
-			aemusa_ms_flagship_ensure_present = yes
-			if = {
-				limit = {
-					has_country_flag = aemusa_ms_country_flagship_recovering
-					has_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
+			limit = {
+				count_owned_ship = { count = 1 limit = { is_ship_size = aemusa_reality_flagship } }
+				any_owned_ship = {
+					is_same_value = event_target:aef16_original_flagship
+					is_disabled = no
+					has_hp_percentage >= 0.99
+					fleet = { is_same_value = event_target:aef16_original_fleet }
+					solar_system = { is_same_value = event_target:aef16_original_system }
 				}
-				remove_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
-				log = "AEF16|LEGACY|cooldown_accelerated"
-				country_event = { id = aemusa_flagship.2 }
-				country_event = { id = aef16.22 days = 1 }
 			}
-			else = { log = "AEF16|LEGACY_FAIL|missing_recovery_timer" }
+			log = "AEF16|DISABLE|same_ship_fleet_system_operational"
 		}
-		else = { log = "AEF16|LEGACY_FAIL|loss_not_registered" }
+		else = { log = "AEF16|DISABLE_UNCONFIRMED|scripted_disable_did_not_yield_same_active_ship" }
+	}
+}
+
+# 另一项必须主动触发的测试。真实删除后，先试月检、旧事件；只有正式联络效果才可创建新舰。
+country_event = {
+	id = aef16.23
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ai = no
+		has_country_flag = aemusa_ms_country_flagship_commissioned
+		aemusa_ms_flagship_has_safe_capital = yes
+		count_owned_ship = { count = 1 limit = { is_ship_size = aemusa_reality_flagship } }
+	}
+	immediate = {
+		aemusa_ms_flagship_ensure_present = yes
+		random_owned_ship = { limit = { is_ship_size = aemusa_reality_flagship } destroy_ship = this }
+		country_event = { id = aef16.24 days = 1 }
 	}
 }
 
 country_event = {
-	id = aef16.22
+	id = aef16.24
 	hide_window = yes
 	is_triggered_only = yes
 	immediate = {
+		aemusa_ms_flagship_monthly_update = yes
+		country_event = { id = aemusa_flagship.2 }
 		if = {
-			limit = {
-				any_owned_ship = {
-					is_ship_size = aemusa_reality_flagship
-					has_ship_flag = aemusa_reality_flagship
-					has_component = "AEMUSA_ENDGAME_REACTOR"
-					has_component = "AEMUSA_ENDGAME_T_BEAM"
-					NOR = { has_component = "LARGE_GAMMA_LASER" has_component = "LARGE_MASS_DRIVER_5" }
-				}
-			}
-			random_owned_ship = {
-				limit = { is_ship_size = aemusa_reality_flagship has_component = "AEMUSA_ENDGAME_T_BEAM" }
-				save_event_target_as = aef16_recovered_flagship
-			}
-			aemusa_ms_flagship_ensure_present = yes
-			aemusa_ms_flagship_ensure_present = yes
+			limit = { aemusa_ms_flagship_can_contact_recall = yes }
+			log = "AEF16|RECALL|absent_before_manual_contact"
+			aemusa_ms_flagship_contact_recall = yes
+			aemusa_ms_flagship_contact_recall = yes
 			if = {
 				limit = {
-					count_owned_ship = { count < 2 limit = { is_ship_size = aemusa_reality_flagship } }
-					any_owned_ship = { is_same_value = event_target:aef16_recovered_flagship }
-					NOT = { has_country_flag = aemusa_ms_country_flagship_recovering }
+					count_owned_ship = { count = 1 limit = { is_ship_size = aemusa_reality_flagship } }
+					any_owned_ship = {
+						is_ship_size = aemusa_reality_flagship
+						has_component = "AEMUSA_ENDGAME_REACTOR"
+						has_component = "AEMUSA_ENDGAME_T_BEAM"
+					}
+					NOT = { aemusa_ms_flagship_can_contact_recall = yes }
 				}
-				log = "AEF16|LEGACY|one_restored_ship_with_T_beam_and_reactor"
+				log = "AEF16|RECALL|one_new_T_design_after_manual_contact"
 			}
-			else = { log = "AEF16|LEGACY_FAIL|duplicate_or_still_recovering" }
+			else = { log = "AEF16|RECALL_FAIL|replacement_or_uniqueness" }
 		}
-		else = { log = "AEF16|LEGACY_FAIL|wrong_or_missing_restored_loadout" }
+		else = { log = "AEF16|RECALL_FAIL|missing_manual_contact_window" }
 	}
 }

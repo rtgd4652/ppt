@@ -25,13 +25,15 @@ def main():
     sections={scalar(b,'key'):b for b in blocks(ROOT/'mod/common/section_templates/aemusa_reality_flagship_sections.txt','ship_section_template')}
     designs=blocks(ROOT/'mod/common/global_ship_designs/aemusa_reality_flagship_designs.txt','ship_design')
     # 从正式造舰处分辨活动设计与历史同名设计，避免把旧键也当成新造舰入口。
-    ensure, = blocks(ROOT/'mod/common/scripted_effects/aemusa_ms_flagship_effects.txt','aemusa_ms_flagship_ensure_present')
-    fleet, = [entry.value for entry,_ in walk(ensure) if entry.key=='create_fleet']
+    spawn, = blocks(ROOT/'mod/common/scripted_effects/aemusa_ms_flagship_effects.txt','aemusa_ms_flagship_create_at_capital')
+    fleet, = [entry.value for entry,_ in walk(spawn) if entry.key=='create_fleet']
     effects, = children(fleet, 'effect')
     create_ship, = [entry for entry in effects if entry.key=='create_ship']
-    create_design, = [entry for entry,_ in walk(ensure) if entry.key=='create_ship_design']
+    create_design, = [entry for entry,_ in walk(spawn) if entry.key=='create_ship_design']
     assert effects.index(create_design) + 1 == effects.index(create_ship)
     assert scalar(create_ship.value,'design')=='last_created_design' and scalar(create_ship.value,'upgradable')=='no'
+    ship_setup, = children(create_ship.value, 'effect')
+    assert scalar(ship_setup, 'set_disable_at_health') == '0.05'
     ship_name = scalar(create_ship.value,'name')
     active_key = scalar(create_design.value,'design')
     by_name = {scalar(b,'name'):b for b in designs}

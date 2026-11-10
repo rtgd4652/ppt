@@ -5,7 +5,6 @@ aemusa_ms_has_flagship_instance = {
 
 aemusa_ms_has_operational_flagship = {
 	has_country_flag = aemusa_ms_country_flagship_commissioned
-	NOT = { has_country_flag = aemusa_ms_country_flagship_recovering }
 	any_owned_ship = {
 		is_ship_size = aemusa_reality_flagship
 		is_disabled = no
@@ -39,4 +38,12 @@ aemusa_ms_flagship_has_safe_capital = {
 			starbase = { is_controlled_by = prevprevprev }
 		}
 	}
+}
+
+# 通讯点显示和实际按下共用国家守卫。正在服役或处于紧急撤退中的实例仍占名额。
+aemusa_ms_flagship_can_contact_recall = {
+	has_country_flag = aemusa_ms_country_flagship_commissioned
+	has_country_flag = aemusa_ms_country_flagship_ever_created
+	NOT = { aemusa_ms_has_flagship_instance = yes }
+	aemusa_ms_flagship_has_safe_capital = yes
 }

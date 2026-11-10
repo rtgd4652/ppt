@@ -1,97 +1,82 @@
-# 新旗舰的生命周期独立于剧情章节和爱缪莎领袖身份；本文件均为国家作用域。
-# 授权入口只设置 commissioned 后调用 ensure_present，不需要付款或绑定舰队领袖。
-
-aemusa_ms_flagship_begin_recovery = {
-	if = {
-		limit = {
-			has_country_flag = aemusa_ms_country_flagship_commissioned
-			NOT = { has_country_flag = aemusa_ms_country_flagship_recovering }
+# 建舰只用于正式授舰与联络处补舰，调用者已检查资格、唯一性及首都安全。
+aemusa_ms_flagship_create_at_capital = {
+	capital_scope = { save_event_target_as = aemusa_ms_flagship_spawn_location }
+	create_fleet = {
+		name = "NAME_Aemusa_Reality_Flagship_Fleet"
+		effect = {
+			set_owner = prev
+			set_fleet_flag = aemusa_reality_flagship
+			# 旧档的同名全局设计可能仍是六 L。只在确实要建舰时生成新版设计，立即交给本舰。
+			create_ship_design = { design = "NAME_Aemusa_Reality_Flagship_16T" }
+			create_ship = {
+				name = "NAME_Aemusa_Reality_Flagship"
+				design = last_created_design
+				graphical_culture = "humanoid_01"
+				upgradable = no
+				effect = {
+					set_ship_flag = aemusa_reality_flagship
+					set_disable_at_health = 0.05
+				}
+			}
+			set_location = event_target:aemusa_ms_flagship_spawn_location
 		}
+	}
+	if = {
+		limit = { aemusa_ms_has_flagship_instance = yes }
 		set_country_flag = aemusa_ms_country_flagship_ever_created
-		set_country_flag = aemusa_ms_country_flagship_recovering
-		remove_country_flag = aemusa_ms_country_flagship_recovery_ready
-		# 此入口位于危机月度深调用链，直接读取真实等级，避免再展开一层公共效果。
-		# 只调整本次恢复期；人物缺席沿用90日，舰船、身份和剧情账本互不替代。
-		if = {
-			limit = { any_owned_leader = { has_leader_flag = aemusa_unique_leader has_base_skill >= 21 } }
-			set_timed_country_flag = { flag = aemusa_ms_country_flagship_recovery_time_remaining days = 60 }
-			country_event = { id = aemusa_flagship.2 days = 60 }
-		}
-		else_if = {
-			limit = { any_owned_leader = { has_leader_flag = aemusa_unique_leader has_base_skill >= 11 } }
-			set_timed_country_flag = { flag = aemusa_ms_country_flagship_recovery_time_remaining days = 75 }
-			country_event = { id = aemusa_flagship.2 days = 75 }
-		}
-		else = {
-			set_timed_country_flag = { flag = aemusa_ms_country_flagship_recovery_time_remaining days = 90 }
-			country_event = { id = aemusa_flagship.2 days = 90 }
-		}
-		log = "AEMUSA-MS|AWP-06|flagship_recovery_started"
+		log = "AEMUSA-MS|AWP-06|flagship_created"
 	}
 }
 
-aemusa_ms_flagship_finish_recovery = {
-	if = {
-		limit = {
-			has_country_flag = aemusa_ms_country_flagship_recovering
-			NOT = { has_country_flag = aemusa_ms_country_flagship_recovery_time_remaining }
-		}
-		remove_country_flag = aemusa_ms_country_flagship_recovering
-		remove_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
-		set_country_flag = aemusa_ms_country_flagship_recovery_ready
-		log = "AEMUSA-MS|AWP-06|flagship_recovery_ready"
-	}
+# 船只作用域。给跨版本旧舰补装与新舰相同的原生低船体瘫痪阈值，保留实例及舰装。
+aemusa_ms_flagship_bind_existing = {
+	set_disable_at_health = 0.05
 }
 
+# 国家作用域。旧档已进入恢复期时，授舰已发生；历史定时票据不能重授舰船。
+aemusa_ms_flagship_clear_legacy_recovery = {
+	set_country_flag = aemusa_ms_country_flagship_ever_created
+	remove_country_flag = aemusa_ms_country_flagship_recovering
+	remove_country_flag = aemusa_ms_country_flagship_recovery_ready
+	remove_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
+}
+
+# 首次已获授权但首都失控时，保留首次交付资格。此前确已交付的缺舰只由联络入口补给。
 aemusa_ms_flagship_ensure_present = {
 	if = {
 		limit = { has_country_flag = aemusa_ms_country_flagship_commissioned }
 		if = {
-			limit = { aemusa_ms_has_flagship_instance = yes }
-			# 已有实例优先，包括超光速撤退中的舰船；不再生成另一艘。
-			set_country_flag = aemusa_ms_country_flagship_ever_created
-			remove_country_flag = aemusa_ms_country_flagship_recovery_ready
-		}
-		else_if = {
 			limit = {
-				has_country_flag = aemusa_ms_country_flagship_ever_created
-				NOT = { has_country_flag = aemusa_ms_country_flagship_recovering }
-				NOT = { has_country_flag = aemusa_ms_country_flagship_recovery_ready }
-			}
-			# 遗漏摧毁回调或旧档缺失时仍走完整冷却，不能靠重新开通讯立即补舰。
-			aemusa_ms_flagship_begin_recovery = yes
-		}
-		else_if = {
-			limit = {
-				NOT = { has_country_flag = aemusa_ms_country_flagship_recovering }
-				aemusa_ms_flagship_has_safe_capital = yes
-			}
-			capital_scope = { save_event_target_as = aemusa_ms_flagship_spawn_location }
-			create_fleet = {
-				name = "NAME_Aemusa_Reality_Flagship_Fleet"
-				effect = {
-					set_owner = prev
-					set_fleet_flag = aemusa_reality_flagship
-					# 旧档的同名全局设计可能仍是六 L。只在确实要建舰时生成新版设计，立即交给本舰。
-					create_ship_design = { design = "NAME_Aemusa_Reality_Flagship_16T" }
-					create_ship = {
-						name = "NAME_Aemusa_Reality_Flagship"
-						design = last_created_design
-						graphical_culture = "humanoid_01"
-						upgradable = no
-						effect = { set_ship_flag = aemusa_reality_flagship }
-					}
-					set_location = event_target:aemusa_ms_flagship_spawn_location
+				OR = {
+					has_country_flag = aemusa_ms_country_flagship_recovering
+					has_country_flag = aemusa_ms_country_flagship_recovery_ready
+					has_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
 				}
 			}
-			if = {
-				limit = { aemusa_ms_has_flagship_instance = yes }
-				set_country_flag = aemusa_ms_country_flagship_ever_created
-				remove_country_flag = aemusa_ms_country_flagship_recovery_ready
-				remove_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
-				log = "AEMUSA-MS|AWP-06|flagship_created"
+			aemusa_ms_flagship_clear_legacy_recovery = yes
+		}
+		if = {
+			limit = { aemusa_ms_has_flagship_instance = yes }
+			set_country_flag = aemusa_ms_country_flagship_ever_created
+			every_owned_ship = {
+				limit = { is_ship_size = aemusa_reality_flagship }
+				aemusa_ms_flagship_bind_existing = yes
 			}
 		}
+		else_if = {
+			limit = {
+				NOT = { has_country_flag = aemusa_ms_country_flagship_ever_created }
+				aemusa_ms_flagship_has_safe_capital = yes
+			}
+			aemusa_ms_flagship_create_at_capital = yes
+		}
+	}
+}
+
+aemusa_ms_flagship_contact_recall = {
+	if = {
+		limit = { aemusa_ms_flagship_can_contact_recall = yes }
+		aemusa_ms_flagship_create_at_capital = yes
 	}
 }
 
@@ -107,15 +92,6 @@ aemusa_ms_flagship_monthly_update = {
 			}
 			fleet_event = { id = aemusa_flagship.4 }
 		}
-		if = {
-			limit = {
-				has_country_flag = aemusa_ms_country_flagship_recovering
-				NOT = { has_country_flag = aemusa_ms_country_flagship_recovery_time_remaining }
-			}
-			# 定时旗标会随存档保留；月度核对补偿丢失的延迟事件。
-			aemusa_ms_flagship_finish_recovery = yes
-		}
-		# 冷却结束但首都仍被占领时保留 ready，控制恢复后免费重现。
 		aemusa_ms_flagship_ensure_present = yes
 	}
 }

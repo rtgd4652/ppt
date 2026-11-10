@@ -9,21 +9,75 @@ country_event = {
 		has_country_flag = aemusa_ms_country_flagship_commissioned
 		fromfrom = { is_ship_size = aemusa_reality_flagship }
 	}
-	immediate = { aemusa_ms_flagship_begin_recovery = yes }
+	immediate = { set_country_flag = aemusa_ms_country_flagship_ever_created }
 }
 
-# 冷却结束只重建舰船；剧情进度、领袖身份和锚点损失不回退。
+# 旧档可能排有旧版延迟事件。仅结清旧票据，无建舰动作。
 country_event = {
 	id = aemusa_flagship.2
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
 		has_country_flag = aemusa_ms_country_flagship_commissioned
-		has_country_flag = aemusa_ms_country_flagship_recovering
+		OR = {
+			has_country_flag = aemusa_ms_country_flagship_recovering
+			has_country_flag = aemusa_ms_country_flagship_recovery_ready
+			has_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
+		}
+	}
+	immediate = { aemusa_ms_flagship_clear_legacy_recovery = yes }
+}
+
+# 原生 on_ship_disabled 的 THIS 为刚瘫痪的船，FROM 为致瘫舰。直接在本船修复并启用。
+ship_event = {
+	id = aemusa_flagship.5
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		is_ship_size = aemusa_reality_flagship
+		is_disabled = yes
+		exists = owner
+		owner = { has_country_flag = aemusa_ms_country_flagship_commissioned }
 	}
 	immediate = {
-		aemusa_ms_flagship_finish_recovery = yes
-		aemusa_ms_flagship_ensure_present = yes
+		repair_ship = yes
+		set_disabled = no
+		log = "AEMUSA-MS|AWP-06|flagship_revived_in_place"
+	}
+}
+
+# 原生单人读档时为首次升级到本版的旧舰绑定阈值，包括已经在战斗中的实例。
+event = {
+	id = aemusa_flagship.6
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_country = {
+			limit = { has_country_flag = aemusa_ms_country_flagship_commissioned }
+			aemusa_ms_flagship_ensure_present = yes
+			every_owned_ship = {
+				limit = { is_ship_size = aemusa_reality_flagship is_disabled = yes }
+				ship_event = { id = aemusa_flagship.5 }
+			}
+		}
+	}
+}
+
+# 参战时也为既有舰绑定保护，覆盖无单人读档回调的游戏。
+fleet_event = {
+	id = aemusa_flagship.7
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		exists = owner
+		owner = { has_country_flag = aemusa_ms_country_flagship_commissioned }
+		any_owned_ship = { is_ship_size = aemusa_reality_flagship }
+	}
+	immediate = {
+		every_owned_ship = {
+			limit = { is_ship_size = aemusa_reality_flagship }
+			aemusa_ms_flagship_bind_existing = yes
+		}
 	}
 }
 

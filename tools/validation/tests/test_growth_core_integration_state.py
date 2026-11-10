@@ -27,6 +27,7 @@ class CoreLedger(CompanionLedger):
         self.effects.update(load('mod/common/scripted_effects/aemusa_ms_flagship_effects.txt'))
         self.triggers = dict(self.triggers)
         self.triggers.update(load('mod/common/scripted_triggers/central_court_triggers.txt'))
+        self.triggers.update(load('mod/common/scripted_triggers/aemusa_ms_flagship_triggers.txt'))
         self.leaders.update({
             'antoniva': {'level': 10, 'flags': {'cc_antoniva_unique'}, 'ruler': True},
             'yanhua': {'level': 7, 'flags': {'cc_yanhua_unique'}, 'class': 'official'},
@@ -47,9 +48,18 @@ class CoreLedger(CompanionLedger):
         })
         self.objects['cc_analysis_target'] = self.objects['cc_analysis_candidate']
         self.created_flagships = 0
+        self.flagship = {'size': 'aemusa_reality_flagship', 'disabled': False, 'health': 1.0}
         self.fleet_fixture = 'cc_yanhua_force'
 
     def term(self, e, obj, params):
+        if e.key == 'is_ship_size':
+            return obj['size'] == e.value
+        if e.key == 'is_disabled':
+            return obj['disabled'] == (e.value == 'yes')
+        if e.key == 'exists' and e.value == 'owner':
+            return obj is self.flagship
+        if e.key == 'owner':
+            return self.condition(e.value, None, params)
         if e.key == 'leader_class':
             return obj.get('class') == e.value
         if e.key == 'is_ruler':
@@ -80,6 +90,16 @@ class CoreLedger(CompanionLedger):
             self.execute(value, self.objects['cc_capital'], params)
         elif key == 'save_event_target_as':
             pass  # 引用及原生创建效果由夹具提供。
+        elif key == 'every_owned_ship':
+            limit = next(e.value for e in value if e.key == 'limit')
+            if self.external['aemusa_ms_has_flagship_instance'] and self.condition(limit, self.flagship, params):
+                self.execute([e for e in value if e.key != 'limit'], self.flagship, params)
+        elif key == 'set_disable_at_health':
+            obj['disable_threshold'] = float(value)
+        elif key == 'repair_ship':
+            obj['health'] = 1.0
+        elif key == 'set_disabled':
+            obj['disabled'] = (value == 'yes')
         elif key == 'create_fleet':
             self.created_flagships += 1
             self.external['aemusa_ms_has_flagship_instance'] = True
@@ -149,33 +169,62 @@ class GrowthCoreIntegrationTests(unittest.TestCase):
                 self.assertNotIn('cc_analysis_conclusion', x.flags)
                 self.assertIn('cc_analysis_cooldown', x.flags)
 
-    def test_flagship_growth_keeps_unique_instance_and_timer_blocks_stale_callback(self):
-        for level, days in ((7, 90), (11, 75), (21, 60), (None, 90)):
-            with self.subTest(level=level):
+    def test_first_commission_waits_for_safe_capital_then_delivers_once(self):
+        x = CoreLedger()
+        x.flags.add('aemusa_ms_country_flagship_commissioned')
+        x.external['aemusa_ms_flagship_has_safe_capital'] = False
+        x.effect('aemusa_ms_flagship_ensure_present')
+        self.assertEqual(x.created_flagships, 0)
+        x.external['aemusa_ms_flagship_has_safe_capital'] = True
+        x.effect('aemusa_ms_flagship_ensure_present')
+        x.effect('aemusa_ms_flagship_ensure_present')
+        self.assertEqual(x.created_flagships, 1)
+        self.assertFalse(x.delayed_events)
+        x.external['aemusa_ms_has_flagship_instance'] = False
+        x.flags.remove('aemusa_ms_country_flagship_commissioned')
+        x.effect('aemusa_ms_flagship_contact_recall')
+        self.assertEqual(x.created_flagships, 1)
+
+    def test_missing_ship_only_returns_via_safe_contact_even_after_stale_event(self):
+        event = next(e.value for e in read_script('mod/events/aemusa_ms_flagship_events.txt')
+                     if e.key == 'country_event' and scalar(e.value, 'id') == 'aemusa_flagship.2')
+        for flag in ('ever_created', 'recovering', 'recovery_ready', 'recovery_time_remaining'):
+            with self.subTest(flag=flag):
                 x = CoreLedger()
-                if level is None:
-                    del x.leaders['aemusa']
-                else:
-                    x.leaders['aemusa']['level'] = level
-                x.flags.add('aemusa_ms_country_flagship_commissioned')
-                x.effect('aemusa_ms_flagship_begin_recovery')
-                self.assertEqual(days, x.timed_flags['aemusa_ms_country_flagship_recovery_time_remaining'])
-                self.assertEqual([('aemusa_flagship.2', days)], x.delayed_events)
-                x.effect('aemusa_ms_flagship_begin_recovery')
-                x.effect('aemusa_ms_flagship_finish_recovery')
+                x.flags.update({'aemusa_ms_country_flagship_commissioned',
+                                'aemusa_ms_country_flagship_' + flag})
+                trigger = next(e.value for e in event if e.key == 'trigger')
+                if x.condition(trigger):
+                    x.execute(next(e.value for e in event if e.key == 'immediate'))
                 x.effect('aemusa_ms_flagship_ensure_present')
-                self.assertEqual(0, x.created_flagships)
-                self.assertEqual(1, len(x.delayed_events))
-                x.flags.discard('aemusa_ms_country_flagship_recovery_time_remaining')
-                x.effect('aemusa_ms_flagship_finish_recovery')
+                self.assertEqual(x.created_flagships, 0)
                 x.external['aemusa_ms_flagship_has_safe_capital'] = False
-                x.effect('aemusa_ms_flagship_ensure_present')
-                self.assertEqual(0, x.created_flagships)
-                self.assertIn('aemusa_ms_country_flagship_recovery_ready', x.flags)
+                x.effect('aemusa_ms_flagship_contact_recall')
+                self.assertEqual(x.created_flagships, 0)
                 x.external['aemusa_ms_flagship_has_safe_capital'] = True
-                x.effect('aemusa_ms_flagship_ensure_present')
-                x.effect('aemusa_ms_flagship_ensure_present')
-                self.assertEqual(1, x.created_flagships)
+                x.effect('aemusa_ms_flagship_contact_recall')
+                x.effect('aemusa_ms_flagship_contact_recall')
+                self.assertEqual(x.created_flagships, 1)
+
+    def test_native_disabled_event_repairs_and_enables_only_this_ship(self):
+        on_actions = load('mod/common/on_actions/aemusa_on_actions.txt')
+        self.assertIn('aemusa_flagship.5', [e.value for e in on_actions['on_ship_disabled'][0].value])
+        event = next(e.value for e in read_script('mod/events/aemusa_ms_flagship_events.txt')
+                     if e.key == 'ship_event' and scalar(e.value, 'id') == 'aemusa_flagship.5')
+        trigger = next(e.value for e in event if e.key == 'trigger')
+        immediate = next(e.value for e in event if e.key == 'immediate')
+        self.assertEqual([e.key for e in immediate], ['repair_ship', 'set_disabled', 'log'])
+        x = CoreLedger()
+        x.flags.add('aemusa_ms_country_flagship_commissioned')
+        x.flagship.update(disabled=True, health=0.05, size='corvette')
+        self.assertFalse(x.condition(trigger, x.flagship, {}))
+        x.flagship['size'] = 'aemusa_reality_flagship'
+        self.assertTrue(x.condition(trigger, x.flagship, {}))
+        x.execute(immediate, x.flagship, {})
+        self.assertEqual(x.flagship['health'], 1.0)
+        self.assertFalse(x.flagship['disabled'])
+        self.assertEqual(x.created_flagships, 0)
+        self.assertFalse(x.delayed_events)
 
     def test_flagship_commission_preserves_existing_legacy_ship(self):
         triggers = load('mod/common/scripted_triggers/aemusa_ms_flagship_triggers.txt')
@@ -188,6 +237,7 @@ class GrowthCoreIntegrationTests(unittest.TestCase):
         x.external['aemusa_ms_has_flagship_instance'] = True
         x.effect('aemusa_ms_flagship_ensure_present')
         x.effect('aemusa_ms_flagship_ensure_present')
+        self.assertEqual(x.flagship['disable_threshold'], 0.05)
         self.assertIn('aemusa_ms_country_flagship_ever_created', x.flags)
         self.assertEqual(x.created_flagships, 0)
         self.assertEqual(x.delayed_events, [])

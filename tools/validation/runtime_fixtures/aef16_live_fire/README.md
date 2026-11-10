@@ -6,8 +6,8 @@
 
 11月8日这份战前档位于独立测试目录下的 `save games/_987386394/2200.01.01.sav`。首次实机确认舰艏12T、舰尾4T。首轮使用25°射界，记录到旗舰伤害为零。
 
-## 旧六 L 舰恢复
+## 瘫痪与真正删除
 
-在独立资料目录载入 `2293.12.03.sav` 的副本，手动运行 `event aef16.20` 并放行两个游戏日。夹具先连续调用正式补舰效果，确认原六 L 舰仍是同一艘，再模拟其损失。检测到实际恢复倒计时后，只加速本次倒计时，交回正式事件 `aemusa_flagship.2` 补舰。
+在独立资料目录载入 `2293.12.03.sav` 的副本。手动运行 `event aef16.20` 会以 `set_disabled` 尝试令唯一旗舰瘫痪。夹具记录原舰、舰队、星系，再读取同一实例能否行动及其真实船体。核对生产日志 `flagship_revived_in_place` 和夹具的 `same_ship_fleet_system_operational`。这个测试使用脚本致瘫，真实战斗触发 5% 阈值另据战斗日志判定。单独一次强制瘫痪不等于炮击证明。
 
-`game.log` 中的 `AEF16|LEGACY|original_preserved` 与 `AEF16|LEGACY|one_restored_ship_with_T_beam_and_reactor` 分别记录旧舰存续、恢复后仍只有一艘恒定主炮旗舰。将结果另存到独立资料目录后，运行 `python inspect_flagship_save.py <旧档副本> <恢复结果档>`。输出包含舰船 ID、存档设计 ID、各段实装武器及同名全局索引，可以直接检查六 L 和舰艏 12T／舰尾 4T。
+`event aef16.23` 专门模拟脚本删除，次日先试月检和旧回调，确认舰位仍空，再调用与爱缪莎联络选项相同的补舰效果两次。读取 `AEF16|RECALL|absent_before_manual_contact` 与 `one_new_T_design_after_manual_contact`。两个测试仅限独立副本。需要核对实装时，运行 `python inspect_flagship_save.py <旧档副本> <新另存档>` 对照真实舰船／设计 ID、舰艏 12T 和舰尾 4T。
