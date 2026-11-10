@@ -14,7 +14,7 @@
 
 ## 正式创建
 
-领取与冷却完成共用 `aemusa_ms_flagship_ensure_present`。只要本国仍持有该舰种，这个效果直接登记已有舰。确实需要补舰时，它从独立键 `NAME_Aemusa_Reality_Flagship_16T` 创建设计，随即将 `last_created_design` 交给该舰。舰名继续显示「未闭合的航路」。原键保留最后发布的配置，更早的六 L 舰继续引用存档中的设计 ID 和原有区段。
+首次授舰与手动召回共用建舰效果，从独立键 `NAME_Aemusa_Reality_Flagship_16T` 创建设计，随即将 `last_created_design` 交给该舰。舰名继续显示「未闭合的航路」。六 L 旧舰继续引用存档中的设计与区段。新旧舰共用 5% 船体瘫痪保护，原生 `on_ship_disabled` 在原船上执行 `repair_ship` 和 `set_disabled = no`。脚本彻底删除舰体后，由玩家在「联络爱缪莎」召回；旧冷却事件仅清理旧票据。
 
 本机 4.5.3 原版在 `events/anomaly_events_2.txt` 的 R44 事件以及 `common/scripted_effects/archaeology_event_effects.txt` 的 Grand Herald 创建效果中使用同一对引擎操作。专项预检从本 Mod 的正式入口追踪到新设计，得到舰艏 12T、舰尾 4T，供能余量 1,470。
 

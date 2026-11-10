@@ -69,13 +69,21 @@ edict_contact_aemusa = {
     icon = "GFX_edict_type_policy" # 临时使用原版占位图标，避免自定义图标 sprite 未注册时崩溃。
 
     potential = {
-        exists = event_target:aemusa_leader # 仅在爱缪莎仍存在时显示。
+        OR = {
+            exists = event_target:aemusa_leader
+            aemusa_ms_flagship_can_contact_recall = yes
+        }
         is_ai = no # 只允许玩家手动选择职责。
     }
 
     effect = {
-        country_event = {
-            id = aemusa_dialogue.10 # 打开职业切换事件。
+        if = {
+            limit = { exists = event_target:aemusa_leader }
+            country_event = { id = aemusa_dialogue.10 }
+        }
+        else = {
+            # 即便领袖已离场，既有授舰记录仍能在联络处办理召回。
+            country_event = { id = aemusa_dialogue.3 }
         }
     }
 

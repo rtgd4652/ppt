@@ -56,7 +56,7 @@
  edict_edict_contact_white_night_pavilion:0 "联络白夜馆"
  edict_edict_contact_white_night_pavilion_desc:0 "打开白夜馆通讯终端，查看已接入的神器使与待整理的委托名册。"
  edict_edict_contact_aemusa:0 "联络爱缪莎"
- edict_edict_contact_aemusa_desc:0 "与爱缪莎建立通讯，并为她重新选择职责。"
+ edict_edict_contact_aemusa_desc:0 "联络爱缪莎，调整她的职责。获授的旗舰彻底消失时，可通过此处将其召回首都。"
  edict_edict_artifact_research_archive:0 "调阅中央庭科技档案"
  edict_edict_artifact_research_archive_desc:0 "旧版科技档案入口已停用。共有神器科技随文明身份与前置研究开放；可从白夜馆了解首都工坊试验。"
  edict_edict_aemusa_debug_storage:0 "【测试】扩展资源仓储"

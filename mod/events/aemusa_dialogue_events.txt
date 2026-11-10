@@ -178,6 +178,15 @@ country_event = {
     }
 
     option = {
+        name = aemusa_contact.recall_flagship
+        trigger = {
+            NOT = { exists = event_target:aemusa_leader }
+            aemusa_ms_flagship_can_contact_recall = yes
+        }
+        hidden_effect = { aemusa_ms_flagship_contact_recall = yes }
+    }
+
+    option = {
         name = aemusa_dialogue.3.seth # 与已入驻的赛斯通讯。
         trigger = {
             ac_seth_available = yes # 已招募赛斯时显示通讯入口。
@@ -1021,6 +1030,12 @@ country_event = {
     picture_event_data = {
         portrait = event_target:aemusa_leader # 显示已保存的爱缪莎肖像。
         room = ethic_spaceship_room # 使用原版太空船通讯背景。
+    }
+
+    option = {
+        name = aemusa_contact.recall_flagship
+        trigger = { aemusa_ms_flagship_can_contact_recall = yes }
+        hidden_effect = { aemusa_ms_flagship_contact_recall = yes }
     }
 
     option = {
