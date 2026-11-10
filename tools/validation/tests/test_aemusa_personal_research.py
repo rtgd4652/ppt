@@ -6,22 +6,14 @@ from unittest.mock import patch
 
 import test_artifact_foundation_projects as workshop
 import test_milestone2_finale_state as finale
-from check_mod import parse, scalar
+from check_mod import scalar
 
 ROOT, child = workshop.ROOT, workshop.child
 TECH = 'tech_aemusa_possibility_branch_modeling'
 TECHNOLOGY = workshop.load('mod/common/technology/aemusa_personal_research_technology.txt')[TECH]
 PERSONAL = workshop.load('mod/common/scripted_triggers/aemusa_personal_research_triggers.txt')
 SCREEN = 'artifact_foundation.21'
-STATUS = {
-    scalar(e.value, 'name'): e.value for e in parse(
-        (ROOT / 'mod/common/scripted_loc/aemusa_personal_branch_model_loc.txt').read_text(encoding='utf-8'))
-}
-NAMES = {
-    'basic_construction': 'GetAemusaBasicConstructionAvailability',
-    'precision_construction': 'GetAemusaPrecisionConstructionAvailability',
-    'materials_study': 'GetAemusaMaterialsStudyAvailability',
-}
+NAMES = ('basic_construction', 'precision_construction', 'materials_study')
 
 
 def accepted():
@@ -55,22 +47,15 @@ class Workshop(workshop.World):
 
     def select(self, event, name, ctx):
         button = option(event, name)
-        if not self.condition(child(button, 'trigger', []), self.p, ctx):
+        conditions = child(button, 'trigger', []) + child(button, 'allow', [])
+        if not self.condition(conditions, self.p, ctx):
             return False
         self.execute(child(button, 'hidden_effect', []), self.p, ctx)
         return True
 
     def possible(self, mode, ctx):
-        # 事件描述带着原工单上下文；原生 scripted_loc 另以星球为根计算，不带该局部目标。
-        desc, = [e.value for e in workshop.EVENTS[SCREEN] if e.key == 'desc'
-                 and self.condition(child(e.value, 'trigger'), self.p, ctx)]
-        if scalar(desc, 'text') == 'aemusa_p01.site_transferred':
-            return False
-        entry = STATUS[NAMES[mode]]
-        assert scalar(entry, 'random') == 'no' and scalar(entry, 'default') == 'aemusa_p01.unavailable'
-        indicator = child(entry, 'text')
-        assert scalar(indicator, 'localization_key') == 'aemusa_p01.ready'
-        return self.condition(child(indicator, 'trigger'), self.p, {})
+        button = option(SCREEN, 'aemusa_p01.review_' + mode)
+        return self.condition(child(button, 'allow'), self.p, ctx)
 
 
 class PersonalResearchTests(unittest.TestCase):
@@ -140,6 +125,11 @@ class PersonalResearchTests(unittest.TestCase):
         ctx = w.open('workshop')
         w.a['resources'].update(minerals=300, energy=150, consumer_goods=0, alloys=0)
         self.assertEqual([mode for mode in NAMES if w.possible(mode, ctx)], ['basic_construction'])
+        wallet = dict(w.a['resources'])
+        self.assertFalse(w.select(SCREEN, 'aemusa_p01.review_precision_construction', ctx))
+        self.assertTrue(w.select(SCREEN, 'aemusa_p01.review_basic_construction', ctx))
+        self.assertEqual(w.last_event, 'artifact_foundation.20')
+        self.assertEqual(w.a['resources'], wallet)
         w.a['techs'].discard('tech_artifact_modular_colony_construction')
         w.a['techs'].discard('tech_artifact_resonance_material_screening')
         self.assertIsNotNone(w.open('workshop'))
@@ -176,7 +166,9 @@ class PersonalResearchTests(unittest.TestCase):
         for mode in NAMES:
             offer = 'artifact_foundation.offer_' + mode
             self.assertIn('$' + offer + '$', strings['aemusa_p01.compare'])
-            self.assertIn('[Root.' + NAMES[mode] + ']', strings['aemusa_p01.compare'])
+            preview = option(SCREEN, 'aemusa_p01.review_' + mode)
+            self.assertEqual(scalar(preview, 'custom_tooltip'), offer)
+            self.assertEqual(scalar(child(child(preview, 'hidden_effect'), 'carrier_event'), 'id'), 'artifact_foundation.20')
             cost_key = re.search(r'\$(artifact_foundation\.cost_\w+)\$', strings[offer])[1]
             displayed = {resource_names[label]: workshop.WORKSHOP_COSTS[name] for name, label in
                          re.findall(r'\$@(\w+)\$(矿物|能源|合金|消费品)', strings[cost_key])}

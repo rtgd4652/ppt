@@ -164,12 +164,7 @@ artifact_foundation_knows_precision_construction = {
 }
 
 artifact_foundation_can_start_basic_construction = {
-	artifact_foundation_ui_owner = yes
-	artifact_foundation_basic_construction_available = yes
-}
-
-artifact_foundation_basic_construction_available = {
-	artifact_foundation_actor = yes
+	artifact_foundation_ui_actor = yes
 	artifact_foundation_safe_control = yes
 	artifact_foundation_idle = yes
 	owner = {
@@ -190,12 +185,7 @@ artifact_foundation_basic_construction_available = {
 }
 
 artifact_foundation_can_start_precision_construction = {
-	artifact_foundation_ui_owner = yes
-	artifact_foundation_precision_construction_available = yes
-}
-
-artifact_foundation_precision_construction_available = {
-	artifact_foundation_actor = yes
+	artifact_foundation_ui_actor = yes
 	artifact_foundation_safe_control = yes
 	artifact_foundation_idle = yes
 	owner = {
@@ -220,12 +210,7 @@ artifact_foundation_precision_construction_available = {
 }
 
 artifact_foundation_can_start_materials_study = {
-	artifact_foundation_ui_owner = yes
-	artifact_foundation_materials_study_available = yes
-}
-
-artifact_foundation_materials_study_available = {
-	artifact_foundation_actor = yes
+	artifact_foundation_ui_actor = yes
 	artifact_foundation_safe_control = yes
 	artifact_foundation_idle = yes
 	owner = {

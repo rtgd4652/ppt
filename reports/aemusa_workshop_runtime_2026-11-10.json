@@ -38,6 +38,14 @@
         "[21:57:16][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 297. AEF-P02|END|site=交界都市"
       ],
       "p02_implementation": "8bad332"
+    },
+    {
+      "p01_implementation": "10535e4",
+      "scope": "22:06:27 冷启动，独立核对实际守卫及显示文案",
+      "log_lines": [
+        "[22:07:08][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 172. AEF-P02|PASS|p01_three_real_workshop_guards",
+        "[22:07:08][effect_impl.cpp:22232]: [2293.12.8] Log effect, file: events/aef_p01p02_driver.txt line: 173. AEF-P02|P01_TEXT|basic=\u0011Y当前不可开工\u0011!|precision=\u0011Y当前不可开工\u0011!|materials=\u0011Y当前不可开工\u0011!"
+      ]
     }
   ]
 }

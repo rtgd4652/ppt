@@ -1,32 +1,3 @@
-# 本地化重新以星球为根求值。读取与开工共用的现场条件，原窗口拥有者留在事件链中核验。
-defined_text = {
-	name = GetAemusaBasicConstructionAvailability
-	random = no
-	text = {
-		trigger = { artifact_foundation_basic_construction_available = yes }
-		localization_key = aemusa_p01.ready
-	}
-	default = aemusa_p01.unavailable
-}
-defined_text = {
-	name = GetAemusaPrecisionConstructionAvailability
-	random = no
-	text = {
-		trigger = { artifact_foundation_precision_construction_available = yes }
-		localization_key = aemusa_p01.ready
-	}
-	default = aemusa_p01.unavailable
-}
-defined_text = {
-	name = GetAemusaMaterialsStudyAvailability
-	random = no
-	text = {
-		trigger = { artifact_foundation_materials_study_available = yes }
-		localization_key = aemusa_p01.ready
-	}
-	default = aemusa_p01.unavailable
-}
-
 # 工单金额与支付效果取相同脚本值；原项目页依真实改选收据显示累计投入。
 defined_text = {
 	name = GetAemusaUpgradeMinerals

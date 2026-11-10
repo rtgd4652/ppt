@@ -203,6 +203,40 @@ carrier_event = {
 		artifact_foundation_ui_owner = yes
 		aemusa_personal_branch_model_colony = yes
 	}
+	# 原生选项在当前事件链中核验开工资格；点亮的方案通往原工坊，尚未付款。
+	option = {
+		name = aemusa_p01.review_basic_construction
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_foundation.require_basic_construction
+				artifact_foundation_can_start_basic_construction = yes
+			}
+		}
+		custom_tooltip = artifact_foundation.offer_basic_construction
+		hidden_effect = { carrier_event = { id = artifact_foundation.20 } }
+	}
+	option = {
+		name = aemusa_p01.review_precision_construction
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_foundation.require_precision_construction
+				artifact_foundation_can_start_precision_construction = yes
+			}
+		}
+		custom_tooltip = artifact_foundation.offer_precision_construction
+		hidden_effect = { carrier_event = { id = artifact_foundation.20 } }
+	}
+	option = {
+		name = aemusa_p01.review_materials_study
+		allow = {
+			custom_tooltip = {
+				fail_text = artifact_foundation.require_materials_study
+				artifact_foundation_can_start_materials_study = yes
+			}
+		}
+		custom_tooltip = artifact_foundation.offer_materials_study
+		hidden_effect = { carrier_event = { id = artifact_foundation.20 } }
+	}
 	option = {
 		name = aemusa_p01.back
 		trigger = { artifact_foundation_ui_actor = yes }

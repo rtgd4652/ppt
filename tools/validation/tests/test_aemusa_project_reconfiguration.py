@@ -5,7 +5,7 @@ from unittest.mock import patch
 
 import test_aemusa_personal_research as personal
 import test_artifact_foundation_projects as workshop
-from check_mod import scalar
+from check_mod import parse, scalar
 
 child = workshop.child
 QUOTE = 'artifact_foundation.22'
@@ -17,6 +17,8 @@ PENDING, CHANGED = 'arf_p02_quote_open', 'arf_p02_replanned'
 TECHNOLOGY = workshop.load('mod/common/technology/aemusa_personal_research_technology.txt')[TECH]
 EFFECTS = workshop.load('mod/common/scripted_effects/aemusa_personal_research_effects.txt')
 VALUES = workshop.load('mod/common/script_values/aemusa_personal_workshop_values.txt')
+SCRIPTED_LOC = {scalar(e.value, 'name'): e.value for e in parse(
+    (workshop.ROOT / 'mod/common/scripted_loc/aemusa_personal_branch_model_loc.txt').read_text(encoding='utf-8'))}
 
 
 class ReplanWorld(workshop.World):
@@ -83,7 +85,7 @@ class ReplanWorld(workshop.World):
         return ctx
 
     def receipt(self, ctx):
-        definition = personal.STATUS['GetAemusaConstructionPaid']
+        definition = SCRIPTED_LOC['GetAemusaConstructionPaid']
         assert scalar(definition, 'random') == 'no'
         for entry in definition:
             if entry.key == 'text' and self.condition(child(entry.value, 'trigger'), self.p, ctx):
@@ -188,7 +190,7 @@ class ReconfigurationTests(unittest.TestCase):
         ctx = w.review()
         due = {'minerals': 150, 'energy': 50, 'alloys': 50, 'unity': 50}
         for resource, name in (('minerals', 'GetAemusaUpgradeMinerals'), ('energy', 'GetAemusaUpgradeEnergy')):
-            self.assertEqual(w.number(scalar(personal.STATUS[name], 'value'), w.p), due[resource])
+            self.assertEqual(w.number(scalar(SCRIPTED_LOC[name], 'value'), w.p), due[resource])
         w.a['resources'].update(due)
         for resource in due:
             w.a['resources'][resource] -= 1
