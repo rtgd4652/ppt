@@ -1,0 +1,48 @@
+# 国家作用域。研究资格独立，实际造境同时依赖合法个人知识与已有公共工程能力。
+aemusa_p04_world_forming_available = {
+	has_technology = "tech_aemusa_possibility_engineering_interface"
+	aemusa_personal_branch_model_available = yes
+	artifact_postcrisis_megastructure_available = yes
+}
+
+# 行星决议中 ROOT 是玩家选中的星球，FROM 是签单国家。ready 的直接上层保持为该国。
+aemusa_p04_can_quote_world = {
+	OR = { is_planet_class = pc_barren is_planet_class = pc_barren_cold }
+	exists = from
+	from = {
+		aemusa_p04_world_forming_available = yes
+		any_owned_megastructure = {
+			artifact_postcrisis_world_former_ready = yes
+			planet = { is_same_value = root }
+		}
+	}
+}
+
+# 国家确认窗口。原国家、原平台、原星球均在本次事件链内捕获，不从当前所有合格平台重新抽取。
+aemusa_p04_quote_current = {
+	exists = event_target:apm_p04_applicant
+	is_same_value = event_target:apm_p04_applicant
+	aemusa_p04_world_forming_available = yes
+	exists = event_target:apm_p04_platform
+	exists = event_target:apm_p04_planet
+	exists = event_target:apm_p04_system
+	event_target:apm_p04_platform = {
+		is_owned_by = prev
+		artifact_postcrisis_world_former_ready = yes
+		solar_system = { is_same_value = event_target:apm_p04_system }
+		planet = {
+			is_same_value = event_target:apm_p04_planet
+			solar_system = { is_same_value = event_target:apm_p04_system }
+		}
+	}
+}
+aemusa_p04_can_form_arid = {
+	aemusa_p04_quote_current = yes
+	has_resource = { type = energy amount >= @apm_p04_energy }
+	has_resource = { type = rare_crystals amount >= @apm_p04_dry_crystals }
+}
+aemusa_p04_can_form_arctic = {
+	aemusa_p04_quote_current = yes
+	has_resource = { type = energy amount >= @apm_p04_energy }
+	has_resource = { type = exotic_gases amount >= @apm_p04_cold_gases }
+}

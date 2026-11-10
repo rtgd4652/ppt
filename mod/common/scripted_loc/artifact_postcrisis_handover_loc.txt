@@ -89,6 +89,14 @@ defined_text = {
 		localization_key = aph.handover.platform_research
 	}
 	text = {
+		trigger = {
+			has_technology = "tech_aemusa_possibility_engineering_interface"
+			aemusa_personal_branch_model_available = yes
+			artifact_postcrisis_world_former_can_activate = yes
+		}
+		localization_key = aemusa_p04.handover_ready
+	}
+	text = {
 		trigger = { artifact_postcrisis_world_former_can_activate = yes }
 		localization_key = aph.handover.platform_ready
 	}

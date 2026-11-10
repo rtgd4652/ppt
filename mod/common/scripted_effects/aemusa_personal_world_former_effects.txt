@@ -1,0 +1,31 @@
+# 国家作用域。支付和变更同步完成，始终使用报价时的同一个平台。
+aemusa_p04_form_arid_world = {
+	if = {
+		limit = { aemusa_p04_can_form_arid = yes }
+		add_resource = { energy = @apm_p04_energy rare_crystals = @apm_p04_dry_crystals mult = -1 }
+		event_target:apm_p04_platform = {
+			artifact_postcrisis_world_former_record_use = yes
+			planet = {
+				change_pc = pc_arid
+				add_deposit = d_searing_desert
+				add_deposit = d_ore_rich_caverns
+				add_deposit = d_marvelous_oasis
+			}
+		}
+	}
+}
+aemusa_p04_form_arctic_world = {
+	if = {
+		limit = { aemusa_p04_can_form_arctic = yes }
+		add_resource = { energy = @apm_p04_energy exotic_gases = @apm_p04_cold_gases mult = -1 }
+		event_target:apm_p04_platform = {
+			artifact_postcrisis_world_former_record_use = yes
+			planet = {
+				change_pc = pc_arctic
+				add_deposit = d_geothermal_vent
+				add_deposit = d_rich_mountain
+				add_deposit = d_lichen_fields
+			}
+		}
+	}
+}

@@ -2542,6 +2542,30 @@
         "mod/common/scripted_variables/artifact_foundation_workshop_costs.txt",
         "mod/common/script_values/aemusa_personal_workshop_values.txt"
       ]
+    },
+    {
+      "id": "P04",
+      "name": "可能性工程接口",
+      "key": "tech_aemusa_possibility_engineering_interface",
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": ["unknown_boundaries", "artifact_science", "megastructure_engineering_direction"],
+      "source_note": "个人终局权限可以为已有工程呈现不同未来，公共团队承担实施与殖民。普通气候、配方、材料和地貌收益属于 Mod 工程设计。",
+      "references": [
+        "knowledge/world/cosmology_bible_v0.1.md",
+        "knowledge/curated/decisions/project_editorial_decisions_v0.1.md",
+        "knowledge/artifacts/artifact_bible_v0.1.md",
+        "docs/design/artifact_civilization_r5g_implementation_spec_v0.1.md"
+      ],
+      "technology_file": "mod/common/technology/aemusa_personal_research_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/aemusa_personal_research_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/decisions/aemusa_personal_world_former_decisions.txt",
+        "mod/events/aemusa_personal_climate_events.txt",
+        "mod/common/scripted_triggers/aemusa_personal_world_former_triggers.txt",
+        "mod/common/scripted_effects/aemusa_personal_world_former_effects.txt",
+        "mod/common/scripted_effects/artifact_postcrisis_megastructure_effects.txt",
+        "mod/common/scripted_variables/aemusa_personal_world_former_costs.txt"
+      ]
     }
   ],
   "source_policy": {

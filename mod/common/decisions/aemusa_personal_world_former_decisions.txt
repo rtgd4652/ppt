@@ -1,0 +1,28 @@
+# 4.5.3 原生梦境塑造等决议允许对未殖民天体使用。玩家由目标星球打开报价，无预扣。
+decision_aemusa_choose_world_former_climate = {
+	owned_planets_only = no
+	icon = "decision_artifact_destiny_city_project"
+	sound = "event_administrative_work"
+	potential = { aemusa_p04_can_quote_world = yes }
+	effect = {
+		hidden_effect = {
+			if = {
+				limit = { aemusa_p04_can_quote_world = yes }
+				save_event_target_as = apm_p04_planet
+				solar_system = { save_event_target_as = apm_p04_system }
+				from = {
+					save_event_target_as = apm_p04_applicant
+					random_owned_megastructure = {
+						limit = {
+							artifact_postcrisis_world_former_ready = yes
+							planet = { is_same_value = event_target:apm_p04_planet }
+						}
+						save_event_target_as = apm_p04_platform
+					}
+					country_event = { id = aemusa_personal_climate.1 }
+				}
+			}
+		}
+	}
+	ai_weight = { weight = 0 }
+}

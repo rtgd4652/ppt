@@ -1,0 +1,4 @@
+# P04 启用费。两种气候共用能源面额，各自消耗一种星球工程材料。
+@apm_p04_energy = 1500
+@apm_p04_dry_crystals = 100
+@apm_p04_cold_gases = 100

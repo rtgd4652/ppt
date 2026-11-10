@@ -20,3 +20,15 @@ tech_aemusa_selected_plan_reconfiguration = {
 	prerequisites = { "tech_aemusa_possibility_branch_modeling" }
 	potential = { aemusa_personal_research_eligible = yes }
 }
+
+# P04 在已有公共造境平台上增设可选气候配方。实施时另核对 F08、运行态实体与原目标。
+tech_aemusa_possibility_engineering_interface = {
+	area = physics
+	tier = 5
+	category = { field_manipulation }
+	cost = 18000
+	weight = 100
+	icon = "tech_artifact_destiny_economy"
+	prerequisites = { "tech_aemusa_possibility_branch_modeling" }
+	potential = { aemusa_personal_research_eligible = yes }
+}

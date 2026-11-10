@@ -1,0 +1,30 @@
+namespace = aemusa_personal_climate
+
+# 报价使用原生定位按钮指向所选星球。关闭只收起方案，按确认按钮才支付及造境。
+country_event = {
+	id = aemusa_personal_climate.1
+	title = aemusa_p04.title
+	picture = GFX_evt_ship_in_orbit
+	is_triggered_only = yes
+	trigger = { aemusa_p04_quote_current = yes }
+	location = event_target:apm_p04_planet
+	desc = {
+		trigger = { aemusa_p04_quote_current = yes }
+		text = aemusa_p04.proposal
+	}
+	desc = {
+		trigger = { aemusa_p04_quote_current = no }
+		text = aemusa_p04.expired
+	}
+	option = {
+		name = aemusa_p04.arid
+		allow = { custom_tooltip = { fail_text = aemusa_p04.require_arid aemusa_p04_can_form_arid = yes } }
+		hidden_effect = { aemusa_p04_form_arid_world = yes }
+	}
+	option = {
+		name = aemusa_p04.arctic
+		allow = { custom_tooltip = { fail_text = aemusa_p04.require_arctic aemusa_p04_can_form_arctic = yes } }
+		hidden_effect = { aemusa_p04_form_arctic_world = yes }
+	}
+	option = { name = aemusa_p04.close default_hide_option = yes }
+}

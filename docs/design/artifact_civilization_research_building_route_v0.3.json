@@ -1587,7 +1587,7 @@
     }
   ],
   "personal_route": {
-    "status": "p01_p02_source_implemented_p03_p04_separate_draft",
+    "status": "p01_p02_p04_source_implemented_p03_paused",
     "updated": "2026-11-10",
     "entry": "仅主线第五阶段全部结束、玩家最终授权、爱缪莎自主接受并合法完成正式转变结算后；沿用aemusa_ms_country_ending_fate_sovereign_settled及既有身份与授权检查。",
     "pacing": "结尾后的可选短程奖励研究；入口与配方可随合法结算开放，不新增强制长任务链或第二轮危机。",
@@ -1635,7 +1635,9 @@
         "prerequisites": [
           "P01"
         ],
-        "capability": "个人专属舰船或核心的研究资格；公共舰体工程可在建造阶段单向核对，不替代现有主线唯一旗舰。"
+        "capability": "个人专属舰船或核心的研究资格；公共舰体工程可在建造阶段单向核对，不替代现有主线唯一旗舰。",
+        "status": "paused_by_user",
+        "decision_date": "2026-11-10"
       },
       {
         "id": "P04",
@@ -1645,10 +1647,21 @@
         "prerequisites": [
           "P01"
         ],
-        "capability": "个人专属工程配方资格；公共工程条件可在建造时核对。具体巨构能力与数量另定，不自动认领连续巨构原型。"
+        "capability": "为既有 F08 运行态造境平台提供可选气候配方，从实际目标星球决议选择干旱或极地世界。",
+        "implementation_key": "tech_aemusa_possibility_engineering_interface",
+        "research_cost": 18000,
+        "weight": 100,
+        "consumer": "decision_aemusa_choose_world_former_climate",
+        "recipes": {
+          "pc_arid": {"energy": 1500, "rare_crystals": 100},
+          "pc_arctic": {"energy": 1500, "exotic_gases": 100}
+        },
+        "status": "implemented_static_passed",
+        "runtime_status": "not_run",
+        "report": "reports/aemusa_world_former_climates_2026-11-10.md"
       }
     ],
-    "difficulty": "高；方案切换的守恒、权限检查与舰体／工程能力均待可行性核实。",
+    "difficulty": "P01、P02 及 P04 已有独立实现和源码检查，各节点分别记录实机边界。P03 暂缓。",
     "asset_boundary": "不计入80项公共研究或27类公共建筑；人物组合不恢复。"
   },
   "buildings": [
