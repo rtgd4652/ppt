@@ -177,6 +177,21 @@ class GrowthCoreIntegrationTests(unittest.TestCase):
                 x.effect('aemusa_ms_flagship_ensure_present')
                 self.assertEqual(1, x.created_flagships)
 
+    def test_flagship_commission_preserves_existing_legacy_ship(self):
+        triggers = load('mod/common/scripted_triggers/aemusa_ms_flagship_triggers.txt')
+        ownership, = triggers['aemusa_ms_has_flagship_instance']
+        self.assertEqual(ownership.key, 'any_owned_ship')
+        self.assertEqual([(term.key, term.value) for term in ownership.value],
+                         [('is_ship_size', 'aemusa_reality_flagship')])
+        x = CoreLedger()
+        x.flags.add('aemusa_ms_country_flagship_commissioned')
+        x.external['aemusa_ms_has_flagship_instance'] = True
+        x.effect('aemusa_ms_flagship_ensure_present')
+        x.effect('aemusa_ms_flagship_ensure_present')
+        self.assertIn('aemusa_ms_country_flagship_ever_created', x.flags)
+        self.assertEqual(x.created_flagships, 0)
+        self.assertEqual(x.delayed_events, [])
+
     def test_yanhua_fleet_claim_uses_country_record_and_old_conclusion_stays_basic(self):
         for record, days in ((None, 180), (2, 240), (3, 300)):
             with self.subTest(record=record):

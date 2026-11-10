@@ -1,0 +1,108 @@
+namespace = aef16
+
+# 仅手动用于六 L 隔离存档副本。先验证 ensure 保留同一艘船，再模拟损失。
+country_event = {
+	id = aef16.20
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				is_ai = no
+				has_country_flag = aemusa_ms_country_flagship_commissioned
+				NOT = { has_country_flag = aemusa_ms_country_flagship_recovering }
+				aemusa_ms_flagship_has_safe_capital = yes
+				count_owned_ship = { count < 2 limit = { is_ship_size = aemusa_reality_flagship } }
+				any_owned_ship = {
+					is_ship_size = aemusa_reality_flagship
+					has_ship_flag = aemusa_reality_flagship
+					has_component = "LARGE_GAMMA_LASER"
+					has_component = "LARGE_MASS_DRIVER_5"
+					NOT = { has_component = "AEMUSA_ENDGAME_T_BEAM" }
+				}
+			}
+			random_owned_ship = {
+				limit = { is_ship_size = aemusa_reality_flagship }
+				save_event_target_as = aef16_original_flagship
+			}
+			aemusa_ms_flagship_ensure_present = yes
+			aemusa_ms_flagship_ensure_present = yes
+			if = {
+				limit = {
+					count_owned_ship = { count < 2 limit = { is_ship_size = aemusa_reality_flagship } }
+					any_owned_ship = {
+						is_same_value = event_target:aef16_original_flagship
+						has_component = "LARGE_GAMMA_LASER"
+						has_component = "LARGE_MASS_DRIVER_5"
+						NOT = { has_component = "AEMUSA_ENDGAME_T_BEAM" }
+					}
+				}
+				log = "AEF16|LEGACY|original_preserved"
+				event_target:aef16_original_flagship = { destroy_ship = this }
+				country_event = { id = aef16.21 days = 1 }
+			}
+			else = { log = "AEF16|LEGACY_FAIL|original_changed" }
+		}
+		else = { log = "AEF16|LEGACY_BLOCK|requires_one_old_flagship_and_safe_capital" }
+	}
+}
+
+country_event = {
+	id = aef16.21
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = { NOT = { aemusa_ms_has_flagship_instance = yes } }
+			# 脚本损失有时没有战斗回调。让正式补检进入冷却，再只加速已生效的计时。
+			aemusa_ms_flagship_ensure_present = yes
+			if = {
+				limit = {
+					has_country_flag = aemusa_ms_country_flagship_recovering
+					has_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
+				}
+				remove_country_flag = aemusa_ms_country_flagship_recovery_time_remaining
+				log = "AEF16|LEGACY|cooldown_accelerated"
+				country_event = { id = aemusa_flagship.2 }
+				country_event = { id = aef16.22 days = 1 }
+			}
+			else = { log = "AEF16|LEGACY_FAIL|missing_recovery_timer" }
+		}
+		else = { log = "AEF16|LEGACY_FAIL|loss_not_registered" }
+	}
+}
+
+country_event = {
+	id = aef16.22
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				any_owned_ship = {
+					is_ship_size = aemusa_reality_flagship
+					has_ship_flag = aemusa_reality_flagship
+					has_component = "AEMUSA_ENDGAME_REACTOR"
+					has_component = "AEMUSA_ENDGAME_T_BEAM"
+					NOR = { has_component = "LARGE_GAMMA_LASER" has_component = "LARGE_MASS_DRIVER_5" }
+				}
+			}
+			random_owned_ship = {
+				limit = { is_ship_size = aemusa_reality_flagship has_component = "AEMUSA_ENDGAME_T_BEAM" }
+				save_event_target_as = aef16_recovered_flagship
+			}
+			aemusa_ms_flagship_ensure_present = yes
+			aemusa_ms_flagship_ensure_present = yes
+			if = {
+				limit = {
+					count_owned_ship = { count < 2 limit = { is_ship_size = aemusa_reality_flagship } }
+					any_owned_ship = { is_same_value = event_target:aef16_recovered_flagship }
+					NOT = { has_country_flag = aemusa_ms_country_flagship_recovering }
+				}
+				log = "AEF16|LEGACY|one_restored_ship_with_T_beam_and_reactor"
+			}
+			else = { log = "AEF16|LEGACY_FAIL|duplicate_or_still_recovering" }
+		}
+		else = { log = "AEF16|LEGACY_FAIL|wrong_or_missing_restored_loadout" }
+	}
+}

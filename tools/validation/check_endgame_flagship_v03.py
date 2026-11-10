@@ -12,7 +12,7 @@ ROOT=Path(__file__).resolve().parents[2]
 GAME=Path('F:/steam/steamapps/common/Stellaris')
 sys.path.insert(0,str(Path(__file__).resolve().parent))
 sys.path.insert(0,str(ROOT/'tools/art'))
-from check_mod import parse,scalar
+from check_mod import parse,scalar,walk
 from inspect_external_mesh_counts import load_reader
 
 
@@ -24,8 +24,20 @@ def children(block,key):return [e.value for e in block if e.key==key and isinsta
 def main():
     sections={scalar(b,'key'):b for b in blocks(ROOT/'mod/common/section_templates/aemusa_reality_flagship_sections.txt','ship_section_template')}
     designs=blocks(ROOT/'mod/common/global_ship_designs/aemusa_reality_flagship_designs.txt','ship_design')
-    assert len(designs)==1
-    design=designs[0]
+    # 从正式造舰处分辨活动设计与历史同名设计，避免把旧键也当成新造舰入口。
+    ensure, = blocks(ROOT/'mod/common/scripted_effects/aemusa_ms_flagship_effects.txt','aemusa_ms_flagship_ensure_present')
+    fleet, = [entry.value for entry,_ in walk(ensure) if entry.key=='create_fleet']
+    effects, = children(fleet, 'effect')
+    create_ship, = [entry for entry in effects if entry.key=='create_ship']
+    create_design, = [entry for entry,_ in walk(ensure) if entry.key=='create_ship_design']
+    assert effects.index(create_design) + 1 == effects.index(create_ship)
+    assert scalar(create_ship.value,'design')=='last_created_design' and scalar(create_ship.value,'upgradable')=='no'
+    ship_name = scalar(create_ship.value,'name')
+    active_key = scalar(create_design.value,'design')
+    by_name = {scalar(b,'name'):b for b in designs}
+    assert ship_name=='NAME_Aemusa_Reality_Flagship' and active_key==ship_name+'_16T'
+    assert len(designs)==len(by_name)==2 and ship_name in by_name
+    design = by_name[active_key]
     assert scalar(design,'ship_size')=='aemusa_reality_flagship'
     weapons={scalar(b,'key'):b for b in blocks(ROOT/'mod/common/component_templates/aemusa_endgame_flagship_components.txt','weapon_component_template')}
     powercores={scalar(b,'key'):b for b in blocks(ROOT/'mod/common/component_templates/aemusa_endgame_flagship_components.txt','utility_component_template')}
@@ -161,6 +173,7 @@ def main():
     for f in [ROOT/'mod/common/component_templates/aemusa_endgame_flagship_components.txt',ROOT/'mod/common/component_sets/aemusa_endgame_flagship_sets.txt',ROOT/'mod/common/section_templates/aemusa_reality_flagship_sections.txt']:
         assert not f.read_bytes().startswith(b'\xef\xbb\xbf')
     result={'date':date,'status':'pass','real_T_slots':len(binding),'binding':binding,
+            'spawn_design_key':active_key,'ship_name_key':ship_name,
             'legacy_six_L_templates_retained':True,'legacy_locators_resolved':True,
             'power_breakdown':power,'power_surplus':total,'native_components_resolved':True,
             'pdx_parts':{k:{'triangles':v['triangles'],'material_count':v['material_count'],'locator_count':len(v['locators'])} for k,v in parts.items()},

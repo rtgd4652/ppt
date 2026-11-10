@@ -72,9 +72,11 @@ aemusa_ms_flagship_ensure_present = {
 				effect = {
 					set_owner = prev
 					set_fleet_flag = aemusa_reality_flagship
+					# 旧档的同名全局设计可能仍是六 L。只在确实要建舰时生成新版设计，立即交给本舰。
+					create_ship_design = { design = "NAME_Aemusa_Reality_Flagship_16T" }
 					create_ship = {
 						name = "NAME_Aemusa_Reality_Flagship"
-						design = "NAME_Aemusa_Reality_Flagship"
+						design = last_created_design
 						graphical_culture = "humanoid_01"
 						upgradable = no
 						effect = { set_ship_flag = aemusa_reality_flagship }
