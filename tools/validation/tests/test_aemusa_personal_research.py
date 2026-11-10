@@ -61,11 +61,16 @@ class Workshop(workshop.World):
         return True
 
     def possible(self, mode, ctx):
+        # 事件描述带着原工单上下文；原生 scripted_loc 另以星球为根计算，不带该局部目标。
+        desc, = [e.value for e in workshop.EVENTS[SCREEN] if e.key == 'desc'
+                 and self.condition(child(e.value, 'trigger'), self.p, ctx)]
+        if scalar(desc, 'text') == 'aemusa_p01.site_transferred':
+            return False
         entry = STATUS[NAMES[mode]]
         assert scalar(entry, 'random') == 'no' and scalar(entry, 'default') == 'aemusa_p01.unavailable'
         indicator = child(entry, 'text')
         assert scalar(indicator, 'localization_key') == 'aemusa_p01.ready'
-        return self.condition(child(indicator, 'trigger'), self.p, ctx)
+        return self.condition(child(indicator, 'trigger'), self.p, {})
 
 
 class PersonalResearchTests(unittest.TestCase):
@@ -158,6 +163,7 @@ class PersonalResearchTests(unittest.TestCase):
         w.countries['B']['techs'].add(TECH)
         self.assertFalse(w.dispatch(SCREEN, w.p, ctx))
         self.assertFalse(w.possible('basic_construction', ctx))
+        self.assertFalse(w.choose('basic_construction', ctx=ctx))
         self.assertFalse(w.select('artifact_foundation.20', 'aemusa_p01.open', w.open('workshop')))
 
     def test_displayed_cost_matches_actual_cost_at_exact_and_one_short_balances(self):

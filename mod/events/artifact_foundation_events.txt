@@ -186,12 +186,16 @@ carrier_event = {
 	id = artifact_foundation.21
 	title = tech_aemusa_possibility_branch_modeling
 	desc = {
-		trigger = { artifact_foundation_actor = yes }
+		trigger = { artifact_foundation_ui_actor = yes }
 		text = aemusa_p01.compare
 	}
 	desc = {
-		trigger = { artifact_foundation_actor = no }
+		trigger = { artifact_foundation_ui_owner = yes artifact_foundation_actor = no }
 		text = aemusa_p01.compare_after_species_change
+	}
+	desc = {
+		trigger = { artifact_foundation_ui_owner = no }
+		text = aemusa_p01.site_transferred
 	}
 	picture = GFX_evt_alien_city
 	is_triggered_only = yes

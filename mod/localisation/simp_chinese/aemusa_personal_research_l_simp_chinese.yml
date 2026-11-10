@@ -36,5 +36,6 @@
  aemusa_p04.require_arid:0 "需要本国仍可启用原平台、目标仍适合造境，并备齐$aemusa_p04.arid_cost$。"
  aemusa_p04.require_arctic:0 "需要本国仍可启用原平台、目标仍适合造境，并备齐$aemusa_p04.arctic_cost$。"
  aemusa_p04.expired:0 "这份报价的原平台或目标已发生变化。请在可用的平台所环绕的荒芜星球上重新选择方案。"
+ aemusa_p01.site_transferred:0 "工地的拥有者已变动。请在本国殖民地重新打开工坊。"
  aemusa_p01.compare_after_species_change:0 "本国保存着爱缪莎的工程模型。三项公共工坊工程目前均要求神器使主物种。\n\n$aemusa_p01.compare$"
  aemusa_p01.compare:0 "§Y[Root.GetName]§!的工坊一次承接一项工程。以下按本地项目名额、控制状况、设施、研究和库存核对。\n\n§H$artifact_foundation.start_basic_construction$§!　[Root.GetAemusaBasicConstructionAvailability]\n$artifact_foundation.offer_basic_construction$\n\n§H$artifact_foundation.start_precision_construction$§!　[Root.GetAemusaPrecisionConstructionAvailability]\n$artifact_foundation.offer_precision_construction$\n\n§H$artifact_foundation.start_materials_study$§!　[Root.GetAemusaMaterialsStudyAvailability]\n$artifact_foundation.offer_materials_study$"
