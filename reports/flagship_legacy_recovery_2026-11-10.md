@@ -20,4 +20,20 @@
 
 ## 运行验证
 
-当前完成读取既有存档、接口核对及唯一性回归。修订后的旧档实际恢复留给同一份隔离副本，运行方式及读数见[手动测试夹具](../tools/validation/runtime_fixtures/aef16_live_fire/README.md#旧六-l-舰恢复)。
+11 月 10 日，本机《群星》4.5.3 载入上表 `2293.12.03.sav` 的独立副本。2293.12.04，测试脚本在原六 L 旗舰上执行 `set_disabled = yes`。游戏同日在原生瘫痪回调中运行正式修复效果。随后读取到同一艘船、同一支舰队、同一星系，舰船已能行动，船体至少 99%，本国仍只有一艘该舰种。三条记录的现实时间均为 22:07:06。
+
+```text
+AEF16|DISABLE|begin_scripted_disable
+AEMUSA-MS|AWP-06|flagship_revived_in_place
+AEF16|DISABLE|same_ship_fleet_system_operational
+```
+
+另一项测试在该副本中用脚本实际删除舰船。2293.12.06，月检和原冷却回调执行后，舰位仍空。夹具连续两次调用与爱缪莎联络按钮共用的正式召回效果，游戏只记录了一次造舰。验收读取到恰好一艘该舰种，带专属反应堆与恒定主炮，再次召回的条件已关闭。
+
+```text
+AEF16|RECALL|absent_before_manual_contact
+AEMUSA-MS|AWP-06|flagship_created
+AEF16|RECALL|one_new_T_design_after_manual_contact
+```
+
+本例验证了脚本致瘫以后的同舰即时复活，以及真实删除以后的召回效果。自然交火击穿 5% 船体线和手动点击联络按钮分别保留为独立观察项。新设计的逐槽配置见上节预检，这次召回在游戏内检查了舰船数量、反应堆与主炮的存在性。原始记录位于本机 `temp/late_game_2293_20261110/profile/logs/game.log`。[测试入口与核对方式](../tools/validation/runtime_fixtures/aef16_live_fire/README.md#瘫痪与真正删除)
