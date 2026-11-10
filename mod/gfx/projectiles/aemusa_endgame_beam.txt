@@ -1,0 +1,37 @@
+# 十六个固定发射点共用一条银紫色细束。缩短视觉余辉，让连续射击时仍能看见中央星空。
+projectile_gfx_beam = {
+	name = "aemusa_constancy_beam"
+	color = { 0.73 0.65 0.96 0.75 }
+	muzzle_flash_entity = "uv_laser_small_muzzle_entity"
+	hit_entity = "uv_laser_small_hit_entity"
+	shield_hit_entity = "uv_laser_small_shield_hit_entity"
+	texture = "gfx/models/combat_items/laser_diffuse2.dds"
+	width = 1.4
+	texture_scroll_speed = 1.8
+	texture_tiling = 7.0
+
+	hit = {
+		alpha_curve = {
+			0.00 0.0
+			0.08 6.0
+			0.40 3.2
+			0.75 1.3
+			1.00 0.0
+		}
+		duration = 1.25
+	}
+	miss = {
+		alpha_curve = {
+			0.00 0.0
+			0.08 3.5
+			0.55 1.5
+			1.00 0.0
+		}
+		duration = 0.60
+	}
+	shield_impact = {
+		size = small
+		loop_duration = 0.4
+		delay = 0.1
+	}
+}

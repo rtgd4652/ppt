@@ -9,7 +9,7 @@ weapon_component_template = {
 	icon = "GFX_ship_part_perdition_beam"
 	icon_frame = 1
 	component_set = "AEMUSA_ENDGAME_T_BEAM_SET"
-	projectile_gfx = "perdition_beam"
+	projectile_gfx = "aemusa_constancy_beam"
 	potential = {
 		is_ship_size = aemusa_reality_flagship
 	}

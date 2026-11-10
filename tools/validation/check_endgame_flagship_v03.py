@@ -43,6 +43,14 @@ def main():
     powercores={scalar(b,'key'):b for b in blocks(ROOT/'mod/common/component_templates/aemusa_endgame_flagship_components.txt','utility_component_template')}
     weapon=weapons['AEMUSA_ENDGAME_T_BEAM'];reactor=powercores['AEMUSA_ENDGAME_REACTOR']
     assert scalar(weapon,'size')=='titanic'
+    # 逐个核对单舰专用光束及其原版素材，避免改名后游戏静默丢失发射效果。
+    beam, = blocks(ROOT/'mod/gfx/projectiles/aemusa_endgame_beam.txt', 'projectile_gfx_beam')
+    beam_name = scalar(beam, 'name')
+    assert scalar(weapon, 'projectile_gfx') == beam_name == 'aemusa_constancy_beam'
+    assert (GAME / scalar(beam, 'texture')).is_file()
+    laser_entities = {scalar(b, 'name') for b in blocks(GAME/'gfx/models/combat_items/_lasers_entities.asset', 'entity')}
+    for effect in ('muzzle_flash_entity', 'hit_entity', 'shield_hit_entity'):
+        assert scalar(beam, effect) in laser_entities, effect
     for component in (weapon,reactor):
         assert scalar(children(component,'potential')[0],'is_ship_size')=='aemusa_reality_flagship'
     native_slots={e.key:e.value for e in load(GAME/'common/component_slot_templates/00_component_slots_fixed.txt') if isinstance(e.value,list)}
@@ -173,7 +181,7 @@ def main():
     for f in [ROOT/'mod/common/component_templates/aemusa_endgame_flagship_components.txt',ROOT/'mod/common/component_sets/aemusa_endgame_flagship_sets.txt',ROOT/'mod/common/section_templates/aemusa_reality_flagship_sections.txt']:
         assert not f.read_bytes().startswith(b'\xef\xbb\xbf')
     result={'date':date,'status':'pass','real_T_slots':len(binding),'binding':binding,
-            'spawn_design_key':active_key,'ship_name_key':ship_name,
+            'spawn_design_key':active_key,'ship_name_key':ship_name,'projectile_gfx':beam_name,
             'legacy_six_L_templates_retained':True,'legacy_locators_resolved':True,
             'power_breakdown':power,'power_surplus':total,'native_components_resolved':True,
             'pdx_parts':{k:{'triangles':v['triangles'],'material_count':v['material_count'],'locator_count':len(v['locators'])} for k,v in parts.items()},
