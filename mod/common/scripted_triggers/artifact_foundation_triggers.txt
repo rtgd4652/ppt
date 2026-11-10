@@ -154,12 +154,21 @@ artifact_boundary_can_archive = {
 	}
 }
 
+# 国家作用域。原开工和在途改选均核对目标方案本身的公共研究。
+artifact_foundation_knows_basic_construction = {
+	has_technology = "tech_artifact_modular_colony_construction"
+}
+artifact_foundation_knows_precision_construction = {
+	artifact_foundation_knows_basic_construction = yes
+	has_technology = "tech_artifact_resonance_material_screening"
+}
+
 artifact_foundation_can_start_basic_construction = {
 	artifact_foundation_ui_actor = yes
 	artifact_foundation_safe_control = yes
 	artifact_foundation_idle = yes
 	owner = {
-		has_technology = "tech_artifact_modular_colony_construction"
+		artifact_foundation_knows_basic_construction = yes
 		has_resource = {
 			type = minerals
 			amount >= @arf_workshop_basic_minerals
@@ -180,8 +189,7 @@ artifact_foundation_can_start_precision_construction = {
 	artifact_foundation_safe_control = yes
 	artifact_foundation_idle = yes
 	owner = {
-		has_technology = "tech_artifact_modular_colony_construction"
-		has_technology = "tech_artifact_resonance_material_screening"
+		artifact_foundation_knows_precision_construction = yes
 		has_resource = {
 			type = minerals
 			amount >= @arf_workshop_precision_minerals

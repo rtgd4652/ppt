@@ -1,5 +1,8 @@
 # 清理只涉及本包现场，不退款、不操作角色工程或C2修正。
 artifact_foundation_clear = {
+	# 换主、中止或重新开工时撤销旧工单，并释放本项目的一次改选名额。
+	remove_carrier_flag = arf_p02_quote_open
+	remove_carrier_flag = arf_p02_replanned
 	remove_carrier_flag = arf_r1_active
 	remove_carrier_flag = arf_r1_paid
 	remove_carrier_flag = arf_r1_managed
@@ -70,10 +73,9 @@ artifact_foundation_start_basic_construction = {
 		}
 		owner = {
 			add_resource = {
-				minerals = @[-arf_workshop_basic_minerals]
-			}
-			add_resource = {
-				energy = @[-arf_workshop_basic_energy]
+				minerals = @arf_workshop_basic_minerals
+				energy = @arf_workshop_basic_energy
+				mult = -1
 			}
 		}
 		artifact_foundation_begin = yes
@@ -93,13 +95,10 @@ artifact_foundation_start_precision_construction = {
 		}
 		owner = {
 			add_resource = {
-				minerals = @[-arf_workshop_precision_minerals]
-			}
-			add_resource = {
-				energy = @[-arf_workshop_precision_energy]
-			}
-			add_resource = {
-				alloys = @[-arf_workshop_precision_alloys]
+				minerals = @arf_workshop_precision_minerals
+				energy = @arf_workshop_precision_energy
+				alloys = @arf_workshop_precision_alloys
+				mult = -1
 			}
 		}
 		artifact_foundation_begin = yes
@@ -119,13 +118,10 @@ artifact_foundation_start_materials_study = {
 		}
 		owner = {
 			add_resource = {
-				minerals = @[-arf_workshop_materials_minerals]
-			}
-			add_resource = {
-				energy = @[-arf_workshop_materials_energy]
-			}
-			add_resource = {
-				consumer_goods = @[-arf_workshop_materials_consumer_goods]
+				minerals = @arf_workshop_materials_minerals
+				energy = @arf_workshop_materials_energy
+				consumer_goods = @arf_workshop_materials_consumer_goods
+				mult = -1
 			}
 		}
 		artifact_foundation_begin = yes
@@ -172,6 +168,8 @@ artifact_foundation_complete = {
 		}
 		remove_carrier_flag = arf_r1_active
 		remove_carrier_flag = arf_r1_paid
+		remove_carrier_flag = arf_p02_quote_open
+		remove_carrier_flag = arf_p02_replanned
 		set_carrier_flag = arf_r1_completed
 		if = {
 			limit = { has_carrier_flag = arf_r1_mode_boundary_experiment }
@@ -263,6 +261,15 @@ artifact_foundation_monthly_planet = {
 			change_variable = {
 				which = arf_r1_progress
 				value = 1
+			}
+			# 精密工程进入最后一个工作月后，旧工单承诺的提早交付已不能兑现。
+			if = {
+				limit = {
+					has_carrier_flag = arf_p02_quote_open
+					has_carrier_flag = arf_r1_mode_precision_construction
+					aemusa_p02_can_shorten_work = no
+				}
+				remove_carrier_flag = arf_p02_quote_open
 			}
 			artifact_foundation_complete = yes
 		}

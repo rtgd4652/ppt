@@ -1,0 +1,11 @@
+# 两项均为无作用域的实物差价。预览、国家余额检查与实际扣款共同引用。
+arf_workshop_upgrade_minerals = {
+	base = @arf_workshop_precision_minerals
+	subtract = @arf_workshop_basic_minerals
+	min = 0
+}
+arf_workshop_upgrade_energy = {
+	base = @arf_workshop_precision_energy
+	subtract = @arf_workshop_basic_energy
+	min = 0
+}

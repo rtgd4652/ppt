@@ -7,3 +7,6 @@
 @arf_workshop_materials_minerals = 100
 @arf_workshop_materials_energy = 200
 @arf_workshop_materials_consumer_goods = 50
+
+# 每次正式改选的调度费。升级材料差额按两种原工坊报价另算。
+@arf_workshop_replan_unity = 50

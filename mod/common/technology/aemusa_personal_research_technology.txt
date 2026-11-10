@@ -8,3 +8,15 @@ tech_aemusa_possibility_branch_modeling = {
 	icon = "tech_artifact_tarot_calculation"
 	potential = { aemusa_personal_research_eligible = yes }
 }
+
+# P02 把已经比较过的同类营建方案用于一笔在途工单。研究不会修改任何工程。
+tech_aemusa_selected_plan_reconfiguration = {
+	area = society
+	tier = 5
+	category = { statecraft }
+	cost = 18000
+	weight = 100
+	icon = "tech_artifact_tarot_economy"
+	prerequisites = { "tech_aemusa_possibility_branch_modeling" }
+	potential = { aemusa_personal_research_eligible = yes }
+}

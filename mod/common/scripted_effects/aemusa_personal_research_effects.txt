@@ -1,0 +1,30 @@
+# 原项目的付费收据、启动国家和已做工时留在原处。只有本地月度完工入口可以发放收益。
+aemusa_p02_upgrade_construction = {
+	if = {
+		limit = { aemusa_p02_can_upgrade = yes }
+		owner = {
+			add_resource = { minerals = -1 mult = value:arf_workshop_upgrade_minerals }
+			add_resource = { energy = -1 mult = value:arf_workshop_upgrade_energy }
+			add_resource = { alloys = @arf_workshop_precision_alloys unity = @arf_workshop_replan_unity mult = -1 }
+		}
+		remove_carrier_flag = arf_r1_mode_basic_construction
+		set_carrier_flag = arf_r1_mode_precision_construction
+		set_carrier_flag = arf_p02_replanned
+		remove_carrier_flag = arf_p02_quote_open
+	}
+}
+
+aemusa_p02_simplify_construction = {
+	if = {
+		limit = { aemusa_p02_can_simplify = yes }
+		owner = { add_resource = { unity = @arf_workshop_replan_unity mult = -1 } }
+		if = {
+			limit = { aemusa_p02_can_shorten_work = yes }
+			change_variable = { which = arf_r1_required_work value = -1 }
+		}
+		remove_carrier_flag = arf_r1_mode_precision_construction
+		set_carrier_flag = arf_r1_mode_basic_construction
+		set_carrier_flag = arf_p02_replanned
+		remove_carrier_flag = arf_p02_quote_open
+	}
+}

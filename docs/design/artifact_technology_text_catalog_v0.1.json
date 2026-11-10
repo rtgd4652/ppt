@@ -2518,6 +2518,30 @@
         "mod/common/scripted_effects/artifact_foundation_effects.txt",
         "mod/common/scripted_variables/artifact_foundation_workshop_costs.txt"
       ]
+    },
+    {
+      "id": "P02",
+      "name": "选定方案重组",
+      "key": "tech_aemusa_selected_plan_reconfiguration",
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": ["aemusa_tarot", "unknown_boundaries", "central_court_history"],
+      "source_note": "爱缪莎从已有现实中重选后续路径，沿用项目已审核的终局命运权限与承担代价的边界。具体营建物料、工时和调度费是 Mod 工坊规则。",
+      "references": [
+        "knowledge/world/cosmology_bible_v0.1.md",
+        "knowledge/curated/decisions/project_editorial_decisions_v0.1.md",
+        "knowledge/curated/reviews/aemusa_main_story_outline_review_v1.0.md",
+        "knowledge/organizations/organization_bible_v0.1.md"
+      ],
+      "technology_file": "mod/common/technology/aemusa_personal_research_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/aemusa_personal_research_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/events/artifact_foundation_events.txt",
+        "mod/common/scripted_triggers/aemusa_personal_research_triggers.txt",
+        "mod/common/scripted_effects/aemusa_personal_research_effects.txt",
+        "mod/common/scripted_effects/artifact_foundation_effects.txt",
+        "mod/common/scripted_variables/artifact_foundation_workshop_costs.txt",
+        "mod/common/script_values/aemusa_personal_workshop_values.txt"
+      ]
     }
   ],
   "source_policy": {

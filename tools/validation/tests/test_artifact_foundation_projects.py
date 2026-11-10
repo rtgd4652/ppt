@@ -20,8 +20,7 @@ WORKSHOP_COSTS = {
 
 def load(path):
     text=(ROOT/path).read_text(encoding='utf-8-sig')
-    # 原生全局费用及其相反数同时用于余额守卫与实扣，在解析比较符前展开。
-    text = re.sub(r'@\[-(arf_workshop_\w+)\]', lambda m: str(-WORKSHOP_COSTS[m[1]]), text)
+    # 真实报价来自原生全局费用，效果用 add_resource 的 mult=-1 实扣。
     text = re.sub(r'@(arf_workshop_\w+)', lambda m: str(WORKSHOP_COSTS[m[1]]), text)
     # 检查器解析器不保留比较符；夹具显式保留这两个实际用到的比较。
     text=re.sub(r'\b(value|amount)\s*>=\s*([\w.-]+)',r'\1_ge = \2',text)
@@ -146,7 +145,10 @@ class World:
                 key=scalar(v,'which'); value=self.number(scalar(v,'value'),obj)
                 obj['vars'][key]=value+(obj['vars'].get(key,0) if k=='change_variable' else 0)
             elif k=='add_resource':
-                for resource in v:obj['resources'][resource.key]+=float(resource.value)
+                multiplier = self.number(scalar(v, 'mult') or '1', obj)
+                for resource in v:
+                    if resource.key != 'mult':
+                        obj['resources'][resource.key] += self.number(resource.value, obj) * multiplier
             elif k=='remove_modifier':obj['modifiers'].pop(v,None)
             elif k=='add_modifier':obj['modifiers'][scalar(v,'modifier')]=int(scalar(v,'days'))
             elif k=='carrier_event':self.dispatch(scalar(v,'id'),obj,ctx)

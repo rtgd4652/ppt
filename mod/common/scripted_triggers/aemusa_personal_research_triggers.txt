@@ -24,3 +24,69 @@ aemusa_personal_branch_model_colony = {
 	exists = owner
 	owner = { aemusa_personal_branch_model_available = yes }
 }
+
+# 行星载体作用域。两种营建都在原工坊进行。科研项目、在途复现及已结算成果没有改选入口。
+aemusa_p02_replannable_project = {
+	has_carrier_flag = arf_r1_active
+	has_carrier_flag = arf_r1_paid
+	NOT = { has_carrier_flag = arf_p02_replanned }
+	OR = {
+		has_carrier_flag = arf_r1_mode_basic_construction
+		has_carrier_flag = arf_r1_mode_precision_construction
+	}
+	NOT = {
+		AND = {
+			has_carrier_flag = arf_r1_mode_basic_construction
+			has_carrier_flag = arf_r1_mode_precision_construction
+		}
+	}
+	is_variable_set = arf_r1_progress
+	is_variable_set = arf_r1_required_work
+	check_variable = { which = arf_r1_progress value >= 0 }
+	NOT = { check_variable = { which = arf_r1_progress value >= arf_r1_required_work } }
+	artifact_foundation_ui_actor = yes
+	artifact_foundation_original_owner = yes
+	owner = {
+		has_technology = "tech_aemusa_selected_plan_reconfiguration"
+		aemusa_personal_branch_model_available = yes
+	}
+}
+
+# 同一玩家一次展示一份可扣款的工单。项目结束时撤去该单的现场标记，旧窗口不能替新项目付款。
+aemusa_p02_can_open_quote = {
+	aemusa_p02_replannable_project = yes
+	owner = { NOT = { has_active_event = { artifact_foundation.22 } } }
+}
+aemusa_p02_current_quote = {
+	has_carrier_flag = arf_p02_quote_open
+	aemusa_p02_replannable_project = yes
+}
+aemusa_p02_can_confirm_quote = {
+	aemusa_p02_current_quote = yes
+	artifact_foundation_work_ready = yes
+	owner = { has_resource = { type = unity amount >= @arf_workshop_replan_unity } }
+}
+aemusa_p02_can_upgrade = {
+	has_carrier_flag = arf_r1_mode_basic_construction
+	aemusa_p02_can_confirm_quote = yes
+	owner = {
+		artifact_foundation_knows_precision_construction = yes
+		resource_stockpile_compare = { resource = minerals value >= value:arf_workshop_upgrade_minerals }
+		resource_stockpile_compare = { resource = energy value >= value:arf_workshop_upgrade_energy }
+		has_resource = { type = alloys amount >= @arf_workshop_precision_alloys }
+	}
+}
+aemusa_p02_can_simplify = {
+	has_carrier_flag = arf_r1_mode_precision_construction
+	aemusa_p02_can_confirm_quote = yes
+	owner = { artifact_foundation_knows_basic_construction = yes }
+}
+
+# 只缩短尚未施工的部分，保留最后一次正常月检；此触发器同时用于报价说明。
+aemusa_p02_can_shorten_work = {
+	check_variable_arithmetic = {
+		which = arf_r1_required_work
+		subtract = arf_r1_progress
+		value >= 2
+	}
+}

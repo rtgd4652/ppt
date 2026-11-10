@@ -26,3 +26,26 @@ defined_text = {
 	}
 	default = aemusa_p01.unavailable
 }
+
+# 工单金额与支付效果取相同脚本值；原项目页依真实改选收据显示累计投入。
+defined_text = {
+	name = GetAemusaUpgradeMinerals
+	value = value:arf_workshop_upgrade_minerals
+}
+defined_text = {
+	name = GetAemusaUpgradeEnergy
+	value = value:arf_workshop_upgrade_energy
+}
+defined_text = {
+	name = GetAemusaConstructionPaid
+	random = no
+	text = { trigger = { has_carrier_flag = arf_p02_replanned } localization_key = aemusa_p02.replanned_paid }
+	text = { trigger = { has_carrier_flag = arf_r1_mode_precision_construction } localization_key = artifact_foundation.cost_precision }
+	default = artifact_foundation.cost_basic
+}
+defined_text = {
+	name = GetAemusaSimplifiedSchedule
+	random = no
+	text = { trigger = { aemusa_p02_can_shorten_work = yes } localization_key = aemusa_p02.shorten_one_month }
+	default = aemusa_p02.last_month
+}
