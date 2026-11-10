@@ -1,0 +1,39 @@
+# 细束仍使用泰坦的蓄能、发射与命中声音。银壳两侧只显示经实拍的小型紫外激光粒子。
+entity = {
+	name = "aemusa_constancy_windup_entity"
+	default_state = "attack"
+	get_state_from_parent = no
+	state = {
+		name = "attack" looping = yes state_time = 0.8
+		event = { trigger_once = yes sound = { soundeffect = "perdition_beam_windup_layer_01" } }
+		event = { trigger_once = yes sound = { soundeffect = "perdition_beam_windup_layer_02" } }
+	}
+}
+
+entity = {
+	name = "aemusa_constancy_muzzle_entity"
+	pdxmesh = "locator_mesh"
+	default_state = "idle"
+	state = {
+		name = "idle" state_time = 1 looping = no
+		event = { time = 0 particle = "uv_laser_small_muzzle_particle" keep_particle = yes }
+		event = { trigger_once = yes sound = { soundeffect = "perdition_beam_fire_layer_01" } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_perdition_beam_fire_layer_01" } }
+		event = { trigger_once = yes sound = { soundeffect = "perdition_beam_fire_layer_02" } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_perdition_beam_fire_layer_02" } }
+		event = { trigger_once = yes sound = { soundeffect = "perdition_beam_fire_layer_03" } }
+		event = { trigger_once = yes sound = { soundeffect = "distance_perdition_beam_fire_layer_03" } }
+	}
+}
+
+entity = {
+	name = "aemusa_constancy_hit_entity"
+	cull_radius = 1.0
+	default_state = "idle"
+	state = {
+		name = "idle"
+		start_event = { particle = "uv_laser_small_hit_effect" sound = { soundeffect = "perdition_beam_hit" } }
+		start_event = { trigger_once = yes sound = { soundeffect = "distance_perdition_beam_hit" } }
+	}
+	state = { name = "stop" state_time = 0.5 looping = no }
+}

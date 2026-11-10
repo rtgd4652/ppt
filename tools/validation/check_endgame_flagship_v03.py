@@ -48,9 +48,11 @@ def main():
     beam_name = scalar(beam, 'name')
     assert scalar(weapon, 'projectile_gfx') == beam_name == 'aemusa_constancy_beam'
     assert (GAME / scalar(beam, 'texture')).is_file()
-    laser_entities = {scalar(b, 'name') for b in blocks(GAME/'gfx/models/combat_items/_lasers_entities.asset', 'entity')}
-    for effect in ('muzzle_flash_entity', 'hit_entity', 'shield_hit_entity'):
-        assert scalar(beam, effect) in laser_entities, effect
+    base_effects = blocks(GAME/'gfx/models/combat_items/_lasers_entities.asset', 'entity')
+    ship_effects = blocks(ROOT/'mod/gfx/models/combat_items/_aemusa_constancy_beam.asset', 'entity')
+    effect_names = {scalar(b, 'name') for b in [*base_effects, *ship_effects]}
+    for effect in ('windup_entity', 'muzzle_flash_entity', 'hit_entity', 'shield_hit_entity'):
+        assert scalar(beam, effect) in effect_names, effect
     for component in (weapon,reactor):
         assert scalar(children(component,'potential')[0],'is_ship_size')=='aemusa_reality_flagship'
     native_slots={e.key:e.value for e in load(GAME/'common/component_slot_templates/00_component_slots_fixed.txt') if isinstance(e.value,list)}

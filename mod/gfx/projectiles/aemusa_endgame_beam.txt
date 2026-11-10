@@ -2,8 +2,9 @@
 projectile_gfx_beam = {
 	name = "aemusa_constancy_beam"
 	color = { 0.73 0.65 0.96 0.75 }
-	muzzle_flash_entity = "uv_laser_small_muzzle_entity"
-	hit_entity = "uv_laser_small_hit_entity"
+	windup_entity = "aemusa_constancy_windup_entity"
+	muzzle_flash_entity = "aemusa_constancy_muzzle_entity"
+	hit_entity = "aemusa_constancy_hit_entity"
 	shield_hit_entity = "uv_laser_small_shield_hit_entity"
 	texture = "gfx/models/combat_items/laser_diffuse2.dds"
 	width = 1.4
