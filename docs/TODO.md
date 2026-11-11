@@ -1,6 +1,6 @@
 # 当前执行清单
 
-更新于 2026-11-10。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。早期已完成项保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)。
+更新于 2026-11-11。先读[跨 AI 接手入口](../HANDOFF.md)，全项目状态见[PROJECT_STATUS](PROJECT_STATUS.md)。早期已完成项保存在[历史快照](../project/history/TODO_before_handoff_2026-10-31.md)。
 
 ## 当前接手点
 
@@ -14,7 +14,10 @@
 - [x] 旧六 L 档受控致瘫后，在同一舰队、同一星系即时修复原舰。真正删除舰体后，月检不会补舰，联络召回实效重复执行仍只补一艘。旧等级冷却已移除。[运行记录](../reports/flagship_legacy_recovery_2026-11-10.md)
 - [x] 2293.12.03 副本原有 P01 身份资格，五阶物理尚未解锁。在受控研究与工坊前置下实际核对 P02 开工扣费、2/4 工时改选以及重复确认零扣费。白夜馆回忆页实际点入战后工程交接单，本档无可定位馆址。[工坊](../reports/aemusa_project_reconfiguration_2026-11-10.md) · [交接单](../reports/postcrisis_ending_handover_2026-11-09.md)
 - [x] P04 干旱、极地造境配方与本国原平台绑定，代码和局部回归完成。[配方](../reports/aemusa_world_former_climates_2026-11-10.md)
-- [ ] D12 战术脉冲、F08/P04 造境、合格馆址的定位、第十三章核心节点压力与隔离仍待各自的代表实机。
+- [x] 4.5.4 中正常 D12 按钮、1500 能源／25 水晶实付、敌方与中立筛选、60／180日及冷载保持已验证。[实机](../reports/artifact_field_suppression_runtime_2026-11-11.md)
+- [x] 真实馆址定位、正常解译和冷载保持完成。修复无殖民地天体的造境误判后，公共大陆与P04干旱通过正常入口启用，费用、实际地貌及双层一次性收据已原生保存。[工程](../reports/engineering_world_runtime_2026-11-11.md)
+- [ ] 造境平台的原生两阶段施工、自然研究抽取、实际殖民、极地方案实点与最终造境档的再次冷载留在后续代表检查。
+- [ ] 第十三章核心节点旧档已实际进入阶段0，但定位选项缺失。先从已保存2228.07.04副本排查候选查询，再验预警、隔离付款和自然月检。[问题现场](../reports/core_runtime_checkpoint_2026-11-11.md)
 
 ## 旗舰外观与首轮实弹证据
 
