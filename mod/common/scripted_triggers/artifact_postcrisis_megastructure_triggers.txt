@@ -11,7 +11,8 @@ artifact_postcrisis_world_former_target = {
 	planet_size >= 10
 	planet_size <= 30
 	is_colony = no
-	is_under_colonization = no
+	# 4.5.4无殖民地的荒芜载体不满足直接no判定；否定正在殖民，仍排除实际殖民中的目标。
+	NOT = { is_under_colonization = yes }
 	is_terraforming = no
 	is_moon = no
 	has_anomaly = no

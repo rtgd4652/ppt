@@ -45,7 +45,7 @@ class World(calibration.World):
         for p in self.planets.values(): p['pc'] = 'pc_continental'
         self.target = self.add_planet('Empty', system='T')
         self.target.update(owner=None, controller=None, colony=False, pc='pc_barren', size=20,
-            deposits=set(), moon=False, anomaly=False, terraforming=False, colonizing=False, surveyed=True)
+            deposits=set(), moon=False, anomaly=False, terraforming=False, colonizing=None, surveyed=True)
         self.target['flags'].clear()
         self.mega = dict(kind='megastructure', id='M', owner=self.a, planet=self.target,
             solar_system=self.systems['T'], type=LIVE, flags=set())
@@ -68,9 +68,11 @@ class World(calibration.World):
             return obj['size'] >= float(v) if k.endswith('ge') else obj['size'] <= float(v)
         if k == 'num_deposits': return len(obj['deposits']) == int(v)
         if k == 'is_megastructure_type': return obj['type'] == v
-        if k in ('is_moon', 'has_anomaly', 'is_terraforming', 'is_under_colonization'):
-            return obj[dict(is_moon='moon', has_anomaly='anomaly', is_terraforming='terraforming',
-                            is_under_colonization='colonizing')[k]] == (v == 'yes')
+        if k == 'is_under_colonization':
+            # 4.5.4实机：没有殖民地的荒芜载体不满足该判定的no分支；不能用False代替缺少殖民地。
+            return obj['colonizing'] is not None and obj['colonizing'] == (v == 'yes')
+        if k in ('is_moon', 'has_anomaly', 'is_terraforming'):
+            return obj[dict(is_moon='moon', has_anomaly='anomaly', is_terraforming='terraforming')[k]] == (v == 'yes')
         if k == 'is_surveyed': return obj['surveyed'] == (scalar(v, 'status') == 'yes')
         if k == 'is_inside_border': return obj['owner'] is self.resolve(v, stack)
         if k == 'any_owned_megastructure':
@@ -111,6 +113,20 @@ class World(calibration.World):
 
 
 class PostcrisisMegastructureTests(unittest.TestCase):
+    def test_empty_carrier_passes_but_colonizing_or_occupied_world_stays_excluded(self):
+        w = World()
+        # 真实达恩加III没有殖民地；旧no写法在引擎中为假，仍应允许安全荒芜目标。
+        self.assertFalse(w.condition(parse('is_under_colonization = no'), [w.target]))
+        self.assertTrue(w.condition(TRIGGERS['artifact_postcrisis_world_former_target'], [w.target]))
+        # 单独隔离殖民中状态，避免仅靠owner/is_colony门禁令该断言意外通过。
+        w.target['colonizing'] = True
+        self.assertFalse(w.use()); w.force()
+        self.assertEqual(w.target['pc'], 'pc_barren')
+        self.assertNotIn('apm_world_formed', w.mega['flags'])
+        # 已完成且已有拥有者的世界也不能因此被覆盖。
+        w.target.update(colonizing=False, colony=True, owner=w.a)
+        self.assertFalse(w.use())
+
     def test_shared_knowledge_guards_research_and_forced_effect_without_personal_identity(self):
         w = World(); self.assertTrue(w.candidate())
         for flag in VICTORY:
