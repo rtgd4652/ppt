@@ -14,6 +14,8 @@ decision_aemusa_choose_world_former_climate = {
 					save_event_target_as = apm_p04_applicant
 					random_owned_megastructure = {
 						limit = {
+							# 决议预览尚未执行上方捕获；缺少目标时不解引用，实际报价仍绑定原星球。
+							exists = event_target:apm_p04_planet
 							artifact_postcrisis_world_former_ready = yes
 							planet = { is_same_value = event_target:apm_p04_planet }
 						}

@@ -113,6 +113,26 @@ class ClimateTests(unittest.TestCase):
         self.enterContext(patch.dict(shared.EFFECTS, EFFECTS))
         self.w = World(self.history)
 
+    def test_decision_preview_does_not_dereference_an_uncaptured_planet(self):
+        w = self.w
+        action = child(child(child(DECISION, 'effect'), 'hidden_effect'), 'if')
+        selection = child(child(child(action, 'from'), 'random_owned_megastructure'), 'limit')
+        native_term = w.term
+
+        def reject_missing_target(entry, stack):
+            # 对应实机悬停时的Undefined event target；exists查询自身仍允许返回False。
+            if entry.key == 'is_same_value' and entry.value == 'event_target:apm_p04_planet':
+                self.assertIsNotNone(w.resolve(entry.value, stack), '预览解引用了尚未捕获的星球')
+            return native_term(entry, stack)
+
+        with patch.object(w, 'term', side_effect=reject_missing_target):
+            self.assertFalse(w.condition(selection, [w.target, w.a, w.mega]))
+            w.local['apm_p04_planet'] = w.target
+            self.assertTrue(w.condition(selection, [w.target, w.a, w.mega]))
+            other, _ = w.add_second_platform()
+            w.local['apm_p04_planet'] = other
+            self.assertFalse(w.condition(selection, [w.target, w.a, w.mega]))
+
     def test_personal_technology_and_public_knowledge_are_both_required_for_the_decision(self):
         self.assertEqual(scalar(TECHNOLOGY, 'area'), 'physics')
         self.assertEqual(scalar(TECHNOLOGY, 'tier'), '5')
