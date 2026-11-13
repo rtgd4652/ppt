@@ -189,6 +189,34 @@ def active_anchor():
 
 
 class Awp06CrisisStateTests(unittest.TestCase):
+    def test_locate_stays_visible_and_rechecks_candidates_without_resetting_history(self):
+        ledger = ExclusiveLedger()
+        ledger.effect("aemusa_ms_exclusive_initialize")
+        ledger.variables.update({PREFIX + "anchors_archived": 1, PREFIX + "anchor_losses": 1,
+                                 PREFIX + "anchor_pressure": 5})
+        ledger.flags.update(PREFIX + name for name in (
+            "exclusive_laboratory_verified", "exclusive_public_response_ready"))
+        ledger.external_conditions["aemusa_ms_has_anchor_candidate"] = False
+        self.assertTrue(ledger.open("aemusa_exclusive.20"))
+        option = ledger.option("aemusa_exclusive.20", "locate")
+        self.assertTrue(ledger.condition(child(option, "trigger")))
+        self.assertFalse(ledger.condition(child(option, "allow")))
+        before = ledger.snapshot()
+        ledger.choose("aemusa_exclusive.20", "locate")
+        self.assertEqual(ledger.snapshot(), before)
+
+        # 外部候选条件恢复后，重开页面即重查；不缓存失败或清空已有进度。
+        ledger.external_conditions["aemusa_ms_has_anchor_candidate"] = True
+        self.assertTrue(ledger.open("aemusa_exclusive.20"))
+        self.assertTrue(ledger.condition(child(option, "trigger")))
+        self.assertTrue(ledger.condition(child(option, "allow")))
+        self.assertEqual(ledger.snapshot(), before)
+
+        # 窗口打开后再次失去候选，旧选项也不能越过实际写入守卫。
+        ledger.external_conditions["aemusa_ms_has_anchor_candidate"] = False
+        ledger.choose("aemusa_exclusive.20", "locate")
+        self.assertEqual(ledger.snapshot(), before)
+
     def test_unreachable_pre_warning_target_can_relocate_but_recovery_cannot(self):
         ledger = ExclusiveLedger()
         ledger.effect("aemusa_ms_exclusive_initialize")

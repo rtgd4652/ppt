@@ -157,7 +157,13 @@ country_event = {
 				which = aemusa_ms_country_anchor_stage
 				value = 0
 			}
-			aemusa_ms_has_anchor_candidate = yes
+		}
+		# 无合格目标或旗舰无路可达时保留入口；每次打开按当前候选重查。
+		allow = {
+			custom_tooltip = {
+				fail_text = aemusa_exclusive.20.locate.requirement
+				aemusa_ms_has_anchor_candidate = yes
+			}
 		}
 		hidden_effect = {
 			if = {
