@@ -1,12 +1,12 @@
 # PROJECT_STATUS
 
-更新于 2026-11-13。接手以[当前交接](../HANDOFF.md)和[执行清单](TODO.md)为准。阶段验收遵循[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。早期资料见[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)。
+更新于 2026-11-14。接手以[当前交接](../HANDOFF.md)和[执行清单](TODO.md)为准。阶段验收遵循[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。早期资料见[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)。
 
 ## 当前任务与交付层级
 
 | 交付项 | 源码与证据 |
 | --- | --- |
-| 最终 Boss | 定位缺失的原因是旧舰实际不可达。航路提示已修复并实显；隔离副本受控搬移原舰后，已通过正式选择器进入阶段10并保存，下一步验证预警、隔离付款与自然月检。[实机结论](../reports/core_candidate_resolution_2026-11-13.md) |
+| 最终 Boss | 定位航路已查清并补提示。已实点预警与隔离，实际扣300能源/150矿物，自然月检0→1→2并关闭额外压力关联；误报停运的文字已修。90天到期、成锚压力与最终冷载待验。[本轮实机](../reports/core_isolation_runtime_2026-11-14.md) |
 | 私人旗舰 | 4.5.3 实拍三个镜头尺度和 16T 齐射。银紫细束保留中央星空，两个样例均获胜。旧六 L 舰受控瘫痪后同船、同队、同星系即时复原。彻底移除后从联络处只补一艘 16T。[实拍](../reports/flagship_volley_2026-11-10.md) · [旧档兼容](../reports/flagship_legacy_recovery_2026-11-10.md) |
 | 战后与结局 | 白夜馆交接已实点；本日再由正常定位按钮前往真实馆址，执行解译，精确支付500能源、200消费品和20小型文物，永久知识已冷载确认。[工程实机](../reports/engineering_world_runtime_2026-11-11.md) |
 | 独立个人研究 | P01 比较工坊方案，P02 对在途营建付费改选。P04 通过具体平台环绕的星球选择干旱或极地配方，普通大陆造境继续开放。P03 按用户 11 月 10 日决定暂缓。[P02](../reports/aemusa_project_reconfiguration_2026-11-10.md) · [P04](../reports/aemusa_world_former_climates_2026-11-10.md) |
