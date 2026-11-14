@@ -559,9 +559,10 @@ class LinkedCoreAnchorTests(unittest.TestCase):
 
         self.assertEqual(status(), "aemusa_exclusive_link_open")
         ledger.choose("aemusa_exclusive.25", "isolate")
-        self.assertEqual(status(), "aemusa_exclusive_link_working")
+        self.assertEqual(status(), "aemusa_exclusive_link_ordered")
+        # 本地化只显示委托账本；真实停运不会撤销委托，是否推进仍由月检判断。
         ledger.external_conditions["aemusa_ms_baseline_operational"] = False
-        self.assertEqual(status(), "aemusa_exclusive_link_paused")
+        self.assertEqual(status(), "aemusa_exclusive_link_ordered")
         ledger.external_conditions["aemusa_ms_baseline_operational"] = True
         for _ in range(2):
             ledger.effect("aemusa_ms_exclusive_monthly_update")

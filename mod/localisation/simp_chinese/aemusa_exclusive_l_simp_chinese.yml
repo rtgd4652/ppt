@@ -70,7 +70,6 @@
  aemusa_exclusive_isolate_hint:0 "现实基线枢纽须在运行中。调拨物资后，枢纽用两次有效月度核对隔离此处，预警期间即可开工。已经取得「$aci_signal_identified$」的帝国只需再核对一次。枢纽停运时保留进度。隔离完成后截断关联带来的额外压力，舰队仍须清除投影。"
  aemusa_exclusive_link_defeated:0 "舰队已击破投影，关联压力已截断"
  aemusa_exclusive_link_isolated:0 "枢纽已完成隔离，关联压力已截断"
- aemusa_exclusive_link_working:0 "枢纽正在隔离关联，已核对 [Root.aemusa_ms_country_anchor_isolation_ticks]/2"
- aemusa_exclusive_link_paused:0 "枢纽停运，隔离进度保留在 [Root.aemusa_ms_country_anchor_isolation_ticks]/2"
+ aemusa_exclusive_link_ordered:0 "已委托枢纽隔离关联，已核对 [Root.aemusa_ms_country_anchor_isolation_ticks]/2。枢纽运行时才推进，停运时保留进度"
  aemusa_exclusive_link_open:0 "跨节点关联仍在，枢纽尚未开始隔离"
  aemusa_exclusive_relocate_hint:0 "仅适用于尚未公开预警的失效、失控目标，或可用旗舰没有航路抵达的目标。撤销该处测量记录并返回待定位；公共响应、独立复核和既有损失保留。旗舰暂时恢复中不构成重选理由，已公开的预警不能借此重置。"
