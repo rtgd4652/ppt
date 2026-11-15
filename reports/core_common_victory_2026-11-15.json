@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-15",
+  "game_date": "2231.10.11",
+  "native_save": "temp/core_success_20261115/profile/save games/_-258619271/2231.10.11.sav",
+  "bytes": 1487287,
+  "zip_integrity": "pass",
+  "backup": "temp/core_success_20261115/evidence/common_victory_2231.10.11.sav",
+  "country": 0,
+  "state": {
+    "anchor_stage": 40,
+    "anchor_result": 1,
+    "anchor_pressure": 2,
+    "anchor_losses": 0,
+    "anchor_analysis_ticks": 3,
+    "anchors_archived": 3,
+    "anchors_liberated": 3,
+    "projections_defeated": 3,
+    "chapter_index": 14,
+    "act_index": 5
+  },
+  "exclusive_phase_index": 60,
+  "confirmed_flags": [
+    "aemusa_ms_country_anchor_3_liberated",
+    "aemusa_ms_country_exclusive_future_reopened",
+    "aemusa_ms_crisis_exclusive_completed",
+    "aemusa_ms_crisis_exclusive_settled",
+    "aemusa_ms_country_settlement_exclusive_crisis_victory_done",
+    "aemusa_ms_crisis_anchor_result_ledger_locked",
+    "aemusa_ms_country_settlement_anchor_results_done",
+    "aemusa_ms_country_chapter_13_completed",
+    "aemusa_ms_country_settlement_chapter_13_done",
+    "aemusa_ms_country_act_05_completed",
+    "aemusa_ms_country_settlement_act_05_done"
+  ],
+  "engineering_completed_date": "2231.08.03",
+  "liberated_archived_and_settled_date": "2231.10.11",
+  "user_actions": "用户正式登记工程；助手从情报日志启动并核对30天回调，正常点解放归档；未来重开、胜利结算、代价记录和原生保存由用户完成。",
+  "chapter14_review": "not_started",
+  "final_identity_decision": "not_set_by_crisis_settlement",
+  "post_save_game_reload": "pending",
+  "gui_block": "自动审批服务额度耗尽，未来重开的自动点击未执行；后续未重试或绕过。"
+}
