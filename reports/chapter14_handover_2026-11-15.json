@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-15",
+  "game_date": "2231.10.11",
+  "save": "temp/core_success_20261115/profile/save games/_-258619271/2231.10.11.sav",
+  "bytes": 1487759,
+  "backup": "temp/core_success_20261115/evidence/chapter14_public_review_2231.10.11.sav",
+  "zip_integrity": "pass",
+  "state": {
+    "finale_disclosure_index": 2,
+    "chapter_index": 14,
+    "anchor_losses": 0,
+    "anchors_archived": 3,
+    "anchors_liberated": 3,
+    "projections_defeated": 3
+  },
+  "flags": {
+    "aemusa_ms_country_cluster_aed_14_00_settled": true,
+    "aemusa_ms_country_cluster_aed_14_10_settled": true,
+    "aemusa_ms_country_cluster_aed_14_20_settled": true,
+    "aemusa_ms_truth_civilization_facts_settled": true,
+    "aemusa_ms_truth_fate_is_impersonal_confirmed": true,
+    "aemusa_ms_truth_boundary_layers_locked": true,
+    "aemusa_ms_truth_open_mysteries_locked": true
+  },
+  "aemusa_base_level": 11,
+  "handover_display": "用户确认3击破/3归档/3解放/0损失，正式交接入口及返回有日志",
+  "current_page": "用户确认私人谈话之前",
+  "chapter14_completed": false,
+  "personal_identity_decision": "not_made",
+  "reload": "pending"
+}
