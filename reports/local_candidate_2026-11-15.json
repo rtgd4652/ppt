@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-15",
+  "revision": "3607460b4da2f49296500392adefaf5093d57d26",
+  "package": "temp/local_mod_candidates/aemusa_artifact_user-candidate-3607460b4da2.zip",
+  "bytes": 32441487,
+  "game_files": 621,
+  "trial": "temp/候选试装 2026-11-15 3607460b4da2",
+  "unpacked_bytes_match": true,
+  "registration_resolves": true,
+  "p03_files": [
+    "common/component_templates/aemusa_fate_escort_components.txt",
+    "common/scripted_triggers/aemusa_fate_hull_triggers.txt",
+    "common/section_templates/aemusa_fate_escort_sections.txt",
+    "common/ship_sizes/aemusa_fate_escort.txt",
+    "common/technology/aemusa_fate_hull_technology.txt",
+    "localisation/simp_chinese/aemusa_fate_hull_l_simp_chinese.yml"
+  ],
+  "static_status": "pass",
+  "errors": 0,
+  "warnings": 0,
+  "counts": {
+    "script_files": 298,
+    "events": 270,
+    "localization_keys": 2397,
+    "registered_states": 795,
+    "referenced_states": 738
+  },
+  "installed": false,
+  "game_started": false,
+  "limitations": "本地候选与解包检查；P03设计器/造舰/改装、平衡、独立美术及完整1.0仍待验收。"
+}
