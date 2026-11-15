@@ -71,8 +71,10 @@ function Assert-CurrentGame {
     }
 }
 Assert-CurrentGame
-if (([int][StellarisWindowClick]::GetAsyncKeyState(0x01) -band 0x8000) -ne 0) {
-    throw 'Left mouse button already held; no pointer input sent.'
+# 用户按住任一鼠标键时不接管指针，避免与拖动或右键操作交错。
+if ((([int][StellarisWindowClick]::GetAsyncKeyState(0x01) -band 0x8000) -ne 0) -or
+    (([int][StellarisWindowClick]::GetAsyncKeyState(0x02) -band 0x8000) -ne 0)) {
+    throw 'A physical mouse button is already held; no pointer input sent.'
 }
 $referenceFile = Get-Item -LiteralPath $ReferenceImage -ErrorAction Stop
 if (([DateTime]::UtcNow - $referenceFile.LastWriteTimeUtc).TotalSeconds -gt $MaxReferenceAgeSeconds) {
