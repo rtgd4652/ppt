@@ -1,12 +1,12 @@
 # PROJECT_STATUS
 
-更新于 2026-11-14。接手以[当前交接](../HANDOFF.md)和[执行清单](TODO.md)为准。阶段验收遵循[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。早期资料见[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)。
+更新于 2026-11-15。接手以[当前交接](../HANDOFF.md)和[执行清单](TODO.md)为准。阶段验收遵循[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。早期资料见[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)。
 
 ## 当前任务与交付层级
 
 | 交付项 | 源码与证据 |
 | --- | --- |
-| 最终 Boss | 定位、预警、隔离实付与自然月检、90天成锚和压力已验。后续真实投影战斗、30天勘查、解析3/3及失败归档通过；因测试暂停不及时导致恒定过期，当前归档2、解放1、损失1，成功解除/解放仍未验。已原生保存2230.12.02，第三节点与完整终局尚未完成。[隔离](../reports/core_isolation_runtime_2026-11-14.md) · [战斗与归档](../reports/core_battle_field_archive_runtime_2026-11-14.md) |
+| 最终 Boss | 定位、预警、隔离实付与自然月检、90天成锚和压力已验。真实投影战斗、30天勘查、解析3/3及失败归档已有证据；11月15日从未失控战后副本补齐正常30天解除工程、成功解放和归档，当前归档2、解放2、损失0，已原生保存2230.04.02。失败分支独立保留，归档后实际载回、第三节点和完整终局待验。[隔离](../reports/core_isolation_runtime_2026-11-14.md) · [战斗与失败归档](../reports/core_battle_field_archive_runtime_2026-11-14.md) · [成功分支](../reports/core_success_runtime_2026-11-15.md) |
 | 私人旗舰 | 4.5.3 实拍三个镜头尺度和 16T 齐射。银紫细束保留中央星空，两个样例均获胜。旧六 L 舰受控瘫痪后同船、同队、同星系即时复原。彻底移除后从联络处只补一艘 16T。[实拍](../reports/flagship_volley_2026-11-10.md) · [旧档兼容](../reports/flagship_legacy_recovery_2026-11-10.md) |
 | 战后与结局 | 白夜馆交接已实点；本日再由正常定位按钮前往真实馆址，执行解译，精确支付500能源、200消费品和20小型文物，永久知识已冷载确认。[工程实机](../reports/engineering_world_runtime_2026-11-11.md) |
 | 独立个人研究 | P01 比较工坊方案，P02 对在途营建付费改选。P04 通过具体平台环绕的星球选择干旱或极地配方，普通大陆造境继续开放。P03 按用户 11 月 10 日决定暂缓。[P02](../reports/aemusa_project_reconfiguration_2026-11-10.md) · [P04](../reports/aemusa_world_former_climates_2026-11-10.md) |

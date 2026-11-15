@@ -1,0 +1,49 @@
+{
+  "recorded_on": "2026-11-15",
+  "production_head": "06bb7fd",
+  "version": "Cygnus v4.5.4",
+  "game_date": "2230.04.02",
+  "country_id": 0,
+  "native_save": "temp/core_success_20261115/profile/save games/_-258619271/2230.04.02.sav",
+  "native_save_bytes": 1475002,
+  "native_save_zip_integrity": "pass",
+  "independent_backup": "temp/core_success_20261115/evidence/success_archived_2230.04.02.sav",
+  "save_state": {
+    "anchor_stage": 40,
+    "anchor_result": 1,
+    "anchor_pressure": 8,
+    "anchor_losses": 0,
+    "anchor_analysis_ticks": 3,
+    "anchor_isolation_ticks": 2,
+    "anchors_archived": 2,
+    "anchors_liberated": 2,
+    "projections_defeated": 2
+  },
+  "country_flags": {
+    "anchor_battle_won": true,
+    "anchor_field_evidence": true,
+    "anchor_engineering_completed": true,
+    "anchor_2_liberated": true,
+    "anchor_stabilization_window": true
+  },
+  "original_science_ship": {
+    "ship_id": 1,
+    "fleet_id": 1,
+    "leader_id": 301989892
+  },
+  "original_flagship": {
+    "ship_id": 16777294,
+    "fleet_id": 16777259
+  },
+  "runtime_evidence": {
+    "field_completed": "2229.11.02",
+    "analysis_three_ticks": "2230.02.02",
+    "engineering_completed": "2230.03.02",
+    "liberated_and_archived": "2230.04.02",
+    "source": "生产项目回调和正常节点选项"
+  },
+  "controlled_setup": "原样复制战后存档，仅部署已有科研舰队并保留原科学家。私有驱动不写入项目完成、解析、解放或归档结果。",
+  "saved_by": "守卫拒绝自动点击后，由用户从原生保存框完成",
+  "post_archive_reload": "待验；文件核对不等于游戏实际载回",
+  "complete_crisis": false
+}
