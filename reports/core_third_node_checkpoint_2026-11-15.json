@@ -1,0 +1,48 @@
+{
+  "recorded_on": "2026-11-15",
+  "game_date": "2230.05.06",
+  "country_id": 0,
+  "version": "Cygnus v4.5.4",
+  "native_save": "temp/core_success_20261115/profile/save games/_-258619271/2230.05.06.sav",
+  "native_save_bytes": 1469950,
+  "native_save_zip_integrity": "pass",
+  "independent_backup": "temp/core_success_20261115/evidence/third_survey_completed_2230.05.06.sav",
+  "save_state": {
+    "anchor_stage": 10,
+    "anchor_result": 0,
+    "anchor_pressure": 0,
+    "anchor_losses": 0,
+    "anchor_analysis_ticks": 0,
+    "anchor_isolation_ticks": 2,
+    "anchors_archived": 2,
+    "anchors_liberated": 2,
+    "projections_defeated": 2
+  },
+  "country_flags": {
+    "anchor_baseline_recorded": true,
+    "anchor_warning_active": false,
+    "anchor_isolation_ordered": false,
+    "anchor_battle_won": false,
+    "anchor_field_evidence": false,
+    "anchor_engineering_completed": false
+  },
+  "current_target_planet": 300,
+  "current_target_system": 440,
+  "system_name_displayed": "泽德拉",
+  "original_science_ship": {
+    "ship_id": 1,
+    "fleet_id": 1,
+    "leader_id": 301989892
+  },
+  "original_flagship": {
+    "ship_id": 16777294,
+    "fleet_id": 16777259
+  },
+  "survey_started": "2230.04.02",
+  "survey_completed": "2230.05.02",
+  "controlled_setup": "用户执行单行命令，只部署原旗舰和原科研船到生产选择器选定的第三节点，保留原科学家。",
+  "isolation_note": "计数2为前一节点遗留值；当前隔离订单旗不存在，不能据此认定第三节点已付费隔离。",
+  "runtime_pause_confirmed": true,
+  "post_checkpoint_reload": "pending",
+  "next_action": "从白夜馆主线重新打开专属危机准备页，发布正式90天预警并安排本节点隔离。"
+}

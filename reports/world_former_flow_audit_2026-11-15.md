@@ -1,0 +1,29 @@
+# 造境平台正常流程核对（2026-11-15）
+
+基线为 `c87691f`，对照本机《群星》4.5.4原版脚本与巨构接口说明。沿研究、正常建设、升级、配方及完成收据检查，**未发现需要补写或修正的阻断性代码缺口**。本次只增加此报告，不修改生产脚本，不操作游戏或存档；正常施工、自然研究抽取、极地方案实点和实际殖民仍待代表试玩。
+
+## 调用链与结论
+
+| 环节 | 现有实现与核对结果 |
+| --- | --- |
+| 公共研究 | [F08科技](../mod/common/technology/artifact_postcrisis_megastructure_technology.txt)为工程五阶、18000研究、权重100，前置F06解译研究及E11星系协同；还要具备共同胜利与永久解译知识。F06不要求尚未取得的F08，永久解译由已有档案馆决议提供，没有循环前置。公共线不依赖个人转变或P03。 |
+| 基址选址 | [两阶段定义](../mod/common/megastructures/artifact_postcrisis_megastructures.txt)与[现场条件](../mod/common/scripted_triggers/artifact_postcrisis_megastructure_triggers.txt)核对本国受控星系、已调查的10～30规模荒芜/寒冷荒芜非卫星；排除殖民、改造、矿藏、异常、遗址、旧危机锚点和其他占位。本国已有该家族实体时拒绝新订单；施工互斥交给原生 `self_type`。 |
+| 正常升级 | 基址180天、5000合金和2000能源；运行态升级360天、10000合金和5000能源。升级通过 `upgrade_from` 接续同一实体；目标复核不排除本平台自己留下的 `has_megastructure`，也不重用“本国尚无平台”的新订单条件，不会因基址已存在而自行锁死。完工只登记占位，不提前造境。 |
+| 公共启用 | [一天法令](../mod/common/edicts/artifact_postcrisis_megastructure_edicts.txt)与[实效](../mod/common/scripted_effects/artifact_postcrisis_megastructure_effects.txt)均复核知识、运行态、星系控制和目标；一次处理一个合格实体，变为普通大陆并添加三项地貌。启用不额外收费，兼并平台不会赠送原国家的知识。 |
+| 个人气候 | [P04决议](../mod/common/decisions/aemusa_personal_world_former_decisions.txt)从实际目标星球打开报价，[确认守卫](../mod/common/scripted_triggers/aemusa_personal_world_former_triggers.txt)绑定原国家、原平台、原星球和原星系。P04研究前置P01及合法个人结局；实施时另需公共F08能力。干旱与极地分别追加1500能源及100水晶/气体，公共大陆仍独立可用。 |
+| 完成与殖民 | 三种配方共用平台和星球的 `apm_world_formed` 收据，重复或旧窗口不能再次消费；只清理本平台留下的占位。转换不创建人口、殖民地或星球拥有者。平台保留、运行维护25能源/月，后续定居交由正常殖民。 |
+
+原生接口依据为安装目录中的 `common/megastructures/99_README_MEGASTRUCTURES.txt`：`potential`为国家作用域，`possible`为星系作用域、`from`为国家、升级时`fromfrom`为实体，完工回调也以`fromfrom`提供实体。省略`build_type`时默认`around_planet`，当前定义与这些契约一致。实际建造队列、收费、维护和回调仍需引擎观察，源码核对不能替代。
+
+极地方案使用原版 `pc_arctic`，该类别可殖民；`d_geothermal_vent`、`d_rich_mountain`、`d_lichen_fields`均明确支持该类别，分别提供3发电、3采矿、1农业区划容量。依据为原版 `common/planet_classes/00_planet_classes.txt` 与 `common/deposits/01_planetary_deposits.txt`。本次未变更地貌或文案。
+
+## 复用证据与下一次代表试玩
+
+[11月11日实机记录](engineering_world_runtime_2026-11-11.md)已经证明公共大陆、P04干旱、实际追加扣费、双层一次性收据及可殖民界面。此前6项F08与7项P04定向检查也已覆盖正常/非法目标、升级条件、重复消费、占领、转手与旧报价；本轮源码未变，直接复用，不重复运行这13项或整套历史回归。
+
+下一段只需合并两类观察：
+
+1. 由建造船正常下单一个安全目标，观察基址完工后可升级，再由正常升级得到运行态；在同一平台使用尚未实点的极地配方，核对可殖民状态并接正常殖民。工程费用和维护随这次过程核对即可，不逐窗另存。可以使用隔离备料或加速，但必须记录，不能将直接生成完成态平台算作正常施工通过。
+2. 在正常续玩时观察F08/P04研究选项及保存后保持。五阶领域条件、各自前置与剧情资格需真实满足；随机选项一次没出现不能直接判为缺失解锁。顺带载回同一个关键结果档，避免单独为每项重启。
+
+平台已使用后仍占用本国“已有一处平台”的建造名额，这是当前规格与代码一致的有限奖励设计，不在此次核对中擅自改成可循环扩产。独立跨星系巨构原型保持原状态。
