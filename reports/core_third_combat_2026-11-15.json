@@ -1,0 +1,32 @@
+{
+  "date": "2026-11-15",
+  "game_date": "2230.08.16",
+  "native_save": "temp/core_success_20261115/profile/save games/_-258619271/2230.08.16.sav",
+  "bytes": 1485248,
+  "zip_integrity": "pass",
+  "state": {
+    "anchor_stage": 30,
+    "anchor_pressure": 0,
+    "anchor_losses": 0,
+    "anchors_archived": 2,
+    "anchors_liberated": 2,
+    "projections_defeated": 2
+  },
+  "flagship": {
+    "ship": 16777294,
+    "fleet": 16777259,
+    "system": 440,
+    "old_return_order_present": false,
+    "passive_stance_set_by_controlled_command": true
+  },
+  "combat": {
+    "start": "2230.08.09",
+    "enemy_fleet": 16778334,
+    "enemy_owner": null,
+    "both_sides_damage_recorded": true,
+    "victory": false
+  },
+  "position_command_receipt": "AE-THIRD15|POSITIONED",
+  "unknown_command_cause": "unconfirmed; initial console error, short command remained in input until additional Enter; then receipt recorded",
+  "reload": "pending"
+}
