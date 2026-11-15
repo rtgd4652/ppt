@@ -1,0 +1,7 @@
+# 国家作用域。个人设计与核心读取持久的合法终章知识，不读取工业现场。
+# E10定型、E09营建场运营及船坞条件仅在ship_size的possible_construction中单向复用。
+aemusa_fate_hull_available = {
+	aemusa_personal_research_eligible = yes
+	has_technology = "tech_aemusa_fate_hull_interface"
+	country_uses_bio_ships = no
+}

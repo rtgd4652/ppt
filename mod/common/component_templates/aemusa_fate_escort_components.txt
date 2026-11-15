@@ -1,0 +1,135 @@
+# 择途级独立核心闭包。原版反应堆/推进器/战术助手有舰种白名单，不能默认兼容新舰。
+# 只给新舰种提供五类必需部件；不改公共核心、不借用终局旗舰，也不授予个人身份。
+# 工业现场只限制新建订单，停运不会撤去既有设计的核心。普通武器、防护仍按真实研究选装。
+utility_component_template = {
+	key = "AEMUSA_FATE_ESCORT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 3200
+	component_set = "power_core"
+	size_restriction = { aemusa_fate_escort }
+	potential = {
+		is_ship_size = aemusa_fate_escort
+		from = { aemusa_fate_hull_available = yes }
+	}
+	show_tech_unlock_if = { aemusa_personal_research_eligible = yes }
+	prerequisites = { "tech_aemusa_fate_hull_interface" }
+	resources = {
+		category = ship_components
+		cost = { alloys = 650 }
+		upkeep = { energy = 5.5 alloys = 0.65 }
+	}
+	ai_weight = { weight = 10 }
+}
+
+utility_component_template = {
+	key = "AEMUSA_FATE_ESCORT_THRUSTER"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -300
+	component_set = "thruster_components"
+	size_restriction = { aemusa_fate_escort }
+	potential = {
+		is_ship_size = aemusa_fate_escort
+		from = { aemusa_fate_hull_available = yes }
+	}
+	show_tech_unlock_if = { aemusa_personal_research_eligible = yes }
+	prerequisites = { "tech_aemusa_fate_hull_interface" }
+	modifier = {
+		ship_base_speed_mult = 0.6
+		ship_evasion_add = 3
+	}
+	resources = {
+		category = ship_components
+		cost = { alloys = 200 }
+		upkeep = { energy = 1.5 alloys = 0.2 }
+	}
+	ai_weight = { weight = 10 }
+}
+
+# 沿用原生高级超空间航道能力，不添加跳跃、瞬移或私有航路状态。
+utility_component_template = {
+	key = "AEMUSA_FATE_ESCORT_HYPER_DRIVE"
+	size = small
+	icon = "GFX_ship_part_hyper_drive_3"
+	icon_frame = 1
+	power = -50
+	component_set = "ftl_components"
+	size_restriction = { aemusa_fate_escort }
+	ftl = yes
+	potential = {
+		is_ship_size = aemusa_fate_escort
+		from = { aemusa_fate_hull_available = yes }
+	}
+	show_tech_unlock_if = { aemusa_personal_research_eligible = yes }
+	prerequisites = { "tech_aemusa_fate_hull_interface" }
+	ship_modifier = {
+		ship_disengage_opportunities_add = 1
+		ship_windup_mult = -0.5
+	}
+	resources = {
+		category = ship_components
+		cost = { alloys = 80 }
+		upkeep = { energy = 0.5 alloys = 0.08 }
+	}
+	ai_weight = { weight = 10 }
+}
+
+utility_component_template = {
+	key = "AEMUSA_FATE_ESCORT_SENSOR"
+	size = medium
+	icon = "GFX_ship_part_sensor_4"
+	icon_frame = 1
+	power = -20
+	component_set = "sensor_components"
+	size_restriction = { aemusa_fate_escort }
+	sensor_range = 4
+	hyperlane_range = 5
+	potential = {
+		is_ship_size = aemusa_fate_escort
+		from = { aemusa_fate_hull_available = yes }
+	}
+	show_tech_unlock_if = { aemusa_personal_research_eligible = yes }
+	prerequisites = { "tech_aemusa_fate_hull_interface" }
+	ship_modifier = { ship_tracking_add = 15 }
+	resources = {
+		category = ship_components
+		cost = { alloys = 40 }
+		upkeep = { energy = 0.25 alloys = 0.04 }
+	}
+	ai_weight = { weight = 1000 }
+}
+
+# 计算可执行的射击时机与接敌距离；只有有界的本舰修正，不改写战斗结果或舰队命运。
+utility_component_template = {
+	key = "AEMUSA_FATE_ESCORT_COMPUTER"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_advanced"
+	icon_frame = 1
+	power = -25
+	component_set = "combat_computers"
+	size_restriction = { aemusa_fate_escort }
+	ship_behavior = "artillery"
+	upgrade_path = artillery
+	ai_tags = { artillery }
+	ai_tag_weight = 0
+	potential = {
+		is_ship_size = aemusa_fate_escort
+		from = { aemusa_fate_hull_available = yes }
+	}
+	show_tech_unlock_if = { aemusa_personal_research_eligible = yes }
+	prerequisites = { "tech_aemusa_fate_hull_interface" }
+	ship_modifier = {
+		ship_fire_rate_mult = 0.15
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 5
+	}
+	resources = {
+		category = ship_components
+		cost = { alloys = 80 }
+		upkeep = { energy = 0.75 alloys = 0.08 }
+	}
+	ai_weight = { weight = 10 }
+}

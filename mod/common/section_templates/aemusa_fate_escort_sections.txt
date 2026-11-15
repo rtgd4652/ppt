@@ -1,0 +1,103 @@
+# 择途级独立区段，首版沿用公共三段表现占位。X舰首只复用已存在的XL定位器。
+# 基础6L构型不依赖X武器；主炮构型为1X+4L，不提供新武器科技或任何T槽。
+ship_section_template = {
+	key = "AEMUSA_FATE_ESCORT_BOW"
+	ship_size = aemusa_fate_escort
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "ccv04_runtime_bow_standard_entity"
+	icon = "GFX_ship_part_core_bow"
+	ai_tags = { artillery }
+	ai_weight = { weight = 10 }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+	large_utility_slots = 4
+	resources = { category = ship_sections cost = { alloys = 1000 } }
+}
+
+ship_section_template = {
+	key = "AEMUSA_FATE_ESCORT_SPINAL_BOW"
+	ship_size = aemusa_fate_escort
+	fits_on_slot = bow
+	should_draw_components = yes
+	entity = "ccv04_runtime_bow_spinal_entity"
+	icon = "GFX_ship_part_core_bow"
+	ai_tags = { artillery }
+	# 沿用4.5.4原版战列舰的X槽研究列表，不把P03视为已研究任一主炮。
+	prerequisites = {
+		OR = {
+			"tech_energy_lance_1"
+			"tech_energy_lance_2"
+			"tech_arc_emitter_1"
+			"tech_arc_emitter_2"
+			"tech_mass_accelerator_1"
+			"tech_mass_accelerator_2"
+			"tech_archaeo_mass_accelerator"
+		}
+	}
+	ai_weight = {
+		weight = 20
+		modifier = { factor = 0 has_no_valid_xl_weapon = yes }
+	}
+	component_slot = {
+		name = "EXTRA_LARGE_01"
+		template = "invisible_extra_large_fixed"
+		locatorname = "xl_gun_01"
+	}
+	large_utility_slots = 3
+	resources = { category = ship_sections cost = { alloys = 1200 } }
+}
+
+ship_section_template = {
+	key = "AEMUSA_FATE_ESCORT_MID"
+	ship_size = aemusa_fate_escort
+	fits_on_slot = mid
+	should_draw_components = yes
+	entity = "ccv04_runtime_mid_artillery_entity"
+	icon = "GFX_ship_part_core_mid"
+	ai_tags = { artillery }
+	ai_weight = { weight = 10 }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	component_slot = {
+		name = "LARGE_GUN_02"
+		template = "large_turret"
+		locatorname = "large_gun_02"
+	}
+	component_slot = {
+		name = "LARGE_GUN_03"
+		template = "large_turret"
+		locatorname = "large_gun_03"
+	}
+	large_utility_slots = 4
+	resources = { category = ship_sections cost = { alloys = 1000 } }
+}
+
+ship_section_template = {
+	key = "AEMUSA_FATE_ESCORT_STERN"
+	ship_size = aemusa_fate_escort
+	fits_on_slot = stern
+	should_draw_components = yes
+	entity = "ccv04_runtime_stern_entity"
+	icon = "GFX_ship_part_core_stern"
+	ai_tags = { artillery }
+	ai_weight = { weight = 10 }
+	component_slot = {
+		name = "LARGE_GUN_01"
+		template = "large_turret"
+		locatorname = "large_gun_01"
+	}
+	aux_utility_slots = 2
+	resources = { category = ship_sections cost = { alloys = 800 } }
+}

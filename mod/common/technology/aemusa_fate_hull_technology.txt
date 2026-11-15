@@ -1,0 +1,11 @@
+# P03 是合法终章后的个人舰体研究。公共舰体知识只在实际建造时核对，不反向锁住公共路线。
+tech_aemusa_fate_hull_interface = {
+	area = engineering
+	tier = 5
+	category = { voidcraft }
+	cost = 18000
+	weight = 100
+	icon = "tech_artifact_destiny_lord"
+	prerequisites = { "tech_aemusa_possibility_branch_modeling" }
+	potential = { aemusa_personal_research_eligible = yes }
+}

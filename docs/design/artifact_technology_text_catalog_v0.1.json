@@ -2544,6 +2544,32 @@
       ]
     },
     {
+      "id": "P03",
+      "name": "命运舰体接口",
+      "key": "tech_aemusa_fate_hull_interface",
+      "knowledge_layer": "mod_design_decision",
+      "source_groups": ["aemusa_tarot", "artifact_science", "unknown_boundaries"],
+      "source_note": "已只读查七都SQLite术语及对应来源。命运规则沿用项目工作定义，神器与神器使的原作条目仍为under_review；择途级名称、舰体和演算效果为Mod设计，不提升来源审核状态，不复制唯一旗舰或量产个体神器。",
+      "references": [
+        "knowledge/world/cosmology_bible_v0.1.md",
+        "knowledge/curated/decisions/project_editorial_decisions_v0.1.md",
+        "knowledge/characters/aemusa_character_v0.1.md",
+        "knowledge/artifacts/artifact_bible_v0.1.md"
+      ],
+      "lore": "走到命运的顶点之后，爱缪莎仍愿意为同行者留下能够亲自抵达的航路。择途级把她对可能性的判断接入舰载演算，再由舰员、武器和动力系统完成每一次实际行动。",
+      "application": "解锁可自行配装的择途级重舰与五类专用核心。建造仍需中庭级工程定型、运行中的分段营建场，以及擎天堡或完工巨型船坞；武器与防护沿用已有研究。",
+      "technology_file": "mod/common/technology/aemusa_fate_hull_technology.txt",
+      "localisation_file": "mod/localisation/simp_chinese/aemusa_fate_hull_l_simp_chinese.yml",
+      "consumer_files": [
+        "mod/common/ship_sizes/aemusa_fate_escort.txt",
+        "mod/common/section_templates/aemusa_fate_escort_sections.txt",
+        "mod/common/component_templates/aemusa_fate_escort_components.txt",
+        "mod/common/scripted_triggers/aemusa_fate_hull_triggers.txt"
+      ],
+      "runtime_status": "not_run",
+      "model_status": "existing_public_model_placeholder"
+    },
+    {
       "id": "P04",
       "name": "可能性工程接口",
       "key": "tech_aemusa_possibility_engineering_interface",

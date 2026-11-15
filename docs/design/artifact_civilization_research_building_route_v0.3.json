@@ -1635,9 +1635,28 @@
         "prerequisites": [
           "P01"
         ],
-        "capability": "个人专属舰船或核心的研究资格；公共舰体工程可在建造阶段单向核对，不替代现有主线唯一旗舰。",
-        "status": "paused_by_user",
-        "decision_date": "2026-11-10"
+        "capability": "解锁独立择途级重舰、基础6L或可选1X+4L构型及五类专用核心。正常付费建造、改装与承担战损，公共舰体定型及运行工业只在建造时单向核对，不替代主线唯一旗舰。",
+        "implementation_key": "tech_aemusa_fate_hull_interface",
+        "research_cost": 18000,
+        "weight": 100,
+        "consumer": "aemusa_fate_escort",
+        "ship_hull": {
+          "key": "aemusa_fate_escort",
+          "name": "择途级",
+          "naval_capacity": 60,
+          "hull_points": 12000,
+          "base_build_days": 1080,
+          "hull_and_sections_alloys": {"standard": 4800, "spinal": 5000},
+          "core_components": 5,
+          "native_construction": true,
+          "resurrection": false,
+          "model_status": "existing_public_model_placeholder",
+          "balance_status": "initial_values_pending_runtime"
+        },
+        "status": "implemented_static_passed",
+        "runtime_status": "not_run",
+        "decision_date": "2026-11-15",
+        "report": "reports/aemusa_personal_hull_2026-11-15.md"
       },
       {
         "id": "P04",
@@ -1661,7 +1680,7 @@
         "report": "reports/aemusa_world_former_climates_2026-11-10.md"
       }
     ],
-    "difficulty": "P01、P02 及 P04 已有独立实现和源码检查，各节点分别记录实机边界。P03 暂缓。",
+    "difficulty": "P01、P02 及 P04 已有独立实现和源码检查，各节点分别记录实机边界。P03 已恢复为独立择途级舰体并通过源码检查，原生设计、建造、改装及战斗仍待阶段试玩。",
     "asset_boundary": "不计入80项公共研究或27类公共建筑；人物组合不恢复。"
   },
   "buildings": [

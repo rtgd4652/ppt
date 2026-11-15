@@ -1,0 +1,84 @@
+# 择途级：P03 独立个人重舰，走正常设计、付费建造和改装，不取得唯一旗舰的身份或复原权。
+# 首版复用已接入的中庭级实体作表现占位；这是新舰种代码，不是已制作独立舰模。
+aemusa_fate_escort = {
+	entity = "ccv04_strategic_cruiser_entity"
+	use_shipnames_from = battleship
+	use_ai_design_role_from = battleship
+	formation_priority = 50
+	max_speed = 90
+	acceleration = 0.2
+	rotation_speed = 0.12
+	collision_radius = 6
+	max_hitpoints = 12000
+	modifier = { ship_evasion_add = 5 }
+	# 以本机战列舰40、中庭级60、泰坦80容量为基准；正式平衡仍待代表交战。
+	size_multiplier = 60
+	map_counter_icon = ship_counter_64
+	icon = ship_size_military_16
+	fleet_slot_size = 6
+	section_slots = {
+		"bow" = { locator = "part1" }
+		"mid" = { locator = "part2" }
+		"stern" = { locator = "part3" }
+	}
+	num_target_locators = 4
+	is_space_station = no
+	is_designable = yes
+	can_have_federation_design = no
+	base_buildtime = 1080
+	enable_default_design = yes
+	enable_3dview_in_ship_browser = yes
+	default_behavior = artillery
+	role_background = "GFX_role_selection_battleship"
+	ship_roles = { artillery }
+	prerequisites = { "tech_aemusa_fate_hull_interface" }
+	combat_disengage_chance = 1.5
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	potential_country = { aemusa_fate_hull_available = yes }
+	potential_construction = {
+		OR = {
+			is_scope_type = starbase
+			AND = {
+				is_scope_type = megastructure
+				OR = {
+					is_megastructure_type = mega_shipyard_3
+					is_megastructure_type = mega_shipyard_restored
+				}
+			}
+		}
+	}
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = artifact_strategic_hull_requires_yard
+			artifact_strategic_hull_yard_ready = yes
+		}
+		owner = {
+			custom_tooltip = {
+				fail_text = aemusa_fate_hull_requires_personal_research
+				aemusa_fate_hull_available = yes
+			}
+			custom_tooltip = {
+				fail_text = artifact_strategic_hull_requires_qualification
+				artifact_strategic_hull_available = yes
+			}
+			custom_tooltip = {
+				fail_text = artifact_strategic_hull_requires_industry
+				artifact_strategic_hull_industry_ready = yes
+			}
+		}
+	}
+	# 舰体2000加三段1000/1000/800合金，X舰首另加200；武器、防护和必需核心照价计费。
+	resources = {
+		category = ships
+		cost = { alloys = 2000 }
+		upkeep = { energy = 15 alloys = 7.5 }
+		logistics = { trade = 12 }
+	}
+	min_upgrade_cost = { alloys = 12 }
+}
