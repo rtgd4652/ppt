@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-15",
+  "saved_game_date": "2230.10.01",
+  "live_paused_date": "2230.10.07",
+  "native_autosave": "temp/core_success_20261115/profile/save games/_-258619271/autosave_2230.10.01.sav",
+  "independent_backup": "temp/core_success_20261115/evidence/third_victory_autosave_2230.10.01.sav",
+  "bytes": 1484443,
+  "zip_integrity": "pass",
+  "state": {
+    "anchor_stage": 30,
+    "anchor_pressure": 1,
+    "anchor_losses": 0,
+    "anchor_analysis_ticks": 0,
+    "anchors_archived": 2,
+    "anchors_liberated": 2,
+    "projections_defeated": 3
+  },
+  "flags": {
+    "anchor_battle_won": true,
+    "anchor_field_evidence": false,
+    "anchor_stabilization_window": true,
+    "anchor_engineering_completed": false
+  },
+  "victory_callback_date": "2230.09.15",
+  "stabilized_and_field_project_registered": "2230.09.30",
+  "field_project_status": "项目可用；原科研舰队紧急跃迁失踪，尚未下达有效任务",
+  "reload": "pending",
+  "note": "未确认2230.09.30手动档；胜利已保存于2230.10.01原生自动档并另行保全。",
+  "science_fleet": {
+    "id": 1,
+    "stance": "evasive",
+    "mia_type": "mia_emergency_ftl",
+    "return_date": "2230.11.17",
+    "combat_start": "2230.08.06",
+    "combat_system": 440
+  }
+}
