@@ -1,0 +1,31 @@
+{
+  "date": "2026-11-15",
+  "saved_date": "2231.07.01",
+  "live_paused_date": "2231.07.03",
+  "save": "temp/core_success_20261115/profile/save games/_-258619271/autosave_2231.07.01.sav",
+  "bytes": 1482885,
+  "backup": "temp/core_success_20261115/evidence/third_analysis_ready_2231.07.01.sav",
+  "state": {
+    "anchor_stage": 30,
+    "anchor_pressure": 2,
+    "anchor_losses": 0,
+    "anchor_analysis_ticks": 3,
+    "anchors_archived": 2,
+    "anchors_liberated": 2,
+    "projections_defeated": 3
+  },
+  "flags": {
+    "anchor_battle_won": true,
+    "anchor_field_evidence": true,
+    "anchor_stabilization_window": true,
+    "anchor_engineering_completed": false
+  },
+  "field_completed": "2231.03.08",
+  "stabilization_renewed": "2231.04.27",
+  "analysis_readings": [
+    "2231.05.02=1",
+    "2231.06.02=2",
+    "2231.07.02=3"
+  ],
+  "reload": "pending"
+}
