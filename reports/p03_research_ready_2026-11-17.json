@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-17",
+  "game_date": "2231.10.11",
+  "native_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\AE_Finale_Isolated_20261116\\2231.10.11.sav",
+  "bytes": 1504590,
+  "backup": "temp/p03_runtime_20261117/p03_research_ready_2231.10.11.sav",
+  "zip_integrity": "pass",
+  "added_technologies": [
+    "tech_aemusa_fate_hull_interface",
+    "tech_aemusa_possibility_branch_modeling"
+  ],
+  "removed_technologies": [],
+  "ship_instance_ids_unchanged": true,
+  "state": {
+    "chapter_index": 18,
+    "anchors_archived": 3,
+    "anchors_liberated": 3,
+    "projections_defeated": 3,
+    "anchor_losses": 0
+  },
+  "source": "用户在合法正式结局隔离档执行给研究的受控命令，生产个人研究资格触发器通过后才发放。",
+  "natural_research_draw": "pending",
+  "normal_research_completion": "pending",
+  "designer": "pending",
+  "normal_paid_build_and_refit": "pending",
+  "industrial_setup_changed": false,
+  "live_paused": true,
+  "reload": "新研究断点尚未再次实际载回"
+}
