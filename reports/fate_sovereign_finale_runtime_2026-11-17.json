@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-17",
+  "game_date": "2231.10.11",
+  "native_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\AE_Finale_Isolated_20261116\\2231.10.11.sav",
+  "bytes": 1504593,
+  "zip_integrity": "pass",
+  "backup": "temp/finale_runtime_20261117/fate_sovereign_complete_2231.10.11.sav",
+  "state": {
+    "chapter_index": 18,
+    "anchors_archived": 3,
+    "anchors_liberated": 3,
+    "projections_defeated": 3,
+    "anchor_losses": 0,
+    "epilogue_tone_index": 1
+  },
+  "confirmed_flags": [
+    "aemusa_ms_decision_player_authorized",
+    "aemusa_ms_decision_aemusa_accepted",
+    "aemusa_ms_country_settlement_fate_sovereign_done",
+    "aemusa_ms_country_ending_fate_sovereign_settled",
+    "aemusa_ms_country_fate_sovereign_authority_active",
+    "aemusa_ms_country_chapter_16_completed",
+    "aemusa_ms_country_settlement_chapter_16_done",
+    "aemusa_ms_country_story_v1_complete",
+    "aemusa_ms_country_epilogue_settled"
+  ],
+  "original_aemusa_id": 285212673,
+  "fate_sovereign_trait_present": true,
+  "fate_sovereign_leader_flag_present": true,
+  "control_notes": "沿昨天的独立测试副本继续，基础30来自11月16日受控等级前置。本日从正式页面正常完成转变/主线/尾声，未直接写入结果。",
+  "epilogue_tone": "共同守望",
+  "handover_after_finale": "实际画面3击破/3归档/3解放/0永久损失",
+  "reload": "第十六章入口档本日新进程实际载回；新最终结局档尚未再次载回",
+  "p03": "合法个人研究所需主要持久收据齐全；自然抽取、实际研究/设计/造舰仍待验",
+  "paused": true,
+  "production_changed": false
+}
