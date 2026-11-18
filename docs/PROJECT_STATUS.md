@@ -1,6 +1,6 @@
 # PROJECT_STATUS
 
-更新于 2026-11-17。接手以[当前交接](../HANDOFF.md)和[执行清单](TODO.md)为准。阶段验收遵循[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。早期资料见[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)。
+更新于 2026-11-18。接手以[当前交接](../HANDOFF.md)和[执行清单](TODO.md)为准。阶段验收遵循[开发与验收工作流](DEVELOPMENT_WORKFLOW.md)。早期资料见[整理前快照](../project/history/PROJECT_STATUS_before_handoff_2026-10-31.md)。
 
 ## 当前任务与交付层级
 
@@ -9,7 +9,7 @@
 | 最终 Boss | 三节点真实击破、勘查解析、解除工程、零损失解放归档及共同胜利已实机通过。2231.10.11原生档确认3击破/3归档/3解放/0永久损失，十三章与第五阶段结算，章节14。第14章公共交接与前三段复盘已实点，分阶段公开与边界收据已新存；11月16日在受控等级30的测试副本正常完成私人互认、独立双决定和十四/十五章结算，现进入16；11月17日正式转变、主线收束、尾声及结局交接均通过实际页面，原生新档章节18、身份特质及3/3/3/0保持；最终新档实际载回与其他失败边界仍待验。[正式结局](../reports/fate_sovereign_finale_runtime_2026-11-17.md)[共同胜利](../reports/core_common_victory_2026-11-15.md) |
 | 私人旗舰 | 4.5.3 实拍三个镜头尺度和 16T 齐射。银紫细束保留中央星空，两个样例均获胜。旧六 L 舰受控瘫痪后同船、同队、同星系即时复原。彻底移除后从联络处只补一艘 16T。[实拍](../reports/flagship_volley_2026-11-10.md) · [旧档兼容](../reports/flagship_legacy_recovery_2026-11-10.md) |
 | 战后与结局 | 白夜馆交接已实点；本日再由正常定位按钮前往真实馆址，执行解译，精确支付500能源、200消费品和20小型文物，永久知识已冷载确认。[工程实机](../reports/engineering_world_runtime_2026-11-11.md) |
-| 独立个人研究 | P01比较、P02付费改选、P04气候配方继续保留。P03按用户11月15日选择恢复为独立择途级：基础6L/可选1X+4L及五类核心，16项定向检查和静态通过，11月17日合法结局档的个人资格守卫实际允许受控解锁P01/P03并已保存；自然研究、设计器、造舰改装与平衡待验，模型现为公共占位，独立外观待设计。[研究断点](../reports/p03_research_ready_2026-11-17.md)[P03](../reports/aemusa_personal_hull_2026-11-15.md) · [P02](../reports/aemusa_project_reconfiguration_2026-11-10.md) · [P04](../reports/aemusa_world_former_climates_2026-11-10.md) |
+| 独立个人研究 | P01比较、P02付费改选、P04气候配方继续保留。P03按用户11月15日选择恢复为独立择途级：基础6L/可选1X+4L及五类核心，16项定向检查和静态通过，11月17日合法结局档的个人资格守卫实际允许受控解锁P01/P03并已保存；11月18日正常设计器已保存本国基础6L设计2870，五核心齐全；自然研究、付费造舰改装、X构型与平衡待验，工业前置尚缺，模型现为公共占位，独立外观待设计。[设计器](../reports/p03_designer_runtime_2026-11-18.md)[研究断点](../reports/p03_research_ready_2026-11-17.md)[P03](../reports/aemusa_personal_hull_2026-11-15.md) · [P02](../reports/aemusa_project_reconfiguration_2026-11-10.md) · [P04](../reports/aemusa_world_former_climates_2026-11-10.md) |
 
 本日4.5.4中D12正常按钮的支付、敌我筛选、60/180日时限及冷载保持通过。修复造境目标误判后，公共大陆和个人干旱方案实点完成；平台为受控备料，原生施工、极地实点、自然抽取和殖民仍待验。[D12](../reports/artifact_field_suppression_runtime_2026-11-11.md) · [造境](../reports/engineering_world_runtime_2026-11-11.md)
 

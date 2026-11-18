@@ -1,0 +1,124 @@
+{
+  "date": "2026-11-18",
+  "game_date": "2231.10.11",
+  "native_save": "C:\\Users\\Admin\\Documents\\Paradox Interactive\\Stellaris\\save games\\AE_Finale_Isolated_20261116\\2231.10.11.sav",
+  "bytes": 1511909,
+  "zip_integrity": "pass",
+  "backup": "temp/p03_runtime_20261118/p03_design_saved_2231.10.11.sav",
+  "state": {
+    "chapter_index": 18,
+    "anchors_archived": 3,
+    "anchors_liberated": 3,
+    "projections_defeated": 3,
+    "anchor_losses": 0
+  },
+  "p03_design_records": [
+    {
+      "design_id": 33556898,
+      "name_key": "HUMAN1_SHIP_Marathon",
+      "owned_by_country_0": false,
+      "auto_generated_record": true,
+      "section_templates": {
+        "bow": "AEMUSA_FATE_ESCORT_BOW",
+        "mid": "AEMUSA_FATE_ESCORT_MID",
+        "stern": "AEMUSA_FATE_ESCORT_STERN"
+      },
+      "fitted_components": {
+        "bow": {
+          "LARGE_GUN_01": "LARGE_RED_LASER",
+          "LARGE_GUN_02": "LARGE_RED_LASER",
+          "LARGE_UTILITY_1": "LARGE_ARMOR_1",
+          "LARGE_UTILITY_2": "LARGE_SHIELD_1",
+          "LARGE_UTILITY_3": "LARGE_ARMOR_1",
+          "LARGE_UTILITY_4": "LARGE_ARMOR_1"
+        },
+        "mid": {
+          "LARGE_GUN_01": "LARGE_RED_LASER",
+          "LARGE_GUN_02": "LARGE_RED_LASER",
+          "LARGE_GUN_03": "LARGE_RED_LASER",
+          "LARGE_UTILITY_1": "LARGE_ARMOR_1",
+          "LARGE_UTILITY_2": "LARGE_SHIELD_1",
+          "LARGE_UTILITY_3": "LARGE_ARMOR_1",
+          "LARGE_UTILITY_4": "LARGE_ARMOR_1"
+        },
+        "stern": {
+          "LARGE_GUN_01": "LARGE_RED_LASER",
+          "AUX_UTILITY_1": "REACTOR_BOOSTER_1",
+          "AUX_UTILITY_2": "REACTOR_BOOSTER_1"
+        }
+      },
+      "required_components": [
+        "AEMUSA_FATE_ESCORT_REACTOR",
+        "AEMUSA_FATE_ESCORT_HYPER_DRIVE",
+        "AEMUSA_FATE_ESCORT_THRUSTER",
+        "AEMUSA_FATE_ESCORT_SENSOR",
+        "AEMUSA_FATE_ESCORT_COMPUTER"
+      ],
+      "weapon_slots": 6,
+      "large_defense_slots": 8,
+      "aux_slots": 2
+    },
+    {
+      "design_id": 2870,
+      "name_key": "HUMAN1_SHIP_Freedom",
+      "owned_by_country_0": true,
+      "auto_generated_record": false,
+      "section_templates": {
+        "bow": "AEMUSA_FATE_ESCORT_BOW",
+        "mid": "AEMUSA_FATE_ESCORT_MID",
+        "stern": "AEMUSA_FATE_ESCORT_STERN"
+      },
+      "fitted_components": {
+        "bow": {
+          "LARGE_GUN_01": "LARGE_RED_LASER",
+          "LARGE_GUN_02": "LARGE_RED_LASER",
+          "LARGE_UTILITY_1": "LARGE_ARMOR_1",
+          "LARGE_UTILITY_2": "LARGE_SHIELD_1",
+          "LARGE_UTILITY_3": "LARGE_ARMOR_1",
+          "LARGE_UTILITY_4": "LARGE_ARMOR_1"
+        },
+        "mid": {
+          "LARGE_GUN_01": "LARGE_RED_LASER",
+          "LARGE_GUN_02": "LARGE_RED_LASER",
+          "LARGE_GUN_03": "LARGE_RED_LASER",
+          "LARGE_UTILITY_1": "LARGE_ARMOR_1",
+          "LARGE_UTILITY_2": "LARGE_SHIELD_1",
+          "LARGE_UTILITY_3": "LARGE_ARMOR_1",
+          "LARGE_UTILITY_4": "LARGE_ARMOR_1"
+        },
+        "stern": {
+          "LARGE_GUN_01": "LARGE_RED_LASER",
+          "AUX_UTILITY_1": "REACTOR_BOOSTER_1",
+          "AUX_UTILITY_2": "REACTOR_BOOSTER_1"
+        }
+      },
+      "required_components": [
+        "AEMUSA_FATE_ESCORT_REACTOR",
+        "AEMUSA_FATE_ESCORT_HYPER_DRIVE",
+        "AEMUSA_FATE_ESCORT_THRUSTER",
+        "AEMUSA_FATE_ESCORT_SENSOR",
+        "AEMUSA_FATE_ESCORT_COMPUTER"
+      ],
+      "weapon_slots": 6,
+      "large_defense_slots": 8,
+      "aux_slots": 2
+    }
+  ],
+  "manual_owned_design_id": 2870,
+  "ship_instance_ids_unchanged": true,
+  "p03_ship_instance_created": false,
+  "missing_public_research": [
+    "tech_artifact_strategic_hull_engineering",
+    "tech_artifact_segmented_large_engineering"
+  ],
+  "hull_qualified": false,
+  "segmented_industry_present": false,
+  "ui_source": "用户完成新设计/自动配装/保存；助手只读核对原生设计与本国设计集合。未取得完整P03配装截图。",
+  "designer_runtime": "基础6L、8L防护、2A与五核心正常保存，设计2870属于国家0",
+  "normal_build_refit_combat": "pending",
+  "spinal_x_configuration": "pending",
+  "natural_research": "pending; P01/P03为已记录的受控前置",
+  "post_save_reload": "pending",
+  "paused": "用户确认保存并暂停；自动完整截图连续失焦后停止输入",
+  "production_changed": false
+}
