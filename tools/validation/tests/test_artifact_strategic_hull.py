@@ -120,6 +120,10 @@ class StrategicHullTests(unittest.TestCase):
         self.assertTrue(self.w.may_fit(PARTS['ARTIFACT_STRATEGIC_REACTOR']))
 
     def test_only_completed_capital_yards_and_megashipyards_accept_orders(self):
+        # 已知作用域的星堡事件在载入时也会解析未执行的分支，专用入口应只含星堡等级检查。
+        citadel_trigger = TRIGGERS['artifact_strategic_hull_citadel_yard_ready']
+        self.assertEqual([(entry.key, entry.value) for entry in citadel_trigger],
+                         [('has_starbase_size_ge', 'starbase_citadel')])
         for level in ('starbase_starport', 'starbase_starhold', 'starbase_starfortress'):
             self.assertFalse(self.w.may_order({**self.port, 'size': level}))
         for kind in ('mega_shipyard_0', 'mega_shipyard_1', 'mega_shipyard_2'):

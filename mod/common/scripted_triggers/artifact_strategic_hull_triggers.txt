@@ -15,12 +15,17 @@ artifact_strategic_hull_industry_ready = {
 	}
 }
 
-# 建造场所作用域：沿用原生船厂；不要求泰坦科技、个人旗舰或额外角色。
+# 恒星基地作用域：已定位到星堡的事件可直接检查等级，避免在该作用域展开巨构条件。
+artifact_strategic_hull_citadel_yard_ready = {
+	has_starbase_size >= starbase_citadel
+}
+
+# 舰船建造地点可以是恒星基地或巨构，沿用原生船厂的分类。
 artifact_strategic_hull_yard_ready = {
 	OR = {
 		AND = {
 			is_scope_type = starbase
-			has_starbase_size >= starbase_citadel
+			artifact_strategic_hull_citadel_yard_ready = yes
 		}
 		AND = {
 			is_scope_type = megastructure
