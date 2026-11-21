@@ -10,6 +10,7 @@ __pycache__/
 *.log
 error.log
 game.log
+/console_history.txt
 
 # 临时导出目录
 tmp/

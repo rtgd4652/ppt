@@ -1657,7 +1657,7 @@
           "core_components": 5,
           "native_construction": true,
           "resurrection": false,
-          "model_status": "public_model_in_production_independent_model_local_preview",
+          "model_status": "public_model_in_production_independent_six_large_model_seen_in_game",
           "balance_status": "initial_values_pending_runtime"
         },
         "status": "implemented_static_passed",
