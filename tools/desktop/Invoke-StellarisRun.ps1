@@ -16,8 +16,9 @@ if (-not (Test-Path -LiteralPath $resolvedTestProfile -PathType Container) -or
     throw 'Run control only accepts an existing isolated profile below this repository temp directory.'
 }
 $process = Get-CimInstance Win32_Process -Filter "ProcessId=$ExpectedGameProcessId"
-$profileMatch = [regex]::Match([string]$process.CommandLine,'(?i)(?:^|\s)--?userdir(?:=|\s+)(?:"([^"]+)"|(\S+))')
-$actualProfile = if ($profileMatch.Groups[1].Success) { $profileMatch.Groups[1].Value } else { $profileMatch.Groups[2].Value }
+# Windows 启动器可能引用整个参数，也可能只引用路径。只接受完整的 userdir 参数。
+$profileMatch = [regex]::Match([string]$process.CommandLine,'(?i)(?:^|\s)(?:"--?userdir=(?<path>[^"]+)"|--?userdir(?:=|\s+)(?:"(?<path>[^"]+)"|(?<path>[^\s"]+)))(?=\s|$)')
+$actualProfile = $profileMatch.Groups['path'].Value
 if (-not $process -or $process.ExecutablePath -ne 'F:\steam\steamapps\common\Stellaris\stellaris.exe' -or
     -not $profileMatch.Success -or $actualProfile.TrimEnd('/','\').Replace('\','/') -ine $resolvedTestProfile.TrimEnd('/','\').Replace('\','/')) {
     throw 'Process is not the requested isolated Stellaris instance; no input sent.'

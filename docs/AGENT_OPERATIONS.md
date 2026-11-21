@@ -113,6 +113,8 @@ R5g停电恢复中，分开调用/审批后多次失焦，均未发送输入。�
 & '.\tools\desktop\Send-StellarisText.ps1' -Action Submit -TextFile $commandFile -Label command_submitted
 ```
 
+4.5.4 的独立资料目录支持控制台 `run 文件名.txt`。将完整控制台命令放在当前已核实的 `-userdir` 顶层，以短 ASCII 文件名调用。执行效果的行需以 `effect` 开头；选择星港或舰队会改变控制台作用域，需显式引用该隔离档的玩家国家。先看清输入行，再提交一次，从同一目录的 `logs/game.log` 核对回执。择途级造舰及造境施工均已使用这一路径。
+
 核对实际回显／日志／界面后再关闭控制台。`Submit`检查同PID／窗口及未提交输入记录；`pending-input.json`只是尝试状态。遇到可能已执行但回显不明的命令先核对结果，不重复提交。
 
 `ToggleConsole`只是按键，不识别开关状态，必须先看图。`ClearText`仅用于确认属于本次脚本、未提交且允许清除的文字；不清除未知用户输入。出现拼音候选、失焦或部分文本时停止提交；必要时让用户切英文一次，10分钟预算内仍失败就记录，不重复三次help排障。

@@ -26,9 +26,16 @@ if ($EnsurePaused) {
 '@ | Set-Content -LiteralPath (Join-Path $fakeDesktop 'Invoke-StellarisClick.ps1') -Encoding utf8
 function Get-CimInstance {
     param($ClassName,$Filter)
+    # 覆盖启动器引用整个参数和只引用路径的两种真实 Windows 启动形式。
+    $profileValue = $fakeProfile.Replace('\','/')
+    $userdirArg = switch ($global:StellarisRunTestState.ProfileForm) {
+        'quoted_argument' { '"-userdir=' + $profileValue + '"' }
+        'wrong_profile'   { '"-userdir=' + $profileValue + '-other"' }
+        default           { '-userdir="' + $profileValue + '"' }
+    }
     [pscustomobject]@{
         ExecutablePath = if ($global:StellarisRunTestState.BadIdentity) { 'wrong.exe' } else { 'F:\steam\steamapps\common\Stellaris\stellaris.exe' }
-        CommandLine = '"F:\steam\steamapps\common\Stellaris\stellaris.exe" -userdir="' + $fakeProfile.Replace('\','/') + '" --continuelastsave'
+        CommandLine = '"F:\steam\steamapps\common\Stellaris\stellaris.exe" ' + $userdirArg + ' --continuelastsave'
     }
 }
 function Start-Sleep {
@@ -42,6 +49,8 @@ $cases = @(
     @{Name='error_after_input'; FailStart=$true; Fail=$true; Start=1; Pause=1},
     @{Name='wait_interrupted'; FailSleep=$true; Fail=$true; Start=1; Pause=1},
     @{Name='cannot_confirm_pause'; FailPause=$true; Fail=$true; Start=1; Pause=0},
+    @{Name='quoted_userdir_argument'; ProfileForm='quoted_argument'; Fail=$false; Start=1; Pause=1},
+    @{Name='different_quoted_profile'; ProfileForm='wrong_profile'; Fail=$true; Start=0; Pause=0},
     @{Name='wrong_game'; BadIdentity=$true; Fail=$true; Start=0; Pause=0},
     @{Name='outside_profile'; Outside=$true; Fail=$true; Start=0; Pause=0}
 )
@@ -51,7 +60,7 @@ foreach ($case in $cases) {
         Captures=[Collections.Generic.List[string]]::new()
         AutoPause=[bool]$case.AutoPause; FailStart=[bool]$case.FailStart
         FailSleep=[bool]$case.FailSleep; FailPause=[bool]$case.FailPause
-        BadIdentity=[bool]$case.BadIdentity
+        ProfileForm=$case.ProfileForm; BadIdentity=[bool]$case.BadIdentity
     }
     $requestedProfile = if ($case.Outside) { $outsideProfile } else { $fakeProfile }
     $failed=$false; $result=@()
