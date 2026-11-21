@@ -41,3 +41,5 @@ ZIP 文件名中的 `candidate` 表示开发候选。启动器沿用项目原有
 ## 从源码重建候选包
 
 在仓库根目录运行 `python -B tools/build/package_local_mod.py`。构建使用 Python 标准库和 Git 的 `archive --mtime`，取当前已提交版本的整个 `mod/` 和本说明。输出位于 `temp/local_mod_candidates/`，文件名带提交短号。需要另存时，可传 `--output-dir "包含空格或中文的目录"`。
+
+若本机有更新过或新制作的美术，请运行 `python -B tools/build/package_local_mod.py --local-art`。此模式从工作区的 `mod/gfx/` 读取 `.mesh`、`.anim`、`.dds` 和 `.png`。脚本、模型定义、界面定义与本说明仍取自当前提交。使用新资源时，请先提交引用它的文本定义，并在本机保留该提交已有的美术文件。成品文件名带 `-local-art.zip`，只写入 Git 忽略的输出目录。

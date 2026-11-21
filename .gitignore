@@ -36,7 +36,7 @@ knowledge/database/*.sqlite-wal
 art/reference_library/**
 !art/reference_library/README.md
 
-# 概念图、模型预览和实机影像默认保存在本地。制作输入、模型与游戏贴图继续入库。
+# 概念图、模型预览和实机影像默认保存在本地。既有路径规则保留在下方。
 /art/concepts/**/*.png
 /art/concepts/**/*.jpg
 /art/concepts/**/*.jpeg
@@ -67,3 +67,41 @@ tools/prototypes/aemusa_flagship/test_output/
 
 # 本机隔离试玩存档和输入证据；结构化核对结果保存在reports，不提交二进制存档。
 /runtime-backups/
+
+# 新增模型、纹理、图片及录像留在本机。已有跟踪项的更改仍需在推送前检查。
+*.mesh
+*.anim
+*.blend
+*.blend[0-9]*
+*.fbx
+*.obj
+*.gltf
+*.glb
+*.stl
+*.dae
+*.3ds
+*.usd
+*.usda
+*.usdc
+*.usdz
+*.dds
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.tga
+*.tif
+*.tiff
+*.webp
+*.gif
+*.svg
+*.avif
+*.exr
+*.hdr
+*.psd
+*.kra
+*.xcf
+*.mp4
+*.mov
+*.mkv
+*.webm
