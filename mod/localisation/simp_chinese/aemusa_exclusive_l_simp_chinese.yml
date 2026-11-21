@@ -65,7 +65,7 @@
  aemusa_ms.1560.exclusive:0 "查看专属危机的观测与共同准备。"
  NAME_Aemusa_Convergence:0 "毁灭收敛投影"
  NAME_Aemusa_Projection:0 "现实载体"
- aemusa_exclusive_assets_hint:0 "获得唯一现实恒定旗舰，并开放两阶段现实基线枢纽。原版模型为开发占位；旗舰损毁后免费等待90天，在有效首都恢复。枢纽总建设需360天、750合金和300凝聚力。"
+ aemusa_exclusive_assets_hint:0 "获得唯一现实恒定旗舰「未闭合的航路」。旗舰在战斗中瘫痪时立即原地复原。若舰体彻底消失，可通过「联络爱缪莎」免费召回至本国控制的首都。\n\n同时开放现实基线枢纽。建造和升级共需360天、750合金和300凝聚力。"
  aemusa_exclusive_warning_hint:0 "确认后有90天部署，达到12点压力时永久失去已锁定的普通矿藏。首处节点在缺少有效恒定时每月增加1点。后续节点每有一处此前由危机造成的永久损失，起始压力增加1点。已记录损失为[Root.aemusa_ms_country_anchor_losses]处。后续投影仍在且枢纽尚未隔离关联时，无有效恒定的月份增加2点。预警和既有压力随存档保留。"
  aemusa_exclusive_isolate_hint:0 "现实基线枢纽须在运行中。调拨物资后，枢纽用两次有效月度核对隔离此处，预警期间即可开工。已经取得「$aci_signal_identified$」的帝国只需再核对一次。枢纽停运时保留进度。隔离完成后截断关联带来的额外压力，舰队仍须清除投影。"
  aemusa_exclusive_link_defeated:0 "舰队已击破投影，关联压力已截断"
