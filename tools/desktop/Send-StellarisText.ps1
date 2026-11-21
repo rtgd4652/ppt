@@ -196,7 +196,12 @@ if ($Action -eq 'Text') {
     if (Test-Path -LiteralPath $pendingRecord) {
         $previousInput = Get-Content -LiteralPath $pendingRecord -Raw | ConvertFrom-Json
         if (-not $previousInput.Submitted -and $previousInput.Attempted -gt 0) {
-            throw 'Unsubmitted text remains; inspect and submit or clear it before typing.'
+            # 完全退出的上一实例没有可提交的输入行；仍在运行的进程继续保护其未提交文字。
+            $priorProcessId = [int]$previousInput.Pid
+            if ($priorProcessId -le 0 -or $priorProcessId -eq $game.Id -or
+                (Get-Process -Id $priorProcessId -ErrorAction SilentlyContinue)) {
+                throw 'Unsubmitted text remains; inspect and submit or clear it before typing.'
+            }
         }
     }
     if ($ToggleImeBeforeText) {

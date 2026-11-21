@@ -13,6 +13,24 @@ $branches = @(
     }
 )
 if ($branches.Count -ne 1) { throw 'Expected one actual ClearText branch.' }
+# 复用正式账本门槛，检查旧进程结束后能否在新的空控制台录入命令。
+$ledgerNode = $ast.Find({
+    param($node)
+    $node -is [System.Management.Automation.Language.IfStatementAst] -and
+        $node.Clauses[0].Item1.Extent.Text -eq '-not $previousInput.Submitted -and $previousInput.Attempted -gt 0'
+}, $true)
+if (-not $ledgerNode) { throw 'Expected the pending input check.' }
+$ledger = [scriptblock]::Create($ledgerNode.Extent.Text)
+& {
+    $game = [pscustomobject]@{Id=910}
+    function Get-Process { param($Id,$ErrorAction) if ($Id -eq 911) { [pscustomobject]@{Id=$Id} } }
+    foreach ($case in @(@{Id=910;Block=$true},@{Id=911;Block=$true},@{Id=912;Block=$false},@{Id=0;Block=$true})) {
+        $previousInput = [pscustomobject]@{Pid=$case.Id;Attempted=3;Submitted=$false}
+        $blocked = $false
+        try { & $ledger } catch { $blocked=$true }
+        if ($blocked -ne $case.Block) { throw ('Unexpected pending-input decision for '+$case.Id) }
+    }
+}
 $body = $branches[0].Extent.Text
 $clear = [scriptblock]::Create($body.Substring(1,$body.Length-2))
 $pendingRecord = Join-Path ([IO.Path]::GetTempPath()) ('StellarisTextClearing-'+[Guid]::NewGuid().ToString('N')+'.json')
@@ -47,7 +65,7 @@ try {
             if ($after.Attempted -ne 0 -or $after.Complete -or $after.Submitted) { throw ('Wrong receipt: '+$case.Name) }
         }
     }
-    Write-Output ('通过 '+$cases.Count+' 项源码守卫检查；未发送桌面输入。')
+    Write-Output ('通过 '+$cases.Count+' 项输入清理检查和 4 项旧进程账本检查；未发送桌面输入。')
 } finally {
     if (Test-Path -LiteralPath $pendingRecord) { Remove-Item -LiteralPath $pendingRecord }
 }
