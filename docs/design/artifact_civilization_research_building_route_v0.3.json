@@ -1404,10 +1404,10 @@
       "gate": null,
       "existing_key": null,
       "status": "implemented_representative_runtime_passed",
-      "runtime_status": "base_upgrade_and_public_activation_passed_colonization_order_issued",
-      "runtime_limits": "研究受控。公共法令已将荒芜世界转为大陆。另一个样本由建造船正常完成基址和升级，在同一平台通过P04极地决议后已下达殖民订单。殖民人口抵达及自然抽取待验。",
+      "runtime_status": "base_upgrade_and_public_activation_passed_arctic_colony_settled",
+      "runtime_limits": "研究受控。公共法令已将荒芜世界转为大陆。另一个样本由建造船正常完成基址和升级，在同一平台通过P04极地决议后正常殖民。2299.12.13原生档实有245人口。自然抽取待验。",
       "runtime_report": "reports/engineering_world_runtime_2026-11-11.md",
-      "runtime_save": "temp/world_native_20261121/evidence/arctic_colony_order_2295.11.01.sav",
+      "runtime_save": "temp/world_native_20261121/evidence/arctic_settled_2299.12.13.sav",
       "capability": "原生两阶段传承造境平台：一颗安全空置荒芜世界→普通大陆世界，再正常殖民；公共已解译资格、每处一次，旧锚点损失不回填。",
       "previous_name": "终局巨构工程",
       "implementation_key": "tech_artifact_postcrisis_megastructure_engineering",
@@ -1686,9 +1686,9 @@
         },
         "status": "implemented_static_passed",
         "runtime_status": "arid_and_arctic_planetary_decisions_passed_controlled_research",
-        "runtime_limits": "研究受控。干旱与极地方案均已在实际行星决议中执行。极地样本已发出殖民订单，殖民人口抵达及自然科研待验。",
+        "runtime_limits": "研究受控。干旱与极地方案均已在实际行星决议中执行。极地样本冷载后正常殖民，殖民地109实有245人口。自然科研待验。",
         "runtime_report": "reports/engineering_world_runtime_2026-11-11.md",
-        "runtime_save": "temp/world_native_20261121/evidence/arctic_colony_order_2295.11.01.sav",
+        "runtime_save": "temp/world_native_20261121/evidence/arctic_settled_2299.12.13.sav",
         "report": "reports/aemusa_world_former_climates_2026-11-10.md"
       }
     ],
@@ -2891,7 +2891,7 @@
     "R5g": {
       "date": "2026-10-31",
       "status": "implemented_static_passed",
-      "runtime_status": "base_upgrade_and_public_activation_passed_colonization_order_issued",
+      "runtime_status": "base_upgrade_and_public_activation_passed_arctic_colony_settled",
       "nodes": [
         "F08"
       ],
@@ -2905,7 +2905,7 @@
       "spec": "docs/design/artifact_civilization_r5g_implementation_spec_v0.1.json",
       "report": "reports/artifact_civilization_r5g_implementation_2026-10-31.md",
       "checkpoint": "reports/artifact_civilization_r5g_checkpoint_2026-10-31.json",
-      "next_step": "F08沿用已下达殖民订单的2295.11.01隔离档观察人口抵达，自然研究抽取另列。D12原生费用与限时效果、F07代表舰样本仍按各自记录跟进，阶段整合包括Boss深化、正式资产和结尾、发布前全线回归。人物组合、批量图标与独立连续巨构原型继续暂停。"
+      "next_step": "F08两段施工、造境及极地殖民已完成；F08/P04的自然研究抽取另列。D12原生费用与限时效果、F07代表舰样本仍按各自记录跟进，阶段整合包括Boss深化、正式资产和结尾、发布前全线回归。人物组合、批量图标与独立连续巨构原型继续暂停。"
     }
   },
   "current_counts": {
